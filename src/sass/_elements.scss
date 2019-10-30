@@ -1,0 +1,24 @@
+//Any generic styles for the site. Shouldn't have any classes or ids for selectors.
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: $font;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+}

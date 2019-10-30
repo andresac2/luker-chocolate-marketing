@@ -1,0 +1,94 @@
+.home {
+  background: transparent url('../../assets/img/cocoaPods.png') 0% 0% no-repeat;
+  background-size: cover;
+  opacity: 1;
+  position: fixed;
+  height: 100%;
+
+  .logo {
+    margin: 7em 5em 3em;
+    width: 12em;
+  }
+
+  &-content {
+    position: relative;
+    display: inline-grid;
+    grid-template-columns: 45% 45% 10%;
+    margin-left: 5em;
+    color: #fff;
+
+    .intro {
+      &-title {
+        border-bottom: 6px solid #D5B777;
+        width: fit-content;
+        padding-right: 2em;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+
+        h1 {
+          margin: 0;
+          font-weight: 900;
+          font-size: 4.5em;
+        }
+
+        h2 {
+          font-weight: 700;
+          font-size: 3em;
+          line-height: .7;
+        }
+      }
+
+      p {
+        font-weight: 600;
+        font-size: smaller;
+      }
+
+      ;
+    }
+
+    .dist {
+      @include vert-center;
+      margin-top: 1.5em;
+
+      &-text {
+        width: 19em;
+
+        h2 {
+          background: #C8D226;
+          text-align: center;
+          font-weight: 700;
+          padding: 1em 1.5em;
+          border-bottom: 15px solid #685019;
+        }
+
+        button {
+          font-weight: 700;
+          background: #F4C710;
+          width: 100%;
+          color: #685019;
+          padding: .5em;
+        }
+      }
+
+
+    }
+
+    .cacao-link {
+      position: relative;
+      cursor: pointer;
+      width: 18em;
+      margin-top: -5em;
+      margin-left: -2em;
+
+      img {
+        @media (min-width: 1440px) {
+          width: 25em;
+        }
+
+        position: absolute;
+        filter: blur(2px);
+        width: 20em;
+      }
+    }
+  }
+}
