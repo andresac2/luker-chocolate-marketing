@@ -19,13 +19,13 @@ class Header extends React.Component {
 
     return (
       <nav className="header-component">
-        <button onClick={() => this.headerToggle('intro')} className={`selected-tab ${selectTab === 'intro' && selectTab}`}>INTRODUCCIÓN</button>
-        <button onClick={() => this.headerToggle('flow')} className={`selected-tab ${selectTab === 'flow' && selectTab}`}>FLOW CACAO</button>
-        <button onClick={() => this.headerToggle('sosten')} className={`selected-tab ${selectTab === 'sosten' && selectTab}`}>SOSTENIBILIDAD</button>
-        <button onClick={() => this.headerToggle('solution')} className={`selected-tab ${selectTab === 'solution' && selectTab}`}>SOLUCIONES</button>
-        <button onClick={() => this.headerToggle('customer')} className={`selected-tab ${selectTab === 'customer' && selectTab}`}>CLIENTES</button>
-        <button onClick={() => this.headerToggle('r')} className={`selected-tab ${selectTab === 'r' && selectTab}`}>R&D</button>
-        <button onClick={() => this.headerToggle('propos')} className={`selected-tab ${selectTab === 'propos' && selectTab}`}>PROPUESTA DE VALOR</button>
+        <a onClick={() => this.headerToggle('intro')} className={`selected-tab ${selectTab === 'intro' && selectTab}`}>INTRODUCCIÓN</a>
+        <a onClick={() => this.headerToggle('flow')} className={`selected-tab ${selectTab === 'flow' && selectTab}`}>FLOW CACAO</a>
+        <a onClick={() => this.headerToggle('sosten')} className={`selected-tab ${selectTab === 'sosten' && selectTab}`}>SOSTENIBILIDAD</a>
+        <a onClick={() => this.headerToggle('solution')} className={`selected-tab ${selectTab === 'solution' && selectTab}`}>SOLUCIONES</a>
+        <a onClick={() => this.headerToggle('customer')} className={`selected-tab ${selectTab === 'customer' && selectTab}`}>CLIENTES</a>
+        <a onClick={() => this.headerToggle('r')} className={`selected-tab ${selectTab === 'r' && selectTab}`}>R&D</a>
+        <a onClick={() => this.headerToggle('propos')} className={`selected-tab ${selectTab === 'propos' && selectTab}`}>PROPUESTA DE VALOR</a>
       </nav>
     );
   }

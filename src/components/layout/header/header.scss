@@ -7,19 +7,19 @@
   z-index: 1;
   width: 100%;
 
-  //&:hover {
-  height: 3em;
-  background: linear-gradient(180deg, rgba(0, 0, 0, .9) 10%, rgba(0, 0, 0, 0) 85%);
+  &:hover {
+    height: 3em;
+    background: linear-gradient(180deg, rgba(0, 0, 0, .9) 10%, rgba(0, 0, 0, 0) 85%);
 
-  //    filter: blur(28px);
-  button {
-    background: transparent;
-    display: inline;
+    //    filter: blur(28px);
+    a {
+      background: transparent;
+      display: inline;
+      cursor: pointer;
+    }
   }
 
-  //}
-
-  button {
+  a {
     color: #fff;
     //display: none;
     align-self: center;
