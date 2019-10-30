@@ -12,7 +12,7 @@ export default function BasicExample() {
   return (
     <Router>
       <div>
-        <Header />
+        <Header selectTab="introducci+ón" />
         <Switch>
           <Route exact path="/" component={Home} />
         </Switch>

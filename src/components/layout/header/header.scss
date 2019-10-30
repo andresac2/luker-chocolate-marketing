@@ -1,0 +1,46 @@
+.header-component {
+  background: #C8D226;
+  height: 1em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+
+  &:hover {
+    height: 3em;
+    background: linear-gradient(180deg, rgba(0, 0, 0, .9) 10%, rgba(0, 0, 0, 0) 85%);
+
+    //    filter: blur(28px);
+    a {
+      display: inline;
+    }
+  }
+
+  a {
+    color: #fff;
+    display: none;
+    align-self: center;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1vw;
+  }
+
+  .selected-tab {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 2em;
+      left: 0;
+      width: 100%;
+      border-bottom-width: 5px;
+      border-bottom-style: solid;
+
+      &--intro {
+        border-bottom-color: rgb(104, 80, 25);
+      }
+    }
+  }
+}

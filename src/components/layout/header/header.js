@@ -13,12 +13,18 @@ class Header extends React.Component {
 
   render() {
     const { isOpen } = this.state;
-    const { setCollapsed } = this.props;
+    const { selectTab } = this.props;
 
     return (
-      <div className="">
-        <h1>holaaa</h1>
-      </div>
+      <nav className="header-component">
+        <a href="default.asp" className="selected-tab">INTRODUCCIÓN</a>
+        <a href="news.asp">FLOW CACAO</a>
+        <a href="contact.asp">SOSTENIBILIDAD</a>
+        <a href="about.asp">SOLUCIONES</a>
+        <a href="about.asp">CLIENTES</a>
+        <a href="about.asp">R&D</a>
+        <a href="about.asp">PROPUESTA DE VALOR</a>
+      </nav>
     );
   }
 };
