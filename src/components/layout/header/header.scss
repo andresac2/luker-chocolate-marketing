@@ -7,19 +7,21 @@
   z-index: 1;
   width: 100%;
 
-  &:hover {
-    height: 3em;
-    background: linear-gradient(180deg, rgba(0, 0, 0, .9) 10%, rgba(0, 0, 0, 0) 85%);
+  //&:hover {
+  height: 3em;
+  background: linear-gradient(180deg, rgba(0, 0, 0, .9) 10%, rgba(0, 0, 0, 0) 85%);
 
-    //    filter: blur(28px);
-    a {
-      display: inline;
-    }
+  //    filter: blur(28px);
+  button {
+    background: transparent;
+    display: inline;
   }
 
-  a {
+  //}
+
+  button {
     color: #fff;
-    display: none;
+    //display: none;
     align-self: center;
     text-align: center;
     font-weight: 700;
@@ -28,19 +30,50 @@
 
   .selected-tab {
     position: relative;
-
-    &::after {
-      content: '';
-      position: absolute;
-      top: 2em;
-      left: 0;
-      width: 100%;
-      border-bottom-width: 5px;
-      border-bottom-style: solid;
-
-      &--intro {
-        border-bottom-color: rgb(104, 80, 25);
-      }
-    }
   }
+
+  .intro::after,
+  .flow::after,
+  .sosten::after,
+  .solution::after,
+  .customer::after,
+  .r::after,
+  .propos::after {
+    content: '';
+    position: absolute;
+    top: 2em;
+    left: 0;
+    width: 100%;
+    border-bottom-width: 5px;
+    border-bottom-style: solid;
+  }
+
+  .intro::after {
+    border-bottom-color: #C8D226;
+  }
+
+  .flow::after {
+    border-bottom-color: rgb(104, 80, 250);
+  }
+
+  .sosten::after {
+    border-bottom-color: rgb(104, 80, 250);
+  }
+
+  .solution::after {
+    border-bottom-color: rgb(104, 80, 250);
+  }
+
+  .customer::after {
+    border-bottom-color: rgb(104, 80, 250);
+  }
+
+  .r::after {
+    border-bottom-color: rgb(104, 80, 250);
+  }
+
+  .propos::after {
+    border-bottom-color: rgb(104, 80, 250);
+  }
+
 }
