@@ -13,14 +13,12 @@ import FooterCover from "./components/layout/footer-cover/footer-cover"
 export default function BasicExample() {
   return (
     <Router>
-      <div>
-        <Header />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/flow" component={Flow} />
-        </Switch>
-        <FooterCover />
-      </div>
+      <Header />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/flow" component={Flow} />
+      </Switch>
+      <FooterCover />
     </Router>
   );
 }

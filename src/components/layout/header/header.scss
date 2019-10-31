@@ -1,11 +1,15 @@
 .header-component {
-  background: #C8D226;
+  background: $apple-green;
   height: 1em;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   position: fixed;
   z-index: 1;
   width: 100%;
+
+  &-flow {
+    background: $ocher-yellow;
+  }
 
   &:hover {
     height: 3em;
@@ -49,11 +53,11 @@
   }
 
   .intro::after {
-    border-bottom-color: #C8D226;
+    border-bottom-color: $apple-green;
   }
 
   .flow::after {
-    border-bottom-color: rgb(104, 80, 250);
+    border-bottom-color: $ocher-yellow;
   }
 
   .sosten::after {

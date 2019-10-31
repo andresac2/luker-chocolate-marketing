@@ -15,10 +15,9 @@ class Header extends React.Component {
   }
   render() {
     const { selectTab } = this.state;
-    const { location } = this.props;
 
     return (
-      <nav className="header-component">
+      <nav className={`header-component header-component-${selectTab.slice(1)}`}>
         <Link to="/" onClick={() => this.headerToggle('/')} className={`selected-tab ${selectTab === '/' && 'intro'}`}>INTRODUCCIÓN</Link>
         <Link to="/flow" onClick={() => this.headerToggle('/flow')} className={`selected-tab ${selectTab === '/flow' && selectTab.slice(1)}`}>FLOW CACAO</Link>
         <Link to="/" onClick={() => this.headerToggle('/sosten')} className={`selected-tab ${selectTab === 'sosten' && selectTab.slice(1)}`}>SOSTENIBILIDAD</Link>
