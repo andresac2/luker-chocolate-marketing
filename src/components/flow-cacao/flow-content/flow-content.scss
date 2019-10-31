@@ -1,0 +1,16 @@
+.flow-content-component {
+  background: #611306;
+  height: 100%;
+
+  &--text {
+    width: 50%;
+    height: 100%;
+    padding: 5em;
+    color: #ffffff;
+    line-height: 1.5em;
+  }
+
+  &--img {
+    background: url('../../../assets/img/cacaoOpen.png');
+  }
+}

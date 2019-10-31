@@ -11,6 +11,10 @@
     background: $ocher-yellow;
   }
 
+  &-sustain {
+    background: $beige;
+  }
+
   &:hover {
     height: 3em;
     background: linear-gradient(180deg, rgba(0, 0, 0, .9) 10%, rgba(0, 0, 0, 0) 85%);
@@ -38,7 +42,7 @@
 
   .intro::after,
   .flow::after,
-  .sosten::after,
+  .sustain::after,
   .solution::after,
   .customer::after,
   .r::after,
@@ -60,8 +64,8 @@
     border-bottom-color: $ocher-yellow;
   }
 
-  .sosten::after {
-    border-bottom-color: rgb(104, 80, 250);
+  .sustain::after {
+    border-bottom-color: $beige;
   }
 
   .solution::after {

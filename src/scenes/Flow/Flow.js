@@ -22,17 +22,9 @@ function Flow() {
           <button onClick={() => console.log('hi')}> DISTRIBUIDORES </button>
         </div>
       </div>
-      <div className="flow-content"><h1>ab</h1></div>
       <div className="flow-navbar"><FlowTabs tabActive="cacao" /></div>
     </div>
   );
 }
 
 export default Flow;
-/*
-      <img src={logo} className="logo" alt="Logo Luker" />
-      <div className="cacao-link">
-        <img src={cacao1} className="cacao-link-1" alt="Logo Luker" />
-        <img src={cacao2} className="cacao-link-2" alt="Logo Luker" />
-      </div>
-*/

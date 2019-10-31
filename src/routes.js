@@ -7,6 +7,7 @@ import {
 
 import Home from "./scenes/Home/Home"
 import Flow from "./scenes/Flow/Flow"
+import Sustain from "./scenes/Sustain/Sustain"
 import Header from "./components/layout/header/header"
 import FooterCover from "./components/layout/footer-cover/footer-cover"
 
@@ -17,6 +18,7 @@ export default function BasicExample() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/flow" component={Flow} />
+        <Route path="/sustain" component={Sustain} />
       </Switch>
       <FooterCover />
     </Router>
