@@ -1,0 +1,83 @@
+.flow-tab {
+  display: grid;
+  grid-auto-rows: minmax(15em, 15em);
+  //width: 100vw;
+
+  &-item {
+    @include vert-center;
+
+    span {
+      cursor: pointer;
+      font-size: large;
+      font-weight: 700;
+      text-align: center;
+      writing-mode: tb-rl;
+      transform: rotate(-180deg);
+      color: #fff;
+    }
+
+    &--active {
+      span {
+        font-size: 3vw;
+        align-self: center;
+        writing-mode: unset;
+        transform: none;
+      }
+    }
+  }
+
+  &--cacao {
+    grid-template-columns: 10fr 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  &--granjeros {
+    grid-template-columns: 1fr 10fr 1fr 1fr 1fr 1fr;
+  }
+
+  &--abastecimiento {
+    grid-template-columns: 1fr 1fr 10fr 1fr 1fr 1fr;
+  }
+
+  &--procesamiento {
+    grid-template-columns: 1fr 1fr 1fr 10fr 1fr 1fr;
+  }
+
+  &--coberturas {
+    grid-template-columns: 1fr 1fr 1fr 1fr 10fr 1fr;
+  }
+
+  &--producto {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 10fr;
+  }
+
+  .flow-tab-item--cacao {
+    background-image: linear-gradient(to bottom, rgba(97, 20, 6, 0.6) 100%, transparent), url('../../../assets/img/cacao-cover.png');
+    background-size: cover;
+  }
+
+  .flow-tab-item--granjeros {
+    background-image: linear-gradient(to bottom, rgba(209, 216, 114, .6) 100%, transparent), url('../../../assets/img/granjero-cover.png');
+    background-size: cover;
+  }
+
+  .flow-tab-item--abastecimiento {
+    background-image: linear-gradient(to bottom, rgba(213, 183, 119, .6) 100%, transparent), url('../../../assets/img/abaste-cover.png');
+    background-size: cover;
+  }
+
+  .flow-tab-item--procesamiento {
+    background-image: linear-gradient(to bottom, rgba(171, 171, 171, .6) 100%, transparent), url('../../../assets/img/proces-cover.png');
+    background-size: cover;
+  }
+
+  .flow-tab-item--coberturas {
+    background-image: linear-gradient(to bottom, rgba(83, 44, 46, .6) 100%, transparent), url('../../../assets/img/cober-cover.png');
+    background-size: cover;
+  }
+
+  .flow-tab-item--producto {
+    background-image: linear-gradient(to bottom, rgba(198, 134, 90, .6) 100%, transparent), url('../../../assets/img/product-cover.png');
+    background-size: cover;
+  }
+
+}

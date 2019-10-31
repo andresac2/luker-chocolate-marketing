@@ -4,6 +4,8 @@ import cacao1 from '../../assets/img/roto-b.png'
 import cacao2 from '../../assets/img/roto-c.png'
 import cacao3 from '../../assets/img/roto-a.png'
 
+import FlowTabs from '../../components/flow-cacao/flow-tabs/flow-tabs'
+
 function Flow() {
   return (
     <div className="flow-component">
@@ -21,7 +23,7 @@ function Flow() {
         </div>
       </div>
       <div className="flow-content"><h1>ab</h1></div>
-      <div className="flow-navbar"><h1>abc</h1></div>
+      <div className="flow-navbar"><FlowTabs tabActive="cacao" /></div>
     </div>
   );
 }
