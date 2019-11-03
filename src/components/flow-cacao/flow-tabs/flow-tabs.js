@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'antd';
 
 class FlowTabs extends React.Component {
 
@@ -8,10 +9,14 @@ class FlowTabs extends React.Component {
       selectTab: 'cacao'
     };
   }
-
   tabToggle(tab) {
     this.setState({ selectTab: tab });
   }
+
+  onChange(a, b, c) {
+    console.log(a, b, c);
+  }
+
   render() {
     const { selectTab } = this.state;
     const { tabActive } = this.props;
@@ -21,6 +26,8 @@ class FlowTabs extends React.Component {
         <div className={`flow-content-component`}>
           <div className="flow-content-component--text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet</div>
           <div className="flow-content-component--slider"></div>
+          <Button type="primary">Button</Button>
+
         </div>
         <div className={`flow-tab flow-tab--${selectTab}`}>
           <div onClick={() => this.tabToggle('cacao')} className={`flow-tab-item flow-tab-item--cacao flow-tab-item--${selectTab === 'cacao' && 'active'}`}><span>CACAO FINO DE AROMA</span></div>
