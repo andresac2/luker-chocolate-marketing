@@ -29,6 +29,7 @@
           margin: 0;
           font-weight: 900;
           font-size: 4.5em;
+          line-height: 1;
         }
 
         h2 {
@@ -41,6 +42,11 @@
       p {
         font-weight: 600;
         font-size: smaller;
+
+        @media (min-width: 1440px) {
+          font-size: medium;
+        }
+
       }
 
       ;
@@ -66,11 +72,9 @@
           background: #F4C710;
           width: 100%;
           color: #685019;
-          padding: .5em;
+          padding: 5px 18px;
         }
       }
-
-
     }
 
     .cacao-link {
@@ -82,12 +86,12 @@
 
       img {
         @media (min-width: 1440px) {
-          width: 25em;
+          width: 27em;
         }
 
         position: absolute;
         filter: blur(4px);
-        width: 20em;
+        width: 22em;
       }
     }
   }

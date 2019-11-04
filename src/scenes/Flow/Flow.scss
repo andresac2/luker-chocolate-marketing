@@ -5,8 +5,6 @@
   grid-template-rows: 1fr;
   grid-template-areas:
     "sidebar navbar";
-  height: 100vh;
-  width: 100vw;
 
   .flow-sidebar {
     grid-area: sidebar;
@@ -64,10 +62,10 @@
       }
 
       &-2 {
-        top: 20em;
+        top: 24em;
 
         @media (max-width: 1200px) {
-          top: 17em;
+          top: 20em;
         }
       }
     }
