@@ -55,52 +55,81 @@
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 10fr;
     }
 
-    .flow-tab-item--cacao {
-      background-image: linear-gradient(to bottom, rgba(97, 20, 6, 0.6) 100%, transparent), url('../../../assets/img/cacao-cover.png');
+    .flow-tab-item {
       background-size: cover;
-    }
 
-    .flow-tab-item--granjeros {
-      background-image: linear-gradient(to bottom, rgba(209, 216, 114, .6) 100%, transparent), url('../../../assets/img/granjero-cover.png');
-      background-size: cover;
-    }
+      &--cacao {
+        background-image: linear-gradient(to bottom, rgba(97, 20, 6, 0.6) 100%, transparent), url('../../../assets/img/cacao-cover.png');
+      }
 
-    .flow-tab-item--abastecimiento {
-      background-image: linear-gradient(to bottom, rgba(213, 183, 119, .6) 100%, transparent), url('../../../assets/img/abaste-cover.png');
-      background-size: cover;
-    }
+      &--granjeros {
+        background-image: linear-gradient(to bottom, rgba(209, 216, 114, .6) 100%, transparent), url('../../../assets/img/granjero-cover.png');
+      }
 
-    .flow-tab-item--procesamiento {
-      background-image: linear-gradient(to bottom, rgba(171, 171, 171, .6) 100%, transparent), url('../../../assets/img/proces-cover.png');
-      background-size: cover;
-    }
+      &--abastecimiento {
+        background-image: linear-gradient(to bottom, rgba(213, 183, 119, .6) 100%, transparent), url('../../../assets/img/abaste-cover.png');
+      }
 
-    .flow-tab-item--coberturas {
-      background-image: linear-gradient(to bottom, rgba(83, 44, 46, .6) 100%, transparent), url('../../../assets/img/cober-cover.png');
-      background-size: cover;
-    }
+      &--procesamiento {
+        background-image: linear-gradient(to bottom, rgba(171, 171, 171, .6) 100%, transparent), url('../../../assets/img/proces-cover.png');
+      }
 
-    .flow-tab-item--producto {
-      background-image: linear-gradient(to bottom, rgba(198, 134, 90, .6) 100%, transparent), url('../../../assets/img/product-cover.png');
-      background-size: cover;
+      &--coberturas {
+        background-image: linear-gradient(to bottom, rgba(83, 44, 46, .6) 100%, transparent), url('../../../assets/img/cober-cover.png');
+      }
+
+      &--producto {
+        background-image: linear-gradient(to bottom, rgba(198, 134, 90, .6) 100%, transparent), url('../../../assets/img/product-cover.png');
+      }
     }
 
   }
 
   .flow-content-component {
+    overflow: hidden;
     background: #611306;
-    height: 100%;
+    display: grid;
+    grid-template-columns: minmax(40%, 1fr) minmax(60%, 1fr);
+    grid-template-rows: inherit;
+    //grid-template-columns: 2fr 1fr;
 
     &--text {
-      width: 50%;
-      height: 100%;
-      padding: 5em;
+      //max-width: 50%;
+      padding: 5em 3em;
       color: #ffffff;
       line-height: 1.5em;
+      font-size: 1.2vw;
     }
 
-    &--img {
-      background: url('../../../assets/img/cacaoOpen.png');
+    &--slider {
+      position: relative;
+
+      .ant-carousel {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+        div,
+        img {
+          height: inherit;
+        }
+
+        .slick-slide {
+          text-align: center;
+          height: 100%;
+          line-height: 300px;
+          overflow: hidden;
+
+          img {
+            width: inherit;
+            object-fit: cover;
+          }
+        }
+      }
+
+      .ant-carousel .slick-slide h3 {
+        color: #fff;
+      }
     }
   }
 }
