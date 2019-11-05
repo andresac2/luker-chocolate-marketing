@@ -1,0 +1,67 @@
+.solution-component {
+  background: #333;
+  height: inherit;
+  //position: fixed;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50%;
+  grid-template-areas:
+    "servicios servicios"
+    "maquila ingredientes";
+  text-align: center;
+
+  .header-btn {
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    margin-top: 1em;
+    background: transparent;
+    font-size: 4em;
+    font-weight: 700;
+  }
+
+  &--service {
+    grid-area: servicios;
+    padding-top: 6em;
+    background: url("../../assets/img/serv-serv-cover.png") center;
+    background-size: cover;
+  }
+
+  .btn-dist {
+    position: absolute;
+    top: 0;
+    left: 5em;
+
+    .logo {
+      margin: 5em auto .5em;
+      width: 10em;
+      display: block;
+    }
+
+    button {
+      font-weight: 700;
+      background: #F4C710;
+      color: #685019;
+      padding: 3px 18px;
+    }
+  }
+
+  &--maquila {
+    grid-area: maquila;
+    border-right: 5px solid #F4C710;
+    background: url("../../assets/img/serv-maquila-cover.png") center;
+  }
+
+  &--ingredient {
+    grid-area: ingredientes;
+    border-left: 5px solid #F4C710;
+    background: url("../../assets/img/serv-ingred-cover.png") center;
+  }
+
+  &--maquila,
+  &--ingredient {
+    padding-top: 2em;
+    border-top: 10px solid #F4C710;
+    background-size: cover;
+  }
+}

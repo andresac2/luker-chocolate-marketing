@@ -5,7 +5,6 @@ import model2 from '../../assets/img/costal-luker.png'
 import model3 from '../../assets/img/grano-luker.png'
 import model4 from '../../assets/img/train-luker.png'
 
-import FlowTabs from '../../components/flow-cacao/flow-tabs/flow-tabs'
 
 function Sustain() {
   return (

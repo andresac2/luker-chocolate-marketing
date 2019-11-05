@@ -21,10 +21,10 @@ class Header extends React.Component {
         <Link to="/" onClick={() => this.headerToggle('/')} className={`selected-tab ${selectTab === '/' && 'intro'}`}>INTRODUCCIÓN</Link>
         <Link to="/flow" onClick={() => this.headerToggle('/flow')} className={`selected-tab ${selectTab === '/flow' && selectTab.slice(1)}`}>FLOW CACAO</Link>
         <Link to="/sustain" onClick={() => this.headerToggle('/sustain')} className={`selected-tab ${selectTab === '/sustain' && selectTab.slice(1)}`}>SOSTENIBILIDAD</Link>
-        <Link to="/" onClick={() => this.headerToggle('/solution')} className={`selected-tab ${selectTab === 'solution' && selectTab.slice(1)}`}>SOLUCIONES</Link>
-        <Link to="/" onClick={() => this.headerToggle('/customer')} className={`selected-tab ${selectTab === 'customer' && selectTab.slice(1)}`}>CLIENTES</Link>
-        <Link to="/" onClick={() => this.headerToggle('/r')} className={`selected-tab ${selectTab === 'r' && selectTab.slice(1)}`}>R&D</Link>
-        <Link to="/" onClick={() => this.headerToggle('/propos')} className={`selected-tab ${selectTab === 'propos' && selectTab.slice(1)}`}>PROPUESTA DE VALOR</Link>
+        <Link to="/solution" onClick={() => this.headerToggle('/solution')} className={`selected-tab ${selectTab === '/solution' && selectTab.slice(1)}`}>SOLUCIONES</Link>
+        <Link to="/" onClick={() => this.headerToggle('/customer')} className={`selected-tab ${selectTab === '/customer' && selectTab.slice(1)}`}>CLIENTES</Link>
+        <Link to="/" onClick={() => this.headerToggle('/r')} className={`selected-tab ${selectTab === '/r' && selectTab.slice(1)}`}>R&D</Link>
+        <Link to="/" onClick={() => this.headerToggle('/propos')} className={`selected-tab ${selectTab === '/propos' && selectTab.slice(1)}`}>PROPUESTA DE VALOR</Link>
       </nav>
     );
   }

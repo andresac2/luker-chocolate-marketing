@@ -15,6 +15,10 @@
     background: $beige;
   }
 
+  &-solution {
+    background: $peach;
+  }
+
   &:hover {
     height: 3em;
     background: linear-gradient(180deg, rgba(0, 0, 0, .9) 10%, rgba(0, 0, 0, 0) 85%);
@@ -69,7 +73,7 @@
   }
 
   .solution::after {
-    border-bottom-color: rgb(104, 80, 250);
+    border-bottom-color: $peach;
   }
 
   .customer::after {

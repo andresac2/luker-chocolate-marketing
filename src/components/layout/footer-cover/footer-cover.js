@@ -8,7 +8,7 @@ class FooterCover extends React.Component {
     super(props);
     this.state = {
       selectTab: this.props.location.pathname,
-      isOpen: true
+      isOpen: false
     };
   }
   footerToggle = () => this.setState({ isOpen: !this.state.isOpen })
