@@ -12,9 +12,9 @@
     font-size: 2em;
   }
 
-  nav {
+  &-nav {
     display: none;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     margin-top: .5em;
     margin-bottom: 2em;
 
@@ -24,8 +24,53 @@
       cursor: pointer;
 
       span {
-        border-bottom: 5px solid #C8D226;
+        border-bottom-width: 5px;
+        border-bottom-style: solid;
       }
+    }
+  }
+
+  &-flow {
+    span {
+      border-bottom-color: $ocher-yellow;
+    }
+  }
+
+  &-sustain {
+    span {
+      border-bottom-color: $beige;
+    }
+  }
+
+  &-solution {
+    span {
+      border-bottom-color: rgb(104, 80, 250);
+    }
+  }
+
+  &-customer {
+    span {
+      border-bottom-color: rgb(104, 80, 250);
+    }
+  }
+
+  &-r {
+    span {
+      border-bottom-color: rgb(104, 80, 250);
+    }
+  }
+
+  &-propos {
+    span {
+      border-bottom-color: rgb(104, 80, 250);
+    }
+  }
+
+  &- {
+    grid-template-columns: 1fr 2fr 1fr;
+
+    span {
+      border-bottom-color: $apple-green;
     }
   }
 
@@ -43,7 +88,6 @@
 
   a {
     color: #fff;
-    display: none;
     align-self: center;
     text-align: center;
     font-weight: 700;

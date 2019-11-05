@@ -1,30 +1,33 @@
 import React from 'react';
 import { FiChevronUp } from 'react-icons/fi'
+import { withRouter, Link } from 'react-router-dom';
 
 class FooterCover extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      isOpen: false
+      selectTab: this.props.location.pathname,
+      isOpen: true
     };
   }
   footerToggle = () => this.setState({ isOpen: !this.state.isOpen })
 
   render() {
-    const { isOpen } = this.state;
+    const { isOpen, selectTab } = this.state;
 
     return (
       <div className={`footer-cover ${isOpen && 'footer-cover-open'}`}>
         <FiChevronUp onClick={this.footerToggle} />
-        <nav>
-          <a onClick={() => console.log('hi')} className=""><span>BLOG</span></a>
-          <a onClick={() => console.log('hi')} className=""><span>MÁS INFORMACIÓN</span></a>
-          <a onClick={() => console.log('hi')} className=""><span>ESCRÍBENOS</span></a>
+        <nav className={`footer-cover-nav footer-cover-${selectTab.slice(1)}`}>
+          <Link to="/"><span>BLOG</span></Link>
+          {selectTab !== '/' && <Link to="/"><span>CREA TU CHOCOLATE</span></Link>}
+          <Link to="/"><span>MÁS INFORMACIÓN</span></Link>
+          <Link to="/"><span>ESCRÍBENOS</span></Link>
         </nav>
       </div>
     );
   }
 };
 
-export default FooterCover;
+export default withRouter(FooterCover);
