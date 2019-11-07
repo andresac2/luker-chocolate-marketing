@@ -23,6 +23,10 @@
     background: $citrus;
   }
 
+  &-ryd {
+    background: $tangerine;
+  }
+
   &:hover {
     height: 3em;
     background: linear-gradient(180deg, rgba(0, 0, 0, .9) 10%, rgba(0, 0, 0, 0) 85%);
@@ -53,8 +57,8 @@
   .sustain::after,
   .solution::after,
   .customer::after,
-  .r::after,
-  .propos::after {
+  .ryd::after,
+  .value-propose::after {
     content: '';
     position: absolute;
     top: 2em;
@@ -84,11 +88,11 @@
     border-bottom-color: $citrus;
   }
 
-  .r::after {
-    border-bottom-color: rgb(104, 80, 250);
+  .ryd::after {
+    border-bottom-color: $tangerine;
   }
 
-  .propos::after {
+  .value-propose::after {
     border-bottom-color: rgb(104, 80, 250);
   }
 

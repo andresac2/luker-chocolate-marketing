@@ -12,6 +12,7 @@ import Header from "./components/layout/header/header"
 import FooterCover from "./components/layout/footer-cover/footer-cover"
 import Solutions from "./scenes/Solution/Solution";
 import Customer from "./scenes/Customer/Customer";
+import Ryd from "./scenes/Ryd/Ryd";
 
 export default function BasicExample() {
   return (
@@ -23,6 +24,7 @@ export default function BasicExample() {
         <Route path="/sustain" component={Sustain} />
         <Route path="/solution" component={Solutions} />
         <Route path="/customer" component={Customer} />
+        <Route path="/ryd" component={Ryd} />
       </Switch>
       <FooterCover />
     </Router>
