@@ -1,16 +1,40 @@
 .ryd-component {
   display: grid;
   height: 100vh;
-  background: aquamarine;
+  background: #D3D974;
+  overflow: hidden;
 
   .ryd-tab {
     display: grid;
     height: inherit;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr;
+
+    &--experience {
+      grid-template-columns: 10fr 1fr 1fr 1fr;
+    }
+
+    &--ethical {
+      grid-template-columns: 1fr 10fr 1fr 1fr;
+    }
+
+    &--premium {
+      grid-template-columns: 1fr 1fr 10fr 1fr;
+    }
+
+    &--healthy {
+      grid-template-columns: 1fr 1fr 1fr 10fr;
+    }
 
     &-item {
       @include vert-center;
+      background-size: cover;
+      background-position: right;
+      border-right: 5px solid #D3D974;
+
+      &:last-child {
+        border: none;
+      }
 
       span {
         cursor: pointer;
@@ -24,29 +48,17 @@
       }
 
       &--active {
+        position: relative;
         max-width: 10%;
+
+        &.ryd-tab-item--healthy {
+          border-right: 5px solid #D3D974;
+
+          .ryd-article {
+            width: calc(69vw);
+          }
+        }
       }
-    }
-
-    &--experience {
-      grid-template-columns: 6fr 1fr 1fr 1fr;
-    }
-
-    &--ethical {
-      grid-template-columns: 1fr 6fr 1fr 1fr;
-    }
-
-    &--premium {
-      grid-template-columns: 1fr 1fr 6fr 1fr;
-    }
-
-    &--healthy {
-      grid-template-columns: 1fr 1fr 1fr 6fr;
-    }
-
-    .ryd-tab-item {
-      background-size: cover;
-      background-position: right;
 
       &--experience {
         background-image: url('../../assets/img/experience-bkg.png');

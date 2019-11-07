@@ -118,12 +118,12 @@
       color: #ffffff;
       line-height: 2em;
       font-size: 1vw;
-      scrollbar-width: thin;
 
       div {
         overflow: auto;
         height: 100%;
         padding-right: 2em;
+        scrollbar-width: thin;
 
         /* width */
         &::-webkit-scrollbar {
