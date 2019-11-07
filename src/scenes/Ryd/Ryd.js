@@ -9,12 +9,12 @@ class Ryd extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectTab: 'cacao'
+      selectTab: ''
     };
   }
 
   tabToggle(tab) {
-    this.setState({ selectTab: tab });
+    (tab === this.state.selectTab) ? this.setState({ selectTab: '' }) : this.setState({ selectTab: tab });
   }
 
   render() {
@@ -22,15 +22,17 @@ class Ryd extends React.Component {
 
     return (
       <div className="ryd-component">
-        <div className="btn-dist">
-          <img src={logo} className="logo" alt="Logo Luker" />
-          <button onClick={() => console.log('hi')}> DISTRIBUIDORES </button>
-        </div>
+        {!selectTab &&
+          <div className="btn-dist">
+            <img src={logo} className="logo" alt="Logo Luker" />
+            <button onClick={() => console.log('hi')}> DISTRIBUIDORES </button>
+            <h2>{selectTab}</h2>
+          </div>}
         <div className={`ryd-tab ryd-tab--${selectTab}`}>
-          <div onClick={() => this.tabToggle('abastecimiento')} className={`ryd-tab-item ryd-tab-item--abastecimiento ryd-tab-item--${selectTab === 'abastecimiento' && 'active'}`}><span>ABASTECIMIENTO</span></div>
-          <div onClick={() => this.tabToggle('procesamiento')} className={`ryd-tab-item ryd-tab-item--procesamiento ryd-tab-item--${selectTab === 'procesamiento' && 'active'}`}><span>PROCESAMIENTO</span></div>
-          <div onClick={() => this.tabToggle('coberturas')} className={`ryd-tab-item ryd-tab-item--coberturas ryd-tab-item--${selectTab === 'coberturas' && 'active'}`}><span>COBERTURAS</span></div>
-          <div onClick={() => this.tabToggle('producto')} className={`ryd-tab-item ryd-tab-item--producto ryd-tab-item--${selectTab === 'producto' && 'active'}`}><span>PRODUCTO FINAL</span></div>
+          <div onClick={() => this.tabToggle('experience')} className={`ryd-tab-item ryd-tab-item--experience ryd-tab-item--${selectTab === 'experience' && 'active'}`}><span>EXPERIENCE MORE</span></div>
+          <div onClick={() => this.tabToggle('ethical')} className={`ryd-tab-item ryd-tab-item--ethical ryd-tab-item--${selectTab === 'ethical' && 'active'}`}><span>ETHICAL LIVING</span></div>
+          <div onClick={() => this.tabToggle('premium')} className={`ryd-tab-item ryd-tab-item--premium ryd-tab-item--${selectTab === 'premium' && 'active'}`}><span>PREMIUMIZATION</span></div>
+          <div onClick={() => this.tabToggle('healthy')} className={`ryd-tab-item ryd-tab-item--healthy ryd-tab-item--${selectTab === 'healthy' && 'active'}`}><span>HEALTHY LIVING</span></div>
         </div>
       </div>
     );

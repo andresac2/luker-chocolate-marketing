@@ -1,183 +1,88 @@
-.ryd-tabs {
+.ryd-component {
   display: grid;
-  grid-auto-rows: auto;
   height: 100vh;
   background: aquamarine;
 
   .ryd-tab {
     display: grid;
+    height: inherit;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
 
     &-item {
       @include vert-center;
 
       span {
         cursor: pointer;
-        font-size: large;
+        font-size: 4vw;
         font-weight: 700;
         text-align: center;
+        color: #fff;
         writing-mode: tb-rl;
         transform: rotate(-180deg);
-        color: #fff;
+        margin-left: auto;
       }
 
       &--active {
-        span {
-          font-size: 3vw;
-          align-self: center;
-          writing-mode: unset;
-          transform: none;
-        }
+        max-width: 10%;
       }
     }
 
-    &--cacao {
-      grid-template-columns: 10fr 1fr 1fr 1fr 1fr 1fr;
+    &--experience {
+      grid-template-columns: 6fr 1fr 1fr 1fr;
     }
 
-    &--granjeros {
-      grid-template-columns: 1fr 10fr 1fr 1fr 1fr 1fr;
+    &--ethical {
+      grid-template-columns: 1fr 6fr 1fr 1fr;
     }
 
-    &--abastecimiento {
-      grid-template-columns: 1fr 1fr 10fr 1fr 1fr 1fr;
+    &--premium {
+      grid-template-columns: 1fr 1fr 6fr 1fr;
     }
 
-    &--procesamiento {
-      grid-template-columns: 1fr 1fr 1fr 10fr 1fr 1fr;
-    }
-
-    &--coberturas {
-      grid-template-columns: 1fr 1fr 1fr 1fr 10fr 1fr;
-    }
-
-    &--producto {
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 10fr;
+    &--healthy {
+      grid-template-columns: 1fr 1fr 1fr 6fr;
     }
 
     .ryd-tab-item {
       background-size: cover;
+      background-position: right;
 
-      &--cacao {
-        background-image: linear-gradient(to bottom, rgba(97, 20, 6, 0.6) 100%, transparent), url('../../assets/img/cacao-cover.png');
+      &--experience {
+        background-image: url('../../assets/img/experience-bkg.png');
       }
 
-      &--granjeros {
-        background-image: linear-gradient(to bottom, rgba(209, 216, 114, .6) 100%, transparent), url('../../assets/img/granjero-cover.png');
+      &--ethical {
+        background-image: url('../../assets/img/ethical-bkg.png');
       }
 
-      &--abastecimiento {
-        background-image: linear-gradient(to bottom, rgba(213, 183, 119, .6) 100%, transparent), url('../../assets/img/abaste-cover.png');
+      &--premium {
+        background-image: url('../../assets/img/premium-bkg.png');
       }
 
-      &--procesamiento {
-        background-image: linear-gradient(to bottom, rgba(171, 171, 171, .6) 100%, transparent), url('../../assets/img/proces-cover.png');
-      }
-
-      &--coberturas {
-        background-image: linear-gradient(to bottom, rgba(83, 44, 46, .6) 100%, transparent), url('../../assets/img/cober-cover.png');
-      }
-
-      &--producto {
-        background-image: linear-gradient(to bottom, rgba(198, 134, 90, .6) 100%, transparent), url('../../assets/img/product-cover.png');
+      &--healthy {
+        background-image: url('../../assets/img/healthy-bkg.png');
       }
     }
 
   }
 
-  .ryd-content-component {
-    overryd: hidden;
-    display: grid;
-    grid-template-columns: minmax(40%, 1fr) minmax(60%, 1fr);
-    grid-template-rows: inherit;
+  .btn-dist {
+    position: absolute;
+    top: 0;
+    left: 5em;
 
-    &--cacao {
-      background: #611306;
+    .logo {
+      margin: 5em auto .5em;
+      width: 10em;
+      display: block;
     }
 
-    &--granjeros {
-      background: #C0C663;
-    }
-
-    &--abastecimiento {
-      background: #D5B777;
-    }
-
-    &--procesamiento {
-      background: #ABABAB;
-    }
-
-    &--coberturas {
-      background: #532C2E;
-    }
-
-    &--producto {
-      background: #C6865A;
-    }
-
-    &--text {
-      padding: 5em 1em 3em 3em;
-      color: #ffffff;
-      line-height: 2em;
-      font-size: 1vw;
-      scrollbar-width: thin;
-
-      div {
-        overryd: auto;
-        height: 100%;
-        padding-right: 2em;
-
-        /* width */
-        &::-webkit-scrollbar {
-          width: 10px;
-        }
-
-        /* Track */
-        &::-webkit-scrollbar-track {
-          background: rgba(0, 0, 0, .3);
-          border-radius: 10px;
-        }
-
-        /* Handle */
-        &::-webkit-scrollbar-thumb {
-          height: 20px;
-          border-radius: 10px;
-          background: #f3f3f3;
-          opacity: 0;
-        }
-
-        /* Handle on hover */
-        &::-webkit-scrollbar-thumb:hover {
-          background: rgba(243, 243, 243, .6);
-        }
-      }
-
-    }
-
-    &--slider {
-      position: relative;
-
-      .ant-carousel {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-
-        div,
-        img {
-          height: inherit;
-        }
-
-        .slick-slide {
-          text-align: center;
-          height: 100%;
-          line-height: 300px;
-          overryd: hidden;
-
-          img {
-            width: inherit;
-            object-fit: cover;
-          }
-        }
-      }
+    button {
+      font-weight: 700;
+      background: #F4C710;
+      color: #685019;
+      padding: 3px 18px;
     }
   }
 }
