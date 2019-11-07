@@ -1,0 +1,114 @@
+.value-propose-component {
+  height: inherit;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+  grid-template-areas: "expo item"
+    "carrousel item";
+  text-align: center;
+  color: #FFF;
+
+  &--expo {
+    grid-area: expo;
+    background: #D5B777;
+    text-align: justify;
+    padding: 2em;
+
+    h1 {
+      margin-top: 140px;
+      font-weight: 700;
+      font-size: 3vw;
+    }
+
+    p {
+      border-left: 5px solid #5D340B;
+      padding: .5em 1em;
+      font-size: 1vw;
+    }
+  }
+
+  &--carrousel {
+    grid-area: carrousel;
+    background: #5D340B;
+
+    h2 {
+      border: 3px solid #FFFFFF;
+      font-weight: 200;
+      width: max-content;
+      margin: 1em auto;
+      padding: 0 .5em;
+    }
+  }
+
+  &--item {
+    grid-area: item;
+    display: flex;
+    flex-direction: column;
+    background: url('../../assets/img/costals.png');
+    background-position: right;
+    background-size: contain;
+
+    &-card {
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 0px;
+      overflow: hidden;
+      flex-direction: row;
+      position: relative;
+      border-bottom: 3px solid #eedaac;
+
+      &:last-child {
+        border: none;
+      }
+
+      img {
+        width: 60%;
+        object-fit: fill;
+        z-index: 1;
+      }
+
+      div {
+        @include vert-center;
+        cursor: pointer;
+        align-self: center;
+        z-index: 0;
+        font-weight: 700;
+        padding: 0 1em;
+        font-size: larger;
+
+        &::after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          z-index: -1;
+          background: #5B2D00;
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
+          opacity: .9;
+        }
+
+      }
+    }
+  }
+
+  .btn-dist {
+    position: absolute;
+    top: 0;
+    left: 2em;
+
+    .logo {
+      margin: 5em auto .5em;
+      width: 10em;
+      display: block;
+    }
+
+    button {
+      font-weight: 700;
+      background: #F4C710;
+      color: #685019;
+      padding: 3px 18px;
+    }
+  }
+}

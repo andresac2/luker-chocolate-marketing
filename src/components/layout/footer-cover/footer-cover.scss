@@ -9,7 +9,7 @@
   svg {
     cursor: pointer;
     color: whitesmoke;
-    font-size: 2em;
+    font-size: 3em;
   }
 
   &-nav {
@@ -62,7 +62,7 @@
 
   &-propos {
     span {
-      border-bottom-color: rgb(104, 80, 250);
+      border-bottom-color: $light-gray;
     }
   }
 

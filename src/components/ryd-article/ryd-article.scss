@@ -12,13 +12,13 @@
     @include vert-center;
   }
 
+  .btn-dist {
+    left: 5em;
+  }
+
   &--text {
     flex: 2 1 0px;
     flex-direction: column;
-    //    display: grid;
-    //    height: inherit;
-    //    grid-template-columns: 1fr;
-    //    grid-template-rows: 1fr 1fr;
     margin-left: 5em;
     margin-top: 162px;
     padding-bottom: 2em;
