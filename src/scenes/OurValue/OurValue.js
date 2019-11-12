@@ -8,6 +8,7 @@ import item4 from '../../assets/img/grano4.png'
 import { Link } from 'react-router-dom';
 import OurAroma from '../../components/our-value/aroma/our-aroma';
 import OurFlavour from '../../components/our-value/flavour/our-flavour';
+import OurProduct from '../../components/our-value/product/our-product';
 
 class OurValue extends React.Component {
 
@@ -42,6 +43,7 @@ class OurValue extends React.Component {
         <div className="our-value-content">
           {selectTab === 'aroma' && <OurAroma />}
           {selectTab === 'flavour' && <OurFlavour />}
+          {selectTab === 'product' && <OurProduct />}
         </div>
       </div>
     );
