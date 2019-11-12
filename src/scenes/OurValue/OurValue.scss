@@ -1,0 +1,25 @@
+.our-value-component {
+
+  .btn-dist {
+    position: absolute;
+    top: 0;
+    left: 2em;
+
+    .logo {
+      margin: 5em auto .5em;
+      width: 10em;
+      display: block;
+    }
+
+    a {
+      font-weight: 700;
+      background: #F4C710;
+      color: #685019;
+      padding: 3px 18px;
+    }
+  }
+}
+
+.header-component {
+  background: $light-gray;
+}

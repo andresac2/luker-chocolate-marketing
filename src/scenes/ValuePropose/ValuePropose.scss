@@ -121,13 +121,14 @@
           padding: 0 10%;
         }
 
-        button {
+        a {
           font-weight: 700;
           background: #D4B776;
           color: #FFF;
           width: max-content;
           padding: 3px 18px;
           margin: 1em auto;
+          font-style: normal;
         }
 
         &::after {

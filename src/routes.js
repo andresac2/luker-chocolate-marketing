@@ -14,6 +14,7 @@ import Solutions from "./scenes/Solution/Solution";
 import Customer from "./scenes/Customer/Customer";
 import Ryd from "./scenes/Ryd/Ryd";
 import ValuePropose from "./scenes/ValuePropose/ValuePropose";
+import OurValue from "./scenes/OurValue/OurValue";
 
 export default function BasicExample() {
   return (
@@ -27,6 +28,7 @@ export default function BasicExample() {
         <Route path="/customer" component={Customer} />
         <Route path="/ryd" component={Ryd} />
         <Route path="/value-propose" component={ValuePropose} />
+        <Route path="/our-value" component={OurValue} />
       </Switch>
       <FooterCover />
     </Router>

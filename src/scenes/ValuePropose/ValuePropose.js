@@ -6,6 +6,7 @@ import item3 from '../../assets/img/pote3.png'
 import item4 from '../../assets/img/grano4.png'
 import ImgCarrousel from '../../components/img-carrousel/img-carrousel';
 
+import { Link } from 'react-router-dom';
 
 function ValuePropose() {
   return (
@@ -32,7 +33,7 @@ function ValuePropose() {
           </div>
           <div className="value-propose-component--item-card-hover">
             <p>Trabajamos solo con Cacao Fino de Aroma</p>
-            <button onClick={() => console.log('hi')}> CONOCE MÁS </button>
+            <Link to="/our-value">CONOCE MÁS</Link>
           </div>
         </div>
         <div className="value-propose-component--item-card">
@@ -42,7 +43,7 @@ function ValuePropose() {
           </div>
           <div className="value-propose-component--item-card-hover">
             <p>Queremos que tengas siempre el mejor producto</p>
-            <button onClick={() => console.log('hi')}> CONOCE MÁS </button>
+            <Link to="/our-value">CONOCE MÁS</Link>
           </div>
         </div>
         <div className="value-propose-component--item-card">
@@ -52,7 +53,7 @@ function ValuePropose() {
           </div>
           <div className="value-propose-component--item-card-hover">
             <p>Tus necesidades se convierten en nuestro reto</p>
-            <button onClick={() => console.log('hi')}> CONOCE MÁS </button>
+            <Link to="/our-value">CONOCE MÁS</Link>
           </div>
         </div>
         <div className="value-propose-component--item-card">
@@ -62,7 +63,7 @@ function ValuePropose() {
           </div>
           <div className="value-propose-component--item-card-hover">
             <p>Te invitamos a participar en iniciativas de valor Compartido con impacto social y sostenible</p>
-            <button onClick={() => console.log('hi')}> CONOCE MÁS </button>
+            <Link to="/our-value">CONOCE MÁS</Link>
           </div>
         </div>
       </div>

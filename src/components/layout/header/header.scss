@@ -27,7 +27,8 @@
     background: $tangerine;
   }
 
-  &-value-propose {
+  &-value-propose,
+  &-our-value {
     background: $light-gray;
   }
 
@@ -62,7 +63,8 @@
   .solution::after,
   .customer::after,
   .ryd::after,
-  .value-propose::after {
+  .value-propose::after,
+  .our-value::after {
     content: '';
     position: absolute;
     top: 2em;
