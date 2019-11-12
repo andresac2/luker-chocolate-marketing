@@ -6,6 +6,7 @@ import item3 from '../../assets/img/pote3.png'
 import item4 from '../../assets/img/grano4.png'
 
 import { Link } from 'react-router-dom';
+import OurAroma from '../../components/our-value/aroma/our-aroma';
 
 class OurValue extends React.Component {
 
@@ -38,7 +39,7 @@ class OurValue extends React.Component {
           <Link to="/our-value/social" onClick={() => this.tabToggle('social')} className={`our-value-navbar--${selectTab === 'social' && 'active'}`} ><img src={item4} alt="social" /></Link>
         </div>
         <div className="our-value-content">
-          <h1>{selectTab}</h1>
+          <OurAroma />
         </div>
       </div>
     );

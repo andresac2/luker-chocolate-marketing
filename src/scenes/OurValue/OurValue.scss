@@ -45,7 +45,7 @@
     .btn-dist {
       position: absolute;
       top: 0;
-      left: 2em;
+      left: 3em;
 
       .logo {
         margin: 5em auto .5em;
@@ -64,12 +64,12 @@
 
   .our-value-content {
     grid-area: content;
-    background: lawngreen;
+    background: #F3F3F3;
+    overflow: auto;
   }
 
   .our-value-navbar {
     grid-area: navbar;
-    background: lightcoral;
     display: flex;
     flex-direction: column;
 

@@ -1,1 +1,52 @@
-.our-aroma-component {}
+.our-aroma-component {
+  color: #484848;
+  padding-left: 3em;
+
+  h1 {
+    padding: .5em 0;
+    font-weight: 600;
+  }
+
+  p {
+    border-left: 4px solid #5c340b;
+    border-radius: 4px;
+    padding: 1em 5em 1em 1em;
+    margin: .5em 0;
+    overflow: auto;
+
+    @media (min-width: 1240px) {
+      font-size: 1vw;
+    }
+  }
+
+  &--separator {
+    position: relative;
+    margin-left: -3em;
+    background: #EB7828;
+    color: #fff;
+    padding: 1em 3em;
+    @include vert-center;
+    align-items: center;
+
+    &-btn {
+      position: absolute;
+      left: 0;
+      font-size: 3em;
+
+      &--right {
+        right: 0;
+        left: auto;
+      }
+    }
+
+    h2 {
+      width: 100%;
+      font-weight: 700;
+      max-lines: 2;
+      padding: 0 1em;
+      padding-right: 5em;
+      border-left: 2px solid #fff;
+      border-right: 2px solid #fff;
+    }
+  }
+}
