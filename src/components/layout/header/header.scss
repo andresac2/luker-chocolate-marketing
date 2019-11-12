@@ -63,8 +63,7 @@
   .solution::after,
   .customer::after,
   .ryd::after,
-  .value-propose::after,
-  .our-value::after {
+  .value-propose::after {
     content: '';
     position: absolute;
     top: 2em;

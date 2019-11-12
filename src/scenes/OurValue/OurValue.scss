@@ -1,25 +1,48 @@
 .our-value-component {
+  display: grid;
+  height: inherit;
+  width: 100%;
+  grid-template-columns: 80% 20%;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "header navbar"
+    "content navbar";
 
-  .btn-dist {
-    position: absolute;
-    top: 0;
-    left: 2em;
+  .our-value-header {
+    grid-area: header;
+    position: relative;
+    background-image: url('../../assets/img/CocoaFlowSidebar.png');
+    background-position: right;
+    background-size: cover;
+    text-align: center;
 
-    .logo {
-      margin: 5em auto .5em;
-      width: 10em;
-      display: block;
-    }
+    .btn-dist {
+      position: absolute;
+      top: 0;
+      left: 2em;
 
-    a {
-      font-weight: 700;
-      background: #F4C710;
-      color: #685019;
-      padding: 3px 18px;
+      .logo {
+        margin: 5em auto .5em;
+        width: 10em;
+        display: block;
+      }
+
+      a {
+        font-weight: 700;
+        background: #F4C710;
+        color: #685019;
+        padding: 3px 18px;
+      }
     }
   }
-}
 
-.header-component {
-  background: $light-gray;
+  .our-value-content {
+    grid-area: content;
+    background: lawngreen;
+  }
+
+  .our-value-navbar {
+    background: lightcoral;
+    grid-area: navbar;
+  }
 }

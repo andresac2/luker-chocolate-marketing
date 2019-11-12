@@ -28,7 +28,7 @@ export default function BasicExample() {
         <Route path="/customer" component={Customer} />
         <Route path="/ryd" component={Ryd} />
         <Route path="/value-propose" component={ValuePropose} />
-        <Route path="/our-value" component={OurValue} />
+        <Route path="/our-value/:id" component={OurValue} />
       </Switch>
       <FooterCover />
     </Router>
