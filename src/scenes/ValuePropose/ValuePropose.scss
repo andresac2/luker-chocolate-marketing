@@ -103,6 +103,7 @@
         .value-propose-component--item-card-hover {
           @include vert-center;
           align-self: center;
+          flex-direction: column;
         }
       }
 
@@ -112,10 +113,22 @@
         height: 100%;
         width: 100%;
         z-index: 2;
-        padding: 0 2em;
-        padding-top: 10%;
+        font-size: larger;
         font-style: italic;
-        font-weight: lighter;
+        font-weight: 400;
+
+        p {
+          padding: 0 10%;
+        }
+
+        button {
+          font-weight: 700;
+          background: #D4B776;
+          color: #FFF;
+          width: max-content;
+          padding: 3px 18px;
+          margin: 1em auto;
+        }
 
         &::after {
           content: '';
@@ -124,10 +137,10 @@
           height: 100%;
           top: 0;
           z-index: -1;
-          background: #000;
+          opacity: .8;
+          background: #000000 0% 0% no-repeat padding-box;
           backdrop-filter: blur(17px);
           -webkit-backdrop-filter: blur(17px);
-          opacity: .7;
         }
       }
     }

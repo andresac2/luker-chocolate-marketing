@@ -30,28 +30,40 @@ function ValuePropose() {
           <div className="value-propose-component--item-card-text">
             DALE UN SABOR ÚNICO A TUS PRODUCTOS
           </div>
-          <div className="value-propose-component--item-card-hover">Trabajamos solo con Cacao Fino de Aroma</div>
+          <div className="value-propose-component--item-card-hover">
+            <p>Trabajamos solo con Cacao Fino de Aroma</p>
+            <button onClick={() => console.log('hi')}> CONOCE MÁS </button>
+          </div>
         </div>
         <div className="value-propose-component--item-card">
           <img src={item2} alt="cacao" />
           <div className="value-propose-component--item-card-text">
             MANTÉN LA CONSISTENCIA Y GARANTIZA TU ABASTECIMIENTO
           </div>
-          <div className="value-propose-component--item-card-hover">Queremos que tengas siempre el mejor producto</div>
+          <div className="value-propose-component--item-card-hover">
+            <p>Queremos que tengas siempre el mejor producto</p>
+            <button onClick={() => console.log('hi')}> CONOCE MÁS </button>
+          </div>
         </div>
         <div className="value-propose-component--item-card">
           <img src={item3} alt="cacao" />
           <div className="value-propose-component--item-card-text">
             SOLUCIÓN INTEGRADA DE DISEÑO DE PRODUCTO Y EMPAQUE
           </div>
-          <div className="value-propose-component--item-card-hover">Tus necesidades se convierten en nuestro reto</div>
+          <div className="value-propose-component--item-card-hover">
+            <p>Tus necesidades se convierten en nuestro reto</p>
+            <button onClick={() => console.log('hi')}> CONOCE MÁS </button>
+          </div>
         </div>
         <div className="value-propose-component--item-card">
           <img src={item4} alt="cacao" />
           <div className="value-propose-component--item-card-text">
             CONECTA TU MARCA CON UN PROPÓSITO
           </div>
-          <div className="value-propose-component--item-card-hover">Te invitamos a participar en iniciativas de valor Compartido con impacto social y sostenible</div>
+          <div className="value-propose-component--item-card-hover">
+            <p>Te invitamos a participar en iniciativas de valor Compartido con impacto social y sostenible</p>
+            <button onClick={() => console.log('hi')}> CONOCE MÁS </button>
+          </div>
         </div>
       </div>
     </div>
