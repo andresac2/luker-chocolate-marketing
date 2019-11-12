@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import OurAroma from '../../components/our-value/aroma/our-aroma';
 import OurFlavour from '../../components/our-value/flavour/our-flavour';
 import OurProduct from '../../components/our-value/product/our-product';
+import OurSocial from '../../components/our-value/social/our-social';
 
 class OurValue extends React.Component {
 
@@ -44,6 +45,7 @@ class OurValue extends React.Component {
           {selectTab === 'aroma' && <OurAroma />}
           {selectTab === 'flavour' && <OurFlavour />}
           {selectTab === 'product' && <OurProduct />}
+          {selectTab === 'social' && <OurSocial />}
         </div>
       </div>
     );
