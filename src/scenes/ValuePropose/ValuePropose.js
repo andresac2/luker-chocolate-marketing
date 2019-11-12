@@ -4,6 +4,7 @@ import item1 from '../../assets/img/cacao2.png'
 import item2 from '../../assets/img/cacao1.png'
 import item3 from '../../assets/img/pote3.png'
 import item4 from '../../assets/img/grano4.png'
+import ImgCarrousel from '../../components/img-carrousel/img-carrousel';
 
 
 function ValuePropose() {
@@ -14,11 +15,14 @@ function ValuePropose() {
           <img src={logo} className="logo" alt="Logo Luker" />
           <button onClick={() => console.log('hi')}> DISTRIBUIDORES </button>
         </div>
-        <h1>Nuestra oferta única</h1>
-        <p>Prometemos darte un chocolate con un sabor único y superior, hecho en el origen y apoyando siempre el desarrollo ambiental, económico y social de los orígenes de nuestro cacao.</p>
+        <div className="value-propose-component--expo-pagraph">
+          <h1>Nuestra oferta única</h1>
+          <p>Prometemos darte un chocolate con un sabor único y superior, hecho en el origen y apoyando siempre el desarrollo ambiental, económico y social de los orígenes de nuestro cacao.</p>
+        </div>
       </div>
       <div className="value-propose-component--carrousel">
         <h2>PRODUCTOS DESARROLLADOS</h2>
+        <ImgCarrousel />
       </div>
       <div className="value-propose-component--item">
         <div className="value-propose-component--item-card">
