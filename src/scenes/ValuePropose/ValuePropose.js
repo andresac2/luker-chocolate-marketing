@@ -33,7 +33,7 @@ function ValuePropose() {
           </div>
           <div className="value-propose-component--item-card-hover">
             <p>Trabajamos solo con Cacao Fino de Aroma</p>
-            <Link to="/our-value">CONOCE MÁS</Link>
+            <Link to="/our-value/aroma">CONOCE MÁS</Link>
           </div>
         </div>
         <div className="value-propose-component--item-card">
@@ -43,7 +43,7 @@ function ValuePropose() {
           </div>
           <div className="value-propose-component--item-card-hover">
             <p>Queremos que tengas siempre el mejor producto</p>
-            <Link to="/our-value">CONOCE MÁS</Link>
+            <Link to="/our-value/flavour">CONOCE MÁS</Link>
           </div>
         </div>
         <div className="value-propose-component--item-card">
@@ -53,7 +53,7 @@ function ValuePropose() {
           </div>
           <div className="value-propose-component--item-card-hover">
             <p>Tus necesidades se convierten en nuestro reto</p>
-            <Link to="/our-value">CONOCE MÁS</Link>
+            <Link to="/our-value/product">CONOCE MÁS</Link>
           </div>
         </div>
         <div className="value-propose-component--item-card">
@@ -63,7 +63,7 @@ function ValuePropose() {
           </div>
           <div className="value-propose-component--item-card-hover">
             <p>Te invitamos a participar en iniciativas de valor Compartido con impacto social y sostenible</p>
-            <Link to="/our-value">CONOCE MÁS</Link>
+            <Link to="/our-value/social">CONOCE MÁS</Link>
           </div>
         </div>
       </div>

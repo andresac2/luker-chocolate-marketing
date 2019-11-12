@@ -2,8 +2,9 @@
   display: grid;
   height: inherit;
   width: 100%;
-  grid-template-columns: 80% 20%;
-  grid-template-rows: 1fr 1fr;
+  position: fixed;
+  grid-template-columns: 70% 30%;
+  grid-template-rows: 160px 1fr;
   grid-template-areas:
     "header navbar"
     "content navbar";
@@ -11,10 +12,35 @@
   .our-value-header {
     grid-area: header;
     position: relative;
-    background-image: url('../../assets/img/CocoaFlowSidebar.png');
     background-position: right;
     background-size: cover;
-    text-align: center;
+    background-position: center;
+    @include vert-center;
+    align-items: center;
+
+    &--aroma {
+      background-image: url('../../assets/img/aroma-header.png');
+    }
+
+    &--flavour {
+      background-image: url('../../assets/img/flavour-header.png');
+    }
+
+    &--product {
+      background-image: url('../../assets/img/product-header.png');
+    }
+
+    &--social {
+      background-image: url('../../assets/img/social-header.png');
+    }
+
+    h1 {
+      font-weight: 700;
+      font-size: 3vw;
+      margin-left: 150px;
+      color: #fff;
+      text-shadow: 0px 13px 6px #0000006F;
+    }
 
     .btn-dist {
       position: absolute;
@@ -42,7 +68,25 @@
   }
 
   .our-value-navbar {
-    background: lightcoral;
     grid-area: navbar;
+    background: lightcoral;
+    display: flex;
+    flex-direction: column;
+
+    &--active {
+      border-bottom: 10px solid #F3C90F;
+    }
+
+    a {
+      flex: 1 1;
+      height: 25%;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+
+    }
   }
 }
