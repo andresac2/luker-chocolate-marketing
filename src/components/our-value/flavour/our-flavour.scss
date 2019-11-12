@@ -1,0 +1,67 @@
+.our-flavour-component {
+  padding: 0 3em;
+
+  h1 {
+    font-size: xx-large;
+    font-weight: 700;
+    line-height: 1em;
+    margin: 1em 0;
+  }
+
+  &-cards {
+    @include vert-center;
+    flex-direction: column;
+    max-width: 900px;
+    color: #fff;
+  }
+
+  &-card {
+    display: flex;
+    min-height: 110px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    background-image: url('../../../assets/img/our-flavour-2.png');
+    background-size: cover;
+    background-position: center;
+    max-height: 156px;
+    margin-bottom: .5em;
+    padding: 0 2em;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      z-index: 0;
+      background: #4B2418;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      opacity: .6;
+    }
+
+    &:first-child {
+      background-image: url('../../../assets/img/our-flavour-1.png');
+    }
+
+    &:last-child {
+      background-image: url('../../../assets/img/our-flavour-3.png');
+    }
+
+    p {
+      z-index: 1;
+      font-size: x-large;
+      width: 100%;
+      padding-right: 15%;
+      line-height: 1em;
+      font-weight: 600;
+    }
+
+    svg {
+      z-index: 1;
+      font-size: 3em;
+    }
+  }
+}
