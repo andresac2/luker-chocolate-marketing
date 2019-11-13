@@ -1,9 +1,9 @@
 import React from 'react'
-import logo from '../../assets/img/LukerlogoDark.svg'
-import altImg from '../../assets/img/img-example.svg'
-import back from '../../assets/img/back.svg'
+import logo from '../../../assets/img/LukerlogoDark.svg'
+import altImg from '../../../assets/img/img-example.svg'
+import back from '../../../assets/img/back.svg'
 
-class ImgCarrousel extends React.Component {
+class Maquila extends React.Component {
 
   constructor(props) {
     super(props);
@@ -28,10 +28,10 @@ class ImgCarrousel extends React.Component {
     const { subtitle, content, img } = this.props;
 
     return (
-      <div className="img-carrousel" >
+      <div className="maquila-component" >
         <img className="btn-next-img" src={back} alt='left' onClick={() => this.reorderItems(images, 0, 2)} />
         {
-          this.state.images.map((img, i) => <img key={i} className={`carr-item carr-item--${i === 1 && 'active'}`} src={require('../../assets/img/' + (img ? img : altImg))} alt='jaja' />)
+          this.state.images.map((img, i) => <img key={i} className={`carr-item carr-item--${i === 1 && 'active'}`} src={require('../../../assets/img/' + (img ? img : altImg))} alt='jaja' />)
         }
         <img className="btn-next-img btn-next-img--right " src={back} alt='right' onClick={() => this.reorderItems(images, 2, 0)} />
       </div >
@@ -40,4 +40,4 @@ class ImgCarrousel extends React.Component {
 };
 
 
-export default ImgCarrousel;
+export default Maquila;

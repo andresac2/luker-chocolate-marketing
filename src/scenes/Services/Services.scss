@@ -1,0 +1,60 @@
+.services-component {
+  display: grid;
+  height: inherit;
+  width: 100%;
+  position: fixed;
+  grid-template-rows: 180px 1fr;
+  grid-template-columns: 1fr;
+
+  .services-header {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    @include vert-center;
+    align-items: center;
+
+    &--maquila {
+      background-image: url('../../assets/img/maquila-header.png');
+    }
+
+    &--ingredients {
+      background-image: url('../../assets/img/ingredients-header.png');
+    }
+
+    h1 {
+      font-weight: 700;
+      font-size: 4.5vw;
+      color: #fff;
+      text-transform: uppercase;
+      text-shadow: 0px 13px 6px #0000006F;
+    }
+
+    .btn-dist {
+      position: absolute;
+      top: 0;
+      left: 3em;
+
+      .logo {
+        margin: 4em auto .5em;
+        width: 10em;
+        display: block;
+      }
+
+      a {
+        text-align: center;
+        display: block;
+        font-weight: 700;
+        font-size: smaller;
+        background: #F4C710;
+        color: #685019;
+        padding: 3px 18px;
+        margin-bottom: .5em;
+      }
+    }
+  }
+
+  .services-content {
+    background: #F3F3F3;
+    overflow: auto;
+  }
+}
