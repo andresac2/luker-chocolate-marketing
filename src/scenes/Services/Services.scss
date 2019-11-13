@@ -1,10 +1,8 @@
 .services-component {
   display: grid;
-  height: inherit;
-  width: 100%;
-  position: fixed;
   grid-template-rows: 180px 1fr;
   grid-template-columns: 1fr;
+  height: 100vh;
 
   .services-header {
     position: relative;
@@ -12,6 +10,8 @@
     background-position: center;
     @include vert-center;
     align-items: center;
+    box-shadow: 0px 8px 8px #00000069;
+
 
     &--maquila {
       background-image: url('../../assets/img/maquila-header.png');
@@ -54,7 +54,7 @@
   }
 
   .services-content {
-    background: #F3F3F3;
-    overflow: auto;
+    background: url('../../assets/img/matas.png') no-repeat;
+    background-size: 100%;
   }
 }

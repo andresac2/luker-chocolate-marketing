@@ -1,16 +1,8 @@
 
 import React from 'react';
 import logo from '../../assets/img/Lukerlogo.svg'
-import item1 from '../../assets/img/cacao2.png'
-import item2 from '../../assets/img/cacao1.png'
-import item3 from '../../assets/img/pote3.png'
-import item4 from '../../assets/img/grano4.png'
 
 import { Link } from 'react-router-dom';
-import OurAroma from '../../components/our-value/aroma/our-aroma';
-import OurFlavour from '../../components/our-value/flavour/our-flavour';
-import OurProduct from '../../components/our-value/product/our-product';
-import OurSocial from '../../components/our-value/social/our-social';
 import Maquila from '../../components/services/maquila/maquila';
 import Ingredients from '../../components/services/ingredients/ingredients';
 
