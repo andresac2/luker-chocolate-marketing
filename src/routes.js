@@ -15,7 +15,7 @@ import Customer from "./scenes/Customer/Customer";
 import Ryd from "./scenes/Ryd/Ryd";
 import ValuePropose from "./scenes/ValuePropose/ValuePropose";
 import OurValue from "./scenes/OurValue/OurValue";
-import Services from "./scenes/Services/Services";
+import Services from "./scenes/ProductsServices/ProductsServices";
 
 export default function BasicExample() {
   return (

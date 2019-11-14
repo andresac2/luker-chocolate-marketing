@@ -1,4 +1,4 @@
-.maquila-component {
+.product-services-component {
   @include vert-center;
   align-items: center;
   flex-direction: column;
@@ -119,7 +119,7 @@
     margin: .5em auto 2em;
   }
 
-  .maquila-component--footer {
+  &--footer {
     color: #fff;
     font-weight: 700;
     margin: auto;
@@ -136,6 +136,42 @@
 
     &--dosing {
       background: #B3642C;
+    }
+  }
+
+  &--product {
+    width: 40%;
+    margin-left: 20%;
+    align-self: start;
+
+    h2 {
+
+      &:first-child {
+        color: #675119;
+        font-size: 2.5em;
+        margin: 1em auto 0;
+        text-align: center;
+        font-weight: 700;
+      }
+
+    }
+
+    .product-services-component-title {
+      padding: 3px 1em;
+      font-size: medium;
+      text-transform: uppercase;
+    }
+
+    .product-carrousel .carr-item {
+      filter: none;
+    }
+
+    &-data {
+      p {
+        margin-left: 3em;
+        text-align: left;
+        font-size: smaller;
+      }
     }
   }
 }
