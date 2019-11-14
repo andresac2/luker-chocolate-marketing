@@ -25,7 +25,6 @@ class ImgCarrousel extends React.Component {
   }
   render() {
     const { images } = this.state;
-    const { subtitle, content, img } = this.props;
 
     return (
       <div className="img-carrousel" >

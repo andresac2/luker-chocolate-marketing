@@ -42,39 +42,20 @@ class Maquila extends React.Component {
   }
   render() {
     const { products, selectedProduct } = this.state;
+    const { product } = this.props;
 
     return (
       <div className="maquila-component" >
-        {!selectedProduct && <><h2 className="maquila-component-title">BRANDED CHOCOLATE PRODUCTS</h2>
-          <div className="product-carrousel">
-            <img className="btn-next-img" src={back} alt='left' onClick={() => this.reorderItems(products, 2, 0)} />
-            {
-              Object.keys(this.state.products).map(i =>
-                <div key={i} className={`carr-item carr-item--${i == 1 && 'active'} carr-item--${products[i].id}`}>
-                  <img src={require('../../../assets/img/' + (products[i].img ? products[i].img : altImg))} alt='jaja' />
-                  <h2>{products[i].name}</h2>
-                </div>
-              )
-            }
-            <img className="btn-next-img btn-next-img--right " src={back} alt='right' onClick={() => this.reorderItems(products, 0, 2)} />
+        <h2>Chocolate {product.name}</h2>
+        <div className="maquila-component--product-data ">
+          <div className={`maquila-item maquila-item--${product.id}`}>
+            <img src={require('../../../assets/img/' + (product.img ? product.img : altImg))} alt='jaja' />
           </div>
-          <button className="btn-tobuy" onClick={() => this.selectProduct(1)} >FIND OUT MORE</button>
-          <div className={`maquila-component--footer maquila-component--footer--${products[1].id}`}>
-            {products[1].description}
-          </div></>}
-        {selectedProduct &&
-          <div className="maquila-component--product">
-            <h2>Chocolate {products[selectedProduct].name}</h2>
-            <div className="maquila-component--product-data product-carrousel">
-              <div className={`carr-item carr-item--${products[selectedProduct].id}`}>
-                <img src={require('../../../assets/img/' + (products[selectedProduct].img ? products[selectedProduct].img : altImg))} alt='jaja' />
-              </div>
-              <p>{products[selectedProduct].description}</p>
-            </div>
-            <h2 className="maquila-component-title">Customizable with your logo and branding</h2>
-            <div> contentsvudghcdsajhgsadk
-            </div>
-          </div>}
+          <p>{product.description}</p>
+        </div>
+        <h2 className="maquila-component-title">Customizable with your logo and branding</h2>
+        <div> contentsvudghcdsajhgsadk
+        </div>
       </div >
     );
   }

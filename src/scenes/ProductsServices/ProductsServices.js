@@ -50,7 +50,7 @@ class ProductsServices extends React.Component {
           <h1>{(selectTab === 'maquila') ? 'FINISHED CHOCOLATE PRODUCTS' : (selectTab === 'ingredients') ? 'CHOCOLATE INGREDIENTS' : 'OUR SERVICES'}</h1>
         </div>
         <div className="services-content">
-          {(selectTab === 'our-services') ? <Maquila /> : <ProductServices items={products, 'lala'} />}
+          {(selectTab === 'our-services') ? <Maquila /> : <ProductServices items={products} title='BRANDED CHOCOLATE PRODUCTS' />}
         </div>
         <Footer />
       </div>
