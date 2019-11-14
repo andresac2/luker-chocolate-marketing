@@ -5,6 +5,7 @@ import logo from '../../assets/img/Lukerlogo.svg'
 import { Link } from 'react-router-dom';
 import Maquila from '../../components/services/maquila/maquila';
 import Ingredients from '../../components/services/ingredients/ingredients';
+import Footer from '../../components/layout/footer/footer';
 
 class Services extends React.Component {
 
@@ -29,12 +30,13 @@ class Services extends React.Component {
             <Link to="/solution">DISTRIBUTORS</Link>
             <Link to="/solution">BACK TO SERVICES</Link>
           </div>
-          <h1>{selectTab}</h1>
+          <h1>{(selectTab === 'maquila') ? 'FINISHED CHOCOLATE PRODUCTS' : (selectTab === 'ingredients') ? 'CHOCOLATE INGREDIENTS' : 'OUR SERVICES'}</h1>
         </div>
         <div className="services-content">
           {selectTab === 'maquila' && <Maquila />}
           {selectTab === 'ingredients' && <Ingredients />}
         </div>
+        <Footer />
       </div>
     );
   }

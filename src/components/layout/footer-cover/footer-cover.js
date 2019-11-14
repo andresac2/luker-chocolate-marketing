@@ -17,6 +17,7 @@ class FooterCover extends React.Component {
     const { isOpen, selectTab } = this.state;
 
     return (
+      !selectTab.slice(1).includes('services') &&
       <div className={`footer-cover ${isOpen && 'footer-cover-open'}`}>
         <FiChevronUp onClick={this.footerToggle} />
         <nav className={`footer-cover-nav footer-cover-${selectTab.slice(1)}`}>

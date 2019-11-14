@@ -1,0 +1,106 @@
+.footer-component {
+  background: #D5B777;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) 2fr;
+  grid-template-rows: 1fr;
+  color: #fff;
+  padding: 2em 0;
+
+  &-logo {
+    @include vert-center;
+
+    img {
+      width: 60%;
+      max-width: 200px;
+    }
+  }
+
+  &-data {
+    padding: 1em 1em 0;
+
+    h2 {
+      font-weight: 700;
+      line-height: 1em;
+      margin-bottom: .5em;
+      font-size: medium;
+    }
+
+    ul {
+      list-style-type: none;
+      font-size: smaller;
+    }
+  }
+
+  &-link {
+    @include vert-center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #fff;
+
+    a {
+      color: inherit;
+      margin: 0 2em;
+      font-weight: 700;
+      font-size: smaller;
+    }
+  }
+
+  &-social {
+    padding-left: 2em;
+
+    h2 {
+      padding: 1em 0;
+      font-size: smaller;
+      font-weight: 700;
+    }
+
+    input {
+      border: none;
+      font-size: smaller;
+      font-weight: 700;
+
+      &::placeholder {
+        color: inherit;
+      }
+    }
+
+    input[type=text] {
+      margin-bottom: .5em;
+      display: block;
+      background: transparent;
+      border-bottom: 1px solid #fff;
+    }
+
+    input[type=submit] {
+      padding: 3px 18px;
+      background: #685019;
+      font-size: smaller;
+    }
+
+    &--btn {
+      margin-top: 1em;
+      color: #fff;
+
+      a {
+        &:visited {
+          color: inherit;
+        }
+
+        &:nth-child(2) {
+          margin: 0 .5em;
+        }
+      }
+
+      svg {
+
+        padding: 5px;
+        border-radius: 100%;
+        font-size: 1.5em;
+        background: #685019;
+      }
+
+    }
+
+  }
+}
