@@ -11,7 +11,7 @@ class ProductServices extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedProduct: ''
+      selectedProduct: '2'
     };
   }
 

@@ -141,9 +141,9 @@
 
   &--product {
     position: relative;
-    width: 40%;
+    width: calc(100% - 340px);
     align-self: start;
-    margin-left: 20%;
+    padding-left: 20%;
 
     .btn-close {
       cursor: pointer;
