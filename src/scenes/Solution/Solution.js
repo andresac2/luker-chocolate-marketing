@@ -8,7 +8,7 @@ function Solution() {
   return (
     <div className='solution-component'>
       <div className="solution-component--service">
-        <Link to="/services" className="header-btn">
+        <Link to="/services/maquila" className="header-btn">
           SERVICIOS
         </Link>
         <div className="btn-dist">
@@ -22,7 +22,7 @@ function Solution() {
             </Link>
       </div>
       <div className="solution-component--ingredient">
-        <Link to="/services/maquila" className="header-btn">
+        <Link to="/services/ingredients" className="header-btn">
           INGREDIENTES
             </Link>
       </div>

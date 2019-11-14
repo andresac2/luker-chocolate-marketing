@@ -19,7 +19,7 @@ import Services from "./scenes/ProductsServices/ProductsServices";
 
 export default function BasicExample() {
   return (
-    <Router>
+    <Router className="limit-width">
       <Header />
       <Switch>
         <Route exact path="/" component={Home} />

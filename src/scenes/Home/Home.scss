@@ -4,10 +4,21 @@
   opacity: 1;
   position: fixed;
   height: 100%;
+  @include vert-center;
+  align-items: center;
 
   .logo {
-    margin: 7em 5em 3em;
-    width: 12em;
+    //margin: 7em 5em 3em;
+    position: absolute;
+    top: 5em;
+    left: 5em;
+    width: 15em;
+
+    @media screen and (min-width: 1400px) {
+      top: 7em;
+      width: 20em;
+    }
+
   }
 
   &-content {
@@ -16,6 +27,7 @@
     grid-template-columns: 45% 45% 10%;
     margin-left: 5em;
     color: #fff;
+
 
     .intro {
       &-title {

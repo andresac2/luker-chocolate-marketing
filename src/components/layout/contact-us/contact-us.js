@@ -4,10 +4,6 @@ import FormItem from 'antd/lib/form/FormItem';
 
 class ContactUs extends React.Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   handleSubmit = e => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
@@ -25,8 +21,8 @@ class ContactUs extends React.Component {
     const altImg = 'img-example.svg';
 
     return (
-      <div className="contact-component" >
-        <div className={`contact-component-content contact-component-content--${page}`}>
+      <div className={`contact-component contact-component--${page}`} >
+        <div className={`contact-component-content`}>
           <h1>DÉJANOS TUS DATOS</h1>
           <Form onSubmit={this.handleSubmit} className="contact-form">
             <Form.Item>

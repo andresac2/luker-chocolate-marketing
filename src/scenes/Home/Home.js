@@ -10,10 +10,10 @@ function Home() {
       <div className="home-content">
         <div className="intro">
           <div className="intro-title">
-            <h1>TITULO</h1>
-            <h2>Introducción</h2>
+            <h1>113 YEARS</h1>
+            <h2>OF TRADITION</h2>
           </div>
-          <p>Para la navegación dentro de este wireframe se habilitó un flujo tipo de carrusel por lo cual para pasar de "sección en sección" tipo diapositiva se debe hacer clic en el área derecha o izquierda de la pantalla.</p>
+          <p>We are a family company with over 110 years of tradition built on a dream, where chocolate is the source of inspiration and the opportunity to transform communities. We provide unique chocolate as an ingredient for other food companies and we manufacture finished products for other brands</p>
         </div>
         <div className="dist">
           <div className="dist-text">

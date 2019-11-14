@@ -3,10 +3,6 @@ import ContactUs from '../../layout/contact-us/contact-us';
 
 class Maquila extends React.Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { product } = this.props;
     const altImg = 'img-example.svg';

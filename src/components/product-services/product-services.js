@@ -1,7 +1,6 @@
 import React from 'react'
 import altImg from '../../assets/img/img-example.svg'
 import back from '../../assets/img/back.svg'
-import { Link } from 'react-router-dom';
 import Maquila from './maquila/maquila';
 import { IoIosClose } from "react-icons/io";
 
@@ -11,7 +10,7 @@ class ProductServices extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedProduct: '2'
+      selectedProduct: ''
     };
   }
 
@@ -27,7 +26,7 @@ class ProductServices extends React.Component {
   }
   render() {
     const { selectedProduct } = this.state;
-    const { items, title } = this.props;
+    const { items, title, page } = this.props;
 
     return (
       <div className="product-services-component" >
@@ -44,13 +43,13 @@ class ProductServices extends React.Component {
             }
             <img className="btn-next-img btn-next-img--right " src={back} alt='right' onClick={() => this.reorderItems(items, 0, 2)} />
           </div>
-          <button className="btn-tobuy" onClick={() => this.selectProduct(1)} >FIND OUT MORE</button>
+          <button className="btn-tobuy" onClick={() => this.selectProduct(1)} >{(page === 'maquila') ? 'FIND OUT MORE' : 'GET IT HERE'}</button>
           <div className={`product-services-component--footer product-services-component--footer--${items[1].id}`}>
             {items[1].description}
           </div></>}
         {selectedProduct &&
           <div className="product-services-component--product">
-            <IoIosClose className="btn-close" onClick={() => this.selectProduct('')} />
+            <IoIosClose className="btn-close" onClick={() => this.selecttProduct('')} />
             <Maquila product={items[1]} />
           </div>}
       </div >

@@ -29,7 +29,10 @@
 
       &--bar,
       &--dragee,
-      &--dosing {
+      &--dosing,
+      &--cacao,
+      &--maracas,
+      &--arauca {
         &::after {
           content: '';
           position: absolute;
@@ -54,6 +57,18 @@
         background: #B3642C;
       }
 
+      &--cacao::after {
+        background: #B7C66C;
+      }
+
+      &--maracas::after {
+        background: #C0895E;
+      }
+
+      &--arauca::after {
+        background: #F2CB0E;
+      }
+
       img {
         height: 10em;
         object-fit: contain;
@@ -73,7 +88,10 @@
 
           &--bar,
           &--dragee,
-          &--dosing {
+          &--dosing,
+          &--cacao,
+          &--maracas,
+          &--arauca {
             &::after {
               left: calc(50% - 7.5em);
               width: 15em;
@@ -136,6 +154,18 @@
 
     &--dosing {
       background: #B3642C;
+    }
+
+    &--cacao {
+      background: #B7C66C;
+    }
+
+    &--maracas {
+      background: #C0895E;
+    }
+
+    &--arauca {
+      background: #F2CB0E;
     }
   }
 
