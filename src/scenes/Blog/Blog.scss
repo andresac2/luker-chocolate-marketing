@@ -10,6 +10,11 @@
     @include vert-center;
     flex-direction: column;
 
+    &--take-stand {
+      background: url('../../assets/img/stand-header.png') no-repeat;
+      background-size: cover;
+    }
+
     h1 {
       @include header-title;
       width: 960px;

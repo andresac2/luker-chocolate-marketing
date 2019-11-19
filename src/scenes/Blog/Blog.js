@@ -9,6 +9,7 @@ import item4 from '../../assets/img/blog-item3.png'
 import item5 from '../../assets/img/blog-item4.png'
 
 import logo from '../../assets/img/Lukerlogo.svg'
+import TakeStand from '../../components/blog/take-stand/take-stand';
 
 
 class Blog extends React.Component {
@@ -33,7 +34,7 @@ class Blog extends React.Component {
 
     return (
       <Layout className="blog-component">
-        <div className="blog-component-header">
+        <div className={'blog-component-header blog-component-header--' + category}>
           <div className="btn-dist">
             <img src={logo} className="logo" alt="Logo Luker" />
             <Link to='/blog'>BLOG</Link>
@@ -50,7 +51,7 @@ class Blog extends React.Component {
               <Option value="en">EN</Option>
             </Select>
           </div>
-          <h1 onClick={() => this.searchToggle()}>Headline </h1>
+          <h1 onClick={() => this.searchToggle()}>{(category) ? 'Take a stand' : 'Headline'} </h1>
         </div >
         <div className="blog-component-content">
           <div className={`blog-tabs blog-tabs-${category && 'selected'}`} >
@@ -61,7 +62,7 @@ class Blog extends React.Component {
             <Link to='/blog'>WHAT YOU DIDN’T KNOW</Link>
           </div>
           {(category) ?
-            <h1>{category}</h1>
+            <TakeStand />
             :
             <div className="blog-layout">
               <div className="blog-layout-latest">

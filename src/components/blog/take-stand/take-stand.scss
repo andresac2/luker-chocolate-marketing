@@ -1,0 +1,7 @@
+.take-stand {
+  margin-bottom: 2em;
+
+  .blog-layout-articles {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
