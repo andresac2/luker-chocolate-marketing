@@ -1,0 +1,41 @@
+.blog-article {
+  width: 960px;
+
+  &-bread {
+    @include vert-center;
+    align-items: center;
+    height: 4em;
+
+    .ant-breadcrumb {
+
+      span,
+      .anticon {
+        color: #4B2418;
+      }
+
+      flex: 1 1;
+    }
+
+    &--social {
+      color: #fff;
+
+      a {
+        color: inherit;
+      }
+
+      svg {
+        margin: 0 3px;
+        padding: 7px;
+        border-radius: 50%;
+        font-size: 2em;
+        background: #4B2418;
+      }
+    }
+  }
+
+  &-content {}
+
+  &-content {}
+
+  &-content {}
+}

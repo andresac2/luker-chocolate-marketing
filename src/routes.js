@@ -32,7 +32,7 @@ export default function BasicExample() {
         <Route path="/ryd" component={Ryd} />
         <Route path="/value-propose" component={ValuePropose} />
         <Route path="/our-value/:id" component={OurValue} />
-        <Route path="/blog/:category?" component={Blog} />
+        <Route path="/blog/:category?/:article?" component={Blog} />
       </Switch>
       <FooterCover />
     </Router>

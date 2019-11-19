@@ -10,6 +10,7 @@ import item5 from '../../assets/img/blog-item4.png'
 
 import logo from '../../assets/img/Lukerlogo.svg'
 import TakeStand from '../../components/blog/take-stand/take-stand';
+import Article from '../../components/blog/article/article';
 
 
 class Blog extends React.Component {
@@ -30,7 +31,7 @@ class Blog extends React.Component {
     const { Search } = Input;
     const { Option } = Select;
     const { searchOpen } = this.state;
-    const { category } = this.props.match.params;
+    const { category, article } = this.props.match.params;
 
     return (
       <Layout className="blog-component">
@@ -51,27 +52,30 @@ class Blog extends React.Component {
               <Option value="en">EN</Option>
             </Select>
           </div>
-          <h1 onClick={() => this.searchToggle()}>{(category) ? 'Take a stand' : 'Headline'} </h1>
+          <h1>{(article) ? '"ARTICLE TITLE"' : (category) ? 'Take a stand' : 'Headline'} </h1>
         </div >
         <div className="blog-component-content">
-          <div className={`blog-tabs blog-tabs-${category && 'selected'}`} >
-            <Link to='/blog/take-stand' className={category === 'take-stand' && 'tab-blog-selected'}>TAKE A STAND</Link>
-            <Link to='/blog'>INNOVATION</Link>
-            <Link to='/blog'>CREATE SHARED VALUE</Link>
-            <Link to='/blog'>THE CHOCOLATE DREAM JOURNEY</Link>
-            <Link to='/blog'>WHAT YOU DIDN’T KNOW</Link>
-          </div>
+          {!article &&
+            <div className={`blog-tabs blog-tabs-${category && 'selected'}`} >
+              <Link to='/blog/take-stand' className={category === 'take-stand' && 'tab-blog-selected'}>TAKE A STAND</Link>
+              <Link to='/blog'>INNOVATION</Link>
+              <Link to='/blog'>CREATE SHARED VALUE</Link>
+              <Link to='/blog'>THE CHOCOLATE DREAM JOURNEY</Link>
+              <Link to='/blog'>WHAT YOU DIDN’T KNOW</Link>
+            </div>
+          }
           {(category) ?
-            <TakeStand />
+            (article) ?
+              <Article /> : <TakeStand />
             :
             <div className="blog-layout">
               <div className="blog-layout-latest">
                 <h1>Latest entries</h1>
-                <div className="blog-layout-latest--article">
+                <Link to="/blog/take-stand/article" className="blog-layout-latest--article">
                   <img src={item5} alt="cacao" />
                   <p>DETALLES DE PUBLICACIÓN</p>
                   <h2>Lorem Ipsum</h2>
-                </div>
+                </Link>
               </div>
               <div className="blog-layout-articles">
                 <div className="blog-layout-articles--item">
@@ -121,4 +125,4 @@ class Blog extends React.Component {
   }
 }
 
-export default Blog;
+export default Blog;           
