@@ -16,6 +16,7 @@ import Ryd from "./scenes/Ryd/Ryd";
 import ValuePropose from "./scenes/ValuePropose/ValuePropose";
 import OurValue from "./scenes/OurValue/OurValue";
 import Services from "./scenes/ProductsServices/ProductsServices";
+import Blog from "./scenes/Blog/Blog";
 
 export default function BasicExample() {
   return (
@@ -31,6 +32,7 @@ export default function BasicExample() {
         <Route path="/ryd" component={Ryd} />
         <Route path="/value-propose" component={ValuePropose} />
         <Route path="/our-value/:id" component={OurValue} />
+        <Route path="/blog/:category?" component={Blog} />
       </Switch>
       <FooterCover />
     </Router>

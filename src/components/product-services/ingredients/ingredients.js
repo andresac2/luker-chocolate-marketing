@@ -10,11 +10,6 @@ class Ingredients extends React.Component {
       images: ['luker-huila.png', 'luker-colombia.png', 'luker-santander.png']
     };
   }
-
-  itemToggle(tab) {
-    (tab === this.state.selectTab) ? this.setState({ selectTab: '' }) : this.setState({ selectTab: tab });
-  }
-
   reorderItems(items, moveFromIndex, moveToIndex) {
 
     const movingItem = items[moveFromIndex];
