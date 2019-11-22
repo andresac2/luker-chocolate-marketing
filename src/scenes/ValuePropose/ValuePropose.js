@@ -1,8 +1,8 @@
 import React from 'react';
 import logo from '../../assets/img/Lukerlogo.svg'
-import item1 from '../../assets/img/cacao2.png'
-import item2 from '../../assets/img/cacao1.png'
-import item3 from '../../assets/img/pote3.png'
+import item1 from '../../assets/img/unique-flavour.png'
+import item2 from '../../assets/img/consistency-flavour.png'
+import item3 from '../../assets/img/integrated-packaging.png'
 import item4 from '../../assets/img/grano4.png'
 import ImgCarrousel from '../../components/img-carrousel/img-carrousel';
 
@@ -22,14 +22,12 @@ function ValuePropose() {
         </div>
       </div>
       <div className="value-propose-component--carrousel">
-        <h2>PRODUCTOS DESARROLLADOS</h2>
-        <ImgCarrousel />
       </div>
       <div className="value-propose-component--item">
         <div className="value-propose-component--item-card">
           <img src={item1} alt="cacao" />
           <div className="value-propose-component--item-card-text">
-            DALE UN SABOR ÚNICO A TUS PRODUCTOS
+            DIFFERENTIATE YOUR PRODUCT WITH A UNIQUE FLAVOUR
           </div>
           <div className="value-propose-component--item-card-hover">
             <p>Trabajamos solo con Cacao Fino de Aroma</p>
@@ -39,7 +37,7 @@ function ValuePropose() {
         <div className="value-propose-component--item-card">
           <img src={item2} alt="cacao" />
           <div className="value-propose-component--item-card-text">
-            MANTÉN LA CONSISTENCIA Y GARANTIZA TU ABASTECIMIENTO
+            KEEP THE CONSISTENCY IN THE FLAVOUR AND GUARANTEE YOUR SUPPLY
           </div>
           <div className="value-propose-component--item-card-hover">
             <p>Queremos que tengas siempre el mejor producto</p>
@@ -49,7 +47,7 @@ function ValuePropose() {
         <div className="value-propose-component--item-card">
           <img src={item3} alt="cacao" />
           <div className="value-propose-component--item-card-text">
-            SOLUCIÓN INTEGRADA DE DISEÑO DE PRODUCTO Y EMPAQUE
+            INTEGRATED SOLUTIONS FOR DESIGN, PRODUCTS, AND PACKAGING
           </div>
           <div className="value-propose-component--item-card-hover">
             <p>Tus necesidades se convierten en nuestro reto</p>
@@ -59,7 +57,7 @@ function ValuePropose() {
         <div className="value-propose-component--item-card">
           <img src={item4} alt="cacao" />
           <div className="value-propose-component--item-card-text">
-            CONECTA TU MARCA CON UN PROPÓSITO
+            CONNECT YOUR BRAND AROUND SUSTAINABILITY
           </div>
           <div className="value-propose-component--item-card-hover">
             <p>Te invitamos a participar en iniciativas de valor Compartido con impacto social y sostenible</p>

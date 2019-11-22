@@ -11,7 +11,7 @@
 
   &--expo {
     grid-area: expo;
-    background: #D5B777;
+    background: #C6865A;
     text-align: justify;
     position: relative;
 
@@ -38,6 +38,8 @@
   &--carrousel {
     grid-area: carrousel;
     background: #5D340B;
+    background: url('../../assets/img/big-evelio.png');
+    background-size: cover;
 
     h2 {
       border: 3px solid #FFFFFF;
