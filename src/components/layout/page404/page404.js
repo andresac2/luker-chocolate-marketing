@@ -12,11 +12,11 @@ class Page404 extends React.Component {
   componentDidMount() {
     setTimeout(() => {
       this.goHome();
-    }, 60000)
+    }, 6000)
   }
 
   goHome() {
-    //this.props.history.push('/');
+    this.props.history.push('/');
   }
 
   render() {
