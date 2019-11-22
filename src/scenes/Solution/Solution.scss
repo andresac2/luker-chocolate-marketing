@@ -1,26 +1,34 @@
 .solution-component {
   height: inherit;
   display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 50%;
-  grid-template-areas:
-    "servicios servicios"
-    "maquila ingredientes";
+  grid-template-columns: 33% 33% 1fr;
+  grid-template-rows: 1fr;
+  position: fixed;
+  width: 100vw;
   text-align: center;
 
+
   .header-btn {
-    width: 100%;
     color: #fff;
-    text-align: center;
-    margin-top: 1em;
     background: transparent;
     font-size: 4em;
     font-weight: 700;
+    writing-mode: tb-rl;
+    margin-left: auto;
+    margin-right: .5em;
+    line-height: 1em;
+    transform: rotate(-180deg);
+    text-shadow: 0px 13px 6px #0000006F;
+
+  }
+
+  &--service,
+  &--maquila,
+  &--ingredient {
+    display: flex;
   }
 
   &--service {
-    grid-area: servicios;
-    padding-top: 6em;
     background: url("../../assets/img/serv-serv-cover.png") center;
     background-size: cover;
   }
@@ -45,21 +53,17 @@
   }
 
   &--maquila {
-    grid-area: maquila;
-    border-right: 5px solid #F4C710;
     background: url("../../assets/img/serv-maquila-cover.png") center;
   }
 
   &--ingredient {
-    grid-area: ingredientes;
-    border-left: 5px solid #F4C710;
     background: url("../../assets/img/serv-ingred-cover.png") center;
   }
 
+
   &--maquila,
   &--ingredient {
-    padding-top: 2em;
-    border-top: 10px solid #F4C710;
+    border-right: 10px solid #F4C710;
     background-size: cover;
   }
 }
