@@ -18,6 +18,7 @@ import OurValue from "./scenes/OurValue/OurValue";
 import Services from "./scenes/ProductsServices/ProductsServices";
 import Blog from "./scenes/Blog/Blog";
 import WrappedContact from "./components/layout/contact/contact";
+import Page404 from "./components/layout/page404/page404";
 
 export default function BasicExample() {
   return (
@@ -35,6 +36,8 @@ export default function BasicExample() {
         <Route path="/our-value/:id" component={OurValue} />
         <Route path="/blog/:category?/:article?" component={Blog} />
         <Route path="/contact-us" component={WrappedContact} />
+
+        <Route component={Page404} />
       </Switch>
       <FooterCover />
     </Router>
