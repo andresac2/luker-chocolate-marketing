@@ -5,7 +5,6 @@ class Ingredients extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectProducts: [],
       itemsArauca: [{
         id: 1,
         img: 'p-arauca.png',
@@ -41,18 +40,14 @@ class Ingredients extends React.Component {
   }
 
   productToggle(id, selected) {
-    const prods = this.state.itemsArauca.filter(item => item.selected === true);
-
     this.setState({
       itemsArauca: this.state.itemsArauca.map(el => (el.id === id ? { ...el, selected } : el))
     });
-    console.log(this.state.selectProducts);
-    this.setState({ selectProducts: prods });
   };
 
   render() {
     const { product } = this.props;
-    const { itemsArauca, selectProducts } = this.state;
+    const { itemsArauca } = this.state;
     const altImg = 'img-example.svg';
 
     return (
@@ -65,7 +60,6 @@ class Ingredients extends React.Component {
         <div className="ingredients-component--content">
           <h2>UNIQUE ORIGIN</h2>
           <p>CasaLuker 1906, SANTANDER, HUILA, TUMACO and ARAUCA. Four Colombian Origin Chocolates with flavours that reflect the country’s geographic and cultural diversity. Santander cocoa is cultivated in the Andes; Tumaco, in the tropical forests of the Pacific Coast and Huila cocoa is typical of the region’s deep valleys. In Arauca, cocoa grows in wild landscapes between the snow-capped mountains and valleys of the Orinoco. Mountains, forests and valleys: CasaLuker 1906, the chocolate with an inimitable flavour of the land that it grows in.</p>
-          <p>{product.description}</p>
         </div>
         <div className="ingredients-component--products">
           {Object.keys(itemsArauca).map(i =>
@@ -75,9 +69,8 @@ class Ingredients extends React.Component {
               <h2>CasaLuker 1906</h2>
               <p>{itemsArauca[i].description}</p>
             </div>)}
-
         </div>
-        <WrappedContactUs page='ingredients' products={selectProducts} />
+        <WrappedContactUs page='ingredients' products={itemsArauca} />
       </div>
     );
   }

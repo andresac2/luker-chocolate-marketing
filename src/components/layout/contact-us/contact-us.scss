@@ -10,6 +10,14 @@
   background-position: right;
   background-size: cover;
 
+  .ant-form-explain {
+    margin: 0;
+    padding-top: .2em;
+    font-size: smaller;
+    line-height: 0;
+    min-height: 0;
+  }
+
   &--maquila {
 
     &::after {
@@ -76,19 +84,38 @@
 
     &-products {
       color: #fff;
+      min-height: 120px;
 
-
-      p {
+      p:first-child {
+        flex: none;
         font-weight: 700;
         text-align: left;
         border-bottom: 2px solid #fff;
       }
 
       span {
+        margin: 0 auto;
         font-weight: 600;
         opacity: .5;
         display: block;
-        line-height: 120px;
+        line-height: 90px;
+      }
+
+
+      &--list {
+        max-width: 280px;
+        overflow: auto;
+        display: flex;
+        justify-content: space-between;
+        margin: 1em 0;
+
+        img {
+          width: 70px;
+        }
+
+        p {
+          font-size: smaller;
+        }
       }
     }
 

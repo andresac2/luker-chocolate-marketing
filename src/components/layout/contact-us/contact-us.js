@@ -84,13 +84,15 @@ class ContactUs extends React.Component {
             {(page === 'maquila' || page === 'ingredients') &&
               <div className="contact-form-products">
                 <p>Características</p>
-                {!products &&
-                  <span>Arma tu producto</span>}
-                {Object.keys(products).map(i =>
-                  <div key={i} className={`contact-form-products-img`}>
-                    <img src={require('../../../assets/img/' + (products[i].img ? products[i].img : altImg))} alt='jaja' />
-                  </div>)}
-
+                <div className="contact-form-products--list">
+                  {products.filter(item => item.selected).length > 0 ?
+                    Object.keys(products.filter(item => item.selected)).map(i =>
+                      <div key={i} className={`contact-form-products--list-item`}>
+                        <img src={require('../../../assets/img/' + (products.filter(item => item.selected)[i].img ? products.filter(item => item.selected)[i].img : altImg))} alt='jaja' />
+                        <p>{products.filter(item => item.selected)[i].description}</p>
+                      </div>)
+                    : <span>Arma tu producto</span>}
+                </div>
               </div>
 
             }
@@ -98,7 +100,7 @@ class ContactUs extends React.Component {
               {getFieldDecorator('username', {
                 rules: [{ required: true, message: 'Please leave us a comment!' }],
               })(
-                <TextArea rows={5} placeholder="Comments" />
+                <TextArea rows={4} placeholder="Comments" />
               )}
             </FormItem>
             <Form.Item>
