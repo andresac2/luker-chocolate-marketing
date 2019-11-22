@@ -17,6 +17,7 @@ import ValuePropose from "./scenes/ValuePropose/ValuePropose";
 import OurValue from "./scenes/OurValue/OurValue";
 import Services from "./scenes/ProductsServices/ProductsServices";
 import Blog from "./scenes/Blog/Blog";
+import WrappedContact from "./components/layout/contact/contact";
 
 export default function BasicExample() {
   return (
@@ -33,6 +34,7 @@ export default function BasicExample() {
         <Route path="/value-propose" component={ValuePropose} />
         <Route path="/our-value/:id" component={OurValue} />
         <Route path="/blog/:category?/:article?" component={Blog} />
+        <Route path="/contact-us" component={WrappedContact} />
       </Switch>
       <FooterCover />
     </Router>
