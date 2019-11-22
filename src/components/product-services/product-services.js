@@ -2,9 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import altImg from '../../assets/img/img-example.svg'
 import back from '../../assets/img/back.svg'
-import Maquila from './maquila/maquila';
-import { IoIosClose } from "react-icons/io";
-import Ingredients from './ingredients/ingredients';
 
 
 
@@ -51,15 +48,6 @@ class ProductServices extends React.Component {
           <div className={`product-services-component--footer product-services-component--footer--${items[1].id}`}>
             {items[1].description}
           </div></>}
-        {
-          selectedProduct &&
-          <div className="product-services-component--product">
-            <IoIosClose className="btn-close" onClick={() => this.selectProduct('')} />
-            {(page === 'maquila') ? <Maquila product={items[1]} /> :
-              <Ingredients product={items[1]} />
-            }
-          </div>
-        }
       </div >
     );
   }
