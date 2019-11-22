@@ -1,34 +1,59 @@
 import React from 'react'
-import altImg from '../../../assets/img/img-example.svg'
-import back from '../../../assets/img/back.svg'
 import WrappedContactUs from '../../layout/contact-us/contact-us';
-import { FaInfo } from 'react-icons/fa';
 
 class Ingredients extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectProducts: [],
+      itemsArauca: [{
+        id: 1,
+        img: 'p-arauca.png',
+        description: 'ARAUCA 70%',
+        selected: false
+      },
+      {
+        id: 2,
+        img: 'p-tumaco.png',
+        description: 'TUMACO 65%',
+        selected: false
+      },
+      {
+        id: 3,
+        img: 'p-peru.png',
+        description: 'PERU 72%',
+        selected: false
+      },
+      {
+        id: 4,
+        img: 'p-santander.png',
+        description: 'SANTANDER 65%',
+        selected: false
+      },
+      {
+        id: 5,
+        img: 'p-huila.png',
+        description: 'HUILA 65%',
+        selected: false
+      }
+      ]
+    };
+  }
+
+  productToggle(id, selected) {
+    const prods = this.state.itemsArauca.filter(item => item.selected === true);
+
+    this.setState({
+      itemsArauca: this.state.itemsArauca.map(el => (el.id === id ? { ...el, selected } : el))
+    });
+    console.log(this.state.selectProducts);
+    this.setState({ selectProducts: prods });
+  };
+
   render() {
     const { product } = this.props;
+    const { itemsArauca, selectProducts } = this.state;
     const altImg = 'img-example.svg';
-    const itemsArauca = [{
-      img: 'p-arauca.png',
-      description: 'ARAUCA 70%'
-    },
-    {
-      img: 'p-tumaco.png',
-      description: 'TUMACO 65%'
-    },
-    {
-      img: 'p-peru.png',
-      description: 'PERU 72%'
-    },
-    {
-      img: 'p-santander.png',
-      description: 'SANTANDER 65%'
-    },
-    {
-      img: 'p-huila.png',
-      description: 'HUILA 65%'
-    }
-    ];
 
     return (
       <div className="ingredients-component" >
@@ -44,7 +69,7 @@ class Ingredients extends React.Component {
         </div>
         <div className="ingredients-component--products">
           {Object.keys(itemsArauca).map(i =>
-            <div key={i} className="ingredients-component--products-item">
+            <div key={i} className={`ingredients-component--products-item ingredients-component--products-item-${itemsArauca[i].selected && 'active'}`} onClick={() => this.productToggle(itemsArauca[i].id, !itemsArauca[i].selected)}>
               <img src={require('../../../assets/img/' + (itemsArauca[i].img ? itemsArauca[i].img : altImg))} alt='jaja' />
               <span>i</span>
               <h2>CasaLuker 1906</h2>
@@ -52,7 +77,7 @@ class Ingredients extends React.Component {
             </div>)}
 
         </div>
-        <WrappedContactUs page='ingredients' products={''} />
+        <WrappedContactUs page='ingredients' products={selectProducts} />
       </div>
     );
   }

@@ -59,6 +59,21 @@
       color: #532C2E;
       position: relative;
 
+      &-active::after {
+        content: '';
+        position: absolute;
+        width: 80%;
+        margin: 0 10%;
+        height: 5px;
+        background: #F4C710;
+        left: 0;
+
+        @media screen and (min-width: 1360px) {
+          width: 60%;
+          margin: 0 20%;
+        }
+      }
+
       img {
         width: 180px;
 
