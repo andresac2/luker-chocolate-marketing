@@ -3,6 +3,7 @@ import { Form, Select, Input, Button, InputNumber } from 'antd';
 import FormItem from 'antd/lib/form/FormItem';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/img/Lukerlogo.svg'
+import Footer from '../footer/footer';
 
 class Contact extends React.Component {
 
@@ -89,6 +90,7 @@ class Contact extends React.Component {
             <p>By clicking "send" you agree to the terms and conditions and our privacy policy.</p>
           </Form>
         </div>
+        <Footer />
       </div >
     );
   }

@@ -23,8 +23,8 @@ class FooterCover extends React.Component {
         <nav className={`footer-cover-nav footer-cover-${selectTab.slice(1)}`}>
           <Link to="/blog"><span>BLOG</span></Link>
           {selectTab !== '/' && <Link to="/"><span>CREA TU CHOCOLATE</span></Link>}
-          <Link to="/"><span>MÁS INFORMACIÓN</span></Link>
-          <Link to="/"><span>ESCRÍBENOS</span></Link>
+          <Link to="/asd"><span>MÁS INFORMACIÓN</span></Link>
+          <Link to="/contact-us"><span>ESCRÍBENOS</span></Link>
         </nav>
       </div>
     );
