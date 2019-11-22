@@ -2,9 +2,11 @@ import React from 'react';
 import { Breadcrumb, Icon } from 'antd';
 import { Link } from 'react-router-dom';
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaPrint } from 'react-icons/fa';
+import { Form, Input } from 'antd';
 
 import plant from '../../../assets/img/planting.png'
 import autorPic from '../../../assets/img/autor-blog.png'
+import Comments from '../comments/comments';
 
 
 function Article() {
@@ -68,7 +70,9 @@ function Article() {
           </Link>
         </div>
       </div>
-      <div className="blog-article-comments"></div>
+      <div className="blog-article-comments">
+        <Comments />
+      </div>
     </div>
   );
 }
