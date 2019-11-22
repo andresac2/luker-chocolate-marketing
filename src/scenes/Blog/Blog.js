@@ -35,7 +35,7 @@ class Blog extends React.Component {
 
     return (
       <Layout className="blog-component">
-        <div className={'blog-component-header blog-component-header--' + category}>
+        <div className={`blog-component-header blog-component-header--${(article) ? article : category}`}>
           <div className="btn-dist">
             <img src={logo} className="logo" alt="Logo Luker" />
             <Link to='/blog'>BLOG</Link>

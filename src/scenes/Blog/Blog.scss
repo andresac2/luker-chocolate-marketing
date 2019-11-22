@@ -15,6 +15,11 @@
       background-size: cover;
     }
 
+    &--article {
+      background: url('../../assets/img/article-header.png') no-repeat;
+      background-size: cover;
+    }
+
     h1 {
       @include header-title;
       width: 960px;
