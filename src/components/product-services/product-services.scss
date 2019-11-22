@@ -74,10 +74,18 @@
         object-fit: contain;
       }
 
-      h2 {
+      h2,
+      p {
         text-transform: uppercase;
         color: #532C2E;
+      }
+
+      h2 {
         font-weight: 700;
+      }
+
+      p {
+        width: max-content;
       }
 
 
@@ -187,5 +195,41 @@
       }
     }
 
+  }
+
+  &--maquila {
+    .product-carrousel .carr-item {
+      h2 {
+        margin-top: 1em;
+      }
+    }
+  }
+
+  &--ingredients {
+    .product-services-component-title {
+      font-size: 2em;
+    }
+
+    .product-carrousel .carr-item {
+      p {
+        margin-top: 1em;
+      }
+
+      h2,
+      p {
+        width: 100%;
+        font-size: smaller;
+      }
+
+      &--active {
+        p {
+          font-size: 1rem;
+        }
+
+        h2 {
+          font-size: 1.2rem;
+        }
+      }
+    }
   }
 }

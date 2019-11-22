@@ -2,6 +2,10 @@
   @include vert-center;
   align-items: center;
   flex-direction: column;
+  position: relative;
+  width: calc(100% - 340px);
+  align-self: start;
+  padding-left: 20%;
 
   h2 {
     &:first-child {

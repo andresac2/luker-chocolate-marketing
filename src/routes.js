@@ -27,7 +27,7 @@ export default function BasicExample() {
         <Route path="/flow" component={Flow} />
         <Route path="/sustain" component={Sustain} />
         <Route path="/solution" component={Solutions} />
-        <Route path="/services/:title" component={Services} />
+        <Route path="/services/:title/:item?" component={Services} />
         <Route path="/customer" component={Customer} />
         <Route path="/ryd" component={Ryd} />
         <Route path="/value-propose" component={ValuePropose} />

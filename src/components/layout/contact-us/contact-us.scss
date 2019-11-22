@@ -4,12 +4,13 @@
   right: 0;
   height: 100vh;
   width: 340px;
-  background-size: cover;
-  background-position: right;
   @include vert-center;
 
+  background: url('../../../assets/img/contact-maquila.png') no-repeat;
+  background-position: right;
+  background-size: cover;
+
   &--maquila {
-    background: url('../../../assets/img/contact-maquila.png') no-repeat;
 
     &::after {
       content: '';
@@ -23,6 +24,30 @@
       backdrop-filter: blur(4px);
       -webkit-backdrop-filter: blur(4px);
       opacity: .8;
+    }
+
+    .contact-form-button {
+      background: #D5B777;
+    }
+  }
+
+  &--ingredients {
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      background: #F4C710;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      opacity: .9;
+    }
+
+    .contact-form-button {
+      background: #532C2E;
     }
   }
 
@@ -68,7 +93,6 @@
     }
 
     &-button {
-      background: #D5B777;
       border: none;
       font-weight: 700;
     }
