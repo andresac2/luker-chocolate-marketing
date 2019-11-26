@@ -12,6 +12,7 @@
     padding-right: 3em;
 
     &--dist {
+      width: max-content;
 
       .logo {
         width: 10em;
@@ -20,8 +21,8 @@
 
       button {
         font-weight: 700;
+        font-size: smaller;
         margin-top: .5em;
-        margin-left: .5em;
         background: #F4C710;
         color: #685019;
         padding: 5px 18px;
@@ -32,15 +33,66 @@
       color: #fff;
 
       h1 {
-        margin: .5em 0;
+        margin: 1em 0;
+        font-weight: 700;
+        font-size: xx-large;
       }
 
-      p {
+      &-content {
         border-left: solid 5px #F4C710;
-        padding-left: 1em;
-        font-weight: 600;
-        font-size: 1vw;
-        line-height: 2em;
+        max-height: 300px;
+        overflow: auto;
+
+        p {
+          &:first-child {
+            margin-top: .5em;
+          }
+
+          margin-top: 2em;
+          padding-left: 1em;
+          font-weight: 600;
+          font-size: smaller;
+          line-height: 1.5rem;
+        }
+
+        scrollbar-color: #F4C710;
+        scrollbar-width: thin;
+
+        /* width */
+        &::-webkit-scrollbar {
+          width: 5px;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+          background: rgba(0, 0, 0, .3);
+          border-radius: 10px;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+          height: 20px;
+          border-radius: 10px;
+          background: #F4C710;
+          opacity: 0;
+        }
+
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+          background: rgba(243, 243, 243, .6);
+        }
+
+
+      }
+
+      button {
+        font-weight: 700;
+        font-size: smaller;
+        margin-top: 2em;
+        margin-left: 2em;
+        background: #F4C710;
+        color: #685019;
+        padding: 5px 18px;
       }
     }
   }
