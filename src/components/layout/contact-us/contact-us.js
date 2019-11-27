@@ -89,7 +89,7 @@ class ContactUs extends React.Component {
                     {products.filter(item => item.selected).length > 0 ?
                       Object.keys(products.filter(item => item.selected)).map(i =>
                         <div key={i} className={`contact-form-products--list-item`}>
-                          <img src={require('../../../assets/img/' + (products.filter(item => item.selected)[i].img ? products.filter(item => item.selected)[i].img : altImg))} alt='jaja' />
+                          <img src={require('../../../assets/img/' + (products.filter(item => item.selected)[i].img ? products.filter(item => item.selected)[i].img : altImg))} alt={products.filter(item => item.selected)[i].id} />
                           <p>{products.filter(item => item.selected)[i].description}</p>
                         </div>)
                       : <span>Arma tu producto</span>}

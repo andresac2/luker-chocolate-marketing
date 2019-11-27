@@ -17,8 +17,8 @@ class ProductServices extends React.Component {
   selectProduct(n) {
     this.setState({ selectedProduct: n });
   }
-  reorderItems(items, moveFromIndex, moveToIndex) {
 
+  reorderItems(items, moveFromIndex, moveToIndex) {
     const movingItem = items[moveFromIndex];
     items.splice(moveFromIndex, 1);
     items.splice(moveToIndex, 0, movingItem);

@@ -120,15 +120,17 @@
     }
 
     .btn-next-img {
+      width: min-content;
       max-height: 80px;
       filter: contrast(0.5);
       position: absolute;
-      left: -1em;
+      right: -2em;
+      z-index: 2;
       cursor: pointer;
 
       &--right {
-        right: -1em;
-        left: auto;
+        left: -2em;
+        right: auto;
         transform: rotate(-180deg);
 
       }
