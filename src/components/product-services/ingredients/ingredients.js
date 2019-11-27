@@ -52,9 +52,9 @@ class Ingredients extends React.Component {
     const altImg = 'img-example.svg';
 
     return (
-      <div className="ingredients-component" >
+      <div >
         {product.id === 'arauca' &&
-          <>
+          <div className="ingredients-component">
             <div className="ingredients-component--header">
               <h1>{product.subtitle}</h1>
               <h1>{product.name}</h1>
@@ -74,7 +74,7 @@ class Ingredients extends React.Component {
                 </div>)}
             </div>
             <WrappedContactUs page='ingredients' products={itemsArauca} />
-          </>
+          </div>
         }
         {product.id === 'cacao' &&
           <IngredientCacao data={product} />

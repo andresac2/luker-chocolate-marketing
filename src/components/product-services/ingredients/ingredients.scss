@@ -37,6 +37,7 @@
     }
 
     p {
+      padding: 0 35px;
       text-align: center;
       margin: 0 2em;
       color: #484848;
@@ -44,7 +45,7 @@
     }
   }
 
-  .ingredients-component--products {
+  &--products {
     border-top: 1px solid #532C2E;
     margin: 2em auto;
     display: grid;
