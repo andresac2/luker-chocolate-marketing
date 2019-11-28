@@ -167,207 +167,13 @@ class IngredientCacao extends React.Component {
         }
         ]
       }],
-
       itemsSelected: [],
-      itemsShowed: [{
-        id: 1,
-        img: 'luker-cumbre-58.png',
-        description: 'CUMBRE 58%',
-        selected: false
-      },
-      {
-        id: 2,
-        img: 'LUKER-CACAO-VALLE50.png',
-        description: 'VALLE 50%',
-        selected: false
-      },
-      {
-        id: 3,
-        img: 'LUKER-CACAO-MACONDO-60.png',
-        description: 'MACONDO 60%',
-        selected: false
-      },
-      {
-        id: 4,
-        img: 'LUKER-CACAO-MARANTA 61.png',
-        description: 'MARANTA 61%',
-        selected: false
-      },
-      {
-        id: 5,
-        img: 'LUKER-CACAO-MISTERIO58.png',
-        description: 'MISTERIO 50%',
-        selected: false
-      },
-      {
-        id: 6,
-        img: 'LUKER-CACAO-PALENQUE70.png',
-        description: 'PALENQUE 70%',
-        selected: false
-      },
-      {
-        id: 7,
-        img: 'LUKER-CACAO-SELVA46.png',
-        description: 'SELVA 46%',
-        selected: false
-      },
-      {
-        id: 8,
-        img: 'LUKER-CACAO-SOMBRA54.png',
-        description: 'SOMBRA 54%',
-        selected: false
-      }
-      ],
-      itemsDark: [{
-        id: 1,
-        img: 'luker-cumbre-58.png',
-        description: 'CUMBRE 58%',
-        selected: false
-      },
-      {
-        id: 2,
-        img: 'LUKER-CACAO-VALLE50.png',
-        description: 'VALLE 50%',
-        selected: false
-      },
-      {
-        id: 3,
-        img: 'LUKER-CACAO-MACONDO-60.png',
-        description: 'MACONDO 60%',
-        selected: false
-      },
-      {
-        id: 4,
-        img: 'LUKER-CACAO-MARANTA 61.png',
-        description: 'MARANTA 61%',
-        selected: false
-      },
-      {
-        id: 5,
-        img: 'LUKER-CACAO-MISTERIO58.png',
-        description: 'MISTERIO 50%',
-        selected: false
-      },
-      {
-        id: 6,
-        img: 'LUKER-CACAO-PALENQUE70.png',
-        description: 'PALENQUE 70%',
-        selected: false
-      },
-      {
-        id: 7,
-        img: 'LUKER-CACAO-SELVA46.png',
-        description: 'SELVA 46%',
-        selected: false
-      },
-      {
-        id: 8,
-        img: 'LUKER-CACAO-SOMBRA54.png',
-        description: 'SOMBRA 54%',
-        selected: false
-      }
-      ],
-      itemsMilk: [{
-        id: 1,
-        img: 'LUKER-CACAO-HELICONIA-41.png',
-        description: 'CUMBRE 58%',
-        selected: false
-      },
-      {
-        id: 2,
-        img: 'LUKER-CACAO-HELICONIA-41.png',
-        description: 'VALLE 50%',
-        selected: false
-      },
-      {
-        id: 3,
-        img: 'LUKER-CACAO-HELICONIA-41.png',
-        description: 'MACONDO 60%',
-        selected: false
-      },
-      {
-        id: 4,
-        img: 'LUKER-CACAO-HELICONIA-41.png',
-        description: 'MARANTA 61%',
-        selected: false
-      },
-      {
-        id: 5,
-        img: 'LUKER-CACAO-HELICONIA-41.png',
-        description: 'MISTERIO 50%',
-        selected: false
-      },
-      {
-        id: 6,
-        img: 'LUKER-CACAO-HELICONIA-41.png',
-        description: 'PALENQUE 70%',
-        selected: false
-      },
-      {
-        id: 7,
-        img: 'LUKER-CACAO-HELICONIA-41.png',
-        description: 'SELVA 46%',
-        selected: false
-      },
-      {
-        id: 8,
-        img: 'LUKER-CACAO-HELICONIA-41.png',
-        description: 'SOMBRA 54%',
-        selected: false
-      }
-      ],
-      itemsWhite: [{
-        id: 1,
-        img: 'LUKER-CACAO-PARAMO.png',
-        description: 'CUMBRE 58%',
-        selected: false
-      },
-      {
-        id: 2,
-        img: 'LUKER-CACAO-PARAMO.png',
-        description: 'VALLE 50%',
-        selected: false
-      },
-      {
-        id: 3,
-        img: 'LUKER-CACAO-PARAMO.png',
-        description: 'MACONDO 60%',
-        selected: false
-      },
-      {
-        id: 4,
-        img: 'LUKER-CACAO-PARAMO.png',
-        description: 'MARANTA 61%',
-        selected: false
-      },
-      {
-        id: 5,
-        img: 'LUKER-CACAO-PARAMO.png',
-        description: 'MISTERIO 50%',
-        selected: false
-      },
-      {
-        id: 6,
-        img: 'LUKER-CACAO-PARAMO.png',
-        description: 'PALENQUE 70%',
-        selected: false
-      },
-      {
-        id: 7,
-        img: 'LUKER-CACAO-PARAMO.png',
-        description: 'SELVA 46%',
-        selected: false
-      },
-      {
-        id: 8,
-        img: 'LUKER-CACAO-PARAMO.png',
-        description: 'SOMBRA 54%',
-        selected: false
-      }
-      ],
+      itemsShowed: []
     };
   }
-
+  componentDidMount() {
+    this.changeItems(this.state.itemsHeader[1].items, this.state.itemsHeader[1].id);
+  }
   selectProduct(product) {
     console.log(this.state.itemsSelected.indexOf(product))
     product.selected = !product.selected;
@@ -384,9 +190,6 @@ class IngredientCacao extends React.Component {
         this.setState({ itemsSelected: array });
       }
     }
-    //this.setState({
-    //  itemsSelected: this.state.itemsSelected.map(el => (el.id === product.id ? { ...el, true } : el))
-    //});
   };
 
   reorderItems(items, moveFromIndex, moveToIndex) {
@@ -399,7 +202,6 @@ class IngredientCacao extends React.Component {
   changeItems(item, name) {
     const itemSelected = this.state.itemsHeader.findIndex(i => i.id === name);
     this.setState({ itemsShowed: item });
-    console.log(itemSelected);
     this.reorderItems(this.state.itemsHeader, 1, itemSelected);
   };
 
