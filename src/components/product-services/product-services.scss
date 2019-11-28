@@ -154,6 +154,11 @@
     padding: 2em 20%;
     text-align: center;
 
+    @media screen and (min-width: 1420px) {
+      position: absolute;
+      bottom: 0;
+    }
+
     &--bar {
       background: #8AA130;
     }

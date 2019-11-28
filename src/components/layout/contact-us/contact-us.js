@@ -81,7 +81,7 @@ class ContactUs extends React.Component {
                 </Select>,
               )}
             </Form.Item>
-            {(page === 'maquila' || page === 'ingredients') &&
+            {(page === 'maquila' || page === 'ingredients' || page === 'cacao') &&
               <div className="contact-form-products">
                 <p>Características</p>
                 {products &&
