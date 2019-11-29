@@ -1,248 +1,85 @@
 import React from 'react'
 import WrappedContactUs from '../../../layout/contact-us/contact-us';
 
-class IngredientCacao extends React.Component {
+class IngredientDragees extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      itemsHeader: [{
-        id: 'itemsMilk',
-        img: 'LUKER-CACAO-HELICONIA-41.png',
-        title: 'Milk Chocolate',
-        items: [{
-          id: 1,
-          img: 'LUKER-CACAO-HELICONIA-41.png',
-          description: 'CUMBRE 58%',
-          selected: false
-        },
-        {
-          id: 2,
-          img: 'LUKER-CACAO-HELICONIA-41.png',
-          description: 'VALLE 50%',
-          selected: false
-        },
-        {
-          id: 3,
-          img: 'LUKER-CACAO-HELICONIA-41.png',
-          description: 'MACONDO 60%',
-          selected: false
-        },
-        {
-          id: 4,
-          img: 'LUKER-CACAO-HELICONIA-41.png',
-          description: 'MARANTA 61%',
-          selected: false
-        },
-        {
-          id: 5,
-          img: 'LUKER-CACAO-HELICONIA-41.png',
-          description: 'MISTERIO 50%',
-          selected: false
-        },
-        {
-          id: 6,
-          img: 'LUKER-CACAO-HELICONIA-41.png',
-          description: 'PALENQUE 70%',
-          selected: false
-        },
-        {
-          id: 7,
-          img: 'LUKER-CACAO-HELICONIA-41.png',
-          description: 'SELVA 46%',
-          selected: false
-        },
-        {
-          id: 8,
-          img: 'LUKER-CACAO-HELICONIA-41.png',
-          description: 'SOMBRA 54%',
-          selected: false
-        }
-        ]
+      items: [{
+        id: 1,
+        img: 'maracas-physalis.png',
+        description: 'Covered Physalis',
+        content: 'This tropical fruit is covered in dark chocolate creating the ideal balance between the fruit’s acidic flavour and the chocolate’s fruit and floral notes. Ideal for decorating cakes and desserts or on its own as a snack',
+        selected: false
       },
       {
-        id: 'itemsDark',
-        img: 'LUKER-CACAO-PALENQUE70.png',
-        title: 'Dark Chocolate',
-        items: [{
-          id: 1,
-          img: 'luker-cumbre-58.png',
-          description: 'CUMBRE 58%',
-          selected: false
-        },
-        {
-          id: 2,
-          img: 'LUKER-CACAO-VALLE50.png',
-          description: 'VALLE 50%',
-          selected: false
-        },
-        {
-          id: 3,
-          img: 'LUKER-CACAO-MACONDO-60.png',
-          description: 'MACONDO 60%',
-          selected: false
-        },
-        {
-          id: 4,
-          img: 'LUKER-CACAO-MARANTA 61.png',
-          description: 'MARANTA 61%',
-          selected: false
-        },
-        {
-          id: 5,
-          img: 'LUKER-CACAO-MISTERIO58.png',
-          description: 'MISTERIO 50%',
-          selected: false
-        },
-        {
-          id: 6,
-          img: 'LUKER-CACAO-PALENQUE70.png',
-          description: 'PALENQUE 70%',
-          selected: false
-        },
-        {
-          id: 7,
-          img: 'LUKER-CACAO-SELVA46.png',
-          description: 'SELVA 46%',
-          selected: false
-        },
-        {
-          id: 8,
-          img: 'LUKER-CACAO-SOMBRA54.png',
-          description: 'SOMBRA 54%',
-          selected: false
-        }
-        ]
+        id: 2,
+        img: 'maracas-espresso.png',
+        description: 'COVERED ESPRESSO BEANS',
+        content: 'The perfect combination. The best Colombian coffee beans, covered in generous layers of Fino de Aroma chocolate. Their shine and oval shape makes them different to other brands of chocolate-covered coffee beans. Ideal to go with coffee, as a snack, to include in your recipes or for decoration.',
+        selected: false
       },
       {
-        id: 'itemsWhite',
-        img: 'LUKER-CACAO-PARAMO.png',
-        title: 'White Chocolate',
-        items: [{
-          id: 1,
-          img: 'LUKER-CACAO-PARAMO.png',
-          description: 'CUMBRE 58%',
-          selected: false
-        },
-        {
-          id: 2,
-          img: 'LUKER-CACAO-PARAMO.png',
-          description: 'VALLE 50%',
-          selected: false
-        },
-        {
-          id: 3,
-          img: 'LUKER-CACAO-PARAMO.png',
-          description: 'MACONDO 60%',
-          selected: false
-        },
-        {
-          id: 4,
-          img: 'LUKER-CACAO-PARAMO.png',
-          description: 'MARANTA 61%',
-          selected: false
-        },
-        {
-          id: 5,
-          img: 'LUKER-CACAO-PARAMO.png',
-          description: 'MISTERIO 50%',
-          selected: false
-        },
-        {
-          id: 6,
-          img: 'LUKER-CACAO-PARAMO.png',
-          description: 'PALENQUE 70%',
-          selected: false
-        },
-        {
-          id: 7,
-          img: 'LUKER-CACAO-PARAMO.png',
-          description: 'SELVA 46%',
-          selected: false
-        },
-        {
-          id: 8,
-          img: 'LUKER-CACAO-PARAMO.png',
-          description: 'SOMBRA 54%',
-          selected: false
-        }
-        ]
-      }],
-      itemsSelected: [],
-      itemsShowed: []
+        id: 3,
+        img: 'maracas-cluster.png',
+        description: 'COVERED NIBS CLUSTES',
+        content: 'Small chunks of roasted Fino de Aroma cocoa covered in dark chocolate making for a delicious crunchy chocoaltey snack. Ideal as a snack and for including in recipes.',
+        selected: false
+      },
+      {
+        id: 4,
+        img: 'maracas-instant.png',
+        description: 'DARK CHOCOLATE COVERED INSTANT COFFEE',
+        content: 'The explosive flavour of coffee produces the perfect balance in this dragee. This unique flavour will dieffrentiate your products and surprise whoever tries them. Ideal for decorating cakes, desserts and ice- cream.',
+        selected: false
+      },
+      {
+        id: 5,
+        img: 'maracas-nibs.png',
+        description: 'DARK CHOCOLATE COVERED NIBS',
+        content: 'Small chunks of the best Fino de Aroma cocoa, roasted and covered in dark chocolate. Ideal for decorating cakes and desserts or on its own as a snack.',
+        selected: false
+      }
+      ]
     };
   }
-  componentDidMount() {
-    this.changeItems(this.state.itemsHeader[1].items, this.state.itemsHeader[1].id);
-  }
-  selectProduct(product) {
-    product.selected = !product.selected;
-    if (this.state.itemsSelected.indexOf(product) < 0) {
-      this.setState((state) => ({
-        itemsSelected: state.itemsSelected.concat([product])
-      }))
-    } else {
-      let array = [...this.state.itemsSelected]; // make a separate copy of the array
-      let index = array.indexOf(product)
-      if (index !== -1) {
-        array.splice(index, 1);
-        this.setState({ itemsSelected: array });
-      }
-    }
+  productToggle(id, selected) {
+    this.setState({
+      items: this.state.items.map(el => (el.id === id ? { ...el, selected } : el))
+    });
   };
-
-  reorderItems(items, moveFromIndex, moveToIndex) {
-    const movingItem = items[moveFromIndex];
-    items.splice(moveFromIndex, 1);
-    items.splice(moveToIndex, 0, movingItem);
-    this.setState({ itemsHeader: items });
-  }
-
-  changeItems(item, name) {
-    const itemSelected = this.state.itemsHeader.findIndex(i => i.id === name);
-    this.setState({ itemsShowed: item });
-    this.reorderItems(this.state.itemsHeader, 1, itemSelected);
-  };
-
   render() {
-    const { data } = this.props;
-    const { itemsSelected, itemsShowed, itemsHeader } = this.state;
+    const { items } = this.state;
     const altImg = 'img-example.svg';
+
     return (
-      <div className="cacao-component" >
-        <div className="cacao-component--header">
-          <h1>the best</h1>
-          <h1>ingredients</h1>
-          <div className="cacao-component--header-img">
-            {Object.keys(itemsHeader).map(i =>
-              <img src={require('../../../../assets/img/' + (itemsHeader[i].img ? itemsHeader[i].img : altImg))} alt={itemsHeader[i].title} key={i} />
-            )}
-          </div>
+      <div className="dragees-component">
+        <div className="dragees-component--header">
+          <h1>CHOCOLATE DRAGEES MADE</h1>
+          <h1>WITH 100% CACAO FINO DE AROMA</h1>
         </div>
-        <div className="cacao-component--content">
-          <p>{data.description}</p>
+        <div className="dragees-component--content">
+          <p>In the same way as that magical seductive instrument that characterises the happy upbeat feel of the tropics with its sweet and varied rhythm, CasaLuker Maracas presents a new range of chocolate-covered dragees. Filled with roasted coffee, roasted cocoa and sweet tropical fruits, these delightful dragees are covered in our finest Fino de Aroma chocolate.</p>
+          <p>CasaLuker Maracas, Tropical Dragees are ideal for decorating desserts and cakes, to include in preparations, as toppings for ice-cream or simply to give that special touch to your recipes. They are also a good accompaniment for coffee and other hot drinks; they can be mixed in with cereals and dried fruit to prepare delicious, healthy snacks.</p>
         </div>
-        <div className="cacao-component-tabs">
-          <div className="cacao-component-tabs-header">
-            {Object.keys(itemsHeader).map(i =>
-              <div key={i} onClick={() => this.changeItems(itemsHeader[i].items, itemsHeader[i].id)}>{itemsHeader[i].title}</div>
-            )}
-          </div>
-          <div className="cacao-component-tabs-products">
-            {
-              Object.keys(itemsShowed).map(i =>
-                <div key={i} className={`cacao-component-tabs-products-item cacao-component-tabs-products-item-${itemsShowed[i].selected && 'active'}`} onClick={() => this.selectProduct(itemsShowed[i])}>
-                  <img src={require('../../../../assets/img/' + (itemsShowed[i].img ? itemsShowed[i].img : altImg))} alt='jaja' />
-                  <span>i</span>
-                  <h2>CasaLuker 1906</h2>
-                  <p>{itemsShowed[i].description}</p>
-                </div>)}
-          </div>
+        <div className="dragees-component--products">
+          {Object.keys(items).map(i =>
+            <div key={i} className={`dragees-component--products-item dragees-component--products-item-${items[i].selected && 'active'}`} onClick={() => this.productToggle(items[i].id, !items[i].selected)}>
+              <div className="dragees-component--products-item-img">
+                <img src={require('../../../../assets/img/' + (items[i].img ? items[i].img : altImg))} alt='jaja' />
+                <span>i</span>
+              </div>
+              <div className="dragees-component--products-item-data">
+                <h2>{items[i].description}</h2>
+                <p>{items[i].content}</p>
+              </div>
+            </div>)}
         </div>
-        <WrappedContactUs page='cacao' products={itemsSelected} />
+        <WrappedContactUs page='ingredients' products={items} />
       </div>
     );
   }
 };
 
 
-export default IngredientCacao;
+export default IngredientDragees;

@@ -1,6 +1,7 @@
 import React from 'react'
 import IngredientCacao from './cacao/cacao';
 import Ingredient1906 from './i1906/i1906';
+import IngredientDragees from './dragees/dragees';
 
 const Ingredients = props => {
   const { product } = props;
@@ -13,8 +14,8 @@ const Ingredients = props => {
       {product.id === 'cacao' &&
         <IngredientCacao data={product} />
       }
-      {product.id === 'dragees' &&
-        <IngredientCacao data={product} />
+      {product.id === 'maracas' &&
+        <IngredientDragees data={product} />
       }
     </div>
   );
