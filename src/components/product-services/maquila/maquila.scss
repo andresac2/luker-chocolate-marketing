@@ -101,7 +101,8 @@
     margin-bottom: 2em;
     margin-right: 2em;
     width: fit-content;
-    margin-left: -10%;
+    //margin-left: -10%;
+    width: 100%;
 
     &--bar {
       width: 90%;
@@ -115,20 +116,29 @@
     &-item {
       cursor: pointer;
       @include vert-center;
+      flex-direction: column;
       align-items: center;
       text-align: center;
       line-height: 1em;
       min-height: 5em;
       padding: 0 1em;
       color: #9EA950;
-      font-size: x-large;
+      font-size: larger;
       font-weight: 700;
+      width: 120px;
+      height: 120px;
 
       &:nth-child(odd) {
         color: #62812E;
       }
 
       background: #fff;
+
+      img {
+        width: 3em;
+        height: 3em;
+        object-fit: contain;
+      }
     }
   }
 }

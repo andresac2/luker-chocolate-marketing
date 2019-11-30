@@ -7,9 +7,10 @@
     border: 3px solid #484848;
     color: #484848;
     font-weight: 600;
+    font-size: 2em;
     width: max-content;
     margin: 1em auto;
-    padding: .2em 5em;
+    padding: .2em 3em;
   }
 
   .product-carrousel {
@@ -154,7 +155,7 @@
     padding: 2em 20%;
     text-align: center;
 
-    @media screen and (min-width: 1420px) {
+    @media screen and (min-width: 1445px) {
       position: absolute;
       bottom: 0;
     }
