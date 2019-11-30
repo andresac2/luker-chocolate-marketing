@@ -47,6 +47,7 @@
       padding-right: 3em;
 
       @media screen and (min-width: 1200px) {
+        padding-right: 5em;
         font-size: 1em;
       }
     }
@@ -101,8 +102,15 @@
     margin-bottom: 2em;
     margin-right: 2em;
     width: fit-content;
-    //margin-left: -10%;
     width: 100%;
+    margin-top: 2em;
+
+    &-dmw {
+      @media screen and (max-width: 1320px) {
+        margin-left: -60px;
+        gap: 1em;
+      }
+    }
 
     &--bar {
       width: 90%;
@@ -110,13 +118,33 @@
 
       .maquila-product-item {
         font-size: 2em;
+        width: 100%;
+        max-width: 320px;
+        flex-direction: row;
+
+        img {
+          width: auto;
+          height: inherit;
+        }
+
+        @media screen and (max-width: 1320px) {
+          flex-direction: column;
+          height: 200px;
+
+          img {
+            width: inherit;
+            height: auto;
+          }
+        }
       }
     }
 
     &-item {
       cursor: pointer;
       @include vert-center;
+      position: relative;
       flex-direction: column;
+      margin: auto;
       align-items: center;
       text-align: center;
       line-height: 1em;
@@ -127,16 +155,33 @@
       font-weight: 700;
       width: 120px;
       height: 120px;
+      background: #fff;
+
+      &:nth-child(3n+1) {
+        margin-right: 0;
+      }
+
+      &:nth-child(3n+3) {
+        margin-left: 0;
+      }
 
       &:nth-child(odd) {
         color: #62812E;
       }
 
-      background: #fff;
+      &-dmw {
+        font-size: xx-large;
+        width: auto;
+        text-transform: uppercase;
+      }
+
+      &--active {
+        border-bottom: solid 5px #F4C710;
+      }
 
       img {
-        width: 3em;
-        height: 3em;
+        width: 80px;
+        height: 80px;
         object-fit: contain;
       }
     }
