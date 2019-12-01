@@ -1,11 +1,14 @@
 .ryd-article {
   position: absolute;
-  display: flex;
   background: #F3F3F3;
   left: calc(100% + 5px);
   width: 70vw;
   height: 100%;
   border-right: 5px solid #D3D974;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 20px;
 
   &--text,
   &--img {
@@ -14,14 +17,22 @@
 
   .btn-dist {
     left: 5em;
+
+    @media screen and (max-width: 1320px) {
+      left: 2em;
+    }
   }
 
   &--text {
-    flex: 2 1 0px;
     flex-direction: column;
     margin-left: 5em;
     margin-top: 162px;
     padding-bottom: 2em;
+    justify-content: flex-start;
+
+    @media screen and (max-width: 1320px) {
+      margin-left: 2em;
+    }
 
     h2,
     h3 {
@@ -39,15 +50,20 @@
     }
 
     p {
+      margin-bottom: 2em;
+      font-size: smaller;
+      font-weight: 600;
+    }
+
+    &-content {
+      max-height: 60vh;
       overflow: auto;
-      height: max-content;
       margin-top: 2em;
-      padding-bottom: 2em;
       margin-right: 2em;
 
       /* width */
       &::-webkit-scrollbar {
-        width: 10px;
+        width: 5px;
       }
 
       /* Track */
@@ -72,10 +88,12 @@
   }
 
   &--img {
-    flex: 1 1 0px;
+    justify-content: flex-start;
 
     img {
-      margin: 0 2em;
+      max-width: 100%;
+      height: auto;
+      object-fit: scale-down;
     }
   }
 

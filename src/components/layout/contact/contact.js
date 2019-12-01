@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, Select, Input, Button, InputNumber } from 'antd';
+import { Form, Select, Input, Button } from 'antd';
 import FormItem from 'antd/lib/form/FormItem';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/img/Lukerlogo.svg'
@@ -20,8 +20,6 @@ class Contact extends React.Component {
     const { getFieldDecorator } = this.props.form;
     const { Option } = Select;
     const { TextArea } = Input;
-    const altImg = 'img-example.svg';
-
     return (
       <div className={`contact-us`} >
         <div className="contact-us-header">

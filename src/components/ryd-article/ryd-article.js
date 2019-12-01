@@ -1,9 +1,9 @@
 import React from 'react'
 import logo from '../../assets/img/LukerlogoDark.svg'
-import altImg from '../../assets/img/img-example.svg'
 
 const RydArticle = props => {
   const { title, subtitle, content, img } = props;
+  const altImg = 'img-example.svg';
 
   return (
     <div className="ryd-article" >
@@ -14,10 +14,12 @@ const RydArticle = props => {
       <div className="ryd-article--text">
         <h2>{title}</h2>
         <h3>{subtitle}</h3>
-        <p>{content}</p>
+        <div className="ryd-article--text-content">
+          <div dangerouslySetInnerHTML={{ __html: content }} />
+        </div>
       </div>
       <div className="ryd-article--img">
-        <img src={img ? img : altImg} alt={title} />
+        <img src={require('../../assets/img/' + (img ? img : altImg))} alt={title} />
       </div>
     </div >
   )

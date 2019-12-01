@@ -17,13 +17,19 @@
 
     &-pagraph {
       position: absolute;
+      top: auto;
       bottom: 4em;
       right: 2em;
       left: 3em;
 
+      @media screen and (max-width: 1370px) {
+        bottom: 2em;
+      }
+
       h1 {
         font-weight: 700;
         font-size: 3.5vw;
+        margin-bottom: 1rem;
       }
 
       p {
@@ -140,7 +146,7 @@
           height: 100%;
           top: 0;
           z-index: -1;
-          opacity: .8;
+          opacity: .9;
           background: #000000 0% 0% no-repeat padding-box;
           backdrop-filter: blur(17px);
           -webkit-backdrop-filter: blur(17px);
