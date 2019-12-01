@@ -36,6 +36,10 @@
       background-image: url('../../assets/img/ingredients-header.png');
     }
 
+    &--our-services {
+      background-image: url('../../assets/img/services-header.png');
+    }
+
     h1 {
       @include header-title;
       max-width: 15em;

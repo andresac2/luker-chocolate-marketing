@@ -23,7 +23,7 @@ function Solution() {
             </Link>
       </div>
       <div className="solution-component--service">
-        <Link to="/services/maquila" className="header-btn">
+        <Link to="/services/our-services" className="header-btn">
           OUR SERVICES
         </Link>
       </div>

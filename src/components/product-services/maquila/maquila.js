@@ -5,7 +5,6 @@ class Maquila extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      itemsMoment: ['Dark', 'MILK', 'White'],
       hasSelected: false,
       itemsSelected: [],
       dosing: [{ description: 'CHIPS 0,125G', img: 'chips.png', selected: false },

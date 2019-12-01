@@ -7,6 +7,7 @@ import Maquila from '../../components/product-services/maquila/maquila';
 import Footer from '../../components/layout/footer/footer';
 import ProductServices from '../../components/product-services/product-services';
 import Ingredients from '../../components/product-services/ingredients/ingredients';
+import OurServices from '../../components/product-services/our-services/our-services';
 
 class ProductsServices extends React.Component {
 
@@ -66,7 +67,7 @@ class ProductsServices extends React.Component {
           <h1>{(title === 'maquila') ? 'FINISHED CHOCOLATE PRODUCTS' : (title === 'ingredients') ? 'CHOCOLATE INGREDIENTS' : 'OUR SERVICES'}</h1>
         </div>
         <div className="services-content">
-          {(title === 'our-services') ? <Maquila /> :
+          {(title === 'our-services') ? <OurServices /> :
             (item) ? (title === 'maquila') ? <Maquila product={products[products.findIndex(product => product.id === item)]} /> : <Ingredients product={ingredients[ingredients.findIndex(i => i.id === item)]} />
               : <ProductServices items={(title === 'maquila') ? products : ingredients} title={(title === 'maquila') ? 'BRANDED CHOCOLATE PRODUCTS' : 'PRODUCTS'} page={title} />}
         </div>

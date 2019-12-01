@@ -78,6 +78,26 @@
     }
   }
 
+  &--service {
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      background: #468E18;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      opacity: .9;
+    }
+
+    .contact-form-button {
+      background: #F4C710;
+    }
+  }
+
   &--dragees {
     &::after {
       content: '';
