@@ -52,6 +52,11 @@
       padding-right: 5em;
       border-left: 2px solid #fff;
       border-right: 2px solid #fff;
+      text-transform: uppercase;
+
+      @media (min-width: 1380px) {
+        font-size: 32px;
+      }
     }
   }
 }

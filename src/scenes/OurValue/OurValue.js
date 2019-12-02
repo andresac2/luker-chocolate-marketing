@@ -1,8 +1,8 @@
 import React from 'react';
 import logo from '../../assets/img/Lukerlogo.svg'
-import item1 from '../../assets/img/cacao2.png'
-import item2 from '../../assets/img/cacao1.png'
-import item3 from '../../assets/img/pote3.png'
+import item1 from '../../assets/img/unique-flavour.png'
+import item2 from '../../assets/img/consistency-flavour.png'
+import item3 from '../../assets/img/integrated-packaging.png'
 import item4 from '../../assets/img/grano4.png'
 
 import { Link } from 'react-router-dom';
