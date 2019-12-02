@@ -16,8 +16,8 @@
     padding: .5em;
     margin: .5em 0;
 
-    @media (min-width: 1240px) {
-      font-size: 1vw;
+    @media (min-width: 1370px) {
+      font-size: medium;
     }
   }
 
@@ -45,6 +45,7 @@
   &-card {
     position: relative;
     text-align: center;
+    cursor: pointer;
 
     p {
       font-size: smaller;
@@ -61,12 +62,15 @@
       width: 100%;
       position: absolute;
       bottom: 0;
+      font-size: larger;
       text-align: center;
       color: #fff;
       padding-bottom: 1em;
       background: linear-gradient(to top, rgba(0, 0, 0, .9) 30%, rgba(0, 0, 0, 0) 100%);
       font-weight: 600;
     }
+
+    margin-bottom: 3em;
   }
 
 }

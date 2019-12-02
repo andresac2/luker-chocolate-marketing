@@ -1,8 +1,4 @@
 import React from 'react'
-import item1 from '../../../assets/img/our-product-1.png'
-import item2 from '../../../assets/img/our-product-2.png'
-import item3 from '../../../assets/img/our-product-3.png'
-import item4 from '../../../assets/img/our-product-4.png'
 class OurProduct extends React.Component {
   constructor(props) {
     super(props);
