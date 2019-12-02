@@ -14,8 +14,6 @@ import Article from '../../components/blog/article/article';
 
 
 class Blog extends React.Component {
-
-
   constructor(props) {
     super(props);
     this.state = {
@@ -32,7 +30,20 @@ class Blog extends React.Component {
     const { Option } = Select;
     const { searchOpen } = this.state;
     const { category, article } = this.props.match.params;
-
+    const artExample = {
+      breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/take-stand', name: 'Take a stand' }],
+      title: '"Article title"',
+      content: '<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p> <div class="blog-article-content--img" ><img src=\'/static/media/planting.0dcd8148.png\' alt="Proceso de plantación" /><span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</span></div ><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>',
+      autor: { name: 'NOMBRE APELLIDO', avatar: 'autor-blog.png', details: 'DETALLES PROFESIONALES', description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et.', linkedin: ['https://www.linkedin.com/company/casa-luker/', 'Nombre del perfil'] },
+      recommended: [{ img: 'planting.png', title: 'LOREM IPSUM', subtitle: 'DETALLES DE PUBLICACIÓN', url: '/blog/take-stand/article' }, { img: 'planting.png', title: 'LOREM IPSUM', subtitle: 'DETALLES DE PUBLICACIÓN', url: '/blog/take-stand/article' }, { img: 'planting.png', title: 'LOREM IPSUM', subtitle: 'DETALLES DE PUBLICACIÓN', url: '/blog/take-stand/article' }]
+    }
+    const doisy = {
+      breads: [{ href: '/blog', name: 'Customers' }],
+      title: 'Doisy & Dam',
+      flag: 'uk',
+      content: '<div class="blog-article-content--image-capital"><div class="blog-article-content--img" ><img src="/static/media/Doisy&Dam.fda98bfc.png" alt="Proceso de plantación" /><span>Lorem ipsum dolor sit amet, consetetur sadipscing</span></div><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p></div><div class="blog-article-content--img" ><img src="/static/media/doisy-milk.0e42db9b.png" alt="Proceso de plantación" /><span>DETALLES DEL PRODUCTO</span></div>',
+      recommended: [{ img: 'pots&co.png', title: '', subtitle: 'POTS & CO', url: '/blog/take-stand/article' }, { img: 'PAUL LAFAYET_Creme.png', title: '', subtitle: 'PAUL LAFAYETTE', url: '/blog/take-stand/article' }, { img: 'lyra_eshop.png', title: '', subtitle: 'LYRA CHOC', url: '/blog/take-stand/article' }]
+    }
     return (
       <Layout className="blog-component">
         <div className={`blog-component-header blog-component-header--${(article) ? article : category}`}>
@@ -52,7 +63,7 @@ class Blog extends React.Component {
               <Option value="en">EN</Option>
             </Select>
           </div>
-          <h1>{(article) ? '"ARTICLE TITLE"' : (category) ? 'Take a stand' : 'Headline'} </h1>
+          <h1>{(article) ? (article === 'article') ? artExample.title : doisy.title : (category) ? 'Take a stand' : 'Headline'} </h1>
         </div >
         <div className="blog-component-content">
           {!article &&
@@ -65,8 +76,8 @@ class Blog extends React.Component {
             </div>
           }
           {(category) ?
-            (article) ?
-              <Article /> : <TakeStand />
+            (article) ? (article === 'article') ? <Article data={artExample} /> :
+              <Article data={doisy} /> : <TakeStand />
             :
             <div className="blog-layout">
               <div className="blog-layout-latest">

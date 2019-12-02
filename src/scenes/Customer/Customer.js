@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import logo from '../../assets/img/Lukerlogo.svg'
 import fifthDim from '../../assets/img/5thdimensions.png'
@@ -26,36 +27,36 @@ function Customer() {
         </div>
       </div>
       <div className="customer-component--content">
-        <div>
+        <Link to='/blog/customers/doisy'>
           <img src={fifthDim} alt="" />
           <h2>5TH DIMENSIONS</h2>
           <img src={ukFlag} alt="" className="flag-badge" />
-        </div>
-        <div>
+        </Link>
+        <Link to='/blog/customers/doisy'>
           <img src={doisy} alt="" />
           <h2>DOISY & DAM</h2>
           <img src={ukFlag} alt="" className="flag-badge" />
-        </div>
-        <div>
+        </Link>
+        <Link to='/blog/customers/doisy'>
           <img src={laceys} alt="" />
           <h2>LACEYS</h2>
           <img src={usFlag} alt="" className="flag-badge" />
-        </div>
-        <div>
+        </Link>
+        <Link to='/blog/customers/doisy'>
           <img src={lyra} alt="" />
           <h2>LYRA CHOC</h2>
           <img src={svkFlag} alt="" className="flag-badge" />
-        </div>
-        <div>
+        </Link>
+        <Link to='/blog/customers/doisy'>
           <img src={paul} alt="" />
           <h2>PAUL LAFAYETTE</h2>
           <img src={frFlag} alt="" className="flag-badge" />
-        </div>
-        <div>
+        </Link>
+        <Link to='/blog/customers/doisy'>
           <img src={pots} alt="" />
           <h2>POTS & CO</h2>
           <img src={ukFlag} alt="" className="flag-badge" />
-        </div>
+        </Link>
       </div>
     </div>
   );

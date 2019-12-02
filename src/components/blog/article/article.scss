@@ -18,13 +18,17 @@
       flex: 1 1;
     }
 
-    &--social {
-      color: #fff;
+    color: #fff;
 
-      a {
+    a {
+      color: inherit;
+
+      &:hover {
         color: inherit;
       }
+    }
 
+    &--social {
       svg {
         margin: 0 3px;
         padding: 7px;
@@ -40,6 +44,7 @@
 
     p {
       font-weight: 600;
+      line-height: 1.8em;
       margin-bottom: 1em;
     }
 
@@ -48,11 +53,21 @@
 
       img {
         width: 100%;
+        height: auto;
         object-fit: cover;
       }
 
       span {
         font-size: smaller;
+      }
+    }
+
+    &--image-capital {
+      display: flex;
+
+      :first-child {
+        margin-right: 2em;
+        flex: 1 0 40%;
       }
     }
   }
@@ -68,7 +83,6 @@
       width: 10em;
       object-fit: cover;
     }
-
 
     &--data {
       h2 {

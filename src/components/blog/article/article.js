@@ -2,79 +2,68 @@ import React from 'react';
 import { Breadcrumb, Icon } from 'antd';
 import { Link } from 'react-router-dom';
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaPrint } from 'react-icons/fa';
-import { Form, Input } from 'antd';
 
 import plant from '../../../assets/img/planting.png'
-import autorPic from '../../../assets/img/autor-blog.png'
 import Comments from '../comments/comments';
 
 
-function Article() {
-  return (
-    <div className="blog-article">
-      <div className="blog-article-bread">
-        <Breadcrumb>
-          <Breadcrumb.Item href="/blog">
-            <Icon type="home" />
-          </Breadcrumb.Item>
-          <Breadcrumb.Item href="/blog/take-stand">
-            <Icon type="book" />
-            <span>Take a stand</span>
-          </Breadcrumb.Item>
-          <Breadcrumb.Item>
-            <Icon type="read" />
-            <span>Article</span>
-          </Breadcrumb.Item>
-        </Breadcrumb>
-        <div className="blog-article-bread--social">
-          <a href="https://www.facebook.com/casalukeroficial" target="_blank" ><FaFacebookF /></a>
-          <a href="https://twitter.com/CasaLuker_" target="_blank" ><FaTwitter /></a>
-          <a href="https://www.linkedin.com/company/casa-luker/" target="_blank" ><FaLinkedinIn /></a>
-          <a href="" target="_blank" ><FaPrint /></a>
-        </div>
-      </div>
-      <div className="blog-article-content">
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-        <div className="blog-article-content--img">
-          <img src={plant} alt="Proceso de plantación" />
-          <span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</span>
-        </div>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-      </div>
-      <div className="blog-article-autor">
-        <img src={autorPic} alt="Autor" />
-        <div className="blog-article-autor--data">
-          <h2>NOMBRE APELLIDO</h2>
-          <span>DETALLES PROFESIONALES</span>
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et.</p>
-          <a href="https://www.linkedin.com/company/casa-luker/" target="_blank" ><FaLinkedinIn /> Nombre del perfil</a>
-        </div>
-      </div>
-      <div className="blog-article-entries">
-        <h2>RECOMMENDED ENTRIES</h2>
-        <div className="blog-article-entries--list">
-          <Link to="/blog/take-stand/article">
-            <img src={plant} alt="cacao" />
-            <p>DETALLES DE PUBLICACIÓN</p>
-            <h2>Lorem Ipsum</h2>
-          </Link>
-          <Link to="/blog/take-stand/article">
-            <img src={plant} alt="cacao" />
-            <p>DETALLES DE PUBLICACIÓN</p>
-            <h2>Lorem Ipsum</h2>
-          </Link>
-          <Link to="/blog/take-stand/article">
-            <img src={plant} alt="cacao" />
-            <p>DETALLES DE PUBLICACIÓN</p>
-            <h2>Lorem Ipsum</h2>
-          </Link>
-        </div>
-      </div>
-      <div className="blog-article-comments">
-        <Comments />
-      </div>
-    </div>
-  );
-}
+class Article extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    const { data } = this.props;
+    const altImg = 'img-example.svg';
 
+    return (
+      <div className="blog-article">
+        <div className="blog-article-bread">
+          <Breadcrumb>
+            {Object.keys(data.breads).map(i =>
+              <Breadcrumb.Item href={data.breads[i].href} key={i}>
+                {(data.breads[i].name === 'Blog') ? <Icon type="home" /> : data.breads[i].name}
+              </Breadcrumb.Item>
+            )}
+            <Breadcrumb.Item>
+              <span>{data.title}</span>
+            </Breadcrumb.Item>
+          </Breadcrumb>
+          <div className="blog-article-bread--social">
+            <a href="https://www.facebook.com/casalukeroficial" target="_blank" ><FaFacebookF /></a>
+            <a href="https://twitter.com/CasaLuker_" target="_blank" ><FaTwitter /></a>
+            <a href="https://www.linkedin.com/company/casa-luker/" target="_blank" ><FaLinkedinIn /></a>
+            <a href="" target="_blank" ><FaPrint /></a>
+          </div>
+        </div>
+        <div className="blog-article-content" dangerouslySetInnerHTML={{ __html: data.content }} />
+        {data.autor && <div className="blog-article-autor">
+          <img src={require('../../../assets/img/' + (data.autor.avatar ? data.autor.avatar : altImg))} alt={data.autor.name} />
+          <div className="blog-article-autor--data">
+            <h2>{data.autor.name}</h2>
+            <span>{data.autor.details}</span>
+            <p>{data.autor.description}</p>
+            <a href={data.autor.linkedin[0]} target="_blank" ><FaLinkedinIn /> {data.autor.linkedin[1]}</a>
+          </div>
+        </div>}
+        <div className="blog-article-entries">
+          <h2>{data.flag ? 'RELATED PRODUCTS' : 'RECOMMENDED ENTRIES'}</h2>
+          <div className="blog-article-entries--list">
+            {Object.keys(data.recommended).map(i =>
+              <Link to={data.recommended[i].url}>
+                <img src={require('../../../assets/img/' + (data.recommended[i].img ? data.recommended[i].img : altImg))} alt={data.recommended[i].title} />
+                <p>{data.recommended[i].subtitle}</p>
+                <h2>{data.recommended[i].title}</h2>
+              </Link>
+            )}
+          </div>
+        </div>
+        {!data.flag &&
+          <div className="blog-article-comments">
+            <Comments />
+          </div>
+        }
+      </div>
+    );
+  }
+}
 export default Article;

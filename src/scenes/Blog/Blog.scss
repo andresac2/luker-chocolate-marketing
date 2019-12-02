@@ -20,6 +20,12 @@
       background-size: cover;
     }
 
+    &--doisy {
+      background: url('../../assets/img/doisy-header.png') no-repeat;
+      background-size: cover;
+    }
+
+
     h1 {
       @include header-title;
       width: 960px;
