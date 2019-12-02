@@ -88,7 +88,6 @@ class Home extends React.Component {
             <div className="modal-dist-modal-map">
               <img src={require('../../assets/img/map-dist.png')} alt='map distirbuidores' />
             </div>
-
           </div>
         </div>
       </div>
