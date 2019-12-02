@@ -55,6 +55,8 @@ class Home extends React.Component {
             <img src={cacao2} className="cacao-link-2" alt="Logo Luker" />
           </div>
         </div>
+        <button className="btn-dist-respo" onClick={() => this.showModalDist()}> DISTRIBUIDORES </button>
+
         <div className={`modal-dist modal-dist-${distModalVisible && 'visible'}`}>
           <div className="modal-dist-bkg" onClick={() => this.showModalDist()}></div>
           <div className="modal-dist-modal">
