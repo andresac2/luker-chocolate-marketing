@@ -29,6 +29,7 @@
     align-items: center;
 
     &-btn {
+      cursor: pointer;
       position: absolute;
       left: 0;
       font-size: 3em;
@@ -37,6 +38,10 @@
         right: 0;
         left: auto;
       }
+    }
+
+    .btn-inactive {
+      display: none;
     }
 
     h2 {

@@ -36,10 +36,30 @@ class OurValue extends React.Component {
           <h1>OUR VALUE PROPOSITION</h1>
         </div>
         <div className="our-value-navbar">
-          <Link to="/our-value/aroma" onClick={() => this.tabToggle('aroma')} className={`our-value-navbar--${selectTab === 'aroma' && 'active'}`} ><img src={item1} alt="aroma" /></Link>
-          <Link to="/our-value/flavour" onClick={() => this.tabToggle('flavour')} className={`our-value-navbar--${selectTab === 'flavour' && 'active'}`} ><img src={item2} alt="flavour" /></Link>
-          <Link to="/our-value/product" onClick={() => this.tabToggle('product')} className={`our-value-navbar--${selectTab === 'product' && 'active'}`} ><img src={item3} alt="product" /></Link>
-          <Link to="/our-value/social" onClick={() => this.tabToggle('social')} className={`our-value-navbar--${selectTab === 'social' && 'active'}`} ><img src={item4} alt="social" /></Link>
+          <Link to="/our-value/aroma" onClick={() => this.tabToggle('aroma')} className={`our-value-navbar-item our-value-navbar--${selectTab === 'aroma' && 'active'}`} >
+            <img src={item1} alt="aroma" />
+            <div className="our-value-navbar-card">
+              <p>DIFFERENTIATE YOUR PRODUCT WITH A UNIQUE FLAVOUR</p>
+            </div>
+          </Link>
+          <Link to="/our-value/flavour" onClick={() => this.tabToggle('flavour')} className={`our-value-navbar-item our-value-navbar--${selectTab === 'flavour' && 'active'}`} >
+            <img src={item2} alt="flavour" />
+            <div className="our-value-navbar-card">
+              <p>KEEP THE CONSISTENCY IN THE FLAVOUR AND GUARANTEE YOUR SUPPLY</p>
+            </div>
+          </Link>
+          <Link to="/our-value/product" onClick={() => this.tabToggle('product')} className={`our-value-navbar-item our-value-navbar--${selectTab === 'product' && 'active'}`} >
+            <img src={item3} alt="product" />
+            <div className="our-value-navbar-card">
+              <p>INTEGRATED SOLUTIONS FOR DESIGN, PRODUCTS, AND PACKAGING</p>
+            </div>
+          </Link>
+          <Link to="/our-value/social" onClick={() => this.tabToggle('social')} className={`our-value-navbar-item our-value-navbar--${selectTab === 'social' && 'active'}`} >
+            <img src={item4} alt="social" />
+            <div className="our-value-navbar-card">
+              <p>CONNECT YOUR BRAND AROUND SUSTAINABILITY</p>
+            </div>
+          </Link>
         </div>
         <div className="our-value-content">
           {selectTab === 'aroma' && <OurAroma />}
