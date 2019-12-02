@@ -7,18 +7,48 @@
   @include vert-center;
   align-items: center;
 
-  .logo {
-    //margin: 7em 5em 3em;
+  &-logo {
     position: absolute;
     top: 5em;
-    left: 5em;
+    left: 13em;
     width: 15em;
+    @include vert-center;
+    align-items: center;
 
     @media screen and (min-width: 1400px) {
       top: 7em;
+      left: 10em;
       width: 20em;
     }
 
+    .ant-input,
+    .ant-select-selection {
+      align-items: center;
+      border: none;
+      border-radius: unset;
+      background: transparent;
+      color: #fff;
+      font-weight: 900;
+      font-size: 2em;
+      padding-right: 1em;
+      border-left: 4px solid #fff;
+    }
+
+    .ant-select-selection .anticon {
+      margin-top: -.2em;
+    }
+
+    .anticon {
+      @include vert-center;
+      font-weight: 900;
+      font-size: 1.5em;
+      color: #fff;
+    }
+
+    .logo {
+      margin-right: .5em;
+      //margin: 7em 5em 3em;      
+    }
   }
 
   &-content {
@@ -104,6 +134,112 @@
         position: absolute;
         filter: blur(4px);
         width: 22em;
+      }
+    }
+  }
+
+  .modal-dist {
+    z-index: 1000;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+
+    &-visible {
+      @include vert-center;
+    }
+
+    &-bkg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #000000 0% 0% no-repeat padding-box;
+      opacity: .7;
+      backdrop-filter: blur(19px);
+      -webkit-backdrop-filter: blur(19px);
+    }
+
+    &-modal {
+      height: auto;
+      width: 65vw;
+      background: #ECECEC;
+      z-index: 1;
+      position: relative;
+      display: grid;
+      grid-template-columns: 30% 70%;
+
+      &-dist {
+        box-shadow: inset 0px 3px 6px #00000029;
+        color: #484848;
+
+        &-header {
+          padding-top: 1em;
+          padding-bottom: 1em;
+          height: auto;
+          background: #FFFFFF;
+          text-align: center;
+
+          h2 {
+            font-weight: 600;
+            margin-bottom: .5em;
+          }
+        }
+
+        &-cards {
+          &-card {
+            margin: 1em;
+            background: #fff;
+            box-shadow: 0px 3px 6px #00000029;
+            padding: .5em;
+
+            h2 {
+              text-transform: uppercase;
+              font-weight: 600;
+              font-size: larger;
+              width: max-content;
+              padding: .5em 0;
+              border-bottom: 1px solid #484848;
+              margin-bottom: .5em;
+            }
+
+            span {
+              font-weight: 600;
+            }
+
+            p {
+              font-size: smaller;
+            }
+
+            &--active {
+              border: 1px solid #F4C710;
+
+              h2 {
+                border-color: #F4C710;
+              }
+            }
+          }
+        }
+      }
+
+      &-map {
+        img {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+        }
+      }
+
+      .btn-x {
+        color: #B41218;
+        cursor: pointer;
+        position: absolute;
+        right: 15px;
+        top: 15px;
       }
     }
   }
