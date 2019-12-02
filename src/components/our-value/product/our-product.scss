@@ -19,11 +19,10 @@
     padding: .5em;
     margin: .5em 0;
 
-    @media (min-width: 1240px) {
+    @media (min-width: 1370px) {
       font-size: 1vw;
     }
   }
-
 
   &-cards {
     display: grid;
@@ -32,7 +31,6 @@
     grid-column-gap: 10px;
     padding-bottom: 1em;
     border-bottom: 4px solid #5c340b;
-
     margin: 0 auto;
   }
 
@@ -41,12 +39,10 @@
     text-align: center;
 
     &-active {
-
       p {
         margin: 0 auto;
         width: max-content;
         border-bottom: 4px solid #f3c90f;
-
       }
     }
 
@@ -62,10 +58,10 @@
       bottom: 0;
       text-align: center;
       color: #fff;
+      font-size: larger;
       padding-bottom: 1em;
       background: linear-gradient(to top, rgba(0, 0, 0, .9) 30%, rgba(0, 0, 0, 0) 100%);
       font-weight: 600;
     }
   }
-
 }
