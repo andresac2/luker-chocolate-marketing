@@ -19,11 +19,13 @@ class Article extends React.Component {
       <div className="blog-article">
         <div className="blog-article-bread">
           <Breadcrumb>
-            {Object.keys(data.breads).map(i =>
-              <Breadcrumb.Item href={data.breads[i].href} key={i}>
-                {(data.breads[i].name === 'Blog') ? <Icon type="home" /> : data.breads[i].name}
-              </Breadcrumb.Item>
-            )}
+            {data.breads &&
+              Object.keys(data.breads).map(i =>
+                <Breadcrumb.Item href={data.breads[i].href} key={i}>
+                  {(data.breads[i].name === 'Blog') ? <Icon type="home" /> : data.breads[i].name}
+                </Breadcrumb.Item>
+              )
+            }
             <Breadcrumb.Item>
               <span>{data.title}</span>
             </Breadcrumb.Item>
@@ -45,18 +47,20 @@ class Article extends React.Component {
             <a href={data.autor.linkedin[0]} target="_blank" ><FaLinkedinIn /> {data.autor.linkedin[1]}</a>
           </div>
         </div>}
-        <div className="blog-article-entries">
-          <h2>{data.flag ? 'RELATED PRODUCTS' : 'RECOMMENDED ENTRIES'}</h2>
-          <div className="blog-article-entries--list">
-            {Object.keys(data.recommended).map(i =>
-              <Link to={data.recommended[i].url}>
-                <img src={require('../../../assets/img/' + (data.recommended[i].img ? data.recommended[i].img : altImg))} alt={data.recommended[i].title} />
-                <p>{data.recommended[i].subtitle}</p>
-                <h2>{data.recommended[i].title}</h2>
-              </Link>
-            )}
+        {data.recommended &&
+          <div className="blog-article-entries">
+            <h2>{data.flag ? 'RELATED PRODUCTS' : 'RECOMMENDED ENTRIES'}</h2>
+            <div className="blog-article-entries--list">
+              {Object.keys(data.recommended).map(i =>
+                <Link to={data.recommended[i].url}>
+                  <img src={require('../../../assets/img/' + (data.recommended[i].img ? data.recommended[i].img : altImg))} alt={data.recommended[i].title} />
+                  <p>{data.recommended[i].subtitle}</p>
+                  <h2>{data.recommended[i].title}</h2>
+                </Link>
+              )}
+            </div>
           </div>
-        </div>
+        }
         {!data.flag &&
           <div className="blog-article-comments">
             <Comments />

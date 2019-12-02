@@ -5,6 +5,7 @@ import back from '../../assets/img/back.svg'
 import { MdClose } from 'react-icons/md';
 import { Form, Select, Input, Button, InputNumber } from 'antd';
 import FormItem from 'antd/lib/form/FormItem';
+import Article from '../../components/blog/article/article';
 
 class Sustain extends React.Component {
 
@@ -12,30 +13,36 @@ class Sustain extends React.Component {
     super(props);
     this.state = {
       distModalVisible: false,
-      reportModalVisible: true,
+      reportModalVisible: false,
+      articleModalVisible: false,
       firstItem: 0,
       items: [{
         img: 'costal-luker.png',
+        flag: 'us',
         title: 'Jobs',
-        content: 'We are committed to small-scale farmers, which is why we have established a network of alliances with over 50 cocoa growers associations allowing us to guarantee the purchase of the entire harvest of each association, helping to create the maximum value possible for the farmers and their families. We buy directly from 65 associations and more than 7500 Colombian families. We’ve also trained around 30.000 farmers in Luker Farm and built 10 centralized milling facilities in Tumaco and have 1 currently under construction in Huila.'
+        content: 'We are committed to small-scale farmers, which is why we have established a network of alliances with over 50 cocoa growers associations allowing us to guarantee the purchase of the entire harvest of each association, helping to create the maximum value possible for the farmers and their families. We buy directly from 65 associations and more than 7500 Colombian families. We’ve also trained around 30.000 farmers in Luker Farm and built 10 centralized milling facilities in Tumaco and have 1 currently under construction in Huila.<div class="blog-article-content--img" ><img src="/static/media/secado-2.53b5665a.png"></div>'
       },
       {
         img: 'arauca-river.png',
+        flag: 'us',
         title: 'SMALL-SCALE FARMERS',
         content: 'We are committed to small-scale farmers, which is why we have established a network of alliances with over 50 cocoa growers associations allowing us to guarantee the purchase of the entire harvest of each association, helping to create the maximum value possible for the farmers and their families. We buy directly from 65 associations and more than 7500 Colombian families. We’ve also trained around 30.000 farmers in Luker Farm and built 10 centralized milling facilities in Tumaco and have 1 currently under construction in Huila.'
       },
       {
         img: 'cocoa-tree.png',
+        flag: 'us',
         title: 'Community',
         content: 'We are committed to small-scale farmers, which is why we have established a network of alliances with over 50 cocoa growers associations allowing us to guarantee the purchase of the entire harvest of each association, helping to create the maximum value possible for the farmers and their families. We buy directly from 65 associations and more than 7500 Colombian families. We’ve also trained around 30.000 farmers in Luker Farm and built 10 centralized milling facilities in Tumaco and have 1 currently under construction in Huila.'
       },
       {
         img: 'enviromental.png',
+        flag: 'us',
         title: 'Enviromental',
         content: 'We are committed to small-scale farmers, which is why we have established a network of alliances with over 50 cocoa growers associations allowing us to guarantee the purchase of the entire harvest of each association, helping to create the maximum value possible for the farmers and their families. We buy directly from 65 associations and more than 7500 Colombian families. We’ve also trained around 30.000 farmers in Luker Farm and built 10 centralized milling facilities in Tumaco and have 1 currently under construction in Huila.'
       },
       {
         img: 'cocoa-forest.png',
+        flag: 'us',
         title: 'cocoa forest',
         content: 'We are committed to small-scale farmers, which is why we have established a network of alliances with over 50 cocoa growers associations allowing us to guarantee the purchase of the entire harvest of each association, helping to create the maximum value possible for the farmers and their families. We buy directly from 65 associations and more than 7500 Colombian families. We’ve also trained around 30.000 farmers in Luker Farm and built 10 centralized milling facilities in Tumaco and have 1 currently under construction in Huila.'
       }]
@@ -71,10 +78,15 @@ class Sustain extends React.Component {
       reportModalVisible: !this.state.reportModalVisible,
     });
   };
+  showModalArticle = () => {
+    this.setState({
+      articleModalVisible: !this.state.articleModalVisible,
+    });
+  };
 
   render() {
     const { getFieldDecorator } = this.props.form;
-    const { items, firstItem, distModalVisible, reportModalVisible } = this.state;
+    const { items, firstItem, distModalVisible, reportModalVisible, articleModalVisible } = this.state;
     const { Option } = Select;
 
     const altImg = 'img-example.svg';
@@ -101,7 +113,7 @@ class Sustain extends React.Component {
               <img className="btn-next-img btn-next-img-left" src={back} alt='left' onClick={() => this.carrAction('l')} />
               <div className="sustain-content-contain-carr--items" >
                 {Object.keys(items).map(i =>
-                  <div key={i} className={`card-image ${firstItem > i && 'item-action--l'}`}>
+                  <div key={i} className={`card-image ${firstItem > i && 'item-action--l'}`} onClick={() => this.showModalArticle()}>
                     <img src={require('../../assets/img/' + (items[i].img ? items[i].img : altImg))} alt={items[i].title} />
                     <p>{items[i].title}</p>
                   </div>)}
@@ -248,6 +260,15 @@ class Sustain extends React.Component {
             </div>
           </div>
         </div>
+        <div className={`modal-article modal-article-${articleModalVisible && 'visible'}`}>
+          <div className="modal-article-bkg" onClick={() => this.showModalArticle()}></div>
+          <div className="modal-article-modal">
+            <MdClose className="btn-x" onClick={() => this.showModalArticle()} />
+            <div className="modal-article-header" style={{ backgroundImage: "../../assets/img/" + items[firstItem].img }}><h1>{items[firstItem].title}</h1></div>
+            <Article data={items[firstItem]} />
+          </div>
+        </div>
+
       </div >
     );
   }
