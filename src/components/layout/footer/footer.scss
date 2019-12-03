@@ -1,3 +1,8 @@
+$Small-devices: 576px;
+$Medium-devices: 768px;
+$Large-devices: 992px;
+$Extra-large: 1200px;
+
 .footer-component {
   background: #D5B777;
   display: grid;
@@ -99,5 +104,26 @@
 
     }
 
+  }
+
+  @media (max-width: $Large-devices) { 
+    grid-template-columns: none;
+    justify-content: center;
+    &-data{
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    &-link{
+      text-align: center;
+      border-left: 0px solid #fff;
+      border-right: 0px solid #fff;
+      margin-bottom: 20px;
+    }
+    &-social{
+      text-align: center;
+      display: grid;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
   }
 }
