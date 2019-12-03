@@ -3,6 +3,7 @@
   min-height: 100vh;
   height: auto;
   background: #4b2417;
+
   .sustain-sidebar {
     width: 40%;
     background: #4b2418;
@@ -228,46 +229,53 @@
     }
   }
 
-  @media (max-width: 576px) {
-  }
+  @media (max-width: 576px) {}
 
   // Medium devices (tablets, 768px and up)
-  @media (max-width: 768px) {
-  }
+  @media (max-width: 768px) {}
 
   // Large devices (desktops, 992px and up)
   @media (max-width: 992px) {
     flex-direction: column;
+    padding-top: 70px;
+
     .sustain-sidebar {
       width: 100%;
       padding-top: 20px;
       padding-bottom: 20px;
     }
+
     .sustain-content {
       width: 100%;
       padding-top: 13px;
       padding-left: 25px;
       padding-right: 25px;
       padding-bottom: 13px;
+
       h1 {
         font-size: 24pt;
         padding-bottom: 13px;
       }
+
       &-contain-carr--items .card-image img {
         height: 130px;
         object-fit: cover;
       }
     }
+
     .sustain-sidebar--dist {
       display: none;
     }
+
     .sustain-content-model {
       .btn-next-img {
         display: none;
       }
+
       &:first-child {
         border-bottom: none;
       }
+
       &:nth-child(2n) {
         display: none;
       }
@@ -275,6 +283,5 @@
   }
 
   // Extra large devices (large desktops, 1200px and up)
-  @media (max-width: 1200px) {
-  }
+  @media (max-width: 1200px) {}
 }

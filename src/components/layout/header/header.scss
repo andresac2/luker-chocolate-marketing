@@ -7,6 +7,10 @@
   z-index: 9;
   width: 100%;
 
+  &-responsive {
+    display: none;
+  }
+
   /*&-flow {
     background: $ocher-yellow;
   }
@@ -37,14 +41,11 @@
   height: 3em;
   background: linear-gradient(180deg, rgba(0, 0, 0, .9) 10%, rgba(0, 0, 0, 0) 85%);
 
-  //    filter: blur(28px);
   a {
     background: transparent;
     display: inline;
     cursor: pointer;
   }
-
-  //}
 
   a {
     color: #fff;
@@ -61,12 +62,17 @@
     }
   }
 
-  .home-logo {
+  .header-logo,
+  .btn-x {
     display: none;
   }
 
   .selected-tab {
     position: relative;
+
+    &-responsive {
+      display: none;
+    }
   }
 
   .intro::after,
@@ -112,30 +118,143 @@
   .value-propose::after {
     border-bottom-color: $light-gray;
   }
+}
 
-  @media screen and (max-width: 1024px) {
-    height: 10px;
+.header-component-responsive {
+  display: none;
+  position: absolute;
+  z-index: 9;
+  width: 100%;
+  transition: all ease-in 1s;
+  background: rgba(0, 0, 0, .9);
+
+  &--tabs {
     overflow: hidden;
+    height: 0;
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr;
-    position: fixed;
-    z-index: 9;
-    width: 100%;
-    background: rgba(0, 0, 0, .9);
+    text-align: center;
+    text-transform: uppercase;
     border-top: 10px solid $apple-green;
 
     &-visible {
+      padding-top: 100px;
       height: auto;
       border-bottom: 10px solid $apple-green;
-      padding-top: 120px;
     }
 
-    .home-logo {
-      top: 5em;
-      left: 1em;
-      display: flex;
+    &-flow {
+      border-top: 10px solid $ocher-yellow;
 
+      &.header-component-responsive--tabs-visible {
+        border-bottom: 10px solid $ocher-yellow;
+      }
+    }
+
+    &-sustain {
+      border-top: 10px solid $beige;
+
+      &.header-component-responsive--tabs-visible {
+        border-bottom: 10px solid $beige;
+      }
+    }
+
+    &-solution {
+      border-top: 10px solid $peach;
+
+      &.header-component-responsive--tabs-visible {
+        border-bottom: 10px solid $peach;
+      }
+    }
+
+    &-customer {
+      border-top: 10px solid $citrus;
+
+      &.header-component-responsive--tabs-visible {
+        border-bottom: 10px solid $citrus;
+      }
+    }
+
+    &-ryd {
+      border-top: 10px solid $tangerine;
+
+      &.header-component-responsive--tabs-visible {
+        border-bottom: 10px solid $tangerine;
+      }
+    }
+
+    &-value-propose {
+      border-top: 10px solid $light-gray;
+
+      &.header-component-responsive--tabs-visible {
+        border-bottom: 10px solid $light-gray;
+      }
+    }
+
+    .intro,
+    .flow,
+    .sustain,
+    .solution,
+    .customer,
+    .ryd,
+    .value-propose {
+      span {
+        border-bottom-width: 2px;
+        border-bottom-style: solid;
+      }
+    }
+
+    .intro {
+      span {
+        border-bottom-color: $apple-green;
+      }
+    }
+
+    .flow {
+      span {
+        border-bottom-color: $ocher-yellow;
+      }
+    }
+
+    .sustain {
+      span {
+        border-bottom-color: $beige;
+      }
+    }
+
+    .solution {
+      span {
+        border-bottom-color: $peach;
+      }
+    }
+
+    .customer {
+      span {
+        border-bottom-color: $citrus;
+      }
+    }
+
+    .ryd {
+      span {
+        border-bottom-color: $tangerine;
+      }
+    }
+
+    .value-propose {
+      span {
+        border-bottom-color: $light-gray;
+      }
+    }
+  }
+
+  .header-logo {
+    top: 3em;
+    left: 2em;
+    position: absolute;
+    width: calc(100% - 4em);
+
+    &-visible {
       &::after {
         content: '';
         position: absolute;
@@ -144,48 +263,99 @@
         width: 300px;
         border-bottom: 3px solid #fff;
       }
-
-      img {
-        width: 8em;
-      }
-
-      .ant-input,
-      .ant-select-selection {
-        font-size: 1em;
-      }
-
-      .anticon {
-        font-size: 1em;
-      }
     }
 
-
-
-    a {
-      font-size: smaller;
-      height: auto;
-      padding: 1em 0;
-      border-bottom: 1px solid #fff;
-      width: 200px;
-      margin: auto;
+    img {
+      width: 10em;
     }
 
-    .intro::after,
-    .flow::after,
-    .sustain::after,
-    .solution::after,
-    .customer::after,
-    .ryd::after,
-    .value-propose::after {
+    .ant-input,
+    .ant-select-selection {
+      align-items: center;
+      border: none;
+      border-radius: unset;
+      background: transparent;
+      color: #fff;
+      font-weight: 900;
+      font-size: 1em;
+      padding-right: 1em;
+      border-left: 4px solid #fff;
+    }
+
+    .ant-select-selection .anticon {
+      margin-top: -.2em;
+    }
+
+    .anticon {
+      @include vert-center;
+      font-weight: 900;
+      font-size: 1.2em;
+      color: #fff;
+    }
+
+    .logo {
+      margin-right: .5em;
+      //margin: 7em 5em 3em;      
+    }
+  }
+
+  a {
+    font-size: smaller;
+    height: auto;
+    padding: 1em 0;
+    border-bottom: 1px solid #fff;
+    width: 200px;
+    margin: auto;
+
+    &:last-child {
       border: none;
     }
+  }
 
-    .btn-x {
+  .selected-tab-responsive {
+    display: inline-block;
+  }
+
+  .separator {
+    border-bottom-width: 2px;
+    position: relative;
+
+    &::after {
+      content: '';
       position: absolute;
-      right: 1em;
-      top: 1.5em;
-      color: #fff;
-      font-size: 3em;
+      bottom: -.2em;
+      left: -5em;
+      width: 300px;
+      border-bottom: 3px solid #fff;
     }
+  }
+
+  .intro::after,
+  .flow::after,
+  .sustain::after,
+  .solution::after,
+  .customer::after,
+  .ryd::after,
+  .value-propose::after {
+    border: none;
+  }
+
+  .btn-x {
+    position: absolute;
+    display: block;
+    right: 0;
+    top: 0;
+    color: #fff;
+    font-size: 3em;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .header-component {
+    display: none;
+  }
+
+  .header-component-responsive {
+    display: grid;
   }
 }

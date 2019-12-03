@@ -2,7 +2,7 @@ import React from 'react';
 import { Carousel } from 'antd';
 import cacao from '../../../assets/img/cacaoOpen.png'
 import granjeros from '../../../assets/img//granjeroCar.png'
-import abastecimiento from '../../../assets/img/abastecimientoCar.png'
+import abastecimiento from '../../../assets/img/abastecimiento-car.png'
 import procesamiento from '../../../assets/img/procesoCar.png'
 import coberturas from '../../../assets/img/coberturaCar.png'
 import producto from '../../../assets/img/productoCar.png'
