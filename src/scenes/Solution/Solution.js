@@ -7,7 +7,6 @@ function Solution() {
 
   return (
     <div className='solution-component'>
-
       <div className="solution-component--ingredient">
         <div className="btn-dist">
           <img src={logo} className="logo" alt="Logo Luker" />
