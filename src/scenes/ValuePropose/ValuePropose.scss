@@ -3,15 +3,16 @@
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 50% 50%;
-  grid-template-areas: "expo item"
+  grid-template-areas:
+    "expo item"
     "carrousel item";
   text-align: center;
-  color: #FFF;
+  color: #fff;
   overflow: hidden;
 
   &--expo {
     grid-area: expo;
-    background: #C6865A;
+    background: #c6865a;
     text-align: justify;
     position: relative;
 
@@ -33,8 +34,8 @@
       }
 
       p {
-        border-left: 5px solid #5D340B;
-        padding: .5em 1em;
+        border-left: 5px solid #5d340b;
+        padding: 0.5em 1em;
         font-weight: 600;
         font-size: 1vw;
       }
@@ -43,16 +44,16 @@
 
   &--carrousel {
     grid-area: carrousel;
-    background: #5D340B;
-    background: url('../../assets/img/big-evelio.png');
+    background: #5d340b;
+    background: url("../../assets/img/big-evelio.png");
     background-size: cover;
 
     h2 {
-      border: 3px solid #FFFFFF;
+      border: 3px solid #ffffff;
       font-weight: 300;
       width: max-content;
       margin: 1em auto;
-      padding: .2em .5em;
+      padding: 0.2em 0.5em;
     }
   }
 
@@ -60,7 +61,7 @@
     grid-area: item;
     display: flex;
     flex-direction: column;
-    background: url('../../assets/img/costals.png');
+    background: url("../../assets/img/costals.png");
     background-position: right;
     background-size: contain;
 
@@ -93,18 +94,17 @@
         font-size: larger;
 
         &::after {
-          content: '';
+          content: "";
           position: absolute;
           width: 100%;
           height: 100%;
           top: 0;
           z-index: -1;
-          background: #5B2D00;
+          background: #5b2d00;
           backdrop-filter: blur(8px);
           -webkit-backdrop-filter: blur(8px);
-          opacity: .9;
+          opacity: 0.9;
         }
-
       }
 
       &:hover {
@@ -116,7 +116,7 @@
       }
 
       &-hover {
-        display: none;
+        /* display: none; */
         position: absolute;
         height: 100%;
         width: 100%;
@@ -131,8 +131,8 @@
 
         a {
           font-weight: 700;
-          background: #D4B776;
-          color: #FFF;
+          background: #d4b776;
+          color: #fff;
           width: max-content;
           padding: 3px 18px;
           margin: 1em auto;
@@ -140,13 +140,13 @@
         }
 
         &::after {
-          content: '';
+          content: "";
           position: absolute;
           width: 100%;
           height: 100%;
           top: 0;
           z-index: -1;
-          opacity: .9;
+          opacity: 0.9;
           background: #000000 0% 0% no-repeat padding-box;
           backdrop-filter: blur(17px);
           -webkit-backdrop-filter: blur(17px);
@@ -161,16 +161,46 @@
     left: 3em;
 
     .logo {
-      margin: 5em auto .5em;
+      margin: 5em auto 0.5em;
       width: 10em;
       display: block;
     }
 
     button {
       font-weight: 700;
-      background: #F4C710;
+      background: #f4c710;
       color: #685019;
       padding: 3px 18px;
+    }
+  }
+  @media (max-width: 992px) {
+    height: inherit;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 30% 30% 40%;
+    grid-template-areas:
+      "expo"
+      "carrousel"
+      "item";
+    text-align: center;
+    color: #fff;
+    overflow: scroll;
+    &--item {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      overflow: scroll;
+      height: 95%;
+      &-card {
+        display: flex;
+        flex-direction: column;
+        flex: 1 0 74%;
+        overflow: hidden;
+        flex-direction: row;
+        min-width: 117px;
+        width: 117px;
+        height: 200px;
+      }
     }
   }
 }
