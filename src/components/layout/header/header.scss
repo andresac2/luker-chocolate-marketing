@@ -129,7 +129,6 @@
   background: rgba(0, 0, 0, .9);
 
   &--tabs {
-    border-top: 10px solid $apple-green;
     overflow: hidden;
     height: 0;
     display: grid;
@@ -137,11 +136,60 @@
     grid-template-columns: 1fr;
     text-align: center;
     text-transform: uppercase;
+    border-top: 10px solid $apple-green;
 
     &-visible {
       padding-top: 100px;
       height: auto;
       border-bottom: 10px solid $apple-green;
+    }
+
+    &-flow {
+      border-top: 10px solid $ocher-yellow;
+
+      &.header-component-responsive--tabs-visible {
+        border-bottom: 10px solid $ocher-yellow;
+      }
+    }
+
+    &-sustain {
+      border-top: 10px solid $beige;
+
+      &.header-component-responsive--tabs-visible {
+        border-bottom: 10px solid $beige;
+      }
+    }
+
+    &-solution {
+      border-top: 10px solid $peach;
+
+      &.header-component-responsive--tabs-visible {
+        border-bottom: 10px solid $peach;
+      }
+    }
+
+    &-customer {
+      border-top: 10px solid $citrus;
+
+      &.header-component-responsive--tabs-visible {
+        border-bottom: 10px solid $citrus;
+      }
+    }
+
+    &-ryd {
+      border-top: 10px solid $tangerine;
+
+      &.header-component-responsive--tabs-visible {
+        border-bottom: 10px solid $tangerine;
+      }
+    }
+
+    &-value-propose {
+      border-top: 10px solid $light-gray;
+
+      &.header-component-responsive--tabs-visible {
+        border-bottom: 10px solid $light-gray;
+      }
     }
 
     .intro,

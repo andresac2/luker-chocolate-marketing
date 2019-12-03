@@ -44,7 +44,7 @@ class Header extends React.Component {
             </Select>}
             {(showMenu) ? <MdClose className={`btn-x`} onClick={() => this.menuToggle()} /> : <MdMenu className={`btn-x`} onClick={() => this.menuToggle()} />}
           </div>
-          <nav className={`header-component-responsive--tabs  header-component-responsive--tabs-${showMenu && 'visible'}`} >
+          <nav className={`header-component-responsive--tabs header-component-responsive--tabs-${selectTab.slice(1).split('/').shift()} header-component-responsive--tabs-${showMenu && 'visible'}`} >
             <Link to="/" onClick={() => this.headerToggle('/')} className={`selected-tab ${selectTab === '/' && 'intro'}`}><span>INTRODUCCIÓN</span></Link>
             <Link to="/flow" onClick={() => this.headerToggle('/flow')} className={`selected-tab ${selectTab === '/flow' && selectTab.slice(1)}`}><span>FLOW CACAO</span></Link>
             <Link to="/sustain" onClick={() => this.headerToggle('/sustain')} className={`selected-tab ${selectTab === '/sustain' && selectTab.slice(1)}`}><span>SOSTENIBILIDAD</span></Link>
