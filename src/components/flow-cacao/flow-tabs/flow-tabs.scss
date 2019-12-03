@@ -57,36 +57,41 @@
       background-size: cover;
 
       &--cacao {
-        background-image: linear-gradient(to bottom, rgba(97, 20, 6, 0.6) 100%, transparent), url('../../../assets/img/cacao-cover.png');
-      box-shadow: 10px 5px 5px black;
+        background-image: linear-gradient(to bottom, rgba(97, 20, 6, 0.6) 100%, transparent),
+          url("../../../assets/img/cacao-cover.png");
+        box-shadow: 10px 5px 5px black;
       }
 
       &--granjeros {
-        background-image: linear-gradient(to bottom, rgba(209, 216, 114, .6) 100%, transparent), url('../../../assets/img/granjero-cover.png');
-      box-shadow: 10px 5px 5px black;
+        background-image: linear-gradient(to bottom, rgba(209, 216, 114, 0.6) 100%, transparent),
+          url("../../../assets/img/granjero-cover.png");
+        box-shadow: 10px 5px 5px black;
       }
 
       &--abastecimiento {
-        background-image: linear-gradient(to bottom, rgba(213, 183, 119, .6) 100%, transparent), url('../../../assets/img/abaste-cover.png');
-      box-shadow: 10px 5px 5px black;
+        background-image: linear-gradient(to bottom, rgba(213, 183, 119, 0.6) 100%, transparent),
+          url("../../../assets/img/abaste-cover.png");
+        box-shadow: 10px 5px 5px black;
       }
 
       &--procesamiento {
-        background-image: linear-gradient(to bottom, rgba(171, 171, 171, .6) 100%, transparent), url('../../../assets/img/proces-cover.png');
-      box-shadow: 10px 5px 5px black;
+        background-image: linear-gradient(to bottom, rgba(171, 171, 171, 0.6) 100%, transparent),
+          url("../../../assets/img/proces-cover.png");
+        box-shadow: 10px 5px 5px black;
       }
 
       &--coberturas {
-        background-image: linear-gradient(to bottom, rgba(83, 44, 46, .6) 100%, transparent), url('../../../assets/img/cober-cover.png');
-      box-shadow: 10px 5px 5px black;
+        background-image: linear-gradient(to bottom, rgba(83, 44, 46, 0.6) 100%, transparent),
+          url("../../../assets/img/cober-cover.png");
+        box-shadow: 10px 5px 5px black;
       }
 
       &--producto {
-        background-image: linear-gradient(to bottom, rgba(198, 134, 90, .6) 100%, transparent), url('../../../assets/img/product-cover.png');
-      box-shadow: 10px 5px 5px black;
+        background-image: linear-gradient(to bottom, rgba(198, 134, 90, 0.6) 100%, transparent),
+          url("../../../assets/img/product-cover.png");
+        box-shadow: 10px 5px 5px black;
       }
     }
-
   }
 
   .flow-content-component {
@@ -94,29 +99,76 @@
     display: grid;
     grid-template-columns: minmax(40%, 1fr) minmax(60%, 1fr);
     grid-template-rows: inherit;
+    @media (max-width: 992px) {
+      display: flex;
+      .opened {
+        width: 80%;
+  
+        .arrow-back {
+          display: none;
+        }
+      }
+
+    }
+    @media (min-width: 992px) {
+      .back-rotate{
+        display: none;
+      }
+      
+    }
+  
+    .close {
+      @media (max-width: 992px) {
+        width: 20%;
+        .arrow-back {
+          position: absolute;
+          width: 100%;
+          top: 0;
+          left: 0;
+          height: 100%;
+          z-index: 9;
+          max-width: 10x;
+          display: flex;
+          min-width: 0px;
+          align-items: center;
+          justify-content: center;
+          background: #00000029;
+          padding: 0 10px;
+          transition: width 0.8s;
+          img {
+            max-width: 52px;
+            width: 100%;
+          }
+          .back-rotate {
+            transition: rotate 1s;
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
 
     &--cacao {
       background: #611306;
     }
 
     &--granjeros {
-      background: #C0C663;
+      background: #c0c663;
     }
 
     &--abastecimiento {
-      background: #D5B777;
+      background: #d5b777;
     }
 
     &--procesamiento {
-      background: #ABABAB;
+      background: #ababab;
     }
 
     &--coberturas {
-      background: #532C2E;
+      background: #532c2e;
     }
 
     &--producto {
-      background: #C6865A;
+      background: #c6865a;
     }
 
     &--text {
@@ -124,22 +176,32 @@
       color: #ffffff;
       line-height: 2em;
       font-size: 1vw;
-
+      position: relative;
+      transition: width 0.8s;
       div {
         overflow: auto;
         height: 100%;
         padding-right: 2em;
         scrollbar-width: thin;
         scrollbar-color: #f3f3f3;
-
+        font-size: medium;
+        line-height: 1.4em;
+        min-width: 300px;
+        overflow: auto;
+        font-weight: 100;
         /* width */
         &::-webkit-scrollbar {
           width: 8px;
         }
+        @media (max-width: 992px) {
+          &:first-child {
+            filter: blur(2px);
+          }
+        }
 
         /* Track */
         &::-webkit-scrollbar-track {
-          background: rgba(0, 0, 0, .3);
+          background: rgba(0, 0, 0, 0.3);
           border-radius: 10px;
         }
 
@@ -153,15 +215,14 @@
 
         /* Handle on hover */
         &::-webkit-scrollbar-thumb:hover {
-          background: rgba(243, 243, 243, .6);
+          background: rgba(243, 243, 243, 0.6);
         }
       }
-
     }
 
     &--slider {
       position: relative;
-
+      transition: width 0.8s;
       .ant-carousel {
         position: absolute;
         width: 100%;
@@ -185,7 +246,7 @@
         }
       }
 
-      .ant-carousel .slick-dots li button{
+      .ant-carousel .slick-dots li button {
         width: 8px;
         height: 8px;
         border-radius: 20px;
