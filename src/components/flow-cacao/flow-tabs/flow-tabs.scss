@@ -30,27 +30,27 @@
     }
 
     &--cacao {
-      grid-template-columns: 10fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 10fr 2fr 2fr 2fr 2fr 2fr;
     }
 
     &--granjeros {
-      grid-template-columns: 1fr 10fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 2fr 10fr 2fr 2fr 2fr 2fr;
     }
 
     &--abastecimiento {
-      grid-template-columns: 1fr 1fr 10fr 1fr 1fr 1fr;
+      grid-template-columns: 2fr 2fr 10fr 2fr 2fr 2fr;
     }
 
     &--procesamiento {
-      grid-template-columns: 1fr 1fr 1fr 10fr 1fr 1fr;
+      grid-template-columns: 2fr 2fr 2fr 10fr 2fr 2fr;
     }
 
     &--coberturas {
-      grid-template-columns: 1fr 1fr 1fr 1fr 10fr 1fr;
+      grid-template-columns: 2fr 2fr 2fr 2fr 10fr 2fr;
     }
 
     &--producto {
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 10fr;
+      grid-template-columns: 2fr 2fr 2fr 2fr 2fr 10fr;
     }
 
     .flow-tab-item {
@@ -58,26 +58,32 @@
 
       &--cacao {
         background-image: linear-gradient(to bottom, rgba(97, 20, 6, 0.6) 100%, transparent), url('../../../assets/img/cacao-cover.png');
+      box-shadow: 10px 5px 5px black;
       }
 
       &--granjeros {
         background-image: linear-gradient(to bottom, rgba(209, 216, 114, .6) 100%, transparent), url('../../../assets/img/granjero-cover.png');
+      box-shadow: 10px 5px 5px black;
       }
 
       &--abastecimiento {
         background-image: linear-gradient(to bottom, rgba(213, 183, 119, .6) 100%, transparent), url('../../../assets/img/abaste-cover.png');
+      box-shadow: 10px 5px 5px black;
       }
 
       &--procesamiento {
         background-image: linear-gradient(to bottom, rgba(171, 171, 171, .6) 100%, transparent), url('../../../assets/img/proces-cover.png');
+      box-shadow: 10px 5px 5px black;
       }
 
       &--coberturas {
         background-image: linear-gradient(to bottom, rgba(83, 44, 46, .6) 100%, transparent), url('../../../assets/img/cober-cover.png');
+      box-shadow: 10px 5px 5px black;
       }
 
       &--producto {
         background-image: linear-gradient(to bottom, rgba(198, 134, 90, .6) 100%, transparent), url('../../../assets/img/product-cover.png');
+      box-shadow: 10px 5px 5px black;
       }
     }
 
@@ -177,6 +183,12 @@
             object-fit: cover;
           }
         }
+      }
+
+      .ant-carousel .slick-dots li button{
+        width: 8px;
+        height: 8px;
+        border-radius: 20px;
       }
     }
   }
