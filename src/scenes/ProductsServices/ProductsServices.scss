@@ -29,15 +29,15 @@
     color: #fff;
 
     &--maquila {
-      background-image: url('../../assets/img/maquila-header.png');
+      background-image: url("../../assets/img/maquila-header.png");
     }
 
     &--ingredients {
-      background-image: url('../../assets/img/ingredients-header.png');
+      background-image: url("../../assets/img/ingredients-header.png");
     }
 
     &--our-services {
-      background-image: url('../../assets/img/services-header.png');
+      background-image: url("../assets/img/services-header.png");
     }
 
     h1 {
@@ -71,7 +71,7 @@
   }
 
   .services-content {
-    background: url('../../assets/img/matas.png') no-repeat;
+    background: url("../../assets/img/matas.png") no-repeat;
     background-size: 100%;
     position: relative;
   }
