@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import altImg from '../../assets/img/img-example.svg'
 import back from '../../assets/img/back.svg'
 
-
-
 class ProductServices extends React.Component {
 
   constructor(props) {
@@ -35,7 +33,7 @@ class ProductServices extends React.Component {
             <img className="btn-next-img" src={back} alt='left' onClick={() => this.reorderItems(items, 0, 2)} />
             {
               Object.keys(items).map(i =>
-                <div key={i} className={`carr-item carr-item--${i == 1 && 'active'} carr-item--${items[i].id}`}>
+                <div key={i} className={`carr-item carr-item--${i == 1 && 'active'} carr-item--${items[i].id}`} onClick={() => this.reorderItems(items, (i === 0) ? 0 : 2, (i === 2) ? 2 : 0)}>
                   <img src={require('../../assets/img/' + (items[i].img ? items[i].img : altImg))} alt='jaja' />
                   <p>{items[i].subtitle}</p>
                   <h2>{items[i].name}</h2>
@@ -48,10 +46,12 @@ class ProductServices extends React.Component {
           <div className={`product-services-component--footer product-services-component--footer--${items[1].id}`}>
             {items[1].description}
           </div></>}
+        <div className="btn-back-sticky">
+          <Link to="/solution">BACK TO SERVICES</Link>
+        </div>
       </div >
     );
   }
 };
-
 
 export default ProductServices;

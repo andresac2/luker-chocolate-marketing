@@ -10,6 +10,7 @@
     background-position: center;
     @include vert-center;
     align-items: center;
+    z-index: 1;
     box-shadow: 0px 8px 8px #00000069;
 
     &--title-short {
@@ -29,11 +30,11 @@
     color: #fff;
 
     &--maquila {
-      background-image: url('../../assets/img/maquila-header.png');
+      background-image: url("../../assets/img/maquila-header.png");
     }
 
     &--ingredients {
-      background-image: url('../../assets/img/ingredients-header.png');
+      background-image: url("../../assets/img/ingredients-header.png");
     }
 
     &--our-services {
@@ -71,8 +72,20 @@
   }
 
   .services-content {
-    background: url('../../assets/img/matas.png') no-repeat;
+    background: url("../../assets/img/matas.png") no-repeat;
     background-size: 100%;
     position: relative;
+  }
+
+  @media (max-width: 992px) {
+    grid-template-rows: 120px 1fr;
+
+    .services-header {
+
+      .btn-dist,
+      h1 {
+        display: none;
+      }
+    }
   }
 }

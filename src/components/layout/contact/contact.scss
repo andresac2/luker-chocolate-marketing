@@ -1,8 +1,13 @@
+$Small-devices: 576px;
+$Medium-devices: 768px;
+$Large-devices: 992px;
+$Extra-large: 1200px;
+
 .contact-us {
   color: #484848;
 
   &-header {
-    background: url('../../../assets/img/abastecimientoCar.png') no-repeat;
+    background: url('../../../assets/img/abastecimiento-car.png') no-repeat;
     min-height: 220px;
     background-position: right;
     background-size: cover;
@@ -49,7 +54,21 @@
     margin: auto;
     padding: 2em 100px;
     text-align: center;
-
+    input{
+      border-radius: 0;
+      height: 50px;
+      border-color: #846961;
+    }
+    .ant-select-selection--single {
+      border-radius: 0;
+      height: 50px;
+      display: grid;
+      border-color: #846961;
+  }
+  textarea.ant-input {
+    border-radius: 0;
+    border-color: #846961;
+}
     p {
       font-weight: 700;
       font-size: smaller;
@@ -73,5 +92,35 @@
       font-size: smaller;
       color: #fff;
     }
+  }
+  @media (max-width: $Medium-devices){
+    &-header{
+      min-height: 140px;
+      h1{
+        margin-top: 16%;
+        position: absolute;
+        color: #482418;
+        width: 100%;
+        display: flex;
+        font-size: 4em;
+        justify-content: center;
+      }
+    }
+    &-content{
+      margin-top: 15%;
+    }
+
+  }
+  @media (max-width: $Small-devices){
+    &-header{
+      h1{
+        font-size: 3em;
+        margin-top: 25%;
+      }
+    }
+    &-content{
+      padding: 2em 25px;
+    }
+
   }
 }
