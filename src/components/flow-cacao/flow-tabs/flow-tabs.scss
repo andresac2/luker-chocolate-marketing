@@ -1,6 +1,6 @@
 .flow-tabs {
   display: grid;
-  grid-template-rows: calc(100vh - 18em) 18em;
+  grid-template-rows: calc(100vh - 18em) 16em;
   height: 100vh;
 
   .flow-tab {
@@ -17,6 +17,9 @@
         writing-mode: tb-rl;
         transform: rotate(-180deg);
         color: #fff;
+        @media (max-width: 992px) {
+          font-size: small;
+        }
       }
 
       &--active {
