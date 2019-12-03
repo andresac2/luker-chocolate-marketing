@@ -2,10 +2,10 @@
   position: fixed;
   top: 0;
   right: 0;
-  height: 100vh;
-  width: 340px;
   @include vert-center;
   background: url('../../../assets/img/contact-maquila.png') no-repeat;
+  height: 100vh;
+  width: 340px;
   background-position: right;
   background-size: cover;
 
