@@ -60,6 +60,7 @@ class Sustain extends React.Component {
       this.setState({ firstItem: fi * 2 });
     }
   }
+
   handleSubmit = e => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
@@ -68,16 +69,19 @@ class Sustain extends React.Component {
       }
     });
   };
+
   showModalDist = () => {
     this.setState({
       distModalVisible: !this.state.distModalVisible,
     });
   };
+
   showModalReport = () => {
     this.setState({
       reportModalVisible: !this.state.reportModalVisible,
     });
   };
+
   showModalArticle = () => {
     this.setState({
       articleModalVisible: !this.state.articleModalVisible,
@@ -88,7 +92,6 @@ class Sustain extends React.Component {
     const { getFieldDecorator } = this.props.form;
     const { items, firstItem, distModalVisible, reportModalVisible, articleModalVisible } = this.state;
     const { Option } = Select;
-
     const altImg = 'img-example.svg';
     return (
       <div className="sustain-component">
