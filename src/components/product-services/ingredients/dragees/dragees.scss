@@ -132,6 +132,26 @@
   }
 
   @media screen and (max-width: 992px) {
+    width: 100vw;
+    align-self: start;
+    padding-left: 0;
+
+    &--header {
+      padding: 0 2em;
+    }
+
+    &--products {
+      display: flex;
+      width: calc(100%);
+
+      &-item-data {
+        width: 210px;
+      }
+    }
+
+    &--content p {
+      margin: 1em 0;
+    }
 
     .contact-component {
       display: none;
