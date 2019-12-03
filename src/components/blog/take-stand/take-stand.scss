@@ -4,4 +4,18 @@
   .blog-layout-articles {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  @media screen and (max-width: 992px) {
+    .blog-layout-articles {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(6, 1fr);
+    }
+
+    .blog-layout-latest--article {
+      img {
+        width: 100%;
+        min-height: 150px;
+      }
+    }
+  }
 }

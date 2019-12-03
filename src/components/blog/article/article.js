@@ -17,6 +17,7 @@ class Article extends React.Component {
 
     return (
       <div className="blog-article">
+        <div className="blog-article-title-resp">{data.title}</div>
         <div className="blog-article-bread">
           <Breadcrumb>
             {data.breads &&

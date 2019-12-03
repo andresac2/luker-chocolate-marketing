@@ -1,6 +1,14 @@
 .blog-article {
   width: 960px;
 
+  &-title-resp {
+    display: none;
+    text-align: center;
+    color: #472418;
+    font-weight: 600;
+    font-size: 2em;
+  }
+
   &-bread {
     @include vert-center;
     align-items: center;
@@ -157,6 +165,29 @@
           font-style: italic;
           margin: .5em 0;
         }
+      }
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    width: 100vw;
+    padding: 1em;
+
+    &-title-resp {
+      display: block;
+      text-align: center;
+      color: #472418;
+      font-weight: 600;
+      font-size: 2em;
+    }
+
+    &-entries--list {
+      overflow: auto;
+    }
+
+    &-bread--social {
+      a:last-child {
+        display: none;
       }
     }
   }
