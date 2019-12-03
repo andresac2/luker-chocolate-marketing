@@ -240,4 +240,89 @@
       }
     }
   }
+
+  @media (max-width: 992px) {
+    .product-carrousel {
+      .carr-item {
+        width: 10em;
+
+        &--bar,
+        &--dragee,
+        &--dosing,
+        &--cacao,
+        &--maracas,
+        &--arauca {
+          &::after {
+            left: calc(50% - 2.5em);
+            width: 5em;
+            height: 5em;
+          }
+        }
+
+        img {
+          height: 5em;
+          object-fit: contain;
+        }
+
+        &--active {
+
+          &.carr-item {
+
+            &--bar,
+            &--dragee,
+            &--dosing,
+            &--cacao,
+            &--maracas,
+            &--arauca {
+              &::after {
+                left: calc(50% - 6em);
+                width: 12em;
+                height: 12em;
+              }
+            }
+
+          }
+
+          img {
+            height: 12em;
+          }
+
+          h2 {
+            font-size: larger;
+          }
+        }
+      }
+
+      .btn-next-img {
+        display: none;
+      }
+    }
+
+    &-title {
+      padding: .2em 2em;
+    }
+
+    &--footer {
+      color: #fff;
+      font-weight: 700;
+      margin: auto;
+      padding: 1em 3em;
+      text-align: center;
+    }
+
+    .btn-back-sticky {
+      position: sticky;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      background: #C8D226;
+      padding: 6px;
+
+      a {
+        color: #fff;
+        font-weight: 600;
+        font-size: medium;
+      }
+    }
+  }
 }
