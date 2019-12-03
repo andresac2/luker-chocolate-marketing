@@ -130,4 +130,11 @@
       }
     }
   }
+
+  @media screen and (max-width: 992px) {
+
+    .contact-component {
+      display: none;
+    }
+  }
 }

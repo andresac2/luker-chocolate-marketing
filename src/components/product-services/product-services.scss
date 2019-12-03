@@ -13,6 +13,10 @@
     padding: .2em 3em;
   }
 
+  .btn-back-sticky {
+    display: none;
+  }
+
   .product-carrousel {
     @include vert-center;
     align-items: center;
@@ -154,6 +158,7 @@
     margin: auto;
     padding: 2em 20%;
     text-align: center;
+    transition: all ease-in .5s;
 
     @media screen and (min-width: 1445px) {
       position: absolute;
@@ -242,6 +247,16 @@
   }
 
   @media (max-width: 992px) {
+    h2 {
+      width: 100%;
+      padding: 0;
+      text-align: center;
+      border: none;
+      color: #482418;
+      margin-top: 1.5em;
+      font-weight: 700;
+    }
+
     .product-carrousel {
       .carr-item {
         width: 10em;
@@ -257,6 +272,10 @@
             width: 5em;
             height: 5em;
           }
+        }
+
+        h2 {
+          margin-top: 0;
         }
 
         img {
@@ -288,7 +307,7 @@
           }
 
           h2 {
-            font-size: larger;
+            font-size: 2em;
           }
         }
       }
@@ -311,6 +330,7 @@
     }
 
     .btn-back-sticky {
+      display: inline-block;
       position: sticky;
       bottom: 0;
       width: 100%;
