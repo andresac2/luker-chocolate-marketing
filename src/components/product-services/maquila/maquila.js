@@ -1,5 +1,6 @@
 import React from 'react'
 import ContactUs from '../../layout/contact-us/contact-us';
+import { Link } from 'react-router-dom';
 
 class Maquila extends React.Component {
   constructor(props) {
@@ -41,7 +42,8 @@ class Maquila extends React.Component {
 
     return (
       <div className="maquila-component" >
-        <h2>Chocolate {product.name}</h2>
+        <h1 className="maquila-component-title-resp">BRANDED CHOCOLATE PRODUCTS</h1>
+        <h2 className="maquila-component-title-h2">Chocolate {product.name}</h2>
         <div className="maquila-component--product-data ">
           <div className={`maquila-item maquila-item--${product.id}`}>
             <img src={require('../../../assets/img/' + (product.img ? product.img : altImg))} alt='jaja' />
@@ -73,6 +75,9 @@ class Maquila extends React.Component {
                 <img src={require('../../../assets/img/' + (moulding[i].img ? moulding[i].img : altImg))} alt={moulding[i].id} />
                 {moulding[i].description}    </div>)}
           </div>}
+        <div className="btn-back-sticky">
+          <Link to="/services/maquila">BACK TO PRODUCTS</Link>
+        </div>
         <ContactUs page='maquila' products={itemsSelected} />
       </div >
     );

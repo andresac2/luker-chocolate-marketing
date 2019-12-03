@@ -13,6 +13,10 @@
     padding: .2em 3em;
   }
 
+  .btn-back-sticky {
+    display: none;
+  }
+
   .product-carrousel {
     @include vert-center;
     align-items: center;
@@ -270,6 +274,10 @@
           }
         }
 
+        h2 {
+          margin-top: 0;
+        }
+
         img {
           height: 5em;
           object-fit: contain;
@@ -322,6 +330,7 @@
     }
 
     .btn-back-sticky {
+      display: inline-block;
       position: sticky;
       bottom: 0;
       width: 100%;

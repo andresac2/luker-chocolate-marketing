@@ -145,4 +145,46 @@
       }
     }
   }
+
+  @media screen and (max-width: 992px) {
+    width: calc(100%);
+    align-self: start;
+    padding-left: 0;
+
+    &--header {
+      &-img {
+        margin: 0 auto;
+
+        img {
+          position: relative;
+          width: 12em;
+          z-index: 1;
+
+          &:nth-child(2) {
+            margin: 0 -5em;
+            width: 15em;
+            z-index: 2;
+          }
+        }
+      }
+    }
+
+    &-tabs {
+
+      &-header {
+        margin: 2em auto;
+      }
+
+      &-products {
+        margin: 1em -10%;
+        width: 100%;
+        gap: 1em;
+        text-align: center;
+      }
+    }
+
+    .contact-component {
+      display: none;
+    }
+  }
 }

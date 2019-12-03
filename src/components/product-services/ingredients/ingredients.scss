@@ -1,112 +1,22 @@
 .ingredients-component {
-  position: relative;
-  width: calc(100% - 340px);
-  align-self: start;
-  padding-left: 20%;
-
-  &--header {
-    text-align: center;
-    margin: 2em auto 0;
-
-    h1 {
-      text-transform: uppercase;
-      font-size: 2rem;
-      color: #9EA850;
-      font-weight: 700;
-
-      &:first-child {
-        color: #62812E
-      }
-    }
-
-    img {
-      margin: 2em auto;
-
-    }
+  .btn-back-sticky {
+    display: none;
   }
 
-  &--content {
-
-    h2 {
-      border: 3px solid #484848;
-      color: #484848;
-      font-weight: 600;
-      width: max-content;
-      margin: 0 auto 1em auto;
-      padding: .2em 2em;
-    }
-
-    p {
-      padding: 0 35px;
+  @media screen and (max-width: 992px) {
+    .btn-back-sticky {
+      display: block;
+      position: sticky;
+      bottom: 0;
+      width: calc(100%);
       text-align: center;
-      margin: 0 2em;
-      color: #484848;
-      font-size: 1em;
-    }
-  }
+      background: #C8D226;
+      padding: 6px;
 
-  &--products {
-    border-top: 1px solid #532C2E;
-    margin: 2em auto;
-    display: grid;
-    width: calc(100% - 120px);
-
-    grid-template-columns: 1fr 1fr;
-    gap: 2em;
-    text-align: center;
-
-
-    &-item {
-      margin-top: 1em;
-      color: #532C2E;
-      position: relative;
-
-      &-active::after {
-        content: '';
-        position: absolute;
-        width: 80%;
-        margin: 0 10%;
-        height: 5px;
-        background: #F4C710;
-        left: 0;
-
-        @media screen and (min-width: 1360px) {
-          width: 60%;
-          margin: 0 20%;
-        }
-      }
-
-      img {
-        width: 180px;
-
-        @media screen and (min-width: 1360px) {
-          width: 200px;
-        }
-      }
-
-      span {
-        @include vert-center;
-        align-items: center;
-        right: 0;
-        top: 0;
-        position: absolute;
+      a {
         color: #fff;
-        background: #484848;
-        border-radius: 50%;
-        width: 32px;
-        height: 32px;
-        font-size: 2em;
-        font-style: italic;
-        font-weight: 700;
-        font-family: serif;
-
-        @media screen and (min-width: 1360px) {
-          right: 2em;
-        }
-      }
-
-      h2 {
-        font-weight: 700;
+        font-weight: 600;
+        font-size: medium;
       }
     }
   }

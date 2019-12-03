@@ -7,15 +7,21 @@
   align-self: start;
   padding-left: 20%;
 
-  h2 {
-    &:first-child {
-      color: #675119;
-      font-size: 2.5em;
-      margin: 1em auto 0;
-      text-align: center;
-      font-weight: 700;
-    }
+  .maquila-component-title-resp {
+    display: none;
+    border-bottom: 3px solid #482418;
+  }
 
+  .btn-back-sticky {
+    display: none;
+  }
+
+  .maquila-component-title-h2 {
+    color: #675119;
+    font-size: 2.5em;
+    margin: 1em auto .5em;
+    text-align: center;
+    font-weight: 700;
   }
 
   &-title {
@@ -92,7 +98,6 @@
         object-fit: contain;
       }
     }
-
   }
 
   .maquila-product {
@@ -127,7 +132,7 @@
           height: inherit;
         }
 
-        @media screen and (max-width: 1320px) {
+        @media screen and (max-width: 1320px) and (min-width: 1200px) {
           flex-direction: column;
           height: 200px;
 
@@ -183,6 +188,117 @@
         width: 80px;
         height: 80px;
         object-fit: contain;
+      }
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+
+    .contact-component {
+      display: none;
+    }
+
+    position: relative;
+    width: calc(100% - 3em);
+    padding-left: 3em;
+
+    .maquila-component-title-resp {
+      display: inline-block;
+      text-align: center;
+      color: #482418;
+      font-size: 2em;
+      margin: 1.5em auto -.5em;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    &--product-data {
+      font-size: medium;
+      flex-direction: column;
+
+      p {
+        padding: 0;
+        margin: 0;
+      }
+    }
+
+    .maquila-product {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 1em;
+      margin-bottom: 2em;
+      margin-right: 0;
+      margin-left: 0;
+      width: 90%;
+
+      &-item {
+        width: 100%;
+
+        img {
+          width: auto;
+          height: auto;
+        }
+
+        flex-direction: column;
+        height: 120px;
+
+        img {
+          width: inherit;
+          height: auto;
+        }
+      }
+
+      &--bar {
+        width: 300px;
+        overflow: auto;
+      }
+    }
+
+    &-title {
+      text-align: center;
+      width: auto;
+      margin: 1em auto;
+      padding: 3px 0;
+      font-size: 1em;
+      text-transform: uppercase;
+    }
+
+    .maquila-item {
+
+      &--bar,
+      &--dragee,
+      &--dosing {
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: calc(50% - 3.5em);
+          z-index: -1;
+          border-radius: 100%;
+          width: 7em;
+          height: 7em;
+        }
+      }
+
+      img {
+        height: 7em;
+      }
+    }
+
+    .btn-back-sticky {
+      display: inline-block;
+      margin-top: 1em;
+      position: sticky;
+      bottom: 0;
+      width: calc(100%);
+      text-align: center;
+      background: #C8D226;
+      padding: 6px;
+
+      a {
+        color: #fff;
+        font-weight: 600;
+        font-size: medium;
       }
     }
   }
