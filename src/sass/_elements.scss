@@ -96,6 +96,10 @@ input::placeholder {
     display: grid;
     grid-template-columns: 30% 70%;
 
+    @media screen and (max-width: 1023px) {
+      width: 85vw;
+    }
+
     &-dist {
       box-shadow: inset 0px 3px 6px #00000029;
       color: #484848;

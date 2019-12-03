@@ -142,34 +142,14 @@
     }
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1023px) {
     flex-direction: column;
     background-position: 85%;
-
-    .btn-hamb {
-      position: absolute;
-      right: 1em;
-      top: 1.5em;
-      color: #fff;
-      font-size: 3em;
-    }
+    justify-content: flex-start;
+    padding-top: 120px;
 
     &-logo {
-      top: 5em;
-      left: 1em;
-
-      img {
-        width: 8em;
-      }
-
-      .ant-input,
-      .ant-select-selection {
-        font-size: 1em;
-      }
-
-      .anticon {
-        font-size: 1em;
-      }
+      display: none;
     }
 
     &-content {
@@ -177,8 +157,9 @@
       display: flex;
       flex-direction: column;
       grid-template-columns: 45% 45% 10%;
-      margin-left: 2em;
+      margin-left: 3em;
       color: #fff;
+      width: 100%;
 
       .intro {
         &-title {
@@ -200,6 +181,7 @@
           font-weight: 600;
           font-size: small;
           margin-right: 20px;
+          width: calc(100% - 4em);
         }
       }
 
@@ -208,8 +190,7 @@
         margin-top: 1.5em;
 
         &-text {
-          width: 100%;
-          max-width: 290px;
+          width: calc(100% - 4em);
 
           h2 {
             background: #C8D226;
@@ -217,6 +198,7 @@
             font-weight: 700;
             padding: .5em 1.5em;
             border-bottom: 15px solid #685019;
+            width: 100%;
           }
 
           button {
@@ -225,18 +207,6 @@
         }
       }
 
-    }
-
-    .btn-dist-respo {
-      display: fixed;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      background: #D4B876;
-      color: #685019;
-      width: 100%;
-      font-weight: 700;
-      padding: .5em 0;
     }
 
     .cacao-link {

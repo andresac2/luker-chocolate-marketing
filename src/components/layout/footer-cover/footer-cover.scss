@@ -98,3 +98,19 @@
     display: none;
   }
 }
+
+.btn-dist-footer {
+  bottom: 0;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background: #D4B876;
+  color: #685019;
+  width: 100%;
+  font-weight: 700;
+  padding: .5em 0;
+
+  @media screen and (max-width: 1024px) {
+    display: inline-block;
+  }
+}
