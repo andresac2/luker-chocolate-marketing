@@ -146,6 +146,14 @@
     flex-direction: column;
     background-position: 85%;
 
+    .btn-hamb {
+      position: absolute;
+      right: 1em;
+      top: 1.5em;
+      color: #fff;
+      font-size: 3em;
+    }
+
     &-logo {
       top: 5em;
       left: 1em;

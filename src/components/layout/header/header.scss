@@ -49,6 +49,7 @@
   a {
     color: #fff;
     //display: none;
+    text-transform: uppercase;
     display: inline;
     align-self: center;
     text-align: center;
@@ -58,6 +59,10 @@
     @media screen and (min-width: 1440px) {
       font-size: 14px;
     }
+  }
+
+  .home-logo {
+    display: none;
   }
 
   .selected-tab {
@@ -108,4 +113,79 @@
     border-bottom-color: $light-gray;
   }
 
+  @media screen and (max-width: 1024px) {
+    height: 10px;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    position: fixed;
+    z-index: 9;
+    width: 100%;
+    background: rgba(0, 0, 0, .9);
+    border-top: 10px solid $apple-green;
+
+    &-visible {
+      height: auto;
+      border-bottom: 10px solid $apple-green;
+      padding-top: 120px;
+    }
+
+    .home-logo {
+      top: 5em;
+      left: 1em;
+      display: flex;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -.5em;
+        left: 1em;
+        width: 300px;
+        border-bottom: 3px solid #fff;
+      }
+
+      img {
+        width: 8em;
+      }
+
+      .ant-input,
+      .ant-select-selection {
+        font-size: 1em;
+      }
+
+      .anticon {
+        font-size: 1em;
+      }
+    }
+
+
+
+    a {
+      font-size: smaller;
+      height: auto;
+      padding: 1em 0;
+      border-bottom: 1px solid #fff;
+      width: 200px;
+      margin: auto;
+    }
+
+    .intro::after,
+    .flow::after,
+    .sustain::after,
+    .solution::after,
+    .customer::after,
+    .ryd::after,
+    .value-propose::after {
+      border: none;
+    }
+
+    .btn-x {
+      position: absolute;
+      right: 1em;
+      top: 1.5em;
+      color: #fff;
+      font-size: 3em;
+    }
+  }
 }
