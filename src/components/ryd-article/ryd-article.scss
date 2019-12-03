@@ -97,5 +97,39 @@
     }
   }
 
+  @media (max-width: 992px) {
+    width: 80vw;
+    grid-template-rows: 60% 30%;
+    grid-template-columns: 1fr;
+    overflow: auto;
+
+    &--text {
+      margin-top: 100px;
+      padding-bottom: 0;
+
+      &-content {
+        margin-top: 1em;
+      }
+
+      h2 {
+        margin-top: 1em;
+        font-size: 2em;
+        font-weight: 900;
+      }
+
+      h3 {
+        font-style: italic;
+      }
+
+    }
+
+    &--img {
+
+      img {
+        margin: auto;
+        width: 70%;
+      }
+    }
+  }
 
 }

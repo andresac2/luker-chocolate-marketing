@@ -131,4 +131,27 @@
       }
     }
   }
+
+  @media screen and (max-width: 992px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 160px 1fr;
+    grid-template-areas: "header"
+      "content";
+
+    .our-value-navbar {
+      grid-area: navbar;
+      display: none;
+    }
+
+    .our-value-header {
+      h1 {
+        display: none;
+      }
+    }
+
+    .btn-dist {
+      display: none;
+    }
+  }
+
 }

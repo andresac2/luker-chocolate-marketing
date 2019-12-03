@@ -247,6 +247,8 @@
   }
 
   @media (max-width: 992px) {
+    width: 100%;
+
     h2 {
       width: 100%;
       padding: 0;
@@ -345,4 +347,6 @@
       }
     }
   }
+
+  @media (max-width: 768px) {}
 }

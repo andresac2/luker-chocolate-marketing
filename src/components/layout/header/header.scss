@@ -348,14 +348,17 @@
     color: #fff;
     font-size: 3em;
   }
+
 }
 
 @media screen and (max-width: 1023px) {
+
   .header-component {
     display: none;
   }
 
   .header-component-responsive {
     display: grid;
+    position: relative;
   }
 }

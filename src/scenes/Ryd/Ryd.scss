@@ -11,18 +11,22 @@
     grid-template-rows: 1fr;
 
     &--experience {
+      transition: all ease .5s;
       grid-template-columns: 10fr 1fr 1fr 1fr;
     }
 
     &--ethical {
+      transition: all ease .5s;
       grid-template-columns: 1fr 10fr 1fr 1fr;
     }
 
     &--premium {
+      transition: all ease .5s;
       grid-template-columns: 1fr 1fr 10fr 1fr;
     }
 
     &--healthy {
+      transition: all ease .5s;
       grid-template-columns: 1fr 1fr 1fr 10fr;
     }
 
@@ -31,6 +35,7 @@
       background-size: cover;
       background-position: right;
       border-right: 5px solid #D3D974;
+      transition: all ease .5s;
 
       &:last-child {
         border: none;
@@ -95,6 +100,54 @@
       background: #F4C710;
       color: #685019;
       padding: 3px 18px;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .ryd-tab {
+      &--experience {
+        grid-template-columns: 85% 5% 5% 5%;
+      }
+
+      &--ethical {
+        grid-template-columns: 5% 85% 5% 5%;
+      }
+
+      &--premium {
+        grid-template-columns: 5% 5% 85% 5%;
+      }
+
+      &--healthy {
+        grid-template-columns: 5% 5% 5% 85%;
+      }
+
+      &-item {
+        span {
+          font-size: 42px;
+        }
+
+        &--active {
+          max-width: 5%;
+
+          span {
+            display: none;
+          }
+
+          &.ryd-tab-item--healthy {
+            width: 110vw;
+          }
+        }
+
+        &--resp-hide {
+          span {
+            color: transparent;
+          }
+        }
+      }
+    }
+
+    .btn-dist {
+      display: none;
     }
   }
 }
