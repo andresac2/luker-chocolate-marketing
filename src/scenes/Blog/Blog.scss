@@ -1,30 +1,31 @@
 .blog-component {
   height: inherit;
-
+  overflow-x: hidden;
   &-header {
     min-height: 320px;
     max-height: 580px;
-    background: url('../../assets/img/blog-header.png') no-repeat;
+    background: url("../../assets/img/blog-header.png") no-repeat;
     background-size: cover;
     color: #fff;
     @include vert-center;
     flex-direction: column;
-
+    @media (max-width: 992px) {
+     min-height: 180px;
+    }
     &--take-stand {
-      background: url('../../assets/img/stand-header.png') no-repeat;
+      background: url("../../assets/img/stand-header.png") no-repeat;
       background-size: cover;
     }
 
     &--article {
-      background: url('../../assets/img/article-header.png') no-repeat;
+      background: url("../../assets/img/article-header.png") no-repeat;
       background-size: cover;
     }
 
     &--doisy {
-      background: url('../../assets/img/doisy-header.png') no-repeat;
+      background: url("../../assets/img/doisy-header.png") no-repeat;
       background-size: cover;
     }
-
 
     h1 {
       @include header-title;
@@ -36,12 +37,22 @@
       @media screen and (min-width: 1200px) {
         font-size: 98px;
       }
+      @media (max-width: 992px) {
+        width: 100%;
+        display: none;
+      }
     }
 
     &--search {
       width: 960px;
       margin: 0 auto;
       text-align: end;
+      @media (max-width: 992px) {
+        width: 100%;
+      }
+      .blog-component-header--search {
+        display: none;
+      }
 
       .ant-input,
       .ant-select-selection {
@@ -56,9 +67,8 @@
       }
 
       .ant-select-selection .anticon {
-        margin-top: -.2em;
+        margin-top: -0.2em;
       }
-
 
       .ant-input {
         background: rgba(51, 51, 51, 0.4);
@@ -66,7 +76,7 @@
         display: none;
 
         &-suffix .anticon {
-          margin-top: -.5em;
+          margin-top: -0.5em;
         }
 
         &::placeholder {
@@ -82,7 +92,6 @@
             margin-top: 0;
           }
         }
-
       }
 
       .anticon {
@@ -99,7 +108,7 @@
       left: 3em;
 
       .logo {
-        margin: 3em auto .5em;
+        margin: 3em auto 0.5em;
         width: 8em;
         display: block;
       }
@@ -109,7 +118,7 @@
         width: 100%;
         text-align: center;
         font-weight: 700;
-        background: #F4C710;
+        background: #f4c710;
         color: #685019;
         font-size: smaller;
         padding: 3px 18px;
@@ -121,7 +130,6 @@
         .logo {
           margin-top: 5em;
         }
-
       }
     }
   }
@@ -130,6 +138,7 @@
     flex: auto;
     max-width: 960px;
     margin: 0 auto;
+    width: 100%;
 
     .blog-tabs {
       border-bottom: 3px solid #484848;
@@ -141,14 +150,14 @@
       }
 
       a {
-        padding: 0 .5em;
+        padding: 0 0.5em;
         margin: 1em 0;
         font-weight: 700;
-        color: #4B2418;
+        color: #4b2418;
       }
 
       .tab-blog-selected {
-        border-bottom: 11px solid #F4C710;
+        border-bottom: 11px solid #f4c710;
       }
     }
 
@@ -163,6 +172,9 @@
         "articles featured"
         "articles newsletter";
       margin: 2em 0;
+      width: 100%;
+      max-width: 100%;
+      overflow: hidden;
 
       &-latest {
         grid-area: latest;
@@ -175,13 +187,15 @@
           align-items: center;
           height: 81px;
           font-weight: 700;
-          background: #F4C710;
+          background: #f4c710;
           font-size: 3em;
           text-transform: uppercase;
+          @media (max-width: 992px) {
+            font-size: 22px;
+          }
         }
 
         &--article {
-
           img {
             width: 100%;
             max-height: 310px;
@@ -189,7 +203,7 @@
           }
 
           h2 {
-            color: #4B2418;
+            color: #4b2418;
             font-weight: 700;
             font-size: 3em;
           }
@@ -197,7 +211,7 @@
           p {
             color: #484848;
             font-style: italic;
-            margin: 1em 0 .5em 0;
+            margin: 1em 0 0.5em 0;
           }
         }
       }
@@ -218,7 +232,7 @@
           }
 
           h2 {
-            color: #4B2418;
+            color: #4b2418;
             font-weight: 700;
             font-size: 2em;
           }
@@ -227,7 +241,7 @@
             font-size: smaller;
             color: #484848;
             font-style: italic;
-            margin: 1em 0 .5em 0;
+            margin: 1em 0 0.5em 0;
           }
         }
       }
@@ -239,7 +253,7 @@
 
         h1 {
           @include vert-center;
-          background: #E8D6AF;
+          background: #e8d6af;
           align-items: center;
           color: #fff;
           height: 81px;
@@ -250,7 +264,7 @@
         }
 
         &-item {
-          background: #E8D6AF;
+          background: #e8d6af;
           padding: 0 20px;
           display: flex;
           flex-direction: column;
@@ -260,7 +274,7 @@
             @include vert-center;
             flex: 1 1;
             flex-direction: column;
-            border-bottom: 2px solid #FFFFFF;
+            border-bottom: 2px solid #ffffff;
             color: #fff;
 
             &:last-child {
@@ -268,7 +282,7 @@
             }
 
             h2 {
-              color: #4B2418;
+              color: #4b2418;
               font-weight: 700;
               width: max-content;
               font-size: 1.5em;
@@ -279,7 +293,7 @@
               font-size: smaller;
               font-weight: 600;
               font-style: italic;
-              margin: 1em 0 .5em 0;
+              margin: 1em 0 0.5em 0;
             }
           }
         }
@@ -287,7 +301,7 @@
 
       &-newsletter {
         grid-area: newsletter;
-        background: #D3D974;
+        background: #d3d974;
         padding: 3em 2em;
         margin-top: 1em;
         color: #fff;
@@ -296,7 +310,7 @@
         text-align: center;
 
         h2 {
-          color: #174F02;
+          color: #174f02;
           font-size: 1.5em;
           font-weight: 700;
           text-align: left;
@@ -315,7 +329,7 @@
           text-align: center;
         }
 
-        input[type=text] {
+        input[type="text"] {
           margin-bottom: 1.5em;
           width: 100%;
           text-align: left;
@@ -323,17 +337,16 @@
           font-size: 1rem;
           display: block;
           background: transparent;
-          border-bottom: 1px solid #468E18;
+          border-bottom: 1px solid #468e18;
         }
 
-        input[type=submit] {
+        input[type="submit"] {
           padding: 3px 18px;
-          background: #468E18;
+          background: #468e18;
           border-radius: 3px;
           font-size: 1em;
         }
       }
     }
-
   }
 }
