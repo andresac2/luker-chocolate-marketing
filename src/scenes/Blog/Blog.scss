@@ -1,6 +1,7 @@
 .blog-component {
   height: inherit;
   overflow-x: hidden;
+
   &-header {
     min-height: 320px;
     max-height: 580px;
@@ -9,9 +10,11 @@
     color: #fff;
     @include vert-center;
     flex-direction: column;
+
     @media (max-width: 992px) {
-     min-height: 180px;
+      min-height: 180px;
     }
+
     &--take-stand {
       background: url("../../assets/img/stand-header.png") no-repeat;
       background-size: cover;
@@ -37,6 +40,7 @@
       @media screen and (min-width: 1200px) {
         font-size: 98px;
       }
+
       @media (max-width: 992px) {
         width: 100%;
         display: none;
@@ -47,9 +51,11 @@
       width: 960px;
       margin: 0 auto;
       text-align: end;
+
       @media (max-width: 992px) {
         width: 100%;
       }
+
       .blog-component-header--search {
         display: none;
       }
@@ -190,6 +196,7 @@
           background: #f4c710;
           font-size: 3em;
           text-transform: uppercase;
+
           @media (max-width: 992px) {
             font-size: 22px;
           }
@@ -346,6 +353,117 @@
           border-radius: 3px;
           font-size: 1em;
         }
+      }
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    .btn-dist {
+      position: absolute;
+      top: 0;
+      left: 3em;
+
+      .logo {
+        opacity: 0;
+      }
+
+      a {
+        margin-top: 5px;
+      }
+    }
+
+    .blog-component-header {
+      min-height: 140px;
+      background-size: cover;
+      background-position: right;
+
+      &--search {
+        display: none;
+      }
+    }
+
+    .blog-layout {
+      grid-template-columns: 1fr;
+      column-gap: 15px;
+      grid-template-rows: auto auto auto;
+      grid-template-areas:
+        "latest"
+        "articles"
+        "newsletter";
+      margin: 0;
+
+      &-featured {
+        grid-area: featured;
+        display: none;
+      }
+
+      &-latest {
+        h1 {
+          height: 60px;
+          font-size: 2em;
+        }
+
+        &--article {
+          width: 90%;
+          overflow: hidden;
+          margin-left: 5%;
+
+          img {
+            width: 90%;
+          }
+
+          p,
+          h2 {
+            padding-left: 5%;
+          }
+        }
+      }
+
+      &-newsletter {
+        h2 {
+          text-align: center;
+          font-size: 3em;
+        }
+
+        p {
+          font-size: 1.5em;
+          line-height: 1;
+          font-weight: 600;
+        }
+
+        input[type="submit"] {
+          padding: 5px 20px;
+          background: #468e18;
+          border-radius: 3px;
+          font-size: 1.5em;
+        }
+      }
+
+      &-articles {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-gap: 1em 2em;
+        gap: 1em 2em;
+
+        &--item {
+
+          p,
+          h2 {
+            padding-left: 2rem;
+          }
+        }
+      }
+    }
+
+    .blog-tabs {
+      overflow: auto;
+      text-align: left;
+      justify-content: end;
+      font-size: larger;
+      border: none;
+
+      a {
+        flex: none;
       }
     }
   }
