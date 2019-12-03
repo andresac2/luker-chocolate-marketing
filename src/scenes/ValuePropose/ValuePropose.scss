@@ -173,11 +173,13 @@
       padding: 3px 18px;
     }
   }
+
   @media (max-width: 992px) {
     height: inherit;
     display: grid;
+    margin-bottom: 2em;
     grid-template-columns: 1fr;
-    grid-template-rows: 30% 30% 40%;
+    grid-template-rows: 40% 30% auto;
     grid-template-areas:
       "expo"
       "carrousel"
@@ -185,21 +187,70 @@
     text-align: center;
     color: #fff;
     overflow: scroll;
+
+    .btn-dist {
+      display: none;
+      ;
+
+    }
+
+    &--expo {
+
+      &-pagraph {
+        position: absolute;
+        top: auto;
+        bottom: 1em;
+
+        h1 {
+          font-weight: 700;
+          font-size: 2em;
+          margin-bottom: 1rem;
+        }
+
+        p {
+          border-left: 5px solid #5d340b;
+          padding: 0.5em 1em;
+          font-weight: 600;
+          font-size: smaller;
+        }
+      }
+    }
+
+    overflow: hidden;
+
     &--item {
-      display: flex;
-      flex-direction: row;
       width: 100%;
-      overflow: scroll;
-      height: 95%;
+      flex-direction: row;
+      overflow: auto;
+      height: 190px;
+
       &-card {
-        display: flex;
+        flex: 1 0 75%;
+        overflow: auto;
         flex-direction: column;
-        flex: 1 0 74%;
-        overflow: hidden;
-        flex-direction: row;
-        min-width: 117px;
-        width: 117px;
-        height: 200px;
+
+        img {
+          width: 100%;
+          height: inherit;
+          object-fit: cover;
+        }
+
+        &-text {
+          display: none;
+        }
+
+        &-hover {
+          @include vert-center;
+          align-self: center;
+          flex-direction: column;
+          z-index: 1;
+
+          &::after {
+            background: #3B1D00;
+            opacity: .6;
+            left: 0;
+          }
+        }
       }
     }
   }

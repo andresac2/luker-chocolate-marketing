@@ -238,11 +238,17 @@
   @media (max-width: 992px) {
     flex-direction: column;
     padding-top: 70px;
+    padding-bottom: 2rem;
 
     .sustain-sidebar {
       width: 100%;
       padding-top: 20px;
       padding-bottom: 20px;
+
+      &-text h1 {
+        font-size: 2em;
+
+      }
     }
 
     .sustain-content {
