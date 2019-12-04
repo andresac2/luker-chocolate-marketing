@@ -1,7 +1,7 @@
 import React from 'react'
 import ContactUs from '../../layout/contact-us/contact-us';
 import { ReactComponent as Back } from "../../../assets/img/back.svg"
-
+import { Link } from 'react-router-dom';
 
 class OurServices extends React.Component {
   constructor(props) {
@@ -61,6 +61,9 @@ class OurServices extends React.Component {
             <p>{designProcess[dpSelected]}</p>
           </div>
           <Back className={`btn-next-img ${dpSelected === designProcess.length - 1 && 'btn-inactive'}`} onClick={() => this.carrAction('r')} />
+        </div>
+        <div className="btn-back-sticky">
+          <Link to="/solution">BACK TO SOLUTIONS</Link>
         </div>
         <ContactUs page='service' products={[]} />
       </div >

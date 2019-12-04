@@ -13,6 +13,10 @@
     padding-left: 12%;
   }
 
+  .btn-back-sticky {
+    display: none;
+  }
+
   h2 {
     color: #675119;
     font-size: 2.5em;
@@ -137,6 +141,61 @@
     .btn-inactive {
       .st0 {
         stroke: #ababab;
+      }
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    position: relative;
+    width: 100vw;
+    padding-left: 0;
+    margin-bottom: 0;
+
+    &-process {
+      overflow: auto;
+      width: 100%;
+      padding: 0 1em 2em;
+
+      .card-image {
+        width: 110px;
+        overflow: unset;
+        margin-right: .5em;
+
+        img {
+          width: 100%;
+          height: 170px;
+          object-fit: cover;
+        }
+
+        p {
+          word-break: break-word;
+          padding: 5px 10px;
+        }
+
+      }
+    }
+
+    .contact-component,
+    .btn-dist {
+      display: none;
+    }
+
+    .btn-back-sticky {
+      display: inline-block;
+      position: sticky;
+      margin-top: 2em;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      opacity: 1;
+      z-index: 2;
+      background: #C8D226;
+      padding: 6px;
+
+      a {
+        color: #fff;
+        font-weight: 600;
+        font-size: medium;
       }
     }
   }
