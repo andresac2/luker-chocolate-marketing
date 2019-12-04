@@ -16,11 +16,12 @@ class Sustain extends React.Component {
       reportModalVisible: false,
       articleModalVisible: false,
       firstItem: 0,
+      modalSelectedIndex: 0,
       items: [{
         img: 'costal-luker.png',
         flag: 'us',
         title: 'Jobs',
-        content: 'We are committed to small-scale farmers, which is why we have established a network of alliances with over 50 cocoa growers associations allowing us to guarantee the purchase of the entire harvest of each association, helping to create the maximum value possible for the farmers and their families. We buy directly from 65 associations and more than 7500 Colombian families. We’ve also trained around 30.000 farmers in Luker Farm and built 10 centralized milling facilities in Tumaco and have 1 currently under construction in Huila.<div class="blog-article-content--img" ><img src="/static/media/secado-2.53b5665a.png"></div>'
+        content: 'Thanks to our sustainability efforts, we’ve generated a total of 232 formal jobs in the community with 0% of child labor. We also generated 617 formal jobs in Bogotá and 71% of those positions are filled by millennials, guaranteeing as well 0% of child labor.<div class="blog-article-content--img"><img src="/static/media/secado-2.53b5665a.png"></div>'
       },
       {
         img: 'arauca-river.png',
@@ -32,7 +33,7 @@ class Sustain extends React.Component {
         img: 'cocoa-tree.png',
         flag: 'us',
         title: 'Community',
-        content: 'We are committed to small-scale farmers, which is why we have established a network of alliances with over 50 cocoa growers associations allowing us to guarantee the purchase of the entire harvest of each association, helping to create the maximum value possible for the farmers and their families. We buy directly from 65 associations and more than 7500 Colombian families. We’ve also trained around 30.000 farmers in Luker Farm and built 10 centralized milling facilities in Tumaco and have 1 currently under construction in Huila.'
+        content: 'We support our cocoa producers and their communities by implementing wide impact actions that not only improve farmers’ economic situation but also benefit the stability of their families. So far, we’ve intervened 6 schools with the new school model and renovated 280 square meters of them. 600 people have been trained in entrepreneurship with a focus on gender studies and 600 students have been trained in academic and emotional skills.<div class="blog-article-content--img"><img src="/static/media/granjero-cover.c29c20a3.png"></div>Furthermore, 300 young people have been trained in technical programs, 60 adults have been trained in reading and math, and 300 teachers were trained in resilience and socio-emotional skills with 70 international and national volunteers, which led to the construction of 1 social innovation center.'
       },
       {
         img: 'enviromental.png',
@@ -71,26 +72,20 @@ class Sustain extends React.Component {
   };
 
   showModalDist = () => {
-    this.setState({
-      distModalVisible: !this.state.distModalVisible,
-    });
+    this.setState({ distModalVisible: !this.state.distModalVisible });
   };
 
   showModalReport = () => {
-    this.setState({
-      reportModalVisible: !this.state.reportModalVisible,
-    });
+    this.setState({ reportModalVisible: !this.state.reportModalVisible });
   };
 
-  showModalArticle = () => {
-    this.setState({
-      articleModalVisible: !this.state.articleModalVisible,
-    });
+  showModalArticle = (i) => {
+    this.setState({ articleModalVisible: !this.state.articleModalVisible, modalSelectedIndex: i || 0 });
   };
 
   render() {
     const { getFieldDecorator } = this.props.form;
-    const { items, firstItem, distModalVisible, reportModalVisible, articleModalVisible } = this.state;
+    const { items, firstItem, distModalVisible, reportModalVisible, articleModalVisible, modalSelectedIndex } = this.state;
     const { Option } = Select;
     const altImg = 'img-example.svg';
     return (
@@ -98,25 +93,25 @@ class Sustain extends React.Component {
         <div className="sustain-sidebar">
           <div className="sustain-sidebar--dist">
             <img src={logo} className="logo" alt="Logo Luker" />
-            <button onClick={() => this.showModalDist()}> DISTRIBUIDORES </button>
+            <button onClick={() => this.showModalDist()}> FIND A DISTRIBUTOR </button>
           </div>
           <div className="sustain-sidebar--text">
-            <h1>SOSTENIBILIDAD</h1>
+            <h1>SUSTAINABILITY</h1>
             <div className="sustain-sidebar--text-content">
-              <p>En Luker Chocolate vemos la sostenibilidad como una herramienta para perdurar en el tiempo de manera responsable, siendo motores de transformación económica, social y ambiental. Estamos comprometidos con generar mayor bienestar en todos los actores de la cadena de valor, desde quienes cultivan el grano de cacao hasta nuestros clientes.</p>
-              <p>Nuestra apuesta en la cadena de valor es integrarla, humanizarla y por último cerrarla con estrategias de valor compartido con nuestros clientes y aliados. Sabemos que necesitamos determinación para transformar las regiones cacaoteras, ya que el cacao en Colombia es producido por aproximadamente 38 mil familias que en el pasado fueron víctimas del conflicto armado del país y que cuentan con índices multidimensionales de pobreza muy bajos. Por eso, centramos nuestros esfuerzos en contribuir al cambio en estas regiones para que la calidad de vida de los agricultores y las comunidades mejores.</p>
+              <p>At Luker Chocolate, we are committed to creating greater wellbeing for all the actors of the value chain, from the cocoa growers right through to our clients.</p>
+              <p>We know that we need determination to transform the cocoa growing regions; in Colombia there are 38 thousand cocoa-producing families that were, in the past, victims of the country’s armed conflict and are subject to very low multidimensional poverty indices. As such, we focus our efforts on contributing to change in these regions in order to improve the quality of life of the farmers and their communities.</p>
             </div>
             <button onClick={() => this.showModalReport()}> GET FULL REPORT </button>
           </div>
         </div>
         <div className="sustain-content">
           <div className="sustain-content-model">
-            <h1>Impact</h1>
+            <h1>OUR IMPACT</h1>
             <div className="sustain-content-contain-carr">
               <img className="btn-next-img btn-next-img-left" src={back} alt='left' onClick={() => this.carrAction('l')} />
               <div className="sustain-content-contain-carr--items" >
                 {Object.keys(items).map(i =>
-                  <div key={i} className={`card-image ${firstItem > i && 'item-action--l'}`} onClick={() => this.showModalArticle()}>
+                  <div key={i} className={`card-image ${firstItem > i && 'item-action--l'}`} onClick={() => this.showModalArticle(i)}>
                     <img src={require('../../assets/img/' + (items[i].img ? items[i].img : altImg))} alt={items[i].title} />
                     <p>{items[i].title}</p>
                   </div>)}
@@ -130,7 +125,7 @@ class Sustain extends React.Component {
             </div>
           </div>
           <div className="sustain-content-model">
-            <h1>We go beyond</h1>
+            <h1>WE INVITE YOU TO DREAM WITH US</h1>
             <div className="sustain-content-model--panel">
               <img src={panel} alt="Panel" />
               <button onClick={() => console.log('hi')}> GET FULL REPORT </button>
@@ -267,8 +262,10 @@ class Sustain extends React.Component {
           <div className="modal-article-bkg" onClick={() => this.showModalArticle()}></div>
           <div className="modal-article-modal">
             <MdClose className="btn-x" onClick={() => this.showModalArticle()} />
-            <div className="modal-article-header" style={{ backgroundImage: "../../assets/img/" + items[firstItem].img }}><h1>{items[firstItem].title}</h1></div>
-            <Article data={items[firstItem]} />
+            <div className="modal-article-header" style={{ backgroundImage: `url(${require(`../../assets/img/${items[modalSelectedIndex].img}`)})` }}>
+              <h1>{items[modalSelectedIndex].title}</h1>
+            </div>
+            <Article data={items[modalSelectedIndex]} />
           </div>
         </div>
 
