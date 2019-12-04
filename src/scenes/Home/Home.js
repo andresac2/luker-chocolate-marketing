@@ -62,7 +62,7 @@ class Home extends React.Component {
             <MdClose className="btn-x" onClick={() => this.showModalDist()} />
             <div className="modal-dist-modal-dist">
               <div className="modal-dist-modal-dist-header">
-                <h2>Distributors</h2>
+                <h2>Select your country</h2>
                 <Select size='small' defaultValue="ca" style={{ width: 150 }} >
                   <Option value="ca">Canadá</Option>
                   <Option value="uk">Inglaterra</Option>
