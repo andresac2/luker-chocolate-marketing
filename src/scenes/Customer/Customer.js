@@ -20,10 +20,10 @@ function Customer() {
   return (
     <div className='customer-component'>
       <div className="customer-component--header">
-        <h1>CLIENTES</h1>
+        <h1>OUR CLIENTS</h1>
         <div className="btn-dist">
           <img src={logo} className="logo" alt="Logo Luker" />
-          <button onClick={() => console.log('hi')}> DISTRIBUIDORES </button>
+          <button onClick={() => console.log('hi')}> FIND A DISTRIBUTOR </button>
         </div>
       </div>
       <div className="customer-component--content">

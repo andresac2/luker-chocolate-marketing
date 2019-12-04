@@ -14,11 +14,11 @@ function ValuePropose() {
       <div className="value-propose-component--expo">
         <div className="btn-dist">
           <img src={logo} className="logo" alt="Logo Luker" />
-          <button onClick={() => console.log('hi')}> DISTRIBUIDORES </button>
+          <button onClick={() => console.log('hi')}> FIND A DISTRIBUTOR </button>
         </div>
         <div className="value-propose-component--expo-pagraph">
-          <h1>Nuestra oferta única</h1>
-          <p>Prometemos darte un chocolate con un sabor único y superior, hecho en el origen y apoyando siempre el desarrollo ambiental, económico y social de los orígenes de nuestro cacao.</p>
+          <h1>OUR VALUE PROPOSITION</h1>
+          <p>We promise to offer chocolate with unique and superior flavour and that supports the environmental, economic, and social development of the origins of its cocoa beans.</p>
         </div>
       </div>
       <div className="value-propose-component--carrousel">
@@ -30,8 +30,8 @@ function ValuePropose() {
             DIFFERENTIATE YOUR PRODUCT WITH A UNIQUE FLAVOUR
           </div>
           <div className="value-propose-component--item-card-hover">
-            <p>Trabajamos solo con Cacao Fino de Aroma</p>
-            <Link to="/our-value/aroma">CONOCE MÁS</Link>
+            <p>We work exclusively with Cacao Fino de Aroma</p>
+            <Link to="/our-value/aroma">LEARN MORE</Link>
           </div>
         </div>
         <div className="value-propose-component--item-card">
@@ -40,8 +40,8 @@ function ValuePropose() {
             KEEP THE CONSISTENCY IN THE FLAVOUR AND GUARANTEE YOUR SUPPLY
           </div>
           <div className="value-propose-component--item-card-hover">
-            <p>Queremos que tengas siempre el mejor producto</p>
-            <Link to="/our-value/flavour">CONOCE MÁS</Link>
+            <p>We want you to always have the best product</p>
+            <Link to="/our-value/flavour">LEARN MORE</Link>
           </div>
         </div>
         <div className="value-propose-component--item-card">
@@ -50,8 +50,8 @@ function ValuePropose() {
             INTEGRATED SOLUTIONS FOR DESIGN, PRODUCTS, AND PACKAGING
           </div>
           <div className="value-propose-component--item-card-hover">
-            <p>Tus necesidades se convierten en nuestro reto</p>
-            <Link to="/our-value/product">CONOCE MÁS</Link>
+            <p>Your needs become our challenge</p>
+            <Link to="/our-value/product">LEARN MORE</Link>
           </div>
         </div>
         <div className="value-propose-component--item-card">
@@ -60,8 +60,8 @@ function ValuePropose() {
             CONNECT YOUR BRAND AROUND SUSTAINABILITY
           </div>
           <div className="value-propose-component--item-card-hover">
-            <p>Te invitamos a participar en iniciativas de valor Compartido con impacto social y sostenible</p>
-            <Link to="/our-value/social">CONOCE MÁS</Link>
+            <p>We encourage you to participate in shared value sustainable initiatives that have a social impact</p>
+            <Link to="/our-value/social">LEARN MORE</Link>
           </div>
         </div>
       </div>

@@ -9,7 +9,7 @@ const RydArticle = props => {
     <div className="ryd-article" >
       <div className="btn-dist">
         <img src={logo} className="logo" alt="Logo Luker" />
-        <button onClick={() => console.log('hi')}> DISTRIBUIDORES </button>
+        <button onClick={() => console.log('hi')}> FIND A DISTRIBUTOR </button>
       </div>
       <div className="ryd-article--text">
         <h2>{title}</h2>

@@ -33,9 +33,9 @@ class FooterCover extends React.Component {
           <FiChevronUp onClick={this.footerToggle} />
           <nav className={`footer-cover-nav footer-cover-${selectTab.slice(1)}`}>
             <Link to="/blog"><span>BLOG</span></Link>
-            {selectTab !== '/' && <Link to="/"><span>CREA TU CHOCOLATE</span></Link>}
-            <Link to="/asd"><span>MÁS INFORMACIÓN</span></Link>
-            <Link to="/contact-us"><span>ESCRÍBENOS</span></Link>
+            {selectTab !== '/' && <Link to="/"><span>CREATE YOUR OWN CHOCOLATE</span></Link>}
+            <Link to="/asd"><span>MORE INFO</span></Link>
+            <Link to="/contact-us"><span>CONTACT US</span></Link>
           </nav>
         </div>
         <button className="btn-dist-footer" onClick={() => this.showModalDist()}> DISTRIBUIDORES </button>

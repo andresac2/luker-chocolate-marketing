@@ -58,7 +58,7 @@ class ProductsServices extends React.Component {
         <div className={`services-header services-header--${title} ${(item) && 'services-header--title-short'}`}>
           <div className="btn-dist">
             <img src={logo} className="logo" alt="Logo Luker" />
-            <Link to="/solution">DISTRIBUTORS</Link>
+            <Link to="/solution">FIND A DISTRIBUTOR</Link>
             {(item) ?
               <Link to={'/services/' + title}>BACK</Link> :
               <Link to="/solution">BACK TO SERVICES</Link>
@@ -69,7 +69,7 @@ class ProductsServices extends React.Component {
         <div className="services-content">
           {(title === 'our-services') ? <OurServices /> :
             (item) ? (title === 'maquila') ? <Maquila product={products[products.findIndex(product => product.id === item)]} /> : <Ingredients product={ingredients[ingredients.findIndex(i => i.id === item)]} />
-              : <ProductServices items={(title === 'maquila') ? products : ingredients} title={(title === 'maquila') ? 'BRANDED CHOCOLATE PRODUCTS' : 'PRODUCTS'} page={title} />}
+              : <ProductServices items={(title === 'maquila') ? products : ingredients} title={(title === 'maquila') ? 'BRANDED CHOCOLATE PRODUCTS' : 'OUR PRODUCTS'} page={title} />}
         </div>
         <Footer />
       </div>

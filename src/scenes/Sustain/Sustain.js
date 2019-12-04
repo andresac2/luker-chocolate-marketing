@@ -39,13 +39,25 @@ class Sustain extends React.Component {
         img: 'enviromental.png',
         flag: 'us',
         title: 'Enviromental',
-        content: 'We are committed to small-scale farmers, which is why we have established a network of alliances with over 50 cocoa growers associations allowing us to guarantee the purchase of the entire harvest of each association, helping to create the maximum value possible for the farmers and their families. We buy directly from 65 associations and more than 7500 Colombian families. We’ve also trained around 30.000 farmers in Luker Farm and built 10 centralized milling facilities in Tumaco and have 1 currently under construction in Huila.'
+        content: 'We know that reforestation attracts new species that can then be protected. That’s why with our environmental transformation strategies we have improved the conservation and care of 7 vulnerable species through the plantation of 600.000 new trees in agroforestry systems. The plantations have brought back species that had disappeared from the area. Whatsmore, we also participate in the 0 deforestation agreement “Cocoa, Forest and Peace initiative” led by the World Cocoa Foundation. '
       },
       {
         img: 'cocoa-forest.png',
         flag: 'us',
-        title: 'cocoa forest',
-        content: 'We are committed to small-scale farmers, which is why we have established a network of alliances with over 50 cocoa growers associations allowing us to guarantee the purchase of the entire harvest of each association, helping to create the maximum value possible for the farmers and their families. We buy directly from 65 associations and more than 7500 Colombian families. We’ve also trained around 30.000 farmers in Luker Farm and built 10 centralized milling facilities in Tumaco and have 1 currently under construction in Huila.'
+        title: 'Cocoa forest',
+        content: `
+        Back in 2011, we decided to implement a new strategy by planting our own crops in order to reach the following goals.
+        <p></p>
+        <ul>
+          <li>Demonstrate that it was possible to have productive and profitable agroforestry plantations with the best varieties of Cacao Fino de Aroma, reforesting the countryside and enabling the return of various species of animals and birds.</li>
+          <li>Demonstrate the social and environmental transformational power of a corporate crop when implemented in areas that were traditionally victims of the conflict.</li>
+        </ul>
+        <p></p>
+        This new approach allowed us to fully integrate the value chain and create better social and environmental wellbeing in the territories in which we were working. 
+        This project began in Necoclí, Urabá Antioqueño, with 550 hectares of cocoa in what used to be a livestock farm. In 2017, this model was replicated in Casanare, with 1000 hectares of cacao, in what used to be a palm farm, creating a unique agroforestry system where both species coexist and in 2019, we began a 45-hectare agroforestry system in Huila.
+        <p></p>
+        The purpose of these projects is to take agricultural and social development to the communities in each of the regions in which we grow our cocoa and to come up with innovative solutions that are supported by our clients and partners. So far, we’ve accomplished to set up a total of 3 business crops with 1600 hectares planted sustainably in 3 regions of the country and we’ve projected a catch of 33,925 tons of Co2 per year in our crops.
+        `
       }]
     };
   }
@@ -178,31 +190,31 @@ class Sustain extends React.Component {
               <div className="modal-report-modal-report-cards">
                 <div className={`modal-report-modal-report-cards-card modal-report-modal-report-cards-card--active`}>
                   <h2>Sustainability Report</h2>
-                  <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+                  <p>Find out what we have accomplished by the implementation of several different sustainability strategies in this report.</p>
                 </div>
                 <div className={`modal-report-modal-report-cards-card`}>
                   <h2>Sustainability Brief</h2>
-                  <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+                  <p>Know the facts, findings, and objectives gathered for our sustainability initiatives.</p>
                 </div>
                 <div className={`modal-report-modal-report-cards-card`}>
                   <h2>Certifications</h2>
-                  <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+                  <p>Check our certifications and discover what our expertise and contributions can do.</p>
                 </div>
                 <div className={`modal-report-modal-report-cards-card`}>
                   <h2>Cocoa Forest & Peace Agreement</h2>
-                  <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+                  <p>Explore our commitment alongside other countries and companies to end deforestation and restore fores areas.</p>
                 </div>
               </div>
             </div>
             <div className="modal-report-modal-contact">
               <div className={`contact-component-content`}>
-                <h1>DÉJANOS TUS DATOS</h1>
+                <h1>GIVE US YOUR DETAILS</h1>
                 <Form onSubmit={this.handleSubmit} className="contact-form">
                   <Form.Item>
                     {getFieldDecorator('username', {
                       rules: [{ required: true, message: 'Please input your username!' }],
                     })(
-                      <Input placeholder="Name" />,
+                      <Input placeholder="Full Name" />,
                     )}
                   </Form.Item>
                   <FormItem>
@@ -245,14 +257,14 @@ class Sustain extends React.Component {
                     )}
                   </Form.Item>
                   <div className="contact-form-products">
-                    <span>Choose your documentation</span>
+                    <span>Drag documents in here</span>
                   </div>
                   <Form.Item>
                     <Button type="primary" htmlType="submit" className="contact-form-button">
                       Download
                     </Button>
                   </Form.Item>
-                  <p className="contact-form-terms">Al hacer clic en "enviar" aceptas términos y condiciones y política de privacidad</p>
+                  <p className="contact-form-terms">By clicking "download" you agree to the terms and conditions and our privacy policy.</p>
                 </Form>
               </div>
             </div>
