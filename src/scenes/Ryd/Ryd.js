@@ -23,7 +23,7 @@ class Ryd extends React.Component {
         {!selectTab &&
           <div className="btn-dist">
             <img src={logo} className="logo" alt="Logo Luker" />
-            <button onClick={() => console.log('hi')}> DISTRIBUIDORES </button>
+            <button onClick={() => console.log('hi')}> FIND A DISTRIBUTOR </button>
           </div>}
         <div className={`ryd-tab ryd-tab--${selectTab}`}>
           <div onClick={() => this.tabToggle('experience')} className={`ryd-tab-item ryd-tab-item--experience ryd-tab-item--${selectTab === 'experience' && 'active'} ryd-tab-item--${selectTab !== '' && 'resp-hide'} `}><span>EXPERIENCE MORE</span>
