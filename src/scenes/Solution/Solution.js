@@ -10,7 +10,7 @@ function Solution() {
       <div className="solution-component--ingredient">
         <div className="btn-dist">
           <img src={logo} className="logo" alt="Logo Luker" />
-          <button onClick={() => console.log('hi')}> DISTRIBUIDORES </button>
+          <button onClick={() => console.log('hi')}> FIND A DISTRIBUTOR </button>
         </div>
         <Link to="/services/ingredients" className="header-btn">
           INGREDIENTS
