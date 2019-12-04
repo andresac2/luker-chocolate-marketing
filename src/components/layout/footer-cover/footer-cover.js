@@ -14,7 +14,12 @@ class FooterCover extends React.Component {
       isOpen: false
     };
   }
-  footerToggle = () => this.setState({ isOpen: !this.state.isOpen })
+  footerToggle = () => {
+    this.setState({ isOpen: !this.state.isOpen });
+    setTimeout(() => {
+      this.setState({ isOpen: false });
+    }, 60000)
+  }
 
   showModalDist = () => {
     this.setState({

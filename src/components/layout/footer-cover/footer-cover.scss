@@ -5,11 +5,11 @@
   bottom: 0;
   text-align: center;
 
-
   svg {
     cursor: pointer;
     color: whitesmoke;
-    font-size: 3em;
+    font-size: 4em;
+    @include bounce-top(3s);
   }
 
   &-nav {
@@ -78,7 +78,7 @@
     background: linear-gradient(0deg, rgba(0, 0, 0, .9) 10%, rgba(0, 0, 0, 0) 85%);
 
     svg {
-      transform: rotate(180deg);
+      transform: rotate(180);
     }
 
     nav {
