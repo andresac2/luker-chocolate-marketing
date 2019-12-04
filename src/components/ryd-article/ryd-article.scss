@@ -17,9 +17,15 @@
 
   .btn-dist {
     left: 5em;
-
     @media screen and (max-width: 1320px) {
       left: 2em;
+    }
+    @media screen and (max-width: 960px) {
+      display: flex;
+      width: 4em;
+      button{
+        display: none;
+      };
     }
   }
 
