@@ -98,18 +98,6 @@ class IngredientCacao extends React.Component {
           img: 'LUKER-CACAO-PALENQUE70.png',
           description: 'PALENQUE 70%',
           selected: false
-        },
-        {
-          id: 7,
-          img: 'LUKER-CACAO-SELVA46.png',
-          description: 'SELVA 46%',
-          selected: false
-        },
-        {
-          id: 8,
-          img: 'LUKER-CACAO-SOMBRA54.png',
-          description: 'SOMBRA 54%',
-          selected: false
         }
         ]
       },
@@ -133,36 +121,6 @@ class IngredientCacao extends React.Component {
           id: 3,
           img: 'LUKER-CACAO-PARAMO.png',
           description: 'MACONDO 60%',
-          selected: false
-        },
-        {
-          id: 4,
-          img: 'LUKER-CACAO-PARAMO.png',
-          description: 'MARANTA 61%',
-          selected: false
-        },
-        {
-          id: 5,
-          img: 'LUKER-CACAO-PARAMO.png',
-          description: 'MISTERIO 50%',
-          selected: false
-        },
-        {
-          id: 6,
-          img: 'LUKER-CACAO-PARAMO.png',
-          description: 'PALENQUE 70%',
-          selected: false
-        },
-        {
-          id: 7,
-          img: 'LUKER-CACAO-PARAMO.png',
-          description: 'SELVA 46%',
-          selected: false
-        },
-        {
-          id: 8,
-          img: 'LUKER-CACAO-PARAMO.png',
-          description: 'SOMBRA 54%',
           selected: false
         }
         ]
