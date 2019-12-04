@@ -3,9 +3,7 @@
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 50% 50%;
-  grid-template-areas:
-    "expo item"
-    "carrousel item";
+  grid-template-areas: "expo item";
   text-align: center;
   color: #fff;
   overflow: hidden;
