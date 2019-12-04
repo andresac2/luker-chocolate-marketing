@@ -50,7 +50,7 @@ function Customer() {
           <h2>PAUL LAFAYETTE</h2>
           <img src={frFlag} alt="" className="flag-badge" />
         </Link>
-        <Link to='/blog/customers/doisy'>
+        <Link to='/blog/customers/pots'>
           <img src={pots} alt="" />
           <h2>POTS & CO</h2>
           <img src={ukFlag} alt="" className="flag-badge" />

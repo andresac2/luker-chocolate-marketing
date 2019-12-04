@@ -44,7 +44,7 @@ class Blog extends React.Component {
       breads: [{ href: '/blog', name: 'Customers' }],
       title: 'Doisy & Dam',
       flag: 'uk',
-      content: '<div class="blog-article-content--image-capital"><div class="blog-article-content--img" ><img src="/static/media/Doisy&amp;Dam.af4c8f6b.png" alt=""><span></span></div>When it comes to sourcing cocoa, Doisy & Dam only wants the best of the best.For them, it’s very important to understand exactly how the supply chain works and where exactly the totally delish cocoa comes from.They also want to make sure that the chocolate they work with is ethically sourced and has a positive impact on the dedicated farmers who depend on growing great crops.</div><p></p>For their newest creations Crunchy Almond Butter and SNAPS, they wanted to get even deeper in to the heart of tracing the  cocoa, which us why they\'ve decided to use single-origin chocolate from us, not only because grow some of the tastiest cocoa beans in the land but also because we work very hard to improve the local community.<p></p> Delivering superior product quality is of primary importance for Daniel’s Delights, which is supported by fully understanding our supply chain and supporting a ‘Farm to Bar’ supply chain, which is achieved through our partnership.</div>',
+      content: '<div class="blog-article-content--image-capital"><div class="blog-article-content--img" ><img src="/static/media/Doisy&amp;Dam.af4c8f6b.png" alt=""><span></span></div>When it comes to sourcing cocoa, Doisy & Dam only wants the best of the best.For them, it’s very important to understand exactly how the supply chain works and where exactly the totally delish cocoa comes from.They also want to make sure that the chocolate they work with is ethically sourced and has a positive impact on the dedicated farmers who depend on growing great crops.</div><p></p>For their newest creations Crunchy Almond Butter and SNAPS, they wanted to get even deeper in to the heart of tracing the  cocoa, which us why they\'ve decided to use single-origin chocolate from us, not only because grow some of the tastiest cocoa beans in the land but also because we work very hard to improve the local community.<p></p> Delivering superior product quality is of primary importance for Daniel’s Delights, which is supported by fully understanding our supply chain and supporting a ‘Farm to Bar’ supply chain, which is achieved through our partnership.</div><p></p><div class="blog-article-content--img" ><img src = "/static/media/doisy-milk.de250ec7.png" alt = "" ><span></span></div>',
       recommended: [{ img: 'pots&co.png', title: '', subtitle: 'POTS & CO', url: '/blog/take-stand/article' }, { img: 'PAUL LAFAYET_Creme.png', title: '', subtitle: 'PAUL LAFAYETTE', url: '/blog/take-stand/article' }, { img: 'lyra_eshop.png', title: '', subtitle: 'LYRA CHOC', url: '/blog/take-stand/article' }]
     }
     const daniels = {
@@ -111,7 +111,7 @@ class Blog extends React.Component {
               <Option value="en">EN</Option>
             </Select>
           </div>
-          <h1>{(article) ? (article === 'article') ? artExample.title : doisy.title : (category) ? 'Take a stand' : 'Headline'} </h1>
+          <h1>{(article) ? (article === 'article') ? artExample.title : articleSelected.title : (category) ? 'Take a stand' : 'Headline'} </h1>
         </div >
         <div className="blog-component-content">
           {!article &&
