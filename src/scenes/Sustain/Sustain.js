@@ -14,7 +14,7 @@ class Sustain extends React.Component {
     this.state = {
       distModalVisible: false,
       reportModalVisible: false,
-      articleModalVisible: true,
+      articleModalVisible: false,
       firstItem: 0,
       modalSelectedIndex: 0,
       items: [{
