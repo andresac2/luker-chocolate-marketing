@@ -101,6 +101,7 @@ class Sustain extends React.Component {
     const { items, firstItem, distModalVisible, reportModalVisible, articleModalVisible, modalSelectedIndex } = this.state;
     const { Option } = Select;
     const altImg = 'img-example.svg';
+    
     return (
       <div className="sustain-component">
         <FloatLogo btnText='dist' />
@@ -129,9 +130,9 @@ class Sustain extends React.Component {
               <img className="btn-next-img" src={back} alt='left' onClick={() => this.carrAction('r')} />
             </div>
             <div className="sustain-content-contain-carr--dots">
-              {[...Array(Math.round(items.length / 2))].map((_, i) =>
-                <span key={i} className={`${(i * 2 === firstItem || i * 2 + 1 === firstItem) && 'dots-active'}`} onClick={() => this.carrAction(i)} ></span>
-              )}
+              <span className={`${ firstItem < 1 && 'dots-active'}`} onClick={() => this.carrAction(0)} ></span>
+              <span className={`${ firstItem >= 1 && firstItem < 3 && 'dots-active'}`} onClick={() => this.carrAction(1)} ></span>
+              <span className={`${ firstItem >= 3 && 'dots-active'}`} onClick={() => this.carrAction(2)} ></span>
             </div>
           </div>
           <div className="sustain-content-model">
