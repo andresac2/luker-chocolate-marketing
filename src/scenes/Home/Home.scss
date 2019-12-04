@@ -55,7 +55,7 @@
   &-content {
     position: relative;
     display: inline-grid;
-    grid-template-columns: 45% 45% 10%;
+    grid-template-columns: 45% 45%;
     margin-left: 5em;
     color: #fff;
 
@@ -119,24 +119,48 @@
         }
       }
     }
+  }
 
-    .cacao-link {
+  .cacao-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: 100%;
+
+    &-content {
       position: relative;
-      cursor: pointer;
-      width: 18em;
-      margin-top: -5em;
-      margin-left: -2em;
 
-      img {
-        @media (min-width: 1440px) {
-          width: 27em;
+      a {
+        position: absolute;
+        bottom: 0;
+        filter: blur(2px);
+        width: 100%;
+        height: 100%;
+        bottom: -30vh;
+        right: -50%;
+
+        img {
+          width: 100%;
+          object-fit: contain;
+
+          &:first-child {
+            margin-bottom: -100%;
+          }
+
+          &:last-child {
+            margin-top: -92%;
+          }
         }
 
-        position: absolute;
-        filter: blur(4px);
-        width: 22em;
+        &:active {
+          img:first-child {
+            @include open-flow();
+          }
+        }
       }
     }
+
 
     .btn-dist-respo {
       display: none;

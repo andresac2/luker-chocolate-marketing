@@ -4,7 +4,7 @@ import cacao1 from '../../assets/img/roto-b.png'
 import cacao2 from '../../assets/img/roto-c.png'
 import { MdClose } from 'react-icons/md';
 import { Select } from 'antd';
-
+import { Link } from 'react-router-dom';
 
 class Home extends React.Component {
   constructor(props) {
@@ -51,9 +51,13 @@ class Home extends React.Component {
               <button onClick={() => this.showModalDist()}>FIND A DISTRIBUTOR</button>
             </div>
           </div>
-          <div className="cacao-link">
-            <img src={cacao1} className="cacao-link-1" alt="Logo Luker" />
-            <img src={cacao2} className="cacao-link-2" alt="Logo Luker" />
+        </div>
+        <div className="cacao-link">
+          <div className="cacao-link-content">
+            <Link to="/" onClick={() => console.log('aroma')}>
+              <img src={cacao1} className="cacao-link-1" alt="Logo Luker" />
+              <img src={cacao2} className="cacao-link-2" alt="Logo Luker" />
+            </Link>
           </div>
         </div>
         <div className={`modal-dist modal-dist-${distModalVisible && 'visible'}`}>
