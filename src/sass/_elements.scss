@@ -497,6 +497,7 @@ input::placeholder {
     overflow: auto;
     z-index: 1;
     padding-bottom: 2em;
+    position: relative;
 
     .blog-article {
       width: 800px;
@@ -505,13 +506,14 @@ input::placeholder {
   }
 
   &-header {
-    height: 180px;
+    height: calc(180px + 3em);
     background: url('../assets/img/blog-header.png') no-repeat;
     background-size: cover;
     color: #fff;
     display: flex;
     justify-content: center;
     flex-direction: column;
+    position: relative;
 
     h1 {
       font-weight: 700;
@@ -529,6 +531,28 @@ input::placeholder {
         font-size: 48px;
       }
     }
+
+    &-badges {
+      //display: flex;
+      width: 800px;
+      margin: 0 auto;
+      position: absolute;
+      bottom: 0;
+      left: calc((100% - 800px) / 2);
+
+      // justify-content: flex-start;
+      .modal-badge {
+        display: inline-block;
+        margin-right: 1em;
+        flex: none;
+
+        // flex: 1 1;
+        img {
+          width: 56px;
+          height: 56px;
+        }
+      }
+    }
   }
 
   .btn-x {
@@ -536,7 +560,8 @@ input::placeholder {
     cursor: pointer;
     position: absolute;
     font-size: 2em;
-    right: 15px;
+    right: 20px;
     top: 15px;
+    z-index: 1;
   }
 }

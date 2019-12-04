@@ -14,37 +14,42 @@ class Sustain extends React.Component {
     this.state = {
       distModalVisible: false,
       reportModalVisible: false,
-      articleModalVisible: false,
+      articleModalVisible: true,
       firstItem: 0,
       modalSelectedIndex: 0,
       items: [{
         img: 'costal-luker.png',
         flag: 'us',
         title: 'Jobs',
+        badges: ['gender-equality.png', 'decent-work.png'],
         content: 'Thanks to our sustainability efforts, we’ve generated a total of 232 formal jobs in the community with 0% of child labor. We also generated 617 formal jobs in Bogotá and 71% of those positions are filled by millennials, guaranteeing as well 0% of child labor.<p></p><div class="blog-article-content--img"><img src="/static/media/sustains-jobs.b0b1505e.png"></div>'
       },
       {
         img: 'arauca-river.png',
         flag: 'us',
         title: 'SMALL-SCALE FARMERS',
+        badges: ['no-poverty.png', 'decent-work.png', 'reduced-inequalities.png'],
         content: 'We are committed to small-scale farmers, which is why we have established a network of alliances with over 50 cocoa growers associations allowing us to guarantee the purchase of the entire harvest of each association, helping to create the maximum value possible for the farmers and their families. We buy directly from 65 associations and more than 7500 Colombian families. We’ve also trained around 30.000 farmers in Luker Farm and built 10 centralized milling facilities in Tumaco and have 1 currently under construction in Huila. <p></p><div class="blog-article-content--img"><img src="/static/media/sustain-small.b2035b94.png"></div>'
       },
       {
         img: 'cocoa-tree.png',
         flag: 'us',
         title: 'Community',
+        badges: ['no-poverty.png', 'decent-work.png', 'reduced-inequalities.png'],
         content: 'We support our cocoa producers and their communities by implementing wide impact actions that not only improve farmers’ economic situation but also benefit the stability of their families. So far, we’ve intervened 6 schools with the new school model and renovated 280 square meters of them. 600 people have been trained in entrepreneurship with a focus on gender studies and 600 students have been trained in academic and emotional skills.<p></p><div class="blog-article-content--img"><img src="/static/media/sustain-community.3c2f2eb7.png"></div>Furthermore, 300 young people have been trained in technical programs, 60 adults have been trained in reading and math, and 300 teachers were trained in resilience and socio-emotional skills with 70 international and national volunteers, which led to the construction of 1 social innovation center.'
       },
       {
         img: 'enviromental.png',
         flag: 'us',
         title: 'Enviromental',
+        badges: ['responsible-consumption.png', 'climate-action.png'],
         content: 'We know that reforestation attracts new species that can then be protected. That’s why with our environmental transformation strategies we have improved the conservation and care of 7 vulnerable species through the plantation of 600.000 new trees in agroforestry systems. The plantations have brought back species that had disappeared from the area. Whatsmore, we also participate in the 0 deforestation agreement “Cocoa, Forest and Peace initiative” led by the World Cocoa Foundation.<p></p> <div class="blog-article-content--img"><img src="/static/media/sustain-environmental.bfe1b135.png"></div>'
       },
       {
         img: 'cocoa-forest.png',
         flag: 'us',
         title: 'Cocoa forest',
+        badges: ['no-poverty.png', 'gender-equality.png', 'decent-work.png', 'reduced-inequalities.png', 'responsible-consumption.png', 'climate-action.png'],
         content: `
         Back in 2011, we decided to implement a new strategy by planting our own crops in order to reach the following goals.
         <p></p>
@@ -101,7 +106,7 @@ class Sustain extends React.Component {
     const { items, firstItem, distModalVisible, reportModalVisible, articleModalVisible, modalSelectedIndex } = this.state;
     const { Option } = Select;
     const altImg = 'img-example.svg';
-    
+
     return (
       <div className="sustain-component">
         <FloatLogo btnText='dist' />
@@ -130,9 +135,9 @@ class Sustain extends React.Component {
               <img className="btn-next-img" src={back} alt='left' onClick={() => this.carrAction('r')} />
             </div>
             <div className="sustain-content-contain-carr--dots">
-              <span className={`${ firstItem < 1 && 'dots-active'}`} onClick={() => this.carrAction(0)} ></span>
-              <span className={`${ firstItem >= 1 && firstItem < 3 && 'dots-active'}`} onClick={() => this.carrAction(1)} ></span>
-              <span className={`${ firstItem >= 3 && 'dots-active'}`} onClick={() => this.carrAction(2)} ></span>
+              <span className={`${firstItem < 1 && 'dots-active'}`} onClick={() => this.carrAction(0)} ></span>
+              <span className={`${firstItem >= 1 && firstItem < 3 && 'dots-active'}`} onClick={() => this.carrAction(1)} ></span>
+              <span className={`${firstItem >= 3 && 'dots-active'}`} onClick={() => this.carrAction(2)} ></span>
             </div>
           </div>
           <div className="sustain-content-model">
@@ -275,6 +280,12 @@ class Sustain extends React.Component {
             <MdClose className="btn-x" onClick={() => this.showModalArticle()} />
             <div className="modal-article-header" style={{ backgroundImage: `url(${require(`../../assets/img/${items[modalSelectedIndex].img}`)})` }}>
               <h1>{items[modalSelectedIndex].title}</h1>
+              <div className="modal-article-header-badges">
+                {(items[modalSelectedIndex].badges).map((badge, i) =>
+                  <div key={i} className={`modal-badge`}>
+                    <img src={require('../../assets/img/badges/' + badge)} alt={items[modalSelectedIndex].title} />
+                  </div>)}
+              </div>
             </div>
             <Article data={items[modalSelectedIndex]} />
           </div>
