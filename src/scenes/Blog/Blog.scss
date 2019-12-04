@@ -39,7 +39,9 @@
       word-wrap: break-word;
 
       @media screen and (min-width: 1200px) {
-        font-size: 98px;
+        //font-size: 4em;
+        font-size: calc(2vw + 2vh + 2vmin);
+        padding-left: 1em;
       }
 
       @media (max-width: 992px) {
@@ -237,6 +239,7 @@
         &--item {
           img {
             width: 100%;
+            height: 200px;
             object-fit: cover;
           }
 
@@ -293,7 +296,7 @@
             h2 {
               color: #4b2418;
               font-weight: 700;
-              width: max-content;
+              //width: max-content;
               font-size: 1.5em;
             }
 
