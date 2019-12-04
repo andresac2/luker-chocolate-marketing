@@ -263,9 +263,13 @@
         padding-bottom: 13px;
       }
 
-      &-contain-carr--items .card-image img {
-        height: 130px;
-        object-fit: cover;
+      &-contain-carr--items {
+        overflow: auto;
+
+        .card-image img {
+          height: 130px;
+          object-fit: cover;
+        }
       }
     }
 

@@ -128,7 +128,7 @@ class Sustain extends React.Component {
               <img className="btn-next-img" src={back} alt='left' onClick={() => this.carrAction('r')} />
             </div>
             <div className="sustain-content-contain-carr--dots">
-              {[...Array(Math.floor(items.length / 2))].map((_, i) =>
+              {[...Array(Math.round(items.length / 2))].map((_, i) =>
                 <span key={i} className={`${(i * 2 === firstItem || i * 2 + 1 === firstItem) && 'dots-active'}`} onClick={() => this.carrAction(i)} ></span>
               )}
             </div>
