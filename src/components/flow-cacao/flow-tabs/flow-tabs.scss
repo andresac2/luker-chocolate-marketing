@@ -262,11 +262,7 @@
           width: 8px;
         }
 
-        @media (max-width: 992px) {
-          &:first-child {
-            /* filter: blur(2px); */
-          }
-        }
+        @media (max-width: 992px) {}
 
         /* Track */
         &::-webkit-scrollbar-track {
