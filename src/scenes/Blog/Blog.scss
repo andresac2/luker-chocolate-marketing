@@ -8,6 +8,7 @@
     background: url("../../assets/img/blog-header.png") no-repeat;
     background-size: cover;
     color: #fff;
+    position: relative;
     @include vert-center;
     flex-direction: column;
 

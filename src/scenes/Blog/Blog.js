@@ -34,8 +34,8 @@ class Blog extends React.Component {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/take-stand', name: 'Take a stand' }],
       title: '"Article title"',
       content: '<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p> <div class="blog-article-content--img" ><img src=\'/static/media/planting.0dcd8148.png\' alt="Proceso de plantación" /><span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</span></div ><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>',
-      autor: { name: 'NOMBRE APELLIDO', avatar: 'autor-blog.png', details: 'DETALLES PROFESIONALES', description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et.', linkedin: ['https://www.linkedin.com/company/casa-luker/', 'Nombre del perfil'] },
-      recommended: [{ img: 'planting.png', title: 'LOREM IPSUM', subtitle: 'DETALLES DE PUBLICACIÓN', url: '/blog/take-stand/article' }, { img: 'planting.png', title: 'LOREM IPSUM', subtitle: 'DETALLES DE PUBLICACIÓN', url: '/blog/take-stand/article' }, { img: 'planting.png', title: 'LOREM IPSUM', subtitle: 'DETALLES DE PUBLICACIÓN', url: '/blog/take-stand/article' }]
+      autor: { name: 'AUTHOR', avatar: 'autor-blog.png', details: 'CREDENTIALS', description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et.', linkedin: ['https://www.linkedin.com/company/casa-luker/', 'PROFILE NAME'] },
+      recommended: [{ img: 'planting.png', title: 'LOREM IPSUM', subtitle: 'PUBLICATION DETAILS', url: '/blog/take-stand/article' }, { img: 'planting.png', title: 'LOREM IPSUM', subtitle: 'PUBLICATION DETAILS', url: '/blog/take-stand/article' }, { img: 'planting.png', title: 'LOREM IPSUM', subtitle: 'PUBLICATION DETAILS', url: '/blog/take-stand/article' }]
     }
     const doisy = {
       breads: [{ href: '/blog', name: 'Customers' }],
@@ -84,29 +84,29 @@ class Blog extends React.Component {
                 <h1>Latest entries</h1>
                 <Link to="/blog/take-stand/article" className="blog-layout-latest--article">
                   <img src={item5} alt="cacao" />
-                  <p>DETALLES DE PUBLICACIÓN</p>
+                  <p>PUBLICATION DETAILS</p>
                   <h2>Lorem Ipsum</h2>
                 </Link>
               </div>
               <div className="blog-layout-articles">
                 <div className="blog-layout-articles--item">
                   <img src={item2} alt="cacao" />
-                  <p>DETALLES DE PUBLICACIÓN</p>
+                  <p>PUBLICATION DETAILS</p>
                   <h2>Lorem Ipsum</h2>
                 </div>
                 <div className="blog-layout-articles--item">
                   <img src={item3} alt="cacao" />
-                  <p>DETALLES DE PUBLICACIÓN</p>
+                  <p>PUBLICATION DETAILS</p>
                   <h2>Lorem Ipsum</h2>
                 </div>
                 <div className="blog-layout-articles--item">
                   <img src={item1} alt="cacao" />
-                  <p>DETALLES DE PUBLICACIÓN</p>
+                  <p>PUBLICATION DETAILS</p>
                   <h2>Lorem Ipsum</h2>
                 </div>
                 <div className="blog-layout-articles--item">
                   <img src={item4} alt="cacao" />
-                  <p>DETALLES DE PUBLICACIÓN</p>
+                  <p>PUBLICATION DETAILS</p>
                   <h2>Lorem Ipsum</h2>
                 </div>
               </div>
@@ -114,7 +114,7 @@ class Blog extends React.Component {
                 <h1>Featured</h1>
                 <div className="blog-layout-featured-item">
                   {[...Array(5)].map(i => <div key={i}>
-                    <p>DETALLES DE PUBLICACIÓN</p>
+                    <p>PUBLICATION DETAILS</p>
                     <h2>Lorem Ipsum</h2>
                   </div>)}
                 </div>

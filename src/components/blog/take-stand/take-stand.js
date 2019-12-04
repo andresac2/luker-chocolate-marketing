@@ -14,7 +14,7 @@ function TakeStand() {
         <h1>FEATURED POST</h1>
         <div className="blog-layout-latest--article">
           <img src={item1} alt="cacao" />
-          <p>DETALLES DE PUBLICACIÓN</p>
+          <p>PUBLICATION DETAILS</p>
           <h2>Lorem Ipsum</h2>
         </div>
       </div>
@@ -22,32 +22,32 @@ function TakeStand() {
 
         <div className="blog-layout-articles--item">
           <img src={item2} alt="cacao" />
-          <p>DETALLES DE PUBLICACIÓN</p>
+          <p>PUBLICATION DETAILS</p>
           <h2>Lorem Ipsum</h2>
         </div>
         <div className="blog-layout-articles--item">
           <img src={item3} alt="cacao" />
-          <p>DETALLES DE PUBLICACIÓN</p>
+          <p>PUBLICATION DETAILS</p>
           <h2>Lorem Ipsum</h2>
         </div>
         <div className="blog-layout-articles--item">
           <img src={item4} alt="cacao" />
-          <p>DETALLES DE PUBLICACIÓN</p>
+          <p>PUBLICATION DETAILS</p>
           <h2>Lorem Ipsum</h2>
         </div>
         <div className="blog-layout-articles--item">
           <img src={item5} alt="cacao" />
-          <p>DETALLES DE PUBLICACIÓN</p>
+          <p>PUBLICATION DETAILS</p>
           <h2>Lorem Ipsum</h2>
         </div>
         <div className="blog-layout-articles--item">
           <img src={item6} alt="cacao" />
-          <p>DETALLES DE PUBLICACIÓN</p>
+          <p>PUBLICATION DETAILS</p>
           <h2>Lorem Ipsum</h2>
         </div>
         <div className="blog-layout-articles--item">
           <img src={item7} alt="cacao" />
-          <p>DETALLES DE PUBLICACIÓN</p>
+          <p>PUBLICATION DETAILS</p>
           <h2>Lorem Ipsum</h2>
         </div>
       </div>
