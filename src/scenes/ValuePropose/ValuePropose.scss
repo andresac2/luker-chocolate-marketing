@@ -31,6 +31,7 @@
         font-weight: 700;
         font-size: 3.5vw;
         margin-bottom: 1rem;
+        width: max-content;
       }
 
       p {
@@ -179,7 +180,7 @@
     height: 100%;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 40% 30% 360px;
+    grid-template-rows: 40% 30% 100%;
     grid-template-areas:
       "expo"
       "carrousel"

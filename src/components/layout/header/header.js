@@ -6,6 +6,8 @@ import { Select } from 'antd';
 
 class Header extends React.Component {
 
+  logoHidden = ['/value-propose', '/ryd'];
+
   constructor(props) {
     super(props);
     this.state = {
@@ -21,8 +23,11 @@ class Header extends React.Component {
     this.setState({ showMenu: !this.state.showMenu });
   }
   render() {
+    const { history } = this.props;
     const { selectTab, showMenu } = this.state;
     const { Option } = Select;
+
+    const isLogoHidden = this.logoHidden.includes(history.location.pathname);
 
     return (
       <div>
@@ -37,7 +42,9 @@ class Header extends React.Component {
         </nav>
         <div className={`header-component-responsive header-component-responsive-${showMenu && 'visible'} header-component-responsive-${selectTab.slice(1).split('/').shift()}`} onClick={() => this.menuToggle()} >
           <div className={`header-logo header-logo-${showMenu && 'visible'}`}>
-            <img src={logo} className="logo" alt="Logo Luker" />
+
+            { !isLogoHidden && <img src={logo} className="logo" alt="Logo Luker" /> }
+
             {showMenu && <Select defaultValue="es" >
               <Option value="es">ES</Option>
               <Option value="en">EN</Option>
