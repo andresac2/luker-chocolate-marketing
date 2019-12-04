@@ -111,7 +111,7 @@ class Blog extends React.Component {
               <Option value="en">EN</Option>
             </Select>
           </div>
-          <h1>{(article) ? (article === 'article') ? artExample.title : doisy.title : (category) ? 'Take a stand' : 'Headline'} </h1>
+          <h1>{(article) ? (article === 'article') ? artExample.title : articleSelected.title : (category) ? 'Take a stand' : 'Headline'} </h1>
         </div >
         <div className="blog-component-content">
           {!article &&
