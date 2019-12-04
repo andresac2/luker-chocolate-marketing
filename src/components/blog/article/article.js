@@ -53,7 +53,7 @@ class Article extends React.Component {
             <h2>{data.flag ? 'RELATED PRODUCTS' : 'RECOMMENDED ENTRIES'}</h2>
             <div className="blog-article-entries--list">
               {Object.keys(data.recommended).map(i =>
-                <Link to={data.recommended[i].url}>
+                <Link key={i} to={data.recommended[i].url}>
                   <img src={require('../../../assets/img/' + (data.recommended[i].img ? data.recommended[i].img : altImg))} alt={data.recommended[i].title} />
                   <p>{data.recommended[i].subtitle}</p>
                   <h2>{data.recommended[i].title}</h2>
