@@ -152,10 +152,10 @@ class Blog extends React.Component {
               </div>
               <div className="blog-layout-articles">
                 <div className="blog-layout-articles--item">
-                  <Link to="/blog/take-stand/shoescocoa" className="blog-layout-latest--article">
+                  <Link to="/blog/take-stand/shoescocoa2" className="blog-layout-latest--article">
                     <img class="aligncenter wp-image-3732 size-full below-entry-meta lazyloaded" src="https://www.lukerchocolate.com/wp-content/uploads/2019/10/Fbago21Eng.jpg" alt="" width="1200" height="628" srcset="https://www.lukerchocolate.com/wp-content/uploads/2019/10/Fbago21Eng.jpg 1200w, https://www.lukerchocolate.com/wp-content/uploads/2019/10/Fbago21Eng-300x157.jpg 300w, https://www.lukerchocolate.com/wp-content/uploads/2019/10/Fbago21Eng-768x402.jpg 768w, https://www.lukerchocolate.com/wp-content/uploads/2019/10/Fbago21Eng-1024x536.jpg 1024w" />
                     <p>Agosto 2019</p>
-                    <h2>{shoescocoa.title} </h2>
+                    <h2>{shoescocoa2.title} </h2>
                   </Link>
                 </div>
                 {/*                <div className="blog-layout-articles--item">
