@@ -6,9 +6,9 @@
   height: 100%;
   border-right: 5px solid #D3D974;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.1fr .9fr;
   grid-template-rows: 1fr;
-  gap: 20px;
+  gap: 10px;
 
   &--text,
   &--img {
@@ -37,9 +37,10 @@
   &--text {
     flex-direction: column;
     margin-left: 5em;
-    margin-top: 162px;
+    margin-top: 120px;
     padding-bottom: 2em;
     justify-content: flex-start;
+    color: #484848;
 
     @media screen and (max-width: 1320px) {
       margin-left: 2em;
@@ -52,18 +53,19 @@
 
     h2 {
       margin-top: 1em;
-      font-size: 2vw;
+      font-size: 2em;
       font-weight: 900;
     }
 
     h3 {
+      font-size: 1.5em;
+      font-weight: 600;
       font-style: italic;
     }
 
     p {
       margin-bottom: 2em;
-      font-size: smaller;
-      font-weight: 600;
+      font-size: 1rem;
     }
 
     &-content {
