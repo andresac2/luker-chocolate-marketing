@@ -14,22 +14,6 @@
     &-item {
       @include vert-center;
 
-      &:nth-child(5) {
-        span {
-          font-size: 1em;
-
-          @media screen and (max-width: 992px) {
-            font-size: smaller;
-          }
-        }
-      }
-
-      &:first-child {
-        span {
-          font-size: 1em;
-        }
-      }
-
       span {
         cursor: pointer;
         font-size: large;
@@ -38,7 +22,9 @@
         writing-mode: tb-rl;
         transform: rotate(-180deg);
         color: #fff;
-        font-size: 1.5vw;
+        font-size: 1.5em;
+        line-height: 1em;
+
         overflow: hidden;
 
         @media (max-width: 992px) {
@@ -47,29 +33,21 @@
       }
 
       &--active {
-
-        &:nth-child(5),
-        &:first-child {
-          span {
-            font-size: 2vw;
-          }
-        }
-
-        @media (max-width: 992px) {
-
-          &:nth-child(5),
-          &:first-child {
-            span {
-              font-size: 1.5em;
-            }
-          }
-        }
-
         span {
-          font-size: 3vw;
+          font-size: 3em;
           align-self: center;
+          line-height: 1em;
           writing-mode: unset;
           transform: none;
+
+          br {
+            display: none;
+          }
+
+          @media (max-width: 992px) {
+            font-size: 2em;
+
+          }
         }
       }
     }
