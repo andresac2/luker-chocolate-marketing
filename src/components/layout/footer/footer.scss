@@ -11,6 +11,23 @@ $Extra-large: 1200px;
   color: #fff;
   padding: 2em 0;
 
+  &-vertical {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    grid-template-rows: repeat(4, 1fr) 2fr;
+    grid-template-columns: 1fr;
+    width: 250px;
+
+    .footer-component-link {
+      border-right: none;
+      border-left: none;
+      border-top: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+    }
+  }
+
   &-logo {
     @include vert-center;
 
@@ -106,20 +123,23 @@ $Extra-large: 1200px;
 
   }
 
-  @media (max-width: $Large-devices) { 
+  @media (max-width: $Large-devices) {
     grid-template-columns: none;
     justify-content: center;
-    &-data{
+
+    &-data {
       text-align: center;
       margin-bottom: 20px;
     }
-    &-link{
+
+    &-link {
       text-align: center;
       border-left: 0px solid #fff;
       border-right: 0px solid #fff;
       margin-bottom: 20px;
     }
-    &-social{
+
+    &-social {
       text-align: center;
       display: grid;
       justify-content: center;

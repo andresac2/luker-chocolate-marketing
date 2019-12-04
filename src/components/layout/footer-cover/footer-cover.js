@@ -3,6 +3,7 @@ import { FiChevronUp } from 'react-icons/fi'
 import { withRouter, Link } from 'react-router-dom';
 import { Select } from 'antd';
 import { MdClose } from 'react-icons/md';
+import Footer from '../footer/footer';
 
 class FooterCover extends React.Component {
 
@@ -10,6 +11,7 @@ class FooterCover extends React.Component {
     super(props);
     this.state = {
       distModalVisible: false,
+      moreInfoVisible: false,
       isOpen: false
     };
   }
@@ -26,9 +28,15 @@ class FooterCover extends React.Component {
     });
   };
 
+  showMoreInfo = () => {
+    this.setState({
+      moreInfoVisible: !this.state.moreInfoVisible,
+    });
+  };
+
   render() {
     const { history } = this.props;
-    const { isOpen, distModalVisible } = this.state;
+    const { isOpen, distModalVisible, moreInfoVisible } = this.state;
     const { Option } = Select;
     const selectTab = history.location.pathname;
 
@@ -40,7 +48,7 @@ class FooterCover extends React.Component {
           <nav className={`footer-cover-nav footer-cover-${selectTab.slice(1)}`}>
             <Link to="/blog"><span>BLOG</span></Link>
             {selectTab !== '/' && <Link to="/"><span>CREATE YOUR OWN CHOCOLATE</span></Link>}
-            <Link to="/asd"><span>MORE INFO</span></Link>
+            <Link onClick={() => this.showMoreInfo()}><span>MORE INFO</span></Link>
             <Link to="/contact-us"><span>CONTACT US</span></Link>
           </nav>
         </div>
@@ -80,6 +88,7 @@ class FooterCover extends React.Component {
             </div>
           </div>
         </div>
+        {moreInfoVisible && <Footer mode='vertical' />}
       </div>
     );
   }
