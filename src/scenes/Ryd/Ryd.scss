@@ -106,19 +106,19 @@
   @media (max-width: 992px) {
     .ryd-tab {
       &--experience {
-        grid-template-columns: 85% 5% 5% 5%;
+        grid-template-columns: 100% 0 0 0;
       }
 
       &--ethical {
-        grid-template-columns: 5% 85% 5% 5%;
+        grid-template-columns: 0 100% 0 0;
       }
 
       &--premium {
-        grid-template-columns: 5% 5% 85% 5%;
+        grid-template-columns: 0 0 100% 0;
       }
 
       &--healthy {
-        grid-template-columns: 5% 5% 5% 85%;
+        grid-template-columns: 0 0 0 100%;
       }
 
       &-item {
@@ -134,7 +134,7 @@
           }
 
           &.ryd-tab-item--healthy {
-            width: 110vw;
+            width: 200vw;
           }
         }
 
@@ -148,6 +148,10 @@
 
     .btn-dist {
       display: none;
+    }
+
+    .ryd-tab-item--active.ryd-tab-item--healthy .ryd-article {
+      width: 90vw;
     }
   }
 }
