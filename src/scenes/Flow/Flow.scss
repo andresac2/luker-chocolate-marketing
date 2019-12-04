@@ -1,14 +1,13 @@
 .flow-component {
   position: fixed;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 20% 80%;
   grid-template-rows: 1fr;
   grid-template-areas:
     "sidebar navbar";
 
   .flow-sidebar {
     grid-area: sidebar;
-    display: none;
     position: relative;
     background-image: url('../../assets/img/contact-maquila.png');
     background-position: right;
@@ -40,12 +39,9 @@
       top: 0;
       left: -40%;
 
-      @media (max-width: 1200px) {
-        left: -60%;
-      }
-
       &-content {
         position: relative;
+        top: 20em;
 
         img {
           position: absolute;
@@ -56,6 +52,8 @@
             width: 17em;
           }
         }
+
+        @media (min-width: 1200px) {}
       }
 
       &-1 {
@@ -78,5 +76,13 @@
 
   .flow-navbar {
     grid-area: navbar;
+  }
+
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+
+    .flow-sidebar {
+      display: none;
+    }
   }
 }
