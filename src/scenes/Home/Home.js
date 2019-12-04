@@ -47,8 +47,8 @@ class Home extends React.Component {
           </div>
           <div className="dist">
             <div className="dist-text">
-              <h2>CREA TU PROPIO CHOCOLATE</h2>
-              <button onClick={() => this.showModalDist()}> DISTRIBUIDORES </button>
+              <h2>CREATE YOUR OWN CHOCOLATE</h2>
+              <button onClick={() => this.showModalDist()}>FIND A DISTRIBUTOR</button>
             </div>
           </div>
           <div className="cacao-link">

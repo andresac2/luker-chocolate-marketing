@@ -214,6 +214,14 @@
         overflow: auto;
         font-weight: 100;
 
+        p {
+          margin-bottom: 1em;
+        }
+
+        strong {
+          font-weight: 600;
+        }
+
         /* width */
         &::-webkit-scrollbar {
           width: 8px;
