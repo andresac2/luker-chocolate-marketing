@@ -173,6 +173,13 @@
     width: 100vw;
     padding: 1em;
 
+    &-content {
+      &--image-capital {
+        width: 100%;
+        flex-direction: column;
+      }
+    }
+
     &-title-resp {
       display: block;
       text-align: center;

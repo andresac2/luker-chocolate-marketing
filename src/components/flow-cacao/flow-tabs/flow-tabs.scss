@@ -1,14 +1,9 @@
 .flow-tabs {
   display: grid;
-  grid-template-rows: calc(100vh - 18em) 16em;
-  height: 100vh;
+  grid-template-rows: calc(100vh - 16em) 16em;
 
   .flow-tab {
     display: grid;
-
-    @media (max-width: 992px) {
-      height: calc(100% - 5em);
-    }
 
     &-item {
       @include vert-center;
@@ -201,6 +196,10 @@
       font-size: 1vw;
       position: relative;
       transition: width 0.8s;
+
+      .arrow-back {
+        display: none;
+      }
 
       div {
         overflow: auto;
