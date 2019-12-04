@@ -3,7 +3,9 @@
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 50% 50%;
-  grid-template-areas: "expo item";
+  grid-template-areas:
+    "expo item"
+    "carrousel item";
   text-align: center;
   color: #fff;
   overflow: hidden;
@@ -21,15 +23,21 @@
       right: 2em;
       left: 3em;
 
-      @media screen and (max-width: 1370px) {
-        bottom: 2em;
+      @media screen and (max-height: 710px) {
+        bottom: 2vw;
       }
 
       h1 {
         font-weight: 700;
-        font-size: 3.0vw;
+        font-size: 3.2em;
+        word-wrap: break-word;
+        text-overflow: ellipsis;
         margin-bottom: 1rem;
         width: max-content;
+
+        @media screen and (max-width: 1340px) {
+          font-size: 3em;
+        }
       }
 
       p {
@@ -84,6 +92,7 @@
       }
 
       &-text {
+        transition: all ease-in 1s;
         @include vert-center;
         cursor: pointer;
         align-self: center;
@@ -115,7 +124,7 @@
       }
 
       &-hover {
-        /* display: none; */
+        display: none;
         position: absolute;
         height: 100%;
         width: 100%;

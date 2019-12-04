@@ -6,7 +6,7 @@ import { Select } from 'antd';
 
 class Header extends React.Component {
 
-  logoHidden = ['/value-propose', '/ryd'];
+  logoHidden = ['/ryd'];
 
   constructor(props) {
     super(props);
@@ -31,7 +31,7 @@ class Header extends React.Component {
 
     return (
       <div>
-        <nav className={`header-component header-component-${selectTab === '/' && 'intro'}`} onClick={() => this.menuToggle()} >
+        <nav className={`header-component header-component-${selectTab.slice(1).split('/').shift()} header-component-${selectTab === '/' && 'intro'}`} onClick={() => this.menuToggle()} >
           <Link to="/" onClick={() => this.headerToggle('/')} className={`selected-tab ${selectTab === '/' && 'intro'}`}>LUKER CHOCOLATE</Link>
           <Link to="/flow" onClick={() => this.headerToggle('/flow')} className={`selected-tab ${selectTab === '/flow' && selectTab.slice(1)}`}>THE CHOCOLATE PROCESS</Link>
           <Link to="/sustain" onClick={() => this.headerToggle('/sustain')} className={`selected-tab ${selectTab === '/sustain' && selectTab.slice(1)}`}>SUSTAINABILITY</Link>
@@ -43,7 +43,7 @@ class Header extends React.Component {
         <div className={`header-component-responsive header-component-responsive-${showMenu && 'visible'} header-component-responsive-${selectTab.slice(1).split('/').shift()}`} onClick={() => this.menuToggle()} >
           <div className={`header-logo header-logo-${showMenu && 'visible'}`}>
 
-            { !isLogoHidden && <img src={logo} className="logo" alt="Logo Luker" /> }
+            {!isLogoHidden && <img src={logo} className="logo" alt="Logo Luker" />}
 
             {showMenu && <Select defaultValue="es" >
               <Option value="es">ES</Option>
@@ -61,9 +61,9 @@ class Header extends React.Component {
             <Link to="/value-propose" onClick={() => this.headerToggle('/value-propose')} className={`selected-tab separator ${(selectTab === '/value-propose' || selectTab.slice(1).split('/').shift() === 'our-value') && 'value-propose'}`}><span>OUR VALUE PROPOSITION</span></Link>
 
             <Link to="/blog" onClick={() => this.headerToggle('/')} className={`selected-tab selected-tab-responsive`} ><span>BLOG</span></Link>
-            <Link to="/" onClick={() => this.headerToggle('/')} className={`selected-tab selected-tab-responsive`} ><span>Crea tu chocolate</span></Link>
-            <Link to="/contact-us" onClick={() => this.headerToggle('/')} className={`selected-tab selected-tab-responsive`}><span>Escríbenos</span></Link>
-            <Link to="/" onClick={() => this.headerToggle('/')} className={`selected-tab selected-tab-responsive`} ><span>Más información</span></Link>
+            <Link to="/" onClick={() => this.headerToggle('/')} className={`selected-tab selected-tab-responsive`} ><span>CREATE YOUR OWN CHOCOLATE</span></Link>
+            <Link to="/contact-us" onClick={() => this.headerToggle('/')} className={`selected-tab selected-tab-responsive`}><span>MORE INFO</span></Link>
+            <Link to="/" onClick={() => this.headerToggle('/')} className={`selected-tab selected-tab-responsive`} ><span>CONTACT US</span></Link>
           </nav>
         </div>
       </div>

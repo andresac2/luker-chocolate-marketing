@@ -11,7 +11,7 @@
     display: none;
   }
 
-  /*&-flow {
+  &-flow {
     background: $ocher-yellow;
   }
 
@@ -35,23 +35,25 @@
   &-value-propose,
   &-our-value {
     background: $light-gray;
-  }*/
+  }
 
-  //&:hover {
-  height: 3em;
-  background: linear-gradient(180deg, rgba(0, 0, 0, .9) 10%, rgba(0, 0, 0, 0) 85%);
+  &:hover {
+    height: 3em;
+    background: linear-gradient(180deg, rgba(0, 0, 0, .9) 10%, rgba(0, 0, 0, 0) 85%);
+    transition: all ease-in .2s;
 
-  a {
-    background: transparent;
-    display: inline;
-    cursor: pointer;
+    a {
+      transition: all ease-in 1s;
+      background: transparent;
+      display: inline;
+      cursor: pointer;
+    }
   }
 
   a {
     color: #fff;
-    //display: none;
+    display: none;
     text-transform: uppercase;
-    display: inline;
     align-self: center;
     text-align: center;
     font-weight: 700;
@@ -59,6 +61,19 @@
 
     @media screen and (min-width: 1440px) {
       font-size: 14px;
+    }
+  }
+
+  &-intro {
+    height: 3em;
+    background: linear-gradient(180deg, rgba(0, 0, 0, .9) 10%, rgba(0, 0, 0, 0) 85%);
+    transition: all ease-in .2s;
+
+    a {
+      transition: all ease-in 1s;
+      background: transparent;
+      display: inline;
+      cursor: pointer;
     }
   }
 
