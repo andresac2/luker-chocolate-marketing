@@ -11,6 +11,7 @@ import item5 from '../../assets/img/blog-item4.png'
 import logo from '../../assets/img/Lukerlogo.svg'
 import TakeStand from '../../components/blog/take-stand/take-stand';
 import Article from '../../components/blog/article/article';
+import FloatLogo from '../../components/layout/float-logo/float-logo';
 
 
 class Blog extends React.Component {
@@ -51,6 +52,7 @@ class Blog extends React.Component {
             <img src={logo} className="logo" alt="Logo Luker" />
             <Link to='/blog'>BLOG</Link>
           </div>
+          <FloatLogo btns={[{ url: '/blog', btnText: 'BLOG' }]} />
           <div className="blog-component-header--search">
             <Search allowClear
               placeholder="input search text"

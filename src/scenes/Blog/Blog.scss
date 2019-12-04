@@ -113,6 +113,7 @@
       position: absolute;
       top: 0;
       left: 3em;
+      display: none;
 
       .logo {
         margin: 3em auto 0.5em;
@@ -363,9 +364,10 @@
       position: absolute;
       top: 0;
       left: 3em;
+      display: inline;
 
       .logo {
-        opacity: 0;
+        opacity: 1;
       }
 
       a {
