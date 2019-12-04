@@ -6,7 +6,7 @@ import { Select } from 'antd';
 
 class Header extends React.Component {
 
-  logoHidden = ['/ryd'];
+  logoHidden = ['/ryd', '/blog', '/blog/take-stand', '/blog/take-stand/article'];
 
   constructor(props) {
     super(props);
@@ -40,8 +40,7 @@ class Header extends React.Component {
         <div className={`header-component-responsive header-component-responsive-${showMenu && 'visible'} header-component-responsive-${selectTab.slice(1).split('/').shift()}`} onClick={() => this.menuToggle()} >
           <div className={`header-logo header-logo-${showMenu && 'visible'}`}>
 
-            {!isLogoHidden && <img src={logo} className="logo" alt="Logo Luker" />}
-
+            {(!isLogoHidden || showMenu) && <img src={logo} className="logo" alt="Logo Luker" />}
             {showMenu && <Select defaultValue="es" >
               <Option value="es">ES</Option>
               <Option value="en">EN</Option>

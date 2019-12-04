@@ -9,7 +9,6 @@ class FooterCover extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectTab: this.props.location.pathname,
       distModalVisible: false,
       isOpen: false
     };
@@ -28,8 +27,10 @@ class FooterCover extends React.Component {
   };
 
   render() {
-    const { isOpen, selectTab, distModalVisible } = this.state;
+    const { history } = this.props;
+    const { isOpen, distModalVisible } = this.state;
     const { Option } = Select;
+    const selectTab = history.location.pathname;
 
     return (
       !selectTab.slice(1).includes('services') &&
