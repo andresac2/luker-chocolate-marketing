@@ -1,11 +1,11 @@
 import React from 'react';
-import logo from '../../assets/img/Lukerlogo.svg'
 import panel from '../../assets/img/sustain-panel.png'
 import back from '../../assets/img/back.svg'
 import { MdClose } from 'react-icons/md';
 import { Form, Select, Input, Button, InputNumber } from 'antd';
 import FormItem from 'antd/lib/form/FormItem';
 import Article from '../../components/blog/article/article';
+import FloatLogo from '../../components/layout/float-logo/float-logo';
 
 class Sustain extends React.Component {
 
@@ -102,11 +102,8 @@ class Sustain extends React.Component {
     const altImg = 'img-example.svg';
     return (
       <div className="sustain-component">
+        <FloatLogo btnText='dist' />
         <div className="sustain-sidebar">
-          <div className="sustain-sidebar--dist">
-            <img src={logo} className="logo" alt="Logo Luker" />
-            <button onClick={() => this.showModalDist()}> FIND A DISTRIBUTOR </button>
-          </div>
           <div className="sustain-sidebar--text">
             <h1>SUSTAINABILITY</h1>
             <div className="sustain-sidebar--text-content">

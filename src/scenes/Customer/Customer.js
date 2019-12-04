@@ -13,6 +13,7 @@ import frFlag from '../../assets/img/fr-flag.png'
 import usFlag from '../../assets/img/us-flag.png'
 import svkFlag from '../../assets/img/svk-flag.png'
 import ukFlag from '../../assets/img/uk-flag.png'
+import FloatLogo from '../../components/layout/float-logo/float-logo';
 
 
 function Customer() {
@@ -21,10 +22,7 @@ function Customer() {
     <div className='customer-component'>
       <div className="customer-component--header">
         <h1>OUR CLIENTS</h1>
-        <div className="btn-dist">
-          <img src={logo} className="logo" alt="Logo Luker" />
-          <button onClick={() => console.log('hi')}> FIND A DISTRIBUTOR </button>
-        </div>
+        <FloatLogo btnText='dist' />
       </div>
       <div className="customer-component--content">
         <Link to='/blog/customers/doisy'>

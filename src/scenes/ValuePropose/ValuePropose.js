@@ -7,15 +7,13 @@ import item4 from '../../assets/img/grano4.png'
 import ImgCarrousel from '../../components/img-carrousel/img-carrousel';
 
 import { Link } from 'react-router-dom';
+import FloatLogo from '../../components/layout/float-logo/float-logo';
 
 function ValuePropose() {
   return (
     <div className="value-propose-component">
       <div className="value-propose-component--expo">
-        <div className="btn-dist">
-          <img src={logo} className="logo" alt="Logo Luker" />
-          <button onClick={() => console.log('hi')}> FIND A DISTRIBUTOR </button>
-        </div>
+        <FloatLogo btnText='dist' />
         <div className="value-propose-component--expo-pagraph">
           <h1>OUR VALUE PROPOSITION</h1>
           <p>We promise to offer chocolate with unique and superior flavour and that supports the environmental, economic, and social development of the origins of its cocoa beans.</p>

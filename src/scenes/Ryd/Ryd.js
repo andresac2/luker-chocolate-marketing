@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../../assets/img/Lukerlogo.svg'
 import RydArticle from '../../components/ryd-article/ryd-article';
+import FloatLogo from '../../components/layout/float-logo/float-logo';
 
 class Ryd extends React.Component {
 
@@ -21,10 +22,7 @@ class Ryd extends React.Component {
     return (
       <div className="ryd-component">
         {!selectTab &&
-          <div className="btn-dist">
-            <img src={logo} className="logo" alt="Logo Luker" />
-            <button onClick={() => console.log('hi')}> FIND A DISTRIBUTOR </button>
-          </div>}
+          <FloatLogo btnText='dist' />}
         <div className={`ryd-tab ryd-tab--${selectTab}`}>
           <div onClick={() => this.tabToggle('experience')} className={`ryd-tab-item ryd-tab-item--experience ryd-tab-item--${selectTab === 'experience' && 'active'} ryd-tab-item--${selectTab !== '' && 'resp-hide'} `}><span>EXPERIENCE MORE</span>
             {selectTab === 'experience' && <RydArticle title="EXPERIENCE MORE" subtitle="A SENSORIAL TASTING EXPERIENCE" img="can-tin-pack.png" content="<p>We are seeking to build unique value-added experiences for chocolate lovers, excited to discover new ways to live. They are people looking for authentic ways to maximize the positive impact on communities and their lifestyle especially if these products are personalized and suits their individual tastes.</p> <p>In this edition, we have decided to create a product that will not only allow our chocolate lovers to immerse themselves in a multi-sensory experience of cacao origins, but that will give them the chance to learn the traditional secrets of “cooking” in these pots by using three different chocolates from amazing regions. This chocolate tasting set is developed as the ultimate sharing experience to enjoy at home with friends and stimulate the senses through the interaction with unique tastes, aromas, and textures right from the origin.</p>" />}

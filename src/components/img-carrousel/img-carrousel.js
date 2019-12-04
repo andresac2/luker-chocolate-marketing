@@ -1,5 +1,4 @@
 import React from 'react'
-import logo from '../../assets/img/LukerlogoDark.svg'
 import altImg from '../../assets/img/img-example.svg'
 import back from '../../assets/img/back.svg'
 

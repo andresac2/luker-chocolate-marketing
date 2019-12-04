@@ -1,24 +1,17 @@
 import React from 'react';
-import { FiChevronUp } from 'react-icons/fi'
-import { withRouter, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Select } from 'antd';
 import { MdClose } from 'react-icons/md';
+import logo from '../../../assets/img/Lukerlogo.svg'
+import logoDark from '../../../assets/img/LukerlogoDark.svg'
 
-class FooterCover extends React.Component {
+class FloatLogo extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      selectTab: this.props.location.pathname,
-      distModalVisible: false,
-      isOpen: false
+      distModalVisible: false
     };
-  }
-  footerToggle = () => {
-    this.setState({ isOpen: !this.state.isOpen });
-    setTimeout(() => {
-      this.setState({ isOpen: false });
-    }, 60000)
   }
 
   showModalDist = () => {
@@ -28,22 +21,21 @@ class FooterCover extends React.Component {
   };
 
   render() {
-    const { isOpen, selectTab, distModalVisible } = this.state;
+    const { dark, btns, btnText } = this.props;
+    const { distModalVisible } = this.state;
     const { Option } = Select;
 
     return (
-      !selectTab.slice(1).includes('services') &&
-      <div>
-        <div className={`footer-cover ${isOpen && 'footer-cover-open'}`}>
-          <FiChevronUp onClick={this.footerToggle} />
-          <nav className={`footer-cover-nav footer-cover-${selectTab.slice(1)}`}>
-            <Link to="/blog"><span>BLOG</span></Link>
-            {selectTab !== '/' && <Link to="/"><span>CREATE YOUR OWN CHOCOLATE</span></Link>}
-            <Link to="/asd"><span>MORE INFO</span></Link>
-            <Link to="/contact-us"><span>CONTACT US</span></Link>
-          </nav>
+      <>
+        <div className="float-logo">
+          <img src={dark ? logoDark : logo} className="logo" alt="Logo Luker" />
+          {btnText === 'dist' ?
+            <button className="float-logo-dist" onClick={() => this.showModalDist(distModalVisible)}> FIND A DISTRIBUTOR </button> :
+            Object.keys(btns).map(i =>
+              <Link to={btns[i].url}>{btns[i].btnText}</Link>
+            )
+          }
         </div>
-        <button className="btn-dist-footer" onClick={() => this.showModalDist()}> FIND A DISTRIBUTOR </button>
         <div className={`modal-dist modal-dist-${distModalVisible && 'visible'}`}>
           <div className="modal-dist-bkg" onClick={() => this.showModalDist()}></div>
           <div className="modal-dist-modal">
@@ -79,9 +71,10 @@ class FooterCover extends React.Component {
             </div>
           </div>
         </div>
-      </div>
+      </>
     );
   }
 };
 
-export default withRouter(FooterCover);
+//export default withRouter(FooterCover);
+export default FloatLogo;

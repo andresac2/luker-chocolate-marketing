@@ -24,6 +24,7 @@
     margin: auto;
     text-align: center;
     margin: 1em auto;
+    z-index: 0;
 
     .carr-item {
       filter: blur(2px);
@@ -160,7 +161,7 @@
     text-align: center;
     transition: all ease-in .5s;
 
-    @media screen and (min-width: 1360px) {
+    @media screen and (min-width: 1204px) {
       position: absolute;
       bottom: 0;
     }

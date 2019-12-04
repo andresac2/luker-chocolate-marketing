@@ -2,30 +2,28 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import logo from '../../assets/img/Lukerlogo.svg'
+import FloatLogo from '../../components/layout/float-logo/float-logo';
 
 function Solution() {
 
   return (
     <div className='solution-component'>
-      <div className="solution-component--ingredient">
-        <div className="btn-dist">
-          <img src={logo} className="logo" alt="Logo Luker" />
-          <button onClick={() => console.log('hi')}> FIND A DISTRIBUTOR </button>
-        </div>
-        <Link to="/services/ingredients" className="header-btn">
+      <FloatLogo btnText='dist' />
+      <Link to="/services/ingredients" className="solution-component--ingredient">
+        <div className="header-btn">
           INGREDIENTS
-        </Link>
       </div>
-      <div className="solution-component--maquila">
-        <Link to="/services/maquila" className="header-btn">
+      </Link>
+      <Link to="/services/maquila" className="solution-component--maquila">
+        <div className="header-btn">
           FINISHED CHOCOLATE PRODUCTS
-            </Link>
       </div>
-      <div className="solution-component--service">
-        <Link to="/services/our-services" className="header-btn">
+      </Link>
+      <Link to="/services/our-services" className="solution-component--service">
+        <div className="header-btn">
           OUR SERVICES
-        </Link>
       </div>
+      </Link>
     </div>
   );
 }

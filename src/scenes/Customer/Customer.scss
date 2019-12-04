@@ -1,10 +1,11 @@
 .customer-component {
   height: inherit;
   display: grid;
-  grid-template-rows: 30% 70%;
+  grid-template-rows: 25% 1fr;
   grid-template-columns: 1fr;
   background: url("../../assets/img/customer-bkg.png") center;
   background-size: cover;
+  min-height: 600px;
 
   &::before {
     content: "";
@@ -28,25 +29,6 @@
       font-size: 5em;
       margin-top: 1em;
       text-align: center;
-    }
-
-    .btn-dist {
-      position: absolute;
-      top: 0;
-      left: 5em;
-
-      .logo {
-        margin: 5em auto 0.5em;
-        width: 10em;
-        display: block;
-      }
-
-      button {
-        font-weight: 700;
-        background: #f4c710;
-        color: #685019;
-        padding: 3px 18px;
-      }
     }
   }
 

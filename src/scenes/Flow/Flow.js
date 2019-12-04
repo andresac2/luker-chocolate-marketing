@@ -5,6 +5,7 @@ import cacao2 from '../../assets/img/roto-c.png'
 import cacao3 from '../../assets/img/roto-a.png'
 
 import FlowTabs from '../../components/flow-cacao/flow-tabs/flow-tabs'
+import FloatLogo from '../../components/layout/float-logo/float-logo';
 
 function Flow() {
   return (
@@ -17,10 +18,8 @@ function Flow() {
             <img src={cacao2} className="cacao-link-2" alt="Logo Luker" />
           </div>
         </div>
-        <div className="flow-sidebar--dist">
-          <img src={logo} className="logo" alt="Logo Luker" />
-          <button onClick={() => console.log('hi')}> DISTRIBUIDORES </button>
-        </div>
+        <FloatLogo btnText='dist' />
+
       </div>
       <div className="flow-navbar"><FlowTabs tabActive="cacao" /></div>
     </div>

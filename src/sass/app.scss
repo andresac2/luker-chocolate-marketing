@@ -1,5 +1,3 @@
-
-
 @import "./variables";
 @import "./elements";
 @import "./mixins";
@@ -22,28 +20,27 @@
 @import "../scenes/Blog/Blog";
 
 // // Component
- @import "../components/layout/header/header";
- @import "../components/layout/footer-cover/footer-cover";
- @import "../components/layout/footer/footer";
- @import "../components/layout/contact/contact";
- @import "../components/layout/contact-us/contact-us";
- @import "../components/layout/page404/page404";
- @import "../components/flow-cacao/flow-tabs/flow-tabs";
- @import "../components/ryd-article/ryd-article";
- @import "../components/img-carrousel/img-carrousel";
- @import "../components/our-value/aroma/our-aroma";
- @import "../components/our-value/flavour/our-flavour";
- @import "../components/our-value/product/our-product";
- @import "../components/our-value/social/our-social";
- @import "../components/product-services/product-services";
- @import "../components/product-services/our-services/our-services";
- @import "../components/product-services/ingredients/ingredients";
- @import "../components/product-services/ingredients/cacao/cacao";
- @import "../components/product-services/ingredients/dragees/dragees";
- @import "../components/product-services/ingredients/i1906/i1906";
- @import "../components/product-services/maquila/maquila";
- @import "../components/blog/take-stand/take-stand";
- @import "../components/blog/article/article";
- @import "../components/blog/comments/comments";
-
-
+@import "../components/layout/header/header";
+@import "../components/layout/footer-cover/footer-cover";
+@import "../components/layout/footer/footer";
+@import "../components/layout/contact/contact";
+@import "../components/layout/contact-us/contact-us";
+@import "../components/layout/page404/page404";
+@import "../components/layout/float-logo/float-logo";
+@import "../components/flow-cacao/flow-tabs/flow-tabs";
+@import "../components/ryd-article/ryd-article";
+@import "../components/img-carrousel/img-carrousel";
+@import "../components/our-value/aroma/our-aroma";
+@import "../components/our-value/flavour/our-flavour";
+@import "../components/our-value/product/our-product";
+@import "../components/our-value/social/our-social";
+@import "../components/product-services/product-services";
+@import "../components/product-services/our-services/our-services";
+@import "../components/product-services/ingredients/ingredients";
+@import "../components/product-services/ingredients/cacao/cacao";
+@import "../components/product-services/ingredients/dragees/dragees";
+@import "../components/product-services/ingredients/i1906/i1906";
+@import "../components/product-services/maquila/maquila";
+@import "../components/blog/take-stand/take-stand";
+@import "../components/blog/article/article";
+@import "../components/blog/comments/comments";
