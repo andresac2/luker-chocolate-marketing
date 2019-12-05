@@ -53,12 +53,18 @@
       left: 3em;
 
       .logo {
+        background: transparent;
         margin: 5em auto 0.5em;
         width: 10em;
         display: block;
+
+        img {
+          width: inherit
+        }
       }
 
-      a {
+      a:last-child {
+        font-size: small;
         font-weight: 700;
         background: #f4c710;
         color: #685019;
