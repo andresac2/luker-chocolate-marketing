@@ -1,5 +1,6 @@
 import React from 'react'
 import logo from '../../assets/img/LukerlogoDark.svg'
+import { Link } from 'react-router-dom';
 
 const RydArticle = props => {
   const { title, subtitle, content, img } = props;
@@ -8,7 +9,7 @@ const RydArticle = props => {
   return (
     <div className="ryd-article" >
       <div className="btn-dist">
-        <img src={logo} className="logo" alt="Logo Luker" />
+        <Link to="/" className="logo"> <img src={logo} alt="Logo Luker" /></Link>
         <button onClick={() => console.log('hi')}> FIND A DISTRIBUTOR </button>
       </div>
       <div className="ryd-article--text">

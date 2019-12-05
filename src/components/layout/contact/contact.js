@@ -25,7 +25,7 @@ class Contact extends React.Component {
         <div className="contact-us-header">
           <div className="btn-dist">
             <Link to='/'>
-              <img src={logo} className="logo" alt="Logo Luker" />
+              <Link to="/" className="logo"> <img src={logo} alt="Logo Luker" /></Link>
             </Link>
           </div>
           <h1>Contact us</h1>

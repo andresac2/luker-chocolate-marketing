@@ -109,7 +109,7 @@ class Blog extends React.Component {
       <Layout className="blog-component">
         <div className={`blog-component-header blog-component-header--${(article) ? article : category}`}>
           <div className="btn-dist">
-            <img src={logo} className="logo" alt="Logo Luker" />
+            <Link to="/" className="logo"> <img src={logo} alt="Logo Luker" /></Link>
             <Link to='/blog'>BLOG</Link>
           </div>
           <FloatLogo btns={[{ url: '/blog', btnText: 'BLOG' }]} />

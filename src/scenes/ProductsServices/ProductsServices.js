@@ -57,7 +57,7 @@ class ProductsServices extends React.Component {
       <div className="services-component">
         <div className={`services-header services-header--${title} ${(item) && 'services-header--title-short'}`}>
           <div className="btn-dist">
-            <img src={logo} className="logo" alt="Logo Luker" />
+            <Link to="/" className="logo"> <img src={logo} alt="Logo Luker" /></Link>
             <Link to="/solution">FIND A DISTRIBUTOR</Link>
             {(item) ?
               <Link to={'/services/' + title}>BACK</Link> :

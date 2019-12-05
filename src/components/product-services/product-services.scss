@@ -138,7 +138,6 @@
         left: -2em;
         right: auto;
         transform: rotate(-180deg);
-
       }
     }
   }
@@ -161,7 +160,7 @@
     text-align: center;
     transition: all ease-in .5s;
 
-    @media screen and (min-width: 1204px) {
+    @media screen and (min-width: 1375px) {
       position: absolute;
       bottom: 0;
     }

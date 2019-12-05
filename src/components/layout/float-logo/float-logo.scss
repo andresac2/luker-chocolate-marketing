@@ -2,16 +2,22 @@
   position: absolute;
   top: 0;
   left: 3em;
+  width: fit-content;
 
   .logo {
-    margin: 3em auto 0.5em;
-    width: 12em;
-    display: block;
+    background: transparent;
+    width: fit-content;
+
+    img {
+      width: 12em;
+      margin: 4em auto 0.5em;
+      display: block;
+    }
   }
 
   a,
   button {
-    display: inline-block;
+    display: block;
     width: 100%;
     text-align: center;
     font-weight: 700;

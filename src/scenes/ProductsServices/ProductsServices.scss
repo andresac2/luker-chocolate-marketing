@@ -53,9 +53,15 @@
       left: 3em;
 
       .logo {
-        margin: 4em auto .5em;
+        margin-top: 4em;
+        margin-bottom: .5em;
         width: 10em;
         display: block;
+        background: transparent;
+
+        img {
+          width: 12em;
+        }
       }
 
       a {

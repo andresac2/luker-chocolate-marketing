@@ -31,7 +31,7 @@ class Home extends React.Component {
     return (
       <div className="home">
         <div className="home-logo">
-          <img src={logo} className="logo" alt="Logo Luker" />
+          <Link to="/" className="logo"> <img src={logo} alt="Logo Luker" /></Link>
           <Select defaultValue="es" >
             <Option value="es">ES</Option>
             <Option value="en">EN</Option>
