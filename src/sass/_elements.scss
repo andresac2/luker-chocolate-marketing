@@ -271,8 +271,9 @@ input::placeholder {
   }
 
   &-modal {
-    height: auto;
-    width: 65vw;
+    max-height: 90vh;
+    overflow: hidden;
+    width: 70vw;
     background: #ECECEC;
     z-index: 1;
     position: relative;
@@ -300,6 +301,9 @@ input::placeholder {
       }
 
       &-cards {
+        overflow: auto;
+        max-height: calc(90vh - 140px);
+
         &-card {
           margin: 1em;
           background: #fff;
@@ -336,12 +340,13 @@ input::placeholder {
     }
 
     .btn-x {
-      color: #fff;
+      color: #979797;
+      z-index: 2;
       cursor: pointer;
       position: absolute;
-      font-size: 2em;
-      right: 15px;
-      top: 15px;
+      font-size: 1.5em;
+      right: 5px;
+      top: 5px;
     }
 
     &-contact {
