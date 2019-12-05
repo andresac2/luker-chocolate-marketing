@@ -126,13 +126,17 @@ class IngredientCacao extends React.Component {
         ]
       }],
       itemsSelected: [],
-      itemsShowed: []
+      itemsShowed: [],
     };
+    this.handleSetProductSelected = this.handleSetProductSelected.bind(this);
   }
+
   componentDidMount() {
     this.changeItems(this.state.itemsHeader[1].items, this.state.itemsHeader[1].id);
   }
+
   selectProduct(product) {
+    console.log(product)
     product.selected = !product.selected;
     if (this.state.itemsSelected.indexOf(product) < 0) {
       this.setState((state) => ({
@@ -160,6 +164,11 @@ class IngredientCacao extends React.Component {
     this.setState({ itemsShowed: item });
     this.reorderItems(this.state.itemsHeader, 1, itemSelected);
   };
+
+  handleSetProductSelected(value, cacao) {
+    console.log(value);
+    this.selectProduct(value);
+  }
 
   render() {
     const { data } = this.props;
@@ -196,7 +205,7 @@ class IngredientCacao extends React.Component {
                 </div>)}
           </div>
         </div>
-        <WrappedContactUs page='cacao' products={itemsSelected} />
+        <WrappedContactUs page='cacao' products={itemsSelected} handleSetProductSelected={this.handleSetProductSelected} />
       </div>
     );
   }

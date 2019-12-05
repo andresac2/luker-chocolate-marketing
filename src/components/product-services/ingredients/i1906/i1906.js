@@ -47,7 +47,7 @@ class Ingredient1906 extends React.Component {
   };
 
   handleSetProductSelected(value) {
-    this.productToggle(value, false);
+    this.productToggle(value.id, false);
   }
 
   render() {
