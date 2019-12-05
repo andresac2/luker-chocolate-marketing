@@ -15,7 +15,7 @@ class ContactUs extends React.Component {
 
   render() {
     const { getFieldDecorator } = this.props.form;
-    const { products, page } = this.props;
+    const { products, page, handleSetProductSelected } = this.props;
     const { Option } = Select;
     const { TextArea } = Input;
     const altImg = 'img-example.svg';
@@ -88,7 +88,7 @@ class ContactUs extends React.Component {
                   <div className="contact-form-products--list">
                     {products.filter(item => item.selected).length > 0 ?
                       Object.keys(products.filter(item => item.selected)).map(i =>
-                        <div key={i} className={`contact-form-products--list-item`}>
+                        <div key={i} className={`contact-form-products--list-item`} onClick={() => this.props.handleSetProductSelected(products.filter(item => item.selected)[i].id)}>
                           <img src={require('../../../assets/img/' + (products.filter(item => item.selected)[i].img ? products.filter(item => item.selected)[i].img : altImg))} alt={products.filter(item => item.selected)[i].id} />
                           <p>{products.filter(item => item.selected)[i].description}</p>
                         </div>)

@@ -37,6 +37,7 @@ class Ingredient1906 extends React.Component {
       }
       ]
     };
+    this.handleSetProductSelected = this.handleSetProductSelected.bind(this)
   }
 
   productToggle(id, selected) {
@@ -44,6 +45,11 @@ class Ingredient1906 extends React.Component {
       itemsArauca: this.state.itemsArauca.map(el => (el.id === id ? { ...el, selected } : el))
     });
   };
+
+
+  handleSetProductSelected(value) {
+    this.productToggle(value, false);
+  }
 
   render() {
     const { data } = this.props;
@@ -70,7 +76,7 @@ class Ingredient1906 extends React.Component {
               <p>{itemsArauca[i].description}</p>
             </div>)}
         </div>
-        <WrappedContactUs page='ingredients' products={itemsArauca} />
+        <WrappedContactUs page='ingredients' products={itemsArauca} handleSetProductSelected={this.handleSetProductSelected} />
       </div>
     );
   }
