@@ -41,13 +41,23 @@ class IngredientDragees extends React.Component {
         selected: false
       }
       ]
+
+
+
     };
+    this.handleSetProductSelected = this.handleSetProductSelected.bind(this);
   }
+
   productToggle(id, selected) {
     this.setState({
       items: this.state.items.map(el => (el.id === id ? { ...el, selected } : el))
     });
   };
+
+  handleSetProductSelected(value) {
+    this.productToggle(value, false);
+  }
+
   render() {
     const { items } = this.state;
     const altImg = 'img-example.svg';
@@ -75,7 +85,7 @@ class IngredientDragees extends React.Component {
               </div>
             </div>)}
         </div>
-        <WrappedContactUs page='ingredients' products={items} />
+        <WrappedContactUs page='ingredients' products={items} handleSetProductSelected={this.handleSetProductSelected} />
       </div>
     );
   }
