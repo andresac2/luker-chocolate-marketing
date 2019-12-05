@@ -33,6 +33,13 @@ button {
 a {
   text-decoration: none;
   color: #f3f3f3;
+
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    color: inherit;
+  }
 }
 
 h1,

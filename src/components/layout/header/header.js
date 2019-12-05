@@ -35,9 +35,9 @@ class Header extends React.Component {
           <Link to="/ryd" className={`selected-tab ${selectTab === '/ryd' && selectTab.slice(1)}`}>IDEAS & TRENDS</Link>
           <Link to="/value-propose" className={`selected-tab ${(selectTab === '/value-propose' || selectTab.slice(1).split('/').shift() === 'our-value') && 'value-propose'}`}>OUR VALUE PROPOSITION</Link>
         </nav>
-        <div className={`header-component-responsive header-component-responsive-${showMenu && 'visible'} header-component-responsive-${selectTab.slice(1).split('/').shift()}`} onClick={() => this.menuToggle()} >
+        <div className={`header-component-responsive header-component-responsive-${showMenu && 'visible'} header-component-responsive-${selectTab.slice(1).split('/').shift()}`} >
           <div className={`header-logo header-logo-${showMenu && 'visible'}`}>
-            {(!isLogoHidden || showMenu) && <img src={logo} className="logo" alt="Logo Luker" />}
+            {(!isLogoHidden || showMenu) && <Link to="/" className="logo"> <img src={logo} alt="Logo Luker" /></Link>}
             {showMenu && <Select defaultValue="es" >
               <Option value="es">ES</Option>
               <Option value="en">EN</Option>

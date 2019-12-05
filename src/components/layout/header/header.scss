@@ -149,6 +149,11 @@
   transition: all ease-in 1s;
   background: rgba(0, 0, 0, .9);
 
+  a:active,
+  a:hover {
+    color: #fff;
+  }
+
   &--tabs {
     overflow: hidden;
     height: 0;
@@ -316,7 +321,7 @@
 
     .logo {
       margin-right: .5em;
-      //margin: 7em 5em 3em;      
+      border: none;
     }
   }
 
