@@ -6,6 +6,8 @@ import { MdClose } from 'react-icons/md';
 import Footer from '../footer/footer';
 
 class FooterCover extends React.Component {
+  hideView = ['/services', '/blog'];//VIstas en las que se oculta el footer
+  darkIcon = ['/services', '/blog'];//VIstas en las que se muestra modo oscuro
 
   constructor(props) {
     super(props);
@@ -28,7 +30,8 @@ class FooterCover extends React.Component {
     });
   };
 
-  showMoreInfo = () => {
+  showMoreInfo = (e) => {
+    e.preventDefault();
     this.setState({
       moreInfoVisible: !this.state.moreInfoVisible,
     });
@@ -40,15 +43,17 @@ class FooterCover extends React.Component {
     const { Option } = Select;
     const selectTab = history.location.pathname;
 
+    const isFooterHidden = this.hideView.some(function (v) { return history.location.pathname.includes(v); });
+
     return (
-      !selectTab.slice(1).includes('services') &&
+      !isFooterHidden &&
       <div>
         <div className={`footer-cover ${isOpen && 'footer-cover-open'}`}>
           <FiChevronUp onClick={this.footerToggle} />
           <nav className={`footer-cover-nav footer-cover-${selectTab.slice(1)}`}>
             <Link to="/blog"><span>BLOG</span></Link>
             {selectTab !== '/' && <Link to="/"><span>CREATE YOUR OWN CHOCOLATE</span></Link>}
-            <Link onClick={() => this.showMoreInfo()}><span>MORE INFO</span></Link>
+            <Link to='' onClick={e => this.showMoreInfo(e)}><span>MORE INFO</span></Link>
             <Link to="/contact-us"><span>CONTACT US</span></Link>
           </nav>
         </div>
