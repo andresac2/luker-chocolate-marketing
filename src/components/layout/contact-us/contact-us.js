@@ -92,7 +92,7 @@ class ContactUs extends React.Component {
                           <img src={require('../../../assets/img/' + (products.filter(item => item.selected)[i].img ? products.filter(item => item.selected)[i].img : altImg))} alt={products.filter(item => item.selected)[i].id} />
                           <p>{products.filter(item => item.selected)[i].description}</p>
                         </div>)
-                      : <span>Arma tu producto</span>}
+                      : <span>Drag your choice here</span>}
                   </div>
                 }
               </div>

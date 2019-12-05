@@ -292,8 +292,9 @@ input::placeholder {
         text-align: center;
 
         h2 {
-          font-weight: 600;
+          font-weight: 700;
           margin: .5em 0;
+          padding: 0 5px;
           font-size: 2em;
         }
       }
@@ -303,15 +304,15 @@ input::placeholder {
           margin: 1em;
           background: #fff;
           box-shadow: 0px 3px 6px #00000029;
-          padding: .5em;
+          padding: .5em 1em;
 
           h2 {
             text-transform: uppercase;
-            font-weight: 600;
+            font-weight: bold;
             font-size: larger;
             width: auto;
             padding: .5em 0;
-            border-bottom: 1px solid #F4C710;
+            border-bottom: 1px solid #532C2E;
             margin-bottom: .5em;
           }
 
@@ -325,6 +326,10 @@ input::placeholder {
 
           &--active {
             border: 1px solid #F4C710;
+
+            h2 {
+              border-color: #F4C710;
+            }
           }
         }
       }
@@ -386,20 +391,41 @@ input::placeholder {
         line-height: 90px;
       }
 
-
       &--list {
-        max-width: 280px;
-        overflow: auto;
         display: flex;
-        justify-content: space-between;
-        margin: 1em 0;
+        overflow: auto;
+        width: 100%;
+        height: auto;
 
         img {
-          width: 70px;
+          display: none;
         }
 
         p {
           font-size: smaller;
+          color: #333;
+        }
+
+        &-item {
+          cursor: pointer;
+          display: inherit;
+          justify-content: center;
+          align-items: center;
+          max-width: 120px;
+          min-height: 80px;
+          background: #fff;
+          padding: .5em;
+          align-items: center;
+          box-shadow: 0px 3px 6px #00000029;
+          z-index: 1;
+          margin: 0 .5em .5em 0;
+          max-height: 200px;
+          width: auto;
+
+          p {
+            font-weight: bold;
+            border-bottom: 1px solid #532C2E;
+          }
         }
       }
     }
@@ -424,11 +450,11 @@ input::placeholder {
       color: #484848;
       overflow: hidden;
       width: inherit;
-      width: 80vw;
+      width: 90vw;
       height: 90vh;
 
       &-report {
-        width: 85vw;
+        width: 90vw;
 
         &-header {
           width: 100%;
@@ -447,13 +473,19 @@ input::placeholder {
           height: auto;
 
           &-card {
+            display: inherit;
+            align-items: center;
             margin: 1em .5em;
-            height: fit-content;
+            //height: fit-content;
             max-height: 200px;
             width: auto;
 
             h2 {
-              width: auto;
+              width: 100%;
+            }
+
+            p {
+              display: none;
             }
           }
         }

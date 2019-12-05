@@ -41,9 +41,6 @@ class IngredientDragees extends React.Component {
         selected: false
       }
       ]
-
-
-
     };
     this.handleSetProductSelected = this.handleSetProductSelected.bind(this);
   }

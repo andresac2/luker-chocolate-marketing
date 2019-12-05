@@ -13,7 +13,7 @@ class Sustain extends React.Component {
     super(props);
     this.state = {
       distModalVisible: false,
-      reportModalVisible: false,
+      reportModalVisible: true,
       articleModalVisible: false,
       firstItem: 0,
       modalSelectedIndex: 0,
@@ -64,7 +64,33 @@ class Sustain extends React.Component {
         <p></p>
         The purpose of these projects is to take agricultural and social development to the communities in each of the regions in which we grow our cocoa and to come up with innovative solutions that are supported by our clients and partners. So far, we’ve accomplished to set up a total of 3 business crops with 1600 hectares planted sustainably in 3 regions of the country and we’ve projected a catch of 33,925 tons of Co2 per year in our crops.
         `
-      }]
+      }],
+      modalReportItems: [
+        {
+          id: '1',
+          title: 'SUSTAINABILITY REPORT',
+          content: 'Find out what we have accomplished by the implementation of several different sustainability strategies in this report.',
+          selected: false
+        },
+        {
+          id: '2',
+          title: 'SUSTAINABILITY BRIEF',
+          content: 'Know the facts, findings, and objectives gathered for our sustainability initiatives.',
+          selected: false
+        },
+        {
+          id: '3',
+          title: 'CERTIFICATIONS',
+          content: 'Check our certifications and discover what our expertise and contributions can do.',
+          selected: false
+        },
+        {
+          id: '4',
+          title: 'COCOA FOREST & PEACE AGREEMENT',
+          content: 'Find out what we have accomplished by the implementation of several different sustainability strategies in this report.',
+          selected: false
+        }
+      ]
     };
   }
 
@@ -101,9 +127,16 @@ class Sustain extends React.Component {
     this.setState({ articleModalVisible: !this.state.articleModalVisible, modalSelectedIndex: i || 0 });
   };
 
+  modalItemToggle(id, selected) {
+    console.log(id);
+    this.setState({
+      modalReportItems: this.state.modalReportItems.map(el => (el.id === id ? { ...el, selected } : el))
+    });
+  };
+
   render() {
     const { getFieldDecorator } = this.props.form;
-    const { items, firstItem, distModalVisible, reportModalVisible, articleModalVisible, modalSelectedIndex } = this.state;
+    const { items, firstItem, distModalVisible, reportModalVisible, articleModalVisible, modalSelectedIndex, modalReportItems } = this.state;
     const { Option } = Select;
     const altImg = 'img-example.svg';
 
@@ -144,7 +177,7 @@ class Sustain extends React.Component {
             <h1>WE INVITE YOU TO DREAM WITH US</h1>
             <div className="sustain-content-model--panel">
               <img src={panel} alt="Panel" />
-              <button onClick={() => console.log('hi')}> GET FULL REPORT </button>
+              <button onClick={() => console.log('hi')}> FIND OUT MORE </button>
             </div>
           </div>
         </div>
@@ -189,25 +222,17 @@ class Sustain extends React.Component {
             <MdClose className="btn-x" onClick={() => this.showModalReport()} />
             <div className="modal-report-modal-report">
               <div className="modal-report-modal-report-header">
-                <h2>Get the full Report!</h2>
+                <h2>Select the documents you want!</h2>
               </div>
               <div className="modal-report-modal-report-cards">
-                <div className={`modal-report-modal-report-cards-card modal-report-modal-report-cards-card--active`}>
-                  <h2>Sustainability Report</h2>
-                  <p>Find out what we have accomplished by the implementation of several different sustainability strategies in this report.</p>
-                </div>
-                <div className={`modal-report-modal-report-cards-card`}>
-                  <h2>Sustainability Brief</h2>
-                  <p>Know the facts, findings, and objectives gathered for our sustainability initiatives.</p>
-                </div>
-                <div className={`modal-report-modal-report-cards-card`}>
-                  <h2>Certifications</h2>
-                  <p>Check our certifications and discover what our expertise and contributions can do.</p>
-                </div>
-                <div className={`modal-report-modal-report-cards-card`}>
-                  <h2>Cocoa Forest & Peace Agreement</h2>
-                  <p>Explore our commitment alongside other countries and companies to end deforestation and restore fores areas.</p>
-                </div>
+                {
+                  Object.keys(modalReportItems).map(i =>
+                    <div key={i} className={`modal-report-modal-report-cards-card modal-report-modal-report-cards-card--${modalReportItems[i].selected && 'active'}`} onClick={() => this.modalItemToggle(modalReportItems[i].id, !modalReportItems[i].selected)}>
+                      <h2>{modalReportItems[i].title}</h2>
+                      <p>{modalReportItems[i].content}</p>
+                    </div>
+                  )
+                }
               </div>
             </div>
             <div className="modal-report-modal-contact">
@@ -261,7 +286,15 @@ class Sustain extends React.Component {
                     )}
                   </Form.Item>
                   <div className="contact-form-products">
-                    <span>Drag documents in here</span>
+                    <div className="contact-form-products--list">
+                      {modalReportItems.filter(item => item.selected).length > 0 ?
+                        Object.keys(modalReportItems.filter(item => item.selected)).map(i =>
+                          <div key={i} className={`contact-form-products--list-item`} onClick={() => this.modalItemToggle(modalReportItems.filter(item => item.selected)[i].id, false)}>
+                            <img src={require('../../assets/img/img-example.svg')} alt={modalReportItems.filter(item => item.selected)[i].id} />
+                            <p>{modalReportItems.filter(item => item.selected)[i].title}</p>
+                          </div>)
+                        : <span>Drag documents in here</span>}
+                    </div>
                   </div>
                   <Form.Item>
                     <Button type="primary" htmlType="submit" className="contact-form-button">
