@@ -2,7 +2,7 @@ import React from 'react';
 import back from '../../../assets/img/back.svg'
 import { withRouter } from 'react-router-dom';
 
-class NavArrows extends React.Component {
+class NavArrowRight extends React.Component {
   navRoutes = ['/', '/flow', '/sustain', '/solution', '/customer', '/ryd', '/value-propose'];
 
   constructor(props) {
@@ -33,4 +33,4 @@ class NavArrows extends React.Component {
     );
   }
 };
-export default withRouter(NavArrows);
+export default withRouter(NavArrowRight);
