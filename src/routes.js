@@ -19,6 +19,7 @@ import Services from "./scenes/ProductsServices/ProductsServices";
 import Blog from "./scenes/Blog/Blog";
 import WrappedContact from "./components/layout/contact/contact";
 import Page404 from "./components/layout/page404/page404";
+import NavArrows from "./components/layout/nav-arrows/nav-arrows";
 
 export default function BasicExample() {
   return (
@@ -39,6 +40,7 @@ export default function BasicExample() {
 
         <Route component={Page404} />
       </Switch>
+      <NavArrows />
       <FooterCover />
     </Router>
   );

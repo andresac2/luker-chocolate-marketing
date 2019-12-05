@@ -1,0 +1,42 @@
+.nav-arrow {
+
+  &-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 3em;
+    height: 100vh;
+    overflow: hidden;
+    transition: all ease-in .5s;
+
+    &-content {
+      @include vert-center;
+      align-content: center;
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .6) 30%, rgba(0, 0, 0, .8) 80%);
+      transition: all ease-in .5s;
+      margin-left: 100%;
+      opacity: 0;
+      height: 100vh;
+
+      .arrow {
+        cursor: pointer;
+        width: 3em;
+      }
+    }
+
+    &:hover {
+      width: 7em;
+      transition: all ease-in .5s;
+
+      .nav-arrow-right-content {
+        margin-left: 0;
+        opacity: 1;
+      }
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    display: none;
+  }
+}
