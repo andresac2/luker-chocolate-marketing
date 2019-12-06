@@ -94,7 +94,7 @@ class FlowTabs extends React.Component {
               <img className="back-rotate" src={back} />
             </div>
             <Carousel autoplay>
-              {[...Array(4)].map(i => {
+              {[...Array(4)].map((_, i) => {
                 return <div key={i}>
                   {selectTab === 'cacao' && <img src={cacao} alt={selectTab} key={1} />}
                   {selectTab === 'granjeros' && <img src={granjeros} alt={selectTab} key={2} />}

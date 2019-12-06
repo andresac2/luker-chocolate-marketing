@@ -32,7 +32,7 @@ class FloatLogo extends React.Component {
           {btnText === 'dist' ?
             <button className="float-logo-dist" onClick={() => this.showModalDist(distModalVisible)}> FIND A DISTRIBUTOR </button> :
             Object.keys(btns).map(i =>
-              <Link to={btns[i].url}>{btns[i].btnText}</Link>
+              <Link to={btns[i].url} key={i}>{btns[i].btnText}</Link>
             )
           }
         </div>
