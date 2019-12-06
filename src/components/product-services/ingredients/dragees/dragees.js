@@ -73,8 +73,9 @@ class IngredientDragees extends React.Component {
           {Object.keys(items).map(i =>
             <div key={i} className={`dragees-component--products-item dragees-component--products-item-${items[i].selected && 'active'}`} onClick={() => this.productToggle(items[i].id, !items[i].selected)}>
               <div className="dragees-component--products-item-img">
-                <img src={require('../../../../assets/img/' + (items[i].img ? items[i].img : altImg))} alt='jaja' />
-                <span>i</span>
+                <div className="dragees-component--products-item-img-container">
+                  <img src={require('../../../../assets/img/' + (items[i].img ? items[i].img : altImg))} alt={items[i].description} />
+                </div>
               </div>
               <div className="dragees-component--products-item-data">
                 <h2>{items[i].description}</h2>
@@ -82,7 +83,7 @@ class IngredientDragees extends React.Component {
               </div>
             </div>)}
         </div>
-        <WrappedContactUs page='ingredients' products={items} handleSetProductSelected={this.handleSetProductSelected} />
+        <WrappedContactUs page='maracas' products={items} handleSetProductSelected={this.handleSetProductSelected} />
       </div>
     );
   }

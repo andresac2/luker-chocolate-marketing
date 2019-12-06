@@ -15,7 +15,7 @@ class ContactUs extends React.Component {
 
   render() {
     const { getFieldDecorator } = this.props.form;
-    const { products, page, handleSetProductSelected } = this.props;
+    const { products, page } = this.props;
     const { Option } = Select;
     const { TextArea } = Input;
     const altImg = 'img-example.svg';
@@ -81,7 +81,7 @@ class ContactUs extends React.Component {
                 </Select>,
               )}
             </Form.Item>
-            {(page === 'maquila' || page === 'ingredients' || page === 'cacao') &&
+            {(page === 'maquila' || page === 'ingredients' || page === 'cacao' || page === 'maracas') &&
               <div className="contact-form-products">
                 <p>Características</p>
                 {products &&
@@ -90,13 +90,12 @@ class ContactUs extends React.Component {
                       Object.keys(products.filter(item => item.selected)).map(i =>
                         <div key={i} className={`contact-form-products--list-item`} onClick={() => this.props.handleSetProductSelected(products.filter(item => item.selected)[i])}>
                           <img src={require('../../../assets/img/' + (products.filter(item => item.selected)[i].img ? products.filter(item => item.selected)[i].img : altImg))} alt={products.filter(item => item.selected)[i].id} />
-                          <p>{products.filter(item => item.selected)[i].description}</p>
+                          <p className={`contact-form-products--list-item-${page}`} >{products.filter(item => item.selected)[i].description}</p>
                         </div>)
                       : <span>Drag your choice here</span>}
                   </div>
                 }
               </div>
-
             }
             <FormItem>
               {getFieldDecorator('username', {

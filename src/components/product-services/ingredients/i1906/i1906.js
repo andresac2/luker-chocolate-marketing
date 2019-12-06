@@ -7,32 +7,42 @@ class Ingredient1906 extends React.Component {
     this.state = {
       itemsArauca: [{
         id: 1,
-        img: 'p-arauca.png',
-        description: 'ARAUCA 70%',
-        selected: false
-      },
-      {
-        id: 2,
         img: 'p-tumaco.png',
-        description: 'TUMACO 65%',
+        description: 'DARK TUMACO 65%',
+        selected: false
+      }, {
+        id: 2,
+        img: 'p-tumaco-85.png',
+        description: 'EXTRA DARK TUMACO 65%',
         selected: false
       },
       {
         id: 3,
-        img: 'p-peru.png',
-        description: 'PERU 72%',
+        img: 'p-huila-65.png',
+        description: 'DARK HUILA 65%',
         selected: false
-      },
-      {
+      }, {
         id: 4,
-        img: 'p-santander.png',
-        description: 'SANTANDER 65%',
+        img: 'p-huila-70.png',
+        description: 'DARK HUILA 70%',
         selected: false
       },
       {
         id: 5,
-        img: 'p-huila.png',
-        description: 'HUILA 65%',
+        img: 'p-santander-65.png',
+        description: 'DARK SANTANDER 65%',
+        selected: false
+      },
+      {
+        id: 6,
+        img: 'p-sanmartin-72.png',
+        description: 'DARK SAN MARTIN 72%',
+        selected: false
+      },
+      {
+        id: 7,
+        img: 'p-arauca-55.png',
+        description: 'MILK ARAUCA 55%',
         selected: false
       }
       ]
