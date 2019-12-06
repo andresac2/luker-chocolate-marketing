@@ -6,19 +6,22 @@
   height: 100%;
   @include vert-center;
   align-items: center;
-  min-height: 600px;
+  min-height: 660px;
 
   &-logo {
     position: absolute;
     top: 5em;
-    left: 13em;
-    width: 15em;
+    left: 5em;
     @include vert-center;
     align-items: center;
 
+    .logo img {
+      width: 18em;
+    }
+
     @media screen and (min-width: 1400px) {
       top: 7em;
-      left: 10em;
+      left: 5em;
       width: 20em;
     }
 
@@ -71,25 +74,30 @@
         h1 {
           margin: 0;
           font-weight: 900;
-          font-size: 4.5em;
+          font-size: 6em;
           line-height: 1;
+          width: max-content;
+
+          @media screen and (minmax-width: 1360px) {
+            margin-top: 15px;
+          }
         }
 
         h2 {
+          width: max-content;
           font-weight: 700;
-          font-size: 3em;
+          font-size: 4em;
           line-height: .7;
         }
       }
 
       p {
         font-weight: 600;
+        font-size: larger;
 
-
-        @media (min-width: 1440px) {
+        @media screen and (max-width: 1360px) {
           font-size: medium;
         }
-
       }
 
       ;
@@ -232,6 +240,13 @@
             padding: .5em 1.5em;
             border-bottom: 15px solid #685019;
             width: 100%;
+            /*Temporal*/
+            background: transparent;
+            color: transparent;
+            border-top: 15px solid #685019;
+            border-bottom: none;
+
+            /**/
           }
 
           button {

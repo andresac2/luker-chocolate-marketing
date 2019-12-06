@@ -11,6 +11,8 @@
     display: none;
   }
 
+  /*Temporal header siempre visible
+
   &-flow {
     background: $ocher-yellow;
   }
@@ -37,22 +39,28 @@
     background: $light-gray;
   }
 
-  &:hover {
-    height: 3em;
-    background: linear-gradient(180deg, rgba(0, 0, 0, .9) 10%, rgba(0, 0, 0, 0) 85%);
-    transition: all ease-in .2s;
+  */
 
-    a {
-      transition: all ease-in 1s;
-      background: transparent;
-      display: inline;
-      cursor: pointer;
-    }
+
+
+
+  //  &:hover {
+  height: 3em;
+  background: linear-gradient(180deg, rgba(0, 0, 0, .9) 40%, rgba(0, 0, 0, 0) 95%);
+  transition: all ease-in .2s;
+
+  a {
+    transition: all ease-in 1s;
+    background: transparent;
+    display: inline;
+    cursor: pointer;
   }
+
+  //}
 
   a {
     color: #fff;
-    display: none;
+    //   display: none;
     text-transform: uppercase;
     align-self: center;
     text-align: center;

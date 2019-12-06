@@ -38,7 +38,7 @@ class Header extends React.Component {
         <div className={`header-component-responsive header-component-responsive-${showMenu && 'visible'} header-component-responsive-${selectTab.slice(1).split('/').shift()}`} >
           <div className={`header-logo header-logo-${showMenu && 'visible'}`}>
             {(!isLogoHidden || showMenu) && <Link to="/" className="logo"> <img src={logo} alt="Logo Luker" /></Link>}
-            {showMenu && <Select defaultValue="es" >
+            {showMenu && <Select defaultValue="en"  >
               <Option value="es">ES</Option>
               <Option value="en">EN</Option>
             </Select>}

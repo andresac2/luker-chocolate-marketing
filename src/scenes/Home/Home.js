@@ -32,7 +32,7 @@ class Home extends React.Component {
       <div className="home">
         <div className="home-logo">
           <Link to="/" className="logo"> <img src={logo} alt="Logo Luker" /></Link>
-          <Select defaultValue="es" >
+          <Select defaultValue="en"  >
             <Option value="es">ES</Option>
             <Option value="en">EN</Option>
           </Select>

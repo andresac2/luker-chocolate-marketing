@@ -120,7 +120,7 @@ class Blog extends React.Component {
               className={searchOpen && 'blog-component-header--search-open'}
               style={{ width: 400 }}
             />
-            <Select defaultValue="es" >
+            <Select defaultValue="en"  >
               <Option value="es">ES</Option>
               <Option value="en">EN</Option>
             </Select>
