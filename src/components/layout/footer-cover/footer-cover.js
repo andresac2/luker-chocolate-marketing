@@ -16,6 +16,8 @@ class FooterCover extends React.Component {
       moreInfoVisible: false,
       isOpen: false
     };
+    this.handleShowMoreInfo = this.handleShowMoreInfo.bind(this);
+
   }
   footerToggle = () => {
     this.setState({ isOpen: !this.state.isOpen });
@@ -30,7 +32,7 @@ class FooterCover extends React.Component {
     });
   };
 
-  showMoreInfo = (e) => {
+  handleShowMoreInfo = (e) => {
     e.preventDefault();
     this.setState({
       moreInfoVisible: !this.state.moreInfoVisible,
@@ -49,11 +51,12 @@ class FooterCover extends React.Component {
       !isFooterHidden &&
       <div>
         <div className={`footer-cover ${isOpen && 'footer-cover-open'}`}>
+          <div className="footer-cover-bkg" onClick={this.footerToggle}></div>
           <FiChevronUp onClick={this.footerToggle} />
           <nav className={`footer-cover-nav footer-cover-${selectTab.slice(1)}`}>
             <Link to="/blog"><span>BLOG</span></Link>
             {selectTab !== '/' && <Link to="/"><span>CREATE YOUR OWN CHOCOLATE</span></Link>}
-            <Link to='' onClick={e => this.showMoreInfo(e)}><span>MORE INFO</span></Link>
+            <Link to='' onClick={e => { this.handleShowMoreInfo(e); this.footerToggle(); }}><span>MORE INFO</span></Link>
             <Link to="/contact-us"><span>CONTACT US</span></Link>
           </nav>
         </div>
@@ -93,7 +96,7 @@ class FooterCover extends React.Component {
             </div>
           </div>
         </div>
-        {moreInfoVisible && <Footer mode='vertical' />}
+        {moreInfoVisible && <Footer mode='vertical' handleShowMoreInfo={this.handleShowMoreInfo} />}
       </div>
     );
   }

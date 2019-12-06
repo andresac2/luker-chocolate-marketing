@@ -11,6 +11,19 @@ $Extra-large: 1200px;
   color: #fff;
   padding: 2em 0;
 
+  &-bkg {
+    position: absolute;
+    cursor: pointer;
+    transition: all ease .5s;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+    left: -100;
+    right: 0;
+    background: rgba(0, 0, 0, .7);
+    width: 100vw;
+  }
+
   &-vertical {
     position: fixed;
     top: 0;
@@ -19,6 +32,7 @@ $Extra-large: 1200px;
     grid-template-rows: repeat(4, 1fr) 2fr;
     grid-template-columns: 1fr;
     width: 250px;
+    z-index: 1;
 
     .footer-component-link {
       border-right: none;
@@ -30,6 +44,8 @@ $Extra-large: 1200px;
 
   &-logo {
     @include vert-center;
+    align-items: center;
+    text-align: center;
 
     img {
       width: 60%;
