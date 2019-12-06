@@ -1,7 +1,7 @@
 .float-logo {
   position: absolute;
-  top: 0;
-  left: 3em;
+  top: 4em;
+  left: 4em;
   width: fit-content;
 
   .logo {
@@ -10,7 +10,6 @@
 
     img {
       width: 12em;
-      margin: 4em auto 0.5em;
       display: block;
     }
   }
@@ -18,13 +17,19 @@
   a,
   button {
     display: block;
-    width: 100%;
+    width: auto;
     text-align: center;
     font-weight: 700;
     background: #f4c710;
     color: #685019;
     font-size: smaller;
     padding: 3px 18px;
+    margin-top: .5em;
+
+    &:first-child {
+      margin-top: 0;
+      padding: 0;
+    }
   }
 
   @media screen and (max-width: 960px) {
