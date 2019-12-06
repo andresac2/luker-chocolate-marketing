@@ -143,6 +143,10 @@ $Extra-large: 1200px;
     grid-template-columns: none;
     justify-content: center;
 
+    &-bkg {
+      display: none;
+    }
+
     &-data {
       text-align: center;
       margin-bottom: 20px;

@@ -55,7 +55,9 @@ class Footer extends React.Component {
             </div>
           </div>
         </div >
-        <div className="footer-component-bkg" onClick={this.props.handleShowMoreInfo}></div>
+        {mode === 'vertical' &&
+          <div className="footer-component-bkg" onClick={this.props.handleShowMoreInfo}></div>
+        }
       </div>
     )
   }
