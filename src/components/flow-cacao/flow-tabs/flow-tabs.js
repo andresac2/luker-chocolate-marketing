@@ -42,7 +42,6 @@ class FlowTabs extends React.Component {
               <div>
                 <p>The denomination fine or flavour cocoa or Cacao Fino de Aroma is a classification of the International Cocoa Organization (ICCO) that describes our cocoa as unique in the world for its exquisite fruity and flowery aromas and flavour with nutty malt notes. Our cocoa of origin will guarantee that your products are top quality and differentiated from other chocolates on the market. <strong>We only work with Cacao Fino de Aroma.</strong></p>
                 <p><strong>ONLY ABOUT 8% OF THE WORLD’S COCOA IS CONSIDERED CACAO FINO DE AROMA - 76% OF CACAO FINO DE AROMA IS PRODUCED IN COLOMBIA, ECUADOR, PERÚ, AND VENEZUELA</strong></p>
-                <p>Cacao Fino de Aroma comes from Criollo and Trinitarian varieties. Trinitarian cocoas –highly sought after around the world– are aromatic and mild in flavour. The Trinitario variety is a cross between the Criollo and Forastero. Forastero cocoa is the most common in the world; it is resistant to climate changes and has an acidic astringent flavour. It is the main variety grown in Africa.</p>
               </div>
             }
 
