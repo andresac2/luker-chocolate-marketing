@@ -35,9 +35,9 @@
   &--content {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 13rem 1fr;
     text-align: center;
-    padding: 0 5em 10em;
+    padding: 0 5em 2em;
 
     a {
       position: relative;

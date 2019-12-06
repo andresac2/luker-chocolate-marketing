@@ -59,7 +59,7 @@ class Blog extends React.Component {
       title: 'Doisy & Dam',
       flag: 'uk',
       content: 'When it comes to sourcing cocoa, Doisy & Dam only wants the best of the best.For them, it’s very important to understand exactly how the supply chain works and where exactly the totally delish cocoa comes from.They also want to make sure that the chocolate they work with is ethically sourced and has a positive impact on the dedicated farmers who depend on growing great crops.<p></p>For their newest creations Crunchy Almond Butter and SNAPS, they wanted to get even deeper in to the heart of tracing the  cocoa, which us why they\'ve decided to use single-origin chocolate from us, not only because grow some of the tastiest cocoa beans in the land but also because we work very hard to improve the local community.<p></p> Delivering superior product quality is of primary importance for Daniel’s Delights, which is supported by fully understanding our supply chain and supporting a ‘Farm to Bar’ supply chain, which is achieved through our partnership.</div><p></p><div class="blog-article-content--img" ><img src = "/static/media/doisy-milk.de250ec7.png" alt = "" ><span></span></div>',
-      recommended: [{ img: 'pots&co.png', title: '', subtitle: 'POTS & CO', url: '/blog/take-stand/article' }, { img: 'PAUL LAFAYET_Creme.png', title: '', subtitle: 'PAUL LAFAYETTE', url: '/blog/take-stand/article' }, { img: 'lyra_eshop.png', title: '', subtitle: 'LYRA CHOC', url: '/blog/take-stand/article' }]
+      recommended: [{ img: 'pots&co.png', title: '', subtitle: 'POTS & CO', url: '/blog/customer/york' }, { img: 'PAUL LAFAYET_Creme.png', title: '', subtitle: 'DOISY & DAM', url: '/blog/customer/doisy' }, { img: 'dengel.png', title: '', subtitle: 'Dengel Shokolade', url: '/blog/customer/dengel' }]
     }
     const daniels = {
       breads: [{ href: '/blog', name: 'Customers' }],
@@ -73,7 +73,7 @@ class Blog extends React.Component {
       title: 'Pots & Co',
       flag: 'uk',
       content: 'At Pots & Co they love making timeless classics. Their goal is to work with traditional recipes and elevate them into modern, restaurant-quality puddings that hero the classic ingredients and culinary techniques used to make them.<p></p>All of their base ingredients are sourced with attention and care, which is why at Luker Chocolate get to provide them. There are no additives or taste enhances needed, or allowed in their kitchen. The majority of their products are chocolate-based and the highest quality is required to produce them.</div> <p></p> Since the team at Pots & Co tried Colombian chocolate, they knew the quality and flavour could not be compared to anything else in the world, and thus they decided to make us their provider, ensuring a fantastic flavour and special value.<div class="blog-article-content--img" ><img src="/static/media/pots-blog.6f7212f8.png" alt="Pots Cover"><span>POTS & CO</span></div></div>',
-      recommended: [{ img: 'pots&co.png', title: '', subtitle: 'POTS & CO', url: '/blog/take-stand/article' }, { img: 'PAUL LAFAYET_Creme.png', title: '', subtitle: 'PAUL LAFAYETTE', url: '/blog/take-stand/article' }, { img: 'lyra_eshop.png', title: '', subtitle: 'LYRA CHOC', url: '/blog/take-stand/article' }]
+      recommended: [{ img: 'pots&co.png', title: '', subtitle: 'POTS & CO', url: '/blog/customer/york' }, { img: 'Doisy&Dam.png', title: '', subtitle: 'DOISY & DAM', url: '/blog/customer/doisy' }, { img: 'dengel.png', title: '', subtitle: 'Dengel Shokolade', url: '/blog/customer/dengel' }]
     }
     const atelier = {
       breads: [{ href: '/blog', name: 'Customers' }],
@@ -87,14 +87,14 @@ class Blog extends React.Component {
       title: 'Dengel Shokolade',
       flag: 'uk',
       content: 'What Dengel Shokolade in Germany likes about our products is that every cocoa bean is closely related to the producers. Dengel Shokolade launched a raw material concept in 2015. This is under the motto "honest and fair direct from the producer". Thus, the raw materials needed for chocolate production (cocoa beans, cane sugar, and milk) are purchased directly from cocoa farmers from Colombia. They produce noble and fine chocolates since 1992. For them, the purchase of Cacao Fino de Aroma directly from Colombia without intermediate trade and at a fair fixed price is unbeatable, allowing us to makes sure that equivalent funds are paid directly to the cocoa farmers.<div class="blog-article-content--img" ><img src="/static/media/dengel-blog.068660b3.png" alt="Dengel Shokolade" /><span></span></div>',
-      recommended: [{ img: 'pots&co.png', title: '', subtitle: 'POTS & CO', url: '/blog/take-stand/article' }, { img: 'PAUL LAFAYET_Creme.png', title: '', subtitle: 'PAUL LAFAYETTE', url: '/blog/take-stand/article' }, { img: 'lyra_eshop.png', title: '', subtitle: 'LYRA CHOC', url: '/blog/take-stand/article' }]
+      recommended: [{ img: 'pots&co.png', title: '', subtitle: 'POTS & CO', url: '/blog/customer/york' }, { img: 'Doisy&Dam.png', title: '', subtitle: 'DOISY & DAM', url: '/blog/customer/doisy' }, { img: 'dengel.png', title: '', subtitle: 'Dengel Shokolade', url: '/blog/customer/dengel' }]
     }
     const york = {
       breads: [{ href: '/blog', name: 'Customers' }],
       title: 'York Cocoa House',
       flag: 'uk',
       content: 'Sophie Jewett says she fell in love with chocolate at an early age. She made chocolate cakes and fudge for friends and family as a child, eventually melting Christmas chocolates in an attempt to create her own Easter Eggs. Since then, her interest in chocolate grew into an obsession, and so she set out to learn everything possible about chocolate. Every new thing she’s discovered drawn her deeper into the world of chocolate and introduced her to chocolate lovers, chocolate makers, chocolatiers and experts from around the world, including us. <p></p> For her, it’s very important to work with products that involve communities working side-by-side, giving her and other chocolate professionals to tell new stories through a positive experience, which is what we try to accomplish every day at Luker Chocolate.<div class="blog-article-content--img" ><img src="/static/media/york-blog.d8a0ee79.png" alt="York Cocoa House" /><span></span></div>',
-      recommended: [{ img: 'pots&co.png', title: '', subtitle: 'POTS & CO', url: '/blog/take-stand/article' }, { img: 'PAUL LAFAYET_Creme.png', title: '', subtitle: 'PAUL LAFAYETTE', url: '/blog/take-stand/article' }, { img: 'lyra_eshop.png', title: '', subtitle: 'LYRA CHOC', url: '/blog/take-stand/article' }]
+      recommended: [{ img: 'pots&co.png', title: '', subtitle: 'POTS & CO', url: '/blog/customer/york' }, { img: 'Doisy&Dam.png', title: '', subtitle: 'DOISY & DAM', url: '/blog/customer/doisy' }, { img: 'dengel.png', title: '', subtitle: 'Dengel Shokolade', url: '/blog/customer/dengel' }]
     }
     const roice = {
       breads: [{ href: '/blog', name: 'Customers' }],
@@ -110,9 +110,12 @@ class Blog extends React.Component {
         <div className={`blog-component-header blog-component-header--${(article) ? article : category}`}>
           <div className="btn-dist">
             <Link to="/" className="logo"> <img src={logo} alt="Logo Luker" /></Link>
-            <Link to='/blog'>BLOG</Link>
+            {category === 'customer' ?
+              <Link to='/customer'>BACK</Link> :
+              <Link to='/blog'>BLOG</Link>
+            }
           </div>
-          <FloatLogo btns={[{ url: '/blog', btnText: 'BLOG' }]} />
+          <FloatLogo btns={[{ url: '/customer', btnText: 'BACK' }]} />
           <div className="blog-component-header--search">
             <Search allowClear
               placeholder="input search text"

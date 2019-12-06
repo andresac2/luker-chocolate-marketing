@@ -49,7 +49,7 @@ class Article extends React.Component {
         </div>}
         {data.recommended &&
           <div className="blog-article-entries">
-            <h2>{data.flag ? 'RELATED PRODUCTS' : 'RECOMMENDED ENTRIES'}</h2>
+            <h2>{data.flag ? 'YOU MAY ALSO LIKE' : 'RECOMMENDED ENTRIES'}</h2>
             <div className="blog-article-entries--list">
               {Object.keys(data.recommended).map(i =>
                 <Link key={i} to={data.recommended[i].url}>
