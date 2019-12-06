@@ -105,8 +105,11 @@ class ContactUs extends React.Component {
               )}
             </FormItem>
             <Form.Item>
+              <Button type="primary" className="contact-form-button contact-form-button-back" onClick={() => this.props.handleShowFormContact(false)}>
+                Back
+              </Button>
               <Button type="primary" htmlType="submit" className="contact-form-button">
-                Send
+                Submit
               </Button>
             </Form.Item>
             <p className="contact-form-terms">Al hacer clic en "enviar" aceptas términos y condiciones y política de privacidad</p>

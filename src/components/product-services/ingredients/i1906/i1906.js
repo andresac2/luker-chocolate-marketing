@@ -5,6 +5,7 @@ class Ingredient1906 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      hideFormContact: true,
       itemsArauca: [{
         id: 1,
         img: 'p-tumaco.png',
@@ -47,7 +48,9 @@ class Ingredient1906 extends React.Component {
       }
       ]
     };
-    this.handleSetProductSelected = this.handleSetProductSelected.bind(this)
+    this.handleSetProductSelected = this.handleSetProductSelected.bind(this);
+    this.handleShowFormContact = this.handleShowFormContact.bind(this)
+
   }
 
   productToggle(id, selected) {
@@ -60,13 +63,17 @@ class Ingredient1906 extends React.Component {
     this.productToggle(value.id, false);
   }
 
+  handleShowFormContact(action) {
+    this.setState({ hideFormContact: !action })
+  }
+
   render() {
     const { data } = this.props;
-    const { itemsArauca } = this.state;
+    const { itemsArauca, hideFormContact } = this.state;
     const altImg = 'img-example.svg';
 
     return (
-      <div className="i1906-component">
+      <div className={`i1906-component ${hideFormContact && 'i1906-component--hide-form'} `}>
         <div className="i1906-component--header">
           <h1>{data.subtitle}</h1>
           <h1>{data.name}</h1>
@@ -85,7 +92,8 @@ class Ingredient1906 extends React.Component {
               <p>{itemsArauca[i].description}</p>
             </div>)}
         </div>
-        <WrappedContactUs page='ingredients' products={itemsArauca} handleSetProductSelected={this.handleSetProductSelected} />
+        <button className={`i1906-component--products-btn-next`} disabled={itemsArauca.filter(item => item.selected).length <= 0} onClick={() => this.handleShowFormContact(true)}> Next</button>
+        <WrappedContactUs page='ingredients' products={itemsArauca} handleSetProductSelected={this.handleSetProductSelected} handleShowFormContact={this.handleShowFormContact} />
       </div>
     );
   }

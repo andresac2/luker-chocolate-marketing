@@ -139,14 +139,34 @@
         width: 210px;
         margin-left: 1em;
       }
+
+      &-btn-next {
+        display: block;
+        padding: 3px 2em;
+        margin: auto;
+        font-size: larger;
+        margin-bottom: 1em;
+        border-radius: 3px;
+        background: #F2CB0E;
+        font-weight: bold;
+        color: #532C2E;
+
+        &:disabled,
+        &[disabled] {
+          background: #CCCCCC;
+          color: #9B9B9B;
+        }
+      }
     }
 
     &--content p {
       margin: 1em 0;
     }
 
-    .contact-component {
-      display: none;
+    &--hide-form {
+      .contact-component {
+        display: none;
+      }
     }
   }
 }

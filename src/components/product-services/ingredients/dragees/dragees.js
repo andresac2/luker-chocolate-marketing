@@ -5,6 +5,7 @@ class IngredientDragees extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      hideFormContact: true,
       items: [{
         id: 1,
         img: 'maracas-physalis.png',
@@ -43,6 +44,7 @@ class IngredientDragees extends React.Component {
       ]
     };
     this.handleSetProductSelected = this.handleSetProductSelected.bind(this);
+    this.handleShowFormContact = this.handleShowFormContact.bind(this)
   }
 
   productToggle(id, selected) {
@@ -54,13 +56,16 @@ class IngredientDragees extends React.Component {
   handleSetProductSelected(value) {
     this.productToggle(value.id, false);
   }
+  handleShowFormContact(action) {
+    this.setState({ hideFormContact: !action })
+  }
 
   render() {
-    const { items } = this.state;
+    const { items, hideFormContact } = this.state;
     const altImg = 'img-example.svg';
 
     return (
-      <div className="dragees-component">
+      <div className={`dragees-component ${hideFormContact && 'dragees-component--hide-form'} `}>
         <div className="dragees-component--header">
           <h1>CHOCOLATE DRAGEES MADE</h1>
           <h1>WITH 100% CACAO FINO DE AROMA</h1>
@@ -83,7 +88,8 @@ class IngredientDragees extends React.Component {
               </div>
             </div>)}
         </div>
-        <WrappedContactUs page='maracas' products={items} handleSetProductSelected={this.handleSetProductSelected} />
+        <button className={`dragees-component--products-btn-next`} disabled={items.filter(item => item.selected).length <= 0} onClick={() => this.handleShowFormContact(true)}> Next</button>
+        <WrappedContactUs page='maracas' products={items} handleSetProductSelected={this.handleSetProductSelected} handleShowFormContact={this.handleShowFormContact} />
       </div>
     );
   }

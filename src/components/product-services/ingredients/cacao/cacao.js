@@ -5,6 +5,7 @@ class IngredientCacao extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      hideFormContact: true,
       itemsHeader: [{
         id: 'itemsMilk',
         img: 'LUKER-CACAO-HELICONIA-41.png',
@@ -118,10 +119,14 @@ class IngredientCacao extends React.Component {
       itemsShowed: [],
     };
     this.handleSetProductSelected = this.handleSetProductSelected.bind(this);
+    this.handleShowFormContact = this.handleShowFormContact.bind(this)
   }
 
   componentDidMount() {
     this.changeItems(this.state.itemsHeader[1].items, this.state.itemsHeader[1].id);
+  }
+  handleShowFormContact(action) {
+    this.setState({ hideFormContact: !action })
   }
 
   selectProduct(product) {
@@ -154,17 +159,16 @@ class IngredientCacao extends React.Component {
     this.reorderItems(this.state.itemsHeader, 1, itemSelected);
   };
 
-  handleSetProductSelected(value, cacao) {
-    console.log(value);
+  handleSetProductSelected(value) {
     this.selectProduct(value);
   }
 
   render() {
     const { data } = this.props;
-    const { itemsSelected, itemsShowed, itemsHeader } = this.state;
+    const { itemsSelected, itemsShowed, itemsHeader, hideFormContact } = this.state;
     const altImg = 'img-example.svg';
     return (
-      <div className="cacao-component" >
+      <div className={`cacao-component ${hideFormContact && 'cacao-component--hide-form'} `}>
         <div className="cacao-component--header">
           <h1>the best</h1>
           <h1>ingredients</h1>
@@ -194,7 +198,8 @@ class IngredientCacao extends React.Component {
                 </div>)}
           </div>
         </div>
-        <WrappedContactUs page='cacao' products={itemsSelected} handleSetProductSelected={this.handleSetProductSelected} />
+        <button className={`i1906-component--products-btn-next`} disabled={itemsSelected.length <= 0} onClick={() => this.handleShowFormContact(true)}> Next</button>
+        <WrappedContactUs page='cacao' products={itemsSelected} handleSetProductSelected={this.handleSetProductSelected} handleShowFormContact={this.handleShowFormContact} />
       </div>
     );
   }

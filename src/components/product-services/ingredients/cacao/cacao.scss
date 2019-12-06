@@ -180,11 +180,19 @@
         width: 100%;
         gap: 1em;
         text-align: center;
+
+        &:disabled,
+        &[disabled] {
+          background: #CCCCCC;
+          color: #9B9B9B;
+        }
       }
     }
 
-    .contact-component {
-      display: none;
+    &--hide-form {
+      .contact-component {
+        display: none;
+      }
     }
   }
 }

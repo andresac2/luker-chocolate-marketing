@@ -54,6 +54,10 @@
     gap: 2em;
     text-align: center;
 
+    &-btn-next {
+      display: none;
+    }
+
 
     &-item {
       margin-top: 1em;
@@ -126,10 +130,30 @@
       width: 90%;
       gap: 1em;
       text-align: center;
+
+      &-btn-next {
+        display: block;
+        padding: 3px 2em;
+        margin: auto;
+        font-size: larger;
+        margin-bottom: 1em;
+        border-radius: 3px;
+        background: #F2CB0E;
+        font-weight: bold;
+        color: #532C2E;
+
+        &:disabled,
+        &[disabled] {
+          background: #CCCCCC;
+          color: #9B9B9B;
+        }
+      }
     }
 
-    .contact-component {
-      display: none;
+    &--hide-form {
+      .contact-component {
+        display: none;
+      }
     }
   }
 }

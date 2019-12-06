@@ -139,6 +139,10 @@
     }
   }
 
+  .contact-form-button-back {
+    display: none;
+  }
+
   &-content {
     margin: 5em 2em;
     color: #fff;
@@ -225,6 +229,27 @@
     &-terms {
       font-size: smaller;
       color: #fff;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100vw;
+    padding-top: 50px;
+    background-position: right;
+    background-size: cover;
+    z-index: 1;
+
+    .contact-form-products--list {
+      max-width: 80vw;
+    }
+
+    .contact-form-button-back {
+      display: inline-block;
+      margin-right: 1em;
     }
   }
 }
