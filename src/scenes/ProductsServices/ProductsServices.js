@@ -61,7 +61,7 @@ class ProductsServices extends React.Component {
             <Link to="/solution">FIND A DISTRIBUTOR</Link>
             {(item) ?
               <Link to={'/services/' + title}>BACK</Link> :
-              <Link to="/solution">BACK TO SERVICES</Link>
+              <Link to="/solution" style={{ fontSize: '9px' }}>BACK TO PRODUCTS & SERVICES</Link>
             }
           </div>
           <h1>{(title === 'maquila') ? 'FINISHED CHOCOLATE PRODUCTS' : (title === 'ingredients') ? 'CHOCOLATE INGREDIENTS' : 'OUR SERVICES'}</h1>

@@ -49,15 +49,13 @@
 
     .btn-dist {
       position: absolute;
-      top: 0;
+      top: 4em;
       left: 3em;
+      width: 12em;
 
       .logo {
-        margin-top: 4em;
         margin-bottom: .5em;
-        width: 10em;
         display: block;
-        background: transparent;
 
         img {
           width: 12em;
@@ -71,8 +69,12 @@
         font-size: smaller;
         background: #F4C710;
         color: #685019;
-        padding: 3px 18px;
+        padding: 3px 0;
         margin-bottom: .5em;
+
+        &:first-child {
+          background: transparent;
+        }
       }
     }
   }
