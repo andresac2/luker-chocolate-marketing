@@ -1,7 +1,7 @@
 import React from 'react'
 import logo from '../../../assets/img/Lukerlogo.svg'
 import { Link } from 'react-router-dom';
-import { FaFacebookF, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
+import { FaFacebookF, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
 
 
 class Footer extends React.Component {
@@ -48,9 +48,9 @@ class Footer extends React.Component {
             <input type="submit" value="Send" />
           </form>
           <div className="footer-component-social--btn">
-            <a href="https://www.facebook.com/casalukeroficial" target="_blank" ><FaFacebookF /></a>
-            <a href="https://twitter.com/CasaLuker_" target="_blank" ><FaTwitter /></a>
-            <a href="https://www.linkedin.com/company/casa-luker/" target="_blank" ><FaLinkedinIn /></a>
+            <a href="https://www.facebook.com/LukerChocolate/" target="_blank" ><FaFacebookF /></a>
+            <a href="https://www.instagram.com/lukerchocolate/" target="_blank" ><FaInstagram /></a>
+            <a href="https://www.linkedin.com/company/lukerchocolate/" target="_blank" ><FaLinkedinIn /></a>
           </div>
         </div>
       </div >

@@ -1,9 +1,8 @@
 import React from 'react';
 import { Breadcrumb, Icon } from 'antd';
 import { Link } from 'react-router-dom';
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaPrint } from 'react-icons/fa';
+import { FaFacebookF, FaLinkedinIn, FaPrint, FaInstagram } from 'react-icons/fa';
 
-import plant from '../../../assets/img/planting.png'
 import Comments from '../comments/comments';
 
 
@@ -32,9 +31,9 @@ class Article extends React.Component {
             </Breadcrumb.Item>
           </Breadcrumb>
           <div className="blog-article-bread--social">
-            <a href="https://www.facebook.com/casalukeroficial" target="_blank" ><FaFacebookF /></a>
-            <a href="https://twitter.com/CasaLuker_" target="_blank" ><FaTwitter /></a>
-            <a href="https://www.linkedin.com/company/casa-luker/" target="_blank" ><FaLinkedinIn /></a>
+            <a href="https://www.facebook.com/LukerChocolate/" target="_blank" ><FaFacebookF /></a>
+            <a href="https://www.instagram.com/lukerchocolate/" target="_blank" ><FaInstagram /></a>
+            <a href="https://www.linkedin.com/company/lukerchocolate/" target="_blank" ><FaLinkedinIn /></a>
             <a href="" target="_blank" ><FaPrint /></a>
           </div>
         </div>
