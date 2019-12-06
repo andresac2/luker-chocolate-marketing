@@ -177,7 +177,6 @@
 
       &-img {
         display: block;
-        display: none;
         flex: 1 0 40%;
 
         img {
@@ -193,6 +192,42 @@
       right: 15px;
       z-index: 1;
       font-size: 3em;
+    }
+  }
+
+  @media screen and (max-width: 996px) {
+    padding: 0 2em 20px 2em;
+    margin-bottom: 1em;
+
+    h1 {
+      font-size: x-large;
+    }
+
+    &-card {
+      &--data {
+        &-img {
+          display: none;
+        }
+      }
+
+      &--open {
+        height: 80px;
+
+        p {
+          font-size: large;
+        }
+      }
+
+      &--opened {
+        height: 350px;
+
+        .value-svg {
+          color: #4B2418;
+          top: 10px;
+          right: 10px;
+          transform: rotate(-180deg);
+        }
+      }
     }
   }
 }
