@@ -55,8 +55,8 @@ class Header extends React.Component {
 
             <Link to="/blog" className={`selected-tab selected-tab-responsive`} ><span>BLOG</span></Link>
             <Link to="/" className={`selected-tab selected-tab-responsive`} ><span>CREATE YOUR OWN CHOCOLATE</span></Link>
-            <Link to="/contact-us" className={`selected-tab selected-tab-responsive`}><span>MORE INFO</span></Link>
-            <Link to="/" className={`selected-tab selected-tab-responsive`} ><span>CONTACT US</span></Link>
+            <Link to="/" className={`selected-tab selected-tab-responsive`} ><span>MORE INFO</span></Link>
+            <Link to="/contact-us" className={`selected-tab selected-tab-responsive`}><span>CONTACT US</span></Link>
           </nav>
         </div>
       </div>

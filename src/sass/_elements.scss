@@ -603,7 +603,10 @@ input::placeholder {
 
   @media (max-width: 992px) {
     margin: auto;
-    height: 90vw;
+
+    &-modal {
+      max-height: 80vh;
+    }
 
     .blog-article,
     &-modal,

@@ -35,9 +35,9 @@
       color: #fff;
 
       h1 {
-        margin: 1em 0;
+        margin: 1.5em 0 1em;
         font-weight: 700;
-        font-size: xx-large;
+        font-size: 3em;
       }
 
       &-content {
@@ -53,7 +53,7 @@
           margin-top: 2em;
           padding-left: 1em;
           font-weight: 600;
-          font-size: smaller;
+          font-size: 1em;
           line-height: 1.5rem;
         }
 
@@ -147,6 +147,26 @@
             background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 30%, rgba(0, 0, 0, 0) 100%);
           }
         }
+
+        .card-badges {
+          display: none;
+          width: auto;
+          height: 100%;
+          margin: 0 auto;
+          position: absolute;
+          bottom: 0;
+          left: calc((100% - 800px) / 2);
+
+          .modal-badge {
+            display: inline-block;
+            margin-right: 1em;
+
+            img {
+              width: 56px;
+              height: 56px;
+            }
+          }
+        }
       }
 
       .btn-next-img {
@@ -202,7 +222,7 @@
       h1 {
         font-weight: 700;
         line-height: 1.2em;
-        font-size: 2.5em;
+        font-size: 4em;
         text-transform: uppercase;
       }
 
@@ -241,18 +261,19 @@
     padding-bottom: 2rem;
 
     .sustain-sidebar {
-      width: 100%;
+      display: none;
+      width: calc(100vw);
       padding-top: 20px;
       padding-bottom: 20px;
 
-      &-text h1 {
+      &--text h1 {
         font-size: 2em;
-
       }
     }
 
     .sustain-content {
       width: 100%;
+      display: none;
       padding-top: 13px;
       padding-left: 25px;
       padding-right: 25px;
@@ -288,6 +309,7 @@
       }
 
       &:nth-child(2n) {
+        // text-align: center;
         display: none;
       }
     }

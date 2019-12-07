@@ -155,7 +155,7 @@ class Sustain extends React.Component {
         </div>
         <div className="sustain-content">
           <div className="sustain-content-model">
-            <h1>OUR IMPACT</h1>
+            <h1>IMPACT</h1>
             <div className="sustain-content-contain-carr">
               <img className="btn-next-img btn-next-img-left" src={back} alt='left' onClick={() => this.carrAction('l')} />
               <div className="sustain-content-contain-carr--items" >
@@ -163,6 +163,12 @@ class Sustain extends React.Component {
                   <div key={i} className={`card-image ${firstItem > i && 'item-action--l'}`} onClick={() => this.showModalArticle(i)}>
                     <img src={require('../../assets/img/' + (items[i].img ? items[i].img : altImg))} alt={items[i].title} />
                     <p>{items[i].title}</p>
+                    <div className="card-badges" >
+                      {(items[modalSelectedIndex].badges).map((badge, i) =>
+                        <div key={i} className={`card-badge`}>
+                          <img src={require('../../assets/img/badges/' + badge)} alt={items[modalSelectedIndex].title} />
+                        </div>)}
+                    </div>
                   </div>)}
               </div>
               <img className="btn-next-img" src={back} alt='left' onClick={() => this.carrAction('r')} />
@@ -174,7 +180,7 @@ class Sustain extends React.Component {
             </div>
           </div>
           <div className="sustain-content-model">
-            <h1>WE INVITE YOU TO DREAM WITH US</h1>
+            <h1>WE GO BEYOND</h1>
             <div className="sustain-content-model--panel">
               <img src={panel} alt="Panel" />
               <button onClick={() => console.log('hi')}> FIND OUT MORE </button>

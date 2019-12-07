@@ -1,6 +1,6 @@
 .flow-tabs {
   display: grid;
-  grid-template-rows: calc(100vh - 20em) 20em;
+  grid-template-rows: calc(100vh - 18em) 18em;
 
   @media screen and (max-width: 992px) {
     grid-template-rows: calc(100vh - 22em) 16em 6em;
@@ -90,42 +90,42 @@
 
       &--cacao {
         background-image: linear-gradient(to bottom, rgba(97, 20, 6, 0.6) 100%, transparent),
-          url("../../../assets/img/cacao-cover.png");
+          url("../../../assets/img/the-chocolate-process/cacao/cacao-fino-de-aroma-title.jpg");
         z-index: 5;
         box-shadow: 14px 0px 19px #0000007E;
       }
 
       &--granjeros {
         background-image: linear-gradient(to bottom, rgba(209, 216, 114, 0.6) 100%, transparent),
-          url("../../../assets/img/granjero-cover.png");
+          url("../../../assets/img/the-chocolate-process/harvesting/harvesting-title.jpg");
         z-index: 4;
         box-shadow: 14px 0px 19px #0000007E;
       }
 
       &--abastecimiento {
         background-image: linear-gradient(to bottom, rgba(213, 183, 119, 0.6) 100%, transparent),
-          url("../../../assets/img/abaste-cover.png");
+          url("../../../assets/img/the-chocolate-process/post-harvesting/post-harvesting-title.jpg");
         z-index: 3;
         box-shadow: 14px 0px 19px #0000007E;
       }
 
       &--procesamiento {
         background-image: linear-gradient(to bottom, rgba(171, 171, 171, 0.6) 100%, transparent),
-          url("../../../assets/img/proces-cover.png");
+          url("../../../assets/img/the-chocolate-process/Processing/processing-title.jpg");
         z-index: 2;
         box-shadow: 14px 0px 19px #0000007E;
       }
 
       &--coberturas {
         background-image: linear-gradient(to bottom, rgba(83, 44, 46, 0.6) 100%, transparent),
-          url("../../../assets/img/cober-cover.png");
+          url("../../../assets/img/the-chocolate-process/raffinement-conching/raffinement-conching-title.jpg");
         z-index: 1;
         box-shadow: 14px 0px 19px #0000007E;
       }
 
       &--producto {
         background-image: linear-gradient(to bottom, rgba(198, 134, 90, 0.6) 100%, transparent),
-          url("../../../assets/img/product-cover.png");
+          url("../../../assets/img/the-chocolate-process/finished-products/finished-product-title.jpg");
         z-index: 0;
         box-shadow: 14px 0px 19px #0000007E;
       }
@@ -247,7 +247,7 @@
         line-height: 1.4em;
         min-width: 300px;
         overflow: auto;
-        font-weight: 100;
+        font-weight: 400;
 
         p {
           margin-bottom: 1em;

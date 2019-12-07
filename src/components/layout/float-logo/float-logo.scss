@@ -17,15 +17,15 @@
   a,
   button {
     display: block;
-    width: 12em;
-    //max-width: 12em;
+    width: max-content;
+    max-width: 12em;
     text-align: center;
     font-weight: 700;
     background: #f4c710;
     color: #685019;
-    font-size: small;
     font-size: 1vw;
-    padding: 3px 0;
+    //font-size: 10px;
+    padding: 3px;
     margin-top: .5em;
 
     &:first-child {

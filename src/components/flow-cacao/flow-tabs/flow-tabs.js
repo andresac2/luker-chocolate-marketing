@@ -15,7 +15,7 @@ class FlowTabs extends React.Component {
     this.handleCheck = this.handleCheck.bind(this)
     this.state = {
       selectTab: 'cacao',
-      statusOpened: false
+      statusOpened: true
     };
   }
 
@@ -33,6 +33,12 @@ class FlowTabs extends React.Component {
 
   render() {
     const { selectTab, statusOpened } = this.state;
+    const cacaoImgs = ['cacao-fino-de-aroma.jpg', 'cacao-fino-de-aroma-1.jpg', 'cacao-fino-de-aroma-2.jpg'];
+    const finishedImgs = ['finished-product-1.jpg', 'finished-product-2.jpg'];
+    const harvestingImgs = ['harvesting-1.jpg', 'harvesting-2.jpg', 'harvesting-3.jpg', 'harvesting-4.jpg'];
+    const postharvestingImgs = ['post-harvesting-1.jpg', 'post-harvesting-2.jpg', 'post-harvesting-3.jpg', 'post-harvesting-4.jpg'];
+    const processingImgs = ['processing-1.jpg'];
+    const raffinementImgs = ['raffinement-conching.jpg'];
 
     return (
       <div className="flow-tabs">
@@ -93,16 +99,43 @@ class FlowTabs extends React.Component {
               <img className="back-rotate" src={back} />
             </div>
             <Carousel autoplay>
-              {[...Array(4)].map((_, i) => {
-                return <div key={i}>
-                  {selectTab === 'cacao' && <img src={cacao} alt={selectTab} key={1} />}
-                  {selectTab === 'granjeros' && <img src={granjeros} alt={selectTab} key={2} />}
-                  {selectTab === 'abastecimiento' && <img src={abastecimiento} alt={selectTab} key={3} />}
-                  {selectTab === 'procesamiento' && <img src={procesamiento} alt={selectTab} key={4} />}
-                  {selectTab === 'coberturas' && <img src={coberturas} alt={selectTab} key={5} />}
-                  {selectTab === 'producto' && <img src={producto} alt={selectTab} key={6} />}
-                </div>
-              })}
+              {selectTab === 'cacao' &&
+                cacaoImgs.map((item, i) =>
+                  <div key={i}>
+                    <img src={require('../../../assets/img/the-chocolate-process/cacao/' + item)} alt={selectTab} key={i} />
+                  </div>
+                )
+              }
+              {selectTab === 'granjeros' &&
+                harvestingImgs.map((item, i) =>
+                  <div key={i}>
+                    <img src={require('../../../assets/img/the-chocolate-process/harvesting/' + item)} alt={selectTab} key={i} />
+                  </div>)
+              }
+              {selectTab === 'abastecimiento' &&
+                postharvestingImgs.map((item, i) =>
+                  <div key={i}>
+                    <img src={require('../../../assets/img/the-chocolate-process/post-harvesting/' + item)} alt={selectTab} key={i} />
+                  </div>)
+              }
+              {selectTab === 'procesamiento' &&
+                processingImgs.map((item, i) =>
+                  <div key={i}>
+                    <img src={require('../../../assets/img/the-chocolate-process/Processing/' + item)} alt={selectTab} key={i} />
+                  </div>)
+              }
+              {selectTab === 'coberturas' &&
+                raffinementImgs.map((item, i) =>
+                  <div key={i}>
+                    <img src={require('../../../assets/img/the-chocolate-process/raffinement-conching/' + item)} alt={selectTab} key={i} />
+                  </div>)
+              }
+              {selectTab === 'producto' &&
+                finishedImgs.map((item, i) =>
+                  <div key={i}>
+                    <img src={require('../../../assets/img/the-chocolate-process/finished-products/' + item)} alt={selectTab} key={i} />
+                  </div>)
+              }
             </Carousel>
           </div>
         </div>
@@ -121,3 +154,40 @@ class FlowTabs extends React.Component {
 };
 
 export default FlowTabs;
+/*
+              {selectTab === 'granjeros' &&
+                harvestingImgs.map((item, i) => {
+                  <div key={i}>
+                    <img src={require('../../../assets/img/the-chocolate-process/harvesting') + item} alt={selectTab} key={i} />
+                  </div>
+                })
+              }
+              {selectTab === 'abastecimiento' &&
+                postharvestingImgs.map((item, i) => {
+                  <div key={i}>
+                    <img src={require('../../../assets/img/the-chocolate-process/post-harvesting') + item} alt={selectTab} key={i} />
+                  </div>
+                })
+              }
+              {selectTab === 'procesamiento' &&
+                processingImgs.map((item, i) => {
+                  <div key={i}>
+                    <img src={require('../../../assets/img/the-chocolate-process/Processing') + item} alt={selectTab} key={i} />
+                  </div>
+                })
+              }
+              {selectTab === 'coberturas' &&
+                raffinementImgs.map((item, i) => {
+                  <div key={i}>
+                    <img src={require('../../../assets/img/the-chocolate-process/raffinement-conching') + item} alt={selectTab} key={i} />
+                  </div>
+                })
+              }
+              {selectTab === 'producto' &&
+                finishedImgs.map((item, i) => {
+                  <div key={i}>
+                    <img src={require('../../../assets/img/the-chocolate-process/finished-products') + item} alt={selectTab} key={i} />
+                  </div>
+                })
+              }
+*/

@@ -52,6 +52,10 @@
   }
 
   @media screen and (max-width: 992px) {
-    display: none;
+
+    &-right,
+    &-left {
+      display: none;
+    }
   }
 }
