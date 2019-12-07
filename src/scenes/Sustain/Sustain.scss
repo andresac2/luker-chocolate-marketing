@@ -292,9 +292,9 @@
       }
     }
 
-    .sustain-sidebar--dist {
+    /*.sustain-sidebar--dist {
       // display: none;
-    }
+    }*/
 
     .sustain-content-model {
 
@@ -307,7 +307,7 @@
       }
 
       &:nth-child(2n) {
-        // text-align: center;
+        text-align: center;
         //display: none;
       }
     }

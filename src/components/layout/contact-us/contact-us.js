@@ -112,7 +112,7 @@ class ContactUs extends React.Component {
                 Submit
               </Button>
             </Form.Item>
-            <p className="contact-form-terms">Al hacer clic en "enviar" aceptas términos y condiciones y política de privacidad</p>
+            <p className="contact-form-terms">By clicking "send" you agree to the terms and conditions and our privacy policy.</p>
           </Form>
         </div>
       </div >
