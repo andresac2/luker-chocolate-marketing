@@ -13,37 +13,37 @@ class IngredientCacao extends React.Component {
         items: [{
           id: 1,
           img: 'milk-atlantico-33.png',
-          description: 'ATLÁNTICO 33.5%',
+          description: ['ATLÁNTICO 33.5%', 'MILK 28%'],
           selected: false
         },
         {
           id: 2,
           img: 'milk-mulata-37.png',
-          description: 'MULATA SUGAR FREE 37%',
+          description: ['MULATA SUGAR FREE 37%', 'MILK 23%'],
           selected: false
         },
         {
           id: 3,
           img: 'milk-clarodeluna-37.png',
-          description: 'CLARO DE LUNA 37%',
+          description: ['CLARO DE LUNA 37%', 'MILK 10%'],
           selected: false
         },
         {
           id: 4,
           img: 'milk-noche-40.png',
-          description: 'NOCHE 40%',
+          description: ['NOCHE 40%', 'MILK 13%'],
           selected: false
         },
         {
           id: 5,
           img: 'milk-heliconia-41.png',
-          description: 'HELICONIA 41%',
+          description: ['HELICONIA 41%', 'MILK 19%'],
           selected: false
         },
         {
           id: 6,
           img: 'milk-caribe-45.png',
-          description: 'CARIBE 45%',
+          description: ['CARIBE 45%', 'MILK 20%'],
           selected: false
         }
         ]
@@ -56,37 +56,37 @@ class IngredientCacao extends React.Component {
           {
             id: 1,
             img: 'LUKER-CACAO-VALLE50.png',
-            description: 'VALLE 50%',
+            description: ['VALLE 50%'],
             selected: false
           },
           {
             id: 2,
             img: 'p-sombra-54.png',
-            description: 'SOMBRA 54%',
+            description: ['SOMBRA 54%'],
             selected: false
           },
           {
             id: 3,
             img: 'luker-cumbre-58.png',
-            description: 'CUMBRE 58%',
+            description: ['CUMBRE 58%'],
             selected: false
           },
           {
             id: 4,
             img: 'LUKER-CACAO-MACONDO-60.png',
-            description: 'MACONDO 60%',
+            description: ['MACONDO 60%'],
             selected: false
           },
           {
             id: 5,
             img: 'LUKER-CACAO-MARANTA 61.png',
-            description: 'MARANTA 61%',
+            description: ['MARANTA 61%'],
             selected: false
           },
           {
             id: 6,
             img: 'LUKER-CACAO-PALENQUE70.png',
-            description: 'PALENQUE 70%',
+            description: ['PALENQUE 70%'],
             selected: false
           }
         ]
@@ -98,19 +98,19 @@ class IngredientCacao extends React.Component {
         items: [{
           id: 1,
           img: 'white-glaciar.png',
-          description: 'GLACIAR',
+          description: ['GLACIAR 35%', 'MILK 18%'],
           selected: false
         },
         {
           id: 2,
           img: 'white-nevado.png',
-          description: 'NEVADO',
+          description: ['NEVADO 35%', 'MILK 24%'],
           selected: false
         },
         {
           id: 3,
           img: 'white-sierra.png',
-          description: 'SIERRA',
+          description: ['SIERRA 45%', 'MILK 16%'],
           selected: false
         }
         ]
@@ -180,6 +180,7 @@ class IngredientCacao extends React.Component {
         </div>
         <div className="cacao-component--content">
           <p>{data.description}</p>
+          <p className="cacao-component--content-specifications">Available in: 2,5 bag or 20kg box<br /> Shelf life: Dark 24 months, Milk & White 14 months.</p>
         </div>
         <div className="cacao-component-tabs">
           <div className="cacao-component-tabs-header">
@@ -194,7 +195,8 @@ class IngredientCacao extends React.Component {
                   <img src={require('../../../../assets/img/' + (itemsShowed[i].img ? itemsShowed[i].img : altImg))} alt='jaja' />
                   <span>i</span>
                   <h2>CASALUKER CACAO</h2>
-                  <p>{itemsShowed[i].description}</p>
+                  <p>{itemsShowed[i].description[0]}</p>
+                  <p>{itemsShowed[i].description[1]}</p>
                 </div>)}
           </div>
         </div>

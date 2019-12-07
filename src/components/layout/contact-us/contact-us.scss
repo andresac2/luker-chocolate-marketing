@@ -182,7 +182,12 @@
         font-weight: 600;
         opacity: .9;
         display: block;
-        line-height: 90px;
+        color: #532C2E;
+        margin-top: calc(60px - 1em);
+        line-height: 1em;
+        font-weight: bolder;
+        height: 120px;
+        text-transform: uppercase;
       }
 
       &--list {
@@ -202,7 +207,7 @@
         }
 
         img {
-          width: 70px;
+          width: 90px;
         }
 
         p {

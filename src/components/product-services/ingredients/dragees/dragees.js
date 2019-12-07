@@ -10,6 +10,7 @@ class IngredientDragees extends React.Component {
         id: 1,
         img: 'maracas-physalis.png',
         description: 'Covered Physalis',
+        available: 'Available in: 1 kg bag or 20 kg box',
         content: 'This tropical fruit is covered in dark chocolate creating the ideal balance between the fruit’s acidic flavour and the chocolate’s fruit and floral notes. Ideal for decorating cakes and desserts or on its own as a snack',
         selected: false
       },
@@ -17,6 +18,7 @@ class IngredientDragees extends React.Component {
         id: 2,
         img: 'maracas-espresso.png',
         description: 'COVERED ESPRESSO BEANS',
+        available: 'Available in: 1 kg bag or 15 kg box',
         content: 'The perfect combination. The best Colombian coffee beans, covered in generous layers of Fino de Aroma chocolate. Their shine and oval shape makes them different to other brands of chocolate-covered coffee beans. Ideal to go with coffee, as a snack, to include in your recipes or for decoration.',
         selected: false
       },
@@ -24,6 +26,7 @@ class IngredientDragees extends React.Component {
         id: 3,
         img: 'maracas-cluster.png',
         description: 'COVERED NIBS CLUSTES',
+        available: 'Available in: 1 kg bag or 15 kg box',
         content: 'Small chunks of roasted Fino de Aroma cocoa covered in dark chocolate making for a delicious crunchy chocoaltey snack. Ideal as a snack and for including in recipes.',
         selected: false
       },
@@ -31,6 +34,7 @@ class IngredientDragees extends React.Component {
         id: 4,
         img: 'maracas-instant.png',
         description: 'DARK CHOCOLATE COVERED INSTANT COFFEE',
+        available: 'Available in: 1kg bag or 10 kg box',
         content: 'The explosive flavour of coffee produces the perfect balance in this dragee. This unique flavour will dieffrentiate your products and surprise whoever tries them. Ideal for decorating cakes, desserts and ice- cream.',
         selected: false
       },
@@ -38,6 +42,7 @@ class IngredientDragees extends React.Component {
         id: 5,
         img: 'maracas-nibs.png',
         description: 'DARK CHOCOLATE COVERED NIBS',
+        available: 'Available in: 1 kg bag or 10 kg box',
         content: 'Small chunks of the best Fino de Aroma cocoa, roasted and covered in dark chocolate. Ideal for decorating cakes and desserts or on its own as a snack.',
         selected: false
       }
@@ -85,6 +90,7 @@ class IngredientDragees extends React.Component {
               <div className="dragees-component--products-item-data">
                 <h2>{items[i].description}</h2>
                 <p>{items[i].content}</p>
+                <span>{items[i].available}</span>
               </div>
             </div>)}
         </div>

@@ -261,7 +261,6 @@
     padding-bottom: 2rem;
 
     .sustain-sidebar {
-      display: none;
       width: calc(100vw);
       padding-top: 20px;
       padding-bottom: 20px;
@@ -273,7 +272,6 @@
 
     .sustain-content {
       width: 100%;
-      display: none;
       padding-top: 13px;
       padding-left: 25px;
       padding-right: 25px;
@@ -295,7 +293,7 @@
     }
 
     .sustain-sidebar--dist {
-      display: none;
+      // display: none;
     }
 
     .sustain-content-model {
@@ -310,7 +308,7 @@
 
       &:nth-child(2n) {
         // text-align: center;
-        display: none;
+        //display: none;
       }
     }
   }

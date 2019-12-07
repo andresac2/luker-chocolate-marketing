@@ -37,6 +37,7 @@
   }
 
   &--content {
+    color: #484848;
 
     h2 {
       border: 3px solid #484848;
@@ -50,9 +51,15 @@
     p {
       padding: 0 35px;
       text-align: center;
-      margin: 0 2em;
-      color: #484848;
       font-size: 1em;
+    }
+
+    &-specifications {
+      font-style: italic;
+      font-weight: 500;
+      color: #532C2E;
+      line-height: 1em;
+      margin-top: 1em;
     }
   }
 

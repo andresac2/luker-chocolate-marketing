@@ -83,7 +83,7 @@ class ContactUs extends React.Component {
             </Form.Item>
             {(page === 'maquila' || page === 'ingredients' || page === 'cacao' || page === 'maracas') &&
               <div className="contact-form-products">
-                <p>Características</p>
+                <p>Characteristics</p>
                 {products &&
                   <div className="contact-form-products--list">
                     {products.filter(item => item.selected).length > 0 ?
@@ -92,7 +92,7 @@ class ContactUs extends React.Component {
                           <img src={require('../../../assets/img/' + (products.filter(item => item.selected)[i].img ? products.filter(item => item.selected)[i].img : altImg))} alt={products.filter(item => item.selected)[i].id} />
                           <p className={`contact-form-products--list-item-${page}`} >{products.filter(item => item.selected)[i].description}</p>
                         </div>)
-                      : <span>Drag your choice here</span>}
+                      : <span>{page === 'maquila' ? 'Choose an option from the list' : 'Pick your choice from the list of products'}</span>}
                   </div>
                 }
               </div>
