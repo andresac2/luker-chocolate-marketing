@@ -23,7 +23,7 @@ $Extra-large: 1200px;
       word-wrap: break-word;
 
       @media screen and (min-width: 1200px) {
-        font-size: 98px;
+        font-size: 72px;
       }
     }
 
@@ -36,10 +36,14 @@ $Extra-large: 1200px;
         margin: 3em auto .5em;
         width: 10em;
         display: block;
+
+        img {
+          width: 100%;
+        }
       }
 
       @media screen and (max-width: 960px) {
-          display: none;
+        display: none;
       }
 
       @media screen and (min-width: 1200px) {
@@ -58,21 +62,25 @@ $Extra-large: 1200px;
     margin: auto;
     padding: 2em 100px;
     text-align: center;
-    input{
+
+    input {
       border-radius: 0;
       height: 50px;
       border-color: #846961;
     }
+
     .ant-select-selection--single {
       border-radius: 0;
       height: 50px;
       display: grid;
       border-color: #846961;
-  }
-  textarea.ant-input {
-    border-radius: 0;
-    border-color: #846961;
-}
+    }
+
+    textarea.ant-input {
+      border-radius: 0;
+      border-color: #846961;
+    }
+
     p {
       font-weight: 700;
       font-size: smaller;
@@ -97,10 +105,12 @@ $Extra-large: 1200px;
       color: #fff;
     }
   }
-  @media (max-width: $Medium-devices){
-    &-header{
+
+  @media (max-width: $Medium-devices) {
+    &-header {
       min-height: 140px;
-      h1{
+
+      h1 {
         margin-top: 16%;
         position: absolute;
         color: #482418;
@@ -110,19 +120,22 @@ $Extra-large: 1200px;
         justify-content: center;
       }
     }
-    &-content{
+
+    &-content {
       margin-top: 15%;
     }
 
   }
-  @media (max-width: $Small-devices){
-    &-header{
-      h1{
+
+  @media (max-width: $Small-devices) {
+    &-header {
+      h1 {
         font-size: 3em;
         margin-top: 25%;
       }
     }
-    &-content{
+
+    &-content {
       padding: 2em 25px;
     }
 
