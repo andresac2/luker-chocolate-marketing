@@ -115,7 +115,7 @@ class Blog extends React.Component {
               <Link to='/blog'>BLOG</Link>
             }
           </div>
-          <FloatLogo btns={[{ url: '/customer', btnText: 'BACK' }]} />
+          <FloatLogo btns={[{ url: '/customer', btnText: category === 'customer' ? 'BACK' : 'BLOG' }]} />
           <div className="blog-component-header--search">
             <Search allowClear
               placeholder="input search text"
@@ -148,7 +148,7 @@ class Blog extends React.Component {
               <div className="blog-layout-latest">
                 <h1>Latest entries</h1>
                 <Link to="/blog/take-stand/article" className="blog-layout-latest--article">
-                  <img src="https://www.lukerchocolate.com/wp-content/uploads/2019/09/Fbago28-1024x536.jpg" alt="" style={{ objectFit: 'fill' }} />
+                  <img src={require('../../assets/img/5thdimensions.png')} alt="" />
                   <p>AUGUST 2019</p>
                   <h2>{draway.title}</h2>
                 </Link>
@@ -156,19 +156,19 @@ class Blog extends React.Component {
               <div className="blog-layout-articles">
                 <div className="blog-layout-articles--item">
                   <Link to="/blog/take-stand/shoescocoa2" className="blog-layout-latest--article">
-                    <img src="https://www.lukerchocolate.com/wp-content/uploads/2019/10/Fbago21Eng.jpg" alt="" width="1200" height="628" srcSet="https://www.lukerchocolate.com/wp-content/uploads/2019/10/Fbago21Eng.jpg 1200w, https://www.lukerchocolate.com/wp-content/uploads/2019/10/Fbago21Eng-300x157.jpg 300w, https://www.lukerchocolate.com/wp-content/uploads/2019/10/Fbago21Eng-768x402.jpg 768w, https://www.lukerchocolate.com/wp-content/uploads/2019/10/Fbago21Eng-1024x536.jpg 1024w" />
+                    <img src={require('../../assets/img/train-luker.png')} />
                     <p>Agosto 2019</p>
                     <h2>{shoescocoa2.title} </h2>
                   </Link>
                 </div>
-                {/*                <div className="blog-layout-articles--item">
-                  <Link to="/blog/take-stand/shoescocoa2" className="blog-layout-latest--article">
-                    <img class="aligncenter wp-image-3732 size-full below-entry-meta lazyloaded" src="https://www.lukerchocolate.com/wp-content/uploads/2019/10/Fbago21Eng.jpg" alt="" width="1200" height="628" srcSet="https://www.lukerchocolate.com/wp-content/uploads/2019/10/Fbago21Eng.jpg 1200w, https://www.lukerchocolate.com/wp-content/uploads/2019/10/Fbago21Eng-300x157.jpg 300w, https://www.lukerchocolate.com/wp-content/uploads/2019/10/Fbago21Eng-768x402.jpg 768w, https://www.lukerchocolate.com/wp-content/uploads/2019/10/Fbago21Eng-1024x536.jpg 1024w" />
+                <div className="blog-layout-articles--item">
+                  <Link to="/blog/take-stand/shoescocoa" className="blog-layout-latest--article">
+                    <img src={require('../../assets/img/the-chocolate-process/harvesting/harvesting-3.jpg')} />
                     <p>Agosto 2019</p>
-                    <h2>{shoescocoa2.title}</h2>
+                    <h2>{shoescocoa.title} 2</h2>
                   </Link>
                 </div>
-                <div className="blog-layout-articles--item">
+                {/*<div className="blog-layout-articles--item">
                   <Link to="/blog/take-stand/shoescocoa" className="blog-layout-latest--article">
                     <img src={item1} alt="cacao" />
                     <p>Julio 2019</p>
@@ -181,7 +181,7 @@ class Blog extends React.Component {
                     <p>Mayo 2019</p>
                     <h2>{pots.title}</h2>
                   </Link>
-          </div>*/}
+                </div>*/}
               </div>
               <div className="blog-layout-featured">
                 <h1>Featured</h1>

@@ -26,22 +26,22 @@ function Customer() {
         <FloatLogo btnText='dist' />
       </div>
       <div className="customer-component--content">
-        <Link to='/blog/customers/pots'>
+        <Link to='/blog/customer/pots'>
           <img src={pots} alt="Pots&co" />
           <h2>POTS & CO</h2>
           <img src={ukFlag} alt="" className="flag-badge" />
         </Link>
-        <Link to='/blog/customers/doisy'>
+        <Link to='/blog/customer/doisy'>
           <img src={doisy} alt="Doisy & Dam" />
           <h2>DOISY & DAM</h2>
           <img src={ukFlag} alt="" className="flag-badge" />
         </Link>
-        <Link to='/blog/customers/dengel'>
+        <Link to='/blog/customer/dengel'>
           <img src={dengel} alt="" />
           <h2>DENGEL SHOKOLADE</h2>
           <img src={dkFlag} alt="" className="flag-badge" />
         </Link>
-        <Link to='/blog/customers/york'>
+        <Link to='/blog/customer/york'>
           <img src={york} alt="" />
           <h2>YORK COCOA HOUSE</h2>
           <img src={usFlag} alt="" className="flag-badge" />

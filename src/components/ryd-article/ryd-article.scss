@@ -22,12 +22,22 @@
       left: 2em;
     }
 
-    @media screen and (max-width: 960px) {
-      display: flex;
-      width: 4em;
+    @media screen and (max-width: 996px) {
+      display: inline-block;
+      top: 3em;
+      width: 8em;
+
+      .logo {
+        margin: 0;
+        margin-bottom: .5em;
+        width: 7em;
+      }
 
       button {
-        display: none;
+        //|width: 8em;
+        padding: 5px 0;
+        font-size: x-small;
+        //display: none;
       }
 
       ;
