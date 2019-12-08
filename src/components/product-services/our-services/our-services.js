@@ -1,5 +1,5 @@
 import React from 'react'
-import ContactUs from '../../layout/contact-us/contact-us';
+import ContactSide from '../../layout/contact-side/contact-side';
 import { ReactComponent as Back } from "../../../assets/img/back.svg"
 import { Link } from 'react-router-dom';
 
@@ -65,7 +65,7 @@ class OurServices extends React.Component {
         <div className="btn-back-sticky">
           <Link to="/solution">BACK TO SOLUTIONS</Link>
         </div>
-        <ContactUs page='service' products={[]} />
+        <ContactSide page='service' products={[]} />
       </div >
     );
   }

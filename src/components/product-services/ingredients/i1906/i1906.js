@@ -1,5 +1,5 @@
 import React from 'react'
-import WrappedContactUs from '../../../layout/contact-us/contact-us';
+import WrappedContactSide from '../../../layout/contact-side/contact-side';
 
 class Ingredient1906 extends React.Component {
   constructor(props) {
@@ -94,7 +94,7 @@ class Ingredient1906 extends React.Component {
             </div>)}
         </div>
         <button className={`i1906-component--products-btn-next`} disabled={itemsArauca.filter(item => item.selected).length <= 0} onClick={() => this.handleShowFormContact(true)}> Next</button>
-        <WrappedContactUs page='ingredients' products={itemsArauca} handleSetProductSelected={this.handleSetProductSelected} handleShowFormContact={this.handleShowFormContact} />
+        <WrappedContactSide page='ingredients' products={itemsArauca} handleSetProductSelected={this.handleSetProductSelected} handleShowFormContact={this.handleShowFormContact} />
       </div>
     );
   }

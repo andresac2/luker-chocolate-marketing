@@ -2,7 +2,7 @@ import React from 'react'
 import { Form, Select, Input, Button, InputNumber } from 'antd';
 import FormItem from 'antd/lib/form/FormItem';
 
-class ContactUs extends React.Component {
+class ContactSide extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
@@ -120,7 +120,7 @@ class ContactUs extends React.Component {
   }
 };
 
-const WrappedContactUs = Form.create({ name: 'contact_form' })(ContactUs);
+const WrappedContactSide = Form.create({ name: 'contact_form' })(ContactSide);
 
 
-export default WrappedContactUs;
+export default WrappedContactSide;

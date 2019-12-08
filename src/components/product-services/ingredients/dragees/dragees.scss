@@ -52,6 +52,10 @@
     width: calc(100% - 120px);
     text-align: center;
 
+    &-btn-next {
+      display: none;
+    }
+
     &-item {
       position: relative;
       display: flex;

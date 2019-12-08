@@ -6,7 +6,7 @@ import { MdClose } from 'react-icons/md';
 import Footer from '../footer/footer';
 
 class FooterCover extends React.Component {
-  hideView = ['/services', '/blog'];//VIstas en las que se oculta el footer
+  hideView = ['/services', '/blog', '/contact-us'];//VIstas en las que se oculta el footer
   darkIcon = ['/services', '/blog'];//VIstas en las que se muestra modo oscuro
 
   constructor(props) {
