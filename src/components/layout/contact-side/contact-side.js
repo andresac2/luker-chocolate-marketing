@@ -1,17 +1,54 @@
 import React from 'react'
-import { Form, Select, Input, Button, InputNumber } from 'antd';
+import { Form, Select, Input, Button, InputNumber, Modal } from 'antd';
 import FormItem from 'antd/lib/form/FormItem';
 
 class ContactSide extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { feedback: '', name: 'Name', email: 'email@example.com', country: 'Colombia' };
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
   handleSubmit = e => {
     e.preventDefault();
+    const templateId = 'contact_form_luker';
+    console.log(this.props.products.filter(item => item.selected));
     this.props.form.validateFields((err, values) => {
       if (!err) {
+        //  values.push();
+        values.products = 'And get some information about this products: ' + this.props.products.filter(item => item.selected).map(a => a.description).join(', ');
+        this.sendFeedback(templateId, values);
         console.log('Received values of form: ', values);
       }
     });
+
   };
+
+  sendFeedback(templateId, variables) {
+    window.emailjs.send(
+      'sendgrid', templateId,
+      variables
+    ).then(res => {
+      console.log('Email successfully sent!');
+      this.emailSent('Thank you for getting in touch! ', 'We appreciate you contacting us. One of our colleagues will get back in touch with you soon!');
+      this.props.form.resetFields();
+      this.props.handleSetProductSelected(this.props.products.filter(item => item.selected));
+    })
+      // Handle errors here however you like, or use a React error boundary
+      .catch(err => (console.error('Oh well, you failed. Here some thoughts on the error that occured:', err), this.emailSent('Oh well, something failed', 'Check your conection and try again')));
+  }
+
+  emailSent(title, content) {
+    const modal = Modal.success({
+      title: title,
+      content: content,
+    });
+
+    setTimeout(() => {
+      modal.destroy();
+    }, 8000);
+  }
+
 
   render() {
     const { getFieldDecorator } = this.props.form;
@@ -75,9 +112,9 @@ class ContactSide extends React.Component {
                     option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
                   }
                 >
-                  <Option value="col">Colombia</Option>
-                  <Option value="us">United States</Option>
-                  <Option value="uk">United Kingdom</Option>
+                  <Option value="Colombia">Colombia</Option>
+                  <Option value="United States">United States</Option>
+                  <Option value="United Kingdom">United Kingdom</Option>
                 </Select>,
               )}
             </Form.Item>
@@ -98,7 +135,7 @@ class ContactSide extends React.Component {
               </div>
             }
             <FormItem>
-              {getFieldDecorator('username', {
+              {getFieldDecorator('message', {
                 rules: [{ required: true, message: 'Please leave us a comment!' }],
               })(
                 <TextArea rows={4} placeholder="Comments" />
