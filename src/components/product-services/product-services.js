@@ -33,10 +33,12 @@ class ProductServices extends React.Component {
             <img className="btn-next-img" src={back} alt='left' onClick={() => this.reorderItems(items, 0, 2)} />
             {
               Object.keys(items).map(i =>
-                <div key={i} className={`carr-item carr-item--${i == 1 && 'active'} carr-item--${items[i].id}`} onClick={() => this.reorderItems(items, (i === 0) ? 0 : 2, (i === 2) ? 2 : 0)}>
-                  <img src={require('../../assets/img/' + (items[i].img ? items[i].img : altImg))} alt='jaja' />
-                  <p>{items[i].subtitle}</p>
-                  <h2>{items[i].name}</h2>
+                <div key={i} className={`carr-item carr-item--${i == 1 && 'active'} carr-item--${items[i].id}`} onClick={() => this.reorderItems(items, (i === '0') ? 2 : 0, i)}>
+                  <div>
+                    <img src={require('../../assets/img/' + (items[i].img ? items[i].img : altImg))} alt='jaja' />
+                    <p>{items[i].subtitle}</p>
+                    <h2>{items[i].name}</h2>
+                  </div>
                 </div>
               )
             }
