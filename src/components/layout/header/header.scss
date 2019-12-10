@@ -41,9 +41,6 @@
 
   */
 
-
-
-
   //  &:hover {
   height: 3em;
   background: linear-gradient(180deg, rgba(0, 0, 0, .9) 40%, rgba(0, 0, 0, 0) 95%);
@@ -227,11 +224,20 @@
       }
     }
 
+    &-blog {
+      border-top: 10px solid $live-yellow;
+
+      &.header-component-responsive--tabs-visible {
+        border-bottom: 10px solid $live-yellow;
+      }
+    }
+
     .intro,
     .chocolate-process,
     .sustainability,
     .products-services,
     .customer,
+    .blog,
     .ideas-trends,
     .value-proposition {
       span {
@@ -279,6 +285,12 @@
     .value-proposition {
       span {
         border-bottom-color: $light-gray;
+      }
+    }
+
+    .blog {
+      span {
+        border-bottom-color: $live-yellow;
       }
     }
   }
