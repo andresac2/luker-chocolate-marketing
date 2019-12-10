@@ -13,15 +13,15 @@
 
   /*Temporal header siempre visible
 
-  &-flow {
+  &-chocolate-process {
     background: $ocher-yellow;
   }
 
-  &-sustain {
+  &-sustainability {
     background: $beige;
   }
 
-  &-solution,
+  &-products-services,
   &-services {
     background: $peach;
   }
@@ -30,11 +30,11 @@
     background: $citrus;
   }
 
-  &-ryd {
+  &-ideas-trends {
     background: $tangerine;
   }
 
-  &-value-propose,
+  &-value-proposition,
   &-our-value {
     background: $light-gray;
   }
@@ -106,12 +106,12 @@
   }
 
   .intro::after,
-  .flow::after,
-  .sustain::after,
-  .solution::after,
+  .chocolate-process::after,
+  .sustainability::after,
+  .products-services::after,
   .customer::after,
-  .ryd::after,
-  .value-propose::after {
+  .ideas-trends::after,
+  .value-proposition::after {
     content: '';
     position: absolute;
     top: 2em;
@@ -125,15 +125,15 @@
     border-bottom-color: $apple-green;
   }
 
-  .flow::after {
+  .chocolate-process::after {
     border-bottom-color: $ocher-yellow;
   }
 
-  .sustain::after {
+  .sustainability::after {
     border-bottom-color: $beige;
   }
 
-  .solution::after {
+  .products-services::after {
     border-bottom-color: $peach;
   }
 
@@ -141,11 +141,11 @@
     border-bottom-color: $citrus;
   }
 
-  .ryd::after {
+  .ideas-trends::after {
     border-bottom-color: $tangerine;
   }
 
-  .value-propose::after {
+  .value-proposition::after {
     border-bottom-color: $light-gray;
   }
 }
@@ -179,7 +179,7 @@
       border-bottom: 10px solid $apple-green;
     }
 
-    &-flow {
+    &-chocolate-process {
       border-top: 10px solid $ocher-yellow;
 
       &.header-component-responsive--tabs-visible {
@@ -187,7 +187,7 @@
       }
     }
 
-    &-sustain {
+    &-sustainability {
       border-top: 10px solid $beige;
 
       &.header-component-responsive--tabs-visible {
@@ -195,7 +195,7 @@
       }
     }
 
-    &-solution {
+    &-products-services {
       border-top: 10px solid $peach;
 
       &.header-component-responsive--tabs-visible {
@@ -211,7 +211,7 @@
       }
     }
 
-    &-ryd {
+    &-ideas-trends {
       border-top: 10px solid $tangerine;
 
       &.header-component-responsive--tabs-visible {
@@ -219,7 +219,7 @@
       }
     }
 
-    &-value-propose {
+    &-value-proposition {
       border-top: 10px solid $light-gray;
 
       &.header-component-responsive--tabs-visible {
@@ -228,12 +228,12 @@
     }
 
     .intro,
-    .flow,
-    .sustain,
-    .solution,
+    .chocolate-process,
+    .sustainability,
+    .products-services,
     .customer,
-    .ryd,
-    .value-propose {
+    .ideas-trends,
+    .value-proposition {
       span {
         border-bottom-width: 2px;
         border-bottom-style: solid;
@@ -246,19 +246,19 @@
       }
     }
 
-    .flow {
+    .chocolate-process {
       span {
         border-bottom-color: $ocher-yellow;
       }
     }
 
-    .sustain {
+    .sustainability {
       span {
         border-bottom-color: $beige;
       }
     }
 
-    .solution {
+    .products-services {
       span {
         border-bottom-color: $peach;
       }
@@ -270,13 +270,13 @@
       }
     }
 
-    .ryd {
+    .ideas-trends {
       span {
         border-bottom-color: $tangerine;
       }
     }
 
-    .value-propose {
+    .value-proposition {
       span {
         border-bottom-color: $light-gray;
       }
@@ -366,12 +366,12 @@
   }
 
   .intro::after,
-  .flow::after,
-  .sustain::after,
-  .solution::after,
+  .chocolate-process::after,
+  .sustainability::after,
+  .products-services::after,
   .customer::after,
-  .ryd::after,
-  .value-propose::after {
+  .ideas-trends::after,
+  .value-proposition::after {
     border: none;
   }
 

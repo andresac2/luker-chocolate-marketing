@@ -58,10 +58,10 @@ class ProductsServices extends React.Component {
         <div className={`services-header services-header--${title} ${(item) && 'services-header--title-short'}`}>
           <div className="btn-dist">
             <Link to="/" className="logo"> <img src={logo} alt="Logo Luker" /></Link>
-            <Link to="/solution">FIND A DISTRIBUTOR</Link>
+            <Link to="/products-services">FIND A DISTRIBUTOR</Link>
             {(item) ?
               <Link to={'/services/' + title}>BACK</Link> :
-              <Link to="/solution" style={{ fontSize: '9px' }}>BACK TO PRODUCTS & SERVICES</Link>
+              <Link to="/products-services" style={{ fontSize: '9px' }}>BACK TO PRODUCTS & SERVICES</Link>
             }
           </div>
           <h1>{(title === 'maquila') ? 'FINISHED CHOCOLATE PRODUCTS' : (title === 'ingredients') ? 'CHOCOLATE INGREDIENTS' : 'OUR SERVICES'}</h1>

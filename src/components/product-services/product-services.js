@@ -49,7 +49,7 @@ class ProductServices extends React.Component {
             {items[1].description}
           </div></>}
         <div className="btn-back-sticky">
-          <Link to="/solution">BACK TO PRODUCTS & SERVICES</Link>
+          <Link to="/products-services">BACK TO PRODUCTS & SERVICES</Link>
         </div>
       </div >
     );

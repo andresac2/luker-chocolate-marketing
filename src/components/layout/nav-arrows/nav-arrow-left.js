@@ -3,7 +3,7 @@ import back from '../../../assets/img/back.svg'
 import { withRouter } from 'react-router-dom';
 
 class NavArrowLeft extends React.Component {
-  navRoutes = ['/', '/flow', '/sustain', '/solution', '/customer', '/ryd', '/value-propose'];
+  navRoutes = ['/', '/chocolate-process', '/sustainability', '/products-services', '/customer', '/ideas-trends', '/value-proposition'];
 
   constructor(props) {
     super(props);

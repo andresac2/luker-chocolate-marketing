@@ -63,7 +63,7 @@ class OurServices extends React.Component {
           <Back className={`btn-next-img ${dpSelected === designProcess.length - 1 && 'btn-inactive'}`} onClick={() => this.carrAction('r')} />
         </div>
         <div className="btn-back-sticky">
-          <Link to="/solution">BACK TO SOLUTIONS</Link>
+          <Link to="/products-services">BACK TO SOLUTIONS</Link>
         </div>
         <ContactSide page='service' products={[]} />
       </div >

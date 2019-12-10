@@ -28,13 +28,13 @@ export default function BasicExample() {
       <Header />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/flow" component={Flow} />
-        <Route path="/sustain" component={Sustain} />
-        <Route path="/solution" component={Solutions} />
+        <Route path="/chocolate-process" component={Flow} />
+        <Route path="/sustainability" component={Sustain} />
+        <Route path="/products-services" component={Solutions} />
         <Route path="/services/:title/:item?" component={Services} />
         <Route path="/customer" component={Customer} />
-        <Route path="/ryd" component={Ryd} />
-        <Route path="/value-propose" component={ValuePropose} />
+        <Route path="/ideas-trends" component={Ryd} />
+        <Route path="/value-proposition" component={ValuePropose} />
         <Route path="/our-value/:id" component={OurValue} />
         <Route path="/blog/:category?/:article?" component={Blog} />
         <Route path="/contact-us" component={WrappedContact} />

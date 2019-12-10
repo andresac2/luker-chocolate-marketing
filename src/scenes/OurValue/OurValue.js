@@ -31,7 +31,7 @@ class OurValue extends React.Component {
         <div className={`our-value-header our-value-header--${selectTab}`}>
           <div className="btn-dist">
             <Link to="/" className="logo"> <img src={logo} alt="Logo Luker" /></Link>
-            <Link to="/value-propose">BACK TO VALUES</Link>
+            <Link to="/value-proposition">BACK TO VALUES</Link>
           </div>
           <h1>OUR VALUE PROPOSITION</h1>
         </div>

@@ -38,7 +38,7 @@ class Footer extends React.Component {
             </ul>
           </div>
           <div className="footer-component-link">
-            <Link to="/solution">WORK WITH US</Link>
+            <Link to="/products-services">WORK WITH US</Link>
             <Link to="/contact-us">CONTACT US</Link>
             <Link to="/blog">VISIT OUR BLOG</Link>
           </div>
