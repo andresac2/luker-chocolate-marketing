@@ -21,17 +21,17 @@
       background-size: cover;
     }
 
-    &--york {
+    &--york-cocoa-house {
       background: url("../../assets/img/york-header.png") no-repeat;
       background-size: cover;
     }
 
-    &--pots {
+    &--pots-co {
       background: url("../../assets/img/pots-header.png") no-repeat;
       background-size: cover;
     }
 
-    &--dengel {
+    &--dengel-shokolade {
       background: url("../../assets/img/dengel-header.png") no-repeat;
       background-size: cover;
     }
@@ -41,7 +41,7 @@
       background-size: cover;
     }
 
-    &--doisy {
+    &--doisy-dam {
       background: url("../../assets/img/doisy-header.png") no-repeat;
       background-size: cover;
     }
@@ -195,7 +195,7 @@
       display: grid;
       grid-template-columns: 710px 230px;
       column-gap: 20px;
-      grid-template-rows: auto auto 1fr 1.5fr;
+      grid-template-rows: auto auto 1fr;
       grid-template-areas:
         "latest featured"
         "latest featured"

@@ -58,8 +58,15 @@
       object-fit: cover;
     }
 
-    p {
+    h3 {
+      color: #4B2418;
+      font-size: 1.8em;
       font-weight: 600;
+      margin: .5em 0;
+    }
+
+    p {
+      font-weight: 500;
       line-height: 1.8em;
       margin-bottom: 1em;
     }
@@ -92,12 +99,13 @@
   &-autor {
     @include vert-center;
     align-items: center;
-    max-width: 36em;
+    max-width: 55%;
     margin: 2em 0;
 
     img {
       margin-right: 2em;
       width: 10em;
+      border-radius: 50%;
       object-fit: cover;
     }
 

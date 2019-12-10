@@ -39,7 +39,7 @@ class Article extends React.Component {
         </div>
         <div className="blog-article-content" dangerouslySetInnerHTML={{ __html: data.content }} />
         {data.autor && <div className="blog-article-autor">
-          <img src={require('../../../assets/img/' + (data.autor.avatar ? data.autor.avatar : altImg))} alt={data.autor.name} />
+          <img src={data.autor.avatar} alt={data.autor.name} />
           <div className="blog-article-autor--data">
             <h2>{data.autor.name}</h2>
             <span>{data.autor.details}</span>
