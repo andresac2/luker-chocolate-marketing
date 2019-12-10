@@ -6,7 +6,7 @@ import { Select } from 'antd';
 
 class Header extends React.Component {
 
-  logoHidden = ['/ideas-trends', '/blog'];
+  logoHidden = ['/ideas-trends', '/blog', '/value-proposition'];
 
   constructor(props) {
     super(props);

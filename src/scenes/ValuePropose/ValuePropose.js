@@ -13,6 +13,9 @@ function ValuePropose() {
   return (
     <div className="value-propose-component">
       <div className="value-propose-component--expo">
+        <div className="btn-dist">
+          <Link to="/" className="logo"> <img src={logo} alt="Logo Luker" /></Link>
+        </div>
         <FloatLogo btnText='dist' />
         <div className="value-propose-component--expo-pagraph">
           <h1>OUR VALUE PROPOSITION</h1>

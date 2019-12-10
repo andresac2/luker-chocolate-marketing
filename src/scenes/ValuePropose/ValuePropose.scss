@@ -165,30 +165,15 @@
   }
 
   .btn-dist {
-    position: absolute;
-    top: 0;
-    left: 3em;
-
-    .logo {
-      margin: 5em auto 0.5em;
-      width: 10em;
-      display: block;
-    }
-
-    button {
-      font-weight: 700;
-      background: #f4c710;
-      color: #685019;
-      padding: 3px 18px;
-    }
+    display: none;
   }
 
-  @media (max-width: 992px) {
+  @media (max-width: 996px) {
     z-index: auto;
     height: 100%;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 40% 30% 100%;
+    grid-template-rows: 35% 30% 100%;
     grid-template-areas:
       "expo"
       "carrousel"
@@ -198,7 +183,20 @@
     overflow: scroll;
 
     .btn-dist {
-      display: none;
+      position: absolute;
+      top: 0;
+      left: 1em;
+      display: inline;
+
+      .logo {
+        margin: 3em 0;
+        width: 8em;
+        display: block;
+
+        img {
+          width: 100%;
+        }
+      }
     }
 
     &--expo {
@@ -207,6 +205,7 @@
         position: absolute;
         top: auto;
         bottom: 1em;
+        left: 1em;
 
         h1 {
           font-weight: 700;
@@ -230,6 +229,8 @@
       grid-template-columns: 70% 70%;
       grid-template-rows: 180px 180px;
       height: 360px;
+      z-index: 0;
+      margin-bottom: 35px;
 
       &-card {
         flex-direction: column;
