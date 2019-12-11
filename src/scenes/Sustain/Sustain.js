@@ -585,7 +585,7 @@ class Sustain extends React.Component {
             <h1>WE GO BEYOND</h1>
             <div className="sustain-content-model--panel">
               <img src={panel} alt="Panel" />
-              <button onClick={() => console.log('hi')}> FIND OUT MORE </button>
+              <a href='http://www.thechocolatedream.co/' target="_blank"> FIND OUT MORE </a>
             </div>
           </div>
         </div>
@@ -604,7 +604,7 @@ class Sustain extends React.Component {
               </div>
               <div className="modal-dist-modal-dist-cards">
                 {Object.keys(distributors).map(i =>
-                  <div className={`modal-dist-modal-dist-cards-card modal-dist-modal-dist-cards-card--active`}>
+                  <div key={i} className={`modal-dist-modal-dist-cards-card modal-dist-modal-dist-cards-card--active`}>
                     <h2>{distributors[i].company}</h2>
                     <p><span>Address:</span>{distributors[i].address}</p>
                     <p><span>Phone:</span>{distributors[i].phone}</p>

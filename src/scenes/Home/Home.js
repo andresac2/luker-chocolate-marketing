@@ -60,7 +60,7 @@ class Home extends React.Component {
             </Link>
           </div>
         </div>
-        <div className={`modal-dist modal-dist-${distModalVisible && 'visible'}`}>
+        <div className={`modal-dist modal-dist-${distModalVisible && 'visible'}`} style={{ display: 'none' }}>
           <div className="modal-dist-bkg" onClick={() => this.showModalDist()}></div>
           <div className="modal-dist-modal">
             <MdClose className="btn-x" onClick={() => this.showModalDist()} />

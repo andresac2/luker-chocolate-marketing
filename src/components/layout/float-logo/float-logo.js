@@ -24,7 +24,7 @@ class FloatLogo extends React.Component {
       fax: '+54 (11) 4664- 6581',
       web: 'www.tradar.com.ar',
       email: 'gabriel@tradar.ar',
-      urlMap: 'https://goo.gl/maps/QKNeKVfP2VpWbGfi6',
+      urlMap: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d26254.56544788482!2d-58.6461502!3d-34.6592313!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc7552e6fa7b1%3A0x1841999274f45828!2sEspronceda%20632%2C%20B1712JUC%20Castelar%2C%20Buenos%20Aires%2C%20Argentina!5e0!3m2!1ses!2sco!4v1576090065278!5m2!1ses!2sco',
       selected: false
     },
     {
@@ -110,9 +110,9 @@ class FloatLogo extends React.Component {
       address: 'CasaLuker S.A., Calle 13, Bogotá, Colombia',
       phone: '+57 (1) 4473700',
       fax: '',
-      web: 'casaluker.com.co',
+      web: 'casaluker.com',
       email: 'lukercacao@casaluker.com.co - servicioalcliente@casaluker.com.co',
-      urlMap: 'https://goo.gl/maps/o4sqALU4BCnF6uS19',
+      urlMap: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.7495520310367!2d-74.12201768523794!3d4.638707796630306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9bf75cc5b883%3A0x92615c5254798480!2sCasaLuker%20S.A.!5e0!3m2!1ses!2sco!4v1576094245775!5m2!1ses!2sco',
       selected: true
     },
     {
@@ -437,6 +437,7 @@ class FloatLogo extends React.Component {
   selectDistributorCountry() {
     let arr = this.distributors.filter(e => e.country.includes(this.state.distValue));
     this.setState({ actualDist: arr });
+    console.log(this.state.actualDist);
   }
 
   componentDidMount() {
@@ -466,7 +467,7 @@ class FloatLogo extends React.Component {
                 <h2>Distributors</h2>
                 <Select size='small' defaultValue="co" style={{ width: 150 }} value={distValue} onChange={this.handleChange}>
                   {Object.keys(this.countries).map(i =>
-                    <Option value={this.countries[i].abrev} key={i}>{this.countries[i].name}</Option>
+                    <Option key={i} value={this.countries[i].abrev} key={i}>{this.countries[i].name}</Option>
                   )}
                 </Select>
               </div>
@@ -476,14 +477,16 @@ class FloatLogo extends React.Component {
                     <h2>{actualDist[i].company}</h2>
                     <p><span>Address: </span>{actualDist[i].address}</p>
                     <p><span>Phone: </span>{actualDist[i].phone}</p>
-                    <p><span>Web: </span><a href={actualDist[i].web} target='_blank'>{actualDist[i].web}</a> </p>
+                    <p><span>Web: </span><a href={'https://' + actualDist[i].web} target='_blank'>{actualDist[i].web}</a> </p>
                     <p><span>E-mail: </span> {actualDist[i].email}</p>
                   </div>
                 )}
               </div>
             </div>
             <div className="modal-dist-modal-map">
-              <img src={require('../../../assets/img/map-dist.png')} alt='map distirbuidores' />
+              {actualDist.length > 0 &&
+                <iframe src={actualDist[0].urlMap} width="100%" height="100%" style={{ border: 0 }} ></iframe>
+              } {/*<iframe src={'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d26254.56544788482!2d-58.6461502!3d-34.6592313!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc7552e6fa7b1%3A0x1841999274f45828!2sEspronceda%20632%2C%20B1712JUC%20Castelar%2C%20Buenos%20Aires%2C%20Argentina!5e0!3m2!1ses!2sco!4v1576088872164!5m2!1ses!2sco'} width="100%" height="100%" style={{ border: 0 }} ></iframe>*/}
             </div>
           </div>
         </div>
@@ -491,6 +494,4 @@ class FloatLogo extends React.Component {
     );
   }
 };
-
-//export default withRouter(FooterCover);
 export default FloatLogo;
