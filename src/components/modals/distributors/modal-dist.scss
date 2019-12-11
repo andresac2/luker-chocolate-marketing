@@ -1,6 +1,7 @@
 .modal-dist {
   height: 70vh;
   width: 80vw;
+  max-width: 960px;
   background: #ECECEC;
   z-index: 1;
   position: relative;
@@ -95,39 +96,21 @@
   }
 
   @media screen and (max-width: 1024px) {
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 290px 1fr;
     grid-template-columns: 1fr;
-    height: 70vh;
+    height: 80vh;
 
-    &-dist {
-      box-shadow: inset 0px 3px 6px #00000029;
-      color: #484848;
-      width: inherit;
-
-      &-header {
-        padding-top: 1em;
-        padding-bottom: 1em;
-        height: auto;
-        background: #FFFFFF;
-        text-align: center;
-
-        h2 {
-          font-weight: 600;
-          margin-bottom: .5em;
-        }
-      }
-
+    &-list {
       &-cards {
-        display: flex;
-        overflow: auto;
         max-height: 200px;
         flex-direction: row;
 
         &-card {
-          margin: 1em;
+          margin: 1em .5em;
           background: #fff;
           box-shadow: 0px 3px 6px #00000029;
           padding: .5em;
+          height: fit-content;
 
           h2 {
             text-transform: uppercase;

@@ -8,11 +8,25 @@ import Footer from '../../components/layout/footer/footer';
 import ProductServices from '../../components/product-services/product-services';
 import Ingredients from '../../components/product-services/ingredients/ingredients';
 import OurServices from '../../components/product-services/our-services/our-services';
+import Modals from '../../components/modals/modals';
 
 class ProductsServices extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      distModalVisible: false
+    };
+    this.showModalDist = this.showModalDist.bind(this)
+  }
 
+  showModalDist = () => {
+    this.setState({
+      distModalVisible: !this.state.distModalVisible,
+    });
+  };
   render() {
     const { title, item } = this.props.match.params;
+    const { distModalVisible } = this.state;
 
     const products = [
       {
@@ -53,12 +67,14 @@ class ProductsServices extends React.Component {
         id: 'maracas',
         description: 'In the same way as that magical seductive instrument that characterises the happy upbeat feel of the tropics with its sweet and varied rhythm, CasaLuker Maracas presents a new range of chocolate-covered dragees. Filled with roasted coffee, roasted cocoa and sweet tropical fruits, these delightful dragees are covered in our finest Fino de Aroma chocolate. CasaLuker Maracas, Tropical Dragees are ideal for decorating desserts and cakes, to include in preparations, as toppings for ice - cream or simply to give that special touch to your recipes.They are also a good accompaniment for coffee and other hot drinks; they can be mixed in with cereals and dried fruit to prepare delicious, healthy snacks.'
       }];
+
     return (
+
       <div className="services-component">
         <div className={`services-header services-header--${title} ${(item) && 'services-header--title-short'}`}>
           <div className="btn-dist">
             <Link to="/" className="logo"> <img src={logo} alt="Logo Luker" /></Link>
-            <Link to="/products-services">FIND A DISTRIBUTOR</Link>
+            <button className="float-logo-dist" onClick={() => this.showModalDist(distModalVisible)}> FIND A DISTRIBUTOR </button>
             {(item) ?
               <Link to={'/services/' + title}>BACK</Link> :
               <Link to="/products-services" style={{ fontSize: '9px' }}>BACK TO PRODUCTS & SERVICES</Link>
@@ -72,6 +88,7 @@ class ProductsServices extends React.Component {
               : <ProductServices items={(title === 'maquila') ? products : ingredients} title={(title === 'maquila') ? 'BRANDED CHOCOLATE PRODUCTS' : 'OUR PRODUCTS'} page={title} />}
         </div>
         <Footer />
+        <Modals visible={distModalVisible} modal={'distributors'} showModalDist={this.showModalDist} />
       </div>
     );
   }
