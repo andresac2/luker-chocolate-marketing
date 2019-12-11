@@ -5,6 +5,7 @@ import cacao2 from '../../assets/img/roto-c.png'
 import { MdClose } from 'react-icons/md';
 import { Select } from 'antd';
 import { Link } from 'react-router-dom';
+import Modals from '../../components/modals/modals';
 
 class Home extends React.Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class Home extends React.Component {
     this.state = {
       distModalVisible: false
     };
+    this.showModalDist = this.showModalDist.bind(this)
   }
 
   searchToggle() {
@@ -60,41 +62,7 @@ class Home extends React.Component {
             </Link>
           </div>
         </div>
-        <div className={`modal-dist modal-dist-${distModalVisible && 'visible'}`} style={{ display: 'none' }}>
-          <div className="modal-dist-bkg" onClick={() => this.showModalDist()}></div>
-          <div className="modal-dist-modal">
-            <MdClose className="btn-x" onClick={() => this.showModalDist()} />
-            <div className="modal-dist-modal-dist">
-              <div className="modal-dist-modal-dist-header">
-                <h2>Select your country</h2>
-                <Select size='small' defaultValue="ca" style={{ width: 150 }} >
-                  <Option value="ca">Canadá</Option>
-                  <Option value="uk">Inglaterra</Option>
-                  <Option value="co">Colombia</Option>
-                </Select>
-              </div>
-              <div className="modal-dist-modal-dist-cards">
-                <div className={`modal-dist-modal-dist-cards-card modal-dist-modal-dist-cards-card--active`}>
-                  <h2>CHOCOLATE ALIMENTS</h2>
-                  <p><span>Address:</span> Vancouver, Columbia Británica</p>
-                  <p><span>Phone:</span> 778 895 6549</p>
-                  <p><span>Web:</span> http://chocolatealiments.com/</p>
-                  <p><span>E-mail:</span> @chocolatealiments.ca</p>
-                </div>
-                <div className={`modal-dist-modal-dist-cards-card`}>
-                  <h2>Distributors</h2>
-                  <p><span>Address:</span> Vancouver, Columbia Británica</p>
-                  <p><span>Phone:</span> 778 895 6549</p>
-                  <p><span>Web:</span> http://chocolatealiments.com/</p>
-                  <p><span>E-mail:</span> @chocolatealiments.ca</p>
-                </div>
-              </div>
-            </div>
-            <div className="modal-dist-modal-map">
-              <img src={require('../../assets/img/map-dist.png')} alt='map distirbuidores' />
-            </div>
-          </div>
-        </div>
+        <Modals visible={distModalVisible} modal={'distributors'} showModalDist={this.showModalDist} />
       </div>
     );
   }

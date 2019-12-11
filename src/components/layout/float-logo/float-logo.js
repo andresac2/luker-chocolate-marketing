@@ -35,7 +35,7 @@ class FloatLogo extends React.Component {
       fax: '+61 3 9359 0990',
       web: 'www.campania.com.au',
       email: 'paul@campania.com.au',
-      urlMap: 'https://goo.gl/maps/VTAohNeTgHxkMiM57',
+      urlMap: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3157.326735928845!2d144.97677431531503!3d-37.6885249797753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad6455f3dd9a66b%3A0xc90de8483ecc29a4!2s25%20Industrial%20Ave%2C%20Thomastown%20VIC%203074%2C%20Australia!5e0!3m2!1ses!2sco!4v1576098818769!5m2!1ses!2sco',
       selected: false
     },
     {
@@ -46,7 +46,7 @@ class FloatLogo extends React.Component {
       fax: '00 973 17 93 1313',
       web: 'http://thebakingproduct.com/',
       email: 'info@thebakingproduct.com',
-      urlMap: 'https://goo.gl/maps/Di88Zjn77UYZhH9Z9',
+      urlMap: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3579.8571993759183!2d50.5599665!3d26.2013232!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e49af30a424d343%3A0x58160bc5884daf03!2sModern%20Ingredients!5e0!3m2!1ses!2sco!4v1576098853630!5m2!1ses!2sco',
       selected: false
     },
     {
@@ -57,7 +57,7 @@ class FloatLogo extends React.Component {
       fax: '+32 (0) 9 245 04 62',
       web: 'www.cacaofinodearoma.com',
       email: 'casalukereu@casaluker.com.co',
-      urlMap: 'https://goo.gl/maps/G6WJ2BGt7FPQCpzK9',
+      urlMap: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10039.82800793212!2d3.6688263!3d51.0169432!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c37237be5ddb4f%3A0x795010e9abd7658c!2sKortrijksesteenweg%201132%2C%209051%20Gent%2C%20B%C3%A9lgica!5e0!3m2!1ses!2sco!4v1576098915486!5m2!1ses!2sco',
       selected: false
     },
     {
@@ -68,7 +68,7 @@ class FloatLogo extends React.Component {
       fax: '',
       web: 'www.emulzint.com.br',
       email: 'mailto:Bruna.Rogerio@emulzint.com.br',
-      urlMap: 'https://goo.gl/maps/PbEq4AJM2vcm5DAQ6',
+      urlMap: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3667.8974243351763!2d-46.933020985029486!3d-23.17394358487656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf25bd3d14d26b%3A0x73c8e3a290255771!2sAv.%20Arquimedes%2C%2050%20-%20Jardim%20Guanabara%2C%20Jundia%C3%AD%20-%20SP%2C%2013211-840%2C%20Brasil!5e0!3m2!1ses!2sco!4v1576098946465!5m2!1ses!2sco',
       selected: false
     },
     {
@@ -79,7 +79,7 @@ class FloatLogo extends React.Component {
       fax: '',
       web: 'http://chocolatealiments.com/',
       email: 'mailto:terry@chocolatealiments.ca',
-      urlMap: 'https://goo.gl/maps/fcya8xTqngcRYLmEA',
+      urlMap: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d166655.30827522842!2d-123.2639867747921!3d49.2576507715125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x548673f143a94fb3%3A0xbb9196ea9b81f38b!2sVancouver%2C%20Columbia%20Brit%C3%A1nica%2C%20Canad%C3%A1!5e0!3m2!1ses!2sco!4v1576099002020!5m2!1ses!2sco"',
       selected: false
     },
     {
@@ -88,9 +88,9 @@ class FloatLogo extends React.Component {
       address: 'Quebec, Canadá',
       phone: '1-877-745-199 - 514-745-7199',
       fax: '514-745-8731',
-      web: '',
-      email: ' administration@chococentral.com - commande.order@chococentral.com',
-      urlMap: 'https://goo.gl/maps/rgUmh1ztaKGa4Q2B8',
+      web: 'www.chococentral.com',
+      email: 'administration@chococentral.com - commande.order@chococentral.com',
+      urlMap: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2797.263288262578!2d-73.6963656844419!3d45.484642579101155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc93d336058dc4f%3A0x9fb447050ff18d10!2sChocolat%20Central%20C%20J%20Inc!5e0!3m2!1ses!2sco!4v1576099029078!5m2!1ses!2sco',
       selected: false
     },
     {
@@ -101,7 +101,7 @@ class FloatLogo extends React.Component {
       fax: '',
       web: 'www.neucober.cl',
       email: 'josegil@neucober.cl, alonsogil@neucober.cl',
-      urlMap: 'https://goo.gl/maps/cBXMAF8VnhcoJxN78',
+      urlMap: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d53550.774635573216!2d-71.4954916!3d-32.9794223!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9689dd0e4fa7a08f%3A0x2ecd520dd2f1151f!2sIndustrias%20Neuchatel%20S.A.!5e0!3m2!1ses!2sco!4v1576099083256!5m2!1ses!2sco',
       selected: false
     },
     {
@@ -113,7 +113,7 @@ class FloatLogo extends React.Component {
       web: 'casaluker.com',
       email: 'lukercacao@casaluker.com.co - servicioalcliente@casaluker.com.co',
       urlMap: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.7495520310367!2d-74.12201768523794!3d4.638707796630306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9bf75cc5b883%3A0x92615c5254798480!2sCasaLuker%20S.A.!5e0!3m2!1ses!2sco!4v1576094245775!5m2!1ses!2sco',
-      selected: true
+      selected: false
     },
     {
       country: 'cz',
@@ -123,7 +123,7 @@ class FloatLogo extends React.Component {
       fax: '',
       web: 'www.lyrachocolate.com',
       email: 'info@lyrachocolate.com',
-      urlMap: 'https://goo.gl/maps/DNLiSpEdaDSDgh21A',
+      urlMap: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d21234.59455205956!2d18.0920363!3d48.2966136!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476b3ef752807089%3A0x7681587402652c1f!2sKalv%C3%A1ria%203%2C%20949%2001%20Nitra%2C%20Eslovaquia!5e0!3m2!1ses!2sco!4v1576099132068!5m2!1ses!2sco',
       selected: false
     },
     {
@@ -134,7 +134,7 @@ class FloatLogo extends React.Component {
       fax: '+33 9 57 33 06 82',
       web: 'www.chocolatemall.net',
       email: 'contact@chocolatemall.net',
-      urlMap: 'https://goo.gl/maps/iQ7MWLPQde6AKyvDA',
+      urlMap: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2608.310696329437!2d-0.3377599843143766!3d49.175690679319764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x480a683b3f1ef12b%3A0x869eb82c15c277f7!2s13%20Route%20de%20Trouville%2C%2014000%20Caen%2C%20Francia!5e0!3m2!1ses!2sco!4v1576099179271!5m2!1ses!2sco',
       selected: false
     },
     {
@@ -145,7 +145,7 @@ class FloatLogo extends React.Component {
       fax: '',
       web: 'www.dillicious.eu',
       email: 'info@dillicious.eu',
-      urlMap: 'https://goo.gl/maps/5NWNLnSWkmTFcZkV9',
+      urlMap: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2526.135716885199!2d7.108216315741078!3d50.717421279513104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bee17ca0b5aef9%3A0xd8f1b535ee7988a6!2sBurbacher%20Str.%2079%2C%2053129%20Bonn%2C%20Alemania!5e0!3m2!1ses!2sco!4v1576099222796!5m2!1ses!2sco',
       selected: false
     },
     {
@@ -156,7 +156,7 @@ class FloatLogo extends React.Component {
       fax: '(+30)210 2845937',
       web: 'www.optima.gr',
       email: 'marketing@optima.gr',
-      urlMap: 'https://goo.gl/maps/LURMgFa7Tvg7oiDH8',
+      urlMap: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3140.9089851370013!2d23.765006315326197!3d38.072500679706216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a19f56e381b36f%3A0x4e53980dcb4c0861!2sSorou%201%2C%20Metamorfosi%20144%2052%2C%20Grecia!5e0!3m2!1ses!2sco!4v1576099255004!5m2!1ses!2sco',
       selected: false
     },
     {
@@ -167,7 +167,7 @@ class FloatLogo extends React.Component {
       fax: '',
       web: 'www.chocola.com.gt',
       email: 'martins@chocola.com.gt',
-      urlMap: 'https://goo.gl/maps/H4zwuc6JKNfttrX39',
+      urlMap: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15442.682335584452!2d-90.5179068!3d14.6178321!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8589a230ec0e98d1%3A0x76bd0233cf1d2c26!2sRuta%201%205-13%2C%20Guatemala!5e0!3m2!1ses!2sco!4v1576099291089!5m2!1ses!2sco',
       selected: false
     },
     {
@@ -178,7 +178,7 @@ class FloatLogo extends React.Component {
       fax: '',
       web: 'www.herbalfoods.hu',
       email: 'apcinterfood@apcinterfood.hu',
-      urlMap: 'https://goo.gl/maps/PFLNKXBx6EzXcnaW6',
+      urlMap: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2694.246114398948!2d18.98414471562768!3d47.52407127917936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741ded6c8495b2d%3A0x7ee79a589f3f40bf!2zQnVkYXBlc3QsIEjFsXbDtnN2w7ZsZ3lpIMO6dCA1NCwgMTAyMSBIdW5ncsOtYQ!5e0!3m2!1ses!2sco!4v1576099392200!5m2!1ses!2sco',
       selected: false
     },
     {
@@ -189,7 +189,7 @@ class FloatLogo extends React.Component {
       fax: '+39 0255400495',
       web: 'www.newchem.it',
       email: 'info@newchem.it',
-      urlMap: 'https://goo.gl/maps/XzYhYhwCz5a7u3wx8',
+      urlMap: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2863.678225741285!2d12.481151415513333!3d44.13125877910782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132cc7ab4a87f2cb%3A0x88bb196c0b8d8da7!2sVia%20Marco%20Fabio%20Quintiliano%2C%2030%2C%2047814%20Igea%20Marina%20RN%2C%20Italia!5e0!3m2!1ses!2sco!4v1576099432300!5m2!1ses!2sco',
       selected: false
     },
     {
@@ -200,7 +200,7 @@ class FloatLogo extends React.Component {
       fax: '',
       web: 'www.finodearoma.co.jp',
       email: 'negami@finodearoma.co.jp',
-      urlMap: 'https://goo.gl/maps/cWomoH5wnHjVqPP28',
+      urlMap: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.875375918394!2d139.75751731525946!3d35.70468428018881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c3c5a500d6b%3A0xca7104bf151ceaea!2zMi1jaMWNbWUtMjItNSBIb25nxY0sIEJ1bmt5byBDaXR5LCBUxY1recWNLXRvIDExMy0wMDMzLCBKYXDDs24!5e0!3m2!1ses!2sco!4v1576099475140!5m2!1ses!2sco',
       selected: false
     },
     {
@@ -211,7 +211,7 @@ class FloatLogo extends React.Component {
       fax: '',
       web: 'www.delgiro.be',
       email: 'info@delgiro.be',
-      urlMap: 'https://goo.gl/maps/ccjveaS8TLkuMy3z9',
+      urlMap: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d82735.31077607637!2d6.065830435993233!3d49.60758382175535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479548cd9df32c57%3A0x400d1d6d1056d10!2sLuxemburgo!5e0!3m2!1ses!2sco!4v1576099530590!5m2!1ses!2sco',
       selected: false
     },
     {
@@ -222,7 +222,7 @@ class FloatLogo extends React.Component {
       fax: '+971 04 813 5898',
       web: 'www.pascalclair.com',
       email: 'pascal@pascalclair.com',
-      urlMap: 'https://goo.gl/maps/BTxU5bKbs1byhY746',
+      urlMap: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.877428250431!2d55.15225371500567!3d25.004280583986283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f72595c21a2c7%3A0x541547da78266a1a!2sEuropean%20Business%20Center!5e0!3m2!1ses!2sco!4v1576099565849!5m2!1ses!2sco',
       selected: false
     },
     {
@@ -233,7 +233,7 @@ class FloatLogo extends React.Component {
       fax: '',
       web: 'www.delgiro.be',
       email: 'info@delgiro.be',
-      urlMap: 'https://goo.gl/maps/7d1brsahpFoVM1hb9',
+      urlMap: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2504542.7488137437!2d3.036928238280938!3d52.19173502356913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c609c3db87e4bb%3A0xb3a175ceffbd0a9f!2sPa%C3%ADses%20Bajos!5e0!3m2!1ses!2sco!4v1576099592543!5m2!1ses!2sco',
       selected: false
     },
     {
@@ -244,7 +244,7 @@ class FloatLogo extends React.Component {
       fax: '',
       web: 'www.dupont-ingredient.ro',
       email: 'comenzi@dupont-ingredient.ro',
-      urlMap: 'https://goo.gl/maps/GA9kBQeEsBhePBTL9',
+      urlMap: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2851.913904724109!2d26.118546115521266!3d44.37335817910319!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1fe052fdec29b%3A0xe46f940bb17b1bdd!2zRHJ1bXVsIEdpbMSDdWx1aSA3LCBCdWN1cmXImXRpLCBSdW1hbsOtYQ!5e0!3m2!1ses!2sco!4v1576099628749!5m2!1ses!2sco',
       selected: false
     },
     {
@@ -255,7 +255,7 @@ class FloatLogo extends React.Component {
       fax: '+7 (495) 780 6734',
       web: 'www.ascol.ru',
       email: 'es@ascol.ru',
-      urlMap: 'https://goo.gl/maps/yD9QMYUK2LKKqMxp6',
+      urlMap: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2243.283431430874!2d37.704438415931975!3d55.78831618056286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b535735cf7726b%3A0x92cfa5ee76ac9610!2sAskol%20Ooo!5e0!3m2!1ses!2sco!4v1576099667347!5m2!1ses!2sco',
       selected: false
     },
     {
@@ -266,7 +266,7 @@ class FloatLogo extends React.Component {
       fax: '',
       web: 'www.lyrachocolate.com',
       email: 'info@lyrachocolate.com',
-      urlMap: 'https://goo.gl/maps/3GpBTrWbpreHtRiw6',
+      urlMap: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2657.5403652337372!2d18.12568271565243!3d48.23472457923129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476b163cee7770b9%3A0x4190e2070594d160!2sKone%C4%8Dn%C3%A1%202%2C%20951%2012%20Ivanka%20pri%20Nitre%2C%20Eslovaquia!5e0!3m2!1ses!2sco!4v1576099707939!5m2!1ses!2sco',
       selected: false
     },
     {
@@ -277,7 +277,7 @@ class FloatLogo extends React.Component {
       fax: '+886-2-26972709',
       web: 'http://andyconcept.com.tw/',
       email: 'andy.concept@outlook.com',
-      urlMap: 'https://goo.gl/maps/pRvuZ7aBwEWxGyoC9',
+      urlMap: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d462784.5146940159!2d121.22618611500236!3d25.016963856450708!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ac72bce20a99%3A0x3f6a35cedd0ac2e0!2zVGFpcMOpaSwgVGFpd8Ohbg!5e0!3m2!1ses!2sco!4v1576099768590!5m2!1ses!2sco',
       selected: false
     },
     {
@@ -288,7 +288,7 @@ class FloatLogo extends React.Component {
       fax: '',
       web: 'magnum-sp.com.ua',
       email: 'magnum-nm@ukr.net',
-      urlMap: 'https://goo.gl/maps/Qqs1Et7EspuJJSSw8',
+      urlMap: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d152816.67995854255!2d50.1164439!3d53.2400672!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x416618e22bd879d3%3A0xba95cda9bb3a030b!2sSamara%2C%20%C3%93blast%20de%20Samara%2C%20Rusia!5e0!3m2!1ses!2sco!4v1576099800838!5m2!1ses!2sco',
       selected: false
     },
     {
@@ -310,7 +310,7 @@ class FloatLogo extends React.Component {
       fax: '',
       web: 'www.hbingredients.co.uk',
       email: 'sales@hbingredients.co.uk',
-      urlMap: 'https://goo.gl/maps/wasitYrZHyVzKgb17',
+      urlMap: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2386.0005171904445!2d-1.4426368841643693!3d53.2716103799634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487984c0e3cc8521%3A0x403cb7ba297d274e!2sSheepbridge%20Business%20Centre!5e0!3m2!1ses!2sco!4v1576099832562!5m2!1ses!2sco',
       selected: false
     },
     {
@@ -321,7 +321,7 @@ class FloatLogo extends React.Component {
       fax: '',
       web: 'www.keylink.org',
       email: 'julie@keylink.org',
-      urlMap: 'https://goo.gl/maps/r1JmszGZQxuyuyHp8',
+      urlMap: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2517.9998253340914!2d0.022610315746572976!3d50.8682029795352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47df62eaeedc524f%3A0xe349659ecac6be58!2sHB%20Ingredients!5e0!3m2!1ses!2sco!4v1576099862092!5m2!1ses!2sco',
       selected: false
     },
     {
@@ -332,7 +332,7 @@ class FloatLogo extends React.Component {
       fax: '',
       web: 'www.ifigourmet.com',
       email: 'customerservice@ifigourmet.com',
-      urlMap: 'https://goo.gl/maps/oyybJLtVVQUJdtUY6',
+      urlMap: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2947.630275597935!2d-87.95144528454334!3d42.3717180791861!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880f91e14084d0a1%3A0xd903a29e781814b9!2s760%20Lakeside%20Dr%20Unit%20A%2C%20Gurnee%2C%20IL%2060031%2C%20EE.%20UU.!5e0!3m2!1ses!2sco!4v1576099935568!5m2!1ses!2sco',
       selected: false
     }
   ]

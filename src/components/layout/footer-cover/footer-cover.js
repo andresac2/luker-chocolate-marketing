@@ -484,36 +484,6 @@ class FooterCover extends React.Component {
           </nav>
         </div>
         <button className="btn-dist-footer" onClick={() => this.showModalDist()}> FIND A DISTRIBUTOR </button>
-        <div className={`modal-dist modal-dist-${distModalVisible && 'visible'}`}>
-          <div className="modal-dist-bkg" onClick={() => this.showModalDist()}></div>
-          <div className="modal-dist-modal">
-            <MdClose className="btn-x" onClick={() => this.showModalDist()} />
-            <div className="modal-dist-modal-dist">
-              <div className="modal-dist-modal-dist-header">
-                <h2>Distributors</h2>
-                <Select size='small' defaultValue="co" style={{ width: 150 }} value={distValue} onChange={this.handleChange}>
-                  {Object.keys(this.countries).map(i =>
-                    <Option value={this.countries[i].abrev} key={i}>{this.countries[i].name}</Option>
-                  )}
-                </Select>
-              </div>
-              <div className="modal-dist-modal-dist-cards">
-                {Object.keys(actualDist).map(i =>
-                  <div key={i} className={`modal-dist-modal-dist-cards-card modal-dist-modal-dist-cards-card--${actualDist[i].selected && 'active'}`}>
-                    <h2>{actualDist[i].company}</h2>
-                    <p><span>Address: </span>{actualDist[i].address}</p>
-                    <p><span>Phone: </span>{actualDist[i].phone}</p>
-                    <p><span>Web: </span><a href={actualDist[i].web} target='_blank'>{actualDist[i].web}</a> </p>
-                    <p><span>E-mail: </span> {actualDist[i].email}</p>
-                  </div>
-                )}
-              </div>
-            </div>
-            <div className="modal-dist-modal-map">
-              <img src={require('../../../assets/img/map-dist.png')} alt='map distirbuidores' />
-            </div>
-          </div>
-        </div>
         {moreInfoVisible && <Footer mode='vertical' handleShowMoreInfo={this.handleShowMoreInfo} />}
       </div>
     );
