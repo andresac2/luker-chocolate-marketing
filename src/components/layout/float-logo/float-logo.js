@@ -33,7 +33,7 @@ class FloatLogo extends React.Component {
             <button className="float-logo-dist" onClick={() => this.showModalDist(distModalVisible)}> FIND A DISTRIBUTOR </button> :
             (btns[0].btnText === 'dist') ? <button className="float-logo-dist" onClick={() => this.showModalDist(distModalVisible)}> FIND A DISTRIBUTOR </button> :
               <><Link to={btns[0].url}>{btns[0].btnText}</Link>
-                <Link to={btns[1].url}>{btns[1].btnText}</Link></>
+                {btns[1] && <Link to={btns[1].url}>{btns[1].btnText}</Link>}</>
           }
         </div>
         <Modals visible={distModalVisible} modal={'distributors'} showModalDist={this.showModalDist} />

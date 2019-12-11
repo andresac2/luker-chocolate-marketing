@@ -8,7 +8,87 @@ class ContactSide extends React.Component {
     this.state = { feedback: '', name: 'Name', email: 'email@example.com', country: 'Colombia' };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
+  countries = [
+    {
+      name: 'ARGENTINA',
+      abrev: 'ar'
+    }, {
+      name: 'AUSTRALIA',
+      abrev: 'au'
+    }, {
+      name: 'BAHRAIN',
+      abrev: 'bh'
+    }, {
+      name: 'BELGIUM',
+      abrev: 'be'
+    }, {
+      name: 'BRAZIL',
+      abrev: 'br'
+    }, {
+      name: 'CANADA',
+      abrev: 'ca'
+    }, {
+      name: 'CHILE',
+      abrev: 'cl'
+    }, {
+      name: 'COLOMBIA',
+      abrev: 'co'
+    }, {
+      name: 'CZECH REPUBLIC',
+      abrev: 'cz'
+    }, {
+      name: 'FRANCE',
+      abrev: 'fr'
+    }, {
+      name: 'GERMANY',
+      abrev: 'de'
+    }, {
+      name: 'GREECE',
+      abrev: 'gr'
+    }, {
+      name: 'GUATEMALA',
+      abrev: 'gl'
+    }, {
+      name: 'HUNGARY',
+      abrev: 'hu'
+    }, {
+      name: 'ITALY',
+      abrev: 'it'
+    }, {
+      name: 'JAPAN',
+      abrev: 'jp'
+    }, {
+      name: 'LUXEMBOURG',
+      abrev: 'lu'
+    }, {
+      name: 'MIDDLE EAST',
+      abrev: 'me'
+    }, {
+      name: 'NETHERLANDS',
+      abrev: 'nl'
+    }, {
+      name: 'ROMANIA',
+      abrev: 'ro'
+    }, {
+      name: 'RUSSIA',
+      abrev: 'ru'
+    }, {
+      name: 'SLOVAK REPUBLIK',
+      abrev: 'sk'
+    }, {
+      name: 'TAIWAN',
+      abrev: 'tw'
+    }, {
+      name: 'UKRANIE',
+      abrev: 'ua'
+    }, {
+      name: 'UNITED KINGDOM ',
+      abrev: 'uk'
+    }, {
+      name: 'UNITED STATES',
+      abrev: 'us'
+    }
+  ]
   handleSubmit = e => {
     e.preventDefault();
     const templateId = 'contact_form_luker';
@@ -112,9 +192,9 @@ class ContactSide extends React.Component {
                     option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
                   }
                 >
-                  <Option value="Colombia">Colombia</Option>
-                  <Option value="United States">United States</Option>
-                  <Option value="United Kingdom">United Kingdom</Option>
+                  {Object.keys(this.countries).map(i =>
+                    <Option key={i} value={this.countries[i].abrev} key={i}>{this.countries[i].name}</Option>
+                  )}
                 </Select>,
               )}
             </Form.Item>
