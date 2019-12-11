@@ -8,7 +8,11 @@
   @media screen and (max-width: 992px) {
     .blog-layout-articles {
       grid-template-columns: 1fr;
-      grid-template-rows: repeat(6, 1fr);
+      grid-template-rows: 1fr;
+
+      &--item {
+        width: 90%;
+      }
     }
 
     .blog-layout-latest--article {

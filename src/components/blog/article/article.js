@@ -9,13 +9,19 @@ import Comments from '../comments/comments';
 class Article extends React.Component {
   constructor(props) {
     super(props);
+    this.myRef = React.createRef();
+  }
+  componentDidMount() {
+    window.scrollTo(0, 0);
+    this.myRef.current.scrollTo(0, 0);
+    document.body.scrollTop = 0;
   }
   render() {
     const { data } = this.props;
     const altImg = 'img-example.svg';
 
     return (
-      <div className="blog-article">
+      <div className="blog-article" ref={this.myRef}>
         <div className="blog-article-title-resp">{data.title}</div>
         <div className="blog-article-bread">
           <Breadcrumb>

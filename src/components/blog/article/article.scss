@@ -71,6 +71,16 @@
       margin-bottom: 1em;
     }
 
+    ul,
+    ol {
+      margin-bottom: 1em;
+    }
+
+    li {
+      margin-left: 1.5em;
+      width: calc(100% - 2em);
+    }
+
     &--img {
       margin-bottom: 1em;
 
@@ -212,6 +222,15 @@
     &-bread--social {
       a:last-child {
         display: none;
+      }
+    }
+
+    &-autor {
+      max-width: 100%;
+
+      img {
+        width: 8em;
+        margin-right: 1em;
       }
     }
   }
