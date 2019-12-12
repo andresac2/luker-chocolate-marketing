@@ -103,7 +103,7 @@
       url("../../assets/img/sustain-bkg\(blur\).jpg");
     background-size: cover;
     background-position: right;
-    padding: 3em 5em 0;
+    padding: 3em 6em 0 4em;
     color: #fff;
     @include vert-center;
     flex-direction: column;
@@ -157,13 +157,13 @@
           bottom: 0;
           left: calc((100% - 800px) / 2);
 
-          .modal-badge {
+          .card-badge {
             display: inline-block;
             margin-right: 1em;
 
             img {
-              width: 56px;
-              height: 56px;
+              width: 28px;
+              height: 28px;
             }
           }
         }

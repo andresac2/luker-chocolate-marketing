@@ -49,9 +49,9 @@ class Footer extends React.Component {
               <input type="submit" value="Send" />
             </form>
             <div className="footer-component-social--btn">
-              <a href="https://www.facebook.com/LukerChocolate/" target="_blank" ><FaFacebookF /></a>
-              <a href="https://www.instagram.com/lukerchocolate/" target="_blank" ><FaInstagram /></a>
               <a href="https://www.linkedin.com/company/lukerchocolate/" target="_blank" ><FaLinkedinIn /></a>
+              <a href="https://www.instagram.com/lukerchocolate/" target="_blank" ><FaInstagram /></a>
+              <a href="https://www.facebook.com/LukerChocolate/" target="_blank" ><FaFacebookF /></a>
             </div>
           </div>
         </div >

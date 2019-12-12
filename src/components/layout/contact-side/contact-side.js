@@ -140,7 +140,7 @@ class ContactSide extends React.Component {
     return (
       <div className={`contact-component contact-component--${page}`} >
         <div className={`contact-component-content`}>
-          <h1>DÉJANOS TUS DATOS</h1>
+          <h1>GIVE US YOUR DETAILS</h1>
           <Form onSubmit={this.handleSubmit} className="contact-form">
             <Form.Item>
               {getFieldDecorator('username', {

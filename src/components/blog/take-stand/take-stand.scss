@@ -3,6 +3,7 @@
 
   .blog-layout-articles {
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
   }
 
   @media screen and (max-width: 992px) {

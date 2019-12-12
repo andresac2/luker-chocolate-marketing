@@ -41,7 +41,7 @@ class Sustain extends React.Component {
         content: 'We support our cocoa producers and their communities by implementing wide impact actions that not only improve farmers’ economic situation but also benefit the stability of their families. So far, we’ve intervened 6 schools with the new school model and renovated 280 square meters of them. 600 people have been trained in entrepreneurship with a focus on gender studies and 600 students have been trained in academic and emotional skills.<p></p>Furthermore, 300 young people have been trained in technical programs, 60 adults have been trained in reading and math, and 300 teachers were trained in resilience and socio-emotional skills with 70 international and national volunteers, which led to the construction of 1 social innovation center.'
       },
       {
-        img: 'enviromental.png',
+        img: 'enviromental.jpg',
         flag: 'us',
         title: 'Enviromental',
         badges: ['responsible-consumption.png', 'climate-action.png'],
@@ -334,7 +334,7 @@ class Sustain extends React.Component {
                     {getFieldDecorator('phone', {
                       rules: [{ required: true, message: 'Please input your phone!' }],
                     })(
-                      <InputNumber min={7} max={10} placeholder="Phone number" style={{ width: '100%' }} />,
+                      <InputNumber min={7} placeholder="Phone number" style={{ width: '100%' }} />,
                     )}
                   </Form.Item>
                   <div className="contact-form-products">
