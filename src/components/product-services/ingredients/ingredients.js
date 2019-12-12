@@ -9,13 +9,13 @@ const Ingredients = props => {
 
   return (
     <div className="ingredients-component">
-      {product.id === 'arauca' &&
+      {product.id === 'casaluker-origins' &&
         <Ingredient1906 data={product} />
       }
-      {product.id === 'cacao' &&
+      {product.id === 'casaluker-cacao' &&
         <IngredientCacao data={product} />
       }
-      {product.id === 'maracas' &&
+      {product.id === 'casaluker-maracas' &&
         <IngredientDragees data={product} />
       }
       <div className="btn-back-sticky">

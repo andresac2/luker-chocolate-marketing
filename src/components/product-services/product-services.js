@@ -35,7 +35,7 @@ class ProductServices extends React.Component {
               Object.keys(items).map(i =>
                 <div key={i} className={`carr-item carr-item--${i == 1 && 'active'} carr-item--${items[i].id}`} onClick={() => this.reorderItems(items, (i === '0') ? 2 : 0, i)}>
                   <div>
-                    <img src={require('../../assets/img/' + (items[i].img ? items[i].img : altImg))} alt='jaja' />
+                    <img src={require('../../assets/img/' + (items[i].img ? items[i].img : altImg))} alt={items[i].name} />
                     <p>{items[i].subtitle}</p>
                     <h2>{items[i].name}</h2>
                   </div>
@@ -44,7 +44,7 @@ class ProductServices extends React.Component {
             }
             <img className="btn-next-img btn-next-img--right " src={back} alt='right' onClick={() => this.reorderItems(items, 2, 0)} />
           </div>
-          <Link className="btn-tobuy" to={"/services/" + page + "/" + items[1].id}>{(page === 'maquila') ? 'FIND OUT MORE' : 'GET IT HERE'}</Link>
+          <Link className="btn-tobuy" to={"/products-services/" + page + "/" + items[1].id}>{(page === 'maquila') ? 'FIND OUT MORE' : 'GET IT HERE'}</Link>
           <div className={`product-services-component--footer product-services-component--footer--${items[1].id}`}>
             {items[1].description}
           </div></>}

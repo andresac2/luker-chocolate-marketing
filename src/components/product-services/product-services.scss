@@ -36,9 +36,9 @@
       &--bar,
       &--dragee,
       &--dosing,
-      &--cacao,
-      &--maracas,
-      &--arauca {
+      &--casaluker-cacao,
+      &--casaluker-maracas,
+      &--casaluker-origins {
         &::after {
           content: '';
           position: absolute;
@@ -63,15 +63,15 @@
         background: #B3642C;
       }
 
-      &--cacao::after {
+      &--casaluker-cacao::after {
         background: #B7C66C;
       }
 
-      &--maracas::after {
+      &--casaluker-maracas::after {
         background: #C0895E;
       }
 
-      &--arauca::after {
+      &--casaluker-origins::after {
         background: #F2CB0E;
       }
 
@@ -103,9 +103,9 @@
           &--bar,
           &--dragee,
           &--dosing,
-          &--cacao,
-          &--maracas,
-          &--arauca {
+          &--casaluker-cacao,
+          &--casaluker-maracas,
+          &--casaluker-origins {
             &::after {
               left: calc(50% - 7.5em);
               width: 15em;
@@ -172,15 +172,15 @@
       background: #B3642C;
     }
 
-    &--cacao {
+    &--casaluker-cacao {
       background: #B7C66C;
     }
 
-    &--maracas {
+    &--casaluker-maracas {
       background: #C0895E;
     }
 
-    &--arauca {
+    &--casaluker-origins {
       background: #F2CB0E;
     }
   }
@@ -261,9 +261,9 @@
         &--bar,
         &--dragee,
         &--dosing,
-        &--cacao,
-        &--maracas,
-        &--arauca {
+        &--casaluker-cacao,
+        &--casaluker-maracas,
+        &--casaluker-origins {
           &::after {
             left: calc(50% - 2.5em);
             width: 5em;
@@ -287,9 +287,9 @@
             &--bar,
             &--dragee,
             &--dosing,
-            &--cacao,
-            &--maracas,
-            &--arauca {
+            &--casaluker-cacao,
+            &--casaluker-maracas,
+            &--casaluker-origins {
               &::after {
                 left: calc(50% - 6em);
                 width: 12em;

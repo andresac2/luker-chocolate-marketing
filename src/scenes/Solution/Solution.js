@@ -9,17 +9,17 @@ function Solution() {
   return (
     <div className='solution-component'>
       <FloatLogo btnText='dist' />
-      <Link to="/services/ingredients" className="solution-component--ingredient">
+      <Link to="/products-services/ingredients" className="solution-component--ingredient">
         <div className="header-btn">
           INGREDIENTS
       </div>
       </Link>
-      <Link to="/services/maquila" className="solution-component--maquila">
+      <Link to="/products-services/finished-chocolate-products" className="solution-component--maquila">
         <div className="header-btn">
           FINISHED CHOCOLATE PRODUCTS
       </div>
       </Link>
-      <Link to="/services/our-services" className="solution-component--service">
+      <Link to="/products-services/our-services" className="solution-component--service">
         <div className="header-btn">
           OUR SERVICES
       </div>

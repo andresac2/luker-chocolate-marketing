@@ -30,8 +30,8 @@ export default function BasicExample() {
         <Route exact path="/" component={Home} />
         <Route path="/chocolate-process" component={Flow} />
         <Route path="/sustainability" component={Sustain} />
+        <Route path="/products-services/:title/:item?" component={Services} />
         <Route path="/products-services" component={Solutions} />
-        <Route path="/services/:title/:item?" component={Services} />
         <Route path="/our-clients" component={Customer} />
         <Route path="/ideas-trends" component={Ryd} />
         <Route path="/value-proposition" component={ValuePropose} />
