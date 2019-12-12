@@ -1,7 +1,7 @@
 import React from 'react'
 import IngredientCacao from './cacao/cacao';
-import Ingredient1906 from './i1906/i1906';
-import IngredientDragees from './dragees/dragees';
+import Ingredient1906 from './origins/origins';
+import IngredientDragees from './maracas/maracas';
 import { Link } from 'react-router-dom';
 
 const Ingredients = props => {
