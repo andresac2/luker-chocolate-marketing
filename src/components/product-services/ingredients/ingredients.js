@@ -19,7 +19,7 @@ const Ingredients = props => {
         <IngredientDragees data={product} />
       }
       <div className="btn-back-sticky">
-        <Link to="/services/ingredients">BACK TO OUR PRODUCTS</Link>
+        <Link to="/products-services/ingredients">BACK TO OUR PRODUCTS</Link>
       </div>
     </div>
   );

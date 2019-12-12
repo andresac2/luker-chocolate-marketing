@@ -76,7 +76,7 @@ class Maquila extends React.Component {
                 {moulding[i].description}    </div>)}
           </div>}
         <div className="btn-back-sticky">
-          <Link to="/services/maquila">BACK TO PRODUCTS</Link>
+          <Link to="/products-services/finished-chocolate-products">BACK TO PRODUCTS</Link>
         </div>
         <ContactSide page='maquila' products={itemsSelected} />
       </div >

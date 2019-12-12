@@ -33,8 +33,8 @@
       z-index: 1;
       width: 15em;
 
-      &--bar,
-      &--dragee,
+      &--moulding,
+      &--paning,
       &--dosing,
       &--casaluker-cacao,
       &--casaluker-maracas,
@@ -51,11 +51,11 @@
         }
       }
 
-      &--bar::after {
+      &--moulding::after {
         background: #8AA130;
       }
 
-      &--dragee::after {
+      &--paning::after {
         background: #7F5046;
       }
 
@@ -100,8 +100,8 @@
 
         &.carr-item {
 
-          &--bar,
-          &--dragee,
+          &--moulding,
+          &--paning,
           &--dosing,
           &--casaluker-cacao,
           &--casaluker-maracas,
@@ -160,11 +160,11 @@
     text-align: center;
     transition: all ease-in .5s;
 
-    &--bar {
+    &--moulding {
       background: #8AA130;
     }
 
-    &--dragee {
+    &--paning {
       background: #7F5046;
     }
 
@@ -258,8 +258,8 @@
       .carr-item {
         width: 10em;
 
-        &--bar,
-        &--dragee,
+        &--moulding,
+        &--paning,
         &--dosing,
         &--casaluker-cacao,
         &--casaluker-maracas,
@@ -284,8 +284,8 @@
 
           &.carr-item {
 
-            &--bar,
-            &--dragee,
+            &--moulding,
+            &--paning,
             &--dosing,
             &--casaluker-cacao,
             &--casaluker-maracas,

@@ -34,8 +34,8 @@ export default function BasicExample() {
         <Route path="/products-services" component={Solutions} />
         <Route path="/our-clients" component={Customer} />
         <Route path="/ideas-trends" component={Ryd} />
-        <Route path="/value-proposition" component={ValuePropose} />
         <Route path="/our-value/:id" component={OurValue} />
+        <Route path="/our-value" component={ValuePropose} />
         <Route path="/blog/:category?/:article?" component={Blog} />
         <Route path="/contact-us" component={WrappedContact} />
 

@@ -7,7 +7,7 @@ import Footer from '../footer/footer';
 import Modals from '../../modals/modals';
 
 class FooterCover extends React.Component {
-  hideView = ['/services', '/blog', '/contact-us'];//VIstas en las que se oculta el footer
+  hideView = ['/products-services/', '/blog', '/contact-us'];//VIstas en las que se oculta el footer
   darkIcon = ['/services', '/blog'];//VIstas en las que se muestra modo oscuro
 
   constructor(props) {

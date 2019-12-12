@@ -62,12 +62,12 @@
       position: relative;
       z-index: 1;
 
-      &--dragee {
+      &--paning {
         margin-right: -1em;
       }
 
-      &--bar,
-      &--dragee,
+      &--moulding,
+      &--paning,
       &--dosing {
         &::after {
           content: '';
@@ -81,11 +81,11 @@
         }
       }
 
-      &--bar::after {
+      &--moulding::after {
         background: #8AA130;
       }
 
-      &--dragee::after {
+      &--paning::after {
         background: #7F5046;
       }
 
@@ -117,7 +117,7 @@
       }
     }
 
-    &--bar {
+    &--moulding {
       width: 90%;
       grid-template-columns: 1fr 1fr;
 
@@ -132,12 +132,12 @@
           height: inherit;
         }
 
-        @media screen and (max-width: 1320px) and (min-width: 1200px) {
+        @media screen and (max-width: 1200px) {
           flex-direction: column;
-          height: 200px;
+          height: 120px;
 
           img {
-            width: inherit;
+            width: 4em;
             height: auto;
           }
         }
@@ -248,7 +248,7 @@
         }
       }
 
-      &--bar {
+      &--moulding {
         width: 300px;
         overflow: auto;
       }
@@ -265,8 +265,8 @@
 
     .maquila-item {
 
-      &--bar,
-      &--dragee,
+      &--moulding,
+      &--paning,
       &--dosing {
         &::after {
           content: '';

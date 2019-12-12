@@ -34,7 +34,7 @@
     background: $tangerine;
   }
 
-  &-value-proposition,
+  &-our-value,
   &-our-value {
     background: $light-gray;
   }
@@ -108,7 +108,7 @@
   .products-services::after,
   .our-clients::after,
   .ideas-trends::after,
-  .value-proposition::after {
+  .our-value::after {
     content: '';
     position: absolute;
     top: 2em;
@@ -142,7 +142,7 @@
     border-bottom-color: $tangerine;
   }
 
-  .value-proposition::after {
+  .our-value::after {
     border-bottom-color: $light-gray;
   }
 }
@@ -216,7 +216,7 @@
       }
     }
 
-    &-value-proposition {
+    &-our-value {
       border-top: 10px solid $light-gray;
 
       &.header-component-responsive--tabs-visible {
@@ -239,7 +239,7 @@
     .our-clients,
     .blog,
     .ideas-trends,
-    .value-proposition {
+    .our-value {
       span {
         border-bottom-width: 2px;
         border-bottom-style: solid;
@@ -282,7 +282,7 @@
       }
     }
 
-    .value-proposition {
+    .our-value {
       span {
         border-bottom-color: $light-gray;
       }
@@ -383,7 +383,7 @@
   .products-services::after,
   .our-clients::after,
   .ideas-trends::after,
-  .value-proposition::after {
+  .our-value::after {
     border: none;
   }
 

@@ -32,7 +32,7 @@ class ProductsServices extends React.Component {
       {
         img: 'cocoa-grageas.png',
         name: 'Paning',
-        id: 'dragee',
+        id: 'paning',
         description: 'We use the panning method for making our delicious chocolate covered dragees. Chocolate is slowly poured over dierent centers; can be dried fruits, cereals, coee beans, among other bite-size treats, creating a thin coating over them.'
       },
       {
@@ -43,7 +43,7 @@ class ProductsServices extends React.Component {
       }, {
         img: 'cocoa-bars.png',
         name: 'Moulding',
-        id: 'bar',
+        id: 'moulding',
         description: 'We carry seven diﬀerent existing molds. By combining manual and machine production, we can implement very speciﬁc packaging requirements. Below is a selection of our molds and packaging options.'
       }];
     const ingredients = [
