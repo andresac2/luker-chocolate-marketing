@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import doisy from '../../assets/img/Doisy&Dam.png'
-//import fifthDim from '../../assets/img/5thdimensions.png'
+import doisy from '../../assets/img/Doisy&Dam.jpg'
+//import fifthDim from '../../assets/img/5thdimensions.jpg'
 //import laceys from '../../assets/img/Lacy\'s New.png'
-//import lyra from '../../assets/img/lyra_eshop.png'
+//import lyra from '../../assets/img/lyra_eshop.jpg'
 //import paul from '../../assets/img/PAUL LAFAYET_Creme.png'
-import pots from '../../assets/img/pots&co.png'
-import dengel from '../../assets/img/dengel.png'
-import york from '../../assets/img/york.png'
+import pots from '../../assets/img/pots&co.jpg'
+import dengel from '../../assets/img/dengel.jpg'
+import york from '../../assets/img/york.jpg'
 
 //import frFlag from '../../assets/img/fr-flag.png'
 import usFlag from '../../assets/img/us-flag.png'

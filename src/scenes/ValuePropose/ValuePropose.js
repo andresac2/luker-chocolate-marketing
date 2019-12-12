@@ -1,9 +1,9 @@
 import React from 'react';
 import logo from '../../assets/img/Lukerlogo.svg'
-import item1 from '../../assets/img/unique-flavour.png'
-import item2 from '../../assets/img/consistency-flavour.png'
-import item3 from '../../assets/img/integrated-packaging.png'
-import item4 from '../../assets/img/grano4.png'
+import item1 from '../../assets/img/unique-flavour.jpg'
+import item2 from '../../assets/img/consistency-flavour.jpg'
+import item3 from '../../assets/img/integrated-packaging.jpg'
+import item4 from '../../assets/img/grano4.jpg'
 import ImgCarrousel from '../../components/img-carrousel/img-carrousel';
 
 import { Link } from 'react-router-dom';

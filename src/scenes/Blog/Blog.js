@@ -2,11 +2,11 @@ import React from 'react';
 import { Layout, Input, Select } from 'antd';
 import Footer from '../../components/layout/footer/footer';
 import { Link } from 'react-router-dom';
-import item1 from '../../assets/img/doisy-milk.png'
-import item2 from '../../assets/img/blog-item1.png'
-import item3 from '../../assets/img/blog-item2.png'
-import item4 from '../../assets/img/blog-item3.png'
-import item5 from '../../assets/img/blog-item4.png'
+import item1 from '../../assets/img/doisy-milk.jpg'
+import item2 from '../../assets/img/blog-item1.jpg'
+import item3 from '../../assets/img/blog-item2.jpg'
+import item4 from '../../assets/img/blog-item3.jpg'
+import item5 from '../../assets/img/blog-item4.jpg'
 
 import logo from '../../assets/img/Lukerlogo.svg'
 import TakeStand from '../../components/blog/take-stand/take-stand';
@@ -29,7 +29,7 @@ class Blog extends React.Component {
     content: `<p>When it comes to sourcing cocoa, Doisy & Dam only wants the best of the best. For them, it’s very important to understand exactly how the supply chain works and where exactly the totally delish cocoa comes from. They also want to make sure that the chocolate they work with is ethically sourced and has a positive impact on the dedicated farmers who depend on growing great crops.</p>
 <p>For their newest creations Crunchy Almond Butter and SNAPS, they wanted to get even deeper in to the heart of tracing the  cocoa, which us why they've decided to use single-origin chocolate from us, not only because grow some of the tastiest cocoa beans in the land but also because we work very hard to improve the local community.</p>
   <div class="blog-article-content--img" ><img src="/static/media/doisy-milk.de250ec7.png" alt="" ><span></span></div>`,
-    recommended: [{ img: 'pots&co.png', title: '', subtitle: 'POTS & CO', url: '/blog/customer/pots-co' }, { img: 'york.png', title: '', subtitle: 'YORK COCOA HOUSE', url: '/blog/customer/york-cocoa-house' }, { img: 'dengel.png', title: '', subtitle: 'Dengel Shokolade', url: '/blog/customer/dengel-shokolade' }]
+    recommended: [{ img: 'pots&co.jpg', title: '', subtitle: 'POTS & CO', url: '/blog/customer/pots-co' }, { img: 'york.jpg', title: '', subtitle: 'YORK COCOA HOUSE', url: '/blog/customer/york-cocoa-house' }, { img: 'dengel.jpg', title: '', subtitle: 'Dengel Shokolade', url: '/blog/customer/dengel-shokolade' }]
   }, {
     breads: [{ href: '/customer', name: 'Customers' }],
     url: 'daniels-delights',
@@ -39,7 +39,7 @@ class Blog extends React.Component {
 <p>In 2015 Daniel’s Delights agreed a strategic partnership with Luker Chocolate. In their own words, they see us as a business wholly focused on investing in local rural communities and creating long term sustainable relationships with farmers and growers and moving them away formless sustainable farming practices and into Cacao production. Working tirelessly in rebuilding communities previously blighted by the trade-in coca leaves and through their work throughout Colombia has helped those communities by building schools and developing social enterprise schemes to allow them to become sustainable through the production of Cacao. That’s only a part of what made them choose Luker Chocolate as their provider. They also know that the Cacao we produce is classified by the ICCO as being in the top 8% of the global production in terms of quality and has the Cacao fino de aroma classification.</p>
 <p>Delivering superior product quality is of primary importance for Daniel’s Delights, which is supported by fully understanding our supply chain and supporting a ‘Farm to Bar’ supply chain, which is achieved through our partnership. </p>
   <div class="blog-article-content--img" ><img src="/static/media/5thdimensions.d697a540.png" alt="" ><span></span></div>`,
-    recommended: [{ img: 'pots&co.png', title: '', subtitle: 'POTS & CO', url: '/blog/customer/pots-co' }, { img: 'york.png', title: '', subtitle: 'YORK COCOA HOUSE', url: '/blog/customer/york-cocoa-house' }, { img: 'dengel.png', title: '', subtitle: 'Dengel Shokolade', url: '/blog/customer/dengel-shokolade' }]
+    recommended: [{ img: 'pots&co.jpg', title: '', subtitle: 'POTS & CO', url: '/blog/customer/pots-co' }, { img: 'york.jpg', title: '', subtitle: 'YORK COCOA HOUSE', url: '/blog/customer/york-cocoa-house' }, { img: 'dengel.jpg', title: '', subtitle: 'Dengel Shokolade', url: '/blog/customer/dengel-shokolade' }]
   }, {
     breads: [{ href: '/customer', name: 'Customers' }],
     url: 'pots-co',
@@ -48,14 +48,14 @@ class Blog extends React.Component {
     content: `<p>At Pots & Co they love making timeless classics. Their goal is to work with traditional recipes and elevate them into modern, restaurant-quality puddings that hero the classic ingredients and culinary techniques used to make them.</p>
 <p>All of their base ingredients are sourced with attention and care, which is why at Luker Chocolate get to provide them. There are no additives or taste enhances needed, or allowed in their kitchen. The majority of their products are chocolate-based and the highest quality is required to produce them. </p>
 <p>Since the team at Pots & Co tried Colombian chocolate, they knew the quality and flavour could not be compared to anything else in the world, and thus they decided to make us their provider, ensuring a fantastic flavour and special value.</p><div class="blog-article-content--img" ><img src="/static/media/pots-blog.6f7212f8.png" alt="Pots Cover"><span>POTS & CO</span></div></div>`,
-    recommended: [{ img: 'Doisy&Dam.png', title: '', subtitle: 'Doisy & Dam', url: '/blog/customer/doisy-dam' }, { img: 'york.png', title: '', subtitle: 'YORK COCOA HOUSE', url: '/blog/customer/york-cocoa-house' }, { img: 'dengel.png', title: '', subtitle: 'Dengel Shokolade', url: '/blog/customer/dengel-shokolade' }]
+    recommended: [{ img: 'Doisy&Dam.jpg', title: '', subtitle: 'Doisy & Dam', url: '/blog/customer/doisy-dam' }, { img: 'york.jpg', title: '', subtitle: 'YORK COCOA HOUSE', url: '/blog/customer/york-cocoa-house' }, { img: 'dengel.jpg', title: '', subtitle: 'Dengel Shokolade', url: '/blog/customer/dengel-shokolade' }]
   }, {
     breads: [{ href: '/customer', name: 'Customers' }],
     url: 'atelier-rodier',
     title: 'Atelier Rodier',
     flag: 'uk',
     content: `<p>Santiago Torrijos, owner of Atelier Roder became interested in chocolate, from a very early age. After trying different chocolates from France and Italy, in 2014 he coincidentally tried a homemade-style hot chocolate made by a Colombian chef in a culinary event in the Netherlands. He couldn’t believe that the flavour in the chocolate he was drinking could come from his very own country, while being so far away from the homeland. Since then, all the chocolate sufflés he makes at his restaurant are made with ingredients provided by Luker Chocolate.</p>`,
-    recommended: [{ img: 'Doisy&Dam.png', title: '', subtitle: 'Doisy & Dam', url: '/blog/customer/doisy-dam' }, { img: 'york.png', title: '', subtitle: 'YORK COCOA HOUSE', url: '/blog/customer/york-cocoa-house' }, { img: 'dengel.png', title: '', subtitle: 'Dengel Shokolade', url: '/blog/customer/dengel-shokolade' }]
+    recommended: [{ img: 'Doisy&Dam.jpg', title: '', subtitle: 'Doisy & Dam', url: '/blog/customer/doisy-dam' }, { img: 'york.jpg', title: '', subtitle: 'YORK COCOA HOUSE', url: '/blog/customer/york-cocoa-house' }, { img: 'dengel.jpg', title: '', subtitle: 'Dengel Shokolade', url: '/blog/customer/dengel-shokolade' }]
   }, {
     breads: [{ href: '/customer', name: 'Customers' }],
     url: 'dengel-shokolade',
@@ -63,7 +63,7 @@ class Blog extends React.Component {
     flag: 'uk',
     content: `<p>What Dengel Shokolade in Germany likes about our products is that every cocoa bean is closely related to the producers. Dengel Shokolade launched a raw material concept in 2015. This is under the motto "honest and fair direct from the producer". Thus, the raw materials needed for chocolate production (cocoa beans, cane sugar, and milk) are purchased directly from cocoa farmers from Colombia. They produce noble and fine chocolates since 1992. For them, the purchase of Cacao Fino de Aroma directly from Colombia without intermediate trade and at a fair fixed price is unbeatable, allowing us to makes sure that equivalent funds are paid directly to the cocoa farmers.</p>
   <div class="blog-article-content--img" ><img src="/static/media/dengel-blog.068660b3.png" alt="Dengel Shokolade" /><span></span></div>`,
-    recommended: [{ img: 'Doisy&Dam.png', title: '', subtitle: 'Doisy & Dam', url: '/blog/customer/doisy-dam' }, { img: 'york.png', title: '', subtitle: 'YORK COCOA HOUSE', url: '/blog/customer/york-cocoa-house' }, { img: 'pots&co.png', title: '', subtitle: 'POTS & CO', url: '/blog/customer/pots-co' }]
+    recommended: [{ img: 'Doisy&Dam.jpg', title: '', subtitle: 'Doisy & Dam', url: '/blog/customer/doisy-dam' }, { img: 'york.jpg', title: '', subtitle: 'YORK COCOA HOUSE', url: '/blog/customer/york-cocoa-house' }, { img: 'pots&co.jpg', title: '', subtitle: 'POTS & CO', url: '/blog/customer/pots-co' }]
   }, {
     breads: [{ href: '/customer', name: 'Customers' }],
     url: 'york-cocoa-house',
@@ -72,7 +72,7 @@ class Blog extends React.Component {
     content: `<p>Sophie Jewett says she fell in love with chocolate at an early age. She made chocolate cakes and fudge for friends and family as a child, eventually melting Christmas chocolates in an attempt to create her own Easter Eggs. Since then, her interest in chocolate grew into an obsession, and so she set out to learn everything possible about chocolate. Every new thing she’s discovered drawn her deeper into the world of chocolate and introduced her to chocolate lovers, chocolate makers, chocolatiers and experts from around the world, including us. </p>
 <p>For her, it’s very important to work with products that involve communities working side-by-side, giving her and other chocolate professionals to tell new stories through a positive experience, which is what we try to accomplish every day at Luker Chocolate.</p>
   <div class="blog-article-content--img" ><img src="/static/media/york-blog.d8a0ee79.png" alt="York Cocoa House" /><span></span></div>`,
-    recommended: [{ img: 'dengel.png', title: '', subtitle: 'Dengel Shokolade', url: '/blog/customer/dengel-shokolade' }, { img: 'Doisy&Dam.png', title: '', subtitle: 'Doisy & Dam', url: '/blog/customer/doisy-dam' }, { img: 'pots&co.png', title: '', subtitle: 'POTS & CO', url: '/blog/customer/pots-co' }]
+    recommended: [{ img: 'dengel.jpg', title: '', subtitle: 'Dengel Shokolade', url: '/blog/customer/dengel-shokolade' }, { img: 'Doisy&Dam.jpg', title: '', subtitle: 'Doisy & Dam', url: '/blog/customer/doisy-dam' }, { img: 'pots&co.jpg', title: '', subtitle: 'POTS & CO', url: '/blog/customer/pots-co' }]
   },
   {
     breads: [{ href: '/customer', name: 'Customers' }],
@@ -80,7 +80,7 @@ class Blog extends React.Component {
     title: 'ROYCE\'',
     flag: 'uk',
     content: `ROYCE' was founded in Sapporo, Japan, in 1983. They are able to make chocolate of world-class quality in Hokkaido by having acquired the best techniques and enriching their experience through the years. The fundamental principle of Royce' has been and will always be the painstaking sourcing of high-quality ingredients, and so, we are the ones that provide those for them. They take pride in having their own farm in Colombia, which we run for them, allowing their customers and consumers to know that the origin of their products is from a great quality source.`,
-    recommended: [{ img: 'pots&co.png', title: '', subtitle: 'POTS & CO', url: '/blog/take-stand/article' }, { img: 'PAUL LAFAYET_Creme.png', title: '', subtitle: 'PAUL LAFAYETTE', url: '/blog/take-stand/article' }, { img: 'lyra_eshop.png', title: '', subtitle: 'LYRA CHOC', url: '/blog/take-stand/article' }]
+    recommended: [{ img: 'pots&co.jpg', title: '', subtitle: 'POTS & CO', url: '/blog/take-stand/article' }, { img: 'PAUL LAFAYET_Creme.png', title: '', subtitle: 'PAUL LAFAYETTE', url: '/blog/take-stand/article' }, { img: 'lyra_eshop.jpg', title: '', subtitle: 'LYRA CHOC', url: '/blog/take-stand/article' }]
   }]
   articles = [
     {
@@ -96,7 +96,7 @@ class Blog extends React.Component {
 <p>We hope that the readers of this blog find an open space in which to talk and to share and build ideas. A safe place, where they can take off their masks as though they were under the shade of a great tree.</p>
 `,
       autor: { name: 'SERGIO RESTREPO', avatar: 'https://media.licdn.com/dms/image/C4E03AQEU_fSBYnqwnw/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=pqJb74EtssHW43ajcC8aeRAErFY_wdDFWW8NCbfjXzE', details: 'Marketing Vice-president', description: 'I see chocolate as a tool of change. I am interested in sharing experiences with entrepreneurs, entrepreneurs and leaders who bet and believe in disruptive innovation, in shared value, in technology and in putting people at the center of the conversation.', linkedin: ['https://www.linkedin.com/in/sergiorestrepogutierrez/', 'Sergio Restrepo'] },
-      recommended: [{ img: 'planting.png', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.png', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.png', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+      recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
     },
     {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/chocolate-dream', name: 'The chocolate dream' }],
@@ -120,7 +120,7 @@ class Blog extends React.Component {
 <p>We know that many of us can join together to turn this dream into a movement that can travel the world. This is why The Chocolate Dream will soon open its doors so that all those who want to contribute with their knowledge, their experience and their time, can find a place where they can do so at Luker Chocolate.</p>
 `,
       autor: { name: 'JUANA BOTERO', avatar: 'https://media.licdn.com/dms/image/C5603AQFburD-lKe7tQ/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=OrPNQWmiurHcatseEVuDih5SDGN16X30sgHlTTP8ymg', details: 'Sustainability Director', description: 'Lawyer from Eafit University with an emphasis on public international law from the University of Salamanca, Spain. Current Director of Sustainability at Luker Chocolate where she works to improve the living conditions of rural cocoa farming communities.', linkedin: ['https://www.linkedin.com/in/juana-botero-62a78958/', 'Juana Botero'] },
-      recommended: [{ img: 'planting.png', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.png', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.png', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+      recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
     },
     {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/create-shared-value', name: 'Create shared value' }],
@@ -148,7 +148,7 @@ class Blog extends React.Component {
 <p>Do you want to discover our delicious fine flavour chocolates? Let’s first talk about the impact you want to create in the world.</p>
     `,
       autor: { name: 'SERGIO RESTREPO', avatar: 'https://media.licdn.com/dms/image/C4E03AQEU_fSBYnqwnw/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=pqJb74EtssHW43ajcC8aeRAErFY_wdDFWW8NCbfjXzE', details: 'Marketing Vice-president', description: 'I see chocolate as a tool of change. I am interested in sharing experiences with entrepreneurs, entrepreneurs and leaders who bet and believe in disruptive innovation, in shared value, in technology and in putting people at the center of the conversation.', linkedin: ['https://www.linkedin.com/in/sergiorestrepogutierrez/', 'Sergio Restrepo'] },
-      recommended: [{ img: 'planting.png', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.png', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.png', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+      recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
     },
     {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/create-shared-value', name: 'Create shared value' }],
@@ -188,7 +188,7 @@ class Blog extends React.Component {
       autor: {
         name: 'CRISTIAN CHU', avatar: 'https://media.licdn.com/dms/image/C4E03AQHLclm7u9XKIg/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=WjGN2LsdE9JD7XbCR7nKbDeK8KEejiW0DF3Qcx4HLZQ', details: 'Supply Chain Vicepresident', description: 'Electronic engineer with more than 10 years of experience in operations management and supply chain in the food and beverage sector. Passionate about generating intrapreneurships and working for a higher purpose.', linkedin: ['https://www.linkedin.com/in/cristian-chu-salgado-ba55b140/', 'Cristian Chu']
       },
-      recommended: [{ img: 'planting.png', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.png', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.png', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+      recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
     },
     {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/create-shared-value', name: 'Create shared value' }],
@@ -213,7 +213,7 @@ class Blog extends React.Component {
       autor: {
         name: 'JOSÉ MALDONADO', avatar: 'https://media.licdn.com/dms/image/C5603AQGWmXeWsufD9Q/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=sPc6xh78N7oYmS61XLxym_XcKLYzzBJ9PSp5kyFCPQk', details: 'SUSTAINABLE SUPPLY ANALYST', description: 'Sustainable Supply Analyst for Luker Chocolate, focused on agricultural development and sustainability projects of the company\'s value chain.Project leader for organizations of cocoa producers and small- scale farmers.', linkedin: ['https://www.linkedin.com/in/jos%C3%A9-miguel-maldonado-v%C3%A9lez-79a818114/', 'Jose Maldonado']
       },
-      recommended: [{ img: 'planting.png', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.png', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.png', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+      recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
     },
     {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/create-shared-value', name: 'Create shared value' }],
@@ -231,7 +231,7 @@ class Blog extends React.Component {
 <p>We are delving deeper into the world of flavour, developing new varieties of cocoa that offer very interesting profiles, while increasing the productivity of our crops and the cocoa regions where we work. We are exploring new technologies that will allow us to perfect and standardize the fermentation and drying processes, in order to continue to offer the best chocolates made with Colombian Cacao Fino de Aroma to the whole world.</p>
 `,
       autor: { name: 'FRANCISCO GÓMEZ', avatar: 'https://media.licdn.com/dms/image/C4E03AQFWyb8DSqYCCg/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=dVNW6XiYzO1lK7W9iY9iwua1HVNapQh8khqRdM0Ibto', details: 'Innovation and Business Development Vice-president', description: 'Civil Engineer with more than 30 years of experience in food industries, extensive knowledge in the cocoa supply chain and development of international markets. Currently, innovation in chocolates made with Aroma Fine Cocoa is my biggest challenge', linkedin: ['https://www.linkedin.com/in/francisco-gomez-5503b823/', 'Francisco Gomez'] },
-      recommended: [{ img: 'planting.png', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.png', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.png', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+      recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
     },
     {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/chocolate-dream', name: 'The chocolate dream' }],
@@ -254,7 +254,7 @@ class Blog extends React.Component {
       autor: {
         name: 'SARA GALEANO', avatar: 'https://media.licdn.com/dms/image/C4E03AQHmeKp3KisJdQ/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=grUKZd2SlKyWPgqFHw1IBrNHv31uaLPa6K73hx7A_r8', details: 'Brand & Communications Professional', description: 'Social Communicator of the Pontificia Universidad Javeriana with emphasis on advertising and complementary matters in organizational. Experience in the development of marketing, branding and communication strategies, corporate affairs management, public relations for positioning and construction of corporate reputation.', linkedin: ['https://www.linkedin.com/in/sara-galeano-vallejo-30760831/', 'Sara Galeano']
       },
-      recommended: [{ img: 'planting.png', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.png', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.png', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+      recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
     },
     {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/create-shared-value', name: 'Create shared value' }],
@@ -276,7 +276,7 @@ class Blog extends React.Component {
       autor: {
         name: 'SERGIO RESTREPO', avatar: 'https://media.licdn.com/dms/image/C4E03AQEU_fSBYnqwnw/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=pqJb74EtssHW43ajcC8aeRAErFY_wdDFWW8NCbfjXzE', details: 'Marketing Vice-president', description: 'I see chocolate as a tool of change. I am interested in sharing experiences with entrepreneurs, entrepreneurs and leaders who bet and believe in disruptive innovation, in shared value, in technology and in putting people at the center of the conversation.', linkedin: ['https://www.linkedin.com/in/sergiorestrepogutierrez/', 'Sergio Restrepo']
       },
-      recommended: [{ img: 'planting.png', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.png', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.png', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+      recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
     },
     {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/take-stand', name: 'Take a stand' }],
@@ -297,7 +297,7 @@ class Blog extends React.Component {
 <p>We invite you to keep an eye on the project’s advances. Don’t forget to leave your comments below.</p>
 `,
       autor: { name: 'JULIA OCAMPO', avatar: 'https://media.licdn.com/dms/image/C4E03AQFUGeFloCcVFw/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=NJf7kTdRi6NTIdp250nSBA81HPnpIPN6KQYUr1Tl0uI', details: 'COP The Cocoa Effect at Fundación Luker', description: '', linkedin: ['https://www.linkedin.com/in/julia-ocampo-4725376/', 'Julia Ocampo'] },
-      recommended: [{ img: 'planting.png', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.png', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.png', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+      recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
     },
     {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/take-stand', name: 'Take a stand' }],
@@ -320,7 +320,7 @@ class Blog extends React.Component {
       autor: {
         name: 'JUAN JOSÉ HINCAPIÉ', avatar: 'https://media.licdn.com/dms/image/C4D03AQF3R8cD2WhDyw/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=1h2n3IYyHMZm-VA4MHb0bko7VW_XLXAFZnoyRIqj334', details: 'Agricultural Analyst', description: 'Agricultural Analyst at Luker Chocolate', linkedin: ['https://www.linkedin.com/in/juan-jos%C3%A9-hincapi%C3%A9-toro-b18a12181/', 'Juan José Hincapié']
       },
-      recommended: [{ img: 'planting.png', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.png', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.png', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+      recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
     },
     {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/what-you-didnt-know', name: 'What you didn’t know' }],
@@ -347,7 +347,7 @@ class Blog extends React.Component {
       autor: {
         name: 'HUGO OLARTE', avatar: '', details: 'Investigation and Special Projects Manager', description: 'Dir I&D en Casa Luker', linkedin: ['https://www.linkedin.com/in/hugo-olarte-83625568/', 'Hugo Olarte']
       },
-      recommended: [{ img: 'planting.png', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.png', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.png', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+      recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
     },
     {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/take-stand', name: 'Take a stand' }],
@@ -384,7 +384,7 @@ class Blog extends React.Component {
 <p>We want to contribute to Colombia’s transformation.</p>
 `,
       autor: { name: 'VALENTINA RAMÍREZ', avatar: 'https://pbs.twimg.com/profile_images/1132303793331113984/tmfrgfNK_400x400.jpg', details: 'Director at Transhuella', description: 'Professional in Government and International Relations with emphasis in Public Management, 2 years of experience in the formulation and coordination of projects in public and non-governmental entities.', linkedin: ['https://www.linkedin.com/in/valentina-ramirez-zapata-58616654/', 'Valentina Ramirez Zapata'] },
-      recommended: [{ img: 'planting.png', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.png', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.png', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+      recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
     },
     {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/create-shared-value', name: 'Create shared value' }],
@@ -417,7 +417,7 @@ class Blog extends React.Component {
 <p>This is already possible, efforts have already been made to make this happen, and there are already examples of successes. However, it is still on a small scale. The call is for us to think as one, to be able, for the first time, to give up everything we have been building around individuality so that we can maintain and continue to improve our country and our planet. We have already shown that the path of sectorisation has not resulted in us becoming more sustainable; it is time for us to choose to work together for all humanity. Time is running out.</p>
     `,
       autor: { name: 'JUANA BOTERO', avatar: 'https://media.licdn.com/dms/image/C5603AQFburD-lKe7tQ/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=OrPNQWmiurHcatseEVuDih5SDGN16X30sgHlTTP8ymg', details: 'Sustainability Director', description: 'Lawyer from Eafit University with an emphasis on public international law from the University of Salamanca, Spain. Current Director of Sustainability at Luker Chocolate where she works to improve the living conditions of rural cocoa farming communities.', linkedin: ['https://www.linkedin.com/in/juana-botero-62a78958/', 'Juana Botero'] },
-      recommended: [{ img: 'planting.png', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.png', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.png', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+      recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
     },
     {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/take-stand', name: 'Take a stand' }],
@@ -431,7 +431,7 @@ class Blog extends React.Component {
       autor: {
         name: 'ANDREA CAMACHO', avatar: 'https://media.licdn.com/dms/image/C5603AQGoUFQwRo9MVw/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=75pM_bDTKE8y5wBMwdDbFJpjDm50Br33zWmK-dgQ77E', details: 'Social Innovation Professional', description: 'MSc Social Innovation and Entrepreneurship student with interest in cultural projects. Designer by trait with a certificate in digital media from Yoobee Design School. Three years of experience in innovation, social design, co-creation, product and graphic design', linkedin: ['https://www.linkedin.com/in/andreacamachogonzalez/', 'Andrea Camacho']
       },
-      recommended: [{ img: 'planting.png', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.png', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.png', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+      recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
     },
     {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/take-stand', name: 'Take a stand' }],
@@ -459,7 +459,7 @@ class Blog extends React.Component {
 <p>Without Luker Chocolate, our mission to change the world would not be possible. We are achieving it, one life at a time.</p>
     `,
       autor: { name: 'VALENTINA RAMÍREZ', avatar: 'https://pbs.twimg.com/profile_images/1132303793331113984/tmfrgfNK_400x400.jpg', details: 'Director at Transhuella', description: 'Professional in Government and International Relations with emphasis in Public Management, 2 years of experience in the formulation and coordination of projects in public and non-governmental entities.', linkedin: ['https://www.linkedin.com/in/valentina-ramirez-zapata-58616654/', 'Valentina Ramirez Zapata'] },
-      recommended: [{ img: 'planting.png', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.png', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.png', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+      recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
     },
     {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/innovation', name: 'Innovation' }],
@@ -488,7 +488,7 @@ class Blog extends React.Component {
       autor: {
         name: 'DIEGO CORTÉS', avatar: '', details: 'Research and Development Professional', description: 'Bilingual Chemical Engineer (English - Spanish), Master in Bromatology and Food Technology, with strong experience in Research, Development and Innovation in chocolate and other food companies, also in academic environments. Additional expertise in formulation, new product development, sensory product evaluation, consumer understanding, innovation management, intellectual property, technology research and market intelligence.', linkedin: ['https://www.linkedin.com/in/diego-alejandro-cort%C3%A9s-y%C3%A1%C3%B1ez-66682b50/', 'Diego Alejandro Cortés']
       },
-      recommended: [{ img: 'planting.png', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.png', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.png', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+      recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
     },
     {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/create-shared-value', name: 'Create shared value' }],
@@ -506,7 +506,7 @@ class Blog extends React.Component {
 <p>For me, it is a source of pride to know that this company is not afraid to undertake major projects, rather it has been a pioneer and example throughout the country for this very reason.</p>
 `,
       autor: { name: 'GUIDO SIERRA', avatar: 'https://media.licdn.com/dms/image/C4E03AQHh3XbrtXhmKQ/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=PD2w7KFQty_KkqUIHiUYgJNfA9GLs_S1MTMSqczVWWI', details: 'General Manager Luker Agricola', description: '17 years of professional experience in human talent management and generation of high performance teams, Financial Management, Process Optimization, Installation and commissioning of industrial facilities and Development of Supply Chains with successful results in increases in efficiency, productivity, reduction of costs and value generation through the satisfaction and loyalty of customers and suppliers.', linkedin: ['https://www.linkedin.com/in/guido-sierra-1301a339/', 'Guido Sierra'] },
-      recommended: [{ img: 'planting.png', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.png', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.png', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+      recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
     },
     {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/create-shared-value', name: 'Create shared value' }],
@@ -531,7 +531,7 @@ class Blog extends React.Component {
 <p>Having used their chocolate for over a decade, and now seen the work that Luker and their Chocolate Dream project are doing, I am so excited to help them share this story Maria de Restrepo was a member of Luker Chocolate’s founding family. Every Saturday, in Manizales, she would stand at her window to give out chocolate to the homeless for the sole reason of consoling them and making sure they had food in their stomachs. At that time, there had been no research on the ‘happiness of eating chocolate’, but what she did and the chocolate she gave out must have comforted many. I guess that by using Luker chocolate today, I am doing the same – not only supporting the families at the source of this journey, but by bringing the happiness of sharing their fine chocolate with my customers. The Swiss named cacao ‘Theobroma’ in the 18th century, meaning ‘food of the gods’. I like to believe I am a modern day version of a ‘chocolate goddess’ and it is my duty to bring the best chocolate to everyone’s door. And if it can be done in a way that I know I am helping and supporting the families that supply it, then that’s even better.”</p>
 `,
       autor: { name: 'JOSÉ MALDONADO', avatar: 'https://media.licdn.com/dms/image/C5603AQGWmXeWsufD9Q/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=sPc6xh78N7oYmS61XLxym_XcKLYzzBJ9PSp5kyFCPQk', details: 'SUSTAINABLE SUPPLY ANALYST', description: 'Sustainable Supply Analyst for Luker Chocolate, focused on agricultural development and sustainability projects of the company\'s value chain.Project leader for organizations of cocoa producers and small- scale farmers.', linkedin: ['https://www.linkedin.com/in/jos%C3%A9-miguel-maldonado-v%C3%A9lez-79a818114/', 'Jose Maldonado'] },
-      recommended: [{ img: 'planting.png', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.png', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.png', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+      recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
     },
     {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/create-shared-value', name: 'Create shared value' }],
@@ -564,7 +564,7 @@ class Blog extends React.Component {
 <p>Cocoa, Forests, and Peace is a very important milestone for cocoa farming in Colombia and everything behind it. It will be the first major pact for the sustainable development of cocoa production in the country that will be made by the three sectors of the economy. This project will be a very important contribution in the protection and conservation of all the natural wealth with which cocoa coexists. It will also transform the realities of the country’s cocoa farming families today, help overcome difficulties, and offer a better future for the Colombian countryside.</p>
 `,
       autor: { name: 'JOSÉ MALDONADO', avatar: 'https://media.licdn.com/dms/image/C5603AQGWmXeWsufD9Q/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=sPc6xh78N7oYmS61XLxym_XcKLYzzBJ9PSp5kyFCPQk', details: 'SUSTAINABLE SUPPLY ANALYST', description: 'Sustainable Supply Analyst for Luker Chocolate, focused on agricultural development and sustainability projects of the company\'s value chain.Project leader for organizations of cocoa producers and small- scale farmers.', linkedin: ['https://www.linkedin.com/in/jos%C3%A9-miguel-maldonado-v%C3%A9lez-79a818114/', 'Jose Maldonado'] },
-      recommended: [{ img: 'planting.png', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.png', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.png', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+      recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
     },
     {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/innovation', name: 'Innovation' }],
@@ -586,7 +586,7 @@ class Blog extends React.Component {
 <small>*These studies were carried out by internal investigations of Casa Luker S.A. The declaration of benefits of this product must be approved by the competent regulatory entities, according to the country and with the fulfilment of the corresponding requirements.</small>
 `,
       autor: { name: 'MELISSA CHARRY', avatar: 'https://media.licdn.com/dms/image/C4E03AQE3fTb1qaHvGQ/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=G7ZrphPGrtZfzoLSk3L65yb14Hnoqh4KC3FWqMpkwOM', details: 'Portfolio and Business Growth Professional', description: `Master's degree student in Marketing from the University of Liverpool, Uk, with experience in the creation of strategies of positioning and generation of brand value, development of experiences, product conceptualization and communication plans complemented with the management of design and advertising agencies.`, linkedin: ['https://www.linkedin.com/in/melissa-charry-clavijo-828b30166', 'Melissa Charry Clavijo'] },
-      recommended: [{ img: 'planting.png', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.png', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.png', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+      recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
     },
     {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/innovation', name: 'Innovation' }],
@@ -606,7 +606,7 @@ class Blog extends React.Component {
 <p>We look forward to seeing you!</p>
 `,
       autor: { name: 'JOHANNA VERDUGO', avatar: 'https://media.licdn.com/dms/image/C4E03AQEBjQMIzBoosQ/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=PJFM_xfyNj0lFBOFrXEG8yuGX72o0fnMupSc49dazWw', details: 'Brand and Communications Analyst', description: 'Social communicator with emphasis on journalism from the Pontificia Universidad Javeriana de Bogotá, Colombia.', linkedin: ['https://www.linkedin.com/in/johanna-verdugo-romero-0564a9151/', 'Johanna Verdugo Romero'] },
-      recommended: [{ img: 'planting.png', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.png', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.png', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+      recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
     },
     {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/take-stand', name: 'Take a stand' }],
@@ -639,7 +639,7 @@ class Blog extends React.Component {
       autor: {
         name: 'JUANA BOTERO', avatar: 'https://media.licdn.com/dms/image/C5603AQFburD-lKe7tQ/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=OrPNQWmiurHcatseEVuDih5SDGN16X30sgHlTTP8ymg', details: 'Sustainability Director', description: 'Lawyer from Eafit University with an emphasis on public international law from the University of Salamanca, Spain. Current Director of Sustainability at Luker Chocolate where she works to improve the living conditions of rural cocoa farming communities.', linkedin: ['https://www.linkedin.com/in/juana-botero-62a78958/', 'Juana Botero']
       },
-      recommended: [{ img: 'planting.png', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.png', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.png', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+      recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
     }
   ]
   articleLoaded = [];
@@ -711,7 +711,7 @@ class Blog extends React.Component {
               <div className="blog-layout-latest">
                 <h1>Latest entries</h1>
                 <Link to={'/blog/' + category + '/' + latestArticle.url} className="blog-layout-latest--article">
-                  <img src={require('../../assets/img/5thdimensions.png')} alt="" />
+                  <img src={require('../../assets/img/5thdimensions.jpg')} alt="" />
                   <p>{latestArticle.date}</p>
                   <h2>{latestArticle.title}</h2>
                 </Link>

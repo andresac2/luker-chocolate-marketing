@@ -36,12 +36,12 @@ class Comments extends React.Component {
     comments: [
       {
         author: 'Evelio Gutierrez',
-        avatar: require('../../../assets/img/evelio.png'),
+        avatar: require('../../../assets/img/evelio.jpg'),
         content: <>Donec ultricies eros vel risus convallis ultricies. Proin sed facilisis tortor. Nam vel augue dapibus, posuere arcu ut, finibus orci. Integer a magna et tortor vehicula feugiat eget convallis felis. Etiam mattis nisl et justo molestie imperdiet. {commentActions}</>,
       },
       {
         author: 'Comentario anónimo',
-        avatar: require('../../../assets/img/comment-1.png'),
+        avatar: require('../../../assets/img/comment-1.jpg'),
         content: <>Donec ultricies eros vel risus convallis ultricies. Proin sed facilisis tortor. Nam vel augue dapibus, posuere arcu ut, finibus orci. Integer a magna et tortor vehicula feugiat eget convallis felis. Etiam mattis nisl et justo molestie imperdiet. {commentActions}</>,
       }
     ],
@@ -67,7 +67,7 @@ class Comments extends React.Component {
         comments: [
           {
             author: this.state.author,
-            avatar: require('../../../assets/img/making-hot.png'),
+            avatar: require('../../../assets/img/making-hot.jpg'),
             content: <><p>{this.state.comment}</p> commentActions</>,
             // datetime: moment().fromNow(),
           },
@@ -90,7 +90,7 @@ class Comments extends React.Component {
         <Comment
           avatar={
             <Avatar
-              src={require('../../../assets/img/making-hot.png')}
+              src={require('../../../assets/img/making-hot.jpg')}
               alt="Han Solo"
             />
           }

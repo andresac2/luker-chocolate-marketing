@@ -13,7 +13,7 @@ class Maquila extends React.Component {
       { description: 'DROPS 0,5G', img: 'drops-white.png', selected: false },
       { description: 'DROPS 6g', img: 'drops-mixed.png', selected: false },
       { description: 'CHUNKS 1 to 10 cm', img: 'chunks.png', selected: false }],
-      paning: [{ description: 'CACAO NIBS', img: 'cacao-nibs.png' }, { description: 'NIBS CLUSTERS', img: 'nibs-cluster.png' }, { description: 'QUINOA', img: 'quinoa.png' }, { description: 'GOLDEN BERRIES', img: 'golden-berries.png' }, { description: 'ESPRESSO BEANS', img: 'espresso-beans.png' }, { description: 'INSTANT COFFEE', img: 'instant-coffee.png' }],
+      paning: [{ description: 'CACAO NIBS', img: 'cacao-nibs.jpg' }, { description: 'NIBS CLUSTERS', img: 'nibs-cluster.png' }, { description: 'QUINOA', img: 'quinoa.png' }, { description: 'GOLDEN BERRIES', img: 'golden-berries.png' }, { description: 'ESPRESSO BEANS', img: 'espresso-beans.png' }, { description: 'INSTANT COFFEE', img: 'instant-coffee.png' }],
       moulding: [{ description: 'BARS', img: 'moulding-bars.png' }, { description: 'SHAPES', img: 'moulding-shapes.png' }]
     }
   }

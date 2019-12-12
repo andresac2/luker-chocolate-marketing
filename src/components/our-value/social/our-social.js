@@ -1,7 +1,7 @@
 import React from 'react'
-import item2 from '../../../assets/img/cut-cacao.png'
-import item3 from '../../../assets/img/cacao-store.png'
-import item4 from '../../../assets/img/secado-2.png'
+import item2 from '../../../assets/img/cut-cacao.jpg'
+import item3 from '../../../assets/img/cacao-store.jpg'
+import item4 from '../../../assets/img/secado-2.jpg'
 
 const OurSocial = () => {
 

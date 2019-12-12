@@ -1,11 +1,11 @@
 import React from 'react';
 import { Carousel } from 'antd';
-import cacao from '../../../assets/img/cacaoOpen.png'
-import granjeros from '../../../assets/img//granjeroCar.png'
-import abastecimiento from '../../../assets/img/abastecimiento-car.png'
-import procesamiento from '../../../assets/img/procesoCar.png'
-import coberturas from '../../../assets/img/coberturaCar.png'
-import producto from '../../../assets/img/productoCar.png'
+import cacao from '../../../assets/img/cacaoOpen.jpg'
+import granjeros from '../../../assets/img//granjeroCar.jpg'
+import abastecimiento from '../../../assets/img/abastecimiento-car.jpg'
+import procesamiento from '../../../assets/img/procesoCar.jpg'
+import coberturas from '../../../assets/img/coberturaCar.jpg'
+import producto from '../../../assets/img/productoCar.jpg'
 import back from '../../../assets/img/back.svg'
 
 class FlowTabs extends React.Component {

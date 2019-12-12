@@ -1,5 +1,5 @@
 import React from 'react';
-import panel from '../../assets/img/sustain-panel.png'
+import panel from '../../assets/img/sustain-panel.jpg'
 import back from '../../assets/img/back.svg'
 import { MdClose } from 'react-icons/md';
 import { Form, Select, Input, Button, InputNumber } from 'antd';
@@ -15,26 +15,26 @@ class Sustain extends React.Component {
     super(props);
     this.state = {
       distModalVisible: false,
-      reportModalVisible: true,
+      reportModalVisible: false,
       articleModalVisible: false,
       firstItem: 0,
       modalSelectedIndex: 0,
       items: [{
-        img: 'costal-luker.png',
+        img: 'costal-luker.jpg',
         flag: 'us',
         title: 'Jobs',
         badges: ['gender-equality.png', 'decent-work.png'],
         content: 'Thanks to our sustainability efforts, we’ve generated a total of 232 formal jobs in the community with 0% of child labor. We also generated 617 formal jobs in Bogotá and 71% of those positions are filled by millennials, guaranteeing as well 0% of child labor.<p></p>'
       },
       {
-        img: 'arauca-river.png',
+        img: 'arauca-river.jpg',
         flag: 'us',
         title: 'SMALL-SCALE FARMERS',
         badges: ['no-poverty.png', 'decent-work.png', 'reduced-inequalities.png'],
         content: 'We are committed to small-scale farmers, which is why we have established a network of alliances with over 50 cocoa growers associations allowing us to guarantee the purchase of the entire harvest of each association, helping to create the maximum value possible for the farmers and their families. We buy directly from 65 associations and more than 7500 Colombian families. We’ve also trained around 30.000 farmers in Luker Farm and built 10 centralized milling facilities in Tumaco and have 1 currently under construction in Huila. <p></p>'
       },
       {
-        img: 'cocoa-tree.png',
+        img: 'cocoa-tree.jpg',
         flag: 'us',
         title: 'Community',
         badges: ['no-poverty.png', 'decent-work.png', 'reduced-inequalities.png'],
@@ -48,7 +48,7 @@ class Sustain extends React.Component {
         content: 'We know that reforestation attracts new species that can then be protected. That’s why with our environmental transformation strategies we have improved the conservation and care of 7 vulnerable species through the plantation of 600.000 new trees in agroforestry systems. The plantations have brought back species that had disappeared from the area. Whatsmore, we also participate in the 0 deforestation agreement “Cocoa, Forest and Peace initiative” led by the World Cocoa Foundation.<p></p>'
       },
       {
-        img: 'cocoa-forest.png',
+        img: 'cocoa-forest.jpg',
         flag: 'us',
         title: 'Cocoa forest',
         badges: ['no-poverty.png', 'gender-equality.png', 'decent-work.png', 'reduced-inequalities.png', 'responsible-consumption.png', 'climate-action.png'],

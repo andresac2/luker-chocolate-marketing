@@ -28,15 +28,15 @@ class OurServices extends React.Component {
     const altImg = 'img-example.svg';
     const { dpSelected, designProcess } = this.state;
     const items = [{
-      img: 'our-product-2.png',
+      img: 'our-product-2.jpg',
       title: 'FORMULATION',
     },
     {
-      img: 'product-cover.png',
+      img: 'product-cover.jpg',
       title: 'PACKAGING DESIGN',
     },
     {
-      img: 'productoCar.png',
+      img: 'productoCar.jpg',
       title: 'MANUFACTURING',
     }];
 

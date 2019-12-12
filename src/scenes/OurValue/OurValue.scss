@@ -18,7 +18,7 @@
     align-items: center;
 
     &--aroma {
-      background-image: url("../../assets/img/aroma-header.png");
+      background-image: url("../../assets/img/aroma-header.jpg");
 
       @media (max-width: 768px) {
         .btn-dist {
@@ -28,15 +28,15 @@
     }
 
     &--flavour {
-      background-image: url("../../assets/img/flavour-header.png");
+      background-image: url("../../assets/img/flavour-header.jpg");
     }
 
     &--product {
-      background-image: url("../../assets/img/product-header.png");
+      background-image: url("../../assets/img/product-header.jpg");
     }
 
     &--social {
-      background-image: url("../../assets/img/social-header.png");
+      background-image: url("../../assets/img/social-header.jpg");
     }
 
     h1 {
