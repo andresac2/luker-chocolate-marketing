@@ -77,7 +77,7 @@ class Ingredient1906 extends React.Component {
         <div className="i1906-component--header">
           <h1>{data.subtitle}</h1>
           <h1>{data.name}</h1>
-          <img src={require('../../../../assets/img/lukerproducts.png')} alt='jaja' />
+          <img src={require('../../../../assets/img/chocolate-ingredients/origins/origenes-line-up.png')} alt='Products Origins' />
         </div>
         <div className="i1906-component--content">
           <h2>UNIQUE ORIGIN</h2>

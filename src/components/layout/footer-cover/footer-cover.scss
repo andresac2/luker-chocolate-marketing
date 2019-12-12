@@ -2,10 +2,13 @@
   position: fixed;
   z-index: 4;
   width: 100%;
+  height: 0;
   bottom: 0;
   text-align: center;
 
   &-open {
+    height: auto;
+
     .footer-cover-bkg {
       position: absolute;
       cursor: pointer;
@@ -24,6 +27,8 @@
     cursor: pointer;
     color: whitesmoke;
     font-size: 4em;
+    position: absolute;
+    top: -1em;
     @include bounce-top(3s);
   }
 
