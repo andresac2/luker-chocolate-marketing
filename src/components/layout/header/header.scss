@@ -26,7 +26,7 @@
     background: $peach;
   }
 
-  &-customer {
+  &-our-clients {
     background: $citrus;
   }
 
@@ -106,7 +106,7 @@
   .chocolate-process::after,
   .sustainability::after,
   .products-services::after,
-  .customer::after,
+  .our-clients::after,
   .ideas-trends::after,
   .value-proposition::after {
     content: '';
@@ -134,7 +134,7 @@
     border-bottom-color: $peach;
   }
 
-  .customer::after {
+  .our-clients::after {
     border-bottom-color: $citrus;
   }
 
@@ -200,7 +200,7 @@
       }
     }
 
-    &-customer {
+    &-our-clients {
       border-top: 10px solid $citrus;
 
       &.header-component-responsive--tabs-visible {
@@ -236,7 +236,7 @@
     .chocolate-process,
     .sustainability,
     .products-services,
-    .customer,
+    .our-clients,
     .blog,
     .ideas-trends,
     .value-proposition {
@@ -270,7 +270,7 @@
       }
     }
 
-    .customer {
+    .our-clients {
       span {
         border-bottom-color: $citrus;
       }
@@ -381,7 +381,7 @@
   .chocolate-process::after,
   .sustainability::after,
   .products-services::after,
-  .customer::after,
+  .our-clients::after,
   .ideas-trends::after,
   .value-proposition::after {
     border: none;

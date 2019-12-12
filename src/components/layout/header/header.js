@@ -31,7 +31,7 @@ class Header extends React.Component {
           <Link to="/chocolate-process" className={`selected-tab ${selectTab === '/chocolate-process' && selectTab.slice(1)}`}>THE CHOCOLATE PROCESS</Link>
           <Link to="/sustainability" className={`selected-tab ${selectTab === '/sustainability' && selectTab.slice(1)}`}>SUSTAINABILITY</Link>
           <Link to="/products-services" className={`selected-tab ${(selectTab === '/products-services' || selectTab.slice(1).split('/').shift() === 'services') && 'products-services'}`}>PRODUCTS & SERVICES</Link>
-          <Link to="/customer" className={`selected-tab ${selectTab === '/customer' && selectTab.slice(1)}`}>OUR CLIENTS</Link>
+          <Link to="/our-clients" className={`selected-tab ${selectTab === '/our-clients' && selectTab.slice(1)}`}>OUR CLIENTS</Link>
           <Link to="/ideas-trends" className={`selected-tab ${selectTab === '/ideas-trends' && selectTab.slice(1)}`}>IDEAS & TRENDS</Link>
           <Link to="/value-proposition" className={`selected-tab ${(selectTab === '/value-proposition' || selectTab.slice(1).split('/').shift() === 'our-value') && 'value-proposition'}`}>OUR VALUE PROPOSITION</Link>
         </nav>
@@ -49,7 +49,7 @@ class Header extends React.Component {
             <Link to="/chocolate-process" className={`selected-tab ${selectTab === '/chocolate-process' && selectTab.slice(1)}`}><span>THE CHOCOLATE PROCESS</span></Link>
             <Link to="/sustainability" className={`selected-tab ${selectTab === '/sustainability' && selectTab.slice(1)}`}><span>SUSTAINABILITY</span></Link>
             <Link to="/products-services" className={`selected-tab ${(selectTab === '/products-services' || selectTab.slice(1).split('/').shift() === 'services') && 'products-services'}`}><span>PRODUCTS & SERVICES</span></Link>
-            <Link to="/customer" className={`selected-tab ${selectTab === '/customer' && selectTab.slice(1)}`}><span>OUR CLIENTS</span></Link>
+            <Link to="/our-clients" className={`selected-tab ${selectTab === '/our-clients' && selectTab.slice(1)}`}><span>OUR CLIENTS</span></Link>
             <Link to="/ideas-trends" className={`selected-tab ${selectTab === '/ideas-trends' && selectTab.slice(1)}`}><span>IDEAS & TRENDS</span></Link>
             <Link to="/value-proposition" className={`selected-tab separator ${(selectTab === '/value-proposition' || selectTab.slice(1).split('/').shift() === 'our-value') && 'value-proposition'}`}><span>OUR VALUE PROPOSITION</span></Link>
 

@@ -32,7 +32,7 @@ export default function BasicExample() {
         <Route path="/sustainability" component={Sustain} />
         <Route path="/products-services" component={Solutions} />
         <Route path="/services/:title/:item?" component={Services} />
-        <Route path="/customer" component={Customer} />
+        <Route path="/our-clients" component={Customer} />
         <Route path="/ideas-trends" component={Ryd} />
         <Route path="/value-proposition" component={ValuePropose} />
         <Route path="/our-value/:id" component={OurValue} />
