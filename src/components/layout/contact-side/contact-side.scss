@@ -55,9 +55,10 @@
       }
 
       &--list {
-        max-width: 280px;
-        min-height: 120px;
-        overflow: auto;
+        max-width: 298px;
+        height: 140px;
+        overflow-x: auto;
+        overflow-y: hidden;
         display: flex;
         //justify-content: space-between;
         margin: 1em 0;
@@ -75,12 +76,17 @@
         }
 
         p {
+          text-transform: capitalize;
           text-align: center;
           width: 270px;
+          height: 22px;
           padding: 5px;
           max-width: 90px;
           line-height: 1em;
           font-size: 9px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
 
         &-item-maracas {
