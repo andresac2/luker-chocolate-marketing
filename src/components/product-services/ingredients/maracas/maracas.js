@@ -9,7 +9,7 @@ class IngredientDragees extends React.Component {
       items: [{
         id: 1,
         img: 'chocolate-ingredients/maracas/chocolate-covered-physalis.jpg',
-        description: 'Covered Physalis',
+        description: 'dark chocolate Covered Physalis',
         available: 'Available in: 1 kg bag or 20 kg box',
         content: 'This tropical fruit is covered in dark chocolate creating the ideal balance between the fruit’s acidic flavour and the chocolate’s fruit and floral notes. Ideal for decorating cakes and desserts or on its own as a snack',
         selected: false
@@ -17,7 +17,7 @@ class IngredientDragees extends React.Component {
       {
         id: 2,
         img: 'chocolate-ingredients/maracas/chocolate-covered-espresso-beans.jpg',
-        description: 'covered espresso beans',
+        description: 'dark chocolate covered espresso beans',
         available: 'Available in: 1 kg bag or 15 kg box',
         content: 'The perfect combination. The best Colombian coffee beans, covered in generous layers of Fino de Aroma chocolate. Their shine and oval shape makes them different to other brands of chocolate-covered coffee beans. Ideal to go with coffee, as a snack, to include in your recipes or for decoration.',
         selected: false
@@ -25,7 +25,7 @@ class IngredientDragees extends React.Component {
       {
         id: 3,
         img: 'chocolate-ingredients/maracas/chocolate-covered-nib-clusters.jpg',
-        description: 'covered nibs clustes',
+        description: 'dark chocolate covered nibs clustes',
         available: 'Available in: 1 kg bag or 15 kg box',
         content: 'Small chunks of roasted Fino de Aroma cocoa covered in dark chocolate making for a delicious crunchy chocoaltey snack. Ideal as a snack and for including in recipes.',
         selected: false

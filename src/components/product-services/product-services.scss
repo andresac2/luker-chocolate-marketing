@@ -18,23 +18,27 @@
   }
 
   .product-carrousel {
-    @include vert-center;
+    //@include vert-center;
     align-items: center;
     position: relative;
     margin: auto;
     text-align: center;
     margin: 1em auto;
     z-index: 0;
+    //width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 790px;
 
     .carr-item {
       filter: blur(2px);
       flex: 1 1;
       position: relative;
       z-index: 1;
-      width: 15em;
+      width: 100%;
 
       &--moulding,
-      &--paning,
+      &--panning,
       &--dosing,
       &--casaluker-cacao,
       &--casaluker-maracas,
@@ -55,7 +59,7 @@
         background: #8AA130;
       }
 
-      &--paning::after {
+      &--panning::after {
         background: #7F5046;
       }
 
@@ -75,25 +79,25 @@
         background: #F2CB0E;
       }
 
-      img {
-        height: 10em;
-        object-fit: contain;
+      &-img {
+        img {
+          height: 10em;
+          object-fit: contain;
+        }
       }
 
-      h2,
-      p {
-        text-transform: uppercase;
-        color: #532C2E;
-      }
+      &-data {
 
-      h2 {
-        font-weight: 700;
-      }
+        h2,
+        p {
+          text-transform: uppercase;
+          color: #532C2E;
+        }
 
-      p {
-        width: max-content;
+        h2 {
+          font-weight: 700;
+        }
       }
-
 
       &--active {
         filter: none;
@@ -101,7 +105,7 @@
         &.carr-item {
 
           &--moulding,
-          &--paning,
+          &--panning,
           &--dosing,
           &--casaluker-cacao,
           &--casaluker-maracas,
@@ -164,7 +168,7 @@
       background: #8AA130;
     }
 
-    &--paning {
+    &--panning {
       background: #7F5046;
     }
 
@@ -241,7 +245,7 @@
     }
   }
 
-  @media (max-width: 992px) {
+  @media (max-width: 996px) {
     width: 100%;
 
     h2 {
@@ -255,11 +259,15 @@
     }
 
     .product-carrousel {
+      width: fit-content;
+      display: grid;
+      grid-template-columns: 30% 40% 30%;
+      margin: 1em auto;
+
       .carr-item {
-        width: 10em;
 
         &--moulding,
-        &--paning,
+        &--panning,
         &--dosing,
         &--casaluker-cacao,
         &--casaluker-maracas,
@@ -285,27 +293,45 @@
           &.carr-item {
 
             &--moulding,
-            &--paning,
+            &--panning,
             &--dosing,
             &--casaluker-cacao,
             &--casaluker-maracas,
             &--casaluker-origins {
               &::after {
-                left: calc(50% - 6em);
-                width: 12em;
-                height: 12em;
+                left: calc(50% - 5em);
+                width: 10em;
+                height: 10em;
               }
             }
 
           }
 
-          img {
-            height: 12em;
+          .carr-item-img {
+            height: 10em;
+
+            img {
+              height: 10em;
+            }
           }
 
           h2 {
             font-size: 2em;
           }
+
+          &--moulding,
+          &--panning,
+          &--dosing {
+            img {
+              width: 8em;
+              height: 10em;
+            }
+
+            h2 {
+              font-size: 2em;
+            }
+          }
+
         }
       }
 

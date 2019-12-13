@@ -147,7 +147,6 @@ class FlowTabs extends React.Component {
           <div onClick={() => this.tabToggle('coberturas')} className={`flow-tab-item flow-tab-item--coberturas flow-tab-item--${selectTab === 'coberturas' && 'active'}`}><span>REFINEMENT AND <br></br> CONCHING</span></div>
           <div onClick={() => this.tabToggle('producto')} className={`flow-tab-item flow-tab-item--producto flow-tab-item--${selectTab === 'producto' && 'active'}`}><span>FINISHED PRODUCTS </span></div>
         </div>
-        <div></div>
       </div >
     );
   }

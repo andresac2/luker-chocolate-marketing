@@ -3,13 +3,14 @@
   grid-template-rows: calc(100vh - 18em) 18em;
 
   @media screen and (max-width: 992px) {
-    grid-template-rows: calc(100vh - 22em) 16em 6em;
+    grid-template-rows: 60vh calc(40vh - 36px);
   }
 
 
   .flow-tab {
     display: grid;
-    transition: all ease 1s;
+    -webkit-transition: all ease .5s;
+    transition: all ease .5s;
 
     &-item {
       @include vert-center;
@@ -45,7 +46,7 @@
           }
 
           @media (max-width: 992px) {
-            font-size: 2em;
+            font-size: 1.5em;
 
           }
         }

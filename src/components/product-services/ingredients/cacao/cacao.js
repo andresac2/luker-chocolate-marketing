@@ -180,7 +180,7 @@ class IngredientCacao extends React.Component {
         </div>
         <div className="cacao-component--content">
           <p>{data.description}</p>
-          <p className="cacao-component--content-specifications">Available in: 2,5 bag or 20kg box<br /> Shelf life: Dark 24 months, Milk & White 14 months.</p>
+          <p className="cacao-component--content-specifications">Available in: 2,5 bag or 20kg box<br /> Shelf life: Dark 24 months, Milk 18 months & White 14 months.</p>
         </div>
         <div className="cacao-component-tabs">
           <div className="cacao-component-tabs-header">

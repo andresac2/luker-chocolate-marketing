@@ -34,8 +34,10 @@ class ProductServices extends React.Component {
             {
               Object.keys(items).map(i =>
                 <div key={i} className={`carr-item carr-item--${i == 1 && 'active'} carr-item--${items[i].id}`} onClick={() => this.reorderItems(items, (i === '0') ? 2 : 0, i)}>
-                  <div>
+                  <div className={`carr-item-img`}>
                     <img src={require('../../assets/img/' + (items[i].img ? items[i].img : altImg))} alt={items[i].name} />
+                  </div>
+                  <div className={`carr-item-data`}>
                     <p>{items[i].subtitle}</p>
                     <h2>{items[i].name}</h2>
                   </div>

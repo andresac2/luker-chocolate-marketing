@@ -14,8 +14,17 @@ class Header extends React.Component {
       showMenu: false
     };
   }
+
   menuToggle() {
     this.setState({ showMenu: !this.state.showMenu });
+  }
+
+  componentDidMount() {
+    if (this.props.location.pathname === '/')
+      setTimeout(() => {
+        console.log(this.props.location.pathname)
+        this.menuToggle();
+      }, 2000);
   }
   render() {
     const { history } = this.props;

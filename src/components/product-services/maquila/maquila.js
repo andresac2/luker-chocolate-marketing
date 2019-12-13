@@ -13,7 +13,7 @@ class Maquila extends React.Component {
       { description: 'DROPS 0,5G', img: 'drops-white.png', selected: false },
       { description: 'DROPS 6g', img: 'drops-mixed.png', selected: false },
       { description: 'CHUNKS 1 to 10 cm', img: 'chunks.png', selected: false }],
-      paning: [{ description: 'CACAO NIBS', img: 'cacao-nibs.jpg' }, { description: 'NIBS CLUSTERS', img: 'nibs-cluster.png' }, { description: 'QUINOA', img: 'quinoa.png' }, { description: 'GOLDEN BERRIES', img: 'golden-berries.png' }, { description: 'ESPRESSO BEANS', img: 'chocolate-ingredients/maracas/chocolate-covered-espresso-beans.jpg' }, { description: 'INSTANT COFFEE', img: 'chocolate-ingredients/maracas/chocolate-covered-instant-coffee.jpg' }],
+      panning: [{ description: 'CACAO NIBS', img: 'cacao-nibs.jpg' }, { description: 'NIBS CLUSTERS', img: 'nibs-cluster.png' }, { description: 'QUINOA', img: 'quinoa.png' }, { description: 'GOLDEN BERRIES', img: 'golden-berries.png' }, { description: 'ESPRESSO BEANS', img: 'chocolate-ingredients/maracas/chocolate-covered-espresso-beans.jpg' }, { description: 'INSTANT COFFEE', img: 'chocolate-ingredients/maracas/chocolate-covered-instant-coffee.jpg' }],
       moulding: [{ description: 'BARS', img: 'moulding-bars.png' }, { description: 'SHAPES', img: 'moulding-shapes.png' }]
     }
   }
@@ -38,7 +38,7 @@ class Maquila extends React.Component {
 
     const altImg = 'img-example.svg';
     const { product } = this.props;
-    const { itemsSelected, dosing, paning, moulding, hasSelected } = this.state;
+    const { itemsSelected, dosing, panning, moulding, hasSelected } = this.state;
 
     return (
       <div className="maquila-component" >
@@ -65,10 +65,10 @@ class Maquila extends React.Component {
                 <img src={require('../../../assets/img/' + (dosing[i].img ? dosing[i].img : altImg))} alt={dosing[i].id} />
                 {dosing[i].description}
               </div>)}
-            {product.name === 'Paning' && Object.keys(paning).map((i) =>
-              <div key={i} className="maquila-product-item" onClick={() => this.selectProduct(paning[i])}>
-                <img src={require('../../../assets/img/' + (paning[i].img ? paning[i].img : altImg))} alt={paning[i].id} />
-                {paning[i].description}
+            {product.name === 'Panning' && Object.keys(panning).map((i) =>
+              <div key={i} className="maquila-product-item" onClick={() => this.selectProduct(panning[i])}>
+                <img src={require('../../../assets/img/' + (panning[i].img ? panning[i].img : altImg))} alt={panning[i].id} />
+                {panning[i].description}
               </div>)}
             {product.name === 'Moulding' && Object.keys(moulding).map((i) =>
               <div key={i} className="maquila-product-item" onClick={() => this.selectProduct(moulding[i])}>

@@ -118,8 +118,8 @@ class WorkWithUs extends React.Component {
       variables
     ).then(res => {
       console.log('Email successfully sent!');
-      this.emailSent('Thank you for getting in touch! ', 'We appreciate you contacting us. One of our colleagues will get back in touch with you soon!');
-      //this.props.form.resetFields();
+      this.emailSent('Thanks for filling out our form!', `We will look over your message and get back to you in a few days. In the meantime, you can check our production proccess, look over our products collection or browse through our latest blog posts.`);
+      this.props.form.resetFields();
     })
       // Handle errors here however you like, or use a React error boundary
       .catch(err => (console.error('Oh well, you failed. Here some thoughts on the error that occured:', err), this.emailSent('Oh well, something failed', 'Check your conection and try again')));
@@ -174,7 +174,7 @@ class WorkWithUs extends React.Component {
             <Link to="/" className="logo"> <img src={logo} alt="Logo Luker" /></Link>
           </div>
           <h1>Work with us</h1>
-        </div >
+        </div>
         <div className={`work-with-us-content`}>
           <h2>Personal information</h2>
           <Form onSubmit={this.handleSubmit} className="curriculum-form">

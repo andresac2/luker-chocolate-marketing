@@ -31,8 +31,8 @@ class ProductsServices extends React.Component {
     const products = [
       {
         img: 'cocoa-grageas.png',
-        name: 'Paning',
-        id: 'paning',
+        name: 'Panning',
+        id: 'panning',
         description: 'We use the panning method for making our delicious chocolate covered dragees. Chocolate is slowly poured over dierent centers; can be dried fruits, cereals, coee beans, among other bite-size treats, creating a thin coating over them.'
       },
       {
@@ -55,14 +55,14 @@ class ProductsServices extends React.Component {
         description: 'The meticulous selection of ingredients is essential to achieve the unique sensory profile that characterizes our chocolate.We select the best Cacao Fino de Aroma cocoa beans from Colombia, Ecuador, and Peru.We also use 100% natural cocoa butter and vanilla for our couverture with an exquisite and particular flavor, ideal for chocolate products of all kinds.'
       },
       {
-        img: 'luker-arauca.png',
-        name: 'CasaLuker 1906',
+        img: 'p-arauca.png',
+        name: 'Luker 1906',
         subtitle: 'Single origin chocolates',
         id: 'casaluker-origins',
-        description: 'CasaLuker 1906 has a unique flavour that is given by the pureness of its origins. Made from selected beans from the different Cacao Fino de Aroma cocoa growing regions and countries, its flavour does not only reflect the cocoa variety, but also the richness of the soil and the cocoa harvesting and growing culture of its region. CasaLuker 1906, a treat for the senses.'
+        description: 'Luker 1906 has a unique flavour that is given by the pureness of its origins. Made from selected beans from the different Cacao Fino de Aroma cocoa growing regions and countries, its flavour does not only reflect the cocoa variety, but also the richness of the soil and the cocoa harvesting and growing culture of its region. Luker 1906, a treat for the senses.'
       }, {
         img: 'luker-maracas.png',
-        name: 'CasaLuker Maracas',
+        name: 'Luker Maracas',
         subtitle: 'Chocolate Dragees',
         id: 'casaluker-maracas',
         description: 'In the same way as that magical seductive instrument that characterises the happy upbeat feel of the tropics with its sweet and varied rhythm, CasaLuker Maracas presents a new range of chocolate-covered dragees. Filled with roasted coffee, roasted cocoa and sweet tropical fruits, these delightful dragees are covered in our finest Fino de Aroma chocolate. CasaLuker Maracas, Tropical Dragees are ideal for decorating desserts and cakes, to include in preparations, as toppings for ice - cream or simply to give that special touch to your recipes.They are also a good accompaniment for coffee and other hot drinks; they can be mixed in with cereals and dried fruit to prepare delicious, healthy snacks.'

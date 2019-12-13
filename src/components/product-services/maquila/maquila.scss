@@ -62,12 +62,12 @@
       position: relative;
       z-index: 1;
 
-      &--paning {
+      &--panning {
         margin-right: -1em;
       }
 
       &--moulding,
-      &--paning,
+      &--panning,
       &--dosing {
         &::after {
           content: '';
@@ -85,7 +85,7 @@
         background: #8AA130;
       }
 
-      &--paning::after {
+      &--panning::after {
         background: #7F5046;
       }
 
@@ -266,7 +266,7 @@
     .maquila-item {
 
       &--moulding,
-      &--paning,
+      &--panning,
       &--dosing {
         &::after {
           content: '';
