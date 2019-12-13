@@ -21,6 +21,7 @@ import WrappedContact from "./components/layout/contact/contact";
 import Page404 from "./components/layout/page404/page404";
 import NavArrowRight from "./components/layout/nav-arrows/nav-arrow-right";
 import NavArrowLeft from "./components/layout/nav-arrows/nav-arrow-left";
+import WrappedWorkWithUs from "./components/layout/work-with-us/work-with-us";
 
 export default function BasicExample() {
   return (
@@ -38,6 +39,7 @@ export default function BasicExample() {
         <Route path="/our-value" component={ValuePropose} />
         <Route path="/blog/:category?/:article?" component={Blog} />
         <Route path="/contact-us" component={WrappedContact} />
+        <Route path="/work-with-us" component={WrappedWorkWithUs} />
 
         <Route component={Page404} />
       </Switch>

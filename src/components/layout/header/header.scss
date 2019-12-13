@@ -38,7 +38,8 @@
   &-our-value {
     background: $light-gray;
   }
-
+  &-work-with-us{
+    background: $wine;
   */
 
   //  &:hover {
@@ -108,6 +109,8 @@
   .products-services::after,
   .our-clients::after,
   .ideas-trends::after,
+  .work-with-us::after,
+  .contac-us::after,
   .our-value::after {
     content: '';
     position: absolute;
@@ -144,6 +147,11 @@
 
   .our-value::after {
     border-bottom-color: $light-gray;
+  }
+
+  .work-with-us::after,
+  .contac-us::after {
+    border-bottom-color: $wine;
   }
 }
 
@@ -232,6 +240,15 @@
       }
     }
 
+    &-work-with-us,
+    &-contac-us {
+      border-top: 10px solid $wine;
+
+      &.header-component-responsive--tabs-visible {
+        border-bottom: 10px solid $wine;
+      }
+    }
+
     .intro,
     .chocolate-process,
     .sustainability,
@@ -239,6 +256,8 @@
     .our-clients,
     .blog,
     .ideas-trends,
+    .work-with-us,
+    .contac-us,
     .our-value {
       span {
         border-bottom-width: 2px;
@@ -289,6 +308,13 @@
     }
 
     .blog {
+      span {
+        border-bottom-color: $live-yellow;
+      }
+    }
+
+    .work-with-us,
+    .contac-us {
       span {
         border-bottom-color: $live-yellow;
       }
@@ -383,7 +409,9 @@
   .products-services::after,
   .our-clients::after,
   .ideas-trends::after,
-  .our-value::after {
+  .our-value::after,
+  .work-with-us::after,
+  .contac-us::after {
     border: none;
   }
 

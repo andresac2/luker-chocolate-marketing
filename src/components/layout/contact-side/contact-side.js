@@ -5,7 +5,7 @@ import FormItem from 'antd/lib/form/FormItem';
 class ContactSide extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { feedback: '', name: 'Name', email: 'email@example.com', country: 'Colombia' };
+    this.state = { feedback: '', name: 'Name', email: 'email@example.com', phone: '', country: 'Colombia', products: [] };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   countries = [
