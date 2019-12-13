@@ -51,7 +51,7 @@ class ModalDistributors extends React.Component {
     },
     {
       country: 'be',
-      company: 'LUKER CHOCOLATE EUROPA',
+      company: 'LUKER CHOCOLATE EUROPE',
       address: ' Kortrijkse Steenweg 1132, 9051 Gent, Bélgica',
       phone: '+32 (0) 9 245 04 60',
       fax: '+32 (0) 9 245 04 62',

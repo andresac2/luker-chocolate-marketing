@@ -14,7 +14,7 @@ class Ingredient1906 extends React.Component {
       }, {
         id: 2,
         img: 'p-tumaco-85.png',
-        description: 'EXTRA DARK TUMACO 65%',
+        description: 'EXTRA DARK TUMACO 85%',
         selected: false
       },
       {
@@ -80,7 +80,7 @@ class Ingredient1906 extends React.Component {
           <img src={require('../../../../assets/img/chocolate-ingredients/origins/origenes-line-up.png')} alt='Products Origins' />
         </div>
         <div className="i1906-component--content">
-          <h2>UNIQUE ORIGIN</h2>
+          <h2>SINGLE ORIGIN</h2>
           <p>CasaLuker 1906, SANTANDER, HUILA, TUMACO and ARAUCA. Four Colombian Origin Chocolates with flavours that reflect the country’s geographic and cultural diversity. Santander cocoa is cultivated in the Andes; Tumaco, in the tropical forests of the Pacific Coast and Huila cocoa is typical of the region’s deep valleys. In Arauca, cocoa grows in wild landscapes between the snow-capped mountains and valleys of the Orinoco. Mountains, forests and valleys: CasaLuker 1906, the chocolate with an inimitable flavour of the land that it grows in.</p>
           <p className="i1906-component--content-specifications">Available in: 2,5 bag or 20kg box<br /> Shelf life: Dark 24 months, Milk & White 14 months.</p>
         </div>

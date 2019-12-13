@@ -245,9 +245,9 @@ class Sustain extends React.Component {
                     <img src={require('../../assets/img/' + (items[i].img ? items[i].img : altImg))} alt={items[i].title} />
                     <p>{items[i].title}</p>
                     <div className="card-badges" >
-                      {(items[modalSelectedIndex].badges).map((badge, i) =>
-                        <div key={i} className={`card-badge`}>
-                          <img src={require('../../assets/img/badges/' + badge)} alt={items[modalSelectedIndex].title} />
+                      {(items[i].badges).map((badge, j) =>
+                        <div key={j} className={`card-badge`}>
+                          <img src={require('../../assets/img/badges/' + badge)} alt={items[i].title} />
                         </div>)}
                     </div>
                   </div>)}

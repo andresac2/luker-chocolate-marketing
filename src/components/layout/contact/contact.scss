@@ -72,7 +72,8 @@ $Extra-large: 1200px;
     .ant-select-selection--single {
       border-radius: 0;
       height: 50px;
-      display: grid;
+      display: flex;
+      align-items: center;
       border-color: #846961;
     }
 

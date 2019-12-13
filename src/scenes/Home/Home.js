@@ -45,7 +45,7 @@ class Home extends React.Component {
               <h1>113 YEARS</h1>
               <h2>OF TRADITION</h2>
             </div>
-            <p>We are a family company with over 110 years of tradition built on a dream, where chocolate is the source of inspiration and the opportunity to transform communities. We provide unique chocolate as an ingredient for other food companies and we manufacture finished products for other brands</p>
+            <p>We are a family company with over 110 years of tradition built on a dream, where chocolate is the source of inspiration and the opportunity to transform communities. We provide unique chocolate as an ingredient for other food companies and we manufacture finished products for other brands.</p>
           </div>
           <div className="dist">
             <div className="dist-text">

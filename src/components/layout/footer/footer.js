@@ -29,7 +29,7 @@ class Footer extends React.Component {
             </ul>
           </div>
           <div className="footer-component-data">
-            <h2>LUKER CHOCOLATE EUROPA</h2>
+            <h2>LUKER CHOCOLATE EUROPE</h2>
             <ul>
               <li>Kortrijksesteenweg 1132</li>
               <li>9051 Sint-Denjis-Westrem, Belgium</li>

@@ -7,7 +7,7 @@ class OurAroma extends React.Component {
     super(props);
     this.state = {
       selectedItem: 0,
-      items: ['ONLY ABOUT 8% OF THE WORLD’S COCOA IS CONSIDERED CACAO FINO DE AROMA', '76% of Cacao Fino de Aroma is produces in Colombia, Ecuador, Peru, and Venezuela.']
+      items: ['ONLY ABOUT 8% OF THE WORLD’S COCOA IS CONSIDERED CACAO FINO DE AROMA', '76% of Cacao Fino de Aroma is produced in Colombia, Ecuador, Peru, and Venezuela.']
     };
   }
   carrAction(direction) {
@@ -25,7 +25,7 @@ class OurAroma extends React.Component {
     return (
       <div className="our-aroma-component" >
         <h1>WHAT DOES CACAO FINO DE AROMA MEAN?</h1>
-        <p>The denomination fine or flavour cocoa or Cacao Fino de Aroma is a classification of the International Cocoa Organization (ICCO) that describes our cocoa as unique in the world for its exquisite fruity and flowery aromas and flavour with nutty malt notes. Our cocoa of origin will guarantee that your products are top quality and differentiated from other chocolates on the market.</p>
+        <p>The denomination fine flavour cocoa or Cacao Fino de Aroma is a classification of the International Cocoa Organization (ICCO) that describes our cocoa as unique in the world for its exquisite fruity and flowery aromas and flavour with nutty malt notes. Our cocoa of origin will guarantee that your products are top quality and differentiated from other chocolates on the market.</p>
         <div className="our-aroma-component--separator">
           <FiChevronLeft className={`our-aroma-component--separator-btn ${selectedItem === 0 && 'btn-inactive'}`} onClick={() => this.carrAction('l')} />
           <FiChevronRight className={`our-aroma-component--separator-btn our-aroma-component--separator-btn--right ${selectedItem === items.length - 1 && 'btn-inactive'}`} onClick={() => this.carrAction('r')} />

@@ -48,7 +48,7 @@ class ProductsServices extends React.Component {
       }];
     const ingredients = [
       {
-        img: 'luker-cacao.png',
+        img: 'milk-heliconia-41.png',
         name: 'CasaLuker Cacao',
         subtitle: 'THE BEST INGREDIENTS',
         id: 'casaluker-cacao',

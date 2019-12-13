@@ -46,14 +46,14 @@ class FlowTabs extends React.Component {
           <div className={`flow-content-component--text ${statusOpened ? 'opened' : 'close'}`} onClick={() => { this.handleCheck(statusOpened, 'left') }} >
             {selectTab === 'cacao' &&
               <div>
-                <p>The denomination fine or flavour cocoa or Cacao Fino de Aroma is a classification of the International Cocoa Organization (ICCO) that describes our cocoa as unique in the world for its exquisite fruity and flowery aromas and flavour with nutty malt notes. Our cocoa of origin will guarantee that your products are top quality and differentiated from other chocolates on the market. <strong>We only work with Cacao Fino de Aroma.</strong></p>
-                <p><strong>ONLY ABOUT 8% OF THE WORLD’S COCOA IS CONSIDERED CACAO FINO DE AROMA - 76% OF CACAO FINO DE AROMA IS PRODUCED IN COLOMBIA, ECUADOR, PERÚ, AND VENEZUELA</strong></p>
+                <p>The denomination fine flavour cocoa or Cacao Fino de Aroma is a classification of the International Cocoa Organization (ICCO) that describes our cocoa as unique in the world for its exquisite fruity and flowery aromas and flavour with nutty malt notes. Our cocoa of origin will guarantee that your products are top quality and differentiated from other chocolates on the market. <strong>We only work with Cacao Fino de Aroma.</strong></p>
+                <p><strong>ONLY ABOUT 8% OF THE WORLD’S COCOA IS CONSIDERED CACAO FINO DE AROMA, 76% OF CACAO FINO DE AROMA IS PRODUCED IN COLOMBIA, ECUADOR, PERU, AND VENEZUELA.</strong></p>
               </div>
             }
 
             {selectTab === 'granjeros' &&
               <div>
-                <p>The cocoa harvest is a critical stage to achieve a good fermentation process that achieves the flavor characteristics of chocolate. The quality of the cocoa obtained depends on good harvest management. The cocoa harvest consists of the cut of the ripe cocoa pods that are identified by the change of color in the shell. The ripe pods are collected at different points in the cocoa area, and then the shell is broken in one place to remove the cocoa in drool.</p>
+                <p>The cocoa harvest is a critical stage in good fermentation process that achieves the flavor characteristics of chocolate. The quality of the cocoa obtained depends on good harvest management. The cocoa harvest consists of the cut of the ripe cocoa pods that are identified by the change of color in the shell. The ripe pods are collected at different points in the cocoa area, and then the shell is broken in one place to remove the cocoa in drool.</p>
                 <p>Growing cocoa is a hard task. 90% of the world’s cocoa is grown on small family farms by about 6 million farmers who earn their living from growing and selling cocoa beans. Cocoa trees grow in tropical environments, within 10 degrees of latitude from the equator. The ideal climate for growing cocoa is hot, rainy, and tropical, with lush vegetation to provide shade for the cocoa trees. Cocoa trees are grafted to guarantee good cocoa characteristics.</p>
               </div>
             }
@@ -61,7 +61,7 @@ class FlowTabs extends React.Component {
             {selectTab === 'abastecimiento' &&
               <div>
                 <p>Once the cocoa has been harvested and classified, it is ready for the next stage. This begins with fermentation, which occurs when sugars and starches break down into acids or alcohol. Cocoa beans with its pulp are placed in wooden boxes where the fermentation process takes place. This is a key stage in the production of many types of food and beverages, including coffee, alcohol, and cocoa.</p>
-                <p>After the fermentation process, the grains are ready for drying. This is another crucial step in order to improve the taste of cocoa. The beans are exposed to sunlight in order to reduce the water content and eliminate some acids naturally present in cocoa. (complementar con bullets de sostenibilidad)</p>
+                <p>After the fermentation process, the grains are ready for drying. This is another crucial step in order to improve the taste of cocoa. The beans are exposed to sunlight in order to reduce the water content and eliminate some acids naturally present in cocoa.</p>
               </div>
             }
 
