@@ -630,6 +630,11 @@ input::placeholder {
       width: 90vw;
     }
 
+    &-header h1 {
+      font-size: 9vw;
+      //font-size: 2.5em;
+    }
+
     &-header-badges {
       width: inherit;
       left: calc((100% - 90vw) / 2);

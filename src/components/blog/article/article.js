@@ -1,10 +1,9 @@
 import React from 'react';
 import { Breadcrumb, Icon } from 'antd';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { FaFacebookF, FaLinkedinIn, FaPrint, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 import Comments from '../comments/comments';
-
 
 class Article extends React.Component {
   constructor(props) {
@@ -22,7 +21,7 @@ class Article extends React.Component {
     const fullUrl = window.location.href;
     return (
       <div className="blog-article" ref={this.myRef}>
-        <div className="blog-article-title-resp">{data.title}</div>
+        {!window.location.href.includes('sustainability') && <div className="blog-article-title-resp">{data.title}</div>}
         <div className="blog-article-bread">
           <Breadcrumb>
             {data.breads &&
@@ -49,7 +48,7 @@ class Article extends React.Component {
           <div className="blog-article-autor--data">
             <h2>{data.autor.name}</h2>
             <span>{data.autor.details}</span>
-            <p>{data.autor.description}</p>
+            {/*<p>{data.autor.description}</p>*/}
             <a href={data.autor.linkedin[0]} target="_blank" ><FaLinkedinIn /> {data.autor.linkedin[1]}</a>
           </div>
         </div>}

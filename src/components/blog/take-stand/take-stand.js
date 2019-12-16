@@ -46,7 +46,7 @@ function TakeStand(props) {
         }
       </div>
       <div className="blog-layout-articles">
-        {Object.keys(props.articles.reverse()).map(i =>
+        {Object.keys(props.articles).map(i =>
           <div className="blog-layout-articles--item" key={i}>
             <Link to={'/blog/' + category + '/' + props.articles[i].url} className="blog-layout-latest--article">
               <img src={imgs[randomNum(limImgs)]} />
