@@ -29,14 +29,20 @@
     font-size: 4em;
     position: absolute;
     top: -1em;
+    left: calc(50% - 28px);
     @include bounce-top(3s);
   }
 
   &-nav {
     display: none;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     margin-top: .5em;
     margin-bottom: 2em;
+
+    :nth-child(2) {
+      display: none;
+    }
 
     a {
       z-index: 0;

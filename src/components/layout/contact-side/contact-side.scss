@@ -130,9 +130,14 @@
 
     &-terms {
       font-weight: 500;
-      line-height: 1em;
+      margin-top: -0.5rem;
+      line-height: 1.2em;
       font-size: smaller;
       color: #fff;
+
+      a {
+        font-weight: 800;
+      }
     }
   }
 
@@ -150,6 +155,10 @@
       backdrop-filter: blur(4px);
       -webkit-backdrop-filter: blur(4px);
       opacity: .8;
+    }
+
+    .contact-form-terms a:hover {
+      color: #D5B777;
     }
 
     .contact-form-button {
@@ -176,6 +185,10 @@
       opacity: .9;
     }
 
+    .contact-form-terms a:hover {
+      color: #532C2E;
+    }
+
     .contact-form-button {
       background: #532C2E;
     }
@@ -194,6 +207,10 @@
       backdrop-filter: blur(4px);
       -webkit-backdrop-filter: blur(4px);
       opacity: .9;
+    }
+
+    .contact-form-terms a:hover {
+      color: #F4C710;
     }
 
     .contact-form-button {
@@ -216,6 +233,10 @@
       opacity: .9;
     }
 
+    .contact-form-terms a:hover {
+      color: #532C2E;
+    }
+
     .contact-form-button {
       background: #532C2E;
     }
@@ -236,6 +257,10 @@
       opacity: .9;
     }
 
+    .contact-form-terms a:hover {
+      color: #F4C710;
+    }
+
     .contact-form-button {
       background: #F4C710;
     }
@@ -254,6 +279,10 @@
       backdrop-filter: blur(4px);
       -webkit-backdrop-filter: blur(4px);
       opacity: .9;
+    }
+
+    .contact-form-terms a:hover {
+      color: #532C2E;
     }
 
     .contact-form-button {

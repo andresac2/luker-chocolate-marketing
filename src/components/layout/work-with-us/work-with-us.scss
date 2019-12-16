@@ -116,9 +116,14 @@ $Extra-large: 1200px;
       text-transform: uppercase;
     }
 
-    &-terms {
-      font-size: smaller;
-      color: #fff;
+  }
+
+  &-terms {
+    font-size: smaller;
+
+    a {
+      font-weight: 700;
+      color: #532C2E;
     }
   }
 

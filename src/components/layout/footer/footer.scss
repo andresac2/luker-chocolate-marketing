@@ -67,6 +67,17 @@ $Extra-large: 1200px;
       list-style-type: none;
       font-size: smaller;
     }
+
+    a {
+      font-weight: 500;
+      line-height: 1.2em;
+      color: #fff;
+
+      &:hover {
+        font-weight: 700;
+      }
+
+    }
   }
 
   &-link {

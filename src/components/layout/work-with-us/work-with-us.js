@@ -4,8 +4,8 @@ import FormItem from 'antd/lib/form/FormItem';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/img/Lukerlogo.svg'
 import Footer from '../footer/footer';
-import moment from 'moment';
-
+import termsConditions from '../../../assets/documents/policies/Términos y condiciones de uso sitio web CasaLuker inglés 16dic2019.pdf';
+import privacyPolicy from '../../../assets/documents/policies/Política privacidad sitio web CasaLuker inglés 16dic2019.pdf';
 
 class WorkWithUs extends React.Component {
 
@@ -263,7 +263,7 @@ class WorkWithUs extends React.Component {
                 Send
               </Button>
             </Form.Item>
-            <p>By clicking "send" you agree to the terms and conditions and our privacy policy.</p>
+            <p className="work-with-us-terms">By clicking "send" you agree to the <a href={termsConditions} target="_blank">terms and conditions</a> and our <a href={privacyPolicy} target="_blank">privacy policy</a>.</p>
           </Form>
         </div>
         <Footer />

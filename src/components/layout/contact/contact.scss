@@ -103,7 +103,11 @@ $Extra-large: 1200px;
 
     &-terms {
       font-size: smaller;
-      color: #fff;
+
+      a {
+        font-weight: 700;
+        color: #532C2E;
+      }
     }
   }
 

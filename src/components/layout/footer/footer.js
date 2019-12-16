@@ -3,6 +3,10 @@ import logo from '../../../assets/img/Lukerlogo.svg'
 import { Link } from 'react-router-dom';
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
 
+import termsConditions from '../../../assets/documents/policies/Términos y condiciones de uso sitio web CasaLuker inglés 16dic2019.pdf';
+import privacyPolicy from '../../../assets/documents/policies/Política privacidad sitio web CasaLuker inglés 16dic2019.pdf';
+import antiFraud from '../../../assets/documents/policies/Política antifraude y anticorrupción inglés 16dic2019.pdf';
+import dataTreatment from '../../../assets/documents/policies/Política tratamiento datos personales CasaLuker inglés 16dic2019.pdf';
 
 class Footer extends React.Component {
   constructor(props) {
@@ -37,6 +41,17 @@ class Footer extends React.Component {
               <li>+32(0) 9 2450460</li>
             </ul>
           </div>
+          {mode === 'vertical' &&
+            <div className="footer-component-data">
+              <h2>OUR POLICIES</h2>
+              <ul>
+                <li><a href={termsConditions} target='_blank'>Terms and conditions</a></li>
+                <li><a href={privacyPolicy} target='_blank'>Website Privacy Policy</a></li>
+                <li><a href={antiFraud} target='_blank'>Anti-fraud and Anti-corruption policy</a></li>
+                <li><a href={dataTreatment} target='_blank'>Personal data processing policy</a></li>
+              </ul>
+            </div>
+          }
           <div className="footer-component-link">
             <Link to="/work-with-us">WORK WITH US</Link>
             <Link to="/contact-us">CONTACT US</Link>

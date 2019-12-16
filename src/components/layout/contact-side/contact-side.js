@@ -1,6 +1,8 @@
 import React from 'react'
 import { Form, Select, Input, Button, InputNumber, Modal } from 'antd';
 import FormItem from 'antd/lib/form/FormItem';
+import termsConditions from '../../../assets/documents/policies/Términos y condiciones de uso sitio web CasaLuker inglés 16dic2019.pdf';
+import privacyPolicy from '../../../assets/documents/policies/Política privacidad sitio web CasaLuker inglés 16dic2019.pdf';
 
 class ContactSide extends React.Component {
   constructor(props) {
@@ -237,7 +239,7 @@ class ContactSide extends React.Component {
                 Submit
               </Button>
             </Form.Item>
-            <p className="contact-form-terms">By clicking "send" you agree to the terms and conditions and our privacy policy.</p>
+            <p className="contact-form-terms">By clicking "send" you agree to the <a href={termsConditions} target="_blank">terms and conditions</a> and our <a href={privacyPolicy} target="_blank">privacy policy</a>.</p>
           </Form>
         </div>
       </div >
