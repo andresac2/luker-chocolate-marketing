@@ -56,12 +56,12 @@
 
       &--list {
         max-width: 298px;
-        height: 140px;
+        height: 120px;
         overflow-x: auto;
         overflow-y: hidden;
         display: flex;
         //justify-content: space-between;
-        margin: 1em 0;
+        margin: 0 0 1em 0;
 
         &-item {
           cursor: pointer;
@@ -80,12 +80,13 @@
           text-align: center;
           width: 270px;
           height: 22px;
-          padding: 5px;
+          padding: 0 5px;
           max-width: 90px;
           line-height: 1em;
           font-size: 9px;
           white-space: nowrap;
           overflow: hidden;
+          font-weight: 500;
           text-overflow: ellipsis;
         }
 
@@ -94,6 +95,30 @@
           background: #fff;
           width: 90px;
           color: #61822E;
+        }
+
+        &-item-maquila {
+          cursor: pointer;
+          box-shadow: 0px 3px 6px #00000029;
+          background: #fff;
+          width: 90px;
+          height: 90px;
+          align-self: center;
+          color: #61822E;
+
+          img {
+            height: calc(90px - 1em);
+            object-fit: contain;
+          }
+
+          &-dmw {
+            @include vert-center;
+            align-items: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: larger;
+            margin: 0 1em;
+          }
         }
       }
     }
@@ -104,6 +129,8 @@
     }
 
     &-terms {
+      font-weight: 500;
+      line-height: 1em;
       font-size: smaller;
       color: #fff;
     }

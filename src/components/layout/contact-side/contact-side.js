@@ -89,6 +89,7 @@ class ContactSide extends React.Component {
       abrev: 'us'
     }
   ]
+
   handleSubmit = e => {
     e.preventDefault();
     const templateId = 'contact_form_luker';
@@ -204,12 +205,19 @@ class ContactSide extends React.Component {
                 {products &&
                   <div className="contact-form-products--list">
                     {products.filter(item => item.selected).length > 0 ?
-                      Object.keys(products.filter(item => item.selected)).map(i =>
-                        <div key={i} className={`contact-form-products--list-item`} onClick={() => this.props.handleSetProductSelected(products.filter(item => item.selected)[i])}>
-                          <img src={require('../../../assets/img/' + (products.filter(item => item.selected)[i].img ? products.filter(item => item.selected)[i].img : altImg))} alt={products.filter(item => item.selected)[i].id} />
-                          <p className={`contact-form-products--list-item-${page}`} >{products.filter(item => item.selected)[i].description}</p>
-                        </div>)
-                      : <span>{page === 'maquila' ? 'Choose an option from the list' : 'Pick your choice from the list of products'}</span>}
+                      page !== 'maquila' ?
+                        Object.keys(products.filter(item => item.selected)).map(i =>
+                          <div key={i} className={`contact-form-products--list-item`} onClick={() => this.props.handleSetProductSelected(products.filter(item => item.selected)[i])}>
+                            <img src={require('../../../assets/img/' + (products.filter(item => item.selected)[i].img ? products.filter(item => item.selected)[i].img : altImg))} alt={products.filter(item => item.selected)[i].id} />
+                            <p className={`contact-form-products--list-item-${page}`} >{products.filter(item => item.selected)[i].description}</p>
+                          </div>)
+                        : <><div className={`contact-form-products--list-item-${page}`} onClick={() => this.props.handleSetProductSelected()}>
+                          <img src={require('../../../assets/img/' + products[0].img)} alt={products[0].description} />
+                          <p>{products[0].description}</p>
+                        </div>
+                          <div className={`contact-form-products--list-item-${page} contact-form-products--list-item-${page}-dmw`} onClick={() => this.props.handleSetProductSelected()}>{products[1]}</div></>
+                      : <span>{page === 'maquila' ? 'Choose an option from the list' : 'Pick your choice from the list of products'}</span>
+                    }
                   </div>
                 }
               </div>
@@ -218,7 +226,7 @@ class ContactSide extends React.Component {
               {getFieldDecorator('message', {
                 rules: [{ required: true, message: 'Please leave us a comment!' }],
               })(
-                <TextArea rows={4} placeholder="Comments" />
+                <TextArea rows={3} placeholder="Comments" />
               )}
             </FormItem>
             <Form.Item>

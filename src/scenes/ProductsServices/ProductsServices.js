@@ -48,14 +48,14 @@ class ProductsServices extends React.Component {
       }];
     const ingredients = [
       {
-        img: 'milk-heliconia-41.png',
+        img: 'milk-atlantico-33.png',
         name: 'CasaLuker Cacao',
         subtitle: 'THE BEST INGREDIENTS',
         id: 'casaluker-cacao',
         description: 'The meticulous selection of ingredients is essential to achieve the unique sensory profile that characterizes our chocolate.We select the best Cacao Fino de Aroma cocoa beans from Colombia, Ecuador, and Peru.We also use 100% natural cocoa butter and vanilla for our couverture with an exquisite and particular flavor, ideal for chocolate products of all kinds.'
       },
       {
-        img: 'p-arauca.png',
+        img: 'p-huila-70.png',
         name: 'Luker 1906',
         subtitle: 'Single origin chocolates',
         id: 'casaluker-origins',
@@ -65,7 +65,7 @@ class ProductsServices extends React.Component {
         name: 'Luker Maracas',
         subtitle: 'Chocolate Dragees',
         id: 'casaluker-maracas',
-        description: 'In the same way as that magical seductive instrument that characterises the happy upbeat feel of the tropics with its sweet and varied rhythm, CasaLuker Maracas presents a new range of chocolate-covered dragees. Filled with roasted coffee, roasted cocoa and sweet tropical fruits, these delightful dragees are covered in our finest Fino de Aroma chocolate. CasaLuker Maracas, Tropical Dragees are ideal for decorating desserts and cakes, to include in preparations, as toppings for ice - cream or simply to give that special touch to your recipes.They are also a good accompaniment for coffee and other hot drinks; they can be mixed in with cereals and dried fruit to prepare delicious, healthy snacks.'
+        description: 'In the same way as that magical seductive instrument that characterises the happy upbeat feel of the tropics with its sweet and varied rhythm, Luker Maracas presents a new range of chocolate-covered dragees. Filled with roasted coffee, roasted cocoa and sweet tropical fruits, these delightful dragees are covered in our finest Fino de Aroma chocolate. Luker Maracas, Tropical Dragees are ideal for decorating desserts and cakes, to include in preparations, as toppings for ice - cream or simply to give that special touch to your recipes.They are also a good accompaniment for coffee and other hot drinks; they can be mixed in with cereals and dried fruit to prepare delicious, healthy snacks.'
       }];
 
     return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Breadcrumb, Icon } from 'antd';
 import { Link } from 'react-router-dom';
-import { FaFacebookF, FaLinkedinIn, FaPrint, FaInstagram } from 'react-icons/fa';
+import { FaFacebookF, FaLinkedinIn, FaPrint, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 import Comments from '../comments/comments';
 
@@ -19,7 +19,7 @@ class Article extends React.Component {
   render() {
     const { data } = this.props;
     const altImg = 'img-example.svg';
-
+    const fullUrl = window.location.href;
     return (
       <div className="blog-article" ref={this.myRef}>
         <div className="blog-article-title-resp">{data.title}</div>
@@ -37,9 +37,9 @@ class Article extends React.Component {
             </Breadcrumb.Item>
           </Breadcrumb>
           <div className="blog-article-bread--social">
-            <a href="https://www.facebook.com/LukerChocolate/" target="_blank" ><FaFacebookF /></a>
-            <a href="https://www.instagram.com/lukerchocolate/" target="_blank" ><FaInstagram /></a>
-            <a href="https://www.linkedin.com/company/lukerchocolate/" target="_blank" ><FaLinkedinIn /></a>
+            <a href={'https://www.facebook.com/sharer/sharer.php?u=' + fullUrl} target="_blank" ><FaFacebookF /></a>
+            <a href={'https://twitter.com/home?status=' + fullUrl} target="_blank" ><FaTwitter /></a>
+            <a href={'https://www.linkedin.com/shareArticle?mini=true&url=' + fullUrl} target="_blank" ><FaLinkedinIn /></a>
             <a href="" target="_blank" ><FaPrint /></a>
           </div>
         </div>
