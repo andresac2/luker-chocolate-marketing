@@ -86,13 +86,16 @@ class Blog extends React.Component {
     {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/take-stand', name: 'Take a stand' }],
       url: 'manifesto–under-the-tree',
+      cover: 'cocoa-forest.jpg',
       title: 'MANIFESTO – UNDER THE TREE',
       date: 'APRIL 2019',
       content: `<p>Our existence is condensed into a collection of moments, experiences, anecdotes, and conversations.  For us, it is the latter that makes things happen; memorable events that you never forget, events that transcend, that mark the difference and change the world. At Luker Chocolate, we believe that memorable conversations do not happen just anywhere. Ours, for example, have taken place under a tree.</p>
 <p>Most of the people that work here grew up under cocoa trees, just like the thousands of farmers that work with us today spend much of their lives in their shade. At Granja Luker, our cocoa research centre, visitors from all over the world have been able to have hot chocolate for breakfast under gigantic legendary trees, many of which they have planted with their own hands.</p>
 <p>But why do we place so much importance on the trees? Because the great conversations of our grandparents and parents on the future, those from which they found inspiration and made transcendental decisions, did not take place in an office with them dressed in a suit and tie; quite the contrary, they took place under the leaves of trees as they wore their ponchos and hats.</p>
 <p>In our Cocoa Forest in Necoclí, we have been witness to the shade of the mythic Campano; an old tree that has sheltered different communities for generations, from the indigenous to the cocoa farmers, offering a space in its shade where people could sit to converse. We have dreamt, laughed, and cried under this tree.  We have found something relating to our humanity, we have connected with our roots, culture, and history. It is under this tree that we have forgotten our titles and our social condition, we have been equal; we have been sincere, we have confessed our greatest secrets and happily shared our differences.</p>
+<img src="/static/media/bosque-necocli.12b8874a.jpg" alt="Necoclí Forest">
 <p>We have been chocolatiers in Colombia for 113 years and, even so, sometimes we forget that it is thanks to a tree that we can do what we do. There are no cocoa trees in Switzerland, in Belgium or France. They are here in Colombia, and they are part of our history.</p>
+<img src="/static/media/cocoa-forest-friends.64e7c5c5.jpg" alt="Cocoa friends">
 <p>We hope that the readers of this blog find an open space in which to talk and to share and build ideas. A safe place, where they can take off their masks as though they were under the shade of a great tree.</p>
 `,
       autor: { name: 'SERGIO RESTREPO', avatar: 'https://media.licdn.com/dms/image/C4E03AQEU_fSBYnqwnw/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=pqJb74EtssHW43ajcC8aeRAErFY_wdDFWW8NCbfjXzE', details: 'Marketing Vice-president', description: 'I see chocolate as a tool of change. I am interested in sharing experiences with entrepreneurs, entrepreneurs and leaders who bet and believe in disruptive innovation, in shared value, in technology and in putting people at the center of the conversation.', linkedin: ['https://www.linkedin.com/in/sergiorestrepogutierrez/', 'Sergio Restrepo'] },
@@ -101,12 +104,14 @@ class Blog extends React.Component {
     {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/chocolate-dream', name: 'The chocolate dream' }],
       url: 'the-birth-of-a-dream',
+      cover: 'the-birth-of-a-dream.jpg',
       title: 'THE BIRTH OF A DREAM',
       date: 'JUNE 2019',
-      content: `<quote>“I have a dream for which we need the joint effort of many… I want to set up a chocolate factory”.</quote>
+      content: `<q>I have a dream for which we need the joint effort of many… I want to set up a chocolate factory.</q>
 <p>It was with this statement that José Jesús Restrepo founded Luker Chocolate 113 years ago. A company with a vision that even today, five generations later, is preserved, not only in one man and his family but in the hearts of the company’s 1000 plus collaborators.</p>
 <p>Over a century later, the dream has grown. We know that we can contribute more to the country through chocolate and we are sure that, with the support of many, this idea is beginning to consolidate and become a model in which rural Colombia and its inhabitants are the protagonists. We no longer dream of just a chocolate factory; our purpose today is to transform lives through it.</p>
 <p>The true story of Luker Chocolate’s social responsibility and sustainability is the account of a family legacy that started as a dream, and was then built and extended with all its members. In the search for Luker Chocolate’s highest purpose, we went back to look for its roots and found many stories of the legacy of a family, its values and convictions.</p>
+<img src="/static/media/the-birt-of-a-dream-1.38cc0657.jpg" alt="">
 <p>Let’s start with Maria de Restrepo, who was a member of Luker Chocolate’s founding family. Every Saturday, in Manizales, she would stand at her window to give out chocolate to the homeless for the sole reason of consoling them and making sure they had food in their stomachs. At that time, there had been no research on the “happiness of eating chocolate”, but what she did and the chocolate she gave out must have comforted many.</p>
 <p>Jaime Restrepo, founder of the Luker Foundation, is said to have supported anyone who approached him with a great idea, he would spend time listening to their ideas and he financed some of these projects. In time, this gave rise to the foundation, which later had a great benefactor, Inés Restrepo Mejía, who has always supported causes around children, education and women. She decided to leave all her legacy to the foundation, today allowing the implementation of programs that have had a great positive impact in Manizales, in terms of education and entrepreneurship.</p>
 <p>The story goes on thanks to the new generations of the family which continues to build the country. Many of them have been involved in social projects, foundations, a vocation for service, and the conviction that with the effort of many, it is possible to build a dream. All of the above is the inspiration for the construction of a sustainable model in which we want Luker Chocolate to last another 100 years as a business. We want it to be able to contribute to all those around us, our collaborators, farmers, their families and our customers around the world.</p>
@@ -117,6 +122,7 @@ class Blog extends React.Component {
 <p>We capitalized on all the good practices of more than 110 years in a model of integrated intervention in the territories, not only in Necocli, but also in Casanare, Huila, Tumaco and, in the med-term, the other cocoa-growing parts of the country. We know that we are responsible for the course Colombia is taking and for our planet. We want the Colombian countryside to become a protagonist, not because of the suffering caused by the violence, but because of its prosperity, its dignity, its potential for development, its knowledge, its art and its culture.</p>
 <p>We have fully integrated our value chain to achieve this, first humanizing its links. We are no longer talking about raw materials but about farmers and communities; we are no longer talking about the transformation of cocoa but about equipment with purpose; we are not only talking about income but also about clients with life projects. We are also looking to make our value chain not linear but circular, so that the client can give something back to the countryside through projects created by us and financed by them, in order to improve the living conditions of the communities and farmers who work day by day to bring the best chocolate to their country.</p>
 <p>The Chocolate Dream manages to open new dialogues with anyone who has a product made with our chocolate on their mind. Luker Chocolate is of the best quality but also carries within it the history of our Colombian countryside.</p>
+<img src="/static/media/the-birth-of-a-dream.68663234.jpg" alt="">
 <p>We know that many of us can join together to turn this dream into a movement that can travel the world. This is why The Chocolate Dream will soon open its doors so that all those who want to contribute with their knowledge, their experience and their time, can find a place where they can do so at Luker Chocolate.</p>
 `,
       autor: { name: 'JUANA BOTERO', avatar: 'https://media.licdn.com/dms/image/C5603AQFburD-lKe7tQ/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=OrPNQWmiurHcatseEVuDih5SDGN16X30sgHlTTP8ymg', details: 'Sustainability Director', description: 'Lawyer from Eafit University with an emphasis on public international law from the University of Salamanca, Spain. Current Director of Sustainability at Luker Chocolate where she works to improve the living conditions of rural cocoa farming communities.', linkedin: ['https://www.linkedin.com/in/juana-botero-62a78958/', 'Juana Botero'] },
@@ -126,6 +132,7 @@ class Blog extends React.Component {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/create-shared-value', name: 'Create shared value' }],
       url: 'what-do-we-mean-by-a-brand-with-purpose',
       title: 'WHAT DO WE MEAN BY A BRAND WITH PURPOSE?',
+      cover: 'brick-luker.jpg',
       date: 'JUNE 2019',
       content: `<p>Before we can talk about a brand with purpose or a product with purpose, we have to define the purpose of a business.</p>
 <p>In essence, the purpose of a business is to make a profit by satisfying needs. We can say that those businesses that effectively satisfy a need, and at the same time manage to charge enough to cover their costs and generate a profit, will have created economic value.</p>
@@ -134,6 +141,7 @@ class Blog extends React.Component {
 <p>Towards the end of 2018, I had the opportunity to attend Professor Michael Porter’s Shared Value course at Harvard Business School. Professor Porter and his team invite us to reflect on how we have grown with the conventional wisdom that believes that social problems need to be solved by the government and NGOs, but not by companies. This road that we have travelled for decades is leading us to the destruction of our planet. Society in general has not been effective in solving the most serious problems. We are not on the right track. This is not the way forward.</p>
 <p>I firmly believe that within the concept of shared value, at its core, a new notion of business strategy can be found and represents a real and powerful disruption to our understanding of business. Although it is a concept that is maturing in different ways, only the bravest entrepreneurs —those who dare to work with it—will help refine its understanding. Creating shared value means solving a social problem through a business model; a business that thinks like a business and manages to create economic value as a result of solving a social problem. And it is precisely the ability to create economic value —profit—that allows us to think about sustainable and scalable solutions, which is something that typically NGOs or governments cannot do.</p>
 <p>In addition to the concept of shared value, there are many other lines of thinking that point towards a common interest. Among them, I invite you to study the powerful initiatives led by Sir Ronald Cohen and his ideas on Impact Investment, the vision of B-Lab and its growing and inspiring B-Corp movement, the different approaches within conscious capitalism and many other working groups and their experiences that we will be discussing on our blog. Independent of the academic preferences and affinities of each of the approaches, what I really want to invite our customers, suppliers, allies, entrepreneurs and businesspeople to do, is to start asking ourselves very seriously: What is the role we want our companies and our brands to play in the urgent mission to change the direction of our society? How can we reinterpret the role of business, to provide solid solutions to relevant problems?</p>
+<img src="/static/media/unique-flavour.b9eb31ba.jpg" alt="Luker brand">
 <p>At Luker Chocolate we firmly believe that companies have perhaps the most powerful capacity to offer real and scalable solutions to pressing and urgent problems. We also believe that it is important to share experiences and lessons learnt. We have a certain optimism and celebrate alongside an increasingly large group of companies around the world who have been encouraged to understand business as a tool for change. These include existing companies, as well as the strong wave of new social entrepreneurs who we should encourage, help, and empower.</p>
 <p>At Luker Chocolate, over the past 113 years, we have been sensitive to trying to help different communities, essentially thanks to a set of values ​​inherited across five generations. Throughout our history, we have tried different approaches, from philanthropy, corporate social responsibility, to social work by the Luker Foundation on education and entrepreneurship issues. For some years, we have been evolving that interest to try to incorporate the idea of ​​shared value at the heart of the business strategy. I have to say that it has not been easy, or fast. It is not a clear or simple path, especially as this is a business that is already up and running, and so this implies the rethinking of multiple activities as we go along. One of the most complex challenges that we are looking at today has to do precisely with measuring social impact and its correlation with the creation of economic value for the company. However, despite the challenges and demands, and although there are many elements that are still under construction, from my professional experience it has been a wonderful journey. We have followed a path that has allowed us to innovate and visualize new ways in which our operation and business model can positively impact society. The journey has been rewarding in its humanity.</p>
 <p>Along our journey, we have been able to stop to reflect and explore our industry’s most complex problems, namely, the way the cocoa-producing territories in Colombia where we work have been marked by historical violence, drugs, illegality, poverty, lack of opportunities, and lack of infrastructure and education, among many others. Seeing these problems from the perspective of shared value has led us to innovate, to try to solve things. And it is innovation that is an indispensable tool for the incorporation of shared value into a strategy. Innovation represents an absolute priority when trying to solve complex social problems and, at the same time, create economic value. Given that these adverse conditions are unchartered territory, it is experimentation that allows us to learn and deal with the different challenges. All the efforts will start to make sense only when we begin to see the tangible social results.</p>
@@ -153,6 +161,7 @@ class Blog extends React.Component {
     {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/create-shared-value', name: 'Create shared value' }],
       url: 'the-right-spark',
+      cover: 'spark-woman.jpg',
       title: 'THE RIGHT SPARK',
       date: 'JULY 2019',
       content: `<p>No, it is not a song. Nor is it a declaration of love. It is a momentous search that I carried out over the last two years for the solution to the most brutal professional challenge that I have come up against. Let me tell you all about it…</p>
@@ -184,6 +193,8 @@ class Blog extends React.Component {
 <p>And how are we doing today? There is still a long way to go, there are so many things that can be improved and, most importantly, there are still conversations to be had. But the journey is more pleasant when small triumphs are celebrated.</p>
 <p>Never forget that “everything burns if you apply enough spark.”</p>
 <p>I present to you the people who worked this magic:</p>
+<img src="/static/media/cocoa-friends-5.e3d39bad.jpg" alt="Cocoa Workers">
+<img src="/static/media/cocoa-worker.4139fa73.jpg" alt="Cocoa worker">
     `,
       autor: {
         name: 'CRISTIAN CHU', avatar: 'https://media.licdn.com/dms/image/C4E03AQHLclm7u9XKIg/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=WjGN2LsdE9JD7XbCR7nKbDeK8KEejiW0DF3Qcx4HLZQ', details: 'Supply Chain Vicepresident', description: 'Electronic engineer with more than 10 years of experience in operations management and supply chain in the food and beverage sector. Passionate about generating intrapreneurships and working for a higher purpose.', linkedin: ['https://www.linkedin.com/in/cristian-chu-salgado-ba55b140/', 'Cristian Chu']
@@ -192,8 +203,9 @@ class Blog extends React.Component {
     },
     {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/create-shared-value', name: 'Create shared value' }],
-      url: 'in-the-shoes-of-the-cocoa-farmers-of-huila',
-      title: 'IN THE SHOES OF: THE COCOA FARMERS OF HUILA',
+      url: 'in-the-shoes-of-the-cocoa-farmers-of-huila-part-one',
+      title: 'IN THE SHOES OF: THE COCOA FARMERS OF HUILA PART ONE',
+      cover: 'banner-julio.jpg',
       date: 'JULY 2019',
       content: `<p>This series is based on the experience of three of our collaborators who went to Huila to live and work as cocoa farmers. In this first story, José Maldonado, Sustainable Supply Analyst, tells us about his experience.</p>
 <p>From a very young age, the countryside and I have been inseparable. My paternal grandfather is a veterinarian and has been a milk producer all his life, while my maternal grandfather is a coffee farmer, as were his ancestors for several generations. I’ve always been proud of the Colombian countryside and I’ve identified myself as part of it, so much so that I have often told people that I am from the countryside with my head held high.</p>
@@ -219,6 +231,7 @@ class Blog extends React.Component {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/create-shared-value', name: 'Create shared value' }],
       url: 'cacao-fino-de-aroma-colombias-cultural-and-historical-heritage',
       title: 'CACAO FINO DE AROMA: COLOMBIA’S CULTURAL AND HISTORICAL HERITAGE',
+      cover: 'banner-cacaos.jpg',
       date: 'JULY 2019',
       content: `<p>Today, after having developed a success story around Colombian Cacao Fino de Aroma throughout the world, and opening a market not only for Luker Chocolate but for all the country’s cocoa farmers, we want to go back and think about the road traveled, analyse the present, and think about what will come next.</p>
 <p>One of our most important advantages, which has been difficult to replicate by other companies in the world, is our ability -developed over more than 100 years- to play with the different types of cocoa available to maintain consistency in the taste of chocolate, day after day and year after year, so that our customers can always enjoy the very best Colombian chocolate. To make drinking chocolate like Luker Tradicional, one of the products in our Colombian portfolio that is made 100% of cocoa liquor, and to ensure that it maintains its flavour through the years, is something that is still difficult to believe by many of our competitors, who know that the flavour of cocoa changes slightly in each harvest.</p>
@@ -236,19 +249,24 @@ class Blog extends React.Component {
     {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/chocolate-dream', name: 'The chocolate dream' }],
       url: 'pinta-caribia-dreaming-in-colors-while-painting-a-brighter-reality',
+      cover: 'banner-chocolate.jpg',
       title: 'PINTA CARIBIA: DREAMING IN COLORS WHILE PAINTING A BRIGHTER REALITY',
       date: 'JULY 2019',
       content: `<p>In The Chocolate Dream, we believe that to fulfill a dream, the union of many is required, and we firmly believe in art and culture as detonators of development.</p>
 <p>This is the story of our first volunteering, a tale where art and teamwork were integrated to take the first step —of many we have given so far—intending to generate development in one of the cocoa regions where we work.</p>
+<img src="/static/media/cocoa-friends-9.c4af0582.jpg" alt="Pinta caribia men">
 <p>Our cocoa forest in Necoclí employs people from nearby towns, full of passion and eager to master the cultivation of cocoa, provide for their families and lead the progress of their communities. Among our cocoa farmers, we have 70 workers from Caribia, a small village that is part of the subregion of Urabá, Antioquia, Colombia.</p>
 <p>For some time now, its inhabitants began to train as technicians in sustainable tourism and voiced their enthusiasm towards turning their village into a touristic destination, taking advantage of its historical wealth —it was the first settlement in the area and had a tremendous ethnic diversity—. This was an excellent opportunity to support the Caribia community by helping them spread to the world the energy and generosity their people carry in their hearts, and their relentless desire to move forward. We were thrilled to display that inner beauty into the community, by transforming Caribia into a vibrant touristic destination. With this grand challenge on our hands, Luker Chocolate recruited happy volunteers to paint the Caribia dream in colors, and this is how Pinta Caribia was born.</p>
 <p>For us Pinta Caribia is more than just an initiative, it is the tangible metaphor and magical realism that exists around the cocoa pod, that not only nurtures the beans but also nurtures lives and builds dreams around it.  With our hearts filled with empathy and lots of excitement, the sustainability team of The Chocolate Dream started to materialize the execution of Pinta Caribia.</p>
+<img src="/static/media/cocoa-friends-7.4768f7ff.jpg" alt="Pinta caribean girls">
 <p>This is how we got in touch with the Orbis-Pintuco Foundation (organization with experience generating development through education and color in vulnerable populations throughout Colombia) and together we saw the potential of doing an artistic day in which volunteers from Luker Chocolate and inhabitants of Caribia would paint as a team until the last house of the village.</p>
 <p>The Orbis-Pintuco Foundation helped us to create a program in which 20 young people from Caribia applied to be trained as technicians in painting. Now we only needed the materials, because we had to collect 500 gallons of paint. Between the Orbis Pintuco Foundation, Luker Chocolate and its collaborators, we collected donations to reach the goal. Additionally, 30 of our collaborators, including the management committee, travelled as volunteers to participate in Pinta Caribia, the name we decided to put on this initiative and work shoulder to shoulder with the workers of our farm.</p>
 <h3>PAINTING A DREAM</h3>
+<img src="/static/media/cocoa-friends-8.b85e34a1.jpg" alt="Girl painting">
 <p>And the big day finally arrived, on June 22nd, more than 30 volunteers and Caribans united their efforts around the dream of turning Caribia into the most colorful place in Necoclí. The palette was carefully selected to represent the colors found in the cultivation of cocoa, colors that for the Caribia population have a deep meaning: blue symbolizing tranquility, green representing the peace found in the village, yellow representing the prosperity achieved in the cocoa fields and red for the love they have for their community and families.</p>
 <p>Each volunteer helped two families to paint their houses while receiving assistance from the inhabitants who had previously been trained by the Orbis-Pintuco Foundation. Also, the community was responsible for preparing breakfast, lunch and food, thus concretizing great teamwork and strengthening the links between Luker Chocolate and the community.</p>
 <p>Shoulder to shoulder, despite the heat and exhaustion, we worked for a common goal and this effort was reflected in the results: 100 houses were painted that day, from the primary school, community center, nursery, to the playgrounds.</p>
+<img src="/static/media/growing-comunity.598f55e2.jpg" alt="Cocoa community">
 <p>The Chocolate Dream colors covered more than 100 houses in the small town, and these colors tell the story of how dreaming together and working together can make dreams a beautiful reality. Today we want to thank the community of Caribia for allowing us to connect with their dreams, open the doors of their homes and let us fill their lives with color and chocolate; without a doubt, they also painted our hearts. </p>
 `,
       autor: {
@@ -258,10 +276,11 @@ class Blog extends React.Component {
     },
     {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/create-shared-value', name: 'Create shared value' }],
-      url: 'in-the-shoes-of-the-cocoa-farmers-of-huila-2',
-      title: 'IN THE SHOES OF: THE COCOA FARMERS OF HUILA',
+      url: 'in-the-shoes-of-the-cocoa-farmers-of-huila-part-two',
+      cover: 'harvesting-3.jpg',
+      title: 'IN THE SHOES OF: THE COCOA FARMERS OF HUILA PART TWO',
       date: 'AUGUST 2019',
-      content: `<quote>Thank you, God, for the food before us today and for giving us the blessing of being able to enjoy it. We pray for those who do not have enough to eat, for the sick, for prisoners, and the kidnapped. We thank you for the opportunity to meet here today and for the presence of these doctors and engineers who have come to help us progress, to improve our countryside, our farms, and our lives. Amen</quote>.  Prayer of Don Jesús, cocoa farmer in Huila.
+      content: `<q>Thank you, God, for the food before us today and for giving us the blessing of being able to enjoy it. We pray for those who do not have enough to eat, for the sick, for prisoners, and the kidnapped. We thank you for the opportunity to meet here today and for the presence of these doctors and engineers who have come to help us progress, to improve our countryside, our farms, and our lives. Amen</q>.  Prayer of Don Jesús, cocoa farmer in Huila.
 <p>Standing with his eyes closed, and holding hands with the people around him, this was the prayer that Jesus Augusto Gomez uttered aloud before inviting us to the table. The chicken sancocho had been prepared on a wood-burning stove as you could tell by its smoky taste, by the smell of wood in the air, and by the smoke blowing out from Doña Elvira Quintero de Gómez roof. The table was laid with a classic hand-woven tablecloth, very typical of Colombian peasant houses, with plates from different sets collected over the years and cutlery of different styles and shapes. The soup, the main course and a delicious agua de panela were arranged in each one of the 8 carefully placed spaces at Doña Elvira’s wooden table. In total, there were 11 of us, so after the prayer, Don Jesus, his wife Doña Elvira, and their son “El Mono”, moved to let the guests sit down and have lunch first. He said we were the priority. In spite of having worked all morning on his farm harvesting cocoa under the Huila sun (Colombia), and at the age of 75, he refused to sit down as a gesture of hospitality.</p>
 <p>The four of us from Bogotá were, in fact, complete strangers to this cocoa family. We had asked the associations ASOPROCAR and ASOPECA to take us to visit a farm in the region, because we wanted to learn about their reality, live in their environment for a few hours, and spend time with them for no other reason than to listen to what they had to tell us.</p>
 <p>I have to confess that when we arrived in Huila, I had no clear idea of how they were going to receive us. I thought that our visit would make them suspicious because it’s not a common thing to do. We had arrived suddenly hoping to get into a family’s personal space for an entire day in exchange for nothing. I thought they would refuse to receive us or ask us what we were really there for. What would happen if you suddenly arrive at a house in Bogotá and asked to stay there all day? To my surprise, we were greeted with a big smile and a contagious kindness.</p>
@@ -281,19 +300,23 @@ class Blog extends React.Component {
     {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/take-stand', name: 'Take a stand' }],
       url: 'united-for-the-cocoa-growing-communities-of-colombia',
+      cover: 'cocoa-friends.jpg',
       title: 'UNITED FOR THE COCOA-GROWING COMMUNITIES OF COLOMBIA',
       date: 'AUGUST 2019',
       content: `<p>Enhancing the countryside and boosting Colombia’s cocoa-growing communities is the driving force behind El Efecto Cacao, an alliance between Luker Chocolate, Luker Foundation, USAID Colombia, Enel-Emgesa, Fundación Saldarriaga Concha and Universidad EAFIT, which works for the rural and inclusive development of cocoa-growing communities in Bajo Cauca, Urabá and South Centre of Huila.</p>
+<img src="/static/media/el-efecto-cacao.bc6f7bc9.jpg" alt="Efecto Cacao">
 <p>To make El Efecto Cacao a reality, the private and public sectors need to work hand in hand. The private sector has a long-term vision, greater stability in policies and strategies, capacity to generate value through the market, contacts with international volunteers, and, in our case, Luker Chocolate is inherently interested in cocoa producers, their families and their communities.</p>
 <p>Through its Global Development Alliances (GDA) model, the U.S. Agency for International Development (USAID) provides effective assistance to developing countries through public-private partnerships. To execute this model, the country must demonstrate that it has private companies with the capacity to invest resources in community purposes, connecting solutions with economic activities that produce shared value. This is where all the actors in this alliance play a fundamental role.</p>
 <p>Luker Chocolate and the Luker Foundation sought resources from USAID to contribute to The Chocolate Dream, a long-term vision for leading social and economic development in cocoa-producing regions. The Luker Foundation also provides a crosscutting focus on education and entrepreneurship. The initiative was backed by Universidad EAFIT with its experience in improving productive associations to generate development in rural territories; Fundación Saldarriaga Concha with the Universidad del Norte and its “ReHaSer” Program, which seeks to generate resilience skills in the most marginalized territories of the country; and Enel-Emgesa, which develops social and environmental projects in the area of influence of the Quimbo Dam.</p>
 <h3>BUT HOW DOES EL EFECTO CACAO WORK?</h3>
 <p>The focus of the agreement is on small-scale cocoa producers who while benefiting from a social and economic impact also bring stability to their family and community. We support small-scale cocoa producers, but with no sense of paternalism. The first commitment comes from the producers themselves who have to invest resources in their farms and implement all the necessary improvement practices. The total investment is 35 million dollars, donated by all the actors that are part of this alliance. The funds will be executed in the next 5 years, which is how long the project will run.</p>
 <p>Luker Chocolate offers its business crops in Urabá and Huila as a model of inclusive rural development for producers to receive technical support, appropriate better technologies, and take advantage of distribution channels.</p>
+<img src="/static/media/paint-window.40d79a05.jpg" alt="Painting window">
 <p>The agreement provides all the tools that, from our experience with the cocoa-growing communities, we know are useful: training; agricultural extension; renovation pruning; transitory shade seeds; soil analysis; fertilizers; administrative, technical and commercial advice for the associations; support in entrepreneurship, formal education for children, youth and adults; psychological support; and, finally, institutional relationship to manage other sources of support according to the specific needs of the beneficiary population.</p>
 <h3>WHERE ARE WE GOING?</h3>
+<img src="/static/media/cocoa-friends-4.28b994d9.jpg" alt="Efecto Cacao People">
 <p>Our goal is to increase the productivity of 1340 hectares of cocoa, strengthen 17 cocoa associations, accompany 20 entrepreneurial initiatives, and strengthen the academic and social-emotional skills of 1561 people.</p>
-<p>e are convinced that this type of public-private partnership is a clear example of the scope of good cooperation practices and the great results that can be achieved when working hand in hand. Without doubt, El Efecto Cacao will change the lives of many families and serve as an example of rural development for the world.</p>
+<p>We are convinced that this type of public-private partnership is a clear example of the scope of good cooperation practices and the great results that can be achieved when working hand in hand. Without doubt, El Efecto Cacao will change the lives of many families and serve as an example of rural development for the world.</p>
 <p>We invite you to keep an eye on the project’s advances. Don’t forget to leave your comments below.</p>
 `,
       autor: { name: 'JULIA OCAMPO', avatar: 'https://media.licdn.com/dms/image/C4E03AQFUGeFloCcVFw/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=NJf7kTdRi6NTIdp250nSBA81HPnpIPN6KQYUr1Tl0uI', details: 'COP The Cocoa Effect at Fundación Luker', description: '', linkedin: ['https://www.linkedin.com/in/julia-ocampo-4725376/', 'Julia Ocampo'] },
@@ -302,15 +325,18 @@ class Blog extends React.Component {
     {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/take-stand', name: 'Take a stand' }],
       url: 'cocoa-friends',
+      cover: 'cocoa-friends-6.jpg',
       title: 'COCOA FRIENDS',
       date: 'AUGUST 2019',
       content: `<p>Before working at Luker Chocolate as a trainee at Granja Luker, our cocoa research and training center, I imagined that I would work in an office with white walls and full of computers, but I was very wrong.</p>
 <p>When I arrived at Granja Luker, my welcome committee was made up of a pack of very grumpy dogs who wouldn’t let me in, because they, good guard dogs that they are, are in charge of keeping the farm safe. It was only after I managed to come in closer to them that they let me in so I could get to my new job. Without knowing it, one of the dogs -Peggy- would become my inseparable adventure companion. It was then that I realized that this was not a typical job because from then on my working days would be spent in the middle of a cocoa forest and my time shared with hundreds of different species.</p>
+<img src="/static/media/cocoa-friends-dog.e4e80138.jpg" alt="Cocoa friend Peggy">
 <p>Plants, and crops in general, are known to harbor an immense number of insects and animals, but deforestation and the intensive use of monocultures have caused them either to migrate or to increase their populations disproportionately, to such an extent that they are considered pests. Forest plantations in Colombia have been used for commercial purposes and as strategic tools for the restoration of degraded soils and the conservation of water resources; however, the effect of forest plantations on local diversity has been insufficiently evaluated, especially in the role they play as habitats for the restoration and conservation of biodiversity (Haggar et al., 1997, Barlow et al., 2007, Mitra and Sheldon 1993). In the case of Luker Chocolate, we have implemented agroforestry systems both on Granja Luker and on our cocoa farms in Necoclí (550 ha) and Casanare (1,000 ha), thus promoting biodiversity and an optimal environment for the conservation of autochthonous fauna and flora.</p>
 <p>But how do we measure the biodiversity we promote with our crops? Birds are used as an indicator of a region’s biodiversity because their abundance and occurrence is influenced by the characteristics and composition of the habitat with which they are associated, because they are relatively easy to observe, and they can be counted at large scales (GREGORY, 2006); RAMÍREZ-ALBORES AND RAMÍREZ-CEDILLO, 2002). Only in our cocoa forest in Necocli, there are 96 different bird species, almost 10% of the total number of birds reported in Colombia.</p>
 <p>At Granja Luker, we measure biodiversity not only based on the presence of birds but also on the many other species that inhabit the crop’s ecosystem and that, in time, have become cocoa friends. Here are some of my most memorable anecdotes involving some of them.</p>
 <p>On my first day of work, I decided to tour the farm with Peggy. As we walked, she started barking and frantically chasing after a group of birds. As I got closer, I realized that these animals were not in the cocoa field by chance; on the contrary, they were setting traps on the cocoa fruits to attract insects that would become their food.</p>
 <p>Little by little, the day progressed, and it was soon time for lunch. In an ordinary office, lunchtime is usually a time to interact with our colleagues, and although that was what I was hoping for, it was not the case, since my colleagues were a little different. As I approached the dining room -to which the herd of dogs had come too- 1 km away from the main house, I came across chickens that were also looking for food, as well as a couple of hungry ducks and a parrot that shouted “quiere cacao?”.</p>
+<img src="/static/media/cocoa-friends-2.5bfa3000.jpg" alt="Cocoa friend parrot">
 <p>A month later, I went to gather fruit with the farmworkers under a completely clear sky; the day was sunny, and I felt that nothing wrong could happen. But all of a sudden, I felt as though I was being electrocuted. I started screaming and the workers, used to such things, told me to take my shirt off because I was being stung by tiny wasps. I listened to them and managed to get rid of the insects, but then I decided to go back to see what had stung me, only to get stung again. I had been warned that in life one has both good and bad bosses, that some of them may even be moody, but I do not think that anyone has been so severely judged by a boss as I was by those wasps; surely that was their way of telling me that I had to be more respectful of their home.</p>
 <p>The ecosystem at La Granja also includes some white worms that are colloquially called gusano pollo or chicken worms and that appear at certain times of the year. The first time I heard about them was when a farmer was pruning the trees, and one of these worms bit him and left him with a fever all day long. These animals are very common and go unnoticed as they feed on the leaves and live below them.</p>
 <p>One day, everything was suddenly completely different. As we crossed a guadua bridge, we came across a small friend who could be terrifying for some people and fascinating for others: a snake found in some trees near a creek that crosses through the farm. When we saw it, I panicked and decided to move away a little, but it was used to seeing humans and didn’t get upset. One of the workers took it in his hands to take pictures of her, as it was one of the “pets” that belonged to the farm and, as they are often killed in the region, this one was being protected by the workers. After the photo was taken, the worker put it back in its den, while I recovered from the shock!</p>
@@ -326,6 +352,7 @@ class Blog extends React.Component {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/what-you-didnt-know', name: 'What you didn’t know' }],
       url: 'a-chocolate-a-day-keeps-the-doctor-away',
       title: 'A CHOCOLATE A DAY, KEEPS THE DOCTOR AWAY',
+      cover: 'finished-product-title.jpg',
       date: 'AUGUST 2019',
       content: `<p>Few people are aware of the great benefits of regular cocoa consumption; the vast majority of consumers are convinced (some by medical recommendations) that cocoa and/or chocolate are harmful to health. In order to solve this dispute, Luker Chocolate’s research area, in association with research centres in Colombia and Italy (University of Molise – Campo Basso, Sannio Tech – Benevento, and University of Brescia), characterised the cocoa from Colombia, Ecuador and Peru, and for over four years have developed a variety of experimental designs, including preclinical and clinical studies with 50 volunteers. Once the results were obtained, we discussed them with a group formed by the most renowned cardiologists, nutritionists, nutritionists, dermatologists, sportsmen, etc.</p>
 <p>Today, we have enough scientific and technical evidence to be able to assert that regular consumption of cocoa helps to improve and protect people’s health. But how much chocolate should we consume? Our recommendation is two servings of chocolate powder a day or one of dark chocolate for at least one month. This will help you to:</p>
@@ -352,14 +379,15 @@ class Blog extends React.Component {
     {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/take-stand', name: 'Take a stand' }],
       url: 'healing-with-art-part-one',
+      cover: 'healing-with-art.jpg',
       title: 'HEALING WITH ART: Part one',
       date: 'SEPTEMBER 2019',
       content: `<p><small><b>Editor’s note:</b> Last year, we worked with Transhuella in an artistic project that gathered painting and photography to recognise the cultural heritage of the surrounding communities of our cocoa forest in Necocli. From their experience, they built a book full of stories and, today, we bring you the first one.</small></p>
-<quote>“Train people well so that they can leave, treat them well so that they won’t want to”</quote>
+<q>Train people well so that they can leave, treat them well so that they won’t want to</q>
 <small>– Richard Branson, Founder of Virgin</small>
 <p></p>
 <p>In our imaginary, Luker Chocolate, is without doubt the yellow packaging that contains the chocolate that we drink once we stop drinking our mothers’ milk.  Hot chocolate is served even in the hottest climates in Colombia and in every family it represents genuine love and gives rise to expressions such as “Oh”, “Goodness”, “It’s boiling”, when they burn themselves.</p>
-<p><i>Nowhere is hot chocolate served as hot as it is in Colombia.<i></p>
+<q>Nowhere is hot chocolate served as hot as it is in Colombia.</q>
 <p>There is something at Luker Chocolate that goes that bit further. There is a story of tradition and success of innovation and belonging, a story of responsibility that only few know.</p>
 <p>A company with a large portfolio of products, sufficient to supply everything that a home needs, to give life and colour to our corner shops. In Colombia, we don’t have to go very far to buy what we need and say hello to our neighbours on the way.</p>
 <p>There is a star product with a unique flavour that hypnotises people in the several blocks surrounding the main offices in main cities such as Bogotá: the smell of COCOA.</p>
@@ -370,16 +398,18 @@ class Blog extends React.Component {
 <p>Sustainable companies are about understanding that the workers, employees, raw material, and surroundings are as important as their owners.</p>
 <p>Does social responsibility not imply involving other people to make them fall in love with the meaning behind an individual effort turned common cause? In society, responsibility is shared; we all have something to contribute.</p>
 <p>To our surprise, there is a team behind this great brand thinking not about how to show society its contribution (beyond the daily energy their chocolate gives us) but rather, about how to have an impact on the lives of those who make the Chocolate Dream come true.</p>
+<img src="/static/media/nina.9b48b347.jpg" alt="girl">
 <p>Mother and daughter, Rosalba and Silvia, say that Luker Chocolate is synonymous to blessings and opportunities. Silvia works with Luker Chocolate, and Rosalba, despite not doing so, has felt a positive impact on the region since the arrival of the company that has taken up residence in their hearts. A company that embarked on developing its business hand-in-hand with the community that surrounds its cocoa plantations in Necoclí, and not only those who work with them directly.</p>
 <p>Without doubt, the presence of Luker Chocolate has given this community life and has driven its dreams, even for those who are not directly related to the company.</p>
 <p>Luker Chocolate takes risks when it builds the country; it is an example for the Colombian business sector.</p>
 <p>It’s true that chocolate is celebrated around the world… But only a magical place can understand the importance of celebrating the fruit from which this food is produced, a sweet, a product with as many facets and uses as the variety in its colours.</p>
 <p>Caribia has 438 inhabitants, 438 voices that sing at the Cocoa Festival’s dawn ceremony:</p>
-<p><i>“Viene que ya viene, viene el Festival, Crece la cosecha vamo’ a celebrar</i></p>
-<p><i>Viene que ya viene, viene el Festival se unen las familias, todas por igual”.</i></p>
-<p><i>“The Festival is coming, coming, it is coming. The harvest is growing, let’s celebrate</i></p>
-<p><i>It’s coming, the Festival’s coming. The families come together, each and every one.”</i></p>
+<p><i>“Viene que ya viene, viene el Festival, Crece la cosecha vamo’ a celebrar</i>
+<i>Viene que ya viene, viene el Festival se unen las familias, todas por igual”.</i>
+<i>“The Festival is coming, coming, it is coming. The harvest is growing, let’s celebrate</i>
+<i>It’s coming, the Festival’s coming. The families come together, each and every one.”</i></p>
 <p>The Cocoa Festival is another opportunity for commotion at Luker Chocolate. They work alongside the community, paint the children’s smiling faces, share a cup of hot chocolate and a bowl of stew, everyone participates equally; they bring a team of outgoing and sociable professionals to remind the community of Caribia that without them, the chocolate would not taste as good.</p>
+<img src="/static/media/abrazo.55a56497.jpg" alt="Festival Cacao">
 <p>At Transhuella we are proud to work with Luker Chocolate, a company that grows hand-in-hand with the country.</p>
 <p>We want to contribute to Colombia’s transformation.</p>
 `,
@@ -390,6 +420,7 @@ class Blog extends React.Component {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/create-shared-value', name: 'Create shared value' }],
       url: 'sustainability-a-matter-of-sectors',
       title: 'SUSTAINABILITY, A MATTER OF SECTORS?',
+      cover: 'banner-guacamayo.jpg',
       date: 'SEPTEMBER 2019',
       content: `<p>The concept of sustainability has been defined, and redefined, by many over the last decade. It is a subject everyone talks about: experts, non-experts, young people, adults, business people, and government officials. Some place special emphasis on environmental issues; others, on social, economic issues; and others still, on the relationships between all the components. There are great discussions about what it means, or rather, about the paths we must trace as a planet in order to be sustainable. Concepts, interests, cultures, etc. come up against each other, but we all seem to agree that it is a matter of temporariness. How do we meet today’s needs without compromising tomorrow’s? The United Nations managed to get the whole world to look in the same direction: the Sustainable Development Goals that marked out a path that we must follow as humanity in order to live with dignity, guaranteeing resources for future generations.</p>
 <p>UNITED NATIONS MANAGED TO GET THE WHOLE WORLD TO LOOK IN THE SAME DIRECTION: THE SUSTAINABLE DEVELOPMENT GOALS THAT MARKED OUT A PATH THAT WE MUST FOLLOW AS HUMANITY IN ORDER TO LIVE WITH DIGNITY, GUARANTEEING RESOURCES FOR FUTURE GENERATIONS.</p>
@@ -413,7 +444,7 @@ class Blog extends React.Component {
 <p>The public sector cannot be sustainable without the private; the private sector cannot be sustainable without the public, but to this formula, I suggest adding two new fundamental actors: academia and the community, the other two major players.</p>
 <p>It is only by aligning efforts between these sectors that it will be possible to speak of sustainability since each of them has unique, indispensable, and irreplaceable characteristics that end up being the key pieces for the construction of sustainable cities, countries, and planet.</p>
 <p>To be able to work together, we must create systems, tools, methodologies, look for common ground and, fundamentally, before any development that allows articulation, we must, as human beings who compose these sectors, leave our ego to one side, leave our comfort zone, be willing to work with different people, break with the stereotypes of different sectors and think empathetically.</p>
-<p>THE PUBLIC SECTOR CANNOT BE SUSTAINABLE WITHOUT THE PRIVATE; THE PRIVATE SECTOR CANNOT BE SUSTAINABLE WITHOUT THE PUBLIC, BUT TO THIS FORMULA, I SUGGEST ADDING TWO NEW FUNDAMENTAL ACTORS: ACADEMIA AND THE COMMUNITY, THE OTHER TWO MAJOR PLAYERS.</p>
+<q>THE PUBLIC SECTOR CANNOT BE SUSTAINABLE WITHOUT THE PRIVATE; THE PRIVATE SECTOR CANNOT BE SUSTAINABLE WITHOUT THE PUBLIC, BUT TO THIS FORMULA, I SUGGEST ADDING TWO NEW FUNDAMENTAL ACTORS: ACADEMIA AND THE COMMUNITY, THE OTHER TWO MAJOR PLAYERS.</q>
 <p>This is already possible, efforts have already been made to make this happen, and there are already examples of successes. However, it is still on a small scale. The call is for us to think as one, to be able, for the first time, to give up everything we have been building around individuality so that we can maintain and continue to improve our country and our planet. We have already shown that the path of sectorisation has not resulted in us becoming more sustainable; it is time for us to choose to work together for all humanity. Time is running out.</p>
     `,
       autor: { name: 'JUANA BOTERO', avatar: 'https://media.licdn.com/dms/image/C5603AQFburD-lKe7tQ/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=OrPNQWmiurHcatseEVuDih5SDGN16X30sgHlTTP8ymg', details: 'Sustainability Director', description: 'Lawyer from Eafit University with an emphasis on public international law from the University of Salamanca, Spain. Current Director of Sustainability at Luker Chocolate where she works to improve the living conditions of rural cocoa farming communities.', linkedin: ['https://www.linkedin.com/in/juana-botero-62a78958/', 'Juana Botero'] },
@@ -423,11 +454,14 @@ class Blog extends React.Component {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/take-stand', name: 'Take a stand' }],
       url: 're-imagining-the-role-of-women-in-agriculture',
       title: 'RE-IMAGINING THE ROLE OF WOMEN IN AGRICULTURE',
+      cover: 'banner-chocolate.jpg',
       date: 'SEPTEMBER 2019',
       content: `<p>On August 2, we participated in the Women Economic Forum Latin America, the largest global gathering of women entrepreneurs and leaders worldwide. We gave a talk in which we discussed how we are re-imagining the role of women in agriculture for the world. Participating in such spaces allows us to publicize the reality of the Colombian countryside by making visible the role of its farmers. It also allows us to turn our attention towards rurality and to generate awareness of the misinterpretation of farmers and the great challenge that agriculture currently faces.</p>
+<img src="/static/media/cocoa-friends-1.09b69a29.jpg" alt="Women Forum">
 <p>The importance of rethinking the future of agriculture not only in Colombia but in the world, is because of the threat to the sustainability of agriculture and food security. Young people are not finding the countryside attractive or prosperous; there is no motivation to work in this sector. According to the United Nations, by 2050, the world population will be 9700 billion, making it necessary to question how and who will supply the basic inputs for food. Agriculture has the capacity to increase the incomes of vulnerable populations more effectively than other sectors of the economy according to the World Bank and yet a large percentage of adults in poverty are farmers. We live in a country that is 94% rural, but young people are increasingly migrating to urban areas.</p>
 <p>In the talk we gave, we wanted to bring an inclusive perspective, showing that we cannot understand farmer women until we understand the countryside. We brought together the visions of sustainability, agriculture and women, to show what we are doing with The Chocolate Dream, our long-term-vision to drive change in the cocoa regions where we work.</p>
-    `,
+<img src="/static/media/cocoa-friends-3.8fddecc4.jpg" alt="Girl and donkey">
+`,
       autor: {
         name: 'ANDREA CAMACHO', avatar: 'https://media.licdn.com/dms/image/C5603AQGoUFQwRo9MVw/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=75pM_bDTKE8y5wBMwdDbFJpjDm50Br33zWmK-dgQ77E', details: 'Social Innovation Professional', description: 'MSc Social Innovation and Entrepreneurship student with interest in cultural projects. Designer by trait with a certificate in digital media from Yoobee Design School. Three years of experience in innovation, social design, co-creation, product and graphic design', linkedin: ['https://www.linkedin.com/in/andreacamachogonzalez/', 'Andrea Camacho']
       },
@@ -437,6 +471,7 @@ class Blog extends React.Component {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/take-stand', name: 'Take a stand' }],
       url: 'healing-with-art-part-two',
       title: 'HEALING WITH ART: Part Two',
+      cover: 'healing-with-art.jpg',
       date: 'OCTOBER 2019',
       content: `<p>Grandmothers always say: </p>
 <p><i>Don’t touch! You’ll curdle it!</i></p>
@@ -444,6 +479,7 @@ class Blog extends React.Component {
 <p>All those mothers who make hot chocolate every morning with sacred hands so that their family sets out with the energy to face the day.</p>
 <p>It is true what Colombian chef, Leonor Espinosa, said when talking about the Colombian woman’s role as caregiver: She sows, fishes, takes care of the garden, the children, the kitchen.</p>
 <p>The hands of Colombian women tell many stories.</p>
+<img src="/static/media/bannerhealing.ccd78673.jpg" alt="Girl hug">
 <p>While we were talking, Rosalba opened the yellow packet of Luker Chocolate, which is imprinted on my memory, to make the hot chocolate.</p>
 <p>It was about 35 degrees Celsius, with 100% humidity; hot chocolate was not the best thing to be drinking, but Colombian mother’s vast wisdom says that “heat drives out heat”.</p>
 <p>I drank the hot chocolate and could not stop looking at Rosalba. There was something in her eyes that revealed a silent sadness, a pain that had taken hold of the soul; that same look that I’ve seen in someone close to me, where the light has gone out.</p>
@@ -464,20 +500,25 @@ class Blog extends React.Component {
     {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/innovation', name: 'Innovation' }],
       url: 'the-conching-process',
+      cover: 'banner2.jpg',
       title: 'THE CONCHING PROCESS',
       date: 'OCTOBER 2019',
       content: `<p>As consumers we hardly realize how much is done to a cocoa bean before it can be turned into a chocolate, but more than a mystical metamorphosis, this transformation brings nature, science and art together. In order to bring a chocolate couverture to life, fermented and dried cocoa beans are selected, winnowed, roasted, ground, mixed (with other ingredients), refined and finally conched, which is what we will deal within this article.</p>
-<p>The conching process was discovered in 1879 by the Swiss chocolate-maker Rudolph Lindt, who left a mixer containing chocolate running overnight by mistake, and realized that this changed its flavour and texture. The name of the equipment, the conche, is derived from the Latin word ‘shell’, as the traditional conche used in chocolate manufacture resembled a shell.</p>
+<img src="/static/media/conching-process.cac06e80.jpg" alt="conching process">
+    <p>The conching process was discovered in 1879 by the Swiss chocolate-maker Rudolph Lindt, who left a mixer containing chocolate running overnight by mistake, and realized that this changed its flavour and texture. The name of the equipment, the conche, is derived from the Latin word ‘shell’, as the traditional conche used in chocolate manufacture resembled a shell.</p>
 <p>Nowadays the conching process is the final step in the manufacture of chocolate, whether its milk or dark, and it is an essential process that contributes to the development of viscosity, final texture, and especially flavour. In the chocolate-making process, in the industry, we talk about ‘cocoa solids’ as particles that carry all the colour, taste, and most of the nutritional value of a chocolate bar, but these particles also happen to have intense bitter and astringent notes, which are given by polyphenols or antioxidants in cocoa, and some other off-flavours such as acetic acid left over from the fermentation process.</p>
 <p>This processing step, which consists mainly of mixing, shearing, and aeration of the chocolate mass at a certain temperature and for a certain amount of time that will be discussed further, is considered a critical step for two main reasons:</p>
 <p>During conching, the tiny particles of solids (cocoa, sugar and milk if is the case) acquire a more uniform shape, to be coated evenly with cocoa butter (continuous phase), which is going to give the chocolate its viscosity, flow and textural properties and determine the way in which the finished product will melt smoothly in the mouth.</p>
 <p>The conching process promotes flavour development through several factors such as time, temperature and the other ingredients in the recipe, but it also removes moisture and volatile off-flavours (short-chained volatile fatty acids and aldehydes) that are highly related with the origin and characteristics of the cocoa beans. This is one of the most relevant reasons for which the conching process at Luker Chocolate is different from other chocolate manufacturing companies.</p><p>Among the scientific community, different researchers put forward different opinions on how many phases there are in the conching process. Some researchers defined conching as a two-phase process. In the first stage known as dry-phase, the moisture level is reduced, some volatile acids like acetic acid caused by cocoa fermentation are removed, and the surfaces of all solid particles are covered with fat. In the second stage, called wet-phase, homogenous and paste-like fluid mass is obtained by adding more cocoa butter and emulsifiers.</p>
 <p>On the other hand, some say that this process has three phases, which we actually perform at Luker Chocolate, and that can be described as follows:</p>
 <h3>1. DRY PHASE</h3>
+<img src="/static/media/conchado-seco.c303fd51.jpg" alt="Dry phase">
 <p>The chocolate mass is transferred from the refiner, generally as flakes, to be heated, mixed and aerated. The primary objective of this stage is to allow the evaporation of some of the volatile acids from cocoa liquor and the water originating from the chocolate components. The total concentration of acetic acid after the dry conching stage remains approximately constant as there is no free water that acts as a vapour carrier.</p>
 <h3>2. PLASTIC PHASE</h3>
+<img src="/static/media/conchado-plastico.196668e1.jpg" alt="Plastic phase">
 <p>The mass which was mixed, sheared, heated and degassed enters this second phase that we call the ‘long step’, where flavour characteristics are developed through chemical reactions (Maillard reaction and Strecker’s degradation) given by the process’ time and temperature conditions, and because of major volatilisation of acetic acid due to cocoa fermentation. It is called ‘plastic’ because of the physical change that occur in the mass turning the flakes into a paste and becoming more liquid as the cocoa butter covers the solid particles. Time and temperature play a key role in this stage. The temperature in particular is more closely related to the type of chocolate being manufactured (dark, milk or white), while the time has to do with factors beyond the type of chocolate, where the quality and variety of beans used to produce the cocoa liquor are extremely relevant.</p>
 <h3>3. LIQUID PHASE</h3>
+<img src="/static/media/conchado-liquido.b89fdaad.jpg" alt="Liquid phase">
 <p>This phase is the shortest and it is where the viscosity and flow properties undergo the last adjustments with the addition of cocoa butter and emulsifiers.</p>
 <p>Stating the fact that the type of technology is extremely important (i.e., actual conching machinery designs are more efficient in terms of energy and time) in the conching process during the plastic phase, normally milk chocolates are conched at around 50°C to prevent the caramelisation of the product which occurs above this temperature with the consequent formation of lumps that will be perceived as sandiness in the mouth. Some dark chocolates, on the other hand, can be conched up to 90°C because of their more intense load of volatile by-products from fermentation. However conching time is a big discussion point at this stage, because it is here that the quality, type and the origin of the beans are going to play a determinant role.</p>
 <p>Throughout the years,Luker Chocolate has built an extremely close relationship with the Colombian farmers, sharing knowledge and experience, in order to guarantee and maintain exceptional quality characteristics by the end of the fermentation and drying of the cocoa beans. With this, and considering that the Colombian ‘Fino de Aroma’ cocoa beans are naturally complex in their flavour profile with delicate fruity, floral, and herbal notes, we take great care in the application of temperature and conching time for every chocolate couverture we produce, so that we can deliver finished products to customers all around the world bringing our final consumer a different flavour experience.</p>
@@ -494,8 +535,9 @@ class Blog extends React.Component {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/create-shared-value', name: 'Create shared value' }],
       url: 'the-new-commitment-our-own-cocoa-forests',
       title: 'THE NEW COMMITMENT: OUR OWN COCOA FORESTS',
+      cover: 'cocoa-farm.jpg',
       date: 'OCTOBER 2019',
-      content: `<quote>“WE WERE THE FIRST PEOPLE WHO DARED TO START A BUSINESS MODEL OF GROWING COCOA IN COLOMBIA USING CACAO FINO DE AROMA CLONES”</quote>
+      content: `<q>“WE WERE THE FIRST PEOPLE WHO DARED TO START A BUSINESS MODEL OF GROWING COCOA IN COLOMBIA USING CACAO FINO DE AROMA CLONES”</q>
 <p>Eight years ago, we came to the conclusion that the country had a dispersed model of cocoa development, starting with small producers. Traditionally, the cultivation of cocoa in Colombia was an activity in which farmers used to be very poor; they did not have technological resources or administrative management and did not have the capacity to project their businesses in the medium or long-term.</p>
 <p>We came up with a business development model that would stimulate small producers around cocoa. In 2010, Luker Chocolate opted to grow its own crops to help the company satisfy its own Cacao Fino de Aroma needs -without abandoning the relationships established with cocoa associations all over the country-, in order to promote demonstrative agroindustrial projects that would promote large-scale cocoa plantations to drive rural development. In the same year, the company found 550 hectares of land traditionally used for cattle farming in Necocli, Antioquia. It turned this land into its first agroindustrial plantation and the largest agro-productive plantation of varieties of Cacao Fino de Aroma in the country, designed as an agroforestry system (simultaneous and continuous integration of fruit trees and timber-yielding varieties with agricultural crops, which allow greater yields and avoid soil erosion and loss of biodiversity).</p>
 <p>Today, the plantation provides employment for over 180 people (it previously employed only 5) and over 600,000 new trees have been planted, leading to high economic, social and environmental impact among neighbouring communities. Here, The Chocolate Dream, our long-term vision to drive change in the cocoa producing regions where we work, was born.</p>
@@ -512,6 +554,7 @@ class Blog extends React.Component {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/create-shared-value', name: 'Create shared value' }],
       url: 'chocolate–spreading-the-love-worldwide',
       title: 'CHOCOLATE – SPREADING THE LOVE WORLDWIDE',
+      cover: 'stand-banner.jpg',
       date: 'OCTOBER 2019',
       content: `<p>Taking a trip to Colombia and living the #LukerExperience has proved an eye-opening experience for Le Salon Du Chocolat owner Dawn Shrives. She’s returned from the visit with a new appreciation of chocolate production and full of ideas as to how her Chichester-based business can help support the work being done in the South American country.</p>
 <p>Set up in 2004, Le Salon Du Chocolat is a chocolate studio where visitors can try their hand at themed workshops and parties. Dawn also gives talks and demonstrations to local organisations and schools.</p>
@@ -537,11 +580,14 @@ class Blog extends React.Component {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/create-shared-value', name: 'Create shared value' }],
       url: 'cocoa-forests-and-peace',
       title: 'COCOA, FORESTS, AND PEACE',
+      cover: 'banner-cacaos-w.jpg',
       date: 'OCTOBER 2019',
       content: `<p>At Luker Chocolate, every day we set out and strive to grow based on our higher purpose: to make the world a better place, by helping other companies create purpose-driven products, using our chocolate as a tool for change. This future and change that we dream of begins in the cocoa-producing regions of Colombia, from where we grow the best Cacao Fino de Aroma. But we didn’t want to stop there. That’s why, a few years ago, we decided to put all our strength into the Colombian countryside to offer real solutions. That’s where “The Chocolate Dream” was born.</p>
 <p>The challenge is enormous. In Colombia, cocoa is produced in 27 of the 32 departments, resulting in great geographical dispersion in terms of production and a number of barriers for producers and their families. In addition, Colombia’s main cocoa-growing regions have historically been zones of armed conflict, illegal mining, drug trafficking, etc.; and unfortunately, many still are today. Despite obstacles appearing time and again along the way, our dream is even greater. We know that we cannot do it alone and that the key to achieving our goal is teamwork. It is only in through teamwork that we will be able to make “The Chocolate Dream” stop being just a dream.</p>
+<img src="/static/media/bosque-necocli.12b8874a.jpg" alt="Forest Necoclí">
 <p>A clear reflection of the union and joint efforts is the Cocoa, Forests and Peace initiative, a public-private project aimed at promoting zero-deforestation production models that favour the protection and restoration of forests in the cocoa supply chain, but also contribute to building peace in our country.</p>
 <p>The initiative was born in March 2017 when the Declaration of Intent for the Global Cocoa and Forests Initiative was launched, led by the World Cocoa Foundation, The Sustainable Trade Initiative (IDH), non-profit organisations, and more than 35 private sector companies, who signed the macro agreements for joint action in Ghana and Ivory Coast, mainly. In July 2018, Colombia became the first country in Latin America and the third in the world to adhere to the initiative and sign its own agreement.</p>
+<img src="/static/media/cocoa-forest.dfaf6862.jpg" alt="Cocoa forest">
 <p>Luker Chocolate was the first private sector company to believe in and sign the Cocoa, Forests, and Peace initiative in Colombia. We participated in the planning and structuring of the action plan, which was officially launched last September in Bogotá. We decided to be part of this project because we know that the basis of everything we do lies in the cocoa-producing regions, because that is our source of inspiration and the opportunity we have to transform communities.</p>
 <p>So, this initiative sets in motion its 10-year action plan, led by the ministries of Environment and Sustainable Development, Agriculture and Rural Development, the cocoa industry represented by Luker Chocolate and the National Federation of Cocoa Growers (Fedecacao), the Sustainable Trade Initiative (IDH), and the World Resources Institute (WRI), with the support of the World Cocoa Foundation.</p>
 <p>It will be 10 years of working, shoulder to shoulder, in which we seek to achieve the following:</p>
@@ -569,17 +615,20 @@ class Blog extends React.Component {
     {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/innovation', name: 'Innovation' }],
       url: 'beau-cao-a-chocolate-that-cares-for-your-beauty-from-within',
+      cover: 'beucao-banner.jpg',
       title: 'BEAU CAO, A CHOCOLATE THAT CARES FOR YOUR BEAUTY FROM WITHIN',
       date: 'NOVEMBER 2019',
       content: `<p>For over 30 years, the annual PLMA (Private Label Manufacturing Association) trade show has been the most important event in the United States where retailers and industry gather information and meet suppliers to develop their private brands. In this year’s event, more than 1500 companies from 40 countries will exhibit their products and services, and it will include 25 international pavilions.</p>
 <p>We have participated in this event for over five years, but this time we decided to present ourselves somewhat differently, starting with our very stand. This year, we have a more experiential stand, where visitors will be able to experience the Luker Chocolate Market, a space where they can learn about our 110 years of experience as master chocolatiers taken to the world of some of the food megatrends: the premium, ethical, and healthy world.</p>
 <p>This year we decided to go further and present ourselves at the New Product Expo, a platform where only some of the participating companies will be able to exhibit their latest innovations in products and packaging. The products will be exhibited at the Idea SuperMarket, a part of the fair that shows what supermarkets, hypermarkets and retailers of all kinds are doing with their brands. The products that will be shown here are selected based on their level of innovation determined by a jury. A couple of weeks after we submitted our ideas, we received the great news of having had two of our innovations selected: Beau Cao and Protein Pud.</p>
+<img src="/static/media/beau-cau.cbf77ddd.jpg" alt="Beau Cao">
 <p>Today we are going to tell you what Beau Cao is all about. Beau Cao is a product developed from VitalCao, a line of Luker Chocolate’s functional ingredients offering cocoa powders with the best benefits derived from cocoa. After 11 years of intense research and thanks to all the possibilities afforded by being present throughout our chocolate value chain, from the cocoa bean to the final product, we developed a unique production method, patent pending, where we control post-harvest practices (fermentation and drying) and the industrial process to obtain a large amount of antioxidants from cocoa. All this has resulted in a portfolio of natural products that provide health benefits in the modern era.</p>
 <p>One of VitalCao’s strongest innovations is its ability to protect the body’s cells from UV rays. The antioxidant properties of VitalCao prevent the formation of free radicals triggered by exposure to ultraviolet rays. Based on the benefits of VitalCao and understanding that beauty is a process that must be cultivated from the inside out, at Luker Chocolate we decided to launch Beau Cao, a product that is both indulgent and cares for your skin by reconstituting it from within.</p>
 <p>Beau Cao’s formula helps protect cells up to 60% more than regular chocolate, which means your body is protected from the sun’s rays from within. It also helps to reduce inflammation that may occur in skin tissues up to 26% more than regular chocolate.</p>
 <p>At Luker Chocolate, we conducted a medical study with Ikemia IUCT (a Spanish high-tech business group aimed at developing and exploiting new products) to scientifically prove the benefits of daily consumption of Beau Cao. For a year, 10 healthy subjects, with an average age of 35.4 years and skin type II (according to the FitzPatrick scale), consumed 4 to 6 grams of VitalCao daily. We then exposed 1×1 cm areas of their untanned skin on the inner side of the forearm to increasing doses of simulated solar radiation (SSR, model 601 multiport solar simulator, sunlight, Glenside, PA). The results showed that there was a significant increase in the skin’s photoprotective effect, which is directly related to the product’s high antioxidant activity.</p>
 <p>Clinical studies made by our research and development department, prove that the 45% cocoa Beau Cao has 75% more flavanols (components found in some foods that help the body protect itself from damage caused by oxidising agents such as ultraviolet rays, environmental pollution, chemicals in food, etc.) than a regular milk chocolate with the same cocoa content. The 58% and 70% cocoa content versions (the 70% one is the one we will present at PLMA) contain 57% and 47% more flavanols respectively than a regular chocolate.</p>
 <p>You will find more information about our product in this infographic:</p>
+<img src="/static/media/ficha-beau-cao.4216f6f5.jpg" alt="Beau Cao Infographic">
 <p>We are proud to launch our first innovation in the beauty sector and to participate in PLMA’s Supermarket Idea.</p>
 <p>If you are interested in Beau Cao, join us; this innovation could be yours and part of your private label portfolio. If you want to learn more about the product, come to the Luker Chocolate Market to be held in the North Hall, stand F3011, from November 17 to 19 at the Rosemont Convention Centre in Chicago.</p>
 <p>We look forward to seeing you!</p>
@@ -591,16 +640,19 @@ class Blog extends React.Component {
     {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/innovation', name: 'Innovation' }],
       url: 'protein-pud-the-perfect-snack',
+      cover: 'protein-pud-banner.jpg',
       title: 'PROTEIN PUD, THE PERFECT SNACK',
       date: 'NOVEMBER 2019',
       content: `<p>In last week’s blog, we told you about our participation in the PLMA (Private Label Manufacturing Association) fair, where our clients and event attendees will be able to take part in the Luker Chocolate Market experience. We will also present one of our latest product innovations: Beau Cao, a chocolate that nurtures beauty from the inside. We will exhibit the product at the New Product Expo, a platform where only some of the companies taking part in the fair will be able to exhibit their latest innovations.</p>
 <p>Today, the protagonist of this blog is the Protein Pud, the second innovative product that we will exhibit on the platform. A formulation that we have developed for our clients who would like to have it in their private label portfolio. Here we are going to tell you how the creative process of this product was.</p>
+<img src="/static/media/protein-pud.e083a995.jpg" alt="Protein pud">
 <p>Today, people have less time to stay home and to prepare homemade meals. They have other priorities such as a social life and personal care. This is why snacks have become the perfect solution to lengthen the time between one meal and another, while also being satisfying.</p>
 <p>Based on the behavior of these consumers, we decided to develop the Protein Pud: an instant soy protein pudding sweetened with stevia that doesn’t need refrigeration. A perfect, quick to prepare, healthy, delicious, and satisfying snack. With its innovative formulation all you have to do is add a little cold water to obtain your desired texture. It is an herbal product, so it is suitable for vegans. And to make the Protein Pud experience even more memorable, you can add different toppings such as nuts, dried or fresh fruit, cocoa nibs, etc.</p>
 <p>Our Research and Development team spent more than 6 months searching for the right formulation to create the balance between texture and taste. First, we looked for the raw materials that would give us the creamy, soft sensation we wanted. Then, there was the challenge of maintaining the exquisite flavour and texture of chocolate made with our characteristic Cacao Fino de Aroma. However, the most important challenge was to find a way for all of these properties to be maintained in a cold-water preparation without the pudding cracking or becoming granular.</p>
 <p>Aside from being indulgent and innovative, the Protein Pud is a good source of protein, one of the most important nutrients in the human body, vital for muscle formation and which plays a fundamental role in the proper functioning of the immune system. In addition, it provides calcium, a complex of vitamins such as vitamin A, vitamin B2, vitamin B12, and minerals such as iron, zinc and copper.</p>
 <p>With the formula perfected, the ultimate question was how to show the world and our customers this innovation. To this end, we developed two product presentations. One is the ‘on the go’, individual presentation, designed for people who want to have a snack anytime, anywhere. The other, the ‘home presentation’, is ideal for preparing something delicious and healthy while at home away from the routine.</p>
 <p>You will find more information about our product in this infographic:</p>
+<img src="/static/media/ficha-protein-pud.b6ddb06e.jpg" alt="Protein pud infographic">
 <p>At Luker Chocolate, we are very proud to present our latest innovations and of the fact that both Beau Cao and Protein Pud are present in the PLMA Supermarket Idea.</p>
 <p>If you are interested in Protein Pud, feel free to join us; this innovation could be yours and be part of your private label portfolio. To find out more about the product, visit the Luker Chocolate Market, which will be held in the North Hall, booth F3011, from November 17 to 19 at the Rosemont Convention Centre in Chicago. If you are not attending to the PLMA event and you are interested in our innovation, contact us.</p>
 <p>We look forward to seeing you!</p>
@@ -611,9 +663,11 @@ class Blog extends React.Component {
     {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/take-stand', name: 'Take a stand' }],
       url: 'small-changes-big-revolutions',
+      cover: 'banner-cocoa-forest.jpg',
       title: 'SMALL CHANGES, BIG REVOLUTIONS',
       date: 'DECEMBER 2019',
       content: `<p>This story began 8 years ago, when against all odds we arrived in Necocli, Urabá antioqueño, to cultivate our first cocoa forest.</p>
+<img src="/static/media/bosque-necocli.12b8874a.jpg" alt="Forest Necoclí">
 <p>For years this has been a region that has carried the burden of violence and all that this implies: poverty, inequality, lack of education, loss of meaning of life and hope.</p>
 <p>Upon its arrival, Luker decided not only to have the best Fine Flavour Cocoa crop in the country, but also to become a model of sustainability where people are the centre: its ultimate goal.</p>
 <p>After 7 years of positive impacts on the neighbouring communities of the 550-hectare forest, in 2017 one of the districts most benefited from the project took the initiative -hand-in-hand with The Chocolate Dream team- to celebrate the company’s historic arrival in their lives through a festival.</p>
@@ -627,6 +681,7 @@ class Blog extends React.Component {
 <p>We had two themes that distanced us, cockfighting and the beauty pageant, both so traditional in Colombian culture. So we began to talk about these issues.</p>
 <p>From the company we respectfully proposed to omit the cockfights generating environmental and animal awareness. We also proposed that instead of celebrating women’s beauty, we should acknowledge their talent and their role in the more than 5 ethnic groups that live in the same territory.</p>
 <p>Our respectful stance on deep-rooted culture was that over time we would modify beliefs and behaviours and that the Cocoa Festival could reflect a joint way of looking at life, where people, animals, nature, and culture deserved the greatest respect.</p>
+<img src="/static/media/foto-tarima.0cef3648.jpg" alt="Cocoa Festival">
 <h3>We had a big, beautiful surprise.</h3>
 <p>Far from being discarded and generating discord, our proposals were immediately understood. We also saw how these positions were already incorporated in the community on an individual level, and that, in their own personal reflection, they all had had these concerns, but this had not reached the collective. The Cocoa Festival was becoming a vehicle that would help to put certain topics on the table.</p>
 <p>In a 3-hour long conversation, more than one and a half hours of planning were devoted to reflect on the beauty pageant; topics were touched on, led by the community, around the great talent of their women, the change in understanding the role of women, their importance in the culture and the differences between one ethnic group and another in that understanding. There was a reflection on what it means to put a young woman on a catwalk in a territory that had been sexist for years, the risk it represents and the message it sends to children.</p>
@@ -634,6 +689,7 @@ class Blog extends React.Component {
 <p>The same thing happened with the cockfight, the consensus around this issue was very fast and we all decided to highlight values of care for the environment that this practice does not reflect.</p>
 <p>We left this meeting not only with a new agenda, with competitions for talented women and with environmental tours, but also with the firm conviction that these actions that sometimes do not seem to have as much impact as a festival, in the end are nothing more than the manifestation of the reinterpretation of the culture of a community and its encounter with other beliefs and communities.</p>
 <p>We witnessed a change that is not easy to witness in a country of traditions. The 2018 Cocoa Festival was a tribute to farmers, women, animals and nature.</p>
+<img src="/static/media/abrazo.55a56497.jpg" alt="Cocoa Festival">
 <p>In three days we will be living the third edition of the festival, everybody is welcome!</p>
 `,
       autor: {
@@ -643,6 +699,7 @@ class Blog extends React.Component {
     }
   ]
   articleLoaded = [];
+
   searchToggle() {
     this.setState({ searchOpen: !this.state.searchOpen });
   }
@@ -653,7 +710,10 @@ class Blog extends React.Component {
         const client = this.clients.find(client => client.url === this.props.match.params.article)
         this.articleLoaded = client;
       } else {
-        const art = this.articles.find(art => art.url === this.props.match.params.article)
+        const art = this.articles.find(art => art.url === this.props.match.params.article);
+        console.log('==============================================================000');
+        console.log(this.articles.findIndex(art => art.url === this.props.match.params.article));
+        console.log('==============================================================000');
         this.articleLoaded = art;
       }
     }
@@ -669,7 +729,7 @@ class Blog extends React.Component {
 
     return (
       <Layout className="blog-component">
-        <div className={`blog-component-header blog-component-header--${(article) ? article : category}`}>
+        <div className={`blog-component-header blog-component-header--${(article) ? article : category}`} style={{ backgroundImage: (article) ? require('../../assets/img/blog/' + this.articleLoaded.cover) : '' }}>
           <div className="btn-dist">
             <Link to="/" className="logo"> <img src={logo} alt="Logo Luker" /></Link>
             {category === 'our-clients' ?
@@ -705,13 +765,13 @@ class Blog extends React.Component {
             </div>
           }
           {(category) ?
-            (article) ? <Article data={this.articleLoaded} /> : <TakeStand articles={this.articles.filter(t => t.breads.find(e => e.href.includes(category)))} category={category} />
+            (article) ? <Article data={this.articleLoaded} /> : <TakeStand articles={this.articles.filter(t => t.breads.find(e => e.href.includes(category))).reverse()} category={category} />
             :
             <div className="blog-layout">
               <div className="blog-layout-latest">
                 <h1>Latest entries</h1>
-                <Link to={'/blog/' + category + '/' + latestArticle.url} className="blog-layout-latest--article">
-                  <img src={require('../../assets/img/5thdimensions.jpg')} alt="" />
+                <Link to={latestArticle.breads[1].href + '/' + latestArticle.url} className="blog-layout-latest--article">
+                  <img src={require('../../assets/img/blog/' + latestArticle.cover)} alt="" />
                   <p>{latestArticle.date}</p>
                   <h2>{latestArticle.title}</h2>
                 </Link>
@@ -720,7 +780,7 @@ class Blog extends React.Component {
                 {Object.keys(this.articles.reverse()).map(i =>
                   i <= 3 && <div className="blog-layout-articles--item" key={i}>
                     <Link to={this.articles[i].breads[1].href + '/' + this.articles[i].url} className="blog-layout-latest--article">
-                      <img src={imgs[i]} />
+                      <img src={require('../../assets/img/blog/' + this.articles[i].cover)} />
                       <p>{this.articles[i].date}</p>
                       <h2>{this.articles[i].title} </h2>
                     </Link>

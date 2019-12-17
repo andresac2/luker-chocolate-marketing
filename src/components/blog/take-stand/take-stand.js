@@ -26,7 +26,7 @@ function randomNum(limit) {
   return Math.floor(Math.random() * limit)
 }
 function TakeStand(props) {
-  const lim = props.articles.length - 1;
+  const lim = 0; //props.articles.length - 1;
   const category = props.category;
   const imgs = [item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, item16, item17, item18, item19];
   const limImgs = imgs.length;
@@ -38,7 +38,7 @@ function TakeStand(props) {
         {
           <div className="blog-layout-latest--article">
             <Link to={'/blog/' + category + '/' + props.articles[lim].url}>
-              <img src={imgs[randomNum(limImgs)]} alt="cacao" />
+              <img src={require('../../../assets/img/blog/' + props.articles[lim].cover)} alt={props.articles[lim].title} />
               <p>{props.articles[lim].date}</p>
               <h2>{props.articles[lim].title}</h2>
             </Link>
@@ -49,7 +49,7 @@ function TakeStand(props) {
         {Object.keys(props.articles).map(i =>
           <div className="blog-layout-articles--item" key={i}>
             <Link to={'/blog/' + category + '/' + props.articles[i].url} className="blog-layout-latest--article">
-              <img src={imgs[randomNum(limImgs)]} />
+              <img src={require('../../../assets/img/blog/' + props.articles[i].cover)} alt={props.articles[i].title} />
               <p>{props.articles[i].date}</p>
               <h2>{props.articles[i].title} </h2>
             </Link>

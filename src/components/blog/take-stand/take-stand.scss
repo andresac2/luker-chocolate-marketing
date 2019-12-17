@@ -1,6 +1,12 @@
 .take-stand {
   margin-bottom: 2em;
 
+  .blog-temp {
+    img {
+      width: 30%;
+    }
+  }
+
   .blog-layout-articles {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;

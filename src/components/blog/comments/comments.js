@@ -18,7 +18,7 @@ const CommentList = ({ comments }) => (
 const Editor = ({ onChange, onSubmit, submitting, author, comment }) => (
   <div>
     <Form.Item className="form-comment-input">
-      <Input id="author" placeholder="Name lastname" onChange={onChange} author={author} />
+      <Input id="author" placeholder="Your email" onChange={onChange} author={author} />
     </Form.Item>
     <Form.Item className="form-comment-input">
       <TextArea id="comment" placeholder="Comment" rows={4} onChange={onChange} comment={comment} />
@@ -34,16 +34,6 @@ const commentActions = <div className="comment-actions"><span><FiChevronUp />|<F
 class Comments extends React.Component {
   state = {
     comments: [
-      {
-        author: 'Evelio Gutierrez',
-        avatar: require('../../../assets/img/evelio.jpg'),
-        content: <>Donec ultricies eros vel risus convallis ultricies. Proin sed facilisis tortor. Nam vel augue dapibus, posuere arcu ut, finibus orci. Integer a magna et tortor vehicula feugiat eget convallis felis. Etiam mattis nisl et justo molestie imperdiet. {commentActions}</>,
-      },
-      {
-        author: 'Comentario anónimo',
-        avatar: require('../../../assets/img/comment-1.jpg'),
-        content: <>Donec ultricies eros vel risus convallis ultricies. Proin sed facilisis tortor. Nam vel augue dapibus, posuere arcu ut, finibus orci. Integer a magna et tortor vehicula feugiat eget convallis felis. Etiam mattis nisl et justo molestie imperdiet. {commentActions}</>,
-      }
     ],
     submitting: false,
     comment: '',
@@ -86,14 +76,8 @@ class Comments extends React.Component {
 
     return (
       <div className="comments-component">
-        <h2>COMMENTS</h2>
+        <h2>LEAVE US YOUR COMMENTS</h2>
         <Comment
-          avatar={
-            <Avatar
-              src={require('../../../assets/img/making-hot.jpg')}
-              alt="Han Solo"
-            />
-          }
           content={
             <Editor
               onChange={this.handleChange}

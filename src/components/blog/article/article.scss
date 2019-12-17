@@ -49,13 +49,22 @@
 
   &-content {
     color: #484848;
-
     margin-bottom: 2em;
 
     img {
       width: 100%;
       height: auto;
       object-fit: cover;
+    }
+
+    q {
+      display: inline-block;
+      border-left: solid 3px #4B2418;
+      background: #dadada;
+      padding: 7px 10px;
+      font-style: italic;
+      font-weight: 500;
+      margin-bottom: 1em;
     }
 
     h3 {

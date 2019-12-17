@@ -39,10 +39,10 @@ class Article extends React.Component {
             <a href={'https://www.facebook.com/sharer/sharer.php?u=' + fullUrl} target="_blank" ><FaFacebookF /></a>
             <a href={'https://twitter.com/home?status=' + fullUrl} target="_blank" ><FaTwitter /></a>
             <a href={'https://www.linkedin.com/shareArticle?mini=true&url=' + fullUrl} target="_blank" ><FaLinkedinIn /></a>
-            <a href="" target="_blank" ><FaPrint /></a>
+            <a href="" target="_blank" style={{ display: 'none' }} ><FaPrint /></a>
           </div>
         </div>
-        <div className="blog-article-content" dangerouslySetInnerHTML={{ __html: data.content }} />
+        <article className="blog-article-content" dangerouslySetInnerHTML={{ __html: data.content }} />
         {data.autor && <div className="blog-article-autor">
           <img src={data.autor.avatar} alt={data.autor.name} />
           <div className="blog-article-autor--data">
@@ -54,7 +54,7 @@ class Article extends React.Component {
         </div>}
         {data.recommended &&
           <div className="blog-article-entries">
-            <h2>{data.flag ? 'YOU MAY ALSO LIKE' : 'RECOMMENDED ENTRIES'}</h2>
+            <h2>{data.flag ? 'OTHER CLIENTS' : 'RECOMMENDED ENTRIES'}</h2>
             <div className="blog-article-entries--list">
               {Object.keys(data.recommended).map(i =>
                 <Link key={i} to={data.recommended[i].url}>
