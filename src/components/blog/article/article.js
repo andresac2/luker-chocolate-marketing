@@ -10,13 +10,15 @@ class Article extends React.Component {
     super(props);
     this.myRef = React.createRef();
   }
+
   componentDidMount() {
     window.scrollTo(0, 0);
     this.myRef.current.scrollTo(0, 0);
     document.body.scrollTop = 0;
   }
+
   render() {
-    const { data } = this.props;
+    const { data, recommended } = this.props;
     const altImg = 'img-example.svg';
     const fullUrl = window.location.href;
     return (
@@ -56,11 +58,11 @@ class Article extends React.Component {
           <div className="blog-article-entries">
             <h2>{data.flag ? 'OTHER CLIENTS' : 'RECOMMENDED ENTRIES'}</h2>
             <div className="blog-article-entries--list">
-              {Object.keys(data.recommended).map(i =>
-                <Link key={i} to={data.recommended[i].url}>
-                  <img src={require('../../../assets/img/' + (data.recommended[i].img ? data.recommended[i].img : altImg))} alt={data.recommended[i].title} />
-                  <p>{data.recommended[i].subtitle}</p>
-                  <h2>{data.recommended[i].title}</h2>
+              {Object.keys(recommended).map(i =>
+                recommended[i] && <Link key={i} to={recommended[i].url}>
+                  <img src={require('../../../assets/img/' + (data.flag ? '' : 'blog/') + (recommended[i].cover ? recommended[i].cover : altImg))} alt={recommended[i].title} />
+                  <p>{recommended[i].date}</p>
+                  <h2>{recommended[i].title}</h2>
                 </Link>
               )}
             </div>

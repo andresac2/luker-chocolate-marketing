@@ -24,43 +24,29 @@ class Blog extends React.Component {
   clients = [{
     breads: [{ href: '/our-clients', name: 'Our clients' }],
     url: 'doisy-dam',
+    cover: 'Doisy&Dam.jpg',
     title: 'Doisy & Dam',
-    flag: 'uk',
+    flag: 'uk-flag.png',
     content: `<p>When it comes to sourcing cocoa, Doisy & Dam only wants the best of the best. For them, it’s very important to understand exactly how the supply chain works and where exactly the totally delish cocoa comes from. They also want to make sure that the chocolate they work with is ethically sourced and has a positive impact on the dedicated farmers who depend on growing great crops.</p>
 <p>For their newest creations Crunchy Almond Butter and SNAPS, they wanted to get even deeper in to the heart of tracing the  cocoa, which us why they've decided to use single-origin chocolate from us, not only because grow some of the tastiest cocoa beans in the land but also because we work very hard to improve the local community.</p>
   <div class="blog-article-content--img" ><img src="/static/media/doisy-milk.57393fc4.jpg" alt=""><span></span></div>`,
     recommended: [{ img: 'pots&co.jpg', title: '', subtitle: 'POTS & CO', url: '/blog/our-clients/pots-co' }, { img: 'york.jpg', title: '', subtitle: 'YORK COCOA HOUSE', url: '/blog/our-clients/york-cocoa-house' }, { img: 'dengel.jpg', title: '', subtitle: 'Dengel Shokolade', url: '/blog/our-clients/dengel-shokolade' }]
   }, {
     breads: [{ href: '/our-clients', name: 'Our clients' }],
-    url: 'daniels-delights',
-    title: 'Daniel’s Delights',
-    flag: 'uk',
-    content: `<p>Daniel’s Delights is a family owned Chocolatier that was launched in 2007 in Stoke On Trent by our CEO Ken Harrison and his wife Jen at their kitchen table, when Ken, a trained chef, began making Chocolate Favours for Jen to sell at local farmers markets. They are able to produce in excess of 20,000 bars per day as well as small-volume batches of hand-finished chocolate, which makes us quite unique within the UK.</p>
-<p>In 2015 Daniel’s Delights agreed a strategic partnership with Luker Chocolate. In their own words, they see us as a business wholly focused on investing in local rural communities and creating long term sustainable relationships with farmers and growers and moving them away formless sustainable farming practices and into Cacao production. Working tirelessly in rebuilding communities previously blighted by the trade-in coca leaves and through their work throughout Colombia has helped those communities by building schools and developing social enterprise schemes to allow them to become sustainable through the production of Cacao. That’s only a part of what made them choose Luker Chocolate as their provider. They also know that the Cacao we produce is classified by the ICCO as being in the top 8% of the global production in terms of quality and has the Cacao fino de aroma classification.</p>
-<p>Delivering superior product quality is of primary importance for Daniel’s Delights, which is supported by fully understanding our supply chain and supporting a ‘Farm to Bar’ supply chain, which is achieved through our partnership. </p>
-  <div class="blog-article-content--img" ><img src="/static/media/5thdimensions.81cf3384.jpg" alt=""><span></span></div>`,
-    recommended: [{ img: 'pots&co.jpg', title: '', subtitle: 'POTS & CO', url: '/blog/our-clients/pots-co' }, { img: 'york.jpg', title: '', subtitle: 'YORK COCOA HOUSE', url: '/blog/our-clients/york-cocoa-house' }, { img: 'dengel.jpg', title: '', subtitle: 'Dengel Shokolade', url: '/blog/our-clients/dengel-shokolade' }]
-  }, {
-    breads: [{ href: '/our-clients', name: 'Our clients' }],
     url: 'pots-co',
     title: 'Pots & Co',
-    flag: 'uk',
+    cover: 'pots&co.jpg',
+    flag: 'uk-flag.png',
     content: `<p>At Pots & Co they love making timeless classics. Their goal is to work with traditional recipes and elevate them into modern, restaurant-quality puddings that hero the classic ingredients and culinary techniques used to make them.</p>
 <p>All of their base ingredients are sourced with attention and care, which is why at Luker Chocolate get to provide them. There are no additives or taste enhances needed, or allowed in their kitchen. The majority of their products are chocolate-based and the highest quality is required to produce them. </p>
 <p>Since the team at Pots & Co tried Colombian chocolate, they knew the quality and flavour could not be compared to anything else in the world, and thus they decided to make us their provider, ensuring a fantastic flavour and special value.</p><div class="blog-article-content--img" ><img src="/static/media/pots-blog.caab403c.jpg" alt="Pots Cover"><span>POTS & CO</span></div></div>`,
     recommended: [{ img: 'Doisy&Dam.jpg', title: '', subtitle: 'Doisy & Dam', url: '/blog/our-clients/doisy-dam' }, { img: 'york.jpg', title: '', subtitle: 'YORK COCOA HOUSE', url: '/blog/our-clients/york-cocoa-house' }, { img: 'dengel.jpg', title: '', subtitle: 'Dengel Shokolade', url: '/blog/our-clients/dengel-shokolade' }]
   }, {
     breads: [{ href: '/our-clients', name: 'Our clients' }],
-    url: 'atelier-rodier',
-    title: 'Atelier Rodier',
-    flag: 'uk',
-    content: `<p>Santiago Torrijos, owner of Atelier Roder became interested in chocolate, from a very early age. After trying different chocolates from France and Italy, in 2014 he coincidentally tried a homemade-style hot chocolate made by a Colombian chef in a culinary event in the Netherlands. He couldn’t believe that the flavour in the chocolate he was drinking could come from his very own country, while being so far away from the homeland. Since then, all the chocolate sufflés he makes at his restaurant are made with ingredients provided by Luker Chocolate.</p>`,
-    recommended: [{ img: 'Doisy&Dam.jpg', title: '', subtitle: 'Doisy & Dam', url: '/blog/our-clients/doisy-dam' }, { img: 'york.jpg', title: '', subtitle: 'YORK COCOA HOUSE', url: '/blog/our-clients/york-cocoa-house' }, { img: 'dengel.jpg', title: '', subtitle: 'Dengel Shokolade', url: '/blog/our-clients/dengel-shokolade' }]
-  }, {
-    breads: [{ href: '/our-clients', name: 'Our clients' }],
     url: 'dengel-shokolade',
     title: 'Dengel Shokolade',
-    flag: 'uk',
+    cover: 'dengel.jpg',
+    flag: 'dk-flag.png',
     content: `<p>What Dengel Shokolade in Germany likes about our products is that every cocoa bean is closely related to the producers. Dengel Shokolade launched a raw material concept in 2015. This is under the motto "honest and fair direct from the producer". Thus, the raw materials needed for chocolate production (cocoa beans, cane sugar, and milk) are purchased directly from cocoa farmers from Colombia. They produce noble and fine chocolates since 1992. For them, the purchase of Cacao Fino de Aroma directly from Colombia without intermediate trade and at a fair fixed price is unbeatable, allowing us to makes sure that equivalent funds are paid directly to the cocoa farmers.</p>
   <div class="blog-article-content--img" ><img src="/static/media/dengel-blog.ba0062a9.jpg" alt="Dengel Shokolade" /><span></span></div>`,
     recommended: [{ img: 'Doisy&Dam.jpg', title: '', subtitle: 'Doisy & Dam', url: '/blog/our-clients/doisy-dam' }, { img: 'york.jpg', title: '', subtitle: 'YORK COCOA HOUSE', url: '/blog/our-clients/york-cocoa-house' }, { img: 'pots&co.jpg', title: '', subtitle: 'POTS & CO', url: '/blog/our-clients/pots-co' }]
@@ -68,19 +54,12 @@ class Blog extends React.Component {
     breads: [{ href: '/our-clients', name: 'Our clients' }],
     url: 'york-cocoa-house',
     title: 'York Cocoa House',
-    flag: 'uk',
+    cover: 'york.jpg',
+    flag: 'us-flag.png',
     content: `<p>Sophie Jewett says she fell in love with chocolate at an early age. She made chocolate cakes and fudge for friends and family as a child, eventually melting Christmas chocolates in an attempt to create her own Easter Eggs. Since then, her interest in chocolate grew into an obsession, and so she set out to learn everything possible about chocolate. Every new thing she’s discovered drawn her deeper into the world of chocolate and introduced her to chocolate lovers, chocolate makers, chocolatiers and experts from around the world, including us. </p>
 <p>For her, it’s very important to work with products that involve communities working side-by-side, giving her and other chocolate professionals to tell new stories through a positive experience, which is what we try to accomplish every day at Luker Chocolate.</p>
   <div class="blog-article-content--img" ><img src="/static/media/york-blog.6edf6a0f.jpg" alt="York Cocoa House" /><span></span></div>`,
     recommended: [{ img: 'dengel.jpg', title: '', subtitle: 'Dengel Shokolade', url: '/blog/our-clients/dengel-shokolade' }, { img: 'Doisy&Dam.jpg', title: '', subtitle: 'Doisy & Dam', url: '/blog/our-clients/doisy-dam' }, { img: 'pots&co.jpg', title: '', subtitle: 'POTS & CO', url: '/blog/our-clients/pots-co' }]
-  },
-  {
-    breads: [{ href: '/our-clients', name: 'Our clients' }],
-    url: 'royce',
-    title: 'ROYCE\'',
-    flag: 'uk',
-    content: `ROYCE' was founded in Sapporo, Japan, in 1983. They are able to make chocolate of world-class quality in Hokkaido by having acquired the best techniques and enriching their experience through the years. The fundamental principle of Royce' has been and will always be the painstaking sourcing of high-quality ingredients, and so, we are the ones that provide those for them. They take pride in having their own farm in Colombia, which we run for them, allowing their customers and consumers to know that the origin of their products is from a great quality source.`,
-    recommended: [{ img: 'pots&co.jpg', title: '', subtitle: 'POTS & CO', url: '/blog/take-stand/article' }, { img: 'PAUL LAFAYET_Creme.png', title: '', subtitle: 'PAUL LAFAYETTE', url: '/blog/take-stand/article' }, { img: 'lyra_eshop.jpg', title: '', subtitle: 'LYRA CHOC', url: '/blog/take-stand/article' }]
   }]
   articles = [
     {
@@ -697,8 +676,9 @@ class Blog extends React.Component {
       },
       recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
     }
-  ]
+  ].reverse()
   articleLoaded = [];
+  recommendedEntries = [];
 
   searchToggle() {
     this.setState({ searchOpen: !this.state.searchOpen });
@@ -707,29 +687,55 @@ class Blog extends React.Component {
   loadArticle() {
     if (this.props.match.params.article) {
       if (this.props.match.params.category === 'our-clients') {
+        this.generateRecommendedEntries('clients');
         const client = this.clients.find(client => client.url === this.props.match.params.article)
         this.articleLoaded = client;
       } else {
+        this.generateRecommendedEntries('article');
         const art = this.articles.find(art => art.url === this.props.match.params.article);
-        console.log('==============================================================000');
-        console.log(this.articles.findIndex(art => art.url === this.props.match.params.article));
-        console.log('==============================================================000');
         this.articleLoaded = art;
       }
     }
   }
+
+  generateRecommendedEntries(type) {
+    let recommended = [];
+    let array = [];
+    console.log('type', type);
+    if (type === 'article') {
+      array = this.articles;
+    } else {
+      array = this.clients;
+    }
+    const fIndex = array.findIndex(art => art.url === this.props.match.params.article);
+    let rest = 1;
+    for (let i = 1; i < 4; i++) {
+      if (fIndex + i < array.length) {
+        console.log('sumo', fIndex, i)
+        recommended = recommended.concat(array[fIndex + i])
+      } else {
+        console.log('resto', fIndex, i)
+        recommended = recommended.concat(array[fIndex - rest])
+        rest++;
+      }
+    }
+    this.recommendedEntries = recommended;
+    setTimeout(
+      console.log('recomendados', this.recommendedEntries)
+      , 2000);
+  }
+
   render() {
     const { Search } = Input;
     const { Option } = Select;
     const { searchOpen } = this.state;
     const { category, article } = this.props.match.params;
-    const latestArticle = this.articles[this.articles.length - 1];
+    const latestArticle = this.articles[0];
     const imgs = [item2, item3, item4, item5];
     this.loadArticle();
-
     return (
       <Layout className="blog-component">
-        <div className={`blog-component-header blog-component-header--${(article) ? article : category}`} style={{ backgroundImage: (article) ? require('../../assets/img/blog/' + this.articleLoaded.cover) : '' }}>
+        <div className={`blog-component-header blog-component-header--${(article) ? article : category}`} style={{ backgroundImage: category !== 'our-clients' ? (article) ? `url(${require(`../../assets/img/blog/${this.articleLoaded.cover}`)})` : '' : undefined }}>
           <div className="btn-dist">
             <Link to="/" className="logo"> <img src={logo} alt="Logo Luker" /></Link>
             {category === 'our-clients' ?
@@ -752,6 +758,7 @@ class Blog extends React.Component {
               </Select>
             </div>
             <h1 style={{ fontSize: (article) ? '4em' : '5em' }}>{(article) ? this.articleLoaded.title : (category) ? category : 'Under The Tree'} </h1>
+            {this.articleLoaded.flag && <img src={item1} alt="Pots&co" />}
           </div>
         </div >
         <div className="blog-component-content">
@@ -765,7 +772,7 @@ class Blog extends React.Component {
             </div>
           }
           {(category) ?
-            (article) ? <Article data={this.articleLoaded} /> : <TakeStand articles={this.articles.filter(t => t.breads.find(e => e.href.includes(category))).reverse()} category={category} />
+            (article) ? <Article data={this.articleLoaded} recommended={this.recommendedEntries} /> : <TakeStand articles={this.articles.filter(t => t.breads.find(e => e.href.includes(category)))} category={category} />
             :
             <div className="blog-layout">
               <div className="blog-layout-latest">
@@ -777,12 +784,12 @@ class Blog extends React.Component {
                 </Link>
               </div>
               <div className="blog-layout-articles">
-                {Object.keys(this.articles.reverse()).map(i =>
+                {Object.keys(this.articles).map(i =>
                   i <= 3 && <div className="blog-layout-articles--item" key={i}>
                     <Link to={this.articles[i].breads[1].href + '/' + this.articles[i].url} className="blog-layout-latest--article">
                       <img src={require('../../assets/img/blog/' + this.articles[i].cover)} />
                       <p>{this.articles[i].date}</p>
-                      <h2>{this.articles[i].title} </h2>
+                      <h2>{this.articles[i].title}</h2>
                     </Link>
                   </div>
                 )}

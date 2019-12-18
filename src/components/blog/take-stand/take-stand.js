@@ -25,12 +25,12 @@ import { FaHospitalAlt } from 'react-icons/fa';
 function randomNum(limit) {
   return Math.floor(Math.random() * limit)
 }
+
 function TakeStand(props) {
   const lim = 0; //props.articles.length - 1;
   const category = props.category;
   const imgs = [item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12, item13, item14, item15, item16, item17, item18, item19];
   const limImgs = imgs.length;
-
   return (
     <div className="take-stand">
       <div className="blog-layout-latest">

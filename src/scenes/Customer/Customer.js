@@ -12,7 +12,7 @@ import york from '../../assets/img/york.jpg'
 
 //import frFlag from '../../assets/img/fr-flag.png'
 import usFlag from '../../assets/img/us-flag.png'
-import dkFlag from '../../assets/img/dk-flag.svg'
+import dkFlag from '../../assets/img/dk-flag.png'
 import ukFlag from '../../assets/img/uk-flag.png'
 import FloatLogo from '../../components/layout/float-logo/float-logo';
 
