@@ -160,7 +160,7 @@ class ModalDistributors extends React.Component {
       selected: false
     },
     {
-      country: 'gt',
+      country: 'gl',
       company: 'CHOCOLÁ S.A.',
       address: 'Ruta 1 5-13, Zona 4, Guatemala',
       phone: '+ 502 2360-3007',
