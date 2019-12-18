@@ -1,6 +1,7 @@
 import React from "react";
 import {
   BrowserRouter as Router,
+  Redirect,
   Switch,
   Route
 } from "react-router-dom";
@@ -40,6 +41,7 @@ export default function BasicExample() {
         <Route path="/blog/:category?/:article?" component={Blog} />
         <Route path="/contact-us" component={WrappedContact} />
         <Route path="/work-with-us" component={WrappedWorkWithUs} />
+        <Redirect from="/:en/blog/:article" to="/blog/under-the-tree/:article" />
 
         <Route component={Page404} />
       </Switch>
