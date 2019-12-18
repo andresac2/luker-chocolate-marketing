@@ -33,11 +33,11 @@
         word-wrap: break-word;
         text-overflow: ellipsis;
         text-align: left;
-        margin-bottom: 1rem;
+        margin-bottom: 10px;
         //width: max-content;
 
         @media screen and (max-width: 1340px) {
-          font-size: 2.7em;
+          font-size: 2.5em;
         }
       }
 
@@ -45,7 +45,7 @@
         border-left: 5px solid #5d340b;
         padding: 0.5em 1em;
         font-weight: 600;
-        font-size: 1vw;
+        font-size: small;
       }
     }
   }
@@ -82,6 +82,12 @@
       position: relative;
       border-bottom: 3px solid #eedaac;
 
+      &:first-child {
+        .value-propose-component--item-card-text {
+          padding-top: 1.5em;
+        }
+      }
+
       &:last-child {
         border: none;
       }
@@ -114,6 +120,10 @@
           -webkit-backdrop-filter: blur(8px);
           opacity: 0.9;
         }
+      }
+
+      .value-propose-component--item-card-hover-text {
+        display: none;
       }
 
       &:hover {
@@ -173,7 +183,7 @@
     height: 100%;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 35% 30% 100%;
+    grid-template-rows: 35% 30% 360px;
     grid-template-areas:
       "expo"
       "carrousel"
@@ -181,6 +191,10 @@
     text-align: center;
     color: #fff;
     overflow: scroll;
+
+    .value-propose-component--item-card-hover-text {
+      display: block;
+    }
 
     .btn-dist {
       position: absolute;
@@ -226,8 +240,8 @@
       width: 100%;
       display: grid;
       overflow: auto;
-      grid-template-columns: 70% 70%;
-      grid-template-rows: 180px 180px;
+      grid-template-columns: 100vw;
+      grid-template-rows: 1fr;
       height: 360px;
       z-index: 0;
       margin-bottom: 35px;
@@ -251,6 +265,10 @@
           align-self: center;
           flex-direction: column;
           z-index: 1;
+
+          .hide-resp {
+            display: none;
+          }
 
           &::after {
             background: #3B1D00;

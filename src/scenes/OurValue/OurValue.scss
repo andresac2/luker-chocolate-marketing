@@ -9,6 +9,11 @@
     "header navbar"
     "content navbar";
 
+  .btn-back-sticky {
+    display: none;
+  }
+
+
   .our-value-header {
     grid-area: header;
     position: relative;
@@ -150,7 +155,7 @@
 
   @media screen and (max-width: 992px) {
     grid-template-columns: 1fr;
-    grid-template-rows: 160px 1fr;
+    grid-template-rows: 100px 1fr;
     grid-template-areas: "header"
       "content";
 
@@ -167,6 +172,22 @@
 
     .btn-dist {
       display: none;
+    }
+
+    .btn-back-sticky {
+      display: inline-block;
+      position: sticky;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      background: #C8D226;
+      padding: 6px;
+
+      a {
+        color: #fff;
+        font-weight: 600;
+        font-size: medium;
+      }
     }
   }
 

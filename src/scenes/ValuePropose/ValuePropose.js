@@ -31,7 +31,8 @@ function ValuePropose() {
             DIFFERENTIATE YOUR PRODUCT WITH A UNIQUE FLAVOUR
           </div>
           <div className="value-propose-component--item-card-hover">
-            <p>We work exclusively with Cacao Fino de Aroma</p>
+            <p className='hide-resp'>We work exclusively with Cacao Fino de Aroma</p>
+            <p className="value-propose-component--item-card-hover-text">DIFFERENTIATE YOUR PRODUCT WITH A UNIQUE FLAVOUR</p>
             <Link to="/our-value/aroma">LEARN MORE</Link>
           </div>
         </div>
@@ -41,7 +42,8 @@ function ValuePropose() {
             KEEP THE CONSISTENCY IN THE FLAVOUR AND GUARANTEE YOUR SUPPLY
           </div>
           <div className="value-propose-component--item-card-hover">
-            <p>We want you to always have the best product</p>
+            <p className='hide-resp'>We want you to always have the best product</p>
+            <p className="value-propose-component--item-card-hover-text">KEEP THE CONSISTENCY IN THE FLAVOUR AND GUARANTEE YOUR SUPPLY</p>
             <Link to="/our-value/flavour">LEARN MORE</Link>
           </div>
         </div>
@@ -51,7 +53,8 @@ function ValuePropose() {
             INTEGRATED SOLUTIONS FOR DESIGN, PRODUCTS, AND PACKAGING
           </div>
           <div className="value-propose-component--item-card-hover">
-            <p>Your needs become our challenge</p>
+            <p className='hide-resp'>Your needs become our challenge</p>
+            <p className="value-propose-component--item-card-hover-text">INTEGRATED SOLUTIONS FOR DESIGN, PRODUCTS, AND PACKAGING</p>
             <Link to="/our-value/product">LEARN MORE</Link>
           </div>
         </div>
@@ -61,7 +64,8 @@ function ValuePropose() {
             CONNECT YOUR BRAND AROUND SUSTAINABILITY
           </div>
           <div className="value-propose-component--item-card-hover">
-            <p>We encourage you to participate in shared value sustainable initiatives that have a social impact</p>
+            <p className='hide-resp'>We encourage you to participate in shared value sustainable initiatives that have a social impact</p>
+            <p className="value-propose-component--item-card-hover-text">CONNECT YOUR BRAND AROUND SUSTAINABILITY</p>
             <Link to="/our-value/social">LEARN MORE</Link>
           </div>
         </div>

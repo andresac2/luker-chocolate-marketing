@@ -73,4 +73,40 @@
     margin-bottom: 3em;
   }
 
+  @media screen and (max-width: 996px) {
+    padding: 0;
+    margin: 0 1em;
+
+    .our-social-component-cards {
+      display: grid;
+      grid-template-columns: auto 3fr;
+      //column-gap: 20px;
+      grid-template-rows: 100px 100px 100px;
+      grid-template-areas: "achieve item"
+        "achieve item"
+        "achieve item";
+
+      &-achieve {
+        grid-area: achieve;
+        height: auto;
+      }
+    }
+
+    .our-social-component-card {
+      overflow: hidden;
+      margin-bottom: 1em;
+
+      img {
+        height: 100px;
+        object-fit: fill;
+      }
+
+      p {
+        font-weight: bold;
+        padding: 0 5px;
+      }
+
+      //height: 200px;
+    }
+  }
 }

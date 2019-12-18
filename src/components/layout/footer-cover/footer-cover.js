@@ -7,7 +7,7 @@ import Footer from '../footer/footer';
 import Modals from '../../modals/modals';
 
 class FooterCover extends React.Component {
-  hideView = ['/products-services/', '/blog', '/contact-us', '/work-with-us'];//VIstas en las que se oculta el footer
+  hideView = ['/products-services/', '/blog', '/contact-us', '/work-with-us', '/our-value/'];//VIstas en las que se oculta el footer
   darkIcon = ['/services', '/blog'];//VIstas en las que se muestra modo oscuro
 
   constructor(props) {
@@ -48,7 +48,6 @@ class FooterCover extends React.Component {
     const { isOpen, distModalVisible, moreInfoVisible, distValue, actualDist } = this.state;
     const { Option } = Select;
     const selectTab = history.location.pathname;
-
     const isFooterHidden = this.hideView.some(function (v) { return history.location.pathname.includes(v); });
 
     return (

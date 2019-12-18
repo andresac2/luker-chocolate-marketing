@@ -67,6 +67,9 @@ class OurValue extends React.Component {
           {selectTab === 'product' && <OurProduct />}
           {selectTab === 'social' && <OurSocial />}
         </div>
+        <div className="btn-back-sticky">
+          <Link to="/our-value">BACK TO OUR VALUE PROPOSITION</Link>
+        </div>
       </div>
     );
   }

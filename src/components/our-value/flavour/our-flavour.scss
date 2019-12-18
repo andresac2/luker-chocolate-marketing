@@ -221,6 +221,10 @@
       &--opened {
         height: 350px;
 
+        .our-flavour-component-card--data-text-content p {
+          padding-bottom: 1em;
+        }
+
         .value-svg {
           color: #4B2418;
           top: 10px;

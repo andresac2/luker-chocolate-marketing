@@ -26,12 +26,13 @@ class Header extends React.Component {
         this.menuToggle();
       }, 2000);
   }
+
   render() {
     const { history } = this.props;
     const { showMenu } = this.state;
     const { Option } = Select;
     const selectTab = history.location.pathname;
-    const isLogoHidden = this.logoHidden.some(function (v) { return history.location.pathname.includes(v); });
+    const isLogoHidden = history.location.pathname.includes('/our-value/') ? false : this.logoHidden.some(function (v) { return history.location.pathname.includes(v); });
 
     return (
       <div>

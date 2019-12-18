@@ -27,6 +27,7 @@
     padding: 1em 3em;
     @include vert-center;
     align-items: center;
+    transition: all ease-in 1s;
 
     &-btn {
       cursor: pointer;
@@ -60,8 +61,9 @@
     }
   }
 
-  @media (max-width: 768px) {
+  @media screen and (max-width: 996px) {
     padding-left: 1em;
+    margin-bottom: 36px;
 
     p {
       border-left: 4px solid #5c340b;
@@ -77,6 +79,10 @@
       padding: 1em 3em;
       justify-content: center;
       align-items: center;
+
+      >svg {
+        left: 96vw;
+      }
 
       h2 {
         width: 100%;
