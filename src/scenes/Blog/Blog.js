@@ -754,7 +754,6 @@ It’s coming, the Festival’s coming. The families come together, each and eve
                 <Option value="en">EN</Option>
               </Select>
             </div>
-            <h2>{category + '||' + article}</h2>
             <h1 style={{ fontSize: (article) ? '4em' : '5em' }}>{(article) ? this.articleLoaded.title : (category) ? category : 'Under The Tree'}
               {this.articleLoaded.flag && <img className="blog-component-header-flag" src={require('../../assets/img/' + this.articleLoaded.flag)} alt={this.articleLoaded.flag.substr(0, 2)} />} </h1>
           </div>

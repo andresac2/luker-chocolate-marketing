@@ -8,13 +8,6 @@ import Comments from '../comments/comments';
 class Article extends React.Component {
   constructor(props) {
     super(props);
-    this.myRef = React.createRef();
-  }
-
-  componentDidMount() {
-    window.scrollTo(0, 0);
-    this.myRef.current.scrollTo(0, 0);
-    document.body.scrollTop = 0;
   }
 
   render() {
@@ -22,7 +15,7 @@ class Article extends React.Component {
     const altImg = 'img-example.svg';
     const fullUrl = window.location.href;
     return (
-      <div className="blog-article" ref={this.myRef}>
+      <div className="blog-article">
         {!window.location.href.includes('sustainability') && <div className="blog-article-title-resp">{data.title}</div>}
         <div className="blog-article-bread">
           <Breadcrumb>
