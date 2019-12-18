@@ -383,10 +383,10 @@ class Blog extends React.Component {
 <p>Luker Chocolate takes risks when it builds the country; it is an example for the Colombian business sector.</p>
 <p>It’s true that chocolate is celebrated around the world… But only a magical place can understand the importance of celebrating the fruit from which this food is produced, a sweet, a product with as many facets and uses as the variety in its colours.</p>
 <p>Caribia has 438 inhabitants, 438 voices that sing at the Cocoa Festival’s dawn ceremony:</p>
-<p><i>“Viene que ya viene, viene el Festival, Crece la cosecha vamo’ a celebrar</i>
-<i>Viene que ya viene, viene el Festival se unen las familias, todas por igual”.</i>
-<i>“The Festival is coming, coming, it is coming. The harvest is growing, let’s celebrate</i>
-<i>It’s coming, the Festival’s coming. The families come together, each and every one.”</i></p>
+<q>Viene que ya viene, viene el Festival, Crece la cosecha vamo’ a celebrar<br>
+<i>Viene que ya viene, viene el Festival se unen las familias, todas por igual.</i></q>
+<q>The Festival is coming, coming, it is coming. The harvest is growing, let’s celebrate<br>
+It’s coming, the Festival’s coming. The families come together, each and every one.</q>
 <p>The Cocoa Festival is another opportunity for commotion at Luker Chocolate. They work alongside the community, paint the children’s smiling faces, share a cup of hot chocolate and a bowl of stew, everyone participates equally; they bring a team of outgoing and sociable professionals to remind the community of Caribia that without them, the chocolate would not taste as good.</p>
 <img src="/static/media/abrazo.55a56497.jpg" alt="Festival Cacao">
 <p>At Transhuella we are proud to work with Luker Chocolate, a company that grows hand-in-hand with the country.</p>
@@ -757,8 +757,8 @@ class Blog extends React.Component {
                 <Option value="en">EN</Option>
               </Select>
             </div>
-            <h1 style={{ fontSize: (article) ? '4em' : '5em' }}>{(article) ? this.articleLoaded.title : (category) ? category : 'Under The Tree'} </h1>
-            {this.articleLoaded.flag && <img src={item1} alt="Pots&co" />}
+            <h1 style={{ fontSize: (article) ? '4em' : '5em' }}>{(article) ? this.articleLoaded.title : (category) ? category : 'Under The Tree'}
+              {this.articleLoaded.flag && <img className="blog-component-header-flag" src={require('../../assets/img/' + this.articleLoaded.flag)} alt={this.articleLoaded.flag.substr(0, 2)} />} </h1>
           </div>
         </div >
         <div className="blog-component-content">

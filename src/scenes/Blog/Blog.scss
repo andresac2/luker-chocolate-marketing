@@ -53,9 +53,11 @@
       margin: 0 auto;
       padding-top: 20px;
       word-wrap: break-word;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       @media screen and (min-width: 1200px) {
-        //font-size: 4em;
         font-size: calc(2vw + 2vh + 2vmin);
         padding-left: 1em;
       }
@@ -66,7 +68,15 @@
       }
     }
 
+    &-flag {
+      //display: inline;
+      height: .6em;
+      margin: 0 5px;
+
+    }
+
     &--search {
+      display: none;
       width: 960px;
       margin: 0 auto;
       text-align: end;

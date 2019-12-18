@@ -117,7 +117,7 @@
   }
 
   &-autor {
-    @include vert-center;
+    display: flex;
     align-items: center;
     max-width: 55%;
     margin: 2em 0;

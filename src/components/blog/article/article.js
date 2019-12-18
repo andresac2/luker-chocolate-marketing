@@ -39,7 +39,7 @@ class Article extends React.Component {
           </Breadcrumb>
           <div className="blog-article-bread--social">
             <a href={'https://www.facebook.com/sharer/sharer.php?u=' + fullUrl} target="_blank" ><FaFacebookF /></a>
-            <a href={'https://twitter.com/home?status=' + fullUrl} target="_blank" ><FaTwitter /></a>
+            <a href={'https://twitter.com/share?text=I\'m reading &url=' + fullUrl + '&hashtags=#Cacao'} target="_blank" ><FaTwitter /></a>
             <a href={'https://www.linkedin.com/shareArticle?mini=true&url=' + fullUrl} target="_blank" ><FaLinkedinIn /></a>
             <a href="" target="_blank" style={{ display: 'none' }} ><FaPrint /></a>
           </div>
