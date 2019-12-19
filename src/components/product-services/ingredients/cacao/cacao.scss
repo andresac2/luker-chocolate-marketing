@@ -69,6 +69,10 @@
     width: calc(100% - 120px);
     margin: 2em auto;
 
+    &-btn-next {
+      display: none;
+    }
+
     &-header {
       display: flex;
       justify-content: space-evenly;
@@ -164,12 +168,12 @@
 
         img {
           position: relative;
-          width: 12em;
+          width: 10em;
           z-index: 1;
 
           &:nth-child(2) {
             margin: 0 -5em;
-            width: 15em;
+            width: 12em;
             z-index: 2;
           }
         }
@@ -177,16 +181,41 @@
     }
 
     &-tabs {
+      position: relative;
+      margin: 2em 0;
+      width: 100%;
 
       &-header {
-        margin: 2em auto;
+        margin: 1em;
       }
 
       &-products {
-        margin: 1em -10%;
-        width: 100%;
+        width: 100vw;
+        grid-template-columns: 45% 45%;
         gap: 1em;
+        z-index: 0;
         text-align: center;
+
+        img {
+          width: 120px;
+        }
+      }
+
+      &-btn-next {
+        display: block;
+        position: sticky;
+        transition: all ease-in .5s;
+        top: 0;
+        z-index: 1;
+        width: 100%;
+        padding: 3px 2em;
+        margin: auto;
+        font-size: larger;
+        margin-bottom: 1em;
+        border-radius: 3px;
+        background: #F2CB0E;
+        font-weight: bold;
+        color: #532C2E;
 
         &:disabled,
         &[disabled] {

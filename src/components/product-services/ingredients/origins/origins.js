@@ -84,16 +84,18 @@ class Ingredient1906 extends React.Component {
           <p>Luker 1906, SANTANDER, HUILA, TUMACO and ARAUCA. Four Colombian Origin Chocolates with flavours that reflect the country’s geographic and cultural diversity. Santander cocoa is cultivated in the Andes; Tumaco, in the tropical forests of the Pacific Coast and Huila cocoa is typical of the region’s deep valleys. In Arauca, cocoa grows in wild landscapes between the snow-capped mountains and valleys of the Orinoco. Mountains, forests and valleys: Luker 1906, the chocolate with an inimitable flavour of the land that it grows in.</p>
           <p className="i1906-component--content-specifications">Available in: 2,5 bag or 20kg box<br /> Shelf life: Dark 24 months, Milk 18 months & White 14 months.</p>
         </div>
-        <div className="i1906-component--products">
-          {Object.keys(itemsArauca).map(i =>
-            <div key={i} className={`i1906-component--products-item i1906-component--products-item-${itemsArauca[i].selected && 'active'}`} onClick={() => this.productToggle(itemsArauca[i].id, !itemsArauca[i].selected)}>
-              <img src={require('../../../../assets/img/' + (itemsArauca[i].img ? itemsArauca[i].img : altImg))} alt='jaja' />
-              <span>i</span>
-              <h2>Luker 1906</h2>
-              <p>{itemsArauca[i].description}</p>
-            </div>)}
+        <div className="i1906-component--contain-products">
+          <button className={`i1906-component--products-btn-next`} disabled={itemsArauca.filter(item => item.selected).length <= 0} onClick={() => this.handleShowFormContact(true)}>{(itemsArauca.filter(item => item.selected).length <= 0) ? 'Pick a product' : 'Next'}</button>
+          <div className="i1906-component--products">
+            {Object.keys(itemsArauca).map(i =>
+              <div key={i} className={`i1906-component--products-item i1906-component--products-item-${itemsArauca[i].selected && 'active'}`} onClick={() => this.productToggle(itemsArauca[i].id, !itemsArauca[i].selected)}>
+                <img src={require('../../../../assets/img/' + (itemsArauca[i].img ? itemsArauca[i].img : altImg))} alt={itemsArauca[i].description} />
+                <h2>Luker 1906</h2>
+                <span>i</span>
+                <p>{itemsArauca[i].description}</p>
+              </div>)}
+          </div>
         </div>
-        <button className={`i1906-component--products-btn-next`} disabled={itemsArauca.filter(item => item.selected).length <= 0} onClick={() => this.handleShowFormContact(true)}> Next</button>
         <WrappedContactSide page='ingredients' products={itemsArauca} handleSetProductSelected={this.handleSetProductSelected} handleShowFormContact={this.handleShowFormContact} />
       </div>
     );

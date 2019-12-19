@@ -142,7 +142,14 @@
 
     &--products {
       display: flex;
-      width: calc(100% - 2em);
+      margin: 1em auto;
+      width: 100%;
+      position: relative;
+
+      &-item {
+        margin-top: 1em;
+        margin-bottom: 1em;
+      }
 
       &-item-img img {
         width: 120px;
@@ -155,6 +162,11 @@
 
       &-btn-next {
         display: block;
+        position: sticky;
+        z-index: 1;
+        transition: all ease-in .5s;
+        width: 100%;
+        top: 0;
         padding: 3px 2em;
         margin: auto;
         font-size: larger;
