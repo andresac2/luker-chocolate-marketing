@@ -122,7 +122,7 @@ class Maquila extends React.Component {
           <h2 className="maquila-component-title-h2">Chocolate {product.name}</h2>
           <div className="maquila-component--product-data ">
             <div className={`maquila-item maquila-item--${product.id}`}>
-              <img src={require('../../../assets/img/' + (product.img ? product.img : altImg))} alt='jaja' />
+              <img src={require('../../../assets/img/' + (product.img ? product.img : altImg))} alt={product.description} />
             </div>
             <p>{product.description}</p>
           </div>

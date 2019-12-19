@@ -151,7 +151,6 @@ class ContactSide extends React.Component {
       <div className={`contact-component contact-component--${page}`} >
         <div className={`contact-component-content`}>
           <h1>GIVE US YOUR DETAILS</h1>
-          <button onClick={() => this.goBackProducts()}>jajajajja</button>
           <Form onSubmit={this.handleSubmit} className="contact-form">
             <Form.Item>
               {getFieldDecorator('username', {

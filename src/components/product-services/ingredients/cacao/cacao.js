@@ -193,7 +193,7 @@ class IngredientCacao extends React.Component {
             {
               Object.keys(itemsShowed).map(i =>
                 <div key={i} className={`cacao-component-tabs-products-item cacao-component-tabs-products-item-${itemsShowed[i].selected && 'active'}`} onClick={() => this.selectProduct(itemsShowed[i])}>
-                  <img src={require('../../../../assets/img/' + (itemsShowed[i].img ? itemsShowed[i].img : altImg))} alt='jaja' />
+                  <img src={require('../../../../assets/img/' + (itemsShowed[i].img ? itemsShowed[i].img : altImg))} alt={itemsShowed[i].description[0]} />
                   <span>i</span>
                   <h2>CASALUKER CACAO</h2>
                   <p>{itemsShowed[i].description[0]}</p>
