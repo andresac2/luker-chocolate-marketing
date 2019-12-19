@@ -47,12 +47,12 @@ class Article extends React.Component {
             <a href={data.autor.linkedin[0]} target="_blank" ><FaLinkedinIn /> {data.autor.linkedin[1]}</a>
           </div>
         </div>}
-        {data.recommended &&
+        {data.recommended && recommended &&
           <div className="blog-article-entries">
             <h2>{data.flag ? 'OTHER CLIENTS' : 'RECOMMENDED ENTRIES'}</h2>
             <div className="blog-article-entries--list">
               {Object.keys(recommended).map(i =>
-                recommended[i] && <Link key={i} to={recommended[i].url}>
+                <Link key={i} to={recommended[i].url}>
                   <img src={require('../../../assets/img/' + (data.flag ? '' : 'blog/') + (recommended[i].cover ? recommended[i].cover : altImg))} alt={recommended[i].title} />
                   <p>{recommended[i].date}</p>
                   <h2>{recommended[i].title}</h2>

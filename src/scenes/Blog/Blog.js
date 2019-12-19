@@ -687,13 +687,13 @@ It’s coming, the Festival’s coming. The families come together, each and eve
   loadArticle() {
     if (this.props.match.params.article) {
       if (this.props.match.params.category === 'our-clients') {
-        this.generateRecommendedEntries('clients');
         const client = this.clients.find(client => client.url === this.props.match.params.article)
         this.articleLoaded = client;
+        this.generateRecommendedEntries('clients');
       } else {
-        this.generateRecommendedEntries('article');
         const art = this.articles.find(art => art.url === this.props.match.params.article);
         this.articleLoaded = art;
+        this.generateRecommendedEntries('article');
       }
     }
   }
@@ -701,9 +701,10 @@ It’s coming, the Festival’s coming. The families come together, each and eve
   generateRecommendedEntries(type) {
     let recommended = [];
     let array = [];
-    console.log('type', type);
+    let nCategory = (this.props.match.params.category === 'under-the-tree') ? 'take-stand' : this.props.match.params.category;
     if (type === 'article') {
-      array = this.articles;
+      array = this.articles.filter(t => t.breads.find(e => e.href.includes(nCategory)));
+      //array = this.articles;
     } else {
       array = this.clients;
     }
@@ -711,10 +712,8 @@ It’s coming, the Festival’s coming. The families come together, each and eve
     let rest = 1;
     for (let i = 1; i < 4; i++) {
       if (fIndex + i < array.length) {
-        console.log('sumo', fIndex, i)
         recommended = recommended.concat(array[fIndex + i])
       } else {
-        console.log('resto', fIndex, i)
         recommended = recommended.concat(array[fIndex - rest])
         rest++;
       }
@@ -759,15 +758,13 @@ It’s coming, the Festival’s coming. The families come together, each and eve
           </div>
         </div >
         <div className="blog-component-content">
-          {!article &&
-            <div className={`blog-tabs blog-tabs-${category && 'selected'}`} >
-              <Link to='/blog/take-stand' className={category === 'take-stand' ? 'tab-blog-selected' : undefined}>TAKE A STAND</Link>
-              <Link to='/blog/innovation' className={category === 'innovation' ? 'tab-blog-selected' : undefined}>INNOVATION</Link>
-              <Link to='/blog/create-shared-value' className={category === 'create-shared-value' ? 'tab-blog-selected' : undefined}>CREATE SHARED VALUE</Link>
-              <Link to='/blog/chocolate-dream' className={category === 'chocolate-dream' ? 'tab-blog-selected' : undefined}>THE CHOCOLATE DREAM JOURNEY</Link>
-              <Link to='/blog/what-you-didnt-know' className={category === 'what-you-didnt-know' ? 'tab-blog-selected' : undefined}>WHAT YOU DIDN’T KNOW</Link>
-            </div>
-          }
+          {(category !== 'our-clients') && <div className={`blog-tabs blog-tabs-${category && 'selected'}`} >
+            <Link to='/blog/take-stand' className={category === 'take-stand' ? 'tab-blog-selected' : undefined}>TAKE A STAND</Link>
+            <Link to='/blog/innovation' className={category === 'innovation' ? 'tab-blog-selected' : undefined}>INNOVATION</Link>
+            <Link to='/blog/create-shared-value' className={category === 'create-shared-value' ? 'tab-blog-selected' : undefined}>CREATE SHARED VALUE</Link>
+            <Link to='/blog/chocolate-dream' className={category === 'chocolate-dream' ? 'tab-blog-selected' : undefined}>THE CHOCOLATE DREAM JOURNEY</Link>
+            <Link to='/blog/what-you-didnt-know' className={category === 'what-you-didnt-know' ? 'tab-blog-selected' : undefined}>WHAT YOU DIDN’T KNOW</Link>
+          </div>}
           {(category) ?
             (article) ? <Article data={this.articleLoaded} recommended={this.recommendedEntries} /> : <TakeStand articles={this.articles.filter(t => t.breads.find(e => e.href.includes(category)))} category={category} />
             :
