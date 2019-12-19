@@ -93,7 +93,6 @@ class ContactSide extends React.Component {
     }
   ]
 
-
   handleSubmit = e => {
     e.preventDefault();
     const templateId = 'contact_form_luker';
@@ -106,7 +105,6 @@ class ContactSide extends React.Component {
         console.log('Received values of form: ', values);
       }
     });
-
   };
 
   sendFeedback(templateId, variables) {
@@ -142,7 +140,7 @@ class ContactSide extends React.Component {
 
   render() {
     const { getFieldDecorator } = this.props.form;
-    const { products, page, history } = this.props;
+    const { products, page } = this.props;
     const { Option } = Select;
     const { TextArea } = Input;
     const altImg = 'img-example.svg';

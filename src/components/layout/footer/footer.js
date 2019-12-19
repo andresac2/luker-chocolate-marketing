@@ -1,6 +1,6 @@
 import React from 'react'
 import logo from '../../../assets/img/Lukerlogo.svg'
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
 
 import termsConditions from '../../../assets/documents/policies/Términos y condiciones de uso sitio web CasaLuker inglés 16dic2019.pdf';
@@ -9,14 +9,17 @@ import antiFraud from '../../../assets/documents/policies/Política antifraude y
 import dataTreatment from '../../../assets/documents/policies/Política tratamiento datos personales CasaLuker inglés 16dic2019.pdf';
 
 class Footer extends React.Component {
+  hideNews = ['moulding', 'dosing', 'panning', 'cocoa-powder', 'finished-chocolate', 'casaluker', 'our-services'];//VIstas en las que se ocukta el newsletter
   constructor(props) {
     super(props);
     this.state = {
     };
   }
-  render() {
-    const { mode } = this.props;
 
+  render() {
+    const { mode, history } = this.props;
+    const isNewsletterHidden = this.hideNews.some(function (v) { return history.location.pathname.includes(v); });
+    console.log('hide', isNewsletterHidden);
     return (
       <div>
         <div className={`footer-component ${mode == 'vertical' && 'footer-component-vertical'}`}>
@@ -26,18 +29,18 @@ class Footer extends React.Component {
           <div className="footer-component-data">
             <h2>LUKER CHOCOLATE COLOMBIA</h2>
             <ul>
-              <li>Calle 13 # 68-98</li>
+              <li><a href="https://goo.gl/maps/6Ni5hcRznH8yMznv9" target="_blank">Calle 13 # 68-98</a></li>
               <li>Bogotá, Colombia</li>
-              <li>lukercacao@lukerchocolate.com</li>
+              <li><a href="mailto:lukercacao@lukerchocolate.com" target="_blank">lukercacao@lukerchocolate.com</a></li>
               <li>+57(1) 4473700</li>
             </ul>
           </div>
           <div className="footer-component-data">
             <h2>LUKER CHOCOLATE EUROPE</h2>
             <ul>
-              <li>Kortrijksesteenweg 1132</li>
+              <li><a href="https://goo.gl/maps/FvoAnbZQjSMxdRn48" target="_blank">Kortrijksesteenweg 1132</a></li>
               <li>9051 Sint-Denjis-Westrem, Belgium</li>
-              <li>lukereu@lukerchocolate.com</li>
+              <li><a href="mailto:lukereu@lukerchocolate.com" target="_blank">lukereu@lukerchocolate.com</a></li>
               <li>+32(0) 9 2450460</li>
             </ul>
           </div>
@@ -57,7 +60,7 @@ class Footer extends React.Component {
             <Link to="/contact-us">CONTACT US</Link>
             <Link to="/blog">VISIT OUR BLOG</Link>
           </div>
-          <div className="footer-component-social">
+          {!isNewsletterHidden && <div className="footer-component-social">
             <h2>JOIN OUR NEWSLETTER</h2>
             <form action="/" >
               <input type="text" name="email" placeholder="Enter your email" />
@@ -68,8 +71,8 @@ class Footer extends React.Component {
               <a href="https://www.instagram.com/lukerchocolate/" target="_blank" ><FaInstagram /></a>
               <a href="https://www.facebook.com/LukerChocolate/" target="_blank" ><FaFacebookF /></a>
             </div>
-          </div>
-        </div >
+          </div>}
+        </div>
         {mode === 'vertical' &&
           <div className="footer-component-bkg" onClick={this.props.handleShowMoreInfo}></div>
         }
@@ -78,4 +81,4 @@ class Footer extends React.Component {
   }
 }
 
-export default Footer;
+export default withRouter(Footer);
