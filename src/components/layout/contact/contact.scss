@@ -69,6 +69,10 @@ $Extra-large: 1200px;
       border-color: #846961;
     }
 
+    .ant-select-selection--single .ant-select-selection__rendered {
+      width: 100%;
+    }
+
     .ant-select-selection--single {
       border-radius: 0;
       height: 50px;

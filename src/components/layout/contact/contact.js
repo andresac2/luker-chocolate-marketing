@@ -175,7 +175,7 @@ class Contact extends React.Component {
               })(
                 <Select
                   showSearch
-                  placeholder="Your Country"
+                  placeholder="Your country"
                   optionFilterProp="children"
                   filterOption={(input, option) =>
                     option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
