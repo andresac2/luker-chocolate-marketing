@@ -1,4 +1,5 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom';
 import { Form, Select, Input, Button, InputNumber, Modal } from 'antd';
 import FormItem from 'antd/lib/form/FormItem';
 import termsConditions from '../../../assets/documents/policies/Términos y condiciones de uso sitio web CasaLuker inglés 16dic2019.pdf';
@@ -92,6 +93,7 @@ class ContactSide extends React.Component {
     }
   ]
 
+
   handleSubmit = e => {
     e.preventDefault();
     const templateId = 'contact_form_luker';
@@ -116,6 +118,7 @@ class ContactSide extends React.Component {
       this.emailSent('Thank you for getting in touch! ', 'We appreciate you contacting us. One of our colleagues will get back in touch with you soon!');
       this.props.form.resetFields();
       this.props.handleSetProductSelected(this.props.products.filter(item => item.selected));
+      this.goBackProducts();
     })
       // Handle errors here however you like, or use a React error boundary
       .catch(err => (console.error('Oh well, you failed. Here some thoughts on the error that occured:', err), this.emailSent('Oh well, something failed', 'Check your conection and try again')));
@@ -132,10 +135,14 @@ class ContactSide extends React.Component {
     }, 8000);
   }
 
+  goBackProducts() {
+    let newRoute = (this.props.page === 'maquila') ? '/finished-chocolate-products' : (this.props.page === 'service') ? '' : '/ingredients';
+    this.props.history.push('/products-services' + newRoute);
+  }
 
   render() {
     const { getFieldDecorator } = this.props.form;
-    const { products, page } = this.props;
+    const { products, page, history } = this.props;
     const { Option } = Select;
     const { TextArea } = Input;
     const altImg = 'img-example.svg';
@@ -144,6 +151,7 @@ class ContactSide extends React.Component {
       <div className={`contact-component contact-component--${page}`} >
         <div className={`contact-component-content`}>
           <h1>GIVE US YOUR DETAILS</h1>
+          <button onClick={() => this.goBackProducts()}>jajajajja</button>
           <Form onSubmit={this.handleSubmit} className="contact-form">
             <Form.Item>
               {getFieldDecorator('username', {
@@ -250,4 +258,4 @@ class ContactSide extends React.Component {
 const WrappedContactSide = Form.create({ name: 'contact_form' })(ContactSide);
 
 
-export default WrappedContactSide;
+export default withRouter(WrappedContactSide);
