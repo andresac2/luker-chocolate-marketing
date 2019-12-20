@@ -710,7 +710,8 @@ It’s coming, the Festival’s coming. The families come together, each and eve
     }
     const fIndex = array.findIndex(art => art.url === this.props.match.params.article);
     let rest = 1;
-    for (let i = 1; i < 4; i++) {
+    let lim = array.length > 3 ? 4 : array.length;
+    for (let i = 1; i < lim; i++) {
       if (fIndex + i < array.length) {
         recommended = recommended.concat(array[fIndex + i])
       } else {
@@ -719,6 +720,8 @@ It’s coming, the Festival’s coming. The families come together, each and eve
       }
     }
     this.recommendedEntries = recommended;
+    console.log('recom', recommended);
+    console.log('size', recommended.length);
   }
 
   render() {

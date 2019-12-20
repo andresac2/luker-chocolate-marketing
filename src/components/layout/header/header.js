@@ -3,6 +3,7 @@ import { withRouter, Link } from 'react-router-dom';
 import logo from '../../../assets/img/Lukerlogo.svg'
 import { MdClose, MdMenu } from 'react-icons/md';
 import { Select } from 'antd';
+import Footer from '../footer/footer';
 
 class Header extends React.Component {
 
@@ -11,8 +12,10 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showMenu: false
+      showMenu: false,
+      moreInfoVisible: false
     };
+    this.handleShowMoreInfo = this.handleShowMoreInfo.bind(this);
   }
 
   menuToggle() {
@@ -26,10 +29,16 @@ class Header extends React.Component {
         this.menuToggle();
       }, 2000);
   }
+  handleShowMoreInfo = (e) => {
+    e.preventDefault();
+    this.setState({
+      moreInfoVisible: !this.state.moreInfoVisible,
+    });
+  };
 
   render() {
     const { history } = this.props;
-    const { showMenu } = this.state;
+    const { showMenu, moreInfoVisible } = this.state;
     const { Option } = Select;
     const selectTab = history.location.pathname;
     const isLogoHidden = history.location.pathname.includes('/our-value/') ? false : this.logoHidden.some(function (v) { return history.location.pathname.includes(v); });
@@ -64,11 +73,12 @@ class Header extends React.Component {
             <Link to="/our-value" className={`selected-tab separator ${(selectTab === '/our-value' || selectTab.slice(1).split('/').shift() === 'our-value') && 'our-value'}`}><span>OUR VALUE PROPOSITION</span></Link>
 
             <Link to="/blog" className={`selected-tab selected-tab-responsive ${selectTab === '/blog' && selectTab.slice(1)}`} ><span>BLOG</span></Link>
-            <Link to="/" className={`selected-tab selected-tab-responsive`} ><span>CREATE YOUR OWN CHOCOLATE</span></Link>
-            <Link to="/" className={`selected-tab selected-tab-responsive`} ><span>MORE INFO</span></Link>
+            {/*<Link to="/" className={`selected-tab selected-tab-responsive`} ><span>CREATE YOUR OWN CHOCOLATE</span></Link>*/}
+            <Link to="/" onClick={e => this.handleShowMoreInfo(e)} className={`selected-tab selected-tab-responsive`} ><span>MORE INFO</span></Link>
             <Link to="/contact-us" className={`selected-tab selected-tab-responsive`}><span>CONTACT US</span></Link>
           </nav>
         </div>
+        {moreInfoVisible && <Footer mode='responsive' handleShowMoreInfo={this.handleShowMoreInfo} />}
       </div>
     );
   }

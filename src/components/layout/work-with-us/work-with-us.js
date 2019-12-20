@@ -118,7 +118,7 @@ class WorkWithUs extends React.Component {
       variables
     ).then(res => {
       console.log('Email successfully sent!');
-      this.emailSent('Thanks for filling out our form!', `We will look over your message and get back to you in a few days. In the meantime, you can check our production proccess, look over our products collection or browse through our latest blog posts.`);
+      this.emailSent('Thanks for the info!', `We'll look over your message and get back to you in a few days. Keep browsing!`);
       this.props.form.resetFields();
     })
       // Handle errors here however you like, or use a React error boundary
