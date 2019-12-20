@@ -8,6 +8,7 @@ import Article from '../../components/blog/article/article';
 import FloatLogo from '../../components/layout/float-logo/float-logo';
 import SustainabilityBrief from '../../assets/documents/Sustainabililty 2018 Luker Chocolate VERSIÓN DIGITAL.pdf';
 import CocoaForestPeaceAgreement from '../../assets/documents/Colombia-Cocoa-Forests-and-Peace-Initiative-Joint-Framework-for-Action-English.pdf';
+import zipDocuments from '../../assets/documents/documents-luker.zip';
 
 class Sustain extends React.Component {
 
@@ -109,10 +110,14 @@ class Sustain extends React.Component {
   downloadDocuments() {
     //(modalReportItems.filter(item => item.selected).some(function (v) { return v.id.includes(2) }))
     let docs = this.state.modalReportItems.filter(item => item.selected);
-    if (docs.some(function (v) { return v.id.includes(2) }))
-      window.open(SustainabilityBrief);
-    if (docs.some(function (v) { return v.id.includes(4) }))
-      window.open(CocoaForestPeaceAgreement);
+    if (docs.length === 1) {
+      if (docs.some(function (v) { return v.id.includes(2) }))
+        window.open(SustainabilityBrief);
+      if (docs.some(function (v) { return v.id.includes(4) }))
+        window.open(CocoaForestPeaceAgreement);
+    } else {
+      window.open(zipDocuments);
+    }
   }
 
   showModalDist = () => {

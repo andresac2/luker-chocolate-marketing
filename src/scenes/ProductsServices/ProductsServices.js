@@ -45,6 +45,11 @@ class ProductsServices extends React.Component {
         name: 'Moulding',
         id: 'moulding',
         description: 'We carry seven diﬀerent existing molds. By combining manual and machine production, we can implement very speciﬁc packaging requirements. Below is a selection of our molds and packaging options.'
+      }, {
+        img: 'cocoa-powder.png',
+        name: 'Cocoa Powder',
+        id: 'cocoa-powder',
+        description: 'Our sugar and cholesterol-free cocoa powder is made with the best quality fine or flavour cocoa beans. It’s perfect to make delicious hot chocolate or recipes with chocolaty combinations. It can also be used as an ingredient to flavor ice cream, cakes, desserts, and ganache.'
       }];
     const ingredients = [
       {

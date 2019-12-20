@@ -47,7 +47,7 @@ class Article extends React.Component {
             <a href={data.autor.linkedin[0]} target="_blank" ><FaLinkedinIn /> {data.autor.linkedin[1]}</a>
           </div>
         </div>}
-        {recommended.length > 0 &&
+        {recommended && recommended.length > 0 &&
           <div className="blog-article-entries">
             <h2>{data.flag ? 'OTHER CLIENTS' : 'RECOMMENDED ENTRIES'}</h2>
             <div className="blog-article-entries--list">

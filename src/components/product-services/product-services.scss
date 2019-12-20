@@ -30,6 +30,10 @@
     grid-template-columns: 1fr 1fr 1fr;
     width: 790px;
 
+    :nth-child(5) {
+      display: none;
+    }
+
     .carr-item {
       filter: blur(2px);
       flex: 1 1;
@@ -40,6 +44,7 @@
       &--moulding,
       &--panning,
       &--dosing,
+      &--cocoa-powder,
       &--casaluker-cacao,
       &--casaluker-maracas,
       &--casaluker-origins {
@@ -61,6 +66,10 @@
 
       &--panning::after {
         background: #7F5046;
+      }
+
+      &--cocoa-powder::after {
+        background: #D5B777;
       }
 
       &--dosing::after {
@@ -107,6 +116,7 @@
           &--moulding,
           &--panning,
           &--dosing,
+          &--cocoa-powder,
           &--casaluker-cacao,
           &--casaluker-maracas,
           &--casaluker-origins {
@@ -174,6 +184,10 @@
 
     &--dosing {
       background: #B3642C;
+    }
+
+    &--cocoa-powder {
+      background: #D5B777;
     }
 
     &--casaluker-cacao {
@@ -269,6 +283,7 @@
         &--moulding,
         &--panning,
         &--dosing,
+        &--cocoa-powder,
         &--casaluker-cacao,
         &--casaluker-maracas,
         &--casaluker-origins {
@@ -295,6 +310,7 @@
             &--moulding,
             &--panning,
             &--dosing,
+            &--cocoa-powder,
             &--casaluker-cacao,
             &--casaluker-maracas,
             &--casaluker-origins {
@@ -320,6 +336,7 @@
           }
 
           &--moulding,
+          &--cocoa-powder,
           &--panning,
           &--dosing {
             img {
