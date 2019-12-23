@@ -222,7 +222,7 @@ class ContactSide extends React.Component {
                           <img src={require('../../../assets/img/' + products[0].img)} alt={products[0].description} />
                           <p>{products[0].description}</p>
                         </div>
-                          (products.length > 0) && <div className={`contact-form-products--list-item-${page} contact-form-products--list-item-${page}-dmw`} onClick={() => this.props.handleSetProductSelected()}>{products[1]}</div></>
+                          {(products.length > 0) && <div className={`contact-form-products--list-item-${page} contact-form-products--list-item-${page}-dmw`} onClick={() => this.props.handleSetProductSelected()}>{products[1]}</div>}</>
                       : <span>{page === 'maquila' ? 'Choose an option from the list' : 'Pick your choice from the list of products'}</span>
                     }
                   </div>

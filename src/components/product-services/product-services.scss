@@ -30,11 +30,14 @@
     grid-template-columns: 1fr 1fr 1fr;
     width: 790px;
 
-    :nth-child(5) {
-      display: none;
+
+    .carr-item:nth-child(-n+4) {
+      display: block;
     }
 
+
     .carr-item {
+      display: none;
       filter: blur(2px);
       flex: 1 1;
       position: relative;

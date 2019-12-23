@@ -3,7 +3,12 @@
     display: none;
   }
 
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: 996px) {
+    background: url('../../../assets/img/matas.png') no-repeat #f3f3f3;
+    background-size: 100%;
+    background-position: center top;
+    @include open-matas;
+
     .btn-back-sticky {
       display: block;
       position: sticky;

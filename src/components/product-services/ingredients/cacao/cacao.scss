@@ -163,17 +163,25 @@
     padding-left: 0;
 
     &--header {
+      h1 {
+        font-size: 2em;
+      }
+
+      img {
+        transition: all ease-in .5s;
+      }
+
       &-img {
         margin: 0 auto;
 
         img {
           position: relative;
-          width: 10em;
+          width: 8em;
           z-index: 1;
 
           &:nth-child(2) {
-            margin: 0 -5em;
-            width: 12em;
+            margin: 0 -3em;
+            width: 10em;
             z-index: 2;
           }
         }

@@ -3,7 +3,7 @@
   top: 0;
   right: 0;
   @include vert-center;
-  background: url('../../../assets/img/contact-maquila.jpg') no-repeat;
+  background: url('../../../assets/img/maquila-side.jpg') no-repeat;
   height: 100vh;
   width: 340px;
   background-position: right;
@@ -306,19 +306,24 @@
     }
   }
 
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: 996px) {
     position: fixed;
     top: 0;
     right: 0;
     height: 100vh;
     width: 100vw;
-    padding-top: 50px;
     background-position: right;
     background-size: cover;
-    z-index: 1;
+    z-index: 2;
+
+    &-content {
+      margin-top: 100px;
+      margin-bottom: 0;
+      height: calc(100vh - 100px);
+    }
 
     .contact-form-products--list {
-      max-width: 80vw;
+      max-width: calc(100vw - 3em);
     }
 
     .contact-form-button-back {
