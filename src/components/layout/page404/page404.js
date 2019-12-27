@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../../../assets/img/Lukerlogo.svg'
+import HelmetComponent from '../../../commons/helmet/helmet';
 
 class Page404 extends React.Component {
 
@@ -22,6 +23,7 @@ class Page404 extends React.Component {
   render() {
     return (
       <div className="component-404">
+        <HelmetComponent title="Page not found | 404 " />
         <div className="component-404-content">
           <img src={logo} className="logo" alt="Logo Luker" />
           <p>Error</p>

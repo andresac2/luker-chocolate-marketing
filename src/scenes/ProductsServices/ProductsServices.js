@@ -74,7 +74,6 @@ class ProductsServices extends React.Component {
       }];
 
     return (
-
       <div className="services-component">
         <div className={`services-header services-header--${title} ${(item) && 'services-header--title-short'}`}>
           <div className="btn-dist">
@@ -98,6 +97,5 @@ class ProductsServices extends React.Component {
     );
   }
 };
-
 
 export default ProductsServices;

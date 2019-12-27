@@ -2,8 +2,8 @@ import React from 'react';
 import { Breadcrumb, Icon } from 'antd';
 import { Link, withRouter } from 'react-router-dom';
 import { FaFacebookF, FaLinkedinIn, FaPrint, FaInstagram, FaTwitter } from 'react-icons/fa';
-
 import Comments from '../comments/comments';
+import HelmetComponent from '../../../commons/helmet/helmet';
 
 class Article extends React.Component {
   constructor(props) {
@@ -16,6 +16,7 @@ class Article extends React.Component {
     const fullUrl = window.location.href;
     return (
       <div className="blog-article">
+        <HelmetComponent title={data.title} description={(data.flag) ? 'Our clients' : data.breads[0].href} cover={`../../assets/img/blog/${data.cover}`} url={fullUrl} />
         {!window.location.href.includes('sustainability') && <div className="blog-article-title-resp">{data.title}</div>}
         <div className="blog-article-bread">
           <Breadcrumb>

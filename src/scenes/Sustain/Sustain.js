@@ -9,6 +9,7 @@ import FloatLogo from '../../components/layout/float-logo/float-logo';
 import SustainabilityBrief from '../../assets/documents/Sustainabililty 2018 Luker Chocolate VERSIÓN DIGITAL.pdf';
 import CocoaForestPeaceAgreement from '../../assets/documents/Colombia-Cocoa-Forests-and-Peace-Initiative-Joint-Framework-for-Action-English.pdf';
 import zipDocuments from '../../assets/documents/documents-luker.zip';
+import HelmetComponent from '../../commons/helmet/helmet';
 
 class Sustain extends React.Component {
 
@@ -228,6 +229,7 @@ class Sustain extends React.Component {
 
     return (
       <div className="sustain-component">
+        <HelmetComponent title="Luker Chocolate | Sustainability" />
         <FloatLogo btnText='dist' />
         <div className="sustain-sidebar">
           <div className="sustain-sidebar--text">

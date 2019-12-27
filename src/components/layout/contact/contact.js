@@ -6,6 +6,7 @@ import logo from '../../../assets/img/Lukerlogo.svg'
 import Footer from '../footer/footer';
 import termsConditions from '../../../assets/documents/policies/Términos y condiciones de uso sitio web CasaLuker inglés 16dic2019.pdf';
 import privacyPolicy from '../../../assets/documents/policies/Política privacidad sitio web CasaLuker inglés 16dic2019.pdf';
+import HelmetComponent from '../../../commons/helmet/helmet';
 
 class Contact extends React.Component {
 
@@ -138,6 +139,7 @@ class Contact extends React.Component {
     const { TextArea } = Input;
     return (
       <div className={`contact-us`} >
+        <HelmetComponent title="Contact us" />
         <div className="contact-us-header">
           <div className="btn-dist">
             <Link to="/" className="logo"> <img src={logo} alt="Logo Luker" /></Link>

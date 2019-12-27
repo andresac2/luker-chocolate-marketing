@@ -15,12 +15,14 @@ import usFlag from '../../assets/img/us-flag.png'
 import dkFlag from '../../assets/img/dk-flag.png'
 import ukFlag from '../../assets/img/uk-flag.png'
 import FloatLogo from '../../components/layout/float-logo/float-logo';
+import HelmetComponent from '../../commons/helmet/helmet';
 
 
 function Customer() {
 
   return (
     <div className='customer-component'>
+      <HelmetComponent title="Luker Chocolate | Our clients" />
       <div className="customer-component--header">
         <h1>OUR CLIENTS</h1>
         <FloatLogo btnText='dist' />

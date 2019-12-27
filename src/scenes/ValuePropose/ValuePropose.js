@@ -8,10 +8,12 @@ import ImgCarrousel from '../../components/img-carrousel/img-carrousel';
 
 import { Link } from 'react-router-dom';
 import FloatLogo from '../../components/layout/float-logo/float-logo';
+import HelmetComponent from '../../commons/helmet/helmet';
 
 function ValuePropose() {
   return (
     <div className="value-propose-component">
+      <HelmetComponent title="Luker Chocolate | Our value propose" />
       <div className="value-propose-component--expo">
         <div className="btn-dist">
           <Link to="/" className="logo"> <img src={logo} alt="Logo Luker" /></Link>

@@ -12,6 +12,7 @@ import logo from '../../assets/img/Lukerlogo.svg'
 import TakeStand from '../../components/blog/take-stand/take-stand';
 import Article from '../../components/blog/article/article';
 import FloatLogo from '../../components/layout/float-logo/float-logo';
+import HelmetComponent from '../../commons/helmet/helmet';
 
 
 class Blog extends React.Component {
@@ -734,6 +735,7 @@ It’s coming, the Festival’s coming. The families come together, each and eve
     this.loadArticle();
     return (
       <Layout className="blog-component">
+        <HelmetComponent title="Blog | Under The Tree" />
         <div className={`blog-component-header blog-component-header--${(article) ? article : category}`} style={{ backgroundImage: category !== 'our-clients' ? (article) ? `url(${require(`../../assets/img/blog/${this.articleLoaded.cover}`)})` : '' : undefined }}>
           <div className="btn-dist">
             <Link to="/" className="logo"> <img src={logo} alt="Logo Luker" /></Link>
@@ -756,7 +758,7 @@ It’s coming, the Festival’s coming. The families come together, each and eve
                 <Option value="en">EN</Option>
               </Select>
             </div>
-            <h1 style={{ fontSize: (article) ? '4em' : '5em' }}>{(article) ? this.articleLoaded.title : (category) ? category : 'Under The Tree'}
+            <h1 style={{ fontSize: (article) ? '4em' : '5em' }}>{(article) ? this.articleLoaded.title : (category) ? category.replace(/-/g, " ") : 'Under The Tree'}
               {this.articleLoaded.flag && <img className="blog-component-header-flag" src={require('../../assets/img/' + this.articleLoaded.flag)} alt={this.articleLoaded.flag.substr(0, 2)} />} </h1>
           </div>
         </div >

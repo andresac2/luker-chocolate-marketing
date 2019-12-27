@@ -23,7 +23,7 @@ import Page404 from "./components/layout/page404/page404";
 import NavArrowRight from "./components/layout/nav-arrows/nav-arrow-right";
 import NavArrowLeft from "./components/layout/nav-arrows/nav-arrow-left";
 import WrappedWorkWithUs from "./components/layout/work-with-us/work-with-us";
-import ScrollToTop from "./components/layout/scroll-to-top/scroll-to-top";
+import ScrollToTop from "./commons/scroll-to-top/scroll-to-top";
 
 export default function BasicExample() {
   return (

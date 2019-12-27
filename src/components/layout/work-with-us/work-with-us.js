@@ -6,6 +6,7 @@ import logo from '../../../assets/img/Lukerlogo.svg'
 import Footer from '../footer/footer';
 import termsConditions from '../../../assets/documents/policies/Términos y condiciones de uso sitio web CasaLuker inglés 16dic2019.pdf';
 import privacyPolicy from '../../../assets/documents/policies/Política privacidad sitio web CasaLuker inglés 16dic2019.pdf';
+import HelmetComponent from '../../../commons/helmet/helmet';
 
 class WorkWithUs extends React.Component {
 
@@ -169,6 +170,7 @@ class WorkWithUs extends React.Component {
 
     return (
       <div className={`work-with-us`} >
+        <HelmetComponent title="Work with us" />
         <div className="work-with-us-header">
           <div className="btn-dist">
             <Link to="/" className="logo"> <img src={logo} alt="Logo Luker" /></Link>

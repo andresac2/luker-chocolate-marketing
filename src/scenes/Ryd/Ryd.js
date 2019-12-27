@@ -2,6 +2,7 @@ import React from 'react';
 import logo from '../../assets/img/Lukerlogo.svg'
 import RydArticle from '../../components/ryd-article/ryd-article';
 import FloatLogo from '../../components/layout/float-logo/float-logo';
+import HelmetComponent from '../../commons/helmet/helmet';
 
 class Ryd extends React.Component {
 
@@ -21,6 +22,7 @@ class Ryd extends React.Component {
 
     return (
       <div className="ryd-component">
+        <HelmetComponent title="Luker Chocolate | Ideas & trends" />
         {!selectTab &&
           <FloatLogo btnText='dist' />}
         <div className={`ryd-tab ryd-tab--${selectTab}`}>

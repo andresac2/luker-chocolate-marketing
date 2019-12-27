@@ -6,6 +6,7 @@ import { MdClose } from 'react-icons/md';
 import { Select } from 'antd';
 import { Link } from 'react-router-dom';
 import Modals from '../../components/modals/modals';
+import HelmetComponent from '../../commons/helmet/helmet';
 
 class Home extends React.Component {
   constructor(props) {
@@ -32,6 +33,7 @@ class Home extends React.Component {
 
     return (
       <div className="home">
+        <HelmetComponent title="Luker Chocolate | Cacao Fino de Aroma" />
         <div className="home-logo">
           <Link to="/" className="logo"> <img src={logo} alt="Logo Luker" /></Link>
           <Select defaultValue="en"  >

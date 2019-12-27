@@ -3,11 +3,13 @@ import { Link } from 'react-router-dom';
 
 import logo from '../../assets/img/Lukerlogo.svg'
 import FloatLogo from '../../components/layout/float-logo/float-logo';
+import HelmetComponent from '../../commons/helmet/helmet';
 
 function Solution() {
 
   return (
     <div className='solution-component'>
+      <HelmetComponent title="Luker Chocolate | Products & services" />
       <FloatLogo btnText='dist' />
       <Link to="/products-services/ingredients" className="solution-component--ingredient">
         <div className="header-btn">
