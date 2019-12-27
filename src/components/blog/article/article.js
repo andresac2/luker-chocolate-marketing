@@ -3,7 +3,7 @@ import { Breadcrumb, Icon } from 'antd';
 import { Link, withRouter } from 'react-router-dom';
 import { FaFacebookF, FaLinkedinIn, FaPrint, FaInstagram, FaTwitter } from 'react-icons/fa';
 import Comments from '../comments/comments';
-import HelmetComponent from '../../../commons/helmet/helmet';
+import { Helmet } from 'react-helmet';
 
 class Article extends React.Component {
   constructor(props) {
@@ -16,7 +16,19 @@ class Article extends React.Component {
     const fullUrl = window.location.href;
     return (
       <div className="blog-article">
-        <HelmetComponent title={data.title} description={(data.flag) ? 'Our clients' : data.breads[0].href} cover={`../../assets/img/blog/${data.cover}`} url={fullUrl} />
+        <Helmet>
+          <title>{data.title}</title>
+          <meta name="description" content={data.flag ? "Our clients" : data.breads[0].href} />
+          <meta property="og:title" content={data.title} />
+          <meta property="og:description" content={(data.flag) ? 'Our clients' : data.breads[0].href} />
+          <meta property="og:image" content={"https://www.lukerchocolate.com" + require(`../../../assets/img/${data.flag ? '' : 'blog/'}${data.cover ? data.cover : 'img-example.svg'}`)} />
+          <meta property="og:url" content={fullUrl} />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta property="og:site_name" content="Luker Chocolate." />
+          <meta name="twitter:image:alt" content="Luker Chocolate | Cacao Fino de Aroma" />
+          <meta property="fb:app_id" content="your_app_id" />
+          <meta name="twitter:site" content="@Luker_Chocolate" />
+        </Helmet>
         {!window.location.href.includes('sustainability') && <div className="blog-article-title-resp">{data.title}</div>}
         <div className="blog-article-bread">
           <Breadcrumb>
