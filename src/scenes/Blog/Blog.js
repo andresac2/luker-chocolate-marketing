@@ -13,7 +13,7 @@ import TakeStand from '../../components/blog/take-stand/take-stand';
 import Article from '../../components/blog/article/article';
 import FloatLogo from '../../components/layout/float-logo/float-logo';
 import { Helmet } from 'react-helmet';
-
+import MetaTags from 'react-meta-tags';
 
 class Blog extends React.Component {
   constructor(props) {
@@ -26,42 +26,42 @@ class Blog extends React.Component {
     breads: [{ href: '/our-clients', name: 'Our clients' }],
     url: 'doisy-dam',
     cover: 'Doisy&Dam.jpg',
+    banner: 'doisy-header.jpg',
     title: 'Doisy & Dam',
-    flag: 'uk-flag.png',
+    flag: 'uk',
     content: `<p>When it comes to sourcing cocoa, Doisy & Dam only wants the best of the best. For them, it’s very important to understand exactly how the supply chain works and where exactly the totally delish cocoa comes from. They also want to make sure that the chocolate they work with is ethically sourced and has a positive impact on the dedicated farmers who depend on growing great crops.</p>
 <p>For their newest creations Crunchy Almond Butter and SNAPS, they wanted to get even deeper in to the heart of tracing the  cocoa, which us why they've decided to use single-origin chocolate from us, not only because grow some of the tastiest cocoa beans in the land but also because we work very hard to improve the local community.</p>
   <div class="blog-article-content--img" ><img src="/static/media/doisy-milk.57393fc4.jpg" alt=""><span></span></div>`,
-    recommended: [{ img: 'pots&co.jpg', title: '', subtitle: 'POTS & CO', url: '/blog/our-clients/pots-co' }, { img: 'york.jpg', title: '', subtitle: 'YORK COCOA HOUSE', url: '/blog/our-clients/york-cocoa-house' }, { img: 'dengel.jpg', title: '', subtitle: 'Dengel Shokolade', url: '/blog/our-clients/dengel-shokolade' }]
   }, {
     breads: [{ href: '/our-clients', name: 'Our clients' }],
     url: 'pots-co',
     title: 'Pots & Co',
+    banner: 'pots-header.jpg',
     cover: 'pots&co.jpg',
-    flag: 'uk-flag.png',
+    flag: 'uk',
     content: `<p>At Pots & Co they love making timeless classics. Their goal is to work with traditional recipes and elevate them into modern, restaurant-quality puddings that hero the classic ingredients and culinary techniques used to make them.</p>
 <p>All of their base ingredients are sourced with attention and care, which is why at Luker Chocolate get to provide them. There are no additives or taste enhances needed, or allowed in their kitchen. The majority of their products are chocolate-based and the highest quality is required to produce them. </p>
 <p>Since the team at Pots & Co tried Colombian chocolate, they knew the quality and flavour could not be compared to anything else in the world, and thus they decided to make us their provider, ensuring a fantastic flavour and special value.</p><div class="blog-article-content--img" ><img src="/static/media/pots-blog.caab403c.jpg" alt="Pots Cover"><span>POTS & CO</span></div></div>`,
-    recommended: [{ img: 'Doisy&Dam.jpg', title: '', subtitle: 'Doisy & Dam', url: '/blog/our-clients/doisy-dam' }, { img: 'york.jpg', title: '', subtitle: 'YORK COCOA HOUSE', url: '/blog/our-clients/york-cocoa-house' }, { img: 'dengel.jpg', title: '', subtitle: 'Dengel Shokolade', url: '/blog/our-clients/dengel-shokolade' }]
-  }, {
-    breads: [{ href: '/our-clients', name: 'Our clients' }],
-    url: 'dengel-shokolade',
-    title: 'Dengel Shokolade',
-    cover: 'dengel.jpg',
-    flag: 'dk-flag.png',
-    content: `<p>What Dengel Shokolade in Germany likes about our products is that every cocoa bean is closely related to the producers. Dengel Shokolade launched a raw material concept in 2015. This is under the motto "honest and fair direct from the producer". Thus, the raw materials needed for chocolate production (cocoa beans, cane sugar, and milk) are purchased directly from cocoa farmers from Colombia. They produce noble and fine chocolates since 1992. For them, the purchase of Cacao Fino de Aroma directly from Colombia without intermediate trade and at a fair fixed price is unbeatable, allowing us to makes sure that equivalent funds are paid directly to the cocoa farmers.</p>
-  <div class="blog-article-content--img" ><img src="/static/media/dengel-blog.ba0062a9.jpg" alt="Dengel Shokolade" /><span></span></div>`,
-    recommended: [{ img: 'Doisy&Dam.jpg', title: '', subtitle: 'Doisy & Dam', url: '/blog/our-clients/doisy-dam' }, { img: 'york.jpg', title: '', subtitle: 'YORK COCOA HOUSE', url: '/blog/our-clients/york-cocoa-house' }, { img: 'pots&co.jpg', title: '', subtitle: 'POTS & CO', url: '/blog/our-clients/pots-co' }]
   }, {
     breads: [{ href: '/our-clients', name: 'Our clients' }],
     url: 'york-cocoa-house',
     title: 'York Cocoa House',
     cover: 'york.jpg',
-    flag: 'us-flag.png',
+    banner: 'york-header.jpg',
+    flag: 'us',
     content: `<p>Sophie Jewett says she fell in love with chocolate at an early age. She made chocolate cakes and fudge for friends and family as a child, eventually melting Christmas chocolates in an attempt to create her own Easter Eggs. Since then, her interest in chocolate grew into an obsession, and so she set out to learn everything possible about chocolate. Every new thing she’s discovered drawn her deeper into the world of chocolate and introduced her to chocolate lovers, chocolate makers, chocolatiers and experts from around the world, including us. </p>
 <p>For her, it’s very important to work with products that involve communities working side-by-side, giving her and other chocolate professionals to tell new stories through a positive experience, which is what we try to accomplish every day at Luker Chocolate.</p>
   <div class="blog-article-content--img" ><img src="/static/media/york-blog.6edf6a0f.jpg" alt="York Cocoa House" /><span></span></div>`,
-    recommended: [{ img: 'dengel.jpg', title: '', subtitle: 'Dengel Shokolade', url: '/blog/our-clients/dengel-shokolade' }, { img: 'Doisy&Dam.jpg', title: '', subtitle: 'Doisy & Dam', url: '/blog/our-clients/doisy-dam' }, { img: 'pots&co.jpg', title: '', subtitle: 'POTS & CO', url: '/blog/our-clients/pots-co' }]
-  }]
+  },
+  {
+    breads: [{ href: '/our-clients', name: 'Our clients' }],
+    url: 'royce',
+    title: 'ROYCE\'',
+    cover: 'royce.jpg',
+    banner: 'royce-cover.jpg',
+    flag: 'jp',
+    content: `<p>ROYCE' was founded in Sapporo, Japan, in 1983. They are able to make chocolate of world-class quality in Hokkaido by having acquired the best techniques and enriching their experience through the years. The fundamental principle of Royce' has been and will always be the painstaking sourcing of high-quality ingredients, and so, we are the ones that provide those for them. They take pride in having their own farm in Colombia, which we run for them, allowing their customers and consumers to know that the origin of their products is from a great quality source.</p><img class="aligncenter size-full wp-image-1966" src="http://carryitlikeharry.com/wp-content/uploads/2017/07/IMG20170716140426.jpg" alt="Royce Fine Japanese Chocolates" height="992" >`
+  }];
   articles = [
     {
       breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/take-stand', name: 'Take a stand' }],
@@ -735,7 +735,7 @@ It’s coming, the Festival’s coming. The families come together, each and eve
     this.loadArticle();
     return (
       <Layout className="blog-component">
-        <Helmet>
+        <MetaTags>
           <title>Blog | Under The Tree</title>
           <meta property="og:title" content="Blog | Under The Tree" />
           <meta property="og:image" content='https://www.lukerchocolate.com/static/media/blog-header.8847659a.jpg' />
@@ -745,8 +745,19 @@ It’s coming, the Festival’s coming. The families come together, each and eve
           <meta name="twitter:image:alt" content="Blog | Under The Tree" />
           <meta property="fb:app_id" content="your_app_id" />
           <meta name="twitter:site" content="@Luker_Chocolate" />
-        </Helmet>
-        <div className={`blog-component-header blog-component-header--${(article) ? article : category}`} style={{ backgroundImage: category !== 'our-clients' ? (article) ? `url(${require(`../../assets/img/blog/${this.articleLoaded.cover}`)})` : '' : undefined }}>
+        </MetaTags>
+        {/*        <Helmet>
+          <title>Blog | Under The Tree</title>
+          <meta property="og:title" content="Blog | Under The Tree" />
+          <meta property="og:image" content='https://www.lukerchocolate.com/static/media/blog-header.8847659a.jpg' />
+          <meta property="og:url" content={window.location.href} />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta property="og:site_name" content="Luker Chocolate." />
+          <meta name="twitter:image:alt" content="Blog | Under The Tree" />
+          <meta property="fb:app_id" content="your_app_id" />
+          <meta name="twitter:site" content="@Luker_Chocolate" />
+</Helmet>*/}
+        <div className={`blog-component-header blog-component-header--${(article) ? article : category}`} style={{ backgroundImage: category !== 'our-clients' ? (article) ? `url(${require(`../../assets/img/blog/${this.articleLoaded.cover}`)})` : '' : `url(${require(`../../assets/img/${this.articleLoaded.banner}`)})` }}>
           <div className="btn-dist">
             <Link to="/" className="logo"> <img src={logo} alt="Logo Luker" /></Link>
             {category === 'our-clients' ?
@@ -769,7 +780,7 @@ It’s coming, the Festival’s coming. The families come together, each and eve
               </Select>
             </div>
             <h1 style={{ fontSize: (article) ? '4em' : '5em' }}>{(article) ? this.articleLoaded.title : (category) ? category.replace(/-/g, " ") : 'Under The Tree'}
-              {this.articleLoaded.flag && <img className="blog-component-header-flag" src={require('../../assets/img/' + this.articleLoaded.flag)} alt={this.articleLoaded.flag.substr(0, 2)} />} </h1>
+              {this.articleLoaded.flag && <img className="blog-component-header-flag" src={require('../../assets/img/' + this.articleLoaded.flag + "-flag.png")} alt={this.articleLoaded.flag.substr(0, 2)} />} </h1>
           </div>
         </div >
         <div className="blog-component-content">
