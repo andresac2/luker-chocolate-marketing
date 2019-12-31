@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import doisy from '../../assets/img/Doisy&Dam.jpg'
+import royce from '../../assets/img/royce.jpg'
 //import fifthDim from '../../assets/img/5thdimensions.jpg'
 //import laceys from '../../assets/img/Lacy\'s New.png'
 //import lyra from '../../assets/img/lyra_eshop.jpg'
@@ -14,6 +15,7 @@ import york from '../../assets/img/york.jpg'
 import usFlag from '../../assets/img/us-flag.png'
 import dkFlag from '../../assets/img/dk-flag.png'
 import ukFlag from '../../assets/img/uk-flag.png'
+import jpFlag from '../../assets/img/jp-flag.png'
 import FloatLogo from '../../components/layout/float-logo/float-logo';
 import HelmetComponent from '../../commons/helmet/helmet';
 
@@ -31,22 +33,22 @@ function Customer() {
         <Link to='/blog/our-clients/pots-co'>
           <img src={pots} alt="Pots&co" />
           <h2>POTS & CO</h2>
-          <img src={ukFlag} alt="" className="flag-badge" />
+          <img src={ukFlag} alt="United kingdom flag" className="flag-badge" />
         </Link>
         <Link to='/blog/our-clients/doisy-dam'>
           <img src={doisy} alt="Doisy & Dam" />
           <h2>DOISY & DAM</h2>
-          <img src={ukFlag} alt="" className="flag-badge" />
+          <img src={ukFlag} alt="United kingdom flag" className="flag-badge" />
         </Link>
-        <Link to='/blog/our-clients/dengel-shokolade'>
-          <img src={dengel} alt="" />
-          <h2>DENGEL SHOKOLADE</h2>
-          <img src={dkFlag} alt="" className="flag-badge" />
+        <Link to='/blog/our-clients/royce'>
+          <img src={royce} alt="Royce" />
+          <h2>ROYCE'</h2>
+          <img src={jpFlag} alt="Japan flag" className="flag-badge" />
         </Link>
         <Link to='/blog/our-clients/york-cocoa-house'>
-          <img src={york} alt="" />
+          <img src={york} alt="York Cocoa House" />
           <h2>YORK COCOA HOUSE</h2>
-          <img src={usFlag} alt="" className="flag-badge" />
+          <img src={usFlag} alt="United states flag" className="flag-badge" />
         </Link>
       </div>
     </div>
