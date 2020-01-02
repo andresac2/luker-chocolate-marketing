@@ -91,7 +91,7 @@ class Ingredient1906 extends React.Component {
           <p className="i1906-component--content-specifications">Available in: 2,5 bag or 20kg box<br /> Shelf life: Dark 24 months, Milk 18 months & White 14 months.</p>
         </div>
         <div className={`i1906-component--contain-products-arrow ${openProducts ? 'i1906-component--contain-products-arrow-open' : ''}`} onClick={() => this.showProductToggle()}><span><TiArrowSortedUp /></span></div>
-        <div className={`i1906-component--contain-products ${openProducts ? 'i1906-component--contain-products-open' : ''}`} style={{ height: openProducts ? '100%' : '120px' }}>
+        <div className={`i1906-component--contain-products ${openProducts ? 'i1906-component--contain-products-open' : ''}`} >
           <button className={`i1906-component--products-btn-next`} disabled={itemsArauca.filter(item => item.selected).length <= 0} onClick={() => this.handleShowFormContact(true)}>{(itemsArauca.filter(item => item.selected).length <= 0) ? 'Choose your favorite products' : 'Next'}</button>
           <div className="i1906-component--products">
             {Object.keys(itemsArauca).map(i =>

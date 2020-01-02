@@ -206,6 +206,4 @@ class IngredientCacao extends React.Component {
     );
   }
 };
-
-
 export default IngredientCacao;

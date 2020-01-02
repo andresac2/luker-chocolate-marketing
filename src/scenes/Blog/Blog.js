@@ -60,7 +60,7 @@ class Blog extends React.Component {
     cover: 'royce.jpg',
     banner: 'royce-cover.jpg',
     flag: 'jp',
-    content: `<p>ROYCE' was founded in Sapporo, Japan, in 1983. They are able to make chocolate of world-class quality in Hokkaido by having acquired the best techniques and enriching their experience through the years. The fundamental principle of Royce' has been and will always be the painstaking sourcing of high-quality ingredients, and so, we are the ones that provide those for them. They take pride in having their own farm in Colombia, which we run for them, allowing their customers and consumers to know that the origin of their products is from a great quality source.</p><img class="aligncenter size-full wp-image-1966" src="http://carryitlikeharry.com/wp-content/uploads/2017/07/IMG20170716140426.jpg" alt="Royce Fine Japanese Chocolates" height="992" >`
+    content: `<p>ROYCE' was founded in Sapporo, Japan, in 1983. They are able to make chocolate of world-class quality in Hokkaido by having acquired the best techniques and enriching their experience through the years. The fundamental principle of Royce' has been and will always be the painstaking sourcing of high-quality ingredients, and so, we are the ones that provide those for them. They take pride in having their own farm in Colombia, which we run for them, allowing their customers and consumers to know that the origin of their products is from a great quality source.</p><img src="/static/media/royce-product.d37ce5da.jpg" alt="Royce Fine Japanese Chocolates" >`
   }];
   articles = [
     {
