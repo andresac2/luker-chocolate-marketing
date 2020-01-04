@@ -275,6 +275,4 @@ class WorkWithUs extends React.Component {
 };
 
 const WrappedWorkWithUs = Form.create({ name: 'curriculum_form' })(WorkWithUs);
-
-
 export default WrappedWorkWithUs;

@@ -211,6 +211,4 @@ class Contact extends React.Component {
 };
 
 const WrappedContact = Form.create({ name: 'contact_form' })(Contact);
-
-
 export default WrappedContact;

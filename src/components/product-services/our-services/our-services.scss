@@ -102,16 +102,15 @@
 
   &-contain-carr {
     position: relative;
-    width: inherit;
     text-align: center;
     transition: all ease-in .5s;
-
-    @media screen and (max-width: 1360px) {
-      width: 80%;
-    }
+    width: calc(100% - 6em);
+    display: flex;
+    overflow: hidden;
 
     &--items {
       padding: 0 3em;
+      margin: 0 auto;
       @include vert-center;
       align-items: center;
       height: 90px;
@@ -133,9 +132,11 @@
         stroke: #9EA850;
       }
 
+      left: calc(50% - 1.5em);
+
       &-left {
-        left: 0;
-        right: auto;
+        right: calc(50% - 1.5em);
+        left: auto;
         transform: rotate(-180deg);
       }
     }

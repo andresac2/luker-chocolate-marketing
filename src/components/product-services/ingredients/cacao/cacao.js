@@ -183,7 +183,7 @@ class IngredientCacao extends React.Component {
           <p className="cacao-component--content-specifications">Available in: 2,5 bag or 20kg box<br /> Shelf life: Dark 24 months, Milk 18 months & White 14 months.</p>
         </div>
         <div className="cacao-component-tabs">
-          <button className={`cacao-component-tabs-btn-next`} disabled={itemsSelected.length <= 0} onClick={() => this.handleShowFormContact(true)}>{(itemsSelected.length <= 0) ? 'Pick a product' : 'Next'}</button>
+          <button className={`cacao-component-tabs-btn-next`} disabled={itemsSelected.length <= 0} onClick={() => this.handleShowFormContact(true)}>{(itemsSelected.length <= 0) ? 'Choose your favorite products' : 'Next'}</button>
           <div className="cacao-component-tabs-header">
             {Object.keys(itemsHeader).map(i =>
               <div key={i} onClick={() => this.changeItems(itemsHeader[i].items, itemsHeader[i].id)}>{itemsHeader[i].title}</div>

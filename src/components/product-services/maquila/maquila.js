@@ -36,7 +36,6 @@ class Maquila extends React.Component {
   }
 
   selectProduct(product) {
-    console.log(product);
     this.clearProducts();
     this.setState({ itemSelected: [] });
 
