@@ -14,13 +14,19 @@ import Article from '../../components/blog/article/article';
 import FloatLogo from '../../components/layout/float-logo/float-logo';
 import { Helmet } from 'react-helmet';
 import MetaTags from 'react-meta-tags';
+import { NewContact } from '../../commons/services/emblueService';
+import { notification } from 'antd';
 
 class Blog extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchOpen: false
+      searchOpen: false,
+      emailNewsletter: '',
+      newsletterWaiting: false
     };
+    this.handleChange = this.handleChange.bind(this);
+    this.registerEmailNewsletter = this.registerEmailNewsletter.bind(this);
   }
   clients = [{
     breads: [{ href: '/our-clients', name: 'Our clients' }],
@@ -721,14 +727,49 @@ It’s coming, the Festival’s coming. The families come together, each and eve
       }
     }
     this.recommendedEntries = recommended;
-    console.log('recom', recommended);
-    console.log('size', recommended.length);
   }
+
+  handleChange(event) {
+    this.setState({ emailNewsletter: event.target.value });
+  }
+
+  registerEmailNewsletter(e) {
+    e.preventDefault();
+    this.setState({ newsletterWaiting: true });
+    NewContact(this.state.emailNewsletter).then((response) => this.openNotification(response))
+  }
+
+  openNotification = (data) => {
+    console.log(data);
+    if (data.AggregatedGroups) {
+      if (data.Description === "preexistente") {
+        notification.warning({
+          message: "Already did it",
+          description:
+            "the email is already registered"
+        });
+      } else {
+        notification.success({
+          message: "Welcome to our online community!",
+          description:
+            "From now on you'll receive top info and news about the world of chocolate",
+        });
+        this.setState({ emailNewsletter: '' });
+      }
+    } else {
+      notification.error({
+        message: "Oh well, something failed",
+        description:
+          "Please try again"
+      });
+    }
+    this.setState({ newsletterWaiting: false });
+  };
 
   render() {
     const { Search } = Input;
     const { Option } = Select;
-    const { searchOpen } = this.state;
+    const { searchOpen, emailNewsletter, newsletterWaiting } = this.state;
     const { category, article } = this.props.match.params;
     const latestArticle = this.articles[0];
     const imgs = [item2, item3, item4, item5];
@@ -830,9 +871,9 @@ It’s coming, the Festival’s coming. The families come together, each and eve
               <div className="blog-layout-newsletter">
                 <h2>NEWSLETTER</h2>
                 <p>Join our monthly newsletter and don’t miss a bean!</p>
-                <form action="/" >
-                  <input type="text" name="email" placeholder="Give us your email!" />
-                  <input type="submit" value="Send" />
+                <form onSubmit={this.registerEmailNewsletter}>
+                  <input type="email" name="email" placeholder="Give us your email!" value={emailNewsletter} onChange={this.handleChange} />
+                  <input type="submit" value="Send" disabled={newsletterWaiting} />
                 </form>
               </div>
             </div>

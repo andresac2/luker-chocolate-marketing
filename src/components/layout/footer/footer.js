@@ -2,6 +2,8 @@ import React from 'react'
 import logo from '../../../assets/img/Lukerlogo.svg'
 import { Link, withRouter } from 'react-router-dom';
 import { FaFacebookF, FaLinkedinIn, FaInstagram } from 'react-icons/fa';
+import { NewContact } from '../../../commons/services/emblueService';
+import { notification } from 'antd';
 
 import termsConditions from '../../../assets/documents/policies/Términos y condiciones de uso sitio web CasaLuker inglés 16dic2019.pdf';
 import privacyPolicy from '../../../assets/documents/policies/Política privacidad sitio web CasaLuker inglés 16dic2019.pdf';
@@ -13,13 +15,54 @@ class Footer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      emailNewsletter: '',
+      newsletterWaiting: false
     };
+    this.handleChangeNews = this.handleChangeNews.bind(this);
+    this.registerEmailNewsletter = this.registerEmailNewsletter.bind(this);
   }
+
+  handleChangeNews(event) {
+    this.setState({ emailNewsletter: event.target.value });
+  }
+
+  registerEmailNewsletter(e) {
+    e.preventDefault();
+    this.setState({ newsletterWaiting: true });
+    NewContact(this.state.emailNewsletter).then((response) => this.openNotification(response))
+  }
+
+  openNotification = (data) => {
+    console.log(data);
+    if (data.AggregatedGroups) {
+      if (data.Description === "preexistente") {
+        notification.warning({
+          message: "Already did it",
+          description:
+            "the email is already registered"
+        });
+      } else {
+        notification.success({
+          message: "Welcome to our online community!",
+          description:
+            "From now on you'll receive top info and news about the world of chocolate",
+        });
+        this.setState({ emailNewsletter: '' });
+      }
+    } else {
+      notification.error({
+        message: "Oh well, something failed",
+        description:
+          "Please try again"
+      });
+    }
+    this.setState({ newsletterWaiting: false });
+  };
 
   render() {
     const { mode, history } = this.props;
+    const { emailNewsletter, newsletterWaiting } = this.state;
     const isNewsletterHidden = this.hideNews.some(function (v) { return history.location.pathname.includes(v); });
-    console.log('hide', isNewsletterHidden);
     return (
       <div>
         <div className={`footer-component ${mode == 'vertical' && 'footer-component-vertical'} ${mode == 'responsive' && 'footer-component-responsive'}`}>
@@ -68,9 +111,9 @@ class Footer extends React.Component {
           </div>
           {(!isNewsletterHidden && mode !== 'responsive') && <div className="footer-component-social">
             <h2>JOIN OUR NEWSLETTER</h2>
-            <form action="/" >
-              <input type="text" name="email" placeholder="Enter your email" />
-              <input type="submit" value="Send" />
+            <form onSubmit={this.registerEmailNewsletter}>
+              <input type="email" name="email" placeholder="Give us your email!" value={emailNewsletter} onChange={this.handleChangeNews} />
+              <input type="submit" value="Send" disabled={newsletterWaiting} />
             </form>
             <div className="footer-component-social--btn">
               <a href="https://www.linkedin.com/company/lukerchocolate/" target="_blank" ><FaLinkedinIn /></a>
