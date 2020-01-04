@@ -467,7 +467,7 @@ class ModalDistributors extends React.Component {
         <div className="modal-dist-map">
           {actualDist.length > 0 &&
             <iframe src={actualDist[distSelected].urlMap} width="100%" height="100%" style={{ border: 0 }} ></iframe>
-          } {/*<iframe src={'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d26254.56544788482!2d-58.6461502!3d-34.6592313!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc7552e6fa7b1%3A0x1841999274f45828!2sEspronceda%20632%2C%20B1712JUC%20Castelar%2C%20Buenos%20Aires%2C%20Argentina!5e0!3m2!1ses!2sco!4v1576088872164!5m2!1ses!2sco'} width="100%" height="100%" style={{ border: 0 }} ></iframe>*/}
+          }
         </div>
       </div>
     );

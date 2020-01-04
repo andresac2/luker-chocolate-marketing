@@ -1,0 +1,152 @@
+.info-product {
+  height: 70vh;
+  width: 80vw;
+  max-width: 960px;
+  background: #ECECEC;
+  z-index: 1;
+  position: relative;
+
+  @media screen and (max-width: 1023px) {
+    width: 85vw;
+  }
+
+  &-header {
+    position: relative;
+    background-image: url("../../../assets/img/ingredients-header.jpg");
+    background-position: right;
+    background-size: cover;
+    box-shadow: 0px 8px 8px #00000069;
+    padding: 2em 1em;
+    font-size: larger;
+    height: 110px;
+    text-align: center;
+
+    h1 {
+      font-weight: 700;
+      color: #fff;
+      text-shadow: 0px 11px 12px #0000008B;
+    }
+  }
+
+  &-content {
+    background: url('../../../assets/img/matas.png') no-repeat #f3f3f3;
+    background-size: 100%;
+    background-position: center top;
+    height: calc(70vh - 110px);
+    @include open-matas;
+  }
+
+  &-contain {
+    text-align: center;
+
+    &-top {
+      color: #532C2E;
+      padding-top: 1.5em;
+
+      h2 {
+        font-size: 2.5em;
+        font-weight: 700;
+      }
+
+      h3 {
+        font-size: 1.5em;
+        font-weight: 500;
+      }
+
+      img {
+        width: 12em;
+        object-fit: cover;
+      }
+    }
+
+    &-data {
+      &-cocoa {
+        border: 3px solid #484848;
+        text-transform: uppercase;
+        color: #484848;
+        font-weight: 600;
+        width: max-content;
+        margin: 0 auto 1em auto;
+        padding: .2em 2em;
+      }
+
+      &-viscosity {
+        color: #484848;
+        font-weight: 600;
+        display: flex;
+        justify-content: center;
+        text-transform: uppercase;
+
+        span {
+          margin: 0 .5em;
+        }
+
+        svg {
+          margin: auto 2px;
+        }
+      }
+
+      &-table {
+        width: 90%;
+        margin: 1em auto;
+
+        .ant-table-bordered .ant-table-thead>tr>th,
+        .ant-table-bordered .ant-table-tbody>tr>td,
+        .ant-table-bordered .ant-table-body>table {
+          border: 1px solid #2D4310;
+        }
+
+        .ant-table-tbody {
+          text-align: center;
+        }
+
+        .ant-table-bordered .ant-table-tbody>tr>td {
+          svg {
+            font-size: 1.5em;
+          }
+        }
+
+        .ant-table-bordered .ant-table-tbody>tr>td {
+          padding: 5px;
+        }
+
+        .ant-table-thead>tr>th {
+          text-align: center;
+          color: #F3F3F3;
+          padding: .5em;
+          text-transform: uppercase;
+          background: #59742F;
+        }
+      }
+
+      &-very {
+        display: flex;
+        justify-content: center;
+        text-transform: uppercase;
+        font-size: smaller;
+        font-weight: 600;
+
+        &-fluid {
+          display: flex;
+
+          span {
+            margin: 0 .5em;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    height: 80vh;
+
+    &-header {
+      font-size: 1em;
+      padding: 1em 0;
+    }
+
+    &-content {
+      height: calc(80vh - 110px);
+    }
+  }
+}

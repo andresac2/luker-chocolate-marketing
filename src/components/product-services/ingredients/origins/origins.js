@@ -1,6 +1,7 @@
 import React from 'react'
 import WrappedContactSide from '../../../layout/contact-side/contact-side';
 import { TiArrowSortedUp } from 'react-icons/ti';
+import Modals from '../../../modals/modals';
 
 class Ingredient1906 extends React.Component {
   constructor(props) {
@@ -8,52 +9,156 @@ class Ingredient1906 extends React.Component {
     this.state = {
       hideFormContact: true,
       openProducts: false,
+      infoProductsVisible: false,
+      productSelected: [],
       itemsArauca: [{
         id: 1,
         img: 'p-tumaco.png',
-        description: 'DARK TUMACO 65%',
+        description: 'DARK TUMACO',
+        cocoaContent: '65%',
+        viscosity: 3,
+        fluid: 5,
+        viscous: 1,
+        data: [{
+          key: 1,
+          enrobing: true,
+          decorativeFigures: false,
+          moulding: true,
+          fillingsGanaches: true,
+          decorating: true,
+          desserts: false
+        }],
         selected: false
       }, {
         id: 2,
         img: 'p-tumaco-85.png',
-        description: 'EXTRA DARK TUMACO 85%',
+        description: 'EXTRA DARK TUMACO',
+        cocoaContent: '85%',
+        viscosity: 4,
+        fluid: 3,
+        viscous: 3,
+        data: [{
+          key: 1,
+          enrobing: true,
+          decorativeFigures: false,
+          moulding: true,
+          fillingsGanaches: true,
+          decorating: true,
+          desserts: false
+        }],
         selected: false
       },
       {
         id: 3,
         img: 'p-huila-65.png',
-        description: 'DARK HUILA 65%',
+        description: 'DARK HUILA',
+        cocoaContent: '65%',
+        viscosity: 3,
+        fluid: 3,
+        viscous: 3,
+        data: [{
+          key: 1,
+          enrobing: true,
+          decorativeFigures: false,
+          moulding: true,
+          fillingsGanaches: true,
+          decorating: true,
+          desserts: false
+        }],
         selected: false
       }, {
         id: 4,
         img: 'p-huila-70.png',
-        description: 'DARK HUILA 70%',
+        description: 'DARK HUILA',
+        cocoaContent: '70%',
+        viscosity: 4,
+        fluid: 3,
+        viscous: 3,
+        data: [{
+          key: 1,
+          enrobing: true,
+          decorativeFigures: false,
+          moulding: true,
+          fillingsGanaches: true,
+          decorating: true,
+          desserts: false
+        }],
         selected: false
       },
       {
         id: 5,
         img: 'p-santander-65.png',
-        description: 'DARK SANTANDER 65%',
+        description: 'DARK SANTANDER',
+        cocoaContent: '65%',
+        viscosity: 3,
+        fluid: 3,
+        viscous: 3,
+        data: [{
+          key: 1,
+          enrobing: true,
+          decorativeFigures: false,
+          moulding: true,
+          fillingsGanaches: true,
+          decorating: true,
+          desserts: false
+        }],
         selected: false
       },
       {
         id: 6,
         img: 'p-sanmartin-72.png',
-        description: 'DARK SAN MARTIN 72%',
+        description: 'DARK SAN MARTIN',
+        cocoaContent: '72%',
+        viscosity: 4,
+        fluid: 3,
+        viscous: 3,
+        data: [{
+          key: 1,
+          enrobing: true,
+          decorativeFigures: false,
+          moulding: true,
+          fillingsGanaches: true,
+          decorating: true,
+          desserts: false
+        }],
         selected: false
       },
       {
         id: 7,
         img: 'p-arauca-55.png',
-        description: 'MILK ARAUCA 55%',
+        description: 'MILK ARAUCA',
+        cocoaContent: '55%',
+        viscosity: 5,
+        fluid: 3,
+        viscous: 3,
+        data: [{
+          key: 1,
+          enrobing: true,
+          decorativeFigures: false,
+          moulding: true,
+          fillingsGanaches: true,
+          decorating: true,
+          desserts: false
+        }],
         selected: false
       }
       ]
     };
     this.handleSetProductSelected = this.handleSetProductSelected.bind(this);
-    this.handleShowFormContact = this.handleShowFormContact.bind(this)
-
+    this.handleShowFormContact = this.handleShowFormContact.bind(this);
+    this.showModalDist = this.showModalDist.bind(this)
   }
+  showModalDist = (product) => {
+    this.setState({
+      infoProductsVisible: !this.state.infoProductsVisible,
+    });
+    if (product) {
+      console.log("prod: ", product);
+      this.setState({
+        productSelected: product,
+      });
+    }
+  };
 
   productToggle(id, selected) {
     this.setState({
@@ -75,7 +180,7 @@ class Ingredient1906 extends React.Component {
 
   render() {
     const { data } = this.props;
-    const { itemsArauca, hideFormContact, openProducts } = this.state;
+    const { itemsArauca, hideFormContact, openProducts, infoProductsVisible, productSelected } = this.state;
     const altImg = 'img-example.svg';
 
     return (
@@ -98,11 +203,12 @@ class Ingredient1906 extends React.Component {
               <div key={i} className={`i1906-component--products-item i1906-component--products-item-${itemsArauca[i].selected && 'active'}`} onClick={() => this.productToggle(itemsArauca[i].id, !itemsArauca[i].selected)}>
                 <img src={require('../../../../assets/img/' + (itemsArauca[i].img ? itemsArauca[i].img : altImg))} alt={itemsArauca[i].description} />
                 <h2>Luker 1906</h2>
-                <span>i</span>
-                <p>{itemsArauca[i].description}</p>
+                <p>{itemsArauca[i].description} {itemsArauca[i].cocoaContent}</p>
+                <span onClick={() => this.showModalDist(itemsArauca[i])}>i</span>
               </div>)}
           </div>
         </div>
+        <Modals visible={infoProductsVisible} modal={'info-product'} showModalDist={this.showModalDist} product={productSelected} title="SINGLE ORIGIN CHOCOLATES" subtitle="LUKER 1906" />
         <WrappedContactSide page='ingredients' products={itemsArauca} handleSetProductSelected={this.handleSetProductSelected} handleShowFormContact={this.handleShowFormContact} />
       </div>
     );
