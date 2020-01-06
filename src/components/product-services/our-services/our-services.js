@@ -2,6 +2,8 @@ import React from 'react'
 import ContactSide from '../../layout/contact-side/contact-side';
 import { ReactComponent as Back } from "../../../assets/img/back.svg"
 import { Link } from 'react-router-dom';
+import { withNamespaces } from 'react-i18next';
+import { T } from 'antd/lib/upload/utils';
 
 class OurServices extends React.Component {
   constructor(props) {
@@ -27,6 +29,7 @@ class OurServices extends React.Component {
 
     const altImg = 'img-example.svg';
     const { dpSelected, designProcess } = this.state;
+    const { t } = this.props;
     const items = [{
       img: 'our-product-2.jpg',
       title: 'FORMULATION',
@@ -42,7 +45,7 @@ class OurServices extends React.Component {
 
     return (
       <div className="our-services-component" >
-        <h2>This is how it Works</h2>
+        <h2>{t('products-services.this-how-works')}</h2>
         <div className="our-services-component-process">
           {Object.keys(items).map(i =>
             <div key={i} className={`card-image`}>
@@ -51,9 +54,9 @@ class OurServices extends React.Component {
             </div>)}
         </div>
         <div className="our-services-component--header">
-          <h1>FULL INNOVATION AND DESIGN</h1>
-          <h1>PROCESS CONSULTANCY PACK</h1>
-          <p>We can guide you in your product innovation <br /> and design process by:</p>
+          <h1>{t('products-services.services-first-title')}</h1>
+          <h1>{t('products-services.services-second-title')}</h1>
+          <p>{t('products-services.services-first-subtitle')} <br /> {t('products-services.services-second-subtitle')}</p>
         </div>
         <div className="our-services-component-contain-carr">
           <Back className={`btn-next-img btn-next-img-left ${dpSelected === 0 && 'btn-inactive'}`} onClick={() => this.carrAction('l')} />
@@ -63,13 +66,11 @@ class OurServices extends React.Component {
           <Back className={`btn-next-img ${dpSelected === designProcess.length - 1 && 'btn-inactive'}`} onClick={() => this.carrAction('r')} />
         </div>
         <div className="btn-back-sticky">
-          <Link to="/products-services">BACK TO SOLUTIONS</Link>
+          <Link to="/products-services">{t('buttons.back-to-solutions').toUpperCase()}</Link>
         </div>
         <ContactSide page='service' products={[]} />
       </div >
     );
   }
 };
-
-
-export default OurServices;
+export default withNamespaces()(OurServices);

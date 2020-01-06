@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import altImg from '../../assets/img/img-example.svg'
 import back from '../../assets/img/back.svg'
+import { withNamespaces } from 'react-i18next';
 
 class ProductServices extends React.Component {
 
@@ -24,7 +25,7 @@ class ProductServices extends React.Component {
   }
   render() {
     const { selectedProduct } = this.state;
-    const { items, title, page } = this.props;
+    const { items, title, page, t } = this.props;
     const limit = items.length - 1;
 
     return (
@@ -47,16 +48,16 @@ class ProductServices extends React.Component {
             }
             <img className="btn-next-img btn-next-img--right" src={back} alt='right' onClick={() => this.reorderItems(items, limit, 0)} />
           </div>
-          <Link className="btn-tobuy" to={"/products-services/" + page + "/" + items[1].id}>{(page === 'maquila') ? 'FIND OUT MORE' : 'GET IT HERE'}</Link>
+          <Link className="btn-tobuy" to={"/products-services/" + page + "/" + items[1].id}>{(page === 'maquila') ? t('buttons.find-out-more').toUpperCase() : t('buttons.get-it-here').toUpperCase()}</Link>
           <div className={`product-services-component--footer product-services-component--footer--${items[1].id}`}>
             {items[1].description}
           </div></>}
         <div className="btn-back-sticky">
-          <Link to="/products-services">BACK TO PRODUCTS & SERVICES</Link>
+          <Link to="/products-services" >{t('buttons.back-to-products-services').toUpperCase()}</Link>
         </div>
       </div >
     );
   }
 };
 
-export default ProductServices;
+export default withNamespaces()(ProductServices);

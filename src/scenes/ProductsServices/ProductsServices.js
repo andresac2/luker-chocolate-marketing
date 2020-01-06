@@ -9,6 +9,7 @@ import ProductServices from '../../components/product-services/product-services'
 import Ingredients from '../../components/product-services/ingredients/ingredients';
 import OurServices from '../../components/product-services/our-services/our-services';
 import Modals from '../../components/modals/modals';
+import { withNamespaces } from 'react-i18next';
 
 class ProductsServices extends React.Component {
   constructor(props) {
@@ -27,6 +28,7 @@ class ProductsServices extends React.Component {
   render() {
     const { title, item } = this.props.match.params;
     const { distModalVisible } = this.state;
+    const { t } = this.props;
 
     const products = [
       {
@@ -78,18 +80,18 @@ class ProductsServices extends React.Component {
         <div className={`services-header services-header--${title} ${(item) && 'services-header--title-short'}`}>
           <div className="btn-dist">
             <Link to="/" className="logo"> <img src={logo} alt="Logo Luker" /></Link>
-            <button className="float-logo-dist" onClick={() => this.showModalDist(distModalVisible)}> FIND A DISTRIBUTOR </button>
+            <button className="float-logo-dist" onClick={() => this.showModalDist(distModalVisible)}>{t('buttons.find-distributor')}</button>
             {(item) ?
-              <Link to={'/products-services/' + title}>BACK</Link> :
-              <Link to="/products-services" style={{ fontSize: '9px' }}>BACK TO PRODUCTS & SERVICES</Link>
+              <Link to={'/products-services/' + title}>{t('buttons.back').toUpperCase()}</Link> :
+              <Link to="/products-services" style={{ fontSize: '9px' }}>{t('buttons.back-to-products-services').toUpperCase()}</Link>
             }
           </div>
-          <h1>{(title === 'finished-chocolate-products') ? 'FINISHED CHOCOLATE PRODUCTS' : (title === 'ingredients') ? 'CHOCOLATE INGREDIENTS' : 'OUR SERVICES'}</h1>
+          <h1>{(title === 'finished-chocolate-products') ? t('products-services.finished-chocolate-products').toUpperCase() : (title === 'ingredients') ? t('products-services.chocolate').toUpperCase() + ' ' + t('products-services.ingredients').toUpperCase() : t('products-services.our-services').toUpperCase()}</h1>
         </div>
         <div className="services-content">
           {(title === 'our-services') ? <OurServices /> :
             (item) ? (title === 'finished-chocolate-products') ? <Maquila product={products[products.findIndex(product => product.id === item)]} /> : <Ingredients product={ingredients[ingredients.findIndex(i => i.id === item)]} />
-              : <ProductServices items={(title === 'finished-chocolate-products') ? products : ingredients} title={(title === 'finished-chocolate-products') ? 'BRANDED CHOCOLATE PRODUCTS' : 'OUR PRODUCTS'} page={title} />}
+              : <ProductServices items={(title === 'finished-chocolate-products') ? products : ingredients} title={(title === 'finished-chocolate-products') ? t('products-services.branded-chocolate-products').toUpperCase() : t('products-services.our-products').toUpperCase()} page={title} />}
         </div>
         <Footer />
         <Modals visible={distModalVisible} modal={'distributors'} showModalDist={this.showModalDist} />
@@ -97,5 +99,4 @@ class ProductsServices extends React.Component {
     );
   }
 };
-
-export default ProductsServices;
+export default withNamespaces()(ProductsServices);

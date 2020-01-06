@@ -21,7 +21,6 @@ function Flow() {
           </div>
         </div>
         <FloatLogo btnText='dist' />
-
       </div>
       <div className="flow-navbar"><FlowTabs tabActive="cacao" /></div>
     </div>

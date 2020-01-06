@@ -5,6 +5,7 @@
   "dependencies": {
     "antd": "^3.24.3",
     "i18next": "^19.0.2",
+    "i18next-browser-languagedetector": "^4.0.1",
     "node-sass": "^4.13.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",

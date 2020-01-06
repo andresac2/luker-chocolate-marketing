@@ -10,7 +10,7 @@ class Modals extends React.Component {
   }
 
   render() {
-    const { visible, modal, product, title, subtitle } = this.props;
+    const { visible, modal, product, title, subtitle, contentTitle } = this.props;
     return (
       <div className={`modal-content modal-content-${visible && 'visible'}`}>
         <div className="modal-content-bkg" onClick={() => this.props.showModalDist()}></div>
@@ -20,7 +20,7 @@ class Modals extends React.Component {
             <ModalDistributors />
           }
           {modal === 'info-product' &&
-            <ModalInfoProducts product={product} title={title} subtitle={subtitle} />
+            <ModalInfoProducts product={product} title={title} subtitle={subtitle} contentTitle={contentTitle} />
           }
         </div>
       </div>

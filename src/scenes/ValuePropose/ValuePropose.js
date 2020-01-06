@@ -5,12 +5,14 @@ import item2 from '../../assets/img/consistency-flavour.jpg'
 import item3 from '../../assets/img/integrated-packaging.jpg'
 import item4 from '../../assets/img/grano4.jpg'
 import ImgCarrousel from '../../components/img-carrousel/img-carrousel';
+import { withNamespaces } from 'react-i18next';
 
 import { Link } from 'react-router-dom';
 import FloatLogo from '../../components/layout/float-logo/float-logo';
 import HelmetComponent from '../../commons/helmet/helmet';
 
-function ValuePropose() {
+function ValuePropose(props) {
+  const { t } = props;
   return (
     <div className="value-propose-component">
       <HelmetComponent title="Luker Chocolate | Our value propose" />
@@ -20,8 +22,8 @@ function ValuePropose() {
         </div>
         <FloatLogo btnText='dist' />
         <div className="value-propose-component--expo-pagraph">
-          <h1>OUR VALUE PROPOSITION</h1>
-          <p>We promise to offer chocolate with unique and superior flavour and that supports the environmental, economic, and social development of the origins of its cocoa beans.</p>
+          <h1>{t('value-propose.value-propose-title')}</h1>
+          <p>{t('value-propose.value-propose-subtitle')}</p>
         </div>
       </div>
       <div className="value-propose-component--carrousel">
@@ -30,50 +32,49 @@ function ValuePropose() {
         <div className="value-propose-component--item-card">
           <img src={item1} alt="cacao" />
           <div className="value-propose-component--item-card-text">
-            DIFFERENTIATE YOUR PRODUCT WITH A UNIQUE FLAVOUR
+            {t('value-propose.aroma-description')}
           </div>
           <div className="value-propose-component--item-card-hover">
-            <p className='hide-resp'>We work exclusively with Cacao Fino de Aroma</p>
-            <p className="value-propose-component--item-card-hover-text">DIFFERENTIATE YOUR PRODUCT WITH A UNIQUE FLAVOUR</p>
-            <Link to="/our-value/aroma">LEARN MORE</Link>
+            <p className='hide-resp'>{t('value-propose.aroma-description-hover')}</p>
+            <p className="value-propose-component--item-card-hover-text">{t('value-propose.aroma-description')}</p>
+            <Link to="/our-value/aroma">{t('buttons.learn-more').toUpperCase()}</Link>
           </div>
         </div>
         <div className="value-propose-component--item-card">
           <img src={item2} alt="cacao" />
           <div className="value-propose-component--item-card-text">
-            KEEP THE CONSISTENCY IN THE FLAVOUR AND GUARANTEE YOUR SUPPLY
+            {t('value-propose.flavour-description')}
           </div>
           <div className="value-propose-component--item-card-hover">
-            <p className='hide-resp'>We want you to always have the best product</p>
-            <p className="value-propose-component--item-card-hover-text">KEEP THE CONSISTENCY IN THE FLAVOUR AND GUARANTEE YOUR SUPPLY</p>
-            <Link to="/our-value/flavour">LEARN MORE</Link>
+            <p className='hide-resp'>{t('value-propose.flavour-description-hover')}</p>
+            <p className="value-propose-component--item-card-hover-text">{t('value-propose.flavour-description')}</p>
+            <Link to="/our-value/flavour">{t('buttons.learn-more').toUpperCase()}</Link>
           </div>
         </div>
         <div className="value-propose-component--item-card">
           <img src={item3} alt="cacao" />
           <div className="value-propose-component--item-card-text">
-            INTEGRATED SOLUTIONS FOR DESIGN, PRODUCTS, AND PACKAGING
+            {t('value-propose.product-description')}
           </div>
           <div className="value-propose-component--item-card-hover">
-            <p className='hide-resp'>Your needs become our challenge</p>
-            <p className="value-propose-component--item-card-hover-text">INTEGRATED SOLUTIONS FOR DESIGN, PRODUCTS, AND PACKAGING</p>
-            <Link to="/our-value/product">LEARN MORE</Link>
+            <p className='hide-resp'>{t('value-propose.product-description-hover')}</p>
+            <p className="value-propose-component--item-card-hover-text">{t('value-propose.product-description')}</p>
+            <Link to="/our-value/product">{t('buttons.learn-more').toUpperCase()}</Link>
           </div>
         </div>
         <div className="value-propose-component--item-card">
           <img src={item4} alt="cacao" />
           <div className="value-propose-component--item-card-text">
-            CONNECT YOUR BRAND AROUND SUSTAINABILITY
+            {t('value-propose.social-description')}
           </div>
           <div className="value-propose-component--item-card-hover">
-            <p className='hide-resp'>We encourage you to participate in shared value sustainable initiatives that have a social impact</p>
-            <p className="value-propose-component--item-card-hover-text">CONNECT YOUR BRAND AROUND SUSTAINABILITY</p>
-            <Link to="/our-value/social">LEARN MORE</Link>
+            <p className='hide-resp'>{t('value-propose.social-description-hover')}</p>
+            <p className="value-propose-component--item-card-hover-text">{t('value-propose.social-description')}</p>
+            <Link to="/our-value/social">{t('buttons.learn-more').toUpperCase()}</Link>
           </div>
         </div>
       </div>
     </div>
   );
 }
-
-export default ValuePropose;
+export default withNamespaces()(ValuePropose);

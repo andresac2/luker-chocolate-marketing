@@ -2,6 +2,7 @@ import React from 'react'
 import ContactSide from '../../layout/contact-side/contact-side';
 import { Link } from 'react-router-dom';
 import ProductServices from '../product-services';
+import { withNamespaces } from 'react-i18next';
 
 class Maquila extends React.Component {
   constructor(props) {
@@ -111,21 +112,21 @@ class Maquila extends React.Component {
   render() {
 
     const altImg = 'img-example.svg';
-    const { product } = this.props;
+    const { product, t } = this.props;
     const { hideFormContact, itemSelected, dosing, panning, moulding, hasSelected, mouldingShapes, mouldingBars, showMouldingOption } = this.state;
 
     return (
       <div className={`maquila-component ${hideFormContact && 'maquila-component--hide-form'} `} >
         <div className="maquila-component-container">
-          <h1 className="maquila-component-title-resp">BRANDED CHOCOLATE PRODUCTS</h1>
-          <h2 className="maquila-component-title-h2">Chocolate {product.name}</h2>
+          <h1 className="maquila-component-title-resp">{t('products-services.branded-chocolate-products')}</h1>
+          <h2 className="maquila-component-title-h2">{t('products-services.chocolate')} {product.name}</h2>
           <div className="maquila-component--product-data ">
             <div className={`maquila-item maquila-item--${product.id}`}>
               <img src={require('../../../assets/img/' + (product.img ? product.img : altImg))} alt={product.description} />
             </div>
             <p>{product.description}</p>
           </div>
-          <h2 className="maquila-component-title">Customizable with your logo and branding</h2>
+          <h2 className="maquila-component-title">{t('products-services.customizable-logo-branding')}</h2>
           {hasSelected ?
             showMouldingOption ?
               <div className={`maquila-product`}>
@@ -142,7 +143,7 @@ class Maquila extends React.Component {
                     </div>)}
               </div> :
               <div className={`maquila-product maquila-product-dmw`}>
-                {['Dark', 'MILK', 'White'].map((item, i) =>
+                {[t('products-services.dark').toUpperCase(), t('products-services.milk').toUpperCase(), t('products-services.white').toUpperCase()].map((item, i) =>
                   <div key={i} className={`maquila-product-item maquila-product-item-dmw`} onClick={() => this.addProduct(item)}>
                     {item}
                   </div>)}
@@ -166,13 +167,11 @@ class Maquila extends React.Component {
             </div>}
         </div>
         <div className="btn-back-sticky">
-          <Link to="/products-services/finished-chocolate-products">BACK TO PRODUCTS</Link>
+          <Link to="/products-services/finished-chocolate-products">{t('buttons.back-to-products').toUpperCase()}</Link>
         </div>
         <ContactSide page='maquila' products={itemSelected} handleSetProductSelected={this.handleSetProductSelected} handleShowFormContact={this.handleShowFormContact} />
       </div >
     );
   }
 };
-
-
-export default Maquila;
+export default withNamespaces()(Maquila);

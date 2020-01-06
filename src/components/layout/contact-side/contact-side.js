@@ -4,6 +4,7 @@ import { Form, Select, Input, Button, InputNumber, Modal } from 'antd';
 import FormItem from 'antd/lib/form/FormItem';
 import termsConditions from '../../../assets/documents/policies/Términos y condiciones de uso sitio web CasaLuker inglés 16dic2019.pdf';
 import privacyPolicy from '../../../assets/documents/policies/Política privacidad sitio web CasaLuker inglés 16dic2019.pdf';
+import { withNamespaces } from 'react-i18next';
 
 class ContactSide extends React.Component {
   constructor(props) {
@@ -140,7 +141,7 @@ class ContactSide extends React.Component {
 
   render() {
     const { getFieldDecorator } = this.props.form;
-    const { products, page } = this.props;
+    const { products, page, t } = this.props;
     const { Option } = Select;
     const { TextArea } = Input;
     const altImg = 'img-example.svg';
@@ -148,21 +149,21 @@ class ContactSide extends React.Component {
     return (
       <div className={`contact-component contact-component--${page}`} >
         <div className={`contact-component-content`}>
-          <h1>GIVE US YOUR DETAILS</h1>
+          <h1>{t('form.give-us-details')}</h1>
           <Form onSubmit={this.handleSubmit} className="contact-form">
             <Form.Item>
               {getFieldDecorator('username', {
-                rules: [{ required: true, message: 'Please input your username!' }],
+                rules: [{ required: true, message: t('errors.required-name') }],
               })(
-                <Input placeholder="Name" />,
+                <Input placeholder={t('form.your-name')} />,
               )}
             </Form.Item>
             {page === 'service' &&
               <Form.Item>
                 {getFieldDecorator('companyName', {
-                  rules: [{ required: true, message: 'Please input your Company name!' }],
+                  rules: [{ required: true, message: t('errors.required-company') }],
                 })(
-                  <Input placeholder="Company Name" />,
+                  <Input placeholder={t('form.company')} />,
                 )}
               </Form.Item>}
             <FormItem>
@@ -170,31 +171,31 @@ class ContactSide extends React.Component {
                 rules: [
                   {
                     type: 'email',
-                    message: 'The input is not valid E-mail!',
+                    message: t('errors.invalid-email'),
                   },
                   {
                     required: true,
-                    message: 'Please input your E-mail!',
+                    message: t('errors.required-email'),
                   },
                 ],
-              })(<Input placeholder="Email" />)}
+              })(<Input placeholder={t('form.your-email')} />)}
             </FormItem>
             {page === 'service' &&
               <Form.Item>
                 {getFieldDecorator('phone', {
-                  rules: [{ required: true, message: 'Please input your username!' }],
+                  rules: [{ required: true, message: t('errors.required-number') }],
                 })(
-                  <InputNumber min={7} max={10} placeholder="Phone number" style={{ width: '100%' }} />,
+                  <InputNumber min={7} max={10} placeholder={t('form.phone-number')} style={{ width: '100%' }} />,
                 )}
               </Form.Item>
             }
             <Form.Item>
               {getFieldDecorator('country', {
-                rules: [{ required: true, message: 'Please input your country!' }],
+                rules: [{ required: true, message: t('errors.required-country') }],
               })(
                 <Select
                   showSearch
-                  placeholder="Country"
+                  placeholder={t('form.your-country')}
                   optionFilterProp="children"
                   filterOption={(input, option) =>
                     option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
@@ -208,7 +209,7 @@ class ContactSide extends React.Component {
             </Form.Item>
             {(page === 'maquila' || page === 'ingredients' || page === 'cacao' || page === 'maracas') &&
               <div className="contact-form-products">
-                <p>Characteristics</p>
+                <p>{t('form.characteristics')}</p>
                 {products &&
                   <div className="contact-form-products--list">
                     {products.filter(item => item.selected).length > 0 ?
@@ -223,7 +224,7 @@ class ContactSide extends React.Component {
                           <p>{products[0].description}</p>
                         </div>
                           {(products.length > 0) && <div className={`contact-form-products--list-item-${page} contact-form-products--list-item-${page}-dmw`} onClick={() => this.props.handleSetProductSelected()}>{products[1]}</div>}</>
-                      : <span>{page === 'maquila' ? 'Choose an option from the list' : 'Pick your choice from the list of products'}</span>
+                      : <span>{page === 'maquila' ? t('form.choose-documentation') : t('form.choose-products')}</span>
                     }
                   </div>
                 }
@@ -231,20 +232,20 @@ class ContactSide extends React.Component {
             }
             <FormItem>
               {getFieldDecorator('message', {
-                rules: [{ required: true, message: 'Please leave us a comment!' }],
+                rules: [{ required: true, message: t('errors.required-comment') }],
               })(
-                <TextArea rows={3} placeholder="Comments" />
+                <TextArea rows={3} placeholder={t('form.write-message')} />
               )}
             </FormItem>
             <Form.Item>
               <Button type="primary" className="contact-form-button contact-form-button-back" onClick={() => this.props.handleShowFormContact(false)}>
-                Back
+                {t('buttons.back')}
               </Button>
               <Button type="primary" htmlType="submit" className="contact-form-button">
-                Submit
+                {t('buttons.send')}
               </Button>
             </Form.Item>
-            <p className="contact-form-terms">By clicking "send" you agree to the <a href={termsConditions} target="_blank">terms and conditions</a> and our <a href={privacyPolicy} target="_blank">privacy policy</a>.</p>
+            <p className="contact-form-terms">{t('form.clicking-send')} <a href={termsConditions} target="_blank">{t('form.terms-conditions')} </a> {t('form.and-our')} <a href={privacyPolicy} target="_blank">{t('form.privacy-policy')}</a>.</p>
           </Form>
         </div>
       </div >
@@ -255,4 +256,4 @@ class ContactSide extends React.Component {
 const WrappedContactSide = Form.create({ name: 'contact_form' })(ContactSide);
 
 
-export default withRouter(WrappedContactSide);
+export default withNamespaces()(withRouter(WrappedContactSide));

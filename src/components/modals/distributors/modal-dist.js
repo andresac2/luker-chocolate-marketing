@@ -4,6 +4,7 @@ import { Select } from 'antd';
 import { MdClose } from 'react-icons/md';
 import logo from '../../../assets/img/Lukerlogo.svg'
 import logoDark from '../../../assets/img/LukerlogoDark.svg'
+import { withNamespaces } from 'react-i18next';
 
 class ModalDistributors extends React.Component {
 
@@ -440,12 +441,13 @@ class ModalDistributors extends React.Component {
   }
   render() {
     const { distValue, actualDist, distSelected } = this.state;
+    const { t } = this.props;
     const { Option } = Select;
     return (
       <div className="modal-dist">
         <div className="modal-dist-list">
           <div className="modal-dist-list-header">
-            <h2>Distributors</h2>
+            <h2>{t('modals.modal-dist-title')}</h2>
             <Select size='small' defaultValue="co" style={{ width: 150 }} value={distValue} onChange={this.handleChange}>
               {Object.keys(this.countries).map(i =>
                 <Option key={i} value={this.countries[i].abrev} key={i}>{this.countries[i].name}</Option>
@@ -474,4 +476,4 @@ class ModalDistributors extends React.Component {
   }
 };
 
-export default ModalDistributors;
+export default withNamespaces()(ModalDistributors);

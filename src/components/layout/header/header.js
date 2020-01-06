@@ -4,6 +4,7 @@ import logo from '../../../assets/img/Lukerlogo.svg'
 import { MdClose, MdMenu } from 'react-icons/md';
 import { Select } from 'antd';
 import Footer from '../footer/footer';
+import { withNamespaces } from 'react-i18next';
 
 class Header extends React.Component {
 
@@ -37,7 +38,7 @@ class Header extends React.Component {
   };
 
   render() {
-    const { history } = this.props;
+    const { history, t } = this.props;
     const { showMenu, moreInfoVisible } = this.state;
     const { Option } = Select;
     const selectTab = history.location.pathname;
@@ -46,13 +47,13 @@ class Header extends React.Component {
     return (
       <div>
         <nav className={`header-component header-component-${selectTab.slice(1).split('/').shift()} header-component-${selectTab === '/' && 'intro'}`} onClick={() => this.menuToggle()} >
-          <Link to="/" className={`selected-tab ${selectTab === '/' && 'intro'}`}>LUKER CHOCOLATE</Link>
-          <Link to="/chocolate-process" className={`selected-tab ${selectTab === '/chocolate-process' && selectTab.slice(1)}`}>THE CHOCOLATE PROCESS</Link>
-          <Link to="/sustainability" className={`selected-tab ${selectTab === '/sustainability' && selectTab.slice(1)}`}>SUSTAINABILITY</Link>
-          <Link to="/products-services" className={`selected-tab ${(selectTab === '/products-services' || selectTab.slice(1).split('/').shift() === 'services') && 'products-services'}`}>PRODUCTS & SERVICES</Link>
-          <Link to="/our-clients" className={`selected-tab ${selectTab === '/our-clients' && selectTab.slice(1)}`}>OUR CLIENTS</Link>
-          <Link to="/ideas-trends" className={`selected-tab ${selectTab === '/ideas-trends' && selectTab.slice(1)}`}>IDEAS & TRENDS</Link>
-          <Link to="/our-value" className={`selected-tab ${(selectTab === '/our-value' || selectTab.slice(1).split('/').shift() === 'our-value') && 'our-value'}`}>OUR VALUE PROPOSITION</Link>
+          <Link to="/" className={`selected-tab ${selectTab === '/' && 'intro'}`}>{t('header.home')}</Link>
+          <Link to="/chocolate-process" className={`selected-tab ${selectTab === '/chocolate-process' && selectTab.slice(1)}`}>{t('header.chocolate-process')}</Link>
+          <Link to="/sustainability" className={`selected-tab ${selectTab === '/sustainability' && selectTab.slice(1)}`}>{t('header.sustainability')}</Link>
+          <Link to="/products-services" className={`selected-tab ${(selectTab === '/products-services' || selectTab.slice(1).split('/').shift() === 'services') && 'products-services'}`}>{t('header.products-services')}</Link>
+          <Link to="/our-clients" className={`selected-tab ${selectTab === '/our-clients' && selectTab.slice(1)}`}>{t('header.our-clients')}</Link>
+          <Link to="/ideas-trends" className={`selected-tab ${selectTab === '/ideas-trends' && selectTab.slice(1)}`}>{t('header.ideas-trends')}</Link>
+          <Link to="/our-value" className={`selected-tab ${(selectTab === '/our-value' || selectTab.slice(1).split('/').shift() === 'our-value') && 'our-value'}`}>{t('header.our-value-proposition')}</Link>
         </nav>
         <div className={`header-component-responsive header-component-responsive-${showMenu && 'visible'} header-component-responsive-${selectTab.slice(1).split('/').shift()}`} onClick={() => this.menuToggle()} >
           <div className={`header-logo header-logo-${showMenu && 'visible'}`}>
@@ -64,18 +65,18 @@ class Header extends React.Component {
             {(showMenu) ? <MdClose className={`btn-x`} onClick={() => this.menuToggle()} /> : <MdMenu className={`btn-x`} onClick={() => this.menuToggle()} />}
           </div>
           <nav className={`header-component-responsive--tabs header-component-responsive--tabs-${selectTab.slice(1).split('/').shift()} header-component-responsive--tabs-${showMenu && 'visible'}`} >
-            <Link to="/" className={`selected-tab ${selectTab === '/' && 'intro'}`}><span>LUKER CHOCOLATE</span></Link>
-            <Link to="/chocolate-process" className={`selected-tab ${selectTab === '/chocolate-process' && selectTab.slice(1)}`}><span>THE CHOCOLATE PROCESS</span></Link>
-            <Link to="/sustainability" className={`selected-tab ${selectTab === '/sustainability' && selectTab.slice(1)}`}><span>SUSTAINABILITY</span></Link>
-            <Link to="/products-services" className={`selected-tab ${(selectTab === '/products-services' || selectTab.slice(1).split('/').shift() === 'services') && 'products-services'}`}><span>PRODUCTS & SERVICES</span></Link>
-            <Link to="/our-clients" className={`selected-tab ${selectTab === '/our-clients' && selectTab.slice(1)}`}><span>OUR CLIENTS</span></Link>
-            <Link to="/ideas-trends" className={`selected-tab ${selectTab === '/ideas-trends' && selectTab.slice(1)}`}><span>IDEAS & TRENDS</span></Link>
-            <Link to="/our-value" className={`selected-tab separator ${(selectTab === '/our-value' || selectTab.slice(1).split('/').shift() === 'our-value') && 'our-value'}`}><span>OUR VALUE PROPOSITION</span></Link>
+            <Link to="/" className={`selected-tab ${selectTab === '/' && 'intro'}`}><span>{t('header.home')}</span></Link>
+            <Link to="/chocolate-process" className={`selected-tab ${selectTab === '/chocolate-process' && selectTab.slice(1)}`}><span>{t('header.chocolate-process')}</span></Link>
+            <Link to="/sustainability" className={`selected-tab ${selectTab === '/sustainability' && selectTab.slice(1)}`}><span>{t('header.sustainability')}</span></Link>
+            <Link to="/products-services" className={`selected-tab ${(selectTab === '/products-services' || selectTab.slice(1).split('/').shift() === 'services') && 'products-services'}`}><span>{t('header.products-services')}</span></Link>
+            <Link to="/our-clients" className={`selected-tab ${selectTab === '/our-clients' && selectTab.slice(1)}`}><span>{t('header.our-clients')}</span></Link>
+            <Link to="/ideas-trends" className={`selected-tab ${selectTab === '/ideas-trends' && selectTab.slice(1)}`}><span>{t('header.ideas-trends')}</span></Link>
+            <Link to="/our-value" className={`selected-tab separator ${(selectTab === '/our-value' || selectTab.slice(1).split('/').shift() === 'our-value') && 'our-value'}`}><span>{t('header.our-value-proposition')}</span></Link>
 
-            <Link to="/blog" className={`selected-tab selected-tab-responsive ${selectTab === '/blog' && selectTab.slice(1)}`} ><span>BLOG</span></Link>
+            <Link to="/blog" className={`selected-tab selected-tab-responsive ${selectTab === '/blog' && selectTab.slice(1)}`} ><span>{t('header.blog')}</span></Link>
             {/*<Link to="/" className={`selected-tab selected-tab-responsive`} ><span>CREATE YOUR OWN CHOCOLATE</span></Link>*/}
-            <Link to="/" onClick={e => this.handleShowMoreInfo(e)} className={`selected-tab selected-tab-responsive`} ><span>MORE INFO</span></Link>
-            <Link to="/contact-us" className={`selected-tab selected-tab-responsive`}><span>CONTACT US</span></Link>
+            <Link to="/" onClick={e => this.handleShowMoreInfo(e)} className={`selected-tab selected-tab-responsive`} ><span>{t('header.more-info')}</span></Link>
+            <Link to="/contact-us" className={`selected-tab selected-tab-responsive`}><span>{t('header.contact-us')}</span></Link>
           </nav>
         </div>
         {moreInfoVisible && <Footer mode='responsive' handleShowMoreInfo={this.handleShowMoreInfo} />}
@@ -84,4 +85,4 @@ class Header extends React.Component {
   }
 };
 
-export default withRouter(Header);
+export default withNamespaces()(withRouter(Header));

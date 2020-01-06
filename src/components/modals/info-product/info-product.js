@@ -45,7 +45,7 @@ class ModalInfoProducts extends React.Component {
       },
     ];
     const altImg = 'img-example.svg';
-    const { title, subtitle, product } = this.props;
+    const { title, subtitle, contentTitle, product } = this.props;
     return (
       <div className="info-product">
         <div className="info-product-header">
@@ -55,12 +55,12 @@ class ModalInfoProducts extends React.Component {
         <div className="info-product-content">
           <div className="info-product-contain">
             <div className="info-product-contain-top">
-              <h2>{subtitle}</h2>
+              <h2>{contentTitle}</h2>
               <h3>{product.description}</h3>
               <img src={require('../../../assets/img/' + (product.img ? product.img : altImg))} alt={product.description} />
             </div>
             <div className="info-product-contain-data">
-              <div className="info-product-contain-data-cocoa">Cocoa content: {product.cocoaContent}</div>
+    <div className="info-product-contain-data-cocoa">Cocoa content: {product.cocoaContent} {product.milkContent && <span> Milk content: {product.milkContent}</span> }</div>
               <div className="info-product-contain-data-viscosity"><span>Viscosity:</span>
                 {[...Array(product.viscosity)].map((_, i) => <div key={i}>
                   <GiWaterDrop />

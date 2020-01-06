@@ -18,15 +18,16 @@ import ukFlag from '../../assets/img/uk-flag.png'
 import jpFlag from '../../assets/img/jp-flag.png'
 import FloatLogo from '../../components/layout/float-logo/float-logo';
 import HelmetComponent from '../../commons/helmet/helmet';
+import { withNamespaces } from 'react-i18next';
 
 
-function Customer() {
-
+function Customer(props) {
+  const { t } = props;
   return (
     <div className='customer-component'>
       <HelmetComponent title="Luker Chocolate | Our clients" />
       <div className="customer-component--header">
-        <h1>OUR CLIENTS</h1>
+        <h1>{t('our-clients').toUpperCase()}</h1>
         <FloatLogo btnText='dist' />
       </div>
       <div className="customer-component--content">
@@ -55,4 +56,4 @@ function Customer() {
   );
 }
 
-export default Customer;
+export default withNamespaces()(Customer);

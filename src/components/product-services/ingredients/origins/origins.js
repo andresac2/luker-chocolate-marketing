@@ -2,6 +2,7 @@ import React from 'react'
 import WrappedContactSide from '../../../layout/contact-side/contact-side';
 import { TiArrowSortedUp } from 'react-icons/ti';
 import Modals from '../../../modals/modals';
+import { withNamespaces } from 'react-i18next';
 
 class Ingredient1906 extends React.Component {
   constructor(props) {
@@ -22,11 +23,11 @@ class Ingredient1906 extends React.Component {
         data: [{
           key: 1,
           enrobing: true,
-          decorativeFigures: false,
+          decorativeFigures: true,
           moulding: true,
           fillingsGanaches: true,
           decorating: true,
-          desserts: false
+          desserts: true
         }],
         selected: false
       }, {
@@ -35,14 +36,14 @@ class Ingredient1906 extends React.Component {
         description: 'EXTRA DARK TUMACO',
         cocoaContent: '85%',
         viscosity: 4,
-        fluid: 3,
-        viscous: 3,
+        fluid: 5,
+        viscous: 1,
         data: [{
           key: 1,
           enrobing: true,
           decorativeFigures: false,
           moulding: true,
-          fillingsGanaches: true,
+          fillingsGanaches: false,
           decorating: true,
           desserts: false
         }],
@@ -54,16 +55,16 @@ class Ingredient1906 extends React.Component {
         description: 'DARK HUILA',
         cocoaContent: '65%',
         viscosity: 3,
-        fluid: 3,
-        viscous: 3,
+        fluid: 5,
+        viscous: 1,
         data: [{
           key: 1,
           enrobing: true,
-          decorativeFigures: false,
+          decorativeFigures: true,
           moulding: true,
           fillingsGanaches: true,
           decorating: true,
-          desserts: false
+          desserts: true
         }],
         selected: false
       }, {
@@ -72,8 +73,8 @@ class Ingredient1906 extends React.Component {
         description: 'DARK HUILA',
         cocoaContent: '70%',
         viscosity: 4,
-        fluid: 3,
-        viscous: 3,
+        fluid: 5,
+        viscous: 1,
         data: [{
           key: 1,
           enrobing: true,
@@ -81,7 +82,7 @@ class Ingredient1906 extends React.Component {
           moulding: true,
           fillingsGanaches: true,
           decorating: true,
-          desserts: false
+          desserts: true
         }],
         selected: false
       },
@@ -91,16 +92,16 @@ class Ingredient1906 extends React.Component {
         description: 'DARK SANTANDER',
         cocoaContent: '65%',
         viscosity: 3,
-        fluid: 3,
-        viscous: 3,
+        fluid: 5,
+        viscous: 1,
         data: [{
           key: 1,
           enrobing: true,
-          decorativeFigures: false,
+          decorativeFigures: true,
           moulding: true,
           fillingsGanaches: true,
           decorating: true,
-          desserts: false
+          desserts: true
         }],
         selected: false
       },
@@ -110,16 +111,16 @@ class Ingredient1906 extends React.Component {
         description: 'DARK SAN MARTIN',
         cocoaContent: '72%',
         viscosity: 4,
-        fluid: 3,
-        viscous: 3,
+        fluid: 5,
+        viscous: 1,
         data: [{
           key: 1,
           enrobing: true,
-          decorativeFigures: false,
+          decorativeFigures: true,
           moulding: true,
           fillingsGanaches: true,
           decorating: true,
-          desserts: false
+          desserts: true
         }],
         selected: false
       },
@@ -129,8 +130,8 @@ class Ingredient1906 extends React.Component {
         description: 'MILK ARAUCA',
         cocoaContent: '55%',
         viscosity: 5,
-        fluid: 3,
-        viscous: 3,
+        fluid: 5,
+        viscous: 1,
         data: [{
           key: 1,
           enrobing: true,
@@ -138,7 +139,7 @@ class Ingredient1906 extends React.Component {
           moulding: true,
           fillingsGanaches: true,
           decorating: true,
-          desserts: false
+          desserts: true
         }],
         selected: false
       }
@@ -179,7 +180,7 @@ class Ingredient1906 extends React.Component {
   }
 
   render() {
-    const { data } = this.props;
+    const { data, t } = this.props;
     const { itemsArauca, hideFormContact, openProducts, infoProductsVisible, productSelected } = this.state;
     const altImg = 'img-example.svg';
 
@@ -191,9 +192,9 @@ class Ingredient1906 extends React.Component {
           <img src={require('../../../../assets/img/chocolate-ingredients/origins/origenes-line-up.png')} alt='Products Origins' />
         </div>
         <div className={`i1906-component--content ${openProducts ? 'i1906-component--content-open-product' : ''}`}>
-          <h2>SINGLE ORIGIN</h2>
-          <p>Luker 1906, SANTANDER, HUILA, TUMACO and ARAUCA. Four Colombian Origin Chocolates with flavours that reflect the country’s geographic and cultural diversity. Santander cocoa is cultivated in the Andes; Tumaco, in the tropical forests of the Pacific Coast and Huila cocoa is typical of the region’s deep valleys. In Arauca, cocoa grows in wild landscapes between the snow-capped mountains and valleys of the Orinoco. Mountains, forests and valleys: Luker 1906, the chocolate with an inimitable flavour of the land that it grows in.</p>
-          <p className="i1906-component--content-specifications">Available in: 2,5 bag or 20kg box<br /> Shelf life: Dark 24 months, Milk 18 months & White 14 months.</p>
+          <h2>{t('products-services.single-origin').toUpperCase()}</h2>
+          <p>{t('products-services.origins-text')}</p>
+          <p className="i1906-component--content-specifications">{t('products-services.available-in')} {t('products-services.bag-box-origins')}<br /> {t('products-services.shelf-life-origins')}</p>
         </div>
         <div className={`i1906-component--contain-products-arrow ${openProducts ? 'i1906-component--contain-products-arrow-open' : ''}`} onClick={() => this.showProductToggle()}><span><TiArrowSortedUp /></span></div>
         <div className={`i1906-component--contain-products ${openProducts ? 'i1906-component--contain-products-open' : ''}`} >
@@ -202,17 +203,17 @@ class Ingredient1906 extends React.Component {
             {Object.keys(itemsArauca).map(i =>
               <div key={i} className={`i1906-component--products-item i1906-component--products-item-${itemsArauca[i].selected && 'active'}`} onClick={() => this.productToggle(itemsArauca[i].id, !itemsArauca[i].selected)}>
                 <img src={require('../../../../assets/img/' + (itemsArauca[i].img ? itemsArauca[i].img : altImg))} alt={itemsArauca[i].description} />
-                <h2>Luker 1906</h2>
+                <h2>{t('products-services.luker-1906')}</h2>
                 <p>{itemsArauca[i].description} {itemsArauca[i].cocoaContent}</p>
                 <span onClick={() => this.showModalDist(itemsArauca[i])}>i</span>
               </div>)}
           </div>
         </div>
-        <Modals visible={infoProductsVisible} modal={'info-product'} showModalDist={this.showModalDist} product={productSelected} title="SINGLE ORIGIN CHOCOLATES" subtitle="LUKER 1906" />
+        <Modals visible={infoProductsVisible} modal={'info-product'} showModalDist={this.showModalDist} product={productSelected} title={t('products-services.single-origin-chocolates')} subtitle={t('products-services.luker-1906')} contentTitle={t('products-services.luker-1906')} />
         <WrappedContactSide page='ingredients' products={itemsArauca} handleSetProductSelected={this.handleSetProductSelected} handleShowFormContact={this.handleShowFormContact} />
       </div>
     );
   }
 };
 
-export default Ingredient1906;
+export default withNamespaces()(Ingredient1906);

@@ -10,7 +10,6 @@ const RydArticle = props => {
     <div className="ryd-article" >
       <div className="btn-dist">
         <Link to="/" className="logo"> <img src={logo} alt="Logo Luker" /></Link>
-        <button onClick={() => console.log('hi')}> DISTRIBUTORS </button>
       </div>
       <div className="ryd-article--text">
         <h2>{title}</h2>

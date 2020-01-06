@@ -1,6 +1,7 @@
 import React from 'react'
 import WrappedContactSide from '../../../layout/contact-side/contact-side';
 import { TiArrowSortedUp } from 'react-icons/ti';
+import { withNamespaces } from 'react-i18next';
 
 class IngredientDragees extends React.Component {
   constructor(props) {
@@ -71,21 +72,22 @@ class IngredientDragees extends React.Component {
 
   render() {
     const { items, hideFormContact, openProducts } = this.state;
+    const { t } = this.props;
     const altImg = 'img-example.svg';
 
     return (
       <div className={`dragees-component ${hideFormContact && 'dragees-component--hide-form'} `}>
         <div className="dragees-component--header">
-          <h1>CHOCOLATE DRAGEES MADE</h1>
-          <h1>WITH 100% CACAO FINO DE AROMA</h1>
+          <h1>{t('products-services.maracas-first-title')}</h1>
+          <h1>{t('products-services.maracas-second-title')}</h1>          
         </div>
         <div className={`dragees-component--content ${openProducts ? 'dragees-component--content-open' : ''}`}>
-          <p>In the same way as that magical seductive instrument that characterises the happy upbeat feel of the tropics with its sweet and varied rhythm, Luker Maracas presents a new range of chocolate-covered dragees. Filled with roasted coffee, roasted cocoa and sweet tropical fruits, these delightful dragees are covered in our finest Fino de Aroma chocolate.</p>
-          <p>Luker Maracas, Tropical Dragees are ideal for decorating desserts and cakes, to include in preparations, as toppings for ice-cream or simply to give that special touch to your recipes. They are also a good accompaniment for coffee and other hot drinks; they can be mixed in with cereals and dried fruit to prepare delicious, healthy snacks.</p>
+          <p>{t('products-services.maracas-first-text')}</p>
+          <p>{t('products-services.maracas-second-text')}</p>          
         </div>
         <div className={`dragees-component--products-arrow ${openProducts ? 'dragees-component--products-arrow-open' : ''}`} onClick={() => this.showProductToggle()}><span><TiArrowSortedUp /></span></div>
         <div className={`dragees-component--products ${openProducts ? 'dragees-component--products-open' : ''}`}>
-          <button className={`dragees-component--products-btn-next`} disabled={items.filter(item => item.selected).length <= 0} onClick={() => this.handleShowFormContact(true)}>{(items.filter(item => item.selected).length <= 0) ? 'Choose your favorite products' : 'Next'}</button>
+          <button className={`dragees-component--products-btn-next`} disabled={items.filter(item => item.selected).length <= 0} onClick={() => this.handleShowFormContact(true)}>{(items.filter(item => item.selected).length <= 0) ? t('buttons.choose-product') : t('buttons.next')}</button>
           {Object.keys(items).map(i =>
             <div key={i} className={`dragees-component--products-item dragees-component--products-item-${items[i].selected && 'active'}`} onClick={() => this.productToggle(items[i].id, !items[i].selected)}>
               <div className="dragees-component--products-item-img">
@@ -107,4 +109,4 @@ class IngredientDragees extends React.Component {
 };
 
 
-export default IngredientDragees;
+export default withNamespaces()(IngredientDragees);

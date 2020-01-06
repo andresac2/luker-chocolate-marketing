@@ -10,6 +10,10 @@ import SustainabilityBrief from '../../assets/documents/Sustainabililty 2018 Luk
 import CocoaForestPeaceAgreement from '../../assets/documents/Colombia-Cocoa-Forests-and-Peace-Initiative-Joint-Framework-for-Action-English.pdf';
 import zipDocuments from '../../assets/documents/documents-luker.zip';
 import HelmetComponent from '../../commons/helmet/helmet';
+import { withNamespaces } from 'react-i18next';
+
+import termsConditions from '../../assets/documents/policies/Términos y condiciones de uso sitio web CasaLuker inglés 16dic2019.pdf';
+import privacyPolicy from '../../assets/documents/policies/Política privacidad sitio web CasaLuker inglés 16dic2019.pdf';
 
 class Sustain extends React.Component {
 
@@ -142,6 +146,7 @@ class Sustain extends React.Component {
 
   render() {
     const { getFieldDecorator } = this.props.form;
+    const { t } = this.props;
     const { items, firstItem, distModalVisible, reportModalVisible, articleModalVisible, modalSelectedIndex, modalReportItems } = this.state;
     const { Option } = Select;
     const altImg = 'img-example.svg';
@@ -233,17 +238,14 @@ class Sustain extends React.Component {
         <FloatLogo btnText='dist' />
         <div className="sustain-sidebar">
           <div className="sustain-sidebar--text">
-            <h1>SUSTAINABILITY</h1>
-            <div className="sustain-sidebar--text-content">
-              <p>At Luker Chocolate, we are committed to creating greater wellbeing for all the actors of the value chain, from the cocoa growers right through to our clients.</p>
-              <p>We know that we need determination to transform the cocoa growing regions; in Colombia there are 38 thousand cocoa-producing families that were, in the past, victims of the country’s armed conflict and are subject to very low multidimensional poverty indices. As such, we focus our efforts on contributing to change in these regions in order to improve the quality of life of the farmers and their communities.</p>
-            </div>
-            <button onClick={() => this.showModalReport()}> GET FULL REPORT </button>
+            <h1>{t('header.sustainability')}</h1>
+            <div className="sustain-sidebar--text-content" dangerouslySetInnerHTML={{ __html: t('sustainability.sustain-content') }} />
+            <button onClick={() => this.showModalReport()}> {t('buttons.get-full-report')} </button>
           </div>
         </div>
         <div className="sustain-content">
           <div className="sustain-content-model">
-            <h1>IMPACT</h1>
+            <h1>{t('sustainability.impact')}</h1>
             <div className="sustain-content-contain-carr">
               <img className="btn-next-img btn-next-img-left" src={back} alt='left' onClick={() => this.carrAction('l')} />
               <div className="sustain-content-contain-carr--items" >
@@ -268,10 +270,10 @@ class Sustain extends React.Component {
             </div>
           </div>
           <div className="sustain-content-model">
-            <h1>WE GO BEYOND</h1>
+            <h1>{t('sustainability.we-go-beyond')}</h1>
             <div className="sustain-content-model--panel">
               <img src={panel} alt="Panel" />
-              <a href='http://www.thechocolatedream.co/' target="_blank"> FIND OUT MORE </a>
+              <a href='http://www.thechocolatedream.co/' target="_blank"> {t('buttons.find-out-more')} </a>
             </div>
           </div>
         </div>
@@ -281,7 +283,7 @@ class Sustain extends React.Component {
             <MdClose className="btn-x" onClick={() => this.showModalReport()} />
             <div className="modal-report-modal-report">
               <div className="modal-report-modal-report-header">
-                <h2>Select the documents you want!</h2>
+                <h2>{t('modals.modal-documents-title')}</h2>
               </div>
               <div className="modal-report-modal-report-cards">
                 {
@@ -296,13 +298,13 @@ class Sustain extends React.Component {
             </div>
             <div className="modal-report-modal-contact">
               <div className={`contact-component-content`}>
-                <h1>GIVE US YOUR DETAILS</h1>
+                <h1>{t('form.give-us-details')}</h1>
                 <Form onSubmit={this.handleSubmit} className="contact-form">
                   <Form.Item>
                     {getFieldDecorator('username', {
-                      rules: [{ required: true, message: 'Please input your username!' }],
+                      rules: [{ required: true, message: t('errors.required-name') }],
                     })(
-                      <Input placeholder="Full Name" />,
+                      <Input placeholder={t('form.your-name')} />,
                     )}
                   </Form.Item>
                   <FormItem>
@@ -310,22 +312,22 @@ class Sustain extends React.Component {
                       rules: [
                         {
                           type: 'email',
-                          message: 'The input is not valid E-mail!',
+                          message: t('errors.invalid-email'),
                         },
                         {
                           required: true,
-                          message: 'Please input your E-mail!',
+                          message: t('errors.required-email'),
                         },
                       ],
                     })(<Input placeholder="Email" />)}
                   </FormItem>
                   <Form.Item>
                     {getFieldDecorator('country', {
-                      rules: [{ required: true, message: 'Please input your country!' }],
+                      rules: [{ required: true, message: t('errors.required-country') }],
                     })(
                       <Select
                         showSearch
-                        placeholder="Country"
+                        placeholder={t('form.your-country')}
                         optionFilterProp="children"
                         filterOption={(input, option) =>
                           option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
@@ -339,9 +341,9 @@ class Sustain extends React.Component {
                   </Form.Item>
                   <Form.Item>
                     {getFieldDecorator('phone', {
-                      rules: [{ required: true, message: 'Please input your phone!' }],
+                      rules: [{ required: true, message: t('errors.required-number') }],
                     })(
-                      <InputNumber min={7} placeholder="Phone number" style={{ width: '100%' }} />,
+                      <InputNumber min={7} placeholder={t('form.phone-number')} style={{ width: '100%' }} />,
                     )}
                   </Form.Item>
                   <div className="contact-form-products">
@@ -352,15 +354,15 @@ class Sustain extends React.Component {
                             <img src={require('../../assets/img/img-example.svg')} alt={modalReportItems.filter(item => item.selected)[i].id} />
                             <p>{modalReportItems.filter(item => item.selected)[i].title}</p>
                           </div>)
-                        : <span>Choose your documentation</span>}
+                        : <span>{t('form.choose-documentation')}</span>}
                     </div>
                   </div>
                   <Form.Item>
                     <Button type="primary" htmlType="submit" className="contact-form-button">
-                      Download
+                      {t('buttons.download')}
                     </Button>
                   </Form.Item>
-                  <p className="contact-form-terms">By clicking "download" you agree to the terms and conditions and our privacy policy.</p>
+                  <p className="contact-form-terms">{t('form.clicking-download')} <a href={termsConditions} target="_blank">{t('form.terms-conditions')} </a> {t('form.and-our')} <a href={privacyPolicy} target="_blank">{t('form.privacy-policy')}</a>.</p>
                 </Form>
               </div>
             </div>
@@ -388,5 +390,4 @@ class Sustain extends React.Component {
   }
 };
 const WrappedSustain = Form.create({ name: 'report_form' })(Sustain);
-
-export default WrappedSustain;
+export default withNamespaces()(WrappedSustain);
