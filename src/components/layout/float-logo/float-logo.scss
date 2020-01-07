@@ -1,0 +1,41 @@
+.float-logo {
+  position: absolute;
+  top: 4em;
+  left: 4em;
+  width: fit-content;
+
+  .logo {
+    background: transparent;
+    width: fit-content;
+
+    img {
+      width: 12em;
+      display: block;
+    }
+  }
+
+  a,
+  button {
+    display: block;
+    width: max-content;
+    width: 100%;
+    max-width: 12em;
+    text-align: center;
+    font-weight: 700;
+    background: #f4c710;
+    color: #685019;
+    font-size: 11px;
+    //font-size: 10px;
+    padding: 3px;
+    margin-top: .5em;
+
+    &:first-child {
+      margin-top: 0;
+      padding: 0;
+    }
+  }
+
+  @media screen and (max-width: 960px) {
+    display: none;
+  }
+}

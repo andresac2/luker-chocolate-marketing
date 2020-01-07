@@ -1,0 +1,139 @@
+.footer-cover {
+  position: fixed;
+  z-index: 4;
+  width: 100%;
+  height: 0;
+  bottom: 0;
+  text-align: center;
+
+  &-open {
+    height: auto;
+
+    .footer-cover-bkg {
+      position: absolute;
+      cursor: pointer;
+      transition: all ease .5s;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, .7);
+      height: 100vh;
+    }
+  }
+
+
+  svg {
+    cursor: pointer;
+    color: whitesmoke;
+    font-size: 4em;
+    position: absolute;
+    top: -1em;
+    left: calc(50% - 28px);
+    @include bounce-top(3s);
+  }
+
+  &-nav {
+    display: none;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: .5em;
+    margin-bottom: 2em;
+
+    a {
+      z-index: 0;
+      background: transparent;
+      display: inline;
+      cursor: pointer;
+
+      span {
+        border-bottom-width: 5px;
+        border-bottom-style: solid;
+      }
+    }
+  }
+
+  &-chocolate-process {
+    span {
+      border-bottom-color: $ocher-yellow;
+    }
+  }
+
+  &-sustainability {
+    span {
+      border-bottom-color: $beige;
+    }
+  }
+
+  &-products-services {
+    span {
+      border-bottom-color: $peach;
+    }
+  }
+
+  &-our-clients {
+    span {
+      border-bottom-color: $citrus;
+    }
+  }
+
+  &-ideas-trends {
+    span {
+      border-bottom-color: $tangerine;
+    }
+  }
+
+  &-our-value {
+    span {
+      border-bottom-color: $light-gray;
+    }
+  }
+
+  &- {
+    grid-template-columns: 1fr 2fr 1fr;
+
+    span {
+      border-bottom-color: $apple-green;
+    }
+  }
+
+  &-open {
+    background: linear-gradient(0deg, rgba(0, 0, 0, .9) 10%, rgba(0, 0, 0, 0) 85%);
+
+    svg {
+      transform: rotate(180);
+    }
+
+    nav {
+      display: grid;
+    }
+  }
+
+  a {
+    color: #fff;
+    align-self: center;
+    text-align: center;
+    font-weight: 700;
+    font-size: medium;
+  }
+
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
+}
+
+.btn-dist-footer {
+  display: none;
+  bottom: 0;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background: #D4B876;
+  color: #685019;
+  width: 100%;
+  font-weight: 700;
+  padding: .5em 0;
+
+  @media screen and (max-width: 1024px) {
+    display: inline-block;
+  }
+}

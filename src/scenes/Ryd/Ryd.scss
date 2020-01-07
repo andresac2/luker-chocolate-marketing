@@ -1,0 +1,162 @@
+.ryd-component {
+  display: grid;
+  height: 100vh;
+  background: #D3D974;
+  overflow: hidden;
+
+  .ryd-tab {
+    display: grid;
+    height: inherit;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+
+    &--experience {
+      transition: all ease .5s;
+      grid-template-columns: 10fr 1fr 1fr 1fr;
+    }
+
+    &--ethical {
+      transition: all ease .5s;
+      grid-template-columns: 1fr 10fr 1fr 1fr;
+    }
+
+    &--premium {
+      transition: all ease .5s;
+      grid-template-columns: 1fr 1fr 10fr 1fr;
+    }
+
+    &--healthy {
+      transition: all ease .5s;
+      grid-template-columns: 1fr 1fr 1fr 10fr;
+    }
+
+    &-item {
+      @include vert-center;
+      background-size: cover;
+      background-position: right;
+      border-right: 5px solid #D3D974;
+      transition: all ease .5s;
+
+      &:last-child {
+        border: none;
+      }
+
+      span {
+        cursor: pointer;
+        font-size: 4vw;
+        font-weight: 700;
+        text-align: center;
+        color: #fff;
+        writing-mode: tb-rl;
+        transform: rotate(-180deg);
+        margin-left: auto;
+      }
+
+      &--active {
+        position: relative;
+        max-width: 10%;
+
+        &.ryd-tab-item--healthy {
+          border-right: 5px solid #D3D974;
+
+          .ryd-article {
+            width: calc(69vw);
+          }
+        }
+      }
+
+      &--experience {
+        background-image: url('../../assets/img/experience-bkg.jpg');
+      }
+
+      &--ethical {
+        background-image: url('../../assets/img/ethical-bkg.jpg');
+      }
+
+      &--premium {
+        background-image: url('../../assets/img/premium-bkg.jpg');
+      }
+
+      &--healthy {
+        background-image: url('../../assets/img/healthy-bkg.jpg');
+      }
+    }
+
+  }
+
+  .btn-dist {
+    position: absolute;
+    top: 3em;
+    left: 3em;
+
+    .logo {
+      margin: 0 auto .5em;
+      width: 10em;
+      display: block;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    button {
+      font-weight: 700;
+      width: 10em;
+      background: #F4C710;
+      color: #685019;
+      padding: 3px 18px;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .ryd-tab {
+      &--experience {
+        grid-template-columns: 100% 0 0 0;
+      }
+
+      &--ethical {
+        grid-template-columns: 0 100% 0 0;
+      }
+
+      &--premium {
+        grid-template-columns: 0 0 100% 0;
+      }
+
+      &--healthy {
+        grid-template-columns: 0 0 0 100%;
+      }
+
+      &-item {
+        span {
+          font-size: 42px;
+        }
+
+        &--active {
+          max-width: 5%;
+
+          span {
+            display: none;
+          }
+
+          &.ryd-tab-item--healthy {
+            width: 200vw;
+          }
+        }
+
+        &--resp-hide {
+          span {
+            color: transparent;
+          }
+        }
+      }
+    }
+
+    .btn-dist {
+      display: none;
+    }
+
+    .ryd-tab-item--active.ryd-tab-item--healthy .ryd-article {
+      width: 90vw;
+    }
+  }
+}

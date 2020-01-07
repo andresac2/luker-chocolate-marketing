@@ -1,0 +1,323 @@
+.flow-tabs {
+  display: grid;
+  grid-template-rows: calc(100vh - 18em) 18em;
+
+  @media screen and (max-width: 992px) {
+    grid-template-rows: 60vh calc(40vh - 36px);
+  }
+
+
+  .flow-tab {
+    display: grid;
+    -webkit-transition: all ease .5s;
+    transition: all ease .5s;
+
+    &-item {
+      @include vert-center;
+
+      span {
+        cursor: pointer;
+        font-size: large;
+        font-weight: 700;
+        text-align: center;
+        writing-mode: tb-rl;
+        transform: rotate(-180deg);
+        color: #fff;
+        font-size: 1.5em;
+        line-height: 1em;
+
+        overflow: hidden;
+
+        @media (max-width: 992px) {
+          font-size: medium;
+        }
+      }
+
+      &--active {
+        span {
+          font-size: 3em;
+          align-self: center;
+          line-height: 1em;
+          writing-mode: unset;
+          transform: none;
+
+          br {
+            display: none;
+          }
+
+          @media (max-width: 992px) {
+            font-size: 1.5em;
+
+          }
+        }
+      }
+    }
+
+    &--cacao {
+      transition: all ease 1s;
+      grid-template-columns: 10fr 2fr 2fr 2fr 2fr 2fr;
+    }
+
+    &--granjeros {
+      transition: all ease 1s;
+      grid-template-columns: 2fr 10fr 2fr 2fr 2fr 2fr;
+    }
+
+    &--abastecimiento {
+      transition: all ease 1s;
+      grid-template-columns: 2fr 2fr 10fr 2fr 2fr 2fr;
+    }
+
+    &--procesamiento {
+      transition: all ease 1s;
+      grid-template-columns: 2fr 2fr 2fr 10fr 2fr 2fr;
+    }
+
+    &--coberturas {
+      transition: all ease 1s;
+      grid-template-columns: 2fr 2fr 2fr 2fr 10fr 2fr;
+
+    }
+
+    &--producto {
+      transition: all ease 1s;
+      grid-template-columns: 2fr 2fr 2fr 2fr 2fr 10fr;
+    }
+
+    .flow-tab-item {
+      background-size: cover;
+      z-index: inherit;
+      transition: all ease 1s;
+
+      &--cacao {
+        background-image: linear-gradient(to bottom, rgba(97, 20, 6, 0.6) 100%, transparent),
+          url("../../../assets/img/the-chocolate-process/cacao/cacao-fino-de-aroma-title.jpg");
+        z-index: 5;
+        box-shadow: 14px 0px 19px #0000007E;
+      }
+
+      &--granjeros {
+        background-image: linear-gradient(to bottom, rgba(209, 216, 114, 0.6) 100%, transparent),
+          url("../../../assets/img/the-chocolate-process/harvesting/harvesting-title.jpg");
+        z-index: 4;
+        box-shadow: 14px 0px 19px #0000007E;
+      }
+
+      &--abastecimiento {
+        background-image: linear-gradient(to bottom, rgba(213, 183, 119, 0.6) 100%, transparent),
+          url("../../../assets/img/the-chocolate-process/post-harvesting/post-harvesting-title.jpg");
+        z-index: 3;
+        box-shadow: 14px 0px 19px #0000007E;
+      }
+
+      &--procesamiento {
+        background-image: linear-gradient(to bottom, rgba(171, 171, 171, 0.6) 100%, transparent),
+          url("../../../assets/img/the-chocolate-process/Processing/processing-title.jpg");
+        z-index: 2;
+        box-shadow: 14px 0px 19px #0000007E;
+      }
+
+      &--coberturas {
+        background-image: linear-gradient(to bottom, rgba(83, 44, 46, 0.6) 100%, transparent),
+          url("../../../assets/img/the-chocolate-process/raffinement-conching/raffinement-conching-title.jpg");
+        z-index: 1;
+        box-shadow: 14px 0px 19px #0000007E;
+      }
+
+      &--producto {
+        background-image: linear-gradient(to bottom, rgba(198, 134, 90, 0.6) 100%, transparent),
+          url("../../../assets/img/the-chocolate-process/finished-products/finished-product-title.jpg");
+        z-index: 0;
+        box-shadow: 14px 0px 19px #0000007E;
+      }
+    }
+  }
+
+  .flow-content-component {
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: minmax(40%, 1fr) minmax(60%, 1fr);
+    grid-template-rows: inherit;
+    transition: all ease 1s;
+
+    @media (max-width: 992px) {
+      display: flex;
+      padding-top: 100px;
+
+      .opened {
+        width: 80%;
+
+        &:first-child {
+          filter: blur(0px);
+        }
+
+        .arrow-back {
+          display: none;
+        }
+      }
+    }
+
+    @media (min-width: 992px) {
+      .back-rotate {
+        display: none;
+      }
+    }
+
+    .close {
+      @media (max-width: 992px) {
+        width: 20%;
+
+        div {
+          &:first-child {
+            filter: blur(2px);
+          }
+        }
+
+        .arrow-back {
+          position: absolute;
+          width: 100%;
+          top: 0;
+          left: 0;
+          height: 100%;
+          z-index: 9;
+          max-width: 10x;
+          display: flex;
+          min-width: 0px;
+          align-items: center;
+          justify-content: center;
+          background: #00000029;
+          padding: 0 10px;
+          transition: width 0.8s;
+
+          img {
+            max-width: 52px;
+            width: 100%;
+          }
+
+          .back-rotate {
+            transition: rotate 1s;
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+
+    &--cacao {
+      background: #611306;
+    }
+
+    &--granjeros {
+      background: #c0c663;
+    }
+
+    &--abastecimiento {
+      background: #d5b777;
+    }
+
+    &--procesamiento {
+      background: #ababab;
+    }
+
+    &--coberturas {
+      background: #532c2e;
+    }
+
+    &--producto {
+      background: #c6865a;
+    }
+
+    &--text {
+      padding: 5em 1em 3em 3em;
+      color: #ffffff;
+      line-height: 2em;
+      font-size: 1vw;
+      position: relative;
+      transition: width 0.8s;
+
+      .arrow-back {
+        display: none;
+      }
+
+      div {
+        overflow: auto;
+        height: 100%;
+        padding-right: 2em;
+        scrollbar-width: thin;
+        scrollbar-color: #f3f3f3;
+        font-size: medium;
+        line-height: 1.4em;
+        min-width: 300px;
+        overflow: auto;
+        font-weight: 400;
+
+        p {
+          margin-bottom: 1em;
+        }
+
+        strong {
+          font-weight: 600;
+        }
+
+        /* width */
+        &::-webkit-scrollbar {
+          width: 8px;
+        }
+
+        @media (max-width: 992px) {}
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+          background: rgba(0, 0, 0, 0.3);
+          border-radius: 10px;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+          height: 20px;
+          border-radius: 10px;
+          background: #f3f3f3;
+          opacity: 0;
+        }
+
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+          background: rgba(243, 243, 243, 0.6);
+        }
+      }
+    }
+
+    &--slider {
+      position: relative;
+      transition: width 0.8s;
+
+      .ant-carousel {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+        div,
+        img {
+          height: inherit;
+        }
+
+        .slick-slide {
+          text-align: center;
+          height: 100%;
+          line-height: 300px;
+          overflow: hidden;
+
+          img {
+            width: inherit;
+            object-fit: cover;
+          }
+        }
+      }
+
+      .ant-carousel .slick-dots li button {
+        width: 8px;
+        height: 8px;
+        border-radius: 20px;
+      }
+    }
+  }
+}

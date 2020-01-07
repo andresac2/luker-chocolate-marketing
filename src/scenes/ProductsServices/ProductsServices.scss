@@ -1,0 +1,101 @@
+.services-component {
+  display: grid;
+  grid-template-rows: 180px 1fr;
+  grid-template-columns: 1fr;
+  height: 100vh;
+
+  .services-header {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    @include vert-center;
+    align-items: center;
+    z-index: 1;
+    box-shadow: 0px 8px 8px #00000069;
+
+    &--title-short {
+      h1 {
+        margin-left: -5em;
+        width: 12em;
+      }
+
+      @media screen and (min-width: 1360px) {
+        h1 {
+          margin-left: 0;
+          width: auto;
+        }
+      }
+    }
+
+    color: #fff;
+
+    &--finished-chocolate-products {
+      background-image: url("../../assets/img/maquila-header.jpg");
+    }
+
+    &--ingredients {
+      background-image: url("../../assets/img/ingredients-header.jpg");
+    }
+
+    &--our-services {
+      background-image: url('../../assets/img/services-header.jpg');
+    }
+
+    h1 {
+      @include header-title;
+      max-width: 15em;
+      font-size: 3.5vw;
+    }
+
+    .btn-dist {
+      position: absolute;
+      top: 4em;
+      left: 3em;
+      width: 12em;
+
+      .logo {
+        margin-bottom: .5em;
+        display: block;
+
+        img {
+          width: 12em;
+        }
+      }
+
+      button,
+      a {
+        width: 100%;
+        text-align: center;
+        display: block;
+        font-weight: 700;
+        font-size: smaller;
+        background: #F4C710;
+        color: #685019;
+        padding: 3px 0;
+        margin-bottom: .5em;
+
+        &:first-child {
+          background: transparent;
+        }
+      }
+    }
+  }
+
+  .services-content {
+    background: url("../../assets/img/matas.png") no-repeat;
+    background-size: 100%;
+    position: relative;
+  }
+
+  @media (max-width: 992px) {
+    grid-template-rows: 100px 1fr;
+
+    .services-header {
+
+      .btn-dist,
+      h1 {
+        display: none;
+      }
+    }
+  }
+}

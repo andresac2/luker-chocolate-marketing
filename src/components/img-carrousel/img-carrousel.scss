@@ -1,0 +1,31 @@
+.img-carrousel {
+  @include vert-center;
+  align-items: center;
+  position: relative;
+
+  .carr-item {
+    width: 20%;
+    object-fit: cover;
+    filter: blur(2px);
+
+    &--active {
+      width: 40%;
+      margin: 0 -5%;
+      filter: none;
+    }
+  }
+
+  .btn-next-img {
+    max-height: 80px;
+    position: absolute;
+    left: 5%;
+    cursor: pointer;
+
+    &--right {
+      right: 5%;
+      left: auto;
+      transform: rotate(-180deg);
+
+    }
+  }
+}

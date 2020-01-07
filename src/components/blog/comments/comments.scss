@@ -1,0 +1,111 @@
+.comments-component {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 2em;
+
+  h2 {
+    color: #174F02;
+    font-size: 3em;
+    font-weight: 700;
+    text-align: center;
+    margin: 1em auto .5em auto;
+
+    @media screen and (min-width: 1360px) {
+      font-size: 48px;
+    }
+  }
+
+  .ant-form-item {
+    margin: 0;
+
+    &:last-child {
+      text-align: end;
+    }
+
+  }
+
+  .form-comment-input {
+    margin: 0;
+
+    input {
+      width: min-content;
+      margin-bottom: 1em;
+    }
+
+    .ant-input {
+      border: 2px solid #4B2418;
+      border-radius: 0;
+    }
+  }
+
+  .ant-btn {
+    background: #174F02;
+    color: #fff;
+  }
+
+  .ant-avatar,
+  .ant-comment-avatar img {
+    width: 72px;
+    height: 72px;
+    border-radius: 0;
+  }
+
+  .ant-comment-content-author {
+    display: none;
+  }
+
+  .comment-list {
+    border-top: 1px solid #7FC4FD;
+
+    .ant-comment {
+      margin: 1em 0;
+
+      &-avatar {
+        margin-top: 2em;
+      }
+
+      &-inner {
+        padding: 0;
+      }
+
+      &-content-detail {
+        max-width: 534px;
+        color: #484848;
+        font-size: smaller;
+      }
+
+      &-content-author {
+        display: inline-block;
+
+        &-name {
+          font-weight: 700;
+          color: #4B2418;
+        }
+      }
+    }
+  }
+
+  .comment-actions {
+    color: #174F02;
+    display: flex;
+
+    button {
+      font-weight: 700;
+      border: none;
+      background: transparent;
+      text-decoration: underline;
+      margin: 0 1em;
+    }
+
+    span {
+      display: inline-flex;
+      align-items: center;
+      line-height: 0;
+
+      svg {
+        cursor: pointer;
+        font-size: 24px;
+      }
+    }
+  }
+}

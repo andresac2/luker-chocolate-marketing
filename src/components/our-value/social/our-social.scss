@@ -1,0 +1,112 @@
+.our-social-component {
+  padding: 0 3em 0 5em;
+  //max-width: 710px;
+
+  h1 {
+    font-size: xx-large;
+    font-weight: 700;
+    line-height: 1em;
+    margin: 1em 0 .5em 0;
+  }
+
+  .p-border {
+    border-left: 4px solid #5c340b;
+    border-radius: 4px;
+    margin-bottom: 1em;
+    padding: .5em;
+    margin: .5em 0;
+
+    @media (min-width: 1370px) {
+      font-size: medium;
+    }
+  }
+
+
+  &-cards {
+    display: grid;
+    grid-template-columns: auto repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 1em;
+    padding-bottom: 1em;
+
+    @media (min-width: 1240px) {
+      margin-top: 3em;
+    }
+
+    &-achieve {
+      color: #fff;
+      background: #5B340B;
+      padding: .5em;
+      writing-mode: tb-rl;
+      transform: rotate(-180deg);
+    }
+  }
+
+  &-card {
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+
+    p {
+      font-size: smaller;
+      border: none;
+    }
+
+    img {
+      width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+    }
+
+    &-cover {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      font-size: larger;
+      text-align: center;
+      color: #fff;
+      padding-bottom: 1em;
+      background: linear-gradient(to top, rgba(0, 0, 0, .9) 30%, rgba(0, 0, 0, 0) 100%);
+      font-weight: 600;
+    }
+
+    margin-bottom: 3em;
+  }
+
+  @media screen and (max-width: 996px) {
+    padding: 0;
+    margin: 0 1em;
+
+    .our-social-component-cards {
+      display: grid;
+      grid-template-columns: auto 3fr;
+      //column-gap: 20px;
+      grid-template-rows: 100px 100px 100px;
+      grid-template-areas: "achieve item"
+        "achieve item"
+        "achieve item";
+
+      &-achieve {
+        grid-area: achieve;
+        height: auto;
+      }
+    }
+
+    .our-social-component-card {
+      overflow: hidden;
+      margin-bottom: 1em;
+
+      img {
+        height: 100px;
+        object-fit: fill;
+      }
+
+      p {
+        font-weight: bold;
+        padding: 0 5px;
+      }
+
+      //height: 200px;
+    }
+  }
+}

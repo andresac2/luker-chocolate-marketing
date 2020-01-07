@@ -1,0 +1,158 @@
+.ryd-article {
+  position: absolute;
+  background: #F3F3F3;
+  left: calc(100% + 5px);
+  width: 70vw;
+  height: 100%;
+  border-right: 5px solid #D3D974;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  grid-template-rows: 1fr;
+  gap: 10px;
+
+  &--text,
+  &--img {
+    @include vert-center;
+  }
+
+  .btn-dist {
+    left: 5em;
+
+    @media screen and (max-width: 1320px) {
+      left: 2em;
+    }
+
+    @media screen and (max-width: 996px) {
+      display: inline-block;
+      top: 3em;
+      width: 8em;
+
+      .logo {
+        margin: 0;
+        margin-bottom: .5em;
+        width: 7em;
+      }
+
+      button {
+        //|width: 8em;
+        padding: 5px 0;
+        font-size: x-small;
+        //display: none;
+      }
+
+      ;
+    }
+  }
+
+  &--text {
+    flex-direction: column;
+    margin-left: 5em;
+    margin-top: 120px;
+    padding-bottom: 2em;
+    justify-content: flex-start;
+    color: #484848;
+
+    @media screen and (max-width: 1320px) {
+      margin-left: 2em;
+    }
+
+    h2,
+    h3 {
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin-top: 1em;
+      font-size: 2em;
+      font-weight: 900;
+    }
+
+    h3 {
+      font-size: 1.5em;
+      font-weight: 600;
+      font-style: italic;
+    }
+
+    p {
+      margin-bottom: 2em;
+      font-size: 1rem;
+    }
+
+    &-content {
+      max-height: 60vh;
+      overflow: auto;
+      margin-top: 2em;
+      margin-right: 2em;
+
+      /* width */
+      &::-webkit-scrollbar {
+        width: 5px;
+      }
+
+      /* Track */
+      &::-webkit-scrollbar-track {
+        background: #d9d9d9;
+        border-radius: 10px;
+      }
+
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        background: #484848;
+        border-radius: 10px;
+        opacity: 0;
+      }
+
+      /* Handle on hover */
+      &::-webkit-scrollbar-thumb:hover {
+        background: rgba(243, 243, 243, .6);
+      }
+    }
+
+  }
+
+  &--img {
+    justify-content: flex-start;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      object-fit: scale-down;
+    }
+  }
+
+  @media (max-width: 992px) {
+    width: 100vw;
+    grid-template-rows: 60% 30%;
+    grid-template-columns: 1fr;
+    overflow: auto;
+
+    &--text {
+      margin-top: 100px;
+      padding-bottom: 0;
+
+      &-content {
+        margin-top: 1em;
+      }
+
+      h2 {
+        margin-top: 1em;
+        font-size: 2em;
+        font-weight: 900;
+      }
+
+      h3 {
+        font-style: italic;
+      }
+
+    }
+
+    &--img {
+
+      img {
+        margin: auto;
+        width: 70%;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,334 @@
+.contact-component {
+  position: fixed;
+  top: 0;
+  right: 0;
+  @include vert-center;
+  background: url('../../../assets/img/maquila-side.jpg') no-repeat;
+  height: 100vh;
+  width: 340px;
+  background-position: right;
+  background-size: cover;
+  z-index: 1;
+
+  .ant-form-explain {
+    margin: 0;
+    padding-top: .2em;
+    font-size: smaller;
+    line-height: 0;
+    min-height: 0;
+  }
+
+  .contact-form {
+    margin-top: 1em;
+
+    .ant-form-item {
+      margin-bottom: 1em;
+    }
+
+    @media screen and (min-width: 1400px) {
+      margin: 4em 1em;
+    }
+
+    &-products {
+      color: #fff;
+      min-height: 120px;
+      text-align: center;
+
+      p:first-child {
+        flex: none;
+        font-weight: 700;
+        text-align: left;
+        border-bottom: 2px solid #fff;
+      }
+
+      span {
+        margin: 0 auto;
+        font-weight: 600;
+        opacity: .9;
+        display: block;
+        color: inherit;
+        margin-top: calc(60px - 1em);
+        line-height: 1em;
+        font-weight: bolder;
+        height: 120px;
+        text-transform: uppercase;
+      }
+
+      &--list {
+        max-width: 298px;
+        height: 120px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        display: flex;
+        //justify-content: space-between;
+        margin: 0 0 1em 0;
+
+        &-item {
+          cursor: pointer;
+          margin-right: 10px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+
+        img {
+          width: 90px;
+        }
+
+        p {
+          text-transform: capitalize;
+          text-align: center;
+          width: 270px;
+          height: 22px;
+          padding: 0 5px;
+          max-width: 90px;
+          line-height: 1em;
+          font-size: 9px;
+          white-space: nowrap;
+          overflow: hidden;
+          font-weight: 500;
+          text-overflow: ellipsis;
+        }
+
+        &-item-maracas {
+          box-shadow: 0px 3px 6px #00000029;
+          background: #fff;
+          width: 90px;
+          color: #61822E;
+        }
+
+        &-item-maquila {
+          cursor: pointer;
+          box-shadow: 0px 3px 6px #00000029;
+          background: #fff;
+          width: 90px;
+          height: 90px;
+          align-self: center;
+          color: #61822E;
+
+          img {
+            height: calc(90px - 1em);
+            object-fit: contain;
+          }
+
+          &-dmw {
+            @include vert-center;
+            align-items: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: larger;
+            margin: 0 1em;
+          }
+        }
+      }
+    }
+
+    &-button {
+      border: none;
+      font-weight: 700;
+    }
+
+    &-terms {
+      font-weight: 500;
+      margin-top: -0.5rem;
+      line-height: 1.2em;
+      font-size: smaller;
+      color: #fff;
+
+      a {
+        font-weight: 800;
+      }
+    }
+  }
+
+  &--maquila {
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      background: #664c40;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      opacity: .8;
+    }
+
+    .contact-form-terms a:hover {
+      color: #D5B777;
+    }
+
+    .contact-form-button {
+      background: #D5B777;
+    }
+
+    .contact-form-products span {
+      height: 0;
+    }
+  }
+
+  &--ingredients {
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      background: #F4C710;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      opacity: .9;
+    }
+
+    .contact-form-terms a:hover {
+      color: #532C2E;
+    }
+
+    .contact-form-button {
+      background: #532C2E;
+    }
+  }
+
+  &--cacao {
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      background: #507234;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      opacity: .9;
+    }
+
+    .contact-form-terms a:hover {
+      color: #F4C710;
+    }
+
+    .contact-form-button {
+      background: #F4C710;
+    }
+  }
+
+  &--maracas {
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      background: #9AAB55;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      opacity: .9;
+    }
+
+    .contact-form-terms a:hover {
+      color: #532C2E;
+    }
+
+    .contact-form-button {
+      background: #532C2E;
+    }
+  }
+
+  &--service {
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      background: #468E18;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      opacity: .9;
+    }
+
+    .contact-form-terms a:hover {
+      color: #F4C710;
+    }
+
+    .contact-form-button {
+      background: #F4C710;
+    }
+  }
+
+  &--dragees {
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      background: #9AAB55;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      opacity: .9;
+    }
+
+    .contact-form-terms a:hover {
+      color: #532C2E;
+    }
+
+    .contact-form-button {
+      background: #532C2E;
+    }
+  }
+
+  .contact-form-button-back {
+    display: none;
+  }
+
+  &-content {
+    margin: 3em 1.5em auto;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+
+    h1 {
+      font-weight: 600;
+    }
+  }
+
+  @media screen and (max-width: 996px) {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100vw;
+    background-position: right;
+    background-size: cover;
+    z-index: 2;
+
+    &-content {
+      margin-top: 100px;
+      margin-bottom: 0;
+      height: calc(100vh - 100px);
+    }
+
+    .contact-form-products--list {
+      max-width: calc(100vw - 3em);
+    }
+
+    .contact-form-button-back {
+      display: inline-block;
+      margin-right: 1em;
+    }
+  }
+}

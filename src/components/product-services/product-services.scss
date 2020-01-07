@@ -1,0 +1,393 @@
+.product-services-component {
+  @include vert-center;
+  align-items: center;
+  flex-direction: column;
+
+  &-title {
+    border: 3px solid #484848;
+    color: #484848;
+    font-weight: 600;
+    font-size: 2em;
+    width: max-content;
+    margin: 1em auto;
+    padding: .2em 3em;
+  }
+
+  .btn-back-sticky {
+    display: none;
+  }
+
+  .product-carrousel {
+    //@include vert-center;
+    align-items: center;
+    position: relative;
+    margin: auto;
+    text-align: center;
+    margin: 1em auto;
+    z-index: 0;
+    //width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 790px;
+
+
+    .carr-item:nth-child(-n+4) {
+      display: block;
+    }
+
+
+    .carr-item {
+      display: none;
+      filter: blur(2px);
+      flex: 1 1;
+      position: relative;
+      z-index: 1;
+      width: 100%;
+
+      &--moulding,
+      &--panning,
+      &--dosing,
+      &--cocoa-powder,
+      &--casaluker-cacao,
+      &--casaluker-maracas,
+      &--casaluker-origins {
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: calc(50% - 5em);
+          z-index: -1;
+          border-radius: 100%;
+          width: 10em;
+          height: 10em;
+        }
+      }
+
+      &--moulding::after {
+        background: #8AA130;
+      }
+
+      &--panning::after {
+        background: #7F5046;
+      }
+
+      &--cocoa-powder::after {
+        background: #D5B777;
+      }
+
+      &--dosing::after {
+        background: #B3642C;
+      }
+
+      &--casaluker-cacao::after {
+        background: #B7C66C;
+      }
+
+      &--casaluker-maracas::after {
+        background: #C0895E;
+      }
+
+      &--casaluker-origins::after {
+        background: #F2CB0E;
+      }
+
+      &-img {
+        img {
+          height: 10em;
+          object-fit: contain;
+        }
+      }
+
+      &-data {
+
+        h2,
+        p {
+          text-transform: uppercase;
+          color: #532C2E;
+        }
+
+        h2 {
+          font-weight: 700;
+        }
+      }
+
+      &--active {
+        filter: none;
+
+        &.carr-item {
+
+          &--moulding,
+          &--panning,
+          &--dosing,
+          &--cocoa-powder,
+          &--casaluker-cacao,
+          &--casaluker-maracas,
+          &--casaluker-origins {
+            &::after {
+              left: calc(50% - 7.5em);
+              width: 15em;
+              height: 15em;
+            }
+          }
+
+        }
+
+        img {
+          height: 15em;
+        }
+
+        h2 {
+          font-size: 2em;
+        }
+      }
+    }
+
+    .btn-next-img {
+      width: min-content;
+      max-height: 80px;
+      filter: contrast(0.5);
+      position: absolute;
+      right: -2em;
+      z-index: 2;
+      cursor: pointer;
+
+      &--right {
+        left: -2em;
+        right: auto;
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  .btn-tobuy {
+    text-align: center;
+    display: block;
+    font-weight: 700;
+    background: #F4C710;
+    color: #685019;
+    padding: 3px 3em;
+    margin: .5em auto 2em;
+  }
+
+  &--footer {
+    color: #fff;
+    font-weight: 700;
+    margin: auto;
+    padding: 2em 20%;
+    text-align: center;
+    transition: all ease-in .5s;
+
+    &--moulding {
+      background: #8AA130;
+    }
+
+    &--panning {
+      background: #7F5046;
+    }
+
+    &--dosing {
+      background: #B3642C;
+    }
+
+    &--cocoa-powder {
+      background: #D5B777;
+    }
+
+    &--casaluker-cacao {
+      background: #B7C66C;
+    }
+
+    &--casaluker-maracas {
+      background: #C0895E;
+    }
+
+    &--casaluker-origins {
+      background: #F2CB0E;
+    }
+  }
+
+  &--product {
+    position: relative;
+    width: calc(100% - 340px);
+    align-self: start;
+    padding-left: 20%;
+
+    .btn-close {
+      cursor: pointer;
+      font-size: 3em;
+      opacity: .2;
+      position: absolute;
+      right: 0;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+  }
+
+  &--maquila {
+    .product-carrousel .carr-item {
+      h2 {
+        margin-top: 1em;
+      }
+    }
+  }
+
+  &--ingredients {
+    .product-services-component-title {
+      font-size: 2em;
+    }
+
+    .product-carrousel .carr-item {
+      p {
+        margin-top: 1em;
+      }
+
+      h2,
+      p {
+        width: 100%;
+        font-size: smaller;
+      }
+
+      &--active {
+        p {
+          font-size: 1rem;
+        }
+
+        h2 {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 996px) {
+    width: 100%;
+
+    h2 {
+      width: 100%;
+      padding: 0;
+      text-align: center;
+      border: none;
+      color: #482418;
+      margin-top: 1.5em;
+      font-weight: 700;
+    }
+
+    .product-carrousel {
+      width: fit-content;
+      display: grid;
+      grid-template-columns: 30% 40% 30%;
+      margin: 1em auto;
+
+      .carr-item {
+
+        &--moulding,
+        &--panning,
+        &--dosing,
+        &--cocoa-powder,
+        &--casaluker-cacao,
+        &--casaluker-maracas,
+        &--casaluker-origins {
+          &::after {
+            left: calc(50% - 2.5em);
+            width: 5em;
+            height: 5em;
+          }
+        }
+
+        h2 {
+          margin-top: 0;
+        }
+
+        img {
+          height: 5em;
+          object-fit: contain;
+        }
+
+        &--active {
+
+          &.carr-item {
+
+            &--moulding,
+            &--panning,
+            &--dosing,
+            &--cocoa-powder,
+            &--casaluker-cacao,
+            &--casaluker-maracas,
+            &--casaluker-origins {
+              &::after {
+                left: calc(50% - 5em);
+                width: 10em;
+                height: 10em;
+              }
+            }
+
+          }
+
+          .carr-item-img {
+            height: 10em;
+
+            img {
+              height: 10em;
+            }
+          }
+
+          h2 {
+            font-size: 2em;
+          }
+
+          &--moulding,
+          &--cocoa-powder,
+          &--panning,
+          &--dosing {
+            img {
+              width: 8em;
+              height: 10em;
+            }
+
+            h2 {
+              font-size: 2em;
+            }
+          }
+
+        }
+      }
+
+      .btn-next-img {
+        display: none;
+      }
+    }
+
+    &-title {
+      padding: .2em 2em;
+    }
+
+    &--footer {
+      color: #fff;
+      font-weight: 700;
+      margin: auto;
+      padding: 1em 3em;
+      text-align: center;
+    }
+
+    .btn-back-sticky {
+      display: inline-block;
+      position: sticky;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      background: #C8D226;
+      padding: 6px;
+
+      a {
+        color: #fff;
+        font-weight: 600;
+        font-size: medium;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {}
+}

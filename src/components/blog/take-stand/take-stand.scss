@@ -1,0 +1,32 @@
+.take-stand {
+  margin-bottom: 2em;
+
+  .blog-temp {
+    img {
+      width: 30%;
+    }
+  }
+
+  .blog-layout-articles {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+  }
+
+  @media screen and (max-width: 992px) {
+    .blog-layout-articles {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+
+      &--item {
+        width: 90%;
+      }
+    }
+
+    .blog-layout-latest--article {
+      img {
+        width: 100%;
+        min-height: 150px;
+      }
+    }
+  }
+}

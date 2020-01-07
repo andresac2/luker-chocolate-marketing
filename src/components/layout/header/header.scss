@@ -1,0 +1,439 @@
+.header-component {
+  background: $apple-green;
+  height: 1em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  position: fixed;
+  z-index: 9;
+  width: 100%;
+
+  &-responsive {
+    display: none;
+  }
+
+  /*Temporal header siempre visible
+
+  &-chocolate-process {
+    background: $ocher-yellow;
+  }
+
+  &-sustainability {
+    background: $beige;
+  }
+
+  &-products-services,
+  &-services {
+    background: $peach;
+  }
+
+  &-our-clients {
+    background: $citrus;
+  }
+
+  &-ideas-trends {
+    background: $tangerine;
+  }
+
+  &-our-value,
+  &-our-value {
+    background: $light-gray;
+  }
+  &-work-with-us{
+    background: $wine;
+  */
+
+  //  &:hover {
+  height: 3em;
+  background: linear-gradient(180deg, rgba(0, 0, 0, .9) 40%, rgba(0, 0, 0, 0) 95%);
+  transition: all ease-in .2s;
+
+  a {
+    transition: all ease-in 1s;
+    background: transparent;
+    display: inline;
+    cursor: pointer;
+  }
+
+  //}
+
+  a {
+    color: #fff;
+    //   display: none;
+    text-transform: uppercase;
+    align-self: center;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1em;
+
+    &:nth-child(2),
+    &:nth-child(4),
+    &:last-child {
+      font-size: 1em;
+      line-height: 1em;
+    }
+
+    @media screen and (min-width: 1440px) {
+      font-size: 14px;
+    }
+  }
+
+  &-intro {
+    height: 3em;
+    background: linear-gradient(180deg, rgba(0, 0, 0, .9) 10%, rgba(0, 0, 0, 0) 85%);
+    transition: all ease-in .2s;
+
+    a {
+      transition: all ease-in 1s;
+      background: transparent;
+      display: inline;
+      cursor: pointer;
+    }
+  }
+
+  .header-logo,
+  .btn-x {
+    display: none;
+  }
+
+  .selected-tab {
+    position: relative;
+
+    &-responsive {
+      display: none;
+    }
+  }
+
+  .intro::after,
+  .chocolate-process::after,
+  .sustainability::after,
+  .products-services::after,
+  .our-clients::after,
+  .ideas-trends::after,
+  .work-with-us::after,
+  .contac-us::after,
+  .our-value::after {
+    content: '';
+    position: absolute;
+    top: 2em;
+    left: 0;
+    width: 100%;
+    border-bottom-width: 5px;
+    border-bottom-style: solid;
+  }
+
+  .intro::after {
+    border-bottom-color: $apple-green;
+  }
+
+  .chocolate-process::after {
+    border-bottom-color: $ocher-yellow;
+  }
+
+  .sustainability::after {
+    border-bottom-color: $beige;
+  }
+
+  .products-services::after {
+    border-bottom-color: $peach;
+  }
+
+  .our-clients::after {
+    border-bottom-color: $citrus;
+  }
+
+  .ideas-trends::after {
+    border-bottom-color: $tangerine;
+  }
+
+  .our-value::after {
+    border-bottom-color: $light-gray;
+  }
+
+  .work-with-us::after,
+  .contac-us::after {
+    border-bottom-color: $wine;
+  }
+}
+
+.header-component-responsive {
+  display: none;
+  position: absolute;
+  z-index: 9;
+  width: 100%;
+  transition: all ease-in 1s;
+  background: rgba(0, 0, 0, .9);
+
+  a:active,
+  a:hover {
+    color: #fff;
+  }
+
+  &--tabs {
+    overflow: hidden;
+    height: 0;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    text-align: center;
+    text-transform: uppercase;
+    border-top: 10px solid $apple-green;
+
+    &-visible {
+      padding-top: 100px;
+      height: auto;
+      border-bottom: 10px solid $apple-green;
+    }
+
+    &-chocolate-process {
+      border-top: 10px solid $ocher-yellow;
+
+      &.header-component-responsive--tabs-visible {
+        border-bottom: 10px solid $ocher-yellow;
+      }
+    }
+
+    &-sustainability {
+      border-top: 10px solid $beige;
+
+      &.header-component-responsive--tabs-visible {
+        border-bottom: 10px solid $beige;
+      }
+    }
+
+    &-products-services {
+      border-top: 10px solid $peach;
+
+      &.header-component-responsive--tabs-visible {
+        border-bottom: 10px solid $peach;
+      }
+    }
+
+    &-our-clients {
+      border-top: 10px solid $citrus;
+
+      &.header-component-responsive--tabs-visible {
+        border-bottom: 10px solid $citrus;
+      }
+    }
+
+    &-ideas-trends {
+      border-top: 10px solid $tangerine;
+
+      &.header-component-responsive--tabs-visible {
+        border-bottom: 10px solid $tangerine;
+      }
+    }
+
+    &-our-value {
+      border-top: 10px solid $light-gray;
+
+      &.header-component-responsive--tabs-visible {
+        border-bottom: 10px solid $light-gray;
+      }
+    }
+
+    &-blog {
+      border-top: 10px solid $live-yellow;
+
+      &.header-component-responsive--tabs-visible {
+        border-bottom: 10px solid $live-yellow;
+      }
+    }
+
+    &-work-with-us,
+    &-contac-us {
+      border-top: 10px solid $wine;
+
+      &.header-component-responsive--tabs-visible {
+        border-bottom: 10px solid $wine;
+      }
+    }
+
+    .intro,
+    .chocolate-process,
+    .sustainability,
+    .products-services,
+    .our-clients,
+    .blog,
+    .ideas-trends,
+    .work-with-us,
+    .contac-us,
+    .our-value {
+      span {
+        border-bottom-width: 2px;
+        border-bottom-style: solid;
+      }
+    }
+
+    .intro {
+      span {
+        border-bottom-color: $apple-green;
+      }
+    }
+
+    .chocolate-process {
+      span {
+        border-bottom-color: $ocher-yellow;
+      }
+    }
+
+    .sustainability {
+      span {
+        border-bottom-color: $beige;
+      }
+    }
+
+    .products-services {
+      span {
+        border-bottom-color: $peach;
+      }
+    }
+
+    .our-clients {
+      span {
+        border-bottom-color: $citrus;
+      }
+    }
+
+    .ideas-trends {
+      span {
+        border-bottom-color: $tangerine;
+      }
+    }
+
+    .our-value {
+      span {
+        border-bottom-color: $light-gray;
+      }
+    }
+
+    .blog {
+      span {
+        border-bottom-color: $live-yellow;
+      }
+    }
+
+    .work-with-us,
+    .contac-us {
+      span {
+        border-bottom-color: $live-yellow;
+      }
+    }
+  }
+
+  .header-logo {
+    top: 3em;
+    left: 2em;
+    position: absolute;
+    width: calc(100% - 4em);
+
+    &-visible {
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -.5em;
+        left: 1em;
+        width: 300px;
+        border-bottom: 3px solid #fff;
+      }
+    }
+
+    img {
+      width: 10em;
+    }
+
+    .ant-input,
+    .ant-select-selection {
+      align-items: center;
+      border: none;
+      border-radius: unset;
+      background: transparent;
+      color: #fff;
+      font-weight: 900;
+      font-size: 1em;
+      padding-right: 1em;
+      border-left: 4px solid #fff;
+    }
+
+    .ant-select-selection .anticon {
+      margin-top: -.2em;
+    }
+
+    .anticon {
+      @include vert-center;
+      font-weight: 900;
+      font-size: 1.2em;
+      color: #fff;
+    }
+
+    .logo {
+      margin-right: .5em;
+      border: none;
+    }
+  }
+
+  a {
+    font-size: smaller;
+    height: auto;
+    padding: 1em 0;
+    border-bottom: 1px solid #fff;
+    width: 200px;
+    margin: auto;
+
+    &:last-child {
+      border: none;
+    }
+  }
+
+  .selected-tab-responsive {
+    display: inline-block;
+  }
+
+  .separator {
+    border-bottom-width: 2px;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -.2em;
+      left: -5em;
+      width: 300px;
+      border-bottom: 3px solid #fff;
+    }
+  }
+
+  .intro::after,
+  .chocolate-process::after,
+  .sustainability::after,
+  .products-services::after,
+  .our-clients::after,
+  .ideas-trends::after,
+  .our-value::after,
+  .work-with-us::after,
+  .contac-us::after {
+    border: none;
+  }
+
+  .btn-x {
+    position: absolute;
+    display: block;
+    right: 0;
+    top: 0;
+    color: #fff;
+    font-size: 3em;
+  }
+
+}
+
+@media screen and (max-width: 1023px) {
+
+  .header-component {
+    display: none;
+  }
+
+  .header-component-responsive {
+    display: grid;
+    //position: relative;
+  }
+}

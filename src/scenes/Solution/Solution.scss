@@ -1,0 +1,97 @@
+.solution-component {
+  height: inherit;
+  display: grid;
+  grid-template-columns: 33% 33% 1fr;
+  grid-template-rows: 1fr;
+  position: fixed;
+  width: 100vw;
+  text-align: center;
+
+  .header-btn {
+    color: #fff;
+    background: transparent;
+    font-size: 4em;
+    font-weight: 700;
+    writing-mode: tb-rl;
+    margin-left: auto;
+    margin-right: .5em;
+    line-height: 1em;
+    transform: rotate(-180deg);
+    text-shadow: -5px 0px 10px #0000006F;
+  }
+
+  &--service,
+  &--maquila,
+  &--ingredient {
+    display: flex;
+  }
+
+  &--service {
+    background: url("../../assets/img/serv-serv-cover.jpg") center;
+    background-size: cover;
+  }
+
+  .btn-dist {
+    position: absolute;
+    top: 0;
+    left: 5em;
+
+    .logo {
+      margin: 5em auto .5em;
+      width: 10em;
+      display: block;
+    }
+
+    button {
+      font-weight: 700;
+      background: #F4C710;
+      color: #685019;
+      padding: 3px 18px;
+    }
+  }
+
+  &--maquila {
+    background: url("../../assets/img/serv-maquila-cover.jpg") center;
+  }
+
+  &--ingredient {
+    background: url("../../assets/img/serv-ingred-cover.jpg") center;
+  }
+
+
+  &--maquila,
+  &--ingredient {
+    border-right: 10px solid #F4C710;
+    background-size: cover;
+  }
+
+  // Large devices (desktops, 992px and up)
+  @media (max-width: 992px) {
+    grid-template-rows: 33% 33% 1fr;
+    grid-template-columns: 1fr;
+
+    .btn-dist {
+      display: none;
+    }
+
+    :last-child {
+      margin-bottom: 2em;
+    }
+
+    .header-btn {
+      margin: auto auto .5em auto;
+      text-align: center;
+      font-size: 3em;
+      writing-mode: unset;
+      line-height: 1em;
+      transform: none;
+    }
+
+    &--maquila,
+    &--ingredient {
+      border: none;
+      border-bottom: 10px solid #F4C710;
+    }
+  }
+
+}

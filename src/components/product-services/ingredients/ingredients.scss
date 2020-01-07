@@ -1,0 +1,29 @@
+.ingredients-component {
+  .btn-back-sticky {
+    display: none;
+  }
+
+  @media screen and (max-width: 996px) {
+    background: url('../../../assets/img/matas.png') no-repeat #f3f3f3;
+    background-size: 100%;
+    background-position: center top;
+    @include open-matas;
+
+    .btn-back-sticky {
+      display: block;
+      position: sticky;
+      bottom: 0;
+      z-index: 1;
+      width: calc(100%);
+      text-align: center;
+      background: #C8D226;
+      padding: 6px;
+
+      a {
+        color: #fff;
+        font-weight: 600;
+        font-size: medium;
+      }
+    }
+  }
+}

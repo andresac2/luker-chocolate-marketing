@@ -1,0 +1,168 @@
+$Small-devices: 576px;
+$Medium-devices: 768px;
+$Large-devices: 992px;
+$Extra-large: 1200px;
+
+.work-with-us {
+  color: #484848;
+
+  &-header {
+    background: url('../../../assets/img/abastecimiento-car.jpg') no-repeat;
+    min-height: 220px;
+    background-position: right;
+    background-size: cover;
+    color: #fff;
+    @include vert-center;
+    flex-direction: column;
+
+    h1 {
+      @include header-title;
+      width: 960px;
+      margin: 0 auto;
+      padding-top: 20px;
+      word-wrap: break-word;
+
+      @media screen and (min-width: 1200px) {
+        font-size: 72px;
+      }
+    }
+
+    .btn-dist {
+      position: absolute;
+      top: 0;
+      left: 3em;
+
+      .logo {
+        margin: 3em auto .5em;
+        width: 10em;
+        display: block;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      @media screen and (max-width: 960px) {
+        display: none;
+      }
+
+      @media screen and (min-width: 1200px) {
+        left: 5em;
+
+        .logo {
+          margin-top: 5em;
+        }
+
+      }
+    }
+  }
+
+  &-content {
+    max-width: 960px;
+    margin: auto;
+    padding: 2em 100px;
+    text-align: center;
+
+    h2 {
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 1.5em;
+    }
+
+    input {
+      border-radius: 0;
+      height: 50px;
+      border-color: #846961;
+    }
+
+    .ant-form-item label {
+      color: #484848;
+      text-align: left;
+      font-weight: bold;
+      font-size: larger;
+    }
+
+    .ant-select-selection--single .ant-select-selection__rendered {
+      width: 100%;
+    }
+
+    .ant-select-selection--single {
+      border-radius: 0;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      border-color: #846961;
+    }
+
+    textarea.ant-input {
+      border-radius: 0;
+      border-color: #846961;
+    }
+
+    p {
+      font-weight: 700;
+      font-size: smaller;
+    }
+  }
+
+  .curriculum-form {
+    margin: 2em 1em;
+
+    .ant-form-item {
+      margin-bottom: 1em;
+    }
+
+    &-button {
+      background: #174F02;
+      border: none;
+      font-weight: 700;
+      color: #FFF;
+      text-transform: uppercase;
+    }
+
+  }
+
+  &-terms {
+    font-size: smaller;
+
+    a {
+      font-weight: 700;
+      color: #532C2E;
+    }
+  }
+
+  @media (max-width: $Medium-devices) {
+    &-header {
+      min-height: 140px;
+
+      h1 {
+        margin-top: 16%;
+        position: absolute;
+        color: #482418;
+        width: 100%;
+        display: flex;
+        font-size: 4em;
+        justify-content: center;
+      }
+    }
+
+    &-content {
+      margin-top: 15%;
+    }
+
+  }
+
+  @media (max-width: $Small-devices) {
+    &-header {
+      h1 {
+        font-size: 3em;
+        margin-top: 25%;
+      }
+    }
+
+    &-content {
+      padding: 2em 25px;
+    }
+
+  }
+}
