@@ -99,13 +99,21 @@
 
   .intro::after,
   .chocolate-process::after,
+  .proceso-del-chocolate::after,
   .sustainability::after,
+  .sostenibilidad::after,
   .products-services::after,
+  .productos-servicios::after,
   .our-clients::after,
+  .nuestros-clientes::after,
   .ideas-trends::after,
+  .ideas-tendencias::after,
   .work-with-us::after,
+  .trabaja-con-nosotros::after,
   .contac-us::after,
-  .our-value::after {
+  .contactanos::after,
+  .our-value::after,
+  .propuesta-valor::after {
     content: '';
     position: absolute;
     top: 2em;
@@ -119,30 +127,38 @@
     border-bottom-color: $apple-green;
   }
 
+  .proceso-del-chocolate::after,
   .chocolate-process::after {
     border-bottom-color: $ocher-yellow;
   }
 
+  .sostenibilidad::after,
   .sustainability::after {
     border-bottom-color: $beige;
   }
 
+  .productos-servicios::after,
   .products-services::after {
     border-bottom-color: $peach;
   }
 
+  .nuestros-clientes::after,
   .our-clients::after {
     border-bottom-color: $citrus;
   }
 
+  .ideas-tendencias::after,
   .ideas-trends::after {
     border-bottom-color: $tangerine;
   }
 
+  .propuesta-valor::after,
   .our-value::after {
     border-bottom-color: $light-gray;
   }
 
+  .trabaja-con-nosotros::after,
+  .contactanos::after,
   .work-with-us::after,
   .contac-us::after {
     border-bottom-color: $wine;
@@ -150,12 +166,13 @@
 }
 
 .header-component-responsive {
-  display: none;
+  //display: none;
+  //overflow: hidden;
   position: absolute;
   z-index: 9;
   width: 100%;
-  transition: all ease-in 1s;
-  background: rgba(0, 0, 0, .9);
+  transition: all ease-in .2s;
+  height: 10px;
 
   a:active,
   a:hover {
@@ -174,10 +191,14 @@
 
     &-visible {
       padding-top: 100px;
-      height: auto;
+      background: rgba(0, 0, 0, .9);
+      height: 65vh;
+      transition: all ease-in .2s;
+      max-height: 600px;
       border-bottom: 10px solid $apple-green;
     }
 
+    &-proceso-del-chocolate,
     &-chocolate-process {
       border-top: 10px solid $ocher-yellow;
 
@@ -186,6 +207,7 @@
       }
     }
 
+    &-sostenibilidad,
     &-sustainability {
       border-top: 10px solid $beige;
 
@@ -194,6 +216,7 @@
       }
     }
 
+    &-productos-servicios,
     &-products-services {
       border-top: 10px solid $peach;
 
@@ -202,6 +225,7 @@
       }
     }
 
+    &-nuestros-clientes,
     &-our-clients {
       border-top: 10px solid $citrus;
 
@@ -210,6 +234,7 @@
       }
     }
 
+    &-ideas-tendencias,
     &-ideas-trends {
       border-top: 10px solid $tangerine;
 
@@ -218,6 +243,7 @@
       }
     }
 
+    &-propuesta-valor,
     &-our-value {
       border-top: 10px solid $light-gray;
 
@@ -234,6 +260,8 @@
       }
     }
 
+    &-trabaja-con-nosotros,
+    &-contactanos,
     &-work-with-us,
     &-contac-us {
       border-top: 10px solid $wine;
@@ -244,6 +272,14 @@
     }
 
     .intro,
+    .proceso-del-chocolate,
+    .sostenibilidad,
+    .productos-servicios,
+    .nuestros-clientes,
+    .ideas-tendencias,
+    .propuesta-valor,
+    .trabaja-con-nosotros,
+    .contactanos,
     .chocolate-process,
     .sustainability,
     .products-services,
@@ -265,36 +301,42 @@
       }
     }
 
+    .proceso-del-chocolate,
     .chocolate-process {
       span {
         border-bottom-color: $ocher-yellow;
       }
     }
 
+    .sostenibilidad,
     .sustainability {
       span {
         border-bottom-color: $beige;
       }
     }
 
+    .productos-servicios,
     .products-services {
       span {
         border-bottom-color: $peach;
       }
     }
 
+    .nuestros-clientes,
     .our-clients {
       span {
         border-bottom-color: $citrus;
       }
     }
 
+    .ideas-tendencias,
     .ideas-trends {
       span {
         border-bottom-color: $tangerine;
       }
     }
 
+    .propuesta-valor,
     .our-value {
       span {
         border-bottom-color: $light-gray;
@@ -307,6 +349,8 @@
       }
     }
 
+    .trabaja-con-nosotros,
+    .contactanos,
     .work-with-us,
     .contac-us {
       span {
@@ -399,13 +443,21 @@
 
   .intro::after,
   .chocolate-process::after,
+  .proceso-del-chocolate::after,
   .sustainability::after,
+  .sostenibilidad::after,
   .products-services::after,
+  .productos-servicios::after,
   .our-clients::after,
+  .nuestros-clientes::after,
   .ideas-trends::after,
-  .our-value::after,
+  .ideas-tendencias::after,
   .work-with-us::after,
-  .contac-us::after {
+  .trabaja-con-nosotros::after,
+  .contac-us::after,
+  .contactanos::after,
+  .our-value::after,
+  .propuesta-valor::after {
     border: none;
   }
 

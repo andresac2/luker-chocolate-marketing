@@ -5,11 +5,12 @@ import { MdClose, MdMenu } from 'react-icons/md';
 import { Select } from 'antd';
 import Footer from '../footer/footer';
 import { withNamespaces } from 'react-i18next';
+import i18n from '../../../i18n';
 import SelectLanguage from '../../../commons/select-lng/select-lng';
 
 class Header extends React.Component {
 
-  logoHidden = ['/ideas-trends', '/blog', '/our-value'];
+  logoHidden = [i18n.t('routes.ideas-trends'), i18n.t('routes.our-value'), '/blog'];
 
   constructor(props) {
     super(props);

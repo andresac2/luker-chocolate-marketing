@@ -5,11 +5,12 @@ import { Select } from 'antd';
 import { MdClose } from 'react-icons/md';
 import Footer from '../footer/footer';
 import Modals from '../../modals/modals';
+import i18n from '../../../i18n';
 import { withNamespaces } from 'react-i18next';
 
 class FooterCover extends React.Component {
-  hideView = ['/products-services/', '/blog', '/contact-us', '/work-with-us', '/our-value/'];//VIstas en las que se oculta el footer
-  darkIcon = ['/services', '/blog'];//VIstas en las que se muestra modo oscuro
+  hideView = [i18n.t('routes.products-services') + '/', '/blog', i18n.t('routes.contact-us'), i18n.t('routes.work-with-us'), i18n.t('routes.our-value') + '/'];//VIstas en las que se oculta el footer
+  darkIcon = ['/blog'];//VIstas en las que se muestra modo oscuro
 
   constructor(props) {
     super(props);

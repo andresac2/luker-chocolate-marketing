@@ -1,9 +1,10 @@
 import React from 'react';
 import back from '../../../assets/img/back.svg'
 import { withRouter } from 'react-router-dom';
+import i18n from '../../../i18n';
 
 class NavArrowRight extends React.Component {
-  navRoutes = ['/', '/chocolate-process', '/sustainability', '/products-services', '/our-clients', '/ideas-trends', '/our-value'];
+  navRoutes = ['/', i18n.t('routes.chocolate-process'), i18n.t('routes.sustainability'), i18n.t('routes.products-services'), i18n.t('routes.our-clients'), i18n.t('routes.ideas-trends'), i18n.t('routes.our-value')];
 
   constructor(props) {
     super(props);
