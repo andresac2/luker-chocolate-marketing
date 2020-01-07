@@ -198,6 +198,8 @@
     "newsletter-ok": "De ahora en adelante recibirás información y noticias sobre el mundo del chocolate."
   },
   "errors": {
+    "error": "Error",
+    "error-404": "The page you are looking for doesn’t exist",
     "email-send-error": "Algo falló",
     "check-conection": "Verifique su conexión e intente nuevamente",
     "required-name": "Por favor ingrese su nombre de usuario!",
