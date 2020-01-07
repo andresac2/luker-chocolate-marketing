@@ -48,12 +48,12 @@ class ProductServices extends React.Component {
             }
             <img className="btn-next-img btn-next-img--right" src={back} alt='right' onClick={() => this.reorderItems(items, limit, 0)} />
           </div>
-          <Link className="btn-tobuy" to={"/products-services/" + page + "/" + items[1].id}>{(page === 'maquila') ? t('buttons.find-out-more').toUpperCase() : t('buttons.get-it-here').toUpperCase()}</Link>
+          <Link className="btn-tobuy" to={t('routes.products-services') + "/" + page + "/" + items[1].id}>{(page === 'maquila') ? t('buttons.find-out-more').toUpperCase() : t('buttons.get-it-here').toUpperCase()}</Link>
           <div className={`product-services-component--footer product-services-component--footer--${items[1].id}`}>
             {items[1].description}
           </div></>}
         <div className="btn-back-sticky">
-          <Link to="/products-services" >{t('buttons.back-to-products-services').toUpperCase()}</Link>
+          <Link to={t('routes.products-services')} >{t('buttons.back-to-products-services').toUpperCase()}</Link>
         </div>
       </div >
     );

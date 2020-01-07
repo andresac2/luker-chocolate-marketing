@@ -1,5 +1,6 @@
 import React from 'react'
 import { FiChevronDown } from 'react-icons/fi'
+import { withNamespaces } from 'react-i18next';
 
 class OurFlavour extends React.Component {
   constructor(props) {
@@ -30,11 +31,12 @@ class OurFlavour extends React.Component {
 
   render() {
     const { items, openedItem } = this.state;
+    const { t} = this.props;
     const altImg = 'img-example.svg';
 
     return (
       <div className="our-flavour-component" >
-        <h1>KEEP THE CONSISTENCY IN THE FLAVOUR AND GUARANTEE YOUR SUPPLY</h1>
+        <h1>{t('value-propose.flavour-title')}</h1>
         <div className="our-flavour-component-cards">
           {Object.keys(items).map(i =>
             <div key={i} className={`our-flavour-component-card our-flavour-component-card--${openedItem !== 99 && 'open'} our-flavour-component-card--${openedItem === i && 'opened'}`}>
@@ -63,5 +65,4 @@ class OurFlavour extends React.Component {
     )
   }
 }
-
-export default OurFlavour;
+export default withNamespaces()(OurFlavour);

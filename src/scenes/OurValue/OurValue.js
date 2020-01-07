@@ -33,30 +33,30 @@ class OurValue extends React.Component {
         <div className={`our-value-header our-value-header--${selectTab}`}>
           <div className="btn-dist">
             <Link to="/" className="logo"> <img src={logo} alt="Logo Luker" /></Link>
-            <Link to="/our-value">{t('buttons.back-to-value').toUpperCase()}</Link>
+            <Link to={t('routes.our-value')}>{t('buttons.back-to-value').toUpperCase()}</Link>
           </div>
           <h1>{t('value-propose.value-propose-title')}</h1>
         </div>
         <div className="our-value-navbar">
-          <Link to="/our-value/aroma" onClick={() => this.tabToggle('aroma')} className={`our-value-navbar-item our-value-navbar--${selectTab === 'aroma' && 'active'}`} >
+          <Link to={t('routes.our-value')+ t('routes.aroma')} onClick={() => this.tabToggle('aroma')} className={`our-value-navbar-item our-value-navbar--${selectTab === 'aroma' && 'active'}`} >
             <img src={item1} alt="aroma" />
             <div className="our-value-navbar-card">
               <p>{t('value-propose.aroma-description')}</p>
             </div>
           </Link>
-          <Link to="/our-value/flavour" onClick={() => this.tabToggle('flavour')} className={`our-value-navbar-item our-value-navbar--${selectTab === 'flavour' && 'active'}`} >
+          <Link to={t('routes.our-value')+ t('routes.flavour')} onClick={() => this.tabToggle('flavour')} className={`our-value-navbar-item our-value-navbar--${selectTab === 'flavour' && 'active'}`} >
             <img src={item2} alt="flavour" />
             <div className="our-value-navbar-card">
               <p>{t('value-propose.flavour-description')}</p>
             </div>
           </Link>
-          <Link to="/our-value/product" onClick={() => this.tabToggle('product')} className={`our-value-navbar-item our-value-navbar--${selectTab === 'product' && 'active'}`} >
+          <Link to={t('routes.our-value')+ t('routes.product')} onClick={() => this.tabToggle('product')} className={`our-value-navbar-item our-value-navbar--${selectTab === 'product' && 'active'}`} >
             <img src={item3} alt="product" />
             <div className="our-value-navbar-card">
               <p>{t('value-propose.product-description')}</p>
             </div>
           </Link>
-          <Link to="/our-value/social" onClick={() => this.tabToggle('social')} className={`our-value-navbar-item our-value-navbar--${selectTab === 'social' && 'active'}`} >
+          <Link to={t('routes.our-value')+ t('routes.social')} onClick={() => this.tabToggle('social')} className={`our-value-navbar-item our-value-navbar--${selectTab === 'social' && 'active'}`} >
             <img src={item4} alt="social" />
             <div className="our-value-navbar-card">
               <p>{t('value-propose.social-description')}</p>
@@ -70,7 +70,7 @@ class OurValue extends React.Component {
           {selectTab === 'social' && <OurSocial />}
         </div>
         <div className="btn-back-sticky">
-          <Link to="/our-value">{t('buttons.back-to-our-value').toUpperCase()}</Link>
+          <Link to={t('routes.our-value')}>{t('buttons.back-to-our-value').toUpperCase()}</Link>
         </div>
       </div>
     );

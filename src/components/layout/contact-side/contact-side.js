@@ -1,5 +1,6 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom';
+import i18n from '../../../i18n';
 import { Form, Select, Input, Button, InputNumber, Modal } from 'antd';
 import FormItem from 'antd/lib/form/FormItem';
 import termsConditions from '../../../assets/documents/policies/Términos y condiciones de uso sitio web CasaLuker inglés 16dic2019.pdf';
@@ -136,7 +137,7 @@ class ContactSide extends React.Component {
 
   goBackProducts() {
     let newRoute = (this.props.page === 'maquila') ? '/finished-chocolate-products' : (this.props.page === 'service') ? '' : '/ingredients';
-    this.props.history.push('/products-services' + newRoute);
+    this.props.history.push(i18n.t('routes.products-services') + newRoute);
   }
 
   render() {
@@ -254,6 +255,4 @@ class ContactSide extends React.Component {
 };
 
 const WrappedContactSide = Form.create({ name: 'contact_form' })(ContactSide);
-
-
 export default withNamespaces()(withRouter(WrappedContactSide));

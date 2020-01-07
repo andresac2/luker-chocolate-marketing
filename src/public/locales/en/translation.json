@@ -93,7 +93,7 @@
     "social-text": "We serve entrepreneurs and business owners who want to have a positive impact on the world through their businesses. Now more than ever, consumers are looking for sustainable products committed to a cause. All of our initiatives aimed at improving the lives of farmers and communities in the cocoa regions where we work, support our customers’ brands and products. This provides them with a seal of confidence that their final product is sustainable, made by hard-working hand, and with a dream to make their dreams come true.",
     "achieve-this": "WHAT DO WE ACHIEVE WITH THIS?",
     "aligning-sdgs": "ALIGNING YOUR BUSINESS WITH THE SDG’S",
-    "implementation-social-resonsabilities": "IMPLEMENTATION OF CORPORATE SOCIAL RESPONSIBILITY INITIATIVES",
+    "implementation-social-responsabilities": "IMPLEMENTATION OF CORPORATE SOCIAL RESPONSIBILITY INITIATIVES",
     "construction-brand": "CONSTRUCTION OF BRAND EQUITY BASED ON PARTICIPATION IN SHARED VALUE INITIATIVES",
     "social-description": "CONNECT YOUR BRAND AROUND SUSTAINABILITY",
     "social-description-hover": "We encourage you to participate in shared value sustainable initiatives that have a social impact"
@@ -212,5 +212,22 @@
     "registered-email": "The email is already registered",
     "try-again": "Please try again.",
     "already-did-it": "Already did it"
+  },
+  "routes": {
+    "chocolate-process": "/chocolate-process",
+    "sustainability": "/sustainability",
+    "products-services": "/products-services",
+    "our-clients": "/our-clients",
+    "ideas-trends": "/ideas-trends",
+    "our-value": "/our-value",
+    "contact-us": "/contact-us",
+    "work-with-us": "/work-with-us",
+    "ingredients": "/ingredients",
+    "finished-chocolate-products": "/finished-chocolate-products",
+    "our-services": "/our-services",
+    "aroma": "/aroma",
+    "flavour": "/flavour",
+    "product": "/product",
+    "social": "/social"
   }
 }

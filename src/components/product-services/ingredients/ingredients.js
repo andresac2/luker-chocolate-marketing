@@ -20,7 +20,7 @@ const Ingredients = props => {
         <IngredientDragees data={product} />
       }
       <div className="btn-back-sticky">
-        <Link to="/products-services/ingredients">{t('buttons.back-to-products').toUpperCase()}</Link>
+        <Link to={t('route.product-services') + t('route.ingredients')}>{t('buttons.back-to-products').toUpperCase()}</Link>
       </div>
     </div>
   );

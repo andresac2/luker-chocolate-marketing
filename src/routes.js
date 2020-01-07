@@ -33,16 +33,26 @@ export default function BasicExample() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/chocolate-process" component={Flow} />
+        <Route path="/proceso-del-chocolate" component={Flow} />
         <Route path="/sustainability" component={Sustain} />
+        <Route path="/sostenibilidad" component={Sustain} />
         <Route path="/products-services/:title/:item?" component={Services} />
+        <Route path="/productos-servicios/:title/:item?" component={Services} />
         <Route path="/products-services" component={Solutions} />
+        <Route path="/productos-servicios" component={Solutions} />
         <Route path="/our-clients" component={Customer} />
+        <Route path="/nuestros-clientes" component={Customer} />
         <Route path="/ideas-trends" component={Ryd} />
+        <Route path="/ideas-tendencias" component={Ryd} />
         <Route path="/our-value/:id" component={OurValue} />
+        <Route path="/propuesta-valor/:id" component={OurValue} />
         <Route path="/our-value" component={ValuePropose} />
+        <Route path="/propuesta-valor" component={ValuePropose} />
         <Route path="/blog/:category?/:article?" component={Blog} />
         <Route path="/contact-us" component={WrappedContact} />
+        <Route path="/contactanos" component={WrappedContact} />
         <Route path="/work-with-us" component={WrappedWorkWithUs} />
+        <Route path="/trabaja-con-nosotros" component={WrappedWorkWithUs} />
         <Redirect from="/:en/blog/:article" to="/blog/under-the-tree/:article" />
 
         <Route component={Page404} />

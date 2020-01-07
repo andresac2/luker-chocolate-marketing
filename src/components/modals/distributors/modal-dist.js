@@ -45,7 +45,7 @@ class ModalDistributors extends React.Component {
       address: 'Building 450, Road 1109 Tubli, Baréin',
       phone: '00 973 17 77 3388',
       fax: '00 973 17 93 1313',
-      web: 'http://thebakingproduct.com/',
+      web: 'https://thebakingproduct.com/',
       email: 'info@thebakingproduct.com',
       urlMap: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3579.8571993759183!2d50.5599665!3d26.2013232!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e49af30a424d343%3A0x58160bc5884daf03!2sModern%20Ingredients!5e0!3m2!1ses!2sco!4v1576098853630!5m2!1ses!2sco',
       selected: false
@@ -78,7 +78,7 @@ class ModalDistributors extends React.Component {
       address: 'Vancouver, Columbia Británica, Canadá',
       phone: '778 895 6549',
       fax: '',
-      web: 'http://chocolatealiments.com/',
+      web: 'https://chocolatealiments.com/',
       email: 'mailto:terry@chocolatealiments.ca',
       urlMap: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d166655.30827522842!2d-123.2639867747921!3d49.2576507715125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x548673f143a94fb3%3A0xbb9196ea9b81f38b!2sVancouver%2C%20Columbia%20Brit%C3%A1nica%2C%20Canad%C3%A1!5e0!3m2!1ses!2sco!4v1576099002020!5m2!1ses!2sco"',
       selected: false
@@ -276,7 +276,7 @@ class ModalDistributors extends React.Component {
       address: 'Unit 8, Floor 15, No.99, Sec 1, Xintai 5th Rd., Xizhi Dist., New Taipei City 22175 TAIWAN,R.O.C',
       phone: '+886-2-26972626',
       fax: '+886-2-26972709',
-      web: 'http://andyconcept.com.tw/',
+      web: 'https://andyconcept.com.tw/',
       email: 'andy.concept@outlook.com',
       urlMap: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d462784.5146940159!2d121.22618611500236!3d25.016963856450708!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ac72bce20a99%3A0x3f6a35cedd0ac2e0!2zVGFpcMOpaSwgVGFpd8Ohbg!5e0!3m2!1ses!2sco!4v1576099768590!5m2!1ses!2sco',
       selected: false

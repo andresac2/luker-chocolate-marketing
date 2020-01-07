@@ -79,7 +79,7 @@
     "value-propose-subtitle": "Prometemos darte un chocolate con un sabor único y superior, hecho en el origen y apoyando siempre el desarrollo ambiental, económico y social de los orígenes de nuestro cacao.",
     "aroma-description": "DALE UN SABOR ÚNICO A TUS PRODUCTOS",
     "aroma-description-hover": "We work exclusively with Cacao Fino de Aroma",
-    "aroma-title": "WHAT DOES CACAO FINO DE AROMA MEAN?",
+    "aroma-title": "¿QUÉ SIGNIFICA CACAO FINO DE AROMA?",
     "aroma-first-text": "The denomination fine flavour cocoa or Cacao Fino de Aroma is a classification of the International Cocoa Organization (ICCO) that describes our cocoa as unique in the world for its exquisite fruity and flowery aromas and flavour with nutty malt notes. Our cocoa of origin will guarantee that your products are top quality and differentiated from other chocolates on the market.",
     "aroma-second-text": "Cacao Fino de Aroma comes from Criollo and Trinitarian varieties. Trinitarian cocoas –highly sought after around the world– are aromatic and mild in flavour. The Trinitario variety is a cross between the Criollo and Forastero. Forastero cocoa is the most common in the world; it is resistant to climate changes and has an acidic astringent flavour. It is the main variety grown in Africa.<br />The special scent and flavour of cocoa do not only stem from the type of cocoa –Forastero, Trinitarian or Criollo– but also from soil composition, climatic conditions, and primarily, the work of the cocoa artisan– the cocoa grower. <br />The four fundamental factors that ensure the special chocolate scent and flavour are fermentation, drying, roasting, and conching. Fermentation and drying are undertaken by farmers on the farms; and –the final touch that defines the organoleptic profile of each product– roasting and conching take place in the production plant.",
     "flavour-title": "MANTÉN LA CONSISTENCIA EN EL SABOR Y GARANTIZA TU ABASTECIMIENTO",
@@ -93,7 +93,7 @@
     "social-text": "We serve entrepreneurs and business owners who want to have a positive impact on the world through their businesses. Now more than ever, consumers are looking for sustainable products committed to a cause. All of our initiatives aimed at improving the lives of farmers and communities in the cocoa regions where we work, support our customers’ brands and products. This provides them with a seal of confidence that their final product is sustainable, made by hard-working hand, and with a dream to make their dreams come true.",
     "achieve-this": "WHAT DO WE ACHIEVE WITH THIS?",
     "aligning-sdgs": "ALIGNING YOUR BUSINESS WITH THE SDG’S",
-    "implementation-social-resonsabilities": "IMPLEMENTATION OF CORPORATE SOCIAL RESPONSIBILITY INITIATIVES",
+    "implementation-social-responsabilities": "IMPLEMENTATION OF CORPORATE SOCIAL RESPONSIBILITY INITIATIVES",
     "construction-brand": "CONSTRUCTION OF BRAND EQUITY BASED ON PARTICIPATION IN SHARED VALUE INITIATIVES",
     "social-description": "CONECTA TU MARCA CON UN PROPÓSITO",
     "social-description-hover": "We encourage you to participate in shared value sustainable initiatives that have a social impact"
@@ -212,5 +212,22 @@
     "registered-email": "The email is already registered",
     "try-again": "Por favor intenta de nuevo",
     "already-did-it": "Already did it"
+  },
+  "routes": {
+    "chocolate-process": "/proceso-del-chocolate",
+    "sustainability": "/sostenibilidad",
+    "products-services": "/productos-servicios",
+    "our-clients": "/nuestros-clientes",
+    "ideas-trends": "/ideas-tendencias",
+    "our-value": "/propuesta-valor",
+    "contact-us": "/contactanos",
+    "work-with-us": "/trabaja-con-nosotros",
+    "ingredients": "/ingredientes",
+    "finished-chocolate-products": "/productos-chocolate",
+    "our-services": "/nuestros-servicios",
+    "aroma": "/aroma",
+    "flavour": "/sabor",
+    "product": "/producto",
+    "social": "/social"
   }
 }

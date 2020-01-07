@@ -167,7 +167,7 @@ class Maquila extends React.Component {
             </div>}
         </div>
         <div className="btn-back-sticky">
-          <Link to="/products-services/finished-chocolate-products">{t('buttons.back-to-products').toUpperCase()}</Link>
+          <Link to={t('route.product-services') + t('route.finished-chocolate-products')}>{t('buttons.back-to-products').toUpperCase()}</Link>
         </div>
         <ContactSide page='maquila' products={itemSelected} handleSetProductSelected={this.handleSetProductSelected} handleShowFormContact={this.handleShowFormContact} />
       </div >

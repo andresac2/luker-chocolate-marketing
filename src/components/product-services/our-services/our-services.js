@@ -66,7 +66,7 @@ class OurServices extends React.Component {
           <Back className={`btn-next-img ${dpSelected === designProcess.length - 1 && 'btn-inactive'}`} onClick={() => this.carrAction('r')} />
         </div>
         <div className="btn-back-sticky">
-          <Link to="/products-services">{t('buttons.back-to-solutions').toUpperCase()}</Link>
+          <Link to={t('routes.products-services')}>{t('buttons.back-to-solutions').toUpperCase()}</Link>
         </div>
         <ContactSide page='service' products={[]} />
       </div >

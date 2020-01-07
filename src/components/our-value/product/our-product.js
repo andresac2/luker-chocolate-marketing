@@ -1,4 +1,6 @@
 import React from 'react'
+import { withNamespaces } from 'react-i18next';
+
 class OurProduct extends React.Component {
   constructor(props) {
     super(props);
@@ -33,12 +35,13 @@ class OurProduct extends React.Component {
 
   render() {
     const { items, selectedItem } = this.state;
+    const { t } = this.props;
     const altImg = 'img-example.svg';
 
     return (
       <div className="our-product-component" >
-        <h1>GET AN INTEGRATED PRODUCT, DESIGN, AND PACKAGING SOLUTION</h1>
-        <p className="p-flavour p-flavour-border">We work with multidisciplinary teams that allow us to advise you throughout product development, from the idea to its manufacture. We invite you to meet the team that makes your dreams come true.</p>
+        <h1>{t('value-propose.product-title')}</h1>
+        <p className="p-flavour p-flavour-border">{t('value-propose.product-text')}</p>
         <div className="our-product-component-cards">
           {Object.keys(items).map(i =>
             <div key={i} className={`our-product-component-card our-product-component-card-${selectedItem === i && 'active'}`} onClick={() => this.toggleItem(i)}>
@@ -53,4 +56,4 @@ class OurProduct extends React.Component {
   }
 }
 
-export default OurProduct;
+export default withNamespaces()(OurProduct);
