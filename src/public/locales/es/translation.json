@@ -23,7 +23,7 @@
     "finished-products-text": "<p>Si tienes una idea o quieres desarrollar un producto de chocolate, te ayudamos a hacerlo realidad para compartirlo con el mundo. Si tienes una idea clara del producto o si se encuentra en las etapas de definición, podemos ocuparnos de todo, desde la formulación y conceptualización hasta el diseño y la fabricación de envases, de modo que solo te encargues de su distribución y venta.</p><p>El proceso de formulación comienza eligiendo uno de nuestros chocolates hechos con Cacao Fino de Aroma para desarrollar tu producto. Esto nos ayuda a dar forma a las características y al perfil sensorial del chocolate que deseas crear.</p><p>También te guiamos en la conceptualización y desarrollo de la imagen para el empaque del  producto de chocolate y te asesoramos sobre los materiales apropiados para usar de acuerdo con sus necesidades específicas.</p><p>Finalmente, al usar la tecnología y los ingredientes a nuestra disposición, fabricamos el producto de chocolate que hará las delicias de tus clientes y compradores.</p>"
   },
   "sustainability": {
-    "sustain-content": "<p>En Luker Chocolate vemos la sostenibilidad como una herramienta para perdurar en el tiempo de manera responsable, siendo motores de transformación económica, social y ambiental. Estamos comprometidos con generar mayor bienestar en todos los actores de la cadena de valor, desde quienes cultivan el grano de cacao hasta nuestros clientes.</p><p>Nuestra apuesta en la cadena de valor es integrarla, humanizarla y por último cerrarla con estrategias de valor compartido con nuestros clientes y aliados. Sabemos que necesitamos determinación para transformar las regiones cacaoteras, ya que el cacao en Colombia es producido por aproximadamente 38 mil familias que en el pasado fueron víctimas del conflicto armado del país y que cuentan con índices multidimensionales de pobreza muy bajos. Por eso, centramos nuestros esfuerzos en contribuir al cambio en estas regiones para que la calidad de vida de los agricultores y las comunidades mejore.</p>",
+    "sustain-content": "<p>En Luker Chocolate vemos la sostenibilidad como una herramienta para perdurar en el tiempo de manera responsable, siendo motores de transformación económica, social y ambiental. Estamos comprometidos con generar mayor bienestar en todos los actores de la cadena de valor, desde quienes cultivan el grano de cacao hasta nuestros clientes.</p><p>Nuestra apuesta en la cadena de valor es integrarla, humanizarla y por último cerrarla con estrategias de valor compartido con nuestros clientes y aliados. Sabemos que necesitamos determinación para transformar las regiones cacaoteras, ya que el cacao en Colombia es producido por aproximadamente 38 mil familias que en el pasado fueron víctimas del conflicto armado del país y que cuentan con índices multidimensionales de pobreza muy bajos. Por eso, centramos nuestros esfuerzos en contribuir al cambio en estas regiones para que la calidad de vida de los agricultores y las comunidades mejores.</p>",
     "impact": "IMPACTO",
     "we-go-beyond": "SUEÑA CON NOSOTROS"
   },
@@ -143,11 +143,11 @@
   },
   "form": {
     "contact-us": "CONTÁCTANOS",
-    "work-with-us": "Work with us",
+    "work-with-us": "Trabaja con nosotros",
     "give-us-details": "GIVE US YOUR DETAILS",
     "characteristics": "Características",
     "contact-message": "Ingresa tu información y descubre nuestros negocios y acciones en las regiones productoras de cacao.",
-    "personal-info": "Personal information",
+    "personal-info": "Información personal",
     "give-us-email": "Give us your email!",
     "clicking-download": "Al hacer clic en Descargar, aceptas los",
     "clicking-send": "Al hacer clic en enviar, aceptas los",
@@ -160,6 +160,7 @@
     "phone-number": "Teléfono",
     "write-message": "Comentarios",
     "company": "Compañia",
+    "birthday": "Cumpleaños",
     "msg-optional": "Mensaje (opcional)!",
     "contact-email-send-ok-title": "Thank you for getting in touch! ",
     "contact-email-send-ok-msg": "We appreciate you contacting us. One of our colleagues will get back in touch with you soon!",

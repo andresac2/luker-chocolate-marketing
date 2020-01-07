@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, Select, Input, Button, Modal, DatePicker, Upload, Icon } from 'antd';
+import { Form, Select, Input, InputNumber, Button, Modal, DatePicker, Upload, Icon } from 'antd';
 import FormItem from 'antd/lib/form/FormItem';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/img/Lukerlogo.svg'
@@ -7,6 +7,7 @@ import Footer from '../footer/footer';
 import termsConditions from '../../../assets/documents/policies/Términos y condiciones de uso sitio web CasaLuker inglés 16dic2019.pdf';
 import privacyPolicy from '../../../assets/documents/policies/Política privacidad sitio web CasaLuker inglés 16dic2019.pdf';
 import HelmetComponent from '../../../commons/helmet/helmet';
+import { withNamespaces } from 'react-i18next';
 
 class WorkWithUs extends React.Component {
 
@@ -164,6 +165,7 @@ class WorkWithUs extends React.Component {
 
   render() {
     const { getFieldDecorator } = this.props.form;
+    const { t } = this.props;
     const { fileUpload } = this.state;
     const { Option } = Select;
     const { TextArea } = Input;
@@ -175,56 +177,58 @@ class WorkWithUs extends React.Component {
           <div className="btn-dist">
             <Link to="/" className="logo"> <img src={logo} alt="Logo Luker" /></Link>
           </div>
-          <h1>Work with us</h1>
+          <h1>{t('form.work-with-us')}</h1>
         </div>
         <div className={`work-with-us-content`}>
-          <h2>Personal information</h2>
+          <h2>{t('form.personal-info')}</h2>
           <Form onSubmit={this.handleSubmit} className="curriculum-form">
             <Form.Item>
               {getFieldDecorator('username', {
-                rules: [{ required: true, message: 'Please input your username!' }],
+                rules: [{ required: true, message: t('errors.required-name') }],
               })(
-                <Input placeholder="Full name" />,
+                <Input placeholder={t('form.your-name')} />,
               )}
             </Form.Item>
             <Form.Item>
               {getFieldDecorator('phone', {
-                rules: [{ required: true, message: 'Please input your phone number!' }],
-              })(<Input placeholder="Phone Number" />)}
+                rules: [{ required: true, message: t('errors.required-number') }],
+              })(
+                <InputNumber min={7} max={10} placeholder={t('form.phone-number')} style={{ width: '100%' }} />,
+              )}
             </Form.Item>
             <FormItem>
               {getFieldDecorator('email', {
                 rules: [
                   {
                     type: 'email',
-                    message: 'The input is not valid E-mail!',
+                    message: t('errors.invalid-email'),
                   },
                   {
                     required: true,
-                    message: 'Please input your E-mail!',
+                    message: t('errors.required-email'),
                   },
                 ],
-              })(<Input placeholder="Your Email" />)}
+              })(<Input placeholder={t('form.your-email')} />)}
             </FormItem>
             <FormItem>
               <FormItem
-                label="Birthday"
+                label={t('form.birthday')}
                 style={{ display: 'inline-block', float: 'left', marginRight: '20px', textAlign: 'left' }}>
                 {getFieldDecorator('birthday', {
-                  rules: [{ required: true, message: 'Please select your birthday date!' }],
+                  rules: [{ required: true, message: t('errors.required-number') }],
                 })(
                   <DatePicker />
                 )}
               </FormItem>
               <Form.Item
-                label="Country"
+                label={t('form.your-country')}
                 style={{ display: 'inline-block', minWidth: '230px', float: 'left', textAlign: 'left' }}>
                 {getFieldDecorator('country', {
-                  rules: [{ required: true, message: 'Please input your country!' }],
+                  rules: [{ required: true, message: t('errors.required-country') }],
                 })(
                   <Select
                     showSearch
-                    placeholder="Your Country"
+                    placeholder={t('form.your-country')}
                     optionFilterProp="children"
                     filterOption={(input, option) =>
                       option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
@@ -238,34 +242,34 @@ class WorkWithUs extends React.Component {
               </Form.Item>
             </FormItem>
             <Form.Item
-              label="CURRICULUM VITAE"
-              extra="(File Formats: *.doc(x), *.rtf, *.pdf)"
+              label={t('form.curriculum-vitae')}
+              extra={t('form.file-format')}
               style={{ textAlign: 'left' }}>
               {getFieldDecorator('upload', {
-                rules: [{ required: true, message: 'Please upload your cv!' }],
+                rules: [{ required: true, message: t('errors.required-cv') }],
                 //valuePropName: 'fileList',
                 getValueFromEvent: this.normFile,
               })(
                 <Upload name="file" customRequest={this.dummyRequest} accept=".docx,.doc,.rtf,.pdf" onChange={this.handleChangeUpload} fileList={this.state.upload}>
                   <Button className="curriculum-form-button">
-                    <Icon type="upload" /> SELECT A FILE
+                    <Icon type="upload" /> {t('buttons.select-file')}
                   </Button>
                 </Upload>,
               )}
             </Form.Item>
             <FormItem>
               {getFieldDecorator('message', {
-                rules: [{ required: false, message: 'Please leave us a comment!' }],
+                rules: [{ required: true, message: t('errors.required-comment') }],
               })(
-                <TextArea rows={5} placeholder="Message (optional)!" />
+                <TextArea rows={3} placeholder={t('form.write-message')} />
               )}
             </FormItem>
             <Form.Item>
               <Button type="primary" htmlType="submit" className="curriculum-form-button">
-                Send
+                {t('buttons.send')}
               </Button>
             </Form.Item>
-            <p className="work-with-us-terms">By clicking "send" you agree to the <a href={termsConditions} target="_blank">terms and conditions</a> and our <a href={privacyPolicy} target="_blank">privacy policy</a>.</p>
+            <p className="work-with-us-terms">{t('form.clicking-send')} <a href={termsConditions} target="_blank">{t('form.terms-conditions')} </a> {t('form.and-our')} <a href={privacyPolicy} target="_blank">{t('form.privacy-policy')}</a>.</p>
           </Form>
         </div>
         <Footer />
@@ -275,4 +279,4 @@ class WorkWithUs extends React.Component {
 };
 
 const WrappedWorkWithUs = Form.create({ name: 'curriculum_form' })(WorkWithUs);
-export default WrappedWorkWithUs;
+export default withNamespaces()(WrappedWorkWithUs);

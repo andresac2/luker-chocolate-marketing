@@ -106,8 +106,8 @@ class Footer extends React.Component {
             </div>
           }
           <div className="footer-component-link">
-            <Link to="/work-with-us">{t('form.work-with-us').toUpperCase()}</Link>
-            <Link to="/contact-us">{t('form.contact-us')}</Link>
+            <Link to={t('routes.work-with-us')}>{t('form.work-with-us').toUpperCase()}</Link>
+            <Link to={t('routes.contact-us')}>{t('form.contact-us')}</Link>
             <Link to="/blog">{t('footer.visit-our-blog').toUpperCase()}</Link>
           </div>
           {(!isNewsletterHidden && mode !== 'responsive') && <div className="footer-component-social">

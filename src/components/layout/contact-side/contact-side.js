@@ -225,7 +225,7 @@ class ContactSide extends React.Component {
                           <p>{products[0].description}</p>
                         </div>
                           {(products.length > 0) && <div className={`contact-form-products--list-item-${page} contact-form-products--list-item-${page}-dmw`} onClick={() => this.props.handleSetProductSelected()}>{products[1]}</div>}</>
-                      : <span>{page === 'maquila' ? t('form.choose-documentation') : t('form.choose-products')}</span>
+                      : <span>{page === 'maquila' ? t('form.choose-option') : t('form.choose-products')}</span>
                     }
                   </div>
                 }

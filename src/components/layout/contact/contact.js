@@ -7,6 +7,7 @@ import Footer from '../footer/footer';
 import termsConditions from '../../../assets/documents/policies/Términos y condiciones de uso sitio web CasaLuker inglés 16dic2019.pdf';
 import privacyPolicy from '../../../assets/documents/policies/Política privacidad sitio web CasaLuker inglés 16dic2019.pdf';
 import HelmetComponent from '../../../commons/helmet/helmet';
+import { withNamespaces } from 'react-i18next';
 
 class Contact extends React.Component {
 
@@ -135,6 +136,7 @@ class Contact extends React.Component {
 
   render() {
     const { getFieldDecorator } = this.props.form;
+    const { t } = this.props;
     const { Option } = Select;
     const { TextArea } = Input;
     return (
@@ -144,17 +146,17 @@ class Contact extends React.Component {
           <div className="btn-dist">
             <Link to="/" className="logo"> <img src={logo} alt="Logo Luker" /></Link>
           </div>
-          <h1>Contact us</h1>
+          <h1>{t('form.contact-us')}</h1>
         </div >
 
         <div className={`contact-us-content`}>
-          <p>Get in touch with us and have all your questions about chocolate answerd by our experts.</p>
+          <p>{t('form.contact-message')}</p>
           <Form onSubmit={this.handleSubmit} className="contact-form">
             <Form.Item>
               {getFieldDecorator('username', {
-                rules: [{ required: true, message: 'Please input your username!' }],
+                rules: [{ required: true, message: t('errors.required-name') }],
               })(
-                <Input placeholder="Your name" />,
+                <Input placeholder={t('form.your-name')} />,
               )}
             </Form.Item>
             <FormItem>
@@ -162,22 +164,22 @@ class Contact extends React.Component {
                 rules: [
                   {
                     type: 'email',
-                    message: 'The input is not valid E-mail!',
+                    message: t('errors.invalid-email'),
                   },
                   {
                     required: true,
-                    message: 'Please input your E-mail!',
+                    message: t('errors.required-email'),
                   },
                 ],
-              })(<Input placeholder="Your Email" />)}
+              })(<Input placeholder={t('form.your-email')} />)}
             </FormItem>
             <Form.Item>
               {getFieldDecorator('country', {
-                rules: [{ required: true, message: 'Please input your country!' }],
+                rules: [{ required: true, message: t('errors.required-country') }],
               })(
                 <Select
                   showSearch
-                  placeholder="Your country"
+                  placeholder={t('form.your-country')}
                   optionFilterProp="children"
                   filterOption={(input, option) =>
                     option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
@@ -191,17 +193,17 @@ class Contact extends React.Component {
             </Form.Item>
             <FormItem>
               {getFieldDecorator('message', {
-                rules: [{ required: true, message: 'Please leave us a comment!' }],
+                rules: [{ required: true, message: t('errors.required-comment') }],
               })(
-                <TextArea rows={5} placeholder="Write us a message!" />
+                <TextArea rows={5} placeholder={t('form.write-message')} />
               )}
             </FormItem>
             <Form.Item>
               <Button type="primary" htmlType="submit" className="contact-form-button">
-                Send
+                {t('buttons.send')}
               </Button>
             </Form.Item>
-            <p className="contact-form-terms">By clicking "send" you agree to the <a href={termsConditions} target="_blank">terms and conditions</a> and our <a href={privacyPolicy} target="_blank">privacy policy</a>.</p>
+            <p className="contact-form-terms">{t('form.clicking-send')} <a href={termsConditions} target="_blank">{t('form.terms-conditions')} </a> {t('form.and-our')} <a href={privacyPolicy} target="_blank">{t('form.privacy-policy')}</a>.</p>
           </Form>
         </div>
         <Footer />
@@ -211,4 +213,4 @@ class Contact extends React.Component {
 };
 
 const WrappedContact = Form.create({ name: 'contact_form' })(Contact);
-export default WrappedContact;
+export default withNamespaces()(WrappedContact);
