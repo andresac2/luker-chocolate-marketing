@@ -31,7 +31,7 @@ export default function BasicExample() {
       <Header />
       <ScrollToTop />
       <Switch>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={Home} changefreq='weekly' priority={1} />
         <Route path="/chocolate-process" component={Flow} />
         <Route path="/proceso-del-chocolate" component={Flow} />
         <Route path="/sustainability" component={Sustain} />
@@ -48,7 +48,7 @@ export default function BasicExample() {
         <Route path="/propuesta-valor/:id" component={OurValue} />
         <Route path="/our-value" component={ValuePropose} />
         <Route path="/propuesta-valor" component={ValuePropose} />
-        <Route path="/blog/:category?/:article?" component={Blog} />
+        <Route path="/blog/:category?/:article?" component={Blog} changefreq='daily' priority={1} />
         <Route path="/contact-us" component={WrappedContact} />
         <Route path="/contactanos" component={WrappedContact} />
         <Route path="/work-with-us" component={WrappedWorkWithUs} />
