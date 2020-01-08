@@ -31,22 +31,22 @@ function Customer(props) {
         <FloatLogo btnText='dist' />
       </div>
       <div className="customer-component--content">
-        <Link to='/blog/our-clients/pots-co'>
+        <Link to={'/blog' + t('routes.our-clients') + '/pots-co'}>
           <img src={pots} alt="Pots&co" />
           <h2>POTS & CO</h2>
           <img src={ukFlag} alt="United kingdom flag" className="flag-badge" />
         </Link>
-        <Link to='/blog/our-clients/doisy-dam'>
+        <Link to={'/blog' + t('routes.our-clients') + '/doisy-dam'}>
           <img src={doisy} alt="Doisy & Dam" />
           <h2>DOISY & DAM</h2>
           <img src={ukFlag} alt="United kingdom flag" className="flag-badge" />
         </Link>
-        <Link to='/blog/our-clients/royce'>
+        <Link to={'/blog' + t('routes.our-clients') + '/royce'}>
           <img src={royce} alt="Royce" />
           <h2>ROYCE'</h2>
           <img src={jpFlag} alt="Japan flag" className="flag-badge" />
         </Link>
-        <Link to='/blog/our-clients/york-cocoa-house'>
+        <Link to={'/blog' + t('routes.our-clients') + '/york-cocoa-house'}>
           <img src={york} alt="York Cocoa House" />
           <h2>YORK COCOA HOUSE</h2>
           <img src={usFlag} alt="United states flag" className="flag-badge" />

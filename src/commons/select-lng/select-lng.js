@@ -1,27 +1,43 @@
 import React from 'react';
 import i18n from '../../i18n';
+import { withRouter } from 'react-router-dom';
 import { Select } from 'antd';
 
-class SelectLanguage extends React.Component {
+const { Option } = Select;
 
-  constructor(props) {
-    super(props);
-  }
-  _handleChange(lng) {
+const useStateWithLocalStorage = localStorageKey => {
+
+  const [value, setValue] = React.useState(
+    localStorage.getItem(localStorageKey) || ''
+  );
+
+  React.useEffect(() => {
+    localStorage.setItem(localStorageKey, value);
+  }, [value]);
+
+  return [value, setValue];
+};
+
+const SelectLanguage = (props) => {
+  const [value, setValue] = useStateWithLocalStorage('lukerLng');
+  const { history } = props;
+
+  const _handleChange = (lng) => {
+    setValue(lng);
     console.log("language", lng)
     i18n.changeLanguage(lng);
-  }
+    if (history.location.pathname.slice(1).split('/').shift() === "blog") {
+      window.location.reload();
+    }
+  };
 
-  render() {
-    const { visible, modal, product, title, subtitle, contentTitle } = this.props;
-    const { Option } = Select;
 
-    return (
-      <Select defaultValue={i18n.language} onChange={this._handleChange}  >
-        <Option value="es">ES</Option>
-        <Option value="en">EN</Option>
-      </Select>
-    );
-  }
+  return (
+    <Select defaultValue={value} onChange={_handleChange}  >
+      <Option value="es">ES</Option>
+      <Option value="en">EN</Option>
+    </Select>
+  );
 };
-export default SelectLanguage;
+
+export default withRouter(SelectLanguage);

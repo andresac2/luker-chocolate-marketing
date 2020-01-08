@@ -127,15 +127,17 @@
   "blog": {
     "blog-title": "UNDER THE TREE",
     "take-stand": "TAKE A STAND",
-    "innovation": "INNOVATION",
+    "innovation": "INNOVACIÓN",
     "create-shared-value": "CREATE SHARED VALUE",
     "chocolate-dream-journey": "THE CHOCOLATE DREAM JOURNEY",
     "what-did-know": "WHAT YOU DIDN’T KNOW",
-    "latest-entries": "Latest entries",
+    "latest-entries": "Últimos posts",
+    "articles-for": "artículos para",
+    "finded": "Encontrados",
     "featured": "Featured",
     "featured-post": "Featured post",
     "newsletter": "NEWSLETTER",
-    "join-newsletter": "JOIN OUR NEWSLETTER",
+    "join-newsletter": "'UNETE A NUESTRO NEWSLETTER",
     "newsletter-text": "Join our monthly newsletter and don’t miss a bean!",
     "recommended-entries": "RECOMMENDED ENTRIES",
     "other-clients": "OTHER CLIENTS",
@@ -170,7 +172,8 @@
     "file-format": "(File Formats: *.doc(x), *.rtf, *.pdf)",
     "choose-option": "Choose an option from the list",
     "choose-documentation": "Escoge tu documentación",
-    "choose-products": "Pick your choice from the list of products"
+    "choose-products": "Pick your choice from the list of products",
+    "input-search": "Escriba el parámetro de búsqueda"
   },
   "modals": {
     "modal-documents-title": "Selecciona los documentos que deseas",
@@ -231,6 +234,11 @@
     "aroma": "/aroma",
     "flavour": "/sabor",
     "product": "/producto",
-    "social": "/social"
+    "social": "/social",
+    "take-stand": "/take-stand",
+    "innovation": "/innovacion",
+    "create-shared-value": "/create-shared-value",
+    "chocolate-dream": "/chocolate-dream",
+    "what-you-didnt-know": "/what-you-didnt-know"
   }
 }

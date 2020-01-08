@@ -5,7 +5,7 @@
   &-header {
     min-height: 320px;
     max-height: 580px;
-    background: url("../../assets/img/blog-header.jpg") no-repeat;
+    background: linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url("../../assets/img/blog-header.jpg") no-repeat;
     transition: all ease 1s;
     background-size: cover;
     color: #fff;
@@ -18,32 +18,8 @@
     }
 
     &--take-stand {
-      background: url("../../assets/img/stand-header.jpg") no-repeat;
-      background-size: cover;
-    }
-
-    &--york-cocoa-house {
-      background: url("../../assets/img/york-header.jpg") no-repeat;
-      background-size: cover;
-    }
-
-    &--pots-co {
-      background: url("../../assets/img/pots-header.jpg") no-repeat;
-      background-size: cover;
-    }
-
-    &--dengel-shokolade {
-      background: url("../../assets/img/dengel-header.jpg") no-repeat;
-      background-size: cover;
-    }
-
-    &--article {
-      background: url("../../assets/img/article-header.jpg") no-repeat;
-      background-size: cover;
-    }
-
-    &--doisy-dam {
-      background: url("../../assets/img/doisy-header.jpg") no-repeat;
+      background: linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent),
+        url("../../assets/img/stand-header.jpg") no-repeat;
       background-size: cover;
     }
 
@@ -76,7 +52,6 @@
     }
 
     &--search {
-      display: none;
       width: 960px;
       margin: 0 auto;
       text-align: end;
@@ -286,6 +261,21 @@
             font-style: italic;
             margin: 1em 0 0.5em 0;
           }
+        }
+      }
+
+      &-articles-searched-results {
+        border-top: 3px solid #484848;
+
+        h3 {
+          margin: 1em 0;
+        }
+
+        .blog-layout-articles {
+          border: none;
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: 1fr;
+
         }
       }
 

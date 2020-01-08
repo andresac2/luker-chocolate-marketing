@@ -132,6 +132,8 @@
     "chocolate-dream-journey": "THE CHOCOLATE DREAM JOURNEY",
     "what-did-know": "WHAT YOU DIDN’T KNOW",
     "latest-entries": "Latest entries",
+    "articles-for": "articles for",
+    "finded": "Finded",
     "featured": "Featured",
     "featured-post": "Featured post",
     "newsletter": "NEWSLETTER",
@@ -170,7 +172,8 @@
     "file-format": "(File Formats: *.doc(x), *.rtf, *.pdf)",
     "choose-option": "Choose an option from the list",
     "choose-documentation": "Choose your documentation",
-    "choose-products": "Pick your choice from the list of products"
+    "choose-products": "Pick your choice from the list of products",
+    "input-search": "Input search text"
   },
   "modals": {
     "modal-documents-title": "Select the documents you want!",
@@ -231,6 +234,11 @@
     "aroma": "/aroma",
     "flavour": "/flavour",
     "product": "/product",
-    "social": "/social"
+    "social": "/social",
+    "take-stand": "/take-stand",
+    "innovation": "/innovation",
+    "create-shared-value": "/create-shared-value",
+    "chocolate-dream": "/chocolate-dream",
+    "what-you-didnt-know": "/what-you-didnt-know"
   }
 }
