@@ -1,6 +1,8 @@
 import React from 'react';
 import { Comment, Avatar, Form, Button, List, Input } from 'antd';
 import { FiChevronUp, FiChevronDown } from 'react-icons/fi'
+import { withNamespaces } from 'react-i18next';
+import i18n from '../../../i18n';
 
 
 const { TextArea } = Input;
@@ -18,14 +20,14 @@ const CommentList = ({ comments }) => (
 const Editor = ({ onChange, onSubmit, submitting, author, comment }) => (
   <div>
     <Form.Item className="form-comment-input">
-      <Input id="author" placeholder="Your email" onChange={onChange} author={author} />
+      <Input id="author" type="email" placeholder={i18n.t('form.your-email')} onChange={onChange} author={author} />
     </Form.Item>
     <Form.Item className="form-comment-input">
-      <TextArea id="comment" placeholder="Comment" rows={4} onChange={onChange} comment={comment} />
+      <TextArea id="comment" placeholder={i18n.t('errors.required-comment')} rows={4} onChange={onChange} comment={comment} />
     </Form.Item>
     <Form.Item>
       <Button htmlType="submit" loading={submitting} onClick={onSubmit}>
-        Send
+        {i18n.t('buttons.send')}
       </Button>
     </Form.Item>
   </div>
@@ -57,8 +59,7 @@ class Comments extends React.Component {
         comments: [
           {
             author: this.state.author,
-            avatar: require('../../../assets/img/making-hot.jpg'),
-            content: <><p>{this.state.comment}</p> commentActions</>,
+            content: <><p>{this.state.comment}</p>{commentActions}</>,
             // datetime: moment().fromNow(),
           },
           ...this.state.comments,
@@ -73,10 +74,11 @@ class Comments extends React.Component {
 
   render() {
     const { comments, submitting, comment, author } = this.state;
+    const { t } = this.props;
 
     return (
       <div className="comments-component">
-        <h2>LEAVE US YOUR COMMENTS</h2>
+        <h2>{t('blog.leave-us-comment')}</h2>
         <Comment
           content={
             <Editor
@@ -93,4 +95,4 @@ class Comments extends React.Component {
     );
   }
 }
-export default Comments;
+export default withNamespaces()(Comments);
