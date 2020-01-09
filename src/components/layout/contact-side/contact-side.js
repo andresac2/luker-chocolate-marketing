@@ -5,6 +5,8 @@ import { Form, Select, Input, Button, InputNumber, Modal } from 'antd';
 import FormItem from 'antd/lib/form/FormItem';
 import termsConditions from '../../../assets/documents/policies/Términos y condiciones de uso sitio web CasaLuker inglés 16dic2019.pdf';
 import privacyPolicy from '../../../assets/documents/policies/Política privacidad sitio web CasaLuker inglés 16dic2019.pdf';
+import termsConditionsEs from '../../../assets/documents/policies/Términos y condiciones de uso sitio web CasaLuker español 16dic2019.pdf';
+import privacyPolicyEs from '../../../assets/documents/policies/Política privacidad sitio web CasaLuker español 16dic2019.pdf';
 import { withNamespaces } from 'react-i18next';
 import { countries as dataCountries } from '../../../commons/data/data-en';
 import { countries as paises } from '../../../commons/data/data-es';
@@ -147,7 +149,7 @@ class ContactSide extends React.Component {
                           <img src={require('../../../assets/img/' + products[0].img)} alt={products[0].description} />
                           <p>{products[0].description}</p>
                         </div>
-                          {(products.length > 0) && <div className={`contact-form-products--list-item-${page} contact-form-products--list-item-${page}-dmw`} onClick={() => this.props.handleSetProductSelected()}>{products[1]}</div>}</>
+                          {(products[1]) && <div className={`contact-form-products--list-item-${page} contact-form-products--list-item-${page}-dmw`} onClick={() => this.props.handleSetProductSelected()}>{products[1]}</div>}</>
                       : <span>{page === 'maquila' ? t('form.choose-option') : t('form.choose-products')}</span>
                     }
                   </div>
@@ -169,7 +171,7 @@ class ContactSide extends React.Component {
                 {t('buttons.send')}
               </Button>
             </Form.Item>
-            <p className="contact-form-terms">{t('form.clicking-send')} <a href={termsConditions} target="_blank">{t('form.terms-conditions')} </a> {t('form.and-our')} <a href={privacyPolicy} target="_blank">{t('form.privacy-policy')}</a>.</p>
+            <p className="contact-form-terms">{t('form.clicking-send')} <a href={i18n.language === 'en' ? termsConditions : termsConditionsEs} target="_blank">{t('form.terms-conditions')} </a> {t('form.and-our')} <a href={i18n.language === 'en' ? privacyPolicy : privacyPolicyEs} target="_blank">{t('form.privacy-policy')}</a>.</p>
           </Form>
         </div>
       </div >

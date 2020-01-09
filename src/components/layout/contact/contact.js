@@ -6,6 +6,8 @@ import logo from '../../../assets/img/Lukerlogo.svg'
 import Footer from '../footer/footer';
 import termsConditions from '../../../assets/documents/policies/Términos y condiciones de uso sitio web CasaLuker inglés 16dic2019.pdf';
 import privacyPolicy from '../../../assets/documents/policies/Política privacidad sitio web CasaLuker inglés 16dic2019.pdf';
+import termsConditionsEs from '../../../assets/documents/policies/Términos y condiciones de uso sitio web CasaLuker español 16dic2019.pdf';
+import privacyPolicyEs from '../../../assets/documents/policies/Política privacidad sitio web CasaLuker español 16dic2019.pdf';
 import HelmetComponent from '../../../commons/helmet/helmet';
 import { withNamespaces } from 'react-i18next';
 import i18n from '../../../i18n';
@@ -124,7 +126,7 @@ class Contact extends React.Component {
                 {t('buttons.send')}
               </Button>
             </Form.Item>
-            <p className="contact-form-terms">{t('form.clicking-send')} <a href={termsConditions} target="_blank">{t('form.terms-conditions')} </a> {t('form.and-our')} <a href={privacyPolicy} target="_blank">{t('form.privacy-policy')}</a>.</p>
+            <p className="contact-form-terms">{t('form.clicking-send')} <a href={i18n.language === 'en' ? termsConditions : termsConditionsEs} target="_blank">{t('form.terms-conditions')} </a> {t('form.and-our')} <a href={i18n.language === 'en' ? privacyPolicy : privacyPolicyEs} target="_blank">{t('form.privacy-policy')}</a>.</p>
           </Form>
         </div>
         <Footer />

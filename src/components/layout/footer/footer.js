@@ -12,8 +12,13 @@ import privacyPolicy from '../../../assets/documents/policies/Política privacid
 import antiFraud from '../../../assets/documents/policies/Política antifraude y anticorrupción inglés 16dic2019.pdf';
 import dataTreatment from '../../../assets/documents/policies/Política tratamiento datos personales CasaLuker inglés 16dic2019.pdf';
 
+import termsConditionsEs from '../../../assets/documents/policies/Términos y condiciones de uso sitio web CasaLuker español 16dic2019.pdf';
+import privacyPolicyEs from '../../../assets/documents/policies/Política privacidad sitio web CasaLuker español 16dic2019.pdf';
+import antiFraudEs from '../../../assets/documents/policies/Política antifraude y anticorrupción español 16dic2019.pdf';
+import dataTreatmentEs from '../../../assets/documents/policies/Política tratamiento datos personales CasaLuker español 16dic2019.pdf';
+
 class Footer extends React.Component {
-  hideNews = ['moulding', 'dosing', 'panning', 'cocoa-powder', 'casaluker', 'our-services'];//VIstas en las que se ocukta el newsletter
+  hideNews = ['moulding', 'dosing', 'panning', 'cocoa-powder', 'casaluker', 'our-services'];//VIstas en las que se oculta el newsletter
   constructor(props) {
     super(props);
     this.state = {
@@ -64,6 +69,8 @@ class Footer extends React.Component {
     const { mode, history, t } = this.props;
     const { emailNewsletter, newsletterWaiting } = this.state;
     const isNewsletterHidden = this.hideNews.some(function (v) { return history.location.pathname.includes(v); });
+    console.log(i18n.t('routes.products-services') + '/');
+    console.log([i18n.t('routes.products-services') + '/', '/blog', i18n.t('routes.contact-us'), i18n.t('routes.work-with-us'), i18n.t('routes.our-value') + '/']);
     return (
       <div>
         <div className={`footer-component ${mode == 'vertical' && 'footer-component-vertical'} ${mode == 'responsive' && 'footer-component-responsive'}`}>
@@ -95,13 +102,13 @@ class Footer extends React.Component {
             </ul>
           </div>
           {mode === 'vertical' &&
-            <div className="footer-component-data">
+            <div className="footer-component-data footer-component-data-policies">
               <h2>{t('footer.our-policies').toUpperCase()}</h2>
               <ul>
-                <li><a href={termsConditions} target='_blank'>{t('footer.terms-conditions')}</a></li>
-                <li><a href={privacyPolicy} target='_blank'>{t('footer.web-privacy-policy')}</a></li>
-                <li><a href={antiFraud} target='_blank'>{t('footer.anti-fraud-corruption-policy')}</a></li>
-                <li><a href={dataTreatment} target='_blank'>{t('footer.personal-data-processing-policy')}</a></li>
+                <li><a href={i18n.language === 'en' ? termsConditions : termsConditionsEs} target='_blank'>{t('footer.terms-conditions')}</a></li>
+                <li><a href={i18n.language === 'en' ? privacyPolicy : privacyPolicyEs} target='_blank'>{t('footer.web-privacy-policy')}</a></li>
+                <li><a href={i18n.language === 'en' ? antiFraud : antiFraudEs} target='_blank'>{t('footer.anti-fraud-corruption-policy')}</a></li>
+                <li><a href={i18n.language === 'en' ? dataTreatment : dataTreatmentEs} target='_blank'>{t('footer.personal-data-processing-policy')}</a></li>
               </ul>
             </div>
           }
@@ -114,7 +121,7 @@ class Footer extends React.Component {
             <h2>{t('blog.join-newsletter')}</h2>
             <form onSubmit={this.registerEmailNewsletter}>
               <input type="email" name="email" placeholder={t('form.give-us-email')} value={emailNewsletter} onChange={this.handleChangeNews} />
-              <input type="submit" value="Send" disabled={newsletterWaiting} />
+              <input type="submit" value={t('buttons.send')} disabled={newsletterWaiting} />
             </form>
             <div className="footer-component-social--btn">
               <a href="https://www.linkedin.com/company/lukerchocolate/" target="_blank" ><FaLinkedinIn /></a>

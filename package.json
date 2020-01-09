@@ -25,7 +25,7 @@
     "sitemap": "babel-node src/sitemap-builder.js"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": ["eslint:recommended", "plugin:react/recommended"]
   },
   "browserslist": {
     "production": [
@@ -45,6 +45,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
     "css-loader": "^3.2.1",
+    "eslint": "^6.8.0",
     "style-loader": "^1.0.1"
   }
 }

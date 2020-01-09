@@ -133,7 +133,7 @@
     "what-did-know": "LO QUE NO SABÍAS",
     "latest-entries": "ÚLTIMAS ENTRADAS",
     "featured": "Desracados",
-    "featured-post": "Entradas Destacados",
+    "featured-post": "Entradas Destacadas",
     "newsletter": "¡Suscríbete!",
     "join-newsletter": "SUSCRÍBETE",
     "newsletter-text": "¡Únase a nuestro boletín mensual!",
@@ -235,10 +235,10 @@
     "flavour": "/sabor",
     "product": "/producto",
     "social": "/social",
-    "take-stand": "/take-stand",
+    "take-stand": "/tomando-posicion",
     "innovation": "/innovacion",
-    "create-shared-value": "/create-shared-value",
-    "chocolate-dream": "/chocolate-dream",
-    "what-you-didnt-know": "/what-you-didnt-know"
+    "create-shared-value": "/valor-compartido",
+    "chocolate-dream": "/sueno-del-chocolate",
+    "what-you-didnt-know": "/lo-que-no-sabias"
   }
 }

@@ -9,7 +9,7 @@ import i18n from '../../../i18n';
 import { withNamespaces } from 'react-i18next';
 
 class FooterCover extends React.Component {
-  hideView = [i18n.t('routes.products-services') + '/', '/blog', i18n.t('routes.contact-us'), i18n.t('routes.work-with-us'), i18n.t('routes.our-value') + '/'];//VIstas en las que se oculta el footer
+  hideView = [i18n.t('routes.products-services') + '/', '/blog', i18n.t('routes.contact-us'), i18n.t('routes.work-with-us'), i18n.t('routes.our-value') + '/', '/productos-servicios/', '/propuesta-valor/'];//VIstas en las que se oculta el footer
   darkIcon = ['/blog'];//VIstas en las que se muestra modo oscuro
 
   constructor(props) {
@@ -51,7 +51,6 @@ class FooterCover extends React.Component {
     const { Option } = Select;
     const selectTab = history.location.pathname;
     const isFooterHidden = this.hideView.some(function (v) { return history.location.pathname.includes(v); });
-
     return (
       !isFooterHidden &&
       <div>
