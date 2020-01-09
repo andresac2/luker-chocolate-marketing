@@ -8,7 +8,7 @@ import {
 
 export default function SiteRoutes() {
   return (
-    <Router className="limit-width">
+    <Router>
       <Switch>
         <Route exact path="/" changefreq='weekly' priority={1} />
         <Route path="/chocolate-process" />

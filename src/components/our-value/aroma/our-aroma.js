@@ -1,6 +1,10 @@
 import React from 'react'
 import { FiChevronRight, FiChevronLeft } from 'react-icons/fi'
+import i18n from '../../../i18n';
 import { withNamespaces } from 'react-i18next';
+
+import { itemsAroma as itemsAromaEn } from '../../../commons/data/data-en';
+import { itemsAroma as itemsAromaEs } from '../../../commons/data/data-es';
 
 class OurAroma extends React.Component {
 
@@ -8,7 +12,7 @@ class OurAroma extends React.Component {
     super(props);
     this.state = {
       selectedItem: 0,
-      items: ['ONLY ABOUT 8% OF THE WORLD’S COCOA IS CONSIDERED CACAO FINO DE AROMA', '76% of Cacao Fino de Aroma is produced in Colombia, Ecuador, Peru, and Venezuela.']
+      items: i18n.language === 'en' ? itemsAromaEn : itemsAromaEs
     };
   }
   carrAction(direction) {

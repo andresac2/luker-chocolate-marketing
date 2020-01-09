@@ -48,31 +48,31 @@ export const articlesSustain = [{
 export const finishedChocolateProducts = [
   {
     img: 'cocoa-grageas.png',
-    name: 'Paneo',
+    name: 'Panning',
     id: 'panning',
-    description: 'Utilizamos el método de barrido o paneo para hacer nuestras deliciosas grageas cubiertas de chocolate. El chocolate se vierte lentamente sobre diferentes centros; pueden ser frutas secas, cereales, granos de café, entre otras golosinas pequeñas, creando una fina capa sobre ellas.'
+    description: 'We use the panning method for making our delicious chocolate covered dragees. Chocolate is slowly poured over dierent centers; can be dried fruits, cereals, coee beans, among other bite-size treats, creating a thin coating over them.'
   },
   {
     img: 'cocoa-dosing.png',
-    name: 'DOSIFICACIÓN',
+    name: 'Dosing',
     id: 'dosing',
-    description: 'A través de un depósito de chocolate impulsado por bomba, tenemos la capacidad de hacer chips, gotas y trozos Jugando con la dosis podemos ofrecer diferentes tamaños de estos productos.'
+    description: 'Through a pump-driven chocolate depositor,we have the capacity to make chips, drops and chunks. Playing with the dosage we can offer dierent sizes of these products.'
   }, {
     img: 'cocoa-bars.png',
-    name: 'MOLDURA',
+    name: 'Moulding',
     id: 'moulding',
-    description: 'Llevamos siete moldes existentes diferentes. Al combinar la producción manual y la máquina, podemos implementar requisitos de empaque muy específicos. A continuación se muestra una selección de nuestros moldes y opciones de embalaje.'
+    description: 'We carry seven diﬀerent existing molds. By combining manual and machine production, we can implement very speciﬁc packaging requirements. Below is a selection of our molds and packaging options.'
   }, {
     img: 'cocoa-powder.png',
-    name: 'CACAO EN POLVO',
+    name: 'Cocoa Powder',
     id: 'cocoa-powder',
-    description: 'Nuestro cacao en polvo es hecho con los mejores granos de Cacao Fino de Aroma. Perfecto para tomar en una deliciosa taza con leche caliente o para combinar en una receta chocolatosa. Puede ser utilizada como ingrediente para saborizar helados, tortas, postres y ganache. Es un producto saludable, libre de azúcar y colesterol.'
+    description: 'Our sugar and cholesterol-free cocoa powder is made with the best quality fine or flavour cocoa beans. It’s perfect to make delicious hot chocolate or recipes with chocolaty combinations. It can also be used as an ingredient to flavor ice cream, cakes, desserts, and ganache.'
   }];
 export const ingredients = [
   {
     img: 'milk-atlantico-33.png',
     name: 'CasaLuker Cacao',
-    subtitle: 'LOS MEJORES INGREDIENTES',
+    subtitle: 'THE BEST INGREDIENTS',
     id: 'casaluker-cacao',
     description: 'The meticulous selection of ingredients is essential to achieve the unique sensory profile that characterizes our chocolate.We select the best Cacao Fino de Aroma cocoa beans from Colombia, Ecuador, and Peru.We also use 100% natural cocoa butter and vanilla for our couverture with an exquisite and particular flavor, ideal for chocolate products of all kinds.'
   },
@@ -92,41 +92,132 @@ export const ingredients = [
 export const itemsOrigins = [{
   id: 1,
   img: 'p-tumaco.png',
-  description: 'DARK TUMACO 65%',
+  description: 'DARK TUMACO',
+  cocoaContent: '65%',
+  viscosity: 3,
+  fluid: 5,
+  viscous: 1,
+  data: [{
+    key: 1,
+    enrobing: true,
+    decorativeFigures: true,
+    moulding: true,
+    fillingsGanaches: true,
+    decorating: true,
+    desserts: true
+  }],
   selected: false
 }, {
   id: 2,
   img: 'p-tumaco-85.png',
-  description: 'EXTRA DARK TUMACO 85%',
+  description: 'EXTRA DARK TUMACO',
+  cocoaContent: '85%',
+  viscosity: 4,
+  fluid: 5,
+  viscous: 1,
+  data: [{
+    key: 1,
+    enrobing: true,
+    decorativeFigures: false,
+    moulding: true,
+    fillingsGanaches: false,
+    decorating: true,
+    desserts: false
+  }],
   selected: false
 },
 {
   id: 3,
   img: 'p-huila-65.png',
-  description: 'DARK HUILA 65%',
+  description: 'DARK HUILA',
+  cocoaContent: '65%',
+  viscosity: 3,
+  fluid: 5,
+  viscous: 1,
+  data: [{
+    key: 1,
+    enrobing: true,
+    decorativeFigures: true,
+    moulding: true,
+    fillingsGanaches: true,
+    decorating: true,
+    desserts: true
+  }],
   selected: false
 }, {
   id: 4,
   img: 'p-huila-70.png',
-  description: 'DARK HUILA 70%',
+  description: 'DARK HUILA',
+  cocoaContent: '70%',
+  viscosity: 4,
+  fluid: 5,
+  viscous: 1,
+  data: [{
+    key: 1,
+    enrobing: true,
+    decorativeFigures: false,
+    moulding: true,
+    fillingsGanaches: true,
+    decorating: true,
+    desserts: true
+  }],
   selected: false
 },
 {
   id: 5,
   img: 'p-santander-65.png',
-  description: 'DARK SANTANDER 65%',
+  description: 'DARK SANTANDER',
+  cocoaContent: '65%',
+  viscosity: 3,
+  fluid: 5,
+  viscous: 1,
+  data: [{
+    key: 1,
+    enrobing: true,
+    decorativeFigures: true,
+    moulding: true,
+    fillingsGanaches: true,
+    decorating: true,
+    desserts: true
+  }],
   selected: false
 },
 {
   id: 6,
   img: 'p-sanmartin-72.png',
-  description: 'DARK SAN MARTIN 72%',
+  description: 'DARK SAN MARTIN',
+  cocoaContent: '72%',
+  viscosity: 4,
+  fluid: 5,
+  viscous: 1,
+  data: [{
+    key: 1,
+    enrobing: true,
+    decorativeFigures: true,
+    moulding: true,
+    fillingsGanaches: true,
+    decorating: true,
+    desserts: true
+  }],
   selected: false
 },
 {
   id: 7,
   img: 'p-arauca-55.png',
-  description: 'MILK ARAUCA 55%',
+  description: 'MILK ARAUCA',
+  cocoaContent: '55%',
+  viscosity: 5,
+  fluid: 5,
+  viscous: 1,
+  data: [{
+    key: 1,
+    enrobing: true,
+    decorativeFigures: false,
+    moulding: true,
+    fillingsGanaches: true,
+    decorating: true,
+    desserts: true
+  }],
   selected: false
 }
 ]
@@ -178,37 +269,121 @@ export const itemsCacao = [{
   items: [{
     id: 1,
     img: 'milk-atlantico-33.png',
-    description: ['ATLÁNTICO 33.5%', 'MILK 28%'],
+    description: 'ATLÁNTICO',
+    cocoaContent: '33.5%',
+    milkContent: '28%',
+    viscosity: 3,
+    fluid: 5,
+    viscous: 1,
+    data: [{
+      key: 1,
+      enrobing: false,
+      decorativeFigures: true,
+      moulding: true,
+      fillingsGanaches: true,
+      decorating: true,
+      desserts: true
+    }],
     selected: false
   },
   {
     id: 2,
     img: 'milk-mulata-37.png',
-    description: ['MULATA SUGAR FREE 37%', 'MILK 23%'],
+    description: 'MULATA SUGAR FREE',
+    cocoaContent: '37%',
+    milkContent: '23%',
+    viscosity: 3,
+    fluid: 5,
+    viscous: 1,
+    data: [{
+      key: 1,
+      enrobing: true,
+      decorativeFigures: true,
+      moulding: true,
+      fillingsGanaches: true,
+      decorating: true,
+      desserts: true
+    }],
     selected: false
   },
   {
     id: 3,
     img: 'milk-clarodeluna-37.png',
-    description: ['CLARO DE LUNA 37%', 'MILK 10%'],
+    description: 'CLARO DE LUNA',
+    cocoaContent: '37%',
+    milkContent: '10%',
+    viscosity: 3,
+    fluid: 5,
+    viscous: 1,
+    data: [{
+      key: 1,
+      enrobing: false,
+      decorativeFigures: true,
+      moulding: true,
+      fillingsGanaches: true,
+      decorating: true,
+      desserts: true
+    }],
     selected: false
   },
   {
     id: 4,
     img: 'milk-noche-40.png',
-    description: ['NOCHE 40%', 'MILK 13%'],
+    description: 'NOCHE',
+    cocoaContent: '40%',
+    milkContent: '13%',
+    viscosity: 4,
+    fluid: 5,
+    viscous: 1,
+    data: [{
+      key: 1,
+      enrobing: true,
+      decorativeFigures: true,
+      moulding: true,
+      fillingsGanaches: true,
+      decorating: true,
+      desserts: true
+    }],
     selected: false
   },
   {
     id: 5,
     img: 'milk-heliconia-41.png',
-    description: ['HELICONIA 41%', 'MILK 19%'],
+    description: 'HELICONIA',
+    cocoaContent: '41%',
+    milkContent: '19%',
+    viscosity: 4,
+    fluid: 5,
+    viscous: 1,
+    data: [{
+      key: 1,
+      enrobing: true,
+      decorativeFigures: true,
+      moulding: true,
+      fillingsGanaches: true,
+      decorating: true,
+      desserts: true
+    }],
     selected: false
   },
   {
     id: 6,
     img: 'milk-caribe-45.png',
-    description: ['CARIBE 45%', 'MILK 20%'],
+    description: 'CARIBE',
+    cocoaContent: '45%',
+    milkContent: '20%',
+    viscosity: 4,
+    fluid: 5,
+    viscous: 1,
+    data: [{
+      key: 1,
+      enrobing: true,
+      decorativeFigures: true,
+      moulding: true,
+      fillingsGanaches: true,
+      decorating: true,
+      desserts: true
+    }],
     selected: false
   }
   ]
@@ -221,37 +396,115 @@ export const itemsCacao = [{
     {
       id: 1,
       img: 'LUKER-CACAO-VALLE50.png',
-      description: ['VALLE 50%'],
+      description: 'VALLE',
+      cocoaContent: '50%',
+      viscosity: 3,
+      fluid: 5,
+      viscous: 1,
+      data: [{
+        key: 1,
+        enrobing: true,
+        decorativeFigures: true,
+        moulding: true,
+        fillingsGanaches: true,
+        decorating: true,
+        desserts: true
+      }],
       selected: false
     },
     {
       id: 2,
       img: 'p-sombra-54.png',
-      description: ['SOMBRA 54%'],
+      description: 'SOMBRA',
+      cocoaContent: '54%',
+      viscosity: 3,
+      fluid: 5,
+      viscous: 1,
+      data: [{
+        key: 1,
+        enrobing: true,
+        decorativeFigures: true,
+        moulding: true,
+        fillingsGanaches: true,
+        decorating: true,
+        desserts: true
+      }],
       selected: false
     },
     {
       id: 3,
       img: 'luker-cumbre-58.png',
-      description: ['CUMBRE 58%'],
+      description: 'CUMBRE',
+      cocoaContent: '58%',
+      viscosity: 3,
+      fluid: 5,
+      viscous: 1,
+      data: [{
+        key: 1,
+        enrobing: false,
+        decorativeFigures: true,
+        moulding: true,
+        fillingsGanaches: true,
+        decorating: true,
+        desserts: true
+      }],
       selected: false
     },
     {
       id: 4,
       img: 'LUKER-CACAO-MACONDO-60.png',
-      description: ['MACONDO 60%'],
+      description: 'MACONDO',
+      cocoaContent: '60%',
+      viscosity: 3,
+      fluid: 5,
+      viscous: 1,
+      data: [{
+        key: 1,
+        enrobing: false,
+        decorativeFigures: true,
+        moulding: true,
+        fillingsGanaches: true,
+        decorating: true,
+        desserts: true
+      }],
       selected: false
     },
     {
       id: 5,
       img: 'LUKER-CACAO-MARANTA 61.png',
-      description: ['MARANTA 61%'],
+      description: 'MARANTA',
+      cocoaContent: '61%',
+      viscosity: 4,
+      fluid: 5,
+      viscous: 1,
+      data: [{
+        key: 1,
+        enrobing: true,
+        decorativeFigures: false,
+        moulding: true,
+        fillingsGanaches: false,
+        decorating: true,
+        desserts: true
+      }],
       selected: false
     },
     {
       id: 6,
       img: 'LUKER-CACAO-PALENQUE70.png',
-      description: ['PALENQUE 70%'],
+      description: 'PALENQUE',
+      cocoaContent: '70%',
+      viscosity: 4,
+      fluid: 5,
+      viscous: 1,
+      data: [{
+        key: 1,
+        enrobing: true,
+        decorativeFigures: false,
+        moulding: true,
+        fillingsGanaches: true,
+        decorating: true,
+        desserts: true
+      }],
       selected: false
     }
   ]
@@ -263,19 +516,61 @@ export const itemsCacao = [{
   items: [{
     id: 1,
     img: 'white-glaciar.png',
-    description: ['GLACIAR 35%', 'MILK 18%'],
+    description: 'GLACIAR',
+    cocoaContent: '35%',
+    milkContent: '18%',
+    viscosity: 3,
+    fluid: 5,
+    viscous: 1,
+    data: [{
+      key: 1,
+      enrobing: false,
+      decorativeFigures: true,
+      moulding: true,
+      fillingsGanaches: true,
+      decorating: true,
+      desserts: true
+    }],
     selected: false
   },
   {
     id: 2,
     img: 'white-nevado.png',
-    description: ['NEVADO 35%', 'MILK 24%'],
+    description: 'NEVADO',
+    cocoaContent: '35%',
+    milkContent: '24%',
+    viscosity: 3,
+    fluid: 5,
+    viscous: 1,
+    data: [{
+      key: 1,
+      enrobing: true,
+      decorativeFigures: true,
+      moulding: true,
+      fillingsGanaches: true,
+      decorating: true,
+      desserts: true
+    }],
     selected: false
   },
   {
     id: 3,
     img: 'white-sierra.png',
-    description: ['SIERRA 45%', 'MILK 16%'],
+    description: 'SIERRA',
+    cocoaContent: '45%',
+    milkContent: '16%',
+    viscosity: 4,
+    fluid: 5,
+    viscous: 1,
+    data: [{
+      key: 1,
+      enrobing: false,
+      decorativeFigures: false,
+      moulding: true,
+      fillingsGanaches: false,
+      decorating: true,
+      desserts: false
+    }],
     selected: false
   }
   ]
@@ -291,7 +586,7 @@ export const panning = [
   { description: 'CACAO NIBS', img: 'cacao-nibs.jpg' }, { description: 'NIBS CLUSTERS', img: 'nibs-cluster.png' }, { description: 'QUINOA', img: 'quinoa.png' }, { description: 'GOLDEN BERRIES', img: 'golden-berries.png' }, { description: 'ESPRESSO BEANS', img: 'chocolate-ingredients/maracas/chocolate-covered-espresso-beans.jpg' }, { description: 'INSTANT COFFEE', img: 'chocolate-ingredients/maracas/chocolate-covered-instant-coffee.jpg' }
 ]
 export const moulding = [
-  { description: 'BARS', img: 'moulding-bars.png' }, { description: 'SHAPES', img: 'moulding-shapes.png' }
+  { id: 'bars', description: 'BARS', img: 'moulding-bars.png' }, { id: 'shapes', description: 'SHAPES', img: 'moulding-shapes.png' }
 ]
 export const mouldingBars = [
   { description: 'LUKER MINIBARS 6G', img: 'moulding-minibars.png', selected: false },
@@ -417,14 +712,14 @@ export const articles = [
     cover: 'cocoa-forest.jpg',
     title: 'MANIFESTO – UNDER THE TREE',
     date: 'APRIL 2019',
-    content: `<p>Dicen que hay conversaciones que nunca se olvidan, que trascienden, que marcan la diferencia y que cambian el mundo. Nuestro paso por la existencia es una colección de momentos, vivencias, anécdotas y conversaciones. Nosotros creemos que las conversaciones memorables no suceden en cualquier parte; las nuestras, han sucedido debajo de un árbol de cacao.</p>
-<p>Muchos de quienes hacemos parte de Luker y de su historia crecimos debajo de un árbol de cacao, junto con agricultores y personas del campo. Miles de agricultores que hoy trabajan con nosotros, pasan gran parte de sus vidas bajo la sombra de un árbol.</p>
-<p>En nuestra Granja Luker, cientos de personas de todas partes del mundo han disfrutado de un desayuno con chocolate bajo la sombra de gigantescos árboles legendarios. Hemos sembrado árboles con nuestras propias manos, los hemos visto crecer. Nuestros abuelos y padres conversaban sobre el futuro, encontraban inspiración y tomaron decisiones transcendentales bajo los árboles. Las grandes conversaciones de nuestros antepasados no sucedieron en una oficina con traje y corbata; ocurrieron bajo los árboles de cacao, vistiendo poncho y sombrero.</p>
-<p>En nuestro bosque de cacao en Necocli, muchos hemos sido testigos de la sombra del mítico Campano; de las conversaciones que allí han acontecido. Bajo los árboles, hemos soñado, hemos reído y hemos llorado. Allí hemos encontrado algo de nuestra humanidad, nos hemos conectado con nuestra raíz, con nuestra cultura, con nuestra historia. Bajo los árboles hemos olvidado nuestros títulos y nuestra condición social, hemos sido iguales y sinceros, hemos entendido lo importante. Bajo los árboles hemos compartido nuestras diferencias, hemos innovado. Bajo los árboles, seguirá siendo nuestro lugar preferido para pensar el futuro, para conversar.</p>
+    content: `<p>Our existence is condensed into a collection of moments, experiences, anecdotes, and conversations.  For us, it is the latter that makes things happen; memorable events that you never forget, events that transcend, that mark the difference and change the world. At Luker Chocolate, we believe that memorable conversations do not happen just anywhere. Ours, for example, have taken place under a tree.</p>
+<p>Most of the people that work here grew up under cocoa trees, just like the thousands of farmers that work with us today spend much of their lives in their shade. At Granja Luker, our cocoa research centre, visitors from all over the world have been able to have hot chocolate for breakfast under gigantic legendary trees, many of which they have planted with their own hands.</p>
+<p>But why do we place so much importance on the trees? Because the great conversations of our grandparents and parents on the future, those from which they found inspiration and made transcendental decisions, did not take place in an office with them dressed in a suit and tie; quite the contrary, they took place under the leaves of trees as they wore their ponchos and hats.</p>
+<p>In our Cocoa Forest in Necoclí, we have been witness to the shade of the mythic Campano; an old tree that has sheltered different communities for generations, from the indigenous to the cocoa farmers, offering a space in its shade where people could sit to converse. We have dreamt, laughed, and cried under this tree.  We have found something relating to our humanity, we have connected with our roots, culture, and history. It is under this tree that we have forgotten our titles and our social condition, we have been equal; we have been sincere, we have confessed our greatest secrets and happily shared our differences.</p>
 <img src="/static/media/bosque-necocli.12b8874a.jpg" alt="Necoclí Forest">
-<p>Hemos sido chocolateros en Colombia hace 113 años y, aun así, a veces olvidamos que es gracias a un fruto, a un árbol, que podemos hacer lo que hacemos. No hay árboles de cacao en Suiza, en Bélgica o en Francia. Están aquí, junto a nosotros, hacen parte de nuestra historia.</p>
+<p>We have been chocolatiers in Colombia for 113 years and, even so, sometimes we forget that it is thanks to a tree that we can do what we do. There are no cocoa trees in Switzerland, in Belgium or France. They are here in Colombia, and they are part of our history.</p>
 <img src="/static/media/cocoa-forest-friends.64e7c5c5.jpg" alt="Cocoa friends">
-<p>Este espacio ha sido creado para conversar, como si estuviéramos bajo la sombra de un árbol.</p>
+<p>We hope that the readers of this blog find an open space in which to talk and to share and build ideas. A safe place, where they can take off their masks as though they were under the shade of a great tree.</p>
 `,
     autor: { name: 'SERGIO RESTREPO', avatar: 'https://media.licdn.com/dms/image/C4E03AQEU_fSBYnqwnw/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=pqJb74EtssHW43ajcC8aeRAErFY_wdDFWW8NCbfjXzE', details: 'Marketing Vice-president', description: 'I see chocolate as a tool of change. I am interested in sharing experiences with entrepreneurs, entrepreneurs and leaders who bet and believe in disruptive innovation, in shared value, in technology and in putting people at the center of the conversation.', linkedin: ['https://www.linkedin.com/in/sergiorestrepogutierrez/', 'Sergio Restrepo'] },
     recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
@@ -532,23 +827,23 @@ export const articles = [
   {
     breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/create-shared-value', name: 'Create shared value' }],
     url: 'in-the-shoes-of-the-cocoa-farmers-of-huila-part-one',
-    title: 'EN LOS ZAPATOS DE: LOS CACAOCULTORES DEL HUILA',
+    title: 'IN THE SHOES OF: THE COCOA FARMERS OF HUILA PART ONE',
     cover: 'banner-julio.jpg',
     date: 'JULY 2019',
-    content: `<p>Tres de nuestros colaboradores se fueron a la región del Huila a vivir como cacaocultores y de ahí nació esta serie. En esta primera historia José Maldonado, Analista de Abastecimiento sostenible, nos cuenta su experiencia.</p>
-<p>Desde muy pequeño, el campo y yo hemos sido inseparables. Mi abuelo paterno es veterinario y ha sido productor de leche toda su vida; mientras que mi abuelo materno es caficultor, como lo fueron sus antepasados por varias generaciones. Siempre me he sentido orgulloso del campo colombiano y me he identificado como parte de este; tanto así, que más de una vez he dicho con la cabeza en alto “yo soy del campo”.</p>
-<p>Creí tener experiencia, pero después de pasar dos semanas acompañando a diferentes familias cacaocultoras del Huila, me di cuenta de que no podía estar más equivocado. Para ser del campo hace falta valentía y sacrificio, pero ante todo, hace falta tener un corazón gigante y estar profundamente enamorado de la tierra y sus tradiciones.</p>
-<p>En esta travesía conocí muchas personas, pero las historias que a continuación voy a contar, pertenecen a personas que me dejaron grandes lecciones de vida.</p>
-<p>El primero fue Pedro Nel Córdoba; él nos recibió en el aeropuerto de Neiva y nos dio la bienvenida. Este opita de acento cantado es el representante de Desarrollo Agrícola de Luker Chocolate para los departamentos de Huila, Tolima, Putumayo y Caquetá. No hay proveedor, finca o asociación donde no lo saluden con un fuerte abrazo y con la calidez de un hermano que vuelve a casa. Pedro conoce y entiende su tierra a la perfección, pues lleno de orgullo recuerda frecuentemente que él creció en el campo y que sus padres lo educaron a él y a 5 hermanos con los frutos de 1 hectárea de cacao. Él sabe bien lo que es luchar y trabajar por una finca que, por más pequeña que sea, es la esencia y el fruto de vida que mantiene a miles de familias campesinas en Colombia.</p>
-<p>El equipo de trabajo liderado por Pedro estaba listo para emprender nuestra travesía de 2 semanas por este hermoso departamento. Comenzamos en el municipio de Rivera; en este lugar visitamos tres familias pertenecientes a la Asociación de Productores de Cacao del Municipio de Rivera (). Tuve la fortuna de visitar la finca de Doña Carmen, una mujer de 82 años, pero con corazón y alma de 20. Ella es la matrona de su familia y se enorgullece de ser la cabeza de cuatro generaciones, pero aún más, de ver a sus hijos teniendo éxito gracias a la vida y educación que les pudo brindar con las 3 hectáreas de cacao que trabajó por tantos años con su difunto esposo.</p>
-<p>La casa de Doña Carmen queda justo al lado de su plantación de cacao. Es un hogar lleno de amor y detalles; se pueden ver diferentes imágenes católicas y fotografías con su familia. En la visita, recorrimos todo su cultivo y, planta por planta, esta mujer nos iba mostrando lo duro que trabaja por sus árboles de cacao y lo mucho que los conoce.</p>
-<p>El día siguiente fue revelador, pues se debía hacer la recolección y el desgranado de las mazorcas de cacao. Dos trabajadores eran los encargados de recolectarlas y además había un equipo de desgranado, del cual nosotros hacíamos parte. Lo que parecía una tarea sencilla, terminó siendo extenuante. En el lapso de una hora tuve que parar dos veces, ponerme de pie, estirar y esperar a que se me pasara el dolor de espalda. Mientras tanto, Doña Carmen, con sus 82 años, no se quejó ni una sola vez y solo se detuvo para almorzar. Ella simplemente se reía al vernos luchar para completar la tarea. Así aprendí que la fortaleza y el carácter de la gente del Huila son admirables.</p>
-<p>Nuestra siguiente parada fue el municipio vecino de Campoalegre, la capital arrocera del Huila. Una región con vocación agrícola y marcada por unos valles hermosos con diversos tipos de cultivos. En este lugar me marcó particularmente una finca en una zona montañosa, en donde comienza a predominar el café. Allí conocimos a Doña Concha, su hijo Gentil y a quien me daría una gran lección de vida: Samuel. Este hombre de tez morena, buen bigote, una alegría contagiosa y 35 años mal calculados, tiene su propio cultivo de maíz y cilantro en la finca y fue uno de nuestros guías.</p>
-<p>Samuel es ciego desde hace 8 años, pero nosotros no podíamos creerlo, y no fue porque dudáramos de su palabra, sino porque la forma en la que se ubica dentro de la finca es irreal. Nunca se pierde e incluso transita caminos muy peligrosos completamente solo. Lo más increíble de este hombre es su actitud. En un momento le preguntaron si había sido muy difícil recobrar su vida después de perder la vista y respondió, tranquilamente, “un poquito, no más”.</p>
-<p>Después de recorrer esta región del Huila, emprendimos un camino de unos 86 kilómetros hacia el sur del departamento. Recorrimos las orillas del Río Magdalena y la gigantesca Represa del Quimbo hasta nuestro último destino: Garzón. Este municipio es un importante foco cafetero de Colombia y una gran despensa agrícola para la región; además, se ha convertido en un punto muy importante de recolección de cacao para Luker Chocolate. Aquí fue donde tuve el encuentro más significativo y quizás el que más me inspiró a seguir trabajando por los cacaocultores de Colombia.</p>
-<p>En el penúltimo día de nuestra travesía, fuimos a la vereda Majo. En este lugar conocimos la finca de Don Ismael, un hombre de aproximadamente 80 años y oriundo de la región. Nuestro anfitrión principal fue “Chucho”, uno de sus hijos quien cuida de él y lo ayuda con las labores de la plantación de cacao. Tuvimos la oportunidad de ayudarlos en la jornada de trabajo recogiendo las mazorcas de cacao maduras durante toda la mañana. Fue hasta el final de la jornada, y después de disfrutar de un sancocho campesino, que llegó el personaje que tanto me marcó.</p>
-<p>Por la parte trasera de la casa entró un niño de unos 12 años, pelirrojo y lleno de pecas. Vestía un jean hasta las rodillas, una esqueleto blanco, una resortera cruzada en su pecho y unas botas de caucho. Traía un balde lleno de pescados pequeños que acababa de atrapar en un río cercarno. Parecía un Tom Sawyer colombiano, un niño aventurero de esos en peligro de extinción. Sin pensarlo, se acercó a nosotros a mostrarnos la pesca del día y nos comenzó a hablar de todo lo que hacía después de ir al colegio. Su nombre es Wilmer y es el nieto de Don Ismael. Me hizo un recorrido para mostrarme su cultivo de cebolla, unos patos que está criando y finalmente, lleno de orgullo, me mostró su propio árbol de cacao. En ese momento pensé: “el campo colombiano sí tiene un gran futuro y por niños como él es que debemos seguir trabajando”.</p>
-<p>Wilmer es un niño emprendedor y curioso. A muy temprana edad empezó a ayudar a su mamá, pues su padre los abandonó cuando él era solo un bebé. Pero esto nunca lo detuvo. Su forma de ver la vida, de apreciar el agro, sus ganas de salir adelante y el modo en el que ayuda a su familia, me marcaron de una forma indescriptible.</p>
+    content: `<p>This series is based on the experience of three of our collaborators who went to Huila to live and work as cocoa farmers. In this first story, José Maldonado, Sustainable Supply Analyst, tells us about his experience.</p>
+<p>From a very young age, the countryside and I have been inseparable. My paternal grandfather is a veterinarian and has been a milk producer all his life, while my maternal grandfather is a coffee farmer, as were his ancestors for several generations. I’ve always been proud of the Colombian countryside and I’ve identified myself as part of it, so much so that I have often told people that I am from the countryside with my head held high.</p>
+<p>I thought I had a lot of experience, but after spending two weeks accompanying different cocoa farming families in Huila, I realized I couldn’t be more in the wrong. To be from the countryside requires courage and sacrifice, but above all, you need to have a giant heart and be deeply in love with the land and its traditions.</p>
+<p>On this journey, I met many people, but the stories that I am going to tell below belong to people who taught me great life lessons.</p>
+<p>The first was Pedro Nel Córdoba; he met us at the Neiva airport and welcomed us. This Opita with his sung accent is the representative of Luker Chocolate’s Agricultural Development department for Huila, Tolima, Putumayo and Caquetá. There is no supplier, farm or association where he is not greeted with a big hug and like a brother returning home. Pedro knows and understands his land perfectly, because, full of pride, he often recalls that he grew up in the countryside and that his parents raised him and 5 brothers with the produce of 1 hectare of cocoa. He knows what it means to fight and work for a farm that, no matter how small, is the essence and source of life that sustains thousands of farmer families in Colombia.</p>
+<p>The team led by Pedro was ready to embark on our 2-week journey through this beautiful department. We started in the municipality of Rivera, where we visited three families belonging to the Association of Cocoa Producers of the Municipality of Rivera (ASOPROCAR). I was fortunate enough to visit Doña Carmen’s farm, an 82-year-old woman, but with the heart and soul of a 20-year old. She is the matron of her family and is proud to be the head of four generations, but even more so, to see her children succeeding thanks to the life and education she was able to give them with the 3 hectares of cocoa that she worked on for so many years with her late husband.</p>
+<p>Doña Carmen’s house is right next to her cocoa plantation. It is a home full of love and particulars; it is full of Catholic images and photographs with her family. During the visit, we toured all of her plantation and, plant by plant, this woman showed us how hard she works for her cocoa trees and how well she knows them.</p>
+<p>The following day was revelatory, as it was time to harvest and shell the cocoa pods. Two workers were in charge of collecting them and there was also a shelling team, which we were part of. What seemed like a simple task turned out to be exhausting. In an hour, I had to stop twice, stand up, stretch and wait for my back pain to pass. Meanwhile, Doña Carmen, 82, did not complain once and only stopped for lunch. She just laughed when she saw us struggling to complete the task. That’s how I learned about the admirable strength and character of the people of Huila.</p>
+<p>Our next stop was the neighbouring municipality of Campoalegre, the rice capital of Huila. A region with an agricultural vocation, marked by beautiful valleys with different types of crops. In this place, I was particularly marked by a farm in a mountainous area, where coffee is beginning to predominate. There we met Doña Concha, her son Gentil, and the person who would give me a great life lesson: Samuel. This more or less 35-year-old dark-skinned man, with a well-groomed moustache and an infectious joy, has his own corn and coriander crop on the farm and was one of our guides.</p>
+<p>Samuel has been blind for 8 years, but we could not believe it, and it was not because we doubted his word, but because of the way in which he finds his way around the farm. He never gets lost and even walks very dangerous roads all by himself. The most incredible thing about this man is his attitude. At one point, he was asked if it had been very difficult to regain his life after losing his sight, and he quietly replied, “Only a little”.</p>
+<p>After touring Huila, we set out on a road of about 86 kilometres to the south of the department. We travelled along the banks of the Magdalena River and the giant Quimbo Dam until our last destination: Garzón. This municipality is an important coffee-growing centre in Colombia and a great agricultural pantry for the region. It has also become a very important cocoa collection point for Luker Chocolate. This is where I had the most significant encounter and perhaps the one that inspired me the most to continue to work for the cocoa farmers of Colombia.</p>
+<p>On the penultimate day of our journey, we went to the Majo trail to visit Don Ismael’s farm. Don Ismael is approximately 80 years old and native of the region. Our main host was “Chucho”, one of his sons who takes care of him and helps him with the work on the cocoa plantation. We had the opportunity to help them during the working day by collecting the ripe cocoa cobs throughout the morning. It wasn’t until the end of the day, and after enjoying a nice sancocho, that the character that influenced me immensely arrived.</p>
+<p>A 12-year-old boy, redheaded and full of freckles, came in from the back door. He wore knee-length jeans, a white vest, a slingshot across his chest, and rubber boots. He brought a bucket full of small fish he had just caught in a nearby river. He looked like a Colombian Tom Sawyer, an adventurous child; one of those that are in danger of extinction. Without thinking about it, he approached us to show us the catch of the day and began to talk to us about everything he did after school. His name is Wilmer and he’s Don Ismael’s grandson. He took me on a tour to show me his onion crop, some ducks he is raising, and finally, full of pride, he showed me his own cocoa tree. A thought came into my head: “the Colombian countryside does have a great future and it is because of children like him that we must continue to work”.</p>
+<p>Wilmer is an enterprising and curious child. At a very early age, he began to help his mother, as their father left them when he was just a baby. But this never stopped him. His way of seeing life, of appreciating agriculture, his desire to get ahead and the way he helps his family, marked me in an indescribable way.</p>
 `,
     autor: {
       name: 'JOSÉ MALDONADO', avatar: 'https://media.licdn.com/dms/image/C5603AQGWmXeWsufD9Q/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=sPc6xh78N7oYmS61XLxym_XcKLYzzBJ9PSp5kyFCPQk', details: 'SUSTAINABLE SUPPLY ANALYST', description: 'Sustainable Supply Analyst for Luker Chocolate, focused on agricultural development and sustainability projects of the company\'s value chain.Project leader for organizations of cocoa producers and small- scale farmers.', linkedin: ['https://www.linkedin.com/in/jos%C3%A9-miguel-maldonado-v%C3%A9lez-79a818114/', 'Jose Maldonado']
@@ -1025,7 +1320,7 @@ It’s coming, the Festival’s coming. The families come together, each and eve
     },
     recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
   }
-].reverse();
+]
 export const countries = [
   {
     name: 'ARGENTINA',

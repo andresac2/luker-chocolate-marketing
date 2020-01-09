@@ -20,7 +20,8 @@ i18n
   .use(reactI18nextModule) // passes i18n down to react-i18next
   .init({
     resources,
-    fallbackLng: localStorage.getItem('lukerLng') || 'en', // use en if detected lng is not available
+    lng: "en",
+    fallbackLng: 'en', // localStorage.getItem('lukerLng') || use en if detected lng is not available
 
     keySeparator: ".", // we do not use keys in form messages.welcome
 

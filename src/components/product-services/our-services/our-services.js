@@ -3,14 +3,18 @@ import ContactSide from '../../layout/contact-side/contact-side';
 import { ReactComponent as Back } from "../../../assets/img/back.svg"
 import { Link } from 'react-router-dom';
 import { withNamespaces } from 'react-i18next';
+import i18n from '../../../i18n';
 import { T } from 'antd/lib/upload/utils';
+
+import { designProcess as designProcessEn, itemsOurServices as itemsOurServicesEn } from '../../../commons/data/data-en';
+import { designProcess as designProcessEs, itemsOurServices as itemsOurServicesEs } from '../../../commons/data/data-es';
 
 class OurServices extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       dpSelected: 0,
-      designProcess: ['ANALYSING THE MAIN TRENDS OF THE GLOBAL CHOCOLATE MARKET', 'UNDERSTANDING THE TARGET CONSUMER', 'PRODUCT BENCHMARKING WITHIN THE TARGET CATEGORY', 'CREATING PROTOTYPE PRODUCT PROPOSALS ACCORDING TO OUR FINDINGS AND GUIDANCE UNTIL WE DEFINE THE FINAL PRODUCT', 'CONCEPTUALIZATION OF THE END PRODUCT']
+      designProcess: i18n.language === 'en' ? designProcessEn : designProcessEs
     }
   }
 
@@ -30,18 +34,7 @@ class OurServices extends React.Component {
     const altImg = 'img-example.svg';
     const { dpSelected, designProcess } = this.state;
     const { t } = this.props;
-    const items = [{
-      img: 'our-product-2.jpg',
-      title: 'FORMULATION',
-    },
-    {
-      img: 'product-cover.jpg',
-      title: 'PACKAGING DESIGN',
-    },
-    {
-      img: 'productoCar.jpg',
-      title: 'MANUFACTURING',
-    }];
+    const items = i18n.language === 'en' ? itemsOurServicesEn : itemsOurServicesEs;
 
     return (
       <div className="our-services-component" >

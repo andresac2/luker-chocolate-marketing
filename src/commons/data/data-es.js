@@ -1,48 +1,48 @@
 export const articlesSustain = [{
   img: 'costal-luker.jpg',
   flag: 'us',
-  title: 'Jobs',
+  title: 'Empleos',
   badges: ['gender-equality.png', 'decent-work.png'],
-  content: 'Thanks to our sustainability efforts, we’ve generated a total of 232 formal jobs in the community with 0% of child labor. We also generated 617 formal jobs in Bogotá and 71% of those positions are filled by millennials, guaranteeing as well 0% of child labor.<p></p>'
+  content: 'Gracias a nuestros esfuerzos de sostenibilidad, hemos generado un total de 232 empleos formales en la comunidad con 0% del trabajo infantil. También, generamos 617 empleos formales en Bogotá y el 71% de esos puestos son ocupados por la generación del milenio, lo que garantiza el 0% del trabajo infantil.<p></p>'
 },
 {
   img: 'arauca-river.jpg',
   flag: 'us',
-  title: 'SMALL-SCALE FARMERS',
+  title: 'PEQUEÑOS AGRICULTORES',
   badges: ['no-poverty.png', 'decent-work.png', 'reduced-inequalities.png'],
-  content: 'We are committed to small-scale farmers, which is why we have established a network of alliances with over 50 cocoa growers associations allowing us to guarantee the purchase of the entire harvest of each association, helping to create the maximum value possible for the farmers and their families. We buy directly from 65 associations and more than 7500 Colombian families. We’ve also trained around 30.000 farmers in Luker Farm and built 10 centralized milling facilities in Tumaco and have 1 currently under construction in Huila. <p></p>'
+  content: 'Estamos comprometidos con los pequeños agricultores, por eso hemos establecido una red de alianzas con más de 50 asociaciones de productores de cacao que nos permiten garantizar la compra y ayudarlos a crear el máximo valor posible para los agricultores y sus familias. Compramos directamente de 65 asociaciones y más de 7,500 familias colombianas. También capacitamos a alrededor de 30,000 agricultores en la Granja Luker y construimos 10 instalaciones centralizadas de poscosecha en Tumaco, tenemos una actualmente en construcción en Huila y una en Necoclí.<p></p>'
 },
 {
   img: 'cocoa-tree.jpg',
   flag: 'us',
-  title: 'Community',
+  title: 'COMUNIDAD',
   badges: ['no-poverty.png', 'decent-work.png', 'reduced-inequalities.png'],
-  content: 'We support our cocoa producers and their communities by implementing wide impact actions that not only improve farmers’ economic situation but also benefit the stability of their families. So far, we’ve intervened 6 schools with the new school model and renovated 280 square meters of them. 600 people have been trained in entrepreneurship with a focus on gender studies and 600 students have been trained in academic and emotional skills.<p></p>Furthermore, 300 young people have been trained in technical programs, 60 adults have been trained in reading and math, and 300 teachers were trained in resilience and socio-emotional skills with 70 international and national volunteers, which led to the construction of 1 social innovation center.'
+  content: 'Apoyamos a nuestros productores de cacao y sus comunidades mediante la implementación de acciones de amplio impacto que no solo mejoran la situación económica de los agricultores sino que también benefician la estabilidad de sus familias. Hasta ahora, hemos intervenido 6 escuelas con el nuevo modelo Escuela Nueva y hemos renovado 280 metros cuadrados de ellas. 600 personas han sido capacitadas en emprendimiento con un enfoque en estudios de género y 600 estudiantes han sido capacitados en habilidades académicas y emocionales.<p>Además, 300 jóvenes se han capacitado en programas técnicos, 60 adultos se han capacitado en lectura y matemáticas, y 300 maestros se capacitaron en resiliencia y habilidades socioemocionales con 70 voluntarios internacionales y nacionales, lo que condujo a la construcción de 1 centro de innovación social.</p>'
 },
 {
   img: 'enviromental.jpg',
   flag: 'us',
-  title: 'Environmental',
+  title: 'AMBIENTAL',
   badges: ['responsible-consumption.png', 'climate-action.png'],
-  content: 'We know that reforestation attracts new species that can then be protected. That’s why with our environmental transformation strategies we have improved the conservation and care of 7 vulnerable species through the plantation of 600.000 new trees in agroforestry systems. The plantations have brought back species that had disappeared from the area. Whatsmore, we also participate in the 0 deforestation agreement “Cocoa, Forest and Peace initiative” led by the World Cocoa Foundation.<p></p>'
+  content: 'Sabemos que la reforestación atrae nuevas especies que luego pueden protegerse. Es por eso que con nuestras estrategias de transformación ambiental hemos mejorado la conservación y el cuidado de 7 especies vulnerables a través de la plantación de 600,000 nuevos árboles en sistemas agroforestales. Las plantaciones han traído de vuelta especies que habían desaparecido del área. Además, también participamos en el acuerdo de 0 deforestación de la “Iniciativa de cacao, bosques y paz” liderado por la Fundación Mundial del Cacao.<p></p>'
 },
 {
   img: 'cocoa-forest.jpg',
   flag: 'us',
-  title: 'Cocoa forest',
+  title: 'BOSQUES DE CACAO',
   badges: ['no-poverty.png', 'gender-equality.png', 'decent-work.png', 'reduced-inequalities.png', 'responsible-consumption.png', 'climate-action.png'],
   content: `
-        Back in 2011, we decided to implement a new strategy by planting our own crops in order to reach the following goals.
+        En 2011, decidimos implementar una nueva estrategia plantando nuestros propios cultivos para alcanzar los siguientes objetivos.
         <p></p>
         <ul>
-          <li>Demonstrate that it was possible to have productive and profitable agroforestry plantations with the best varieties of Cacao Fino de Aroma, reforesting the countryside and enabling the return of various species of animals and birds.</li>
-          <li>Demonstrate the social and environmental transformational power of a corporate crop when implemented in areas that were traditionally victims of the conflict.</li>
+          <li>Demostrar que era posible tener plantaciones agroforestales productivas y rentables con las mejores variedades de Cacao Fino de Aroma, reforestando el campo y permitiendo el retorno de varias especies de animales y aves.</li>
+          <li>Demostrar el poder transformador social y ambiental de un cultivo corporativo cuando se implementa en áreas que tradicionalmente fueron víctimas del conflicto.</li>
         </ul>
         <p></p>        
-        This new approach allowed us to fully integrate the value chain and create better social and environmental wellbeing in the territories in which we were working. 
-        This project began in Necoclí, Urabá Antioqueño, with 550 hectares of cocoa in what used to be a livestock farm. In 2017, this model was replicated in Casanare, with 1000 hectares of cocoa, in what used to be a palm farm, creating a unique agroforestry system where both species coexist and in 2019, we began a 45-hectare agroforestry system in Huila.
+        Este nuevo enfoque nos permitió integrar completamente la cadena de valor y crear un mejor bienestar social y ambiental en los territorios en los que estábamos trabajando. Este proyecto comenzó en Necoclí, Urabá Antioqueño, con 550 hectáreas de cacao en lo que solía ser una granja ganadera. En 2017, este modelo fue replicado en Casanare, con 1000 hectáreas de cacao, en lo que solía ser una granja de palmeras, creando un sistema agroforestal único donde ambas especies coexisten; y en 2019, comenzamos un sistema agroforestal de 45 hectáreas en Huila.
+        Este proyecto comenzó en Necoclí, Urabá Antioqueño, con 550 hectáreas de cacao en lo que solía ser una granja ganadera. En 2017, este modelo fue replicado en Casanare, con 1000 hectáreas de cacao, en lo que solía ser una granja de palmeras, creando un sistema agroforestal único donde ambas especies coexisten; en 2019, comenzamos un sistema agroforestal de 45 hectáreas en Huila.
         <p></p>
-        The purpose of these projects is to take agricultural and social development to the communities in each of the regions in which we grow our cocoa and to come up with innovative solutions that are supported by our clients and partners. So far, we’ve accomplished to set up a total of 3 business crops with 1600 hectares planted sustainably in 3 regions of the country and we’ve projected a catch of 33,925 tons of Co2 per year in our crops.
+        El propósito de estos proyectos es llevar el desarrollo agrícola y social a las comunidades en cada una de las regiones en las que cultivamos nuestro cacao y encontrar soluciones innovadoras que sean respaldadas por nuestros clientes y socios. Hasta ahora, hemos logrado establecer un total de 3 cultivos comerciales con 1,600 hectáreas plantadas de manera sostenible en 3 regiones del país y hemos proyectado una captura de 33,925 toneladas de CO2 por año en nuestros cultivos.
         `
 }]
 export const finishedChocolateProducts = [
@@ -54,17 +54,17 @@ export const finishedChocolateProducts = [
   },
   {
     img: 'cocoa-dosing.png',
-    name: 'DOSIFICACIÓN',
+    name: 'Dosificación',
     id: 'dosing',
     description: 'A través de un depósito de chocolate impulsado por bomba, tenemos la capacidad de hacer chips, gotas y trozos Jugando con la dosis podemos ofrecer diferentes tamaños de estos productos.'
   }, {
     img: 'cocoa-bars.png',
-    name: 'MOLDURA',
+    name: 'Moldura',
     id: 'moulding',
     description: 'Llevamos siete moldes existentes diferentes. Al combinar la producción manual y la máquina, podemos implementar requisitos de empaque muy específicos. A continuación se muestra una selección de nuestros moldes y opciones de embalaje.'
   }, {
     img: 'cocoa-powder.png',
-    name: 'CACAO EN POLVO',
+    name: 'Cacao en polvo',
     id: 'cocoa-powder',
     description: 'Nuestro cacao en polvo es hecho con los mejores granos de Cacao Fino de Aroma. Perfecto para tomar en una deliciosa taza con leche caliente o para combinar en una receta chocolatosa. Puede ser utilizada como ingrediente para saborizar helados, tortas, postres y ganache. Es un producto saludable, libre de azúcar y colesterol.'
   }];
@@ -74,59 +74,150 @@ export const ingredients = [
     name: 'CasaLuker Cacao',
     subtitle: 'LOS MEJORES INGREDIENTES',
     id: 'casaluker-cacao',
-    description: 'The meticulous selection of ingredients is essential to achieve the unique sensory profile that characterizes our chocolate.We select the best Cacao Fino de Aroma cocoa beans from Colombia, Ecuador, and Peru.We also use 100% natural cocoa butter and vanilla for our couverture with an exquisite and particular flavor, ideal for chocolate products of all kinds.'
+    description: 'he meticulous selection of ingredients is essential to achieve the unique sensory profile that characterizes our chocolate.We select the best Cacao Fino de Aroma cocoa beans from Colombia, Ecuador, and Peru.We also use 100% natural cocoa butter and vanilla for our couverture with an exquisite and particular flavor, ideal for chocolate products of all kinds.'
   },
   {
     img: 'p-huila-70.png',
     name: 'Luker 1906',
-    subtitle: 'Single origin chocolates',
+    subtitle: 'CHOCOLATES DE ORIGEN',
     id: 'casaluker-origins',
-    description: 'Luker 1906 has a unique flavour that is given by the pureness of its origins. Made from selected beans from the different Cacao Fino de Aroma cocoa growing regions and countries, its flavour does not only reflect the cocoa variety, but also the richness of the soil and the cocoa harvesting and growing culture of its region. Luker 1906, a treat for the senses.'
+    description: 'Los chocolates de origen único de CasaLuker 1906 tienen un sabor particular que se debe a la pureza de sus orígenes. Elaborado a partir de granos seleccionados de las diferentes regiones y países productores de Cacao Fino de Aroma, su sabor no solo refleja la variedad de cacao, sino también la riqueza del suelo y la cultura de cultivo de cacao de su región. CasaLuker 1906, una delicia para los sentidos.'
   }, {
     img: 'luker-maracas.png',
     name: 'Luker Maracas',
-    subtitle: 'Chocolate Dragees',
+    subtitle: 'GRAGEAS DE CHOCOLATE',
     id: 'casaluker-maracas',
-    description: 'In the same way as that magical seductive instrument that characterises the happy upbeat feel of the tropics with its sweet and varied rhythm, Luker Maracas presents a new range of chocolate-covered dragees. Filled with roasted coffee, roasted cocoa and sweet tropical fruits, these delightful dragees are covered in our finest Fino de Aroma chocolate. Luker Maracas, Tropical Dragees are ideal for decorating desserts and cakes, to include in preparations, as toppings for ice - cream or simply to give that special touch to your recipes.They are also a good accompaniment for coffee and other hot drinks; they can be mixed in with cereals and dried fruit to prepare delicious, healthy snacks.'
+    description: 'CasaLuker Maracas, Tropical Dragees son grageas ideales para decorar postres y tortas, como inclusión en preparaciones, topping para helados o simplemente para darle un toque especial a sus recetas. También pueden acompañar cafés y bebidas calientes, mezclarse con cereales y frutos secos para elaborar snacks saludables.'
   }];
 export const itemsOrigins = [{
   id: 1,
   img: 'p-tumaco.png',
-  description: 'DARK TUMACO 65%',
+  description: 'DARK TUMACO',
+  cocoaContent: '65%',
+  viscosity: 3,
+  fluid: 5,
+  viscous: 1,
+  data: [{
+    key: 1,
+    enrobing: true,
+    decorativeFigures: true,
+    moulding: true,
+    fillingsGanaches: true,
+    decorating: true,
+    desserts: true
+  }],
   selected: false
 }, {
   id: 2,
   img: 'p-tumaco-85.png',
-  description: 'EXTRA DARK TUMACO 85%',
+  description: 'EXTRA DARK TUMACO',
+  cocoaContent: '85%',
+  viscosity: 4,
+  fluid: 5,
+  viscous: 1,
+  data: [{
+    key: 1,
+    enrobing: true,
+    decorativeFigures: false,
+    moulding: true,
+    fillingsGanaches: false,
+    decorating: true,
+    desserts: false
+  }],
   selected: false
 },
 {
   id: 3,
   img: 'p-huila-65.png',
-  description: 'DARK HUILA 65%',
+  description: 'DARK HUILA',
+  cocoaContent: '65%',
+  viscosity: 3,
+  fluid: 5,
+  viscous: 1,
+  data: [{
+    key: 1,
+    enrobing: true,
+    decorativeFigures: true,
+    moulding: true,
+    fillingsGanaches: true,
+    decorating: true,
+    desserts: true
+  }],
   selected: false
 }, {
   id: 4,
   img: 'p-huila-70.png',
-  description: 'DARK HUILA 70%',
+  description: 'DARK HUILA',
+  cocoaContent: '70%',
+  viscosity: 4,
+  fluid: 5,
+  viscous: 1,
+  data: [{
+    key: 1,
+    enrobing: true,
+    decorativeFigures: false,
+    moulding: true,
+    fillingsGanaches: true,
+    decorating: true,
+    desserts: true
+  }],
   selected: false
 },
 {
   id: 5,
   img: 'p-santander-65.png',
-  description: 'DARK SANTANDER 65%',
+  description: 'DARK SANTANDER',
+  cocoaContent: '65%',
+  viscosity: 3,
+  fluid: 5,
+  viscous: 1,
+  data: [{
+    key: 1,
+    enrobing: true,
+    decorativeFigures: true,
+    moulding: true,
+    fillingsGanaches: true,
+    decorating: true,
+    desserts: true
+  }],
   selected: false
 },
 {
   id: 6,
   img: 'p-sanmartin-72.png',
-  description: 'DARK SAN MARTIN 72%',
+  description: 'DARK SAN MARTIN',
+  cocoaContent: '72%',
+  viscosity: 4,
+  fluid: 5,
+  viscous: 1,
+  data: [{
+    key: 1,
+    enrobing: true,
+    decorativeFigures: true,
+    moulding: true,
+    fillingsGanaches: true,
+    decorating: true,
+    desserts: true
+  }],
   selected: false
 },
 {
   id: 7,
   img: 'p-arauca-55.png',
-  description: 'MILK ARAUCA 55%',
+  description: 'MILK ARAUCA',
+  cocoaContent: '55%',
+  viscosity: 5,
+  fluid: 5,
+  viscous: 1,
+  data: [{
+    key: 1,
+    enrobing: true,
+    decorativeFigures: false,
+    moulding: true,
+    fillingsGanaches: true,
+    decorating: true,
+    desserts: true
+  }],
   selected: false
 }
 ]
@@ -134,40 +225,40 @@ export const itemsMaracas = [{
   id: 1,
   img: 'chocolate-ingredients/maracas/chocolate-covered-physalis.jpg',
   description: 'dark chocolate Covered Physalis',
-  available: 'Available in: 1 kg bag or 20 kg box',
-  content: 'This tropical fruit is covered in dark chocolate creating the ideal balance between the fruit’s acidic flavour and the chocolate’s fruit and floral notes. Ideal for decorating cakes and desserts or on its own as a snack',
+  available: 'Disponible en: 1 kg bag or 20 kg box',
+  content: 'Esta fruta tropical está cubierta de chocolate negro creando el equilibrio ideal entre el sabor ácido de la fruta y las notas florales y frutales del chocolate. Ideal para decorar pasteles y postres o solo como refrigerio',
   selected: false
 },
 {
   id: 2,
   img: 'chocolate-ingredients/maracas/chocolate-covered-espresso-beans.jpg',
   description: 'dark chocolate covered espresso beans',
-  available: 'Available in: 1 kg bag or 15 kg box',
-  content: 'The perfect combination. The best Colombian coffee beans, covered in generous layers of Fino de Aroma chocolate. Their shine and oval shape makes them different to other brands of chocolate-covered coffee beans. Ideal to go with coffee, as a snack, to include in your recipes or for decoration.',
+  available: 'Disponible en: 1 kg bag or 15 kg box',
+  content: 'La combinación perfecta Los mejores granos de café colombianos, cubiertos con capas generosas de chocolate Fino de Aroma. Su brillo y forma ovalada los hace diferentes a otras marcas de granos de café cubiertos de chocolate. Ideal para acompañar con café, como snack, para incluir en tus recetas o para decoración.',
   selected: false
 },
 {
   id: 3,
   img: 'chocolate-ingredients/maracas/chocolate-covered-nib-clusters.jpg',
   description: 'dark chocolate covered nibs clusters',
-  available: 'Available in: 1 kg bag or 15 kg box',
-  content: 'Small chunks of roasted Fino de Aroma cocoa covered in dark chocolate making for a delicious crunchy chocoaltey snack. Ideal as a snack and for including in recipes.',
+  available: 'Disponible en: 1 kg bag or 15 kg box',
+  content: 'Pequeños trozos de cacao tostado Fino de Aroma cubiertos de chocolate negro que hacen un delicioso aperitivo crujiente de chocolate. Ideal como snack y para incluir en recetas.',
   selected: false
 },
 {
   id: 4,
   img: 'chocolate-ingredients/maracas/chocolate-covered-instant-coffee.jpg',
   description: 'dark chocolate covered instant coffee',
-  available: 'Available in: 1kg bag or 10 kg box',
-  content: 'The explosive flavour of coffee produces the perfect balance in this dragee. This unique flavour will dieffrentiate your products and surprise whoever tries them. Ideal for decorating cakes, desserts and ice- cream.',
+  available: 'Disponible en: 1kg bag or 10 kg box',
+  content: 'El sabor explosivo del café produce el equilibrio perfecto en esta gragea. Este sabor único diferenciará sus productos y sorprenderá a quien los pruebe. Ideal para decorar pasteles, postres y helados.',
   selected: false
 },
 {
   id: 5,
   img: 'chocolate-ingredients/maracas/chocolate-covered-nibs.jpg',
   description: 'dark chocolate covered nibs',
-  available: 'Available in: 1 kg bag or 10 kg box',
-  content: 'Small chunks of the best Fino de Aroma cocoa, roasted and covered in dark chocolate. Ideal for decorating cakes and desserts or on its own as a snack.',
+  available: 'Disponible en: 1 kg bag or 10 kg box',
+  content: 'Pequeños trozos del mejor cacao Fino de Aroma, tostados y cubiertos de chocolate negro. Ideal para decorar pasteles y postres o solo como refrigerio.',
   selected: false
 }
 ]
@@ -178,37 +269,121 @@ export const itemsCacao = [{
   items: [{
     id: 1,
     img: 'milk-atlantico-33.png',
-    description: ['ATLÁNTICO 33.5%', 'MILK 28%'],
+    description: 'ATLÁNTICO',
+    cocoaContent: '33.5%',
+    milkContent: '28%',
+    viscosity: 3,
+    fluid: 5,
+    viscous: 1,
+    data: [{
+      key: 1,
+      enrobing: false,
+      decorativeFigures: true,
+      moulding: true,
+      fillingsGanaches: true,
+      decorating: true,
+      desserts: true
+    }],
     selected: false
   },
   {
     id: 2,
     img: 'milk-mulata-37.png',
-    description: ['MULATA SUGAR FREE 37%', 'MILK 23%'],
+    description: 'MULATA SUGAR FREE',
+    cocoaContent: '37%',
+    milkContent: '23%',
+    viscosity: 3,
+    fluid: 5,
+    viscous: 1,
+    data: [{
+      key: 1,
+      enrobing: true,
+      decorativeFigures: true,
+      moulding: true,
+      fillingsGanaches: true,
+      decorating: true,
+      desserts: true
+    }],
     selected: false
   },
   {
     id: 3,
     img: 'milk-clarodeluna-37.png',
-    description: ['CLARO DE LUNA 37%', 'MILK 10%'],
+    description: 'CLARO DE LUNA',
+    cocoaContent: '37%',
+    milkContent: '10%',
+    viscosity: 3,
+    fluid: 5,
+    viscous: 1,
+    data: [{
+      key: 1,
+      enrobing: false,
+      decorativeFigures: true,
+      moulding: true,
+      fillingsGanaches: true,
+      decorating: true,
+      desserts: true
+    }],
     selected: false
   },
   {
     id: 4,
     img: 'milk-noche-40.png',
-    description: ['NOCHE 40%', 'MILK 13%'],
+    description: 'NOCHE',
+    cocoaContent: '40%',
+    milkContent: '13%',
+    viscosity: 4,
+    fluid: 5,
+    viscous: 1,
+    data: [{
+      key: 1,
+      enrobing: true,
+      decorativeFigures: true,
+      moulding: true,
+      fillingsGanaches: true,
+      decorating: true,
+      desserts: true
+    }],
     selected: false
   },
   {
     id: 5,
     img: 'milk-heliconia-41.png',
-    description: ['HELICONIA 41%', 'MILK 19%'],
+    description: 'HELICONIA',
+    cocoaContent: '41%',
+    milkContent: '19%',
+    viscosity: 4,
+    fluid: 5,
+    viscous: 1,
+    data: [{
+      key: 1,
+      enrobing: true,
+      decorativeFigures: true,
+      moulding: true,
+      fillingsGanaches: true,
+      decorating: true,
+      desserts: true
+    }],
     selected: false
   },
   {
     id: 6,
     img: 'milk-caribe-45.png',
-    description: ['CARIBE 45%', 'MILK 20%'],
+    description: 'CARIBE',
+    cocoaContent: '45%',
+    milkContent: '20%',
+    viscosity: 4,
+    fluid: 5,
+    viscous: 1,
+    data: [{
+      key: 1,
+      enrobing: true,
+      decorativeFigures: true,
+      moulding: true,
+      fillingsGanaches: true,
+      decorating: true,
+      desserts: true
+    }],
     selected: false
   }
   ]
@@ -221,37 +396,115 @@ export const itemsCacao = [{
     {
       id: 1,
       img: 'LUKER-CACAO-VALLE50.png',
-      description: ['VALLE 50%'],
+      description: 'VALLE',
+      cocoaContent: '50%',
+      viscosity: 3,
+      fluid: 5,
+      viscous: 1,
+      data: [{
+        key: 1,
+        enrobing: true,
+        decorativeFigures: true,
+        moulding: true,
+        fillingsGanaches: true,
+        decorating: true,
+        desserts: true
+      }],
       selected: false
     },
     {
       id: 2,
       img: 'p-sombra-54.png',
-      description: ['SOMBRA 54%'],
+      description: 'SOMBRA',
+      cocoaContent: '54%',
+      viscosity: 3,
+      fluid: 5,
+      viscous: 1,
+      data: [{
+        key: 1,
+        enrobing: true,
+        decorativeFigures: true,
+        moulding: true,
+        fillingsGanaches: true,
+        decorating: true,
+        desserts: true
+      }],
       selected: false
     },
     {
       id: 3,
       img: 'luker-cumbre-58.png',
-      description: ['CUMBRE 58%'],
+      description: 'CUMBRE',
+      cocoaContent: '58%',
+      viscosity: 3,
+      fluid: 5,
+      viscous: 1,
+      data: [{
+        key: 1,
+        enrobing: false,
+        decorativeFigures: true,
+        moulding: true,
+        fillingsGanaches: true,
+        decorating: true,
+        desserts: true
+      }],
       selected: false
     },
     {
       id: 4,
       img: 'LUKER-CACAO-MACONDO-60.png',
-      description: ['MACONDO 60%'],
+      description: 'MACONDO',
+      cocoaContent: '60%',
+      viscosity: 3,
+      fluid: 5,
+      viscous: 1,
+      data: [{
+        key: 1,
+        enrobing: false,
+        decorativeFigures: true,
+        moulding: true,
+        fillingsGanaches: true,
+        decorating: true,
+        desserts: true
+      }],
       selected: false
     },
     {
       id: 5,
       img: 'LUKER-CACAO-MARANTA 61.png',
-      description: ['MARANTA 61%'],
+      description: 'MARANTA',
+      cocoaContent: '61%',
+      viscosity: 4,
+      fluid: 5,
+      viscous: 1,
+      data: [{
+        key: 1,
+        enrobing: true,
+        decorativeFigures: false,
+        moulding: true,
+        fillingsGanaches: false,
+        decorating: true,
+        desserts: true
+      }],
       selected: false
     },
     {
       id: 6,
       img: 'LUKER-CACAO-PALENQUE70.png',
-      description: ['PALENQUE 70%'],
+      description: 'PALENQUE',
+      cocoaContent: '70%',
+      viscosity: 4,
+      fluid: 5,
+      viscous: 1,
+      data: [{
+        key: 1,
+        enrobing: true,
+        decorativeFigures: false,
+        moulding: true,
+        fillingsGanaches: true,
+        decorating: true,
+        desserts: true
+      }],
       selected: false
     }
   ]
@@ -263,110 +516,152 @@ export const itemsCacao = [{
   items: [{
     id: 1,
     img: 'white-glaciar.png',
-    description: ['GLACIAR 35%', 'MILK 18%'],
+    description: 'GLACIAR',
+    cocoaContent: '35%',
+    milkContent: '18%',
+    viscosity: 3,
+    fluid: 5,
+    viscous: 1,
+    data: [{
+      key: 1,
+      enrobing: false,
+      decorativeFigures: true,
+      moulding: true,
+      fillingsGanaches: true,
+      decorating: true,
+      desserts: true
+    }],
     selected: false
   },
   {
     id: 2,
     img: 'white-nevado.png',
-    description: ['NEVADO 35%', 'MILK 24%'],
+    description: 'NEVADO',
+    cocoaContent: '35%',
+    milkContent: '24%',
+    viscosity: 3,
+    fluid: 5,
+    viscous: 1,
+    data: [{
+      key: 1,
+      enrobing: true,
+      decorativeFigures: true,
+      moulding: true,
+      fillingsGanaches: true,
+      decorating: true,
+      desserts: true
+    }],
     selected: false
   },
   {
     id: 3,
     img: 'white-sierra.png',
-    description: ['SIERRA 45%', 'MILK 16%'],
+    description: 'SIERRA',
+    cocoaContent: '45%',
+    milkContent: '16%',
+    viscosity: 4,
+    fluid: 5,
+    viscous: 1,
+    data: [{
+      key: 1,
+      enrobing: false,
+      decorativeFigures: false,
+      moulding: true,
+      fillingsGanaches: false,
+      decorating: true,
+      desserts: false
+    }],
     selected: false
   }
   ]
 }]
 export const dosing = [
   { description: 'CHIPS 0,125G', img: 'chips.png', selected: false },
-  { description: 'DROPS 0,125g', img: 'drops-black.png', selected: false },
-  { description: 'DROPS 0,5G', img: 'drops-white.png', selected: false },
-  { description: 'DROPS 6g', img: 'drops-mixed.png', selected: false },
-  { description: 'CHUNKS 1 to 10 cm', img: 'chunks.png', selected: false }
+  { description: 'GOTAS 0,125g', img: 'drops-black.png', selected: false },
+  { description: 'GOTAS 0,5G', img: 'drops-white.png', selected: false },
+  { description: 'GOTAS 6g', img: 'drops-mixed.png', selected: false },
+  { description: 'TROZOS 1 to 10 cm', img: 'chunks.png', selected: false }
 ]
 export const panning = [
   { description: 'CACAO NIBS', img: 'cacao-nibs.jpg' }, { description: 'NIBS CLUSTERS', img: 'nibs-cluster.png' }, { description: 'QUINOA', img: 'quinoa.png' }, { description: 'GOLDEN BERRIES', img: 'golden-berries.png' }, { description: 'ESPRESSO BEANS', img: 'chocolate-ingredients/maracas/chocolate-covered-espresso-beans.jpg' }, { description: 'INSTANT COFFEE', img: 'chocolate-ingredients/maracas/chocolate-covered-instant-coffee.jpg' }
 ]
 export const moulding = [
-  { description: 'BARS', img: 'moulding-bars.png' }, { description: 'SHAPES', img: 'moulding-shapes.png' }
+  { id: 'bars', description: 'BARRAS', img: 'moulding-bars.png' }, { id: 'shapes', description: 'FORMAS', img: 'moulding-shapes.png' }
 ]
 export const mouldingBars = [
-  { description: 'LUKER MINIBARS 6G', img: 'moulding-minibars.png', selected: false },
+  { description: 'LUKER MINIBARRAS 6G', img: 'moulding-minibars.png', selected: false },
   { description: 'SINGLE BAR 12G', img: 'moulding-single-bar.png', selected: false },
-  { description: 'BOLD STICK 25G', img: 'moulding-bold-stick.png', selected: false },
-  { description: 'BAR 50G', img: 'moulding-bar50.png', selected: false },
-  { description: 'BAR 80G', img: 'moulding-bar80.png', selected: false },
-  { description: 'BAR 100G', img: 'moulding-bar80.png', selected: false }
+  { description: 'PALILLOS GRUESOS 25G', img: 'moulding-bold-stick.png', selected: false },
+  { description: 'BARRAS 50G', img: 'moulding-bar50.png', selected: false },
+  { description: 'BARRAS 80G', img: 'moulding-bar80.png', selected: false },
+  { description: 'BARRAS 100G', img: 'moulding-bar80.png', selected: false }
 ]
 export const mouldingShapes = [
-  { description: 'HEARTS 4G', img: 'moulding-heart.png', selected: false },
-  { description: 'STICK 8G', img: 'moulding-stick.png', selected: false },
-  { description: 'SEMICIRCLE 4G', img: 'moulding-semicircle.png', selected: false },
-  { description: 'EGG 3G', img: 'moulding-egg.png', selected: false }
+  { description: 'CORAZONES 4G', img: 'moulding-heart.png', selected: false },
+  { description: 'PALILLOS 8G', img: 'moulding-stick.png', selected: false },
+  { description: 'SEMICÍRCULOS 4G', img: 'moulding-semicircle.png', selected: false },
+  { description: 'HUEVOS 3G', img: 'moulding-egg.png', selected: false }
 ]
-export const designProcess = ['ANALYSING THE MAIN TRENDS OF THE GLOBAL CHOCOLATE MARKET', 'UNDERSTANDING THE TARGET CONSUMER', 'PRODUCT BENCHMARKING WITHIN THE TARGET CATEGORY', 'CREATING PROTOTYPE PRODUCT PROPOSALS ACCORDING TO OUR FINDINGS AND GUIDANCE UNTIL WE DEFINE THE FINAL PRODUCT', 'CONCEPTUALIZATION OF THE END PRODUCT']
+export const designProcess = ['ANALIZANDO LAS PRINCIPALES TENDENCIAS DEL MERCADO GLOBAL DE CHOCOLATE', 'ENTENDER EL CONSUMIDOR OBJETIVO', 'BANCA DE PRODUCTOS DENTRO DE LA CATEGORÍA OBJETIVO', 'CREANDO PROPUESTAS DE PRODUCTO DE PROTOTIPO SEGÚN NUESTROS HALLAZGOS Y ORIENTACIÓN HASTA QUE DEFINIMOS EL PRODUCTO FINAL', 'CONCEPTUALIZACIÓN DEL PRODUCTO FINAL']
 export const itemsOurServices = [{
   img: 'our-product-2.jpg',
-  title: 'FORMULATION',
+  title: 'FORMULACION',
 },
 {
   img: 'product-cover.jpg',
-  title: 'PACKAGING DESIGN',
+  title: 'DISEÑO DE EMPAQUES',
 },
 {
   img: 'productoCar.jpg',
-  title: 'MANUFACTURING',
+  title: 'FABRICACIÓN',
 }]
-export const itemsAroma = ['ONLY ABOUT 8% OF THE WORLD’S COCOA IS CONSIDERED CACAO FINO DE AROMA', '76% of Cacao Fino de Aroma is produced in Colombia, Ecuador, Peru, and Venezuela.']
+export const itemsAroma = ['SOLO CERCA DEL 8% DEL CACAO DEL MUNDO ES CONSIDERADO CACAO FINO DE AROMA', '76% of Cacao Fino de Aroma is produced in Colombia, Ecuador, Peru, and Venezuela.']
 export const itemsFlavour = [{
-  title: 'RELATIONSHIP WITH SMALL FARMERS',
-  content: 'At Luker Chocolate, we believe that support for small farmers is essential for our business model. As such, we have consolidated commercial partnerships with over 50 farmers associations, benefiting more than 7,500 Colombian families, thanks to a direct purchase model in which we are committed to pay a fair price and pay a deposit to ensure the purchase of the entire harvest. To add to this, at Granja Luker, we offer technical advice for crop improvement, training in improved agricultural practices, and we offer farmers the opportunity to update their crops with high quality Fino de Aroma varieties. This allows us better quality control in products and supply, guaranteeing our customers the availability of each of our Fino de Aroma chocolates.',
+  title: 'RELACIÓN CON PEQUEÑOS AGRICULTORES',
+  content: 'Estamos comprometidos con los pequeños agricultores, por eso hemos establecido una red de alianzas con más de 50 asociaciones de productores de cacao que nos permiten garantizar la compra y ayudarlos a crear el máximo valor posible para los agricultores y sus familias. Compramos directamente de 65 asociaciones y más de 7,500 familias colombianas. También capacitamos a alrededor de 30,000 agricultores en la Granja Luker y construimos 10 instalaciones centralizadas de poscosecha en Tumaco, tenemos una actualmente en construcción en Huila y una en Necoclí.',
   img: 'our-flavour-1.jpg'
 },
 {
-  title: 'VERTICAL INTEGRATION, OWN CROPS, AND TRACEABILITY',
-  content: 'In 2010, Luker Chocolate opted to grow its own crops to help the company satisfy its own Cacao Fino de Aroma needs. Without abandoning the relationships established with cocoa associations all over the country, the company set out to promote demonstrative agro industrial projects that would boost large-scale cocoa plantations to drive rural development. In the same year, the company found 550 hectares of land traditionally used for cattle farming in Necoclí, Antioquia. It turned this land into its first agro industrial plantation and the largest agro-productive plantation of varieties of Cacao Fino de Aroma, designed as an agroforestry system (simultaneous and continuous integration of fruit trees and timber-yielding varieties with agricultural crops, which allow greater yields and avoid soil erosion and loss of biodiversity). This project has allowed us to integrate the entire cocoa value chain, from the seed, to the final product, creating greater social and environmental well being in the territories in which we work. Thanks to this, we can control all cocoa processes, especially postharvest. This is how we can guarantee sustainability, transparency, supply, traceability, a superior flavour, and consistency in our products.',
+  title: 'INTEGRACIÓN VERTICAL, CULTIVOS PROPIOS Y TRAZABILIDAD',
+  content: 'En 2010, Luker Chocolate optó por cultivar sus propios cultivos para ayudar a la compañía a satisfacer sus propias necesidades de Cacao Fino de Aroma. Sin abandonar las relaciones establecidas con las asociaciones de cacao en todo el país, la compañía se propuso promover proyectos agroindustriales demostrativos que impulsarían las plantaciones de cacao a gran escala para impulsar el desarrollo rural. En el mismo año, la compañía encontró 550 hectáreas de tierra tradicionalmente utilizadas para la ganadería en Necoclí, Antioquia. Convirtió esta tierra en su primera plantación agroindustrial y la mayor plantación agroproductiva de variedades de Cacao Fino de Aroma, diseñada como un sistema agroforestal (integración simultánea y continua de árboles frutales y variedades que producen madera con cultivos agrícolas, lo que permite una mayor rendimientos y evitar la erosión del suelo y la pérdida de biodiversidad). Este proyecto nos ha permitido integrar toda la cadena de valor del cacao, desde la semilla hasta el producto final, creando un mayor bienestar social y ambiental en los territorios en los que trabajamos. Gracias a esto, podemos controlar todos los procesos de cacao, especialmente después de la cosecha. Así es como podemos garantizar sostenibilidad, transparencia, suministro, trazabilidad, un sabor superior y consistencia en nuestros productos. ',
   img: 'cacaoOpen.jpg'
 },
 {
-  title: 'QUALITY PROCESS',
-  content: 'At Luker Chocolate, we continuously improve our analysis and quality control processes so that we can keep our promise of delivering a chocolate of unique and superior flavour, ensuring a sensory profile that is maintained over time. Our control process starts at our different points of purchase in the producing regions. Every purchased cocoa bean is analysed in terms of its fermentation level, humidity, and impurities. The beans are then taken to the cocoa storehouse in Bogotá, where the process is repeated. Cocoa liquor is produced in the cocoa laboratory, which we then use to validate the sensory profile of each batch of cocoa purchased and ratify that it actually matches the origin from which it has been purchased. During the chocolate manufacturing process, a third quality analysis is carried out by our quality panel. Two sensory quality panel sessions a day are held, where 15 highly qualified panellists analyse every batch of chocolate that is being manufactured. To guarantee flavour standardization, the roasting and preparation processes are 100% automated.',
+  title: 'PROCESO DE CALIDAD',
+  content: 'En Luker Chocolate, mejoramos continuamente nuestros procesos de análisis y control de calidad para que podamos cumplir nuestra promesa de entregar un chocolate de sabor único y superior, asegurando un perfil sensorial que se mantenga con el tiempo. Nuestro proceso de control comienza en nuestros diferentes puntos de compra en las regiones productoras. Cada grano de cacao comprado se analiza en términos de su nivel de fermentación, humedad e impurezas. Luego, los granos se llevan al depósito de cacao en Bogotá, donde se repite el proceso. El licor de cacao se produce en el laboratorio de cacao, que luego utilizamos para validar el perfil sensorial de cada lote de cacao comprado y ratificar que realmente coincida con el origen del cual se compró. Durante el proceso de fabricación del chocolate, nuestro panel de calidad lleva a cabo un tercer análisis de calidad. Se realizan dos sesiones de panel de calidad sensorial al día, donde 15 panelistas altamente calificados analizan cada lote de chocolate que se fabrica. Para garantizar la estandarización del sabor, los procesos de tostado y preparación son 100% automatizados.',
   img: 'our-flavour-3.jpg'
 }]
 export const itemsProducts = [{
-  title: 'PACKAGING',
-  content: 'This team is responsible for developing the primary and secondary packaging ensuring that they suit the requirements of our customers and their products. They are always innovating bearing in mind safety as the most important element.',
+  title: 'EMPAQUES',
+  content: 'Este equipo se encarga de desarrollar los empaques primarios y secundarios, garantizando que estén de acuerdo con los requerimientos de nuestros clientes y de sus productos. Siempre piensan desde la innovación y para ellos lo más importante es la inocuidad.',
   img: 'our-product-1.jpg'
 },
 {
-  title: 'R&D',
-  content: 'This department is responsible for our agricultural and scientific research to promote Colombian cocoa-culture, always researching the genetic and origin properties of the different varieties of Cacao Fino de Aroma found in the country. On the other hand, they design and develop the best chocolate formulas, satisfying the needs of our clients. They are pure in their maximum expression: they comply with the highest quality standards under our strategic company guidelines',
+  title: 'INVESTIGACIÓN Y DESARROLLO',
+  content: 'Desde este departamento se ejecutan investigaciones agrícolas y científicas que promueven la cacao-cultura colombiana, profundizando siempre en las características genéticas y de origen de las diferentes variedades de Cacao Fino de Aroma que se encuentran en el país. Por otro lado, diseñan y desarrollan las mejores fórmulas de chocolate satisfaciendo las necesidades de nuestros clientes. Son puros en su máxima expresión: cumplen con los más altos estándares normativos y de calidad bajo los lineamientos estratégicos de la compañía.',
   img: 'our-product-2.jpg'
 },
 {
-  title: 'MARKETING',
-  content: 'The team that believes that doing things with passion makes a difference. They design and execute marketing strategies and research the latest market trends to help our clients standout from their competitors.',
+  title: 'MERCADEO',
+  content: 'El equipo que cree que hacer las cosas con pasión marca la diferencia. Diseñan y ejecutan estrategias de marketing e investigan las últimas tendencias del mercado, con el fin de ayudar a nuestros clientes a que se destaquen frente a la competencia.',
   img: 'our-product-3.jpg'
 },
 {
   title: 'DESIGN HUB',
-  content: 'They develop products for their target market with an approach to strategic planning based on local trends, highlighting the most important messages and creating emotional relationships between customers and your brand. Their goal: Sell while supplies last.',
+  content: 'Con un acercamiento al planeamiento estratégico basado en las tendencias locales, desarrollan productos para su mercado objetivo, resaltando los mensajes más atractivos y creando relaciones emocionales de los clientes con su marca. Su objetivo: vender hasta agotar existencias.',
   img: 'our-product-4.jpg'
 }]
 export const modalReportItems = [
   {
     id: '2',
-    title: 'SUSTAINABILITY BRIEF',
-    content: 'Know the facts, findings, and objectives gathered for our sustainability initiatives.',
+    title: 'SOSTENIBILIDAD',
+    content: 'Conozca los hechos, hallazgos y objetivos reunidos para nuestras iniciativas de sostenibilidad.',
     selected: false
   },
   {
     id: '4',
-    title: 'COCOA FOREST & PEACE AGREEMENT',
-    content: 'Find out what we have accomplished by the implementation of several different sustainability strategies in this report.',
+    title: 'BOSQUES DE CACAO Y ACUERDO DE PAZ',
+    content: 'Descubra lo que hemos logrado mediante la implementación de varias estrategias de sostenibilidad diferentes en este informe.',
     selected: false
   }
 ]
@@ -412,11 +707,11 @@ export const clients = [{
 }];
 export const articles = [
   {
-    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/take-stand', name: 'Take a stand' }],
+    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/tomando-posicion', name: 'Tomando posicion' }],
     url: 'manifesto–under-the-tree',
     cover: 'cocoa-forest.jpg',
     title: 'MANIFESTO – UNDER THE TREE',
-    date: 'APRIL 2019',
+    date: 'ABRIL 2019',
     content: `<p>Dicen que hay conversaciones que nunca se olvidan, que trascienden, que marcan la diferencia y que cambian el mundo. Nuestro paso por la existencia es una colección de momentos, vivencias, anécdotas y conversaciones. Nosotros creemos que las conversaciones memorables no suceden en cualquier parte; las nuestras, han sucedido debajo de un árbol de cacao.</p>
 <p>Muchos de quienes hacemos parte de Luker y de su historia crecimos debajo de un árbol de cacao, junto con agricultores y personas del campo. Miles de agricultores que hoy trabajan con nosotros, pasan gran parte de sus vidas bajo la sombra de un árbol.</p>
 <p>En nuestra Granja Luker, cientos de personas de todas partes del mundo han disfrutado de un desayuno con chocolate bajo la sombra de gigantescos árboles legendarios. Hemos sembrado árboles con nuestras propias manos, los hemos visto crecer. Nuestros abuelos y padres conversaban sobre el futuro, encontraban inspiración y tomaron decisiones transcendentales bajo los árboles. Las grandes conversaciones de nuestros antepasados no sucedieron en una oficina con traje y corbata; ocurrieron bajo los árboles de cacao, vistiendo poncho y sombrero.</p>
@@ -426,15 +721,15 @@ export const articles = [
 <img src="/static/media/cocoa-forest-friends.64e7c5c5.jpg" alt="Cocoa friends">
 <p>Este espacio ha sido creado para conversar, como si estuviéramos bajo la sombra de un árbol.</p>
 `,
-    autor: { name: 'SERGIO RESTREPO', avatar: 'https://media.licdn.com/dms/image/C4E03AQEU_fSBYnqwnw/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=pqJb74EtssHW43ajcC8aeRAErFY_wdDFWW8NCbfjXzE', details: 'Marketing Vice-president', description: 'I see chocolate as a tool of change. I am interested in sharing experiences with entrepreneurs, entrepreneurs and leaders who bet and believe in disruptive innovation, in shared value, in technology and in putting people at the center of the conversation.', linkedin: ['https://www.linkedin.com/in/sergiorestrepogutierrez/', 'Sergio Restrepo'] },
-    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+    autor: { name: 'SERGIO RESTREPO', avatar: 'https://media.licdn.com/dms/image/C4E03AQEU_fSBYnqwnw/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=pqJb74EtssHW43ajcC8aeRAErFY_wdDFWW8NCbfjXzE', details: 'Marketing Vice-president', description: 'I see chocolate as a tool of change. I am interested in sharing experiences with entrepreneurs, entrepreneurs and leaders who bet and believe in disruptive Innovacion, in shared value, in technology and in putting people at the center of the conversation.', linkedin: ['https://www.linkedin.com/in/sergiorestrepogutierrez/', 'Sergio Restrepo'] },
+    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DICIEMBRE 2019', url: '/blog/tomando-posicion/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AGOSTO 2019', url: '/blog/tomando-posicion/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULIO 2019', url: '/blog/tomando-posicion/right-spark' }]
   },
   {
-    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/chocolate-dream', name: 'The chocolate dream' }],
+    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/sueno-del-chocolate', name: 'Sueño del chocolate' }],
     url: 'el-origen-de-un-sueno',
     cover: 'the-birth-of-a-dream.jpg',
     title: 'EL ORIGEN DE UN SUEÑO',
-    date: 'JUNE 2019',
+    date: 'JUNIO 2019',
     content: `<q>“Tengo un sueño en el que necesitamos la unión de muchos… quiero montar una fábrica de chocolate” </q>
 <p>Con esta frase, José Jesús Restrepo fundó Luker Chocolate hace 113 años. Una compañía con una visión que todavía hoy, después de cinco generaciones, se conserva; ya no solo en un hombre y su familia sino en el corazón de más de 1.000 colaboradores que componen la empresa.</p>
 <p>Después de más de un siglo, los sueños han crecido. Sabemos que podemos aportarle más al país desde el chocolate y estamos seguros de que, con la voluntad de muchos, esto que era una idea empieza a consolidarse y a convertirse en un modelo en el que la Colombia rural y sus habitantes son los protagonistas. Ya no solo soñamos con una fábrica de chocolate; nuestro propósito hoy es transformar vidas a través de él.</p>
@@ -453,14 +748,14 @@ export const articles = [
 <p>Sabemos que somos muchos los que tenemos que sumarnos para hacer de este sueño un movimiento que tenga la capacidad de recorrer el mundo. Por eso, El Sueño de Chocolate pronto abrirá sus puertas para que todos aquellos que quieran contribuir con su conocimiento, su experiencia y su tiempo, puedan encontrar en Luker Chocolate, el lugar para hacerlo.</p>
 `,
     autor: { name: 'JUANA BOTERO', avatar: 'https://media.licdn.com/dms/image/C5603AQFburD-lKe7tQ/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=OrPNQWmiurHcatseEVuDih5SDGN16X30sgHlTTP8ymg', details: 'Sustainability Director', description: 'Lawyer from Eafit University with an emphasis on public international law from the University of Salamanca, Spain. Current Director of Sustainability at Luker Chocolate where she works to improve the living conditions of rural cocoa farming communities.', linkedin: ['https://www.linkedin.com/in/juana-botero-62a78958/', 'Juana Botero'] },
-    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DICIEMBRE 2019', url: '/blog/tomando-posicion/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AGOSTO 2019', url: '/blog/tomando-posicion/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULIO 2019', url: '/blog/tomando-posicion/right-spark' }]
   },
   {
-    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/create-shared-value', name: 'Create shared value' }],
+    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/valor-compartido', name: 'Valor Compartido' }],
     url: 'que-son-para-nosotros-las-marcas-con-proposito',
     title: '¿QUÉ SON PARA NOSOTROS LAS MARCAS CON PROPÓSITO?',
     cover: 'brick-luker.jpg',
-    date: 'JUNE 2019',
+    date: 'JUNIO 2019',
     content: `<p>Antes de poder hablar sobre una marca con propósito o sobre un producto con propósito, es preciso definir ¿Cuál es el propósito de un negocio?</p>
 <p>En esencia, el propósito de un negocio tiene que ver con solucionar necesidades obteniendo una ganancia. Aquellos negocios que solucionen efectivamente una necesidad, logrando cobrar lo suficiente para cubrir sus costos y generar una utilidad, diremos que habrán creado valor económico.</p>
 <p>El problema de esto, como ocurre en su mayoría hoy, es que muchas empresas han caído en obsesionarse por luchar en segmentos de consumo típicamente iguales a sus competidores y peor aún, ofreciendo lo mismo. Han caído en intensificar la competencia, invirtiendo enormes sumas de dinero en publicidad, intentando sobresalir con mínimas innovaciones incrementales poco relevantes. Ganarle un punto de mercado al competidor, se ha convertido en una obsesión que consume grandes recursos, tiempo y mentes brillantes.</p>
@@ -482,15 +777,15 @@ export const articles = [
 <p>Estas son solo 3 de las muchas otras iniciativas en donde podemos hacer que una marca se nutra con propósito, que lo descubra, que lo visualice y que se anime a incorporarlo en el centro de su apuesta de nuestra mano. Soñamos con ayudar a crear una industria inspiradora de la mano de nuestros clientes, donde usemos el chocolate como una herramienta de cambio.</p>
 <p>¿Quieres usar nuestros deliciosos chocolates Finos y de Aroma? Primero hablemos del impacto que quieres crear en el mundo.</p>
     `,
-    autor: { name: 'SERGIO RESTREPO', avatar: 'https://media.licdn.com/dms/image/C4E03AQEU_fSBYnqwnw/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=pqJb74EtssHW43ajcC8aeRAErFY_wdDFWW8NCbfjXzE', details: 'Marketing Vice-president', description: 'I see chocolate as a tool of change. I am interested in sharing experiences with entrepreneurs, entrepreneurs and leaders who bet and believe in disruptive innovation, in shared value, in technology and in putting people at the center of the conversation.', linkedin: ['https://www.linkedin.com/in/sergiorestrepogutierrez/', 'Sergio Restrepo'] },
-    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+    autor: { name: 'SERGIO RESTREPO', avatar: 'https://media.licdn.com/dms/image/C4E03AQEU_fSBYnqwnw/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=pqJb74EtssHW43ajcC8aeRAErFY_wdDFWW8NCbfjXzE', details: 'Marketing Vice-president', description: 'I see chocolate as a tool of change. I am interested in sharing experiences with entrepreneurs, entrepreneurs and leaders who bet and believe in disruptive Innovacion, in shared value, in technology and in putting people at the center of the conversation.', linkedin: ['https://www.linkedin.com/in/sergiorestrepogutierrez/', 'Sergio Restrepo'] },
+    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DICIEMBRE 2019', url: '/blog/tomando-posicion/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AGOSTO 2019', url: '/blog/tomando-posicion/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULIO 2019', url: '/blog/tomando-posicion/right-spark' }]
   },
   {
-    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/create-shared-value', name: 'Create shared value' }],
+    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/valor-compartido', name: 'Valor Compartido' }],
     url: 'la-chispa-adecuada',
     cover: 'spark-woman.jpg',
     title: 'LA CHISPA ADECUADA',
-    date: 'JULY 2019',
+    date: 'JULIO 2019',
     content: `<p>No, no es una canción. Tampoco una declaratoria de amor. Es la búsqueda más trascendente que he hecho en los últimos dos años en la solución al reto profesional más bestial al que me he enfrentado. Te contaré…</p>
 <p>Luker Chocolate es una compañía que tiene más de 113 años de historia. Sin embargo, hace tan solo 10 años decidimos internacionalizarnos para llevar nuestro chocolate por el mundo. Con las ilusiones puestas en esta meta, nos dimos cuenta de que teníamos que afrontar nuevos retos. Vender chocolate a la industria y fabricar productos finales para otras compañías es un negocio que nada tiene que ver con lo que hemos hecho durante 100 años en Colombia; el reto de atender empresas y no consumidores finales,  y pasar de vender en más de 42 países y no en 1 solo país, es diferente.</p>
 <p>Por eso, cuando asumí la dirección de manufactura y posteriormente la vicepresidencia de cadena de abastecimiento en Luker Chocolate, con mi equipo teníamos la misión de elevar drásticamente el nivel de cumplimiento de la oferta de producción, garantizar la promesa de servicio a nuestros clientes, estabilizar los costos de producción y diseñar el plan de expansión de la planta de producción y los almacenes de logística, teniendo en cuenta el nuevo mercado internacional al que nos estábamos enfrentando.</p>
@@ -526,14 +821,14 @@ export const articles = [
     autor: {
       name: 'CRISTIAN CHU', avatar: 'https://media.licdn.com/dms/image/C4E03AQHLclm7u9XKIg/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=WjGN2LsdE9JD7XbCR7nKbDeK8KEejiW0DF3Qcx4HLZQ', details: 'Supply Chain Vicepresident', description: 'Electronic engineer with more than 10 years of experience in operations management and supply chain in the food and beverage sector. Passionate about generating intrapreneurships and working for a higher purpose.', linkedin: ['https://www.linkedin.com/in/cristian-chu-salgado-ba55b140/', 'Cristian Chu']
     },
-    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DICIEMBRE 2019', url: '/blog/tomando-posicion/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AGOSTO 2019', url: '/blog/tomando-posicion/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULIO 2019', url: '/blog/tomando-posicion/right-spark' }]
   },
   {
-    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/create-shared-value', name: 'Create shared value' }],
+    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/valor-compartido', name: 'Valor Compartido' }],
     url: 'en-los-zapatos-de-los-cacaocultores-del-huila-capitulo-uno',
     title: 'EN LOS ZAPATOS DE: LOS CACAOCULTORES DEL HUILA',
     cover: 'banner-julio.jpg',
-    date: 'JULY 2019',
+    date: 'JULIO 2019',
     content: `<p>Tres de nuestros colaboradores se fueron a la región del Huila a vivir como cacaocultores y de ahí nació esta serie. En esta primera historia José Maldonado, Analista de Abastecimiento sostenible, nos cuenta su experiencia.</p>
 <p>Desde muy pequeño, el campo y yo hemos sido inseparables. Mi abuelo paterno es veterinario y ha sido productor de leche toda su vida; mientras que mi abuelo materno es caficultor, como lo fueron sus antepasados por varias generaciones. Siempre me he sentido orgulloso del campo colombiano y me he identificado como parte de este; tanto así, que más de una vez he dicho con la cabeza en alto “yo soy del campo”.</p>
 <p>Creí tener experiencia, pero después de pasar dos semanas acompañando a diferentes familias cacaocultoras del Huila, me di cuenta de que no podía estar más equivocado. Para ser del campo hace falta valentía y sacrificio, pero ante todo, hace falta tener un corazón gigante y estar profundamente enamorado de la tierra y sus tradiciones.</p>
@@ -552,14 +847,14 @@ export const articles = [
     autor: {
       name: 'JOSÉ MALDONADO', avatar: 'https://media.licdn.com/dms/image/C5603AQGWmXeWsufD9Q/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=sPc6xh78N7oYmS61XLxym_XcKLYzzBJ9PSp5kyFCPQk', details: 'SUSTAINABLE SUPPLY ANALYST', description: 'Sustainable Supply Analyst for Luker Chocolate, focused on agricultural development and sustainability projects of the company\'s value chain.Project leader for organizations of cocoa producers and small- scale farmers.', linkedin: ['https://www.linkedin.com/in/jos%C3%A9-miguel-maldonado-v%C3%A9lez-79a818114/', 'Jose Maldonado']
     },
-    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DICIEMBRE 2019', url: '/blog/tomando-posicion/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AGOSTO 2019', url: '/blog/tomando-posicion/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULIO 2019', url: '/blog/tomando-posicion/right-spark' }]
   },
   {
-    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/create-shared-value', name: 'Create shared value' }],
+    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/valor-compartido', name: 'Valor Compartido' }],
     url: 'cacao-fino-de-aroma-herencia-cultural-e-historica-de-colombia',
     title: 'CACAO FINO DE AROMA: HERENCIA CULTURAL E HISTÓRICA DE COLOMBIA',
     cover: 'banner-cacaos.jpg',
-    date: 'JULY 2019',
+    date: 'JULIO 2019',
     content: `<p>Hoy, después de haber desarrollado una historia de éxito alrededor del Cacao Fino de Aroma de Colombia en el mundo, y de abrir un mercado no solo para Luker Chocolate sino para todos los cacao-cultores del país, es importante recordar un poco el camino recorrido, analizar el presente y pensar en lo que vendrá.</p>
 <p>Una de nuestras ventajas más importantes, y que ha sido difícil de replicar por otras compañías en el mundo, es la capacidad desarrollada durante más de 100 años de jugar con los diferentes tipos de cacaos disponibles para mantener la consistencia en el sabor del chocolate, día tras día y año tras año, con el fin de que nuestros clientes puedan disfrutar del mejor chocolate colombiano. Fabricar un chocolate de mesa como Luker Tradicional —uno de nuestros productos del portafolio colombiano— que es hecho 100% de licor de cacao, y lograr que este mantenga su sabor a través de los años, es algo que aún es difícil de creer por muchos de nuestros competidores, conocedores de que el cacao cambia ligeramente de sabor en cada cosecha.</p>
 <p>Para contarles cómo logramos esta consistencia en nuestro sabor, debemos remontarnos a los años 2004 – 2005, donde vemos a Luker Chocolate como una compañía local empezando a pensar en el mundo y en cuál podría ser la estrategia adecuada para internacionalizarse como negocio a nivel mundial. Es por esos días que se empieza a profundizar sobre el cacao de Colombia del que ya teníamos el sabor identificado y estandarizado por regiones principales del país, y se busca la ayuda de CENICAFE para hacer un estudio con la rigurosidad científica necesaria para permitirnos diseñar una estrategia basada en el sabor del cacao y nuestra capacidad de desarrollar mezclas que conservaran el sabor que prometíamos.</p>
@@ -570,15 +865,15 @@ export const articles = [
 <p>La lista de países que exportan total o parcialmente Cacao Fino de Aroma está compuesta hoy por 25 países de acuerdo con la decisión tomada por el panel de expertos en la pasada reunión de la ICCO en Abijan en abril 13 de 2019. El panel de expertos está conformado por 10 personas, 5 de países no productores y 5 de países productores, del cual hacemos parte, y que se encarga de recomendarle a la ICCO la calificación que debe otorgar con base en los lineamientos establecidos en el Acuerdo Internacional del Cacao. De acuerdo con la información histórica, se han hecho revisiones de la lista de países en los años 1972, 1975, 1980, 1986, 1993, 2001, 2010, 2015 y 2019. Colombia apareció como parcialmente exportador de Cacao Fino de Aroma en el año 1993; en el año 2008 fue incluido por el panel en la lista de países con un cumplimiento del 100% ,y en el año 2010 se llevó al 95%, cifra que se ha mantenido desde entonces.</p>
 <p>Cada vez estamos profundizando más en el mundo del sabor, desarrollamos nuevas variedades de cacao que ofrecen perfiles muy interesantes, mientras incrementamos la productividad de nuestros cultivos y de las regiones cacaoteras donde trabajamos. Estamos explorando nuevas tecnologías que nos permitirán perfeccionar y estandarizar los procesos de fermentación y secado,  todo para seguir ofreciendo los mejores chocolates hechos con Cacao Fino de Aroma de origen colombiano al mundo entero.</p>
 `,
-    autor: { name: 'FRANCISCO GÓMEZ', avatar: 'https://media.licdn.com/dms/image/C4E03AQFWyb8DSqYCCg/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=dVNW6XiYzO1lK7W9iY9iwua1HVNapQh8khqRdM0Ibto', details: 'Innovation and Business Development Vice-president', description: 'Civil Engineer with more than 30 years of experience in food industries, extensive knowledge in the cocoa supply chain and development of international markets. Currently, innovation in chocolates made with Aroma Fine Cocoa is my biggest challenge', linkedin: ['https://www.linkedin.com/in/francisco-gomez-5503b823/', 'Francisco Gomez'] },
-    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+    autor: { name: 'FRANCISCO GÓMEZ', avatar: 'https://media.licdn.com/dms/image/C4E03AQFWyb8DSqYCCg/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=dVNW6XiYzO1lK7W9iY9iwua1HVNapQh8khqRdM0Ibto', details: 'Innovacion and Business Development Vice-president', description: 'Civil Engineer with more than 30 years of experience in food industries, extensive knowledge in the cocoa supply chain and development of international markets. Currently, Innovacion in chocolates made with Aroma Fine Cocoa is my biggest challenge', linkedin: ['https://www.linkedin.com/in/francisco-gomez-5503b823/', 'Francisco Gomez'] },
+    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DICIEMBRE 2019', url: '/blog/tomando-posicion/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AGOSTO 2019', url: '/blog/tomando-posicion/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULIO 2019', url: '/blog/tomando-posicion/right-spark' }]
   },
   {
-    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/chocolate-dream', name: 'The chocolate dream' }],
+    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/sueno-del-chocolate', name: 'Sueño del chocolate' }],
     url: 'pinta-caribia-sonando-en-colores',
     cover: 'banner-chocolate.jpg',
     title: 'PINTA CARIBIA, SOÑANDO EN COLORES',
-    date: 'JULY 2019',
+    date: 'JULIO 2019',
     content: `<p>En El Sueño de Chocolate creemos que, para cumplir un sueño, se requiere la unión de muchos y creemos firmemente en el arte y la cultura como detonadores del desarrollo.</p>
 <p>Esta es la historia de nuestro primer voluntariado, una historia donde el arte y el trabajo en equipo se integraron para dar el primer paso —de muchos que hemos dado hasta ahora— con el objetivo de generar desarrollo en una de las regiones cacaoteras donde trabajamos.</p>
 <img src="/static/media/cocoa-friends-9.c4af0582.jpg" alt="Pinta caribia men">
@@ -600,16 +895,16 @@ export const articles = [
     autor: {
       name: 'SARA GALEANO', avatar: 'https://media.licdn.com/dms/image/C4E03AQHmeKp3KisJdQ/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=grUKZd2SlKyWPgqFHw1IBrNHv31uaLPa6K73hx7A_r8', details: 'Brand & Communications Professional', description: 'Social Communicator of the Pontificia Universidad Javeriana with emphasis on advertising and complementary matters in organizational. Experience in the development of marketing, branding and communication strategies, corporate affairs management, public relations for positioning and construction of corporate reputation.', linkedin: ['https://www.linkedin.com/in/sara-galeano-vallejo-30760831/', 'Sara Galeano']
     },
-    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DICIEMBRE 2019', url: '/blog/tomando-posicion/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AGOSTO 2019', url: '/blog/tomando-posicion/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULIO 2019', url: '/blog/tomando-posicion/right-spark' }]
   },
   {
-    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/create-shared-value', name: 'Create shared value' }],
+    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/valor-compartido', name: 'Valor Compartido' }],
     url: 'en-los-zapatos-de-los-cacaocultores-del-huila-capitulo-dos',
     cover: 'harvesting-3.jpg',
     title: 'EN LOS ZAPATOS DE: LOS CACAOCULTORES DEL HUILA: Capítulo 2',
-    date: 'AUGUST 2019',
+    date: 'AGOSTO 2019',
     content: `<q>“Gracias Dios por este alimento que nos brindas hoy y por darnos la bendición de poder disfrutarlo. Queremos pedirte por las personas que no tienen la posibilidad de tenerlo. Te pedimos también por los enfermos, los presos y los secuestrados. Te agradecemos por la posibilidad de estar reunidos hoy acá y por la visita de estos doctores e ingenieros que han venido a ayudarnos a progresar, a mejor nuestro campo y nuestras fincas para poder vivir mejor. Amén”.  Rezo de Don Jesús, cacaocultor de la región del Huila.</q>
-    <p>Con los ojos cerrados, de pie y cogido de la mano de las personas a su alrededor, esta fue la oración que en voz alta pronunció Jesús Augusto Gómez antes de invitarnos a pasar a la mesa. El sancocho de pollo había sido preparado en fogón de leña según se podía notar por su sabor ahumado, por el olor a leña en el ambiente y por el humo que salía por el techo de la cocina de Doña Elvira Quintero de Gómez. La mesa estaba servida con un clásico mantel tejido a mano, muy típico de las casas campesinas colombianas, con platos de diferentes vajillas recogidas durante los años y cubiertos de diferentes estilos y formas. La sopa, el seco y una deliciosa agua de panela estaban dispuestos en cada uno de los 8 puestos que con cierta limitación de espacio le cupieron a Doña Elvira en la mesa de madera. En total éramos 11, con lo cual Don Jesús, luego de hacer su oración, se retiró junto a su esposa Doña Elvira y su hijo, “El mono”, para permitirle a la visita sentarse y almorzar de primeros, pues según él ellos tenían la prioridad. A pesar de haber trabajado toda la mañana en su finca cosechando cacao bajo el sol del Huila (Colombia), y a sus 75 años de edad, se rehusó a sentarse como gesto de atención con su visita.</p>
+    <p>Con los ojos cerrados, de pie y cogido de la mano de las personas a su alrededor, esta fue la oración que en voz alta pronunció Jesús AGOSTOo Gómez antes de invitarnos a pasar a la mesa. El sancocho de pollo había sido preparado en fogón de leña según se podía notar por su sabor ahumado, por el olor a leña en el ambiente y por el humo que salía por el techo de la cocina de Doña Elvira Quintero de Gómez. La mesa estaba servida con un clásico mantel tejido a mano, muy típico de las casas campesinas colombianas, con platos de diferentes vajillas recogidas durante los años y cubiertos de diferentes estilos y formas. La sopa, el seco y una deliciosa agua de panela estaban dispuestos en cada uno de los 8 puestos que con cierta limitación de espacio le cupieron a Doña Elvira en la mesa de madera. En total éramos 11, con lo cual Don Jesús, luego de hacer su oración, se retiró junto a su esposa Doña Elvira y su hijo, “El mono”, para permitirle a la visita sentarse y almorzar de primeros, pues según él ellos tenían la prioridad. A pesar de haber trabajado toda la mañana en su finca cosechando cacao bajo el sol del Huila (Colombia), y a sus 75 años de edad, se rehusó a sentarse como gesto de atención con su visita.</p>
 <p>Nosotros, 4 personas que veníamos desde Bogotá, éramos en realidad para esta familia cacaotera unos completos desconocidos. Habíamos pedido el favor en las asociaciones ASOPROCAR y ASOPECA de que nos llevaran a visitar alguna finca de la región, pues queríamos conocer de cerca su realidad, vivir algunas horas en su entorno y compartir con ellos un rato sin ningún otro objetivo que escucharlos.</p>
 <p>Tengo que confesar que la llegar al Huila no tenía una idea muy clara sobre cómo nos iban a recibir. Pensé que causaría cierta sospecha nuestra visita y generaría algo de suspicacia pues no sería para nada común. Habíamos llegado repentinamente esperando meternos en el espacio personal de una familia durante todo un día, a cambio de nada. Pensé que se negarían a recibirnos o que nos preguntarían inmediatamente al llegar cuál era el propósito de nuestra visita. ¿Qué pasaría si uno llega repentinamente a una vivienda desconocida en Bogotá y pide el favor de que lo dejan estar allí todo el día? Para mi sorpresa, fuimos recibidos con una gran sonrisa y una amabilidad contagiosa.</p>
 <p>Luego de una corta conversación de bienvenida y de mostrarnos el lugar, de una vez nos sumergimos en el cacaotal, un cultivo de 3 hectáreas con árboles antiguos, de tronco grueso y muy altos: características típicas de una agricultura muy tradicional y prácticas de la zona. Don Jesús iba caminando con cierta dificultad pues un accidente que tuvo cuando joven le había afectado de forma importante su pierna izquierda. No se quejaba, pero se notaba que le costaba bastante caminar. Luego nos confesó que había sufrido 5 trombosis pero que seguía trabajando sin problema. Durante el recorrido nos contó diferentes anécdotas de su vida que espontáneamente le iban saliendo. A la izquierda del sendero por donde caminamos había una quebrada con agua muy cristalina, con piedras muy grandes y vegetación frondosa. La sombra de los árboles de cacao y el sonido de la quebrada creaban un ambiente muy tranquilo y acogedor que sirvió de escenario para una conversación de unas 2 horas. Conocimos la forma en que Don Jesús administraba su finca. A pesar de que no conocía a ciencia cierta cuánto producía, ni tenía ninguna cifra anotada, conocía sus árboles como si fueran la palma de su mano.</p>
@@ -620,16 +915,16 @@ export const articles = [
 <p>Luker Chocolate seguiremos trabajando con ellos y para ellos, pues son quienes hoy hacen posible que podamos disfrutar de los alimentos que nos da la tierra.</p>
 `,
     autor: {
-      name: 'SERGIO RESTREPO', avatar: 'https://media.licdn.com/dms/image/C4E03AQEU_fSBYnqwnw/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=pqJb74EtssHW43ajcC8aeRAErFY_wdDFWW8NCbfjXzE', details: 'Marketing Vice-president', description: 'I see chocolate as a tool of change. I am interested in sharing experiences with entrepreneurs, entrepreneurs and leaders who bet and believe in disruptive innovation, in shared value, in technology and in putting people at the center of the conversation.', linkedin: ['https://www.linkedin.com/in/sergiorestrepogutierrez/', 'Sergio Restrepo']
+      name: 'SERGIO RESTREPO', avatar: 'https://media.licdn.com/dms/image/C4E03AQEU_fSBYnqwnw/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=pqJb74EtssHW43ajcC8aeRAErFY_wdDFWW8NCbfjXzE', details: 'Marketing Vice-president', description: 'I see chocolate as a tool of change. I am interested in sharing experiences with entrepreneurs, entrepreneurs and leaders who bet and believe in disruptive Innovacion, in shared value, in technology and in putting people at the center of the conversation.', linkedin: ['https://www.linkedin.com/in/sergiorestrepogutierrez/', 'Sergio Restrepo']
     },
-    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DICIEMBRE 2019', url: '/blog/tomando-posicion/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AGOSTO 2019', url: '/blog/tomando-posicion/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULIO 2019', url: '/blog/tomando-posicion/right-spark' }]
   },
   {
-    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/take-stand', name: 'Take a stand' }],
+    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/tomando-posicion', name: 'Tomando posicion' }],
     url: 'juntos-por-las-comunidades-cacaoculturas-de-colombia',
     cover: 'cocoa-friends.jpg',
     title: 'JUNTOS POR LAS COMUNIDADES CACAOCULTURAS DE COLOMBIA',
-    date: 'AUGUST 2019',
+    date: 'AGOSTO 2019',
     content: `<p>Mejorar el campo e impulsar a las comunidades cacaocultoras de Colombia es el motor de El Efecto Cacao, una alianza entre Luker Chocolate, Fundación Luker, USAID Colombia, Enel-Emgesa, Fundación Saldarriaga Concha y la Universidad EAFIT, que trabaja por el desarrollo rural e inclusivo de las comunidades que cultivan cacao en el Bajo Cauca, Urabá y Centro Sur del Huila.</p>
 <img src="/static/media/el-efecto-cacao.bc6f7bc9.jpg" alt="Efecto Cacao">
 <p>Para hacer realidad El Efecto Cacao, es necesario que el sector privado y el sector público trabajen de la mano. El sector privado tiene una visión de largo plazo, mayor estabilidad en las políticas y estrategias, capacidad de generar valor a través del mercado, contactos con voluntarios internacionales y, en nuestro caso, Luker Chocolate tiene en su ADN el interés por el productor de cacao, sus familias y sus comunidades.</p>
@@ -647,14 +942,14 @@ export const articles = [
 <p>Los invitamos a que estén pendientes de todos los avances del proyecto. No olviden dejarnos sus comentarios aquí abajo.</p>
 `,
     autor: { name: 'JULIA OCAMPO', avatar: 'https://media.licdn.com/dms/image/C4E03AQFUGeFloCcVFw/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=NJf7kTdRi6NTIdp250nSBA81HPnpIPN6KQYUr1Tl0uI', details: 'COP The Cocoa Effect at Fundación Luker', description: '', linkedin: ['https://www.linkedin.com/in/julia-ocampo-4725376/', 'Julia Ocampo'] },
-    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DICIEMBRE 2019', url: '/blog/tomando-posicion/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AGOSTO 2019', url: '/blog/tomando-posicion/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULIO 2019', url: '/blog/tomando-posicion/right-spark' }]
   },
   {
-    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/take-stand', name: 'Take a stand' }],
+    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/tomando-posicion', name: 'Tomando posicion' }],
     url: 'los-amigos-del-cacao',
     cover: 'cocoa-friends-6.jpg',
     title: 'LOS AMIGOS DEL CACAO',
-    date: 'AUGUST 2019',
+    date: 'AGOSTO 2019',
     content: `<p>Antes de trabajar en Luker Chocolate como practicante de la Granja Luker, nuestro centro de investigación y entrenamiento alrededor del cacao, me imaginé que mi oficina iba a estar rodeada de computadores y paredes blancas, pero estaba completamente equivocado.</p>
 <p>Cuando llegué a la Granja Luker, mi comité de bienvenida estaba conformado por una pandilla de perros muy gruñones que no me querían dejar entrar, pues ellos, como buenos guardianes de la finca, son los encargados de velar por la seguridad de la misma. Solo después de acercarme amistosamente me dejaron llegar a mi nuevo puesto de trabajo y sin saber, una integrante de la pandilla de perros llamada Peggy, se convertiría en mi compañera inseparable de aventuras. En ese momento me di cuenta de que este no era un trabajo del todo normal, pues de ahí en adelante mis jornadas laborales transcurrirían en medio de un bosque de cacao y acompañado de cientos de especies diferentes.</p>
 <img src="/static/media/cocoa-friends-dog.e4e80138.jpg" alt="Cocoa friend Peggy">
@@ -673,14 +968,14 @@ export const articles = [
     autor: {
       name: 'JUAN JOSÉ HINCAPIÉ', avatar: 'https://media.licdn.com/dms/image/C4D03AQF3R8cD2WhDyw/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=1h2n3IYyHMZm-VA4MHb0bko7VW_XLXAFZnoyRIqj334', details: 'Agricultural Analyst', description: 'Agricultural Analyst at Luker Chocolate', linkedin: ['https://www.linkedin.com/in/juan-jos%C3%A9-hincapi%C3%A9-toro-b18a12181/', 'Juan José Hincapié']
     },
-    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DICIEMBRE 2019', url: '/blog/tomando-posicion/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AGOSTO 2019', url: '/blog/tomando-posicion/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULIO 2019', url: '/blog/tomando-posicion/right-spark' }]
   },
   {
-    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/what-you-didnt-know', name: 'What you didn’t know' }],
+    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/lo-que-no-sabias', name: 'Lo que no sabias' }],
     url: 'un-chocolate-al-dia-mantiene-alejado-al-doctor',
     title: 'UN CHOCOLATE AL DÍA, MANTIENE ALEJADO AL DOCTOR',
     cover: 'finished-product-title.jpg',
-    date: 'AUGUST 2019',
+    date: 'AGOSTO 2019',
     content: `<p>Pocas personas conocen los grandes beneficios que trae el consumo regular de cacao. La gran mayoría de los consumidores están convencidos (algunos por recomendaciones médicas), que el cacao y/o el chocolate, son perjudiciales para la salud. Con el objetivo de solucionar esta discrepancia, el Área de Investigación de Luker Chocolate, en asocio con centros de investigación de Colombia y de Italia (University of Molise – Campo Basso, Sannio Tech – Benevento, y University of Brescia) caracterizaron los cacaos de Colombia, Ecuador y Perú, y desarrollaron una variedad de diseños experimentales por más de cuatro años, incluyendo estudios preclínicos y clínicos con 50 voluntarios. Una vez obtenidos los resultados, los discutimos con un grupo formado por los más reconocidos cardiólogos, nutricionistas, nutriólogos, dermatólogos, deportólogos, etc.</p>
 <p>Hoy, tenemos suficiente evidencia científica y técnica para poder afirmar con certeza que el consumo regular de cacao ayuda a mejorar y a proteger la salud de las personas. Pero ¿cuánto chocolate debemos consumir? Nuestra recomendación es dos porciones de chocolate en polvo al día o una de chocolate amargo durante al menos un mes. Esto lo ayudará a:</p>
 <h3>PROTEGER LA SALUD CARDIOVASCULAR</h3>
@@ -701,14 +996,14 @@ export const articles = [
     autor: {
       name: 'HUGO OLARTE', avatar: '', details: 'Investigation and Special Projects Manager', description: 'Dir I&D en Casa Luker', linkedin: ['https://www.linkedin.com/in/hugo-olarte-83625568/', 'Hugo Olarte']
     },
-    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DICIEMBRE 2019', url: '/blog/tomando-posicion/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AGOSTO 2019', url: '/blog/tomando-posicion/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULIO 2019', url: '/blog/tomando-posicion/right-spark' }]
   },
   {
-    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/take-stand', name: 'Take a stand' }],
+    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/tomando-posicion', name: 'Tomando posicion' }],
     url: 'arte-para-sanar',
     cover: 'healing-with-art.jpg',
     title: 'ARTE PARA SANAR',
-    date: 'SEPTEMBER 2019',
+    date: 'SEPTIEMBRE 2019',
     content: `<p><small><b>Nota del editor:</b> El año pasado el equipo de Transhuella trabajó con nosotros implementando un proyecto artístico que unió la pintura y la fotografía para reconocer la herencia cultural de las comunidades aledañas en nuestro cultivo de cacao en Necoclí y ayudar a sanar las heridas de guerra. A partir de su experiencia, construyeron un libro lleno de historias y hoy te traemos la primera.</small></p>
 <q>Forma bien a la gente para que pueda marcharse, trátales mejor para que no quieran hacerlo</q>
 <small> - Richard Branson, Fundador Virgin</small>
@@ -740,14 +1035,14 @@ y un sancocho en los que todos participan por igual; llevar un equipo de profesi
 <p>Queremos ser participes de la transformación de Colombia.</p>
 `,
     autor: { name: 'VALENTINA RAMÍREZ', avatar: 'https://pbs.twimg.com/profile_images/1132303793331113984/tmfrgfNK_400x400.jpg', details: 'Director at Transhuella', description: 'Professional in Government and International Relations with emphasis in Public Management, 2 years of experience in the formulation and coordination of projects in public and non-governmental entities.', linkedin: ['https://www.linkedin.com/in/valentina-ramirez-zapata-58616654/', 'Valentina Ramirez Zapata'] },
-    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DICIEMBRE 2019', url: '/blog/tomando-posicion/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AGOSTO 2019', url: '/blog/tomando-posicion/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULIO 2019', url: '/blog/tomando-posicion/right-spark' }]
   },
   {
-    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/create-shared-value', name: 'Create shared value' }],
+    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/valor-compartido', name: 'Valor Compartido' }],
     url: 'la-sostenibilidad-un-tema-de-sectores',
     title: 'LA SOSTENIBILIDAD, ¿UN TEMA DE SECTORES?',
     cover: 'banner-guacamayo.jpg',
-    date: 'SEPTEMBER 2019',
+    date: 'SEPTIEMBRE 2019',
     content: `<p>El concepto de sostenibilidad se ha ido definiendo, y redefiniendo, por muchos durante la última década. Del tema hablan hoy expertos, no expertos, jóvenes, adultos, empresarios y gobernantes en todas las coordenadas. Algunos hacen especial énfasis en temas ambientales, otros en sociales, económicos y otros en las relaciones entre todos los componentes. Hay grandes discusiones sobre lo que en realidad significa o, más bien; sobre los caminos que nos debemos trazar como planeta para ser sostenibles. Se enfrentan conceptos, intereses, culturas, etc., pero parece que estamos todos de acuerdo en que es un asunto de temporalidad. ¿Cómo satisfacemos las necesidades de hoy sin comprometer las de mañana? Naciones Unidas logró poner al mundo entero a mirar hacia el mismo norte: los Objetivos de Desarrollo Sostenible que nos marcaron una ruta por la cual debemos transitar como humanidad para que vivamos dignamente, garantizando los recursos para futuras generaciones. </p>
 <p>NACIONES UNIDAS LOGRÓ PONER AL MUNDO ENTERO A MIRAR HACIA EL MISMO NORTE: LOS OBJETIVOS DE DESARROLLO SOSTENIBLE QUE NOS MARCARON UNA RUTA POR LA CUAL DEBEMOS TRANSITAR COMO HUMANIDAD PARA QUE VIVAMOS DIGNAMENTE, GARANTIZANDO LOS RECURSOS PARA FUTURAS GENERACIONES.</p>
 <p>Sin embargo, aunque los objetivos estén ahora más claros, todavía nos enfrentamos al reto de su implementación: ¿quiénes?, ¿cuándo?, ¿dónde?, y ¿cuánto dinero se necesita? La discusión toma entonces un matiz entre lo práctico y lo filosófico, entre el propósito superior que como humanidad tenemos y la voluntad de llevarlo a cabo. Surgen las preguntas sobre quiénes deben empezar, si se debe partir de la base o si es responsabilidad de los líderes. En fin, hay más preguntas que respuestas sobre la sostenibilidad. Sin embargo, hay una que es especialmente relevante: ¿quiénes son los jugadores más importantes para que sea una realidad?</p>
@@ -774,14 +1069,14 @@ y un sancocho en los que todos participan por igual; llevar un equipo de profesi
 <p>Esto ya es posible, ya se han realizado algunos esfuerzos para que esto pase y ya existen ejemplos de éxito. Sin embargo, sigue siendo en una escala pequeña. El llamado es a que pensemos como uno solo, que seamos por primera vez capaces de renunciar a todo lo que hemos ido construyendo en torno a la individualidad, para que podamos realmente mantener y seguir mejorando nuestro país y nuestro planeta. Ya hemos evidenciado  que el camino de la sectorización no nos ha llevado a ser más sostenibles, es hora de que elijamos trabajar juntos para toda la humanidad, ya no tenemos más tiempo.</p>
     `,
     autor: { name: 'JUANA BOTERO', avatar: 'https://media.licdn.com/dms/image/C5603AQFburD-lKe7tQ/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=OrPNQWmiurHcatseEVuDih5SDGN16X30sgHlTTP8ymg', details: 'Sustainability Director', description: 'Lawyer from Eafit University with an emphasis on public international law from the University of Salamanca, Spain. Current Director of Sustainability at Luker Chocolate where she works to improve the living conditions of rural cocoa farming communities.', linkedin: ['https://www.linkedin.com/in/juana-botero-62a78958/', 'Juana Botero'] },
-    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DICIEMBRE 2019', url: '/blog/tomando-posicion/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AGOSTO 2019', url: '/blog/tomando-posicion/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULIO 2019', url: '/blog/tomando-posicion/right-spark' }]
   },
   {
-    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/take-stand', name: 'Take a stand' }],
+    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/tomando-posicion', name: 'Tomando posicion' }],
     url: 're-imaginando-el-rol-de-la-mujer-en-el-agro',
     title: 'RE-IMAGINANDO EL ROL DE LA MUJER EN EL AGRO',
     cover: 'banner-chocolate.jpg',
-    date: 'SEPTEMBER 2019',
+    date: 'SEPTIEMBRE 2019',
     content: `<p>El 2 de agosto de 2019 participamos en el Women Economic Forum Latinoamérica, un evento global que busca generar ecosistemas de inclusión enfocados en la economía de la mujer. En él hablamos sobre cómo nos estamos re-imaginando el rol de la mujer en el agro para el mundo. Participar en estos espacios nos permite dar a conocer la realidad del campo colombiano al visibilizar el rol de los agricultores en el país. Además, logramos volcar la mirada hacía la ruralidad y generar conciencia sobre la equivocada interpretación que se tiene sobre el campesino y el gran reto que tiene la agricultura actualmente.</p>
 <img src="/static/media/cocoa-friends-1.09b69a29.jpg" alt="Women Forum">
 <p>La importancia de replantearnos el futuro del agro no solo en Colombia, sino en el mundo entero, obedece a la amenaza existente frente a la sostenibilidad de la agricultura y la seguridad alimentaria. Los jóvenes no están encontrando al campo atractivo ni próspero, no hay motivación alguna para desempeñarse en este sector. De acuerdo con las Naciones Unidas, para el 2050 la población será de 9.700 millones en el mundo, por lo tanto, es necesario cuestionarse cómo y quién suplirá los insumos básicos para la alimentación. La agricultura tiene la capacidad de incrementar los ingresos de las poblaciones vulnerables de manera más eficaz que otros sectores de la economía según el Banco Mundial y, aun así, un gran porcentaje de adultos en estado de pobreza son agricultores. Vivimos en un país que es 94% rural, pero la migración de los jóvenes hacia las zonas urbanas está en aumento.</p>
@@ -789,16 +1084,16 @@ y un sancocho en los que todos participan por igual; llevar un equipo de profesi
 <img src="/static/media/cocoa-friends-3.8fddecc4.jpg" alt="Girl and donkey">
 `,
     autor: {
-      name: 'ANDREA CAMACHO', avatar: 'https://media.licdn.com/dms/image/C5603AQGoUFQwRo9MVw/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=75pM_bDTKE8y5wBMwdDbFJpjDm50Br33zWmK-dgQ77E', details: 'Social Innovation Professional', description: 'MSc Social Innovation and Entrepreneurship student with interest in cultural projects. Designer by trait with a certificate in digital media from Yoobee Design School. Three years of experience in innovation, social design, co-creation, product and graphic design', linkedin: ['https://www.linkedin.com/in/andreacamachogonzalez/', 'Andrea Camacho']
+      name: 'ANDREA CAMACHO', avatar: 'https://media.licdn.com/dms/image/C5603AQGoUFQwRo9MVw/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=75pM_bDTKE8y5wBMwdDbFJpjDm50Br33zWmK-dgQ77E', details: 'Social Innovacion Professional', description: 'MSc Social Innovacion and Entrepreneurship student with interest in cultural projects. Designer by trait with a certificate in digital media from Yoobee Design School. Three years of experience in Innovacion, social design, co-creation, product and graphic design', linkedin: ['https://www.linkedin.com/in/andreacamachogonzalez/', 'Andrea Camacho']
     },
-    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DICIEMBRE 2019', url: '/blog/tomando-posicion/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AGOSTO 2019', url: '/blog/tomando-posicion/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULIO 2019', url: '/blog/tomando-posicion/right-spark' }]
   },
   {
-    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/take-stand', name: 'Take a stand' }],
+    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/tomando-posicion', name: 'Tomando posicion' }],
     url: 'healing-with-art-part-two',
     title: 'HEALING WITH ART: Part Two',
     cover: 'healing-with-art.jpg',
-    date: 'OCTOBER 2019',
+    date: 'OCTUBRE 2019',
     content: `<p>Grandmothers always say: </p>
 <p><i>Don’t touch! You’ll curdle it!</i></p>
 <p>Many times, when I have been meaning to help, I have been shooed out of the kitchen when I have taken hold of the beater to stir the hot chocolate.</p>
@@ -821,14 +1116,14 @@ y un sancocho en los que todos participan por igual; llevar un equipo de profesi
 <p>Without Luker Chocolate, our mission to change the world would not be possible. We are achieving it, one life at a time.</p>
     `,
     autor: { name: 'VALENTINA RAMÍREZ', avatar: 'https://pbs.twimg.com/profile_images/1132303793331113984/tmfrgfNK_400x400.jpg', details: 'Director at Transhuella', description: 'Professional in Government and International Relations with emphasis in Public Management, 2 years of experience in the formulation and coordination of projects in public and non-governmental entities.', linkedin: ['https://www.linkedin.com/in/valentina-ramirez-zapata-58616654/', 'Valentina Ramirez Zapata'] },
-    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DICIEMBRE 2019', url: '/blog/tomando-posicion/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AGOSTO 2019', url: '/blog/tomando-posicion/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULIO 2019', url: '/blog/tomando-posicion/right-spark' }]
   },
   {
-    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/innovacion', name: 'Innovación' }],
+    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/innovacion', name: 'Innovacion' }],
     url: 'el-proceso-de-conchado',
     cover: 'banner2.jpg',
     title: 'EL PROCESO DE CONCHADO',
-    date: 'OCTOBER 2019',
+    date: 'OCTUBRE 2019',
     content: `<p>Como consumidores, no nos damos cuenta de lo que se debe hacer con un grano de cacao antes de poder convertirlo en chocolate, pero más que una metamorfosis mística, este proceso de transformación une a la naturaleza, la ciencia y el arte.. Con el fin de darle vida a un chocolate, los granos de cacao pasan por etapas de selección, trillado, tostión, molienda, mezclado (con otros ingredientes), refinado y por último conchado, que es el proceso que explicaremos en este artículo.</p>
 <img src="/static/media/conching-process.cac06e80.jpg" alt="conching process">
     <p>El proceso de conchado fue descubierto en 1879 por el chocolatero suizo Rudolph Lindt, quien, por equivocación, dejó una mezcladora que contenía chocolate funcionando toda la noche, y se dio cuenta de que esto había cambiado su sabor y textura. El nombre del equipo, “concha”, se deriva de la palabra latina para concha, pues el equipo tradicional que se emplea en la manufactura del chocolate se parece a una concha.</p>
@@ -853,16 +1148,16 @@ y un sancocho en los que todos participan por igual; llevar un equipo de profesi
 <p>Ahora que sabes esto, la próxima vez que comas chocolate cierra los ojos, presta atención a la textura a medida que se derrite en tu boca, toma un poco de aire para evaluar el sabor, y recuerda que detrás de esa complejidad de sabores que estás sintiendo, se encuentra la magia del trabajo conjunto de la ciencia y la naturaleza para generar experiencias sensoriales.</p>
 `,
     autor: {
-      name: 'DIEGO CORTÉS', avatar: '', details: 'Research and Development Professional', description: 'Bilingual Chemical Engineer (English - Spanish), Master in Bromatology and Food Technology, with strong experience in Research, Development and Innovation in chocolate and other food companies, also in academic environments. Additional expertise in formulation, new product development, sensory product evaluation, consumer understanding, innovation management, intellectual property, technology research and market intelligence.', linkedin: ['https://www.linkedin.com/in/diego-alejandro-cort%C3%A9s-y%C3%A1%C3%B1ez-66682b50/', 'Diego Alejandro Cortés']
+      name: 'DIEGO CORTÉS', avatar: '', details: 'Research and Development Professional', description: 'Bilingual Chemical Engineer (English - Spanish), Master in Bromatology and Food Technology, with strong experience in Research, Development and Innovacion in chocolate and other food companies, also in academic environments. Additional expertise in formulation, new product development, sensory product evaluation, consumer understanding, Innovacion management, intellectual property, technology research and market intelligence.', linkedin: ['https://www.linkedin.com/in/diego-alejandro-cort%C3%A9s-y%C3%A1%C3%B1ez-66682b50/', 'Diego Alejandro Cortés']
     },
-    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DICIEMBRE 2019', url: '/blog/tomando-posicion/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AGOSTO 2019', url: '/blog/tomando-posicion/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULIO 2019', url: '/blog/tomando-posicion/right-spark' }]
   },
   {
-    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/create-shared-value', name: 'Create shared value' }],
+    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/valor-compartido', name: 'Valor Compartido' }],
     url: 'la-nueva-apuesta-tener-nuestros-propios-cultivos-empresariales',
     title: 'LA NUEVA APUESTA: TENER NUESTROS PROPIOS CULTIVOS EMPRESARIALES',
     cover: 'cocoa-farm.jpg',
-    date: 'OCTOBER 2019',
+    date: 'OCTUBRE 2019',
     content: `<q>“FUIMOS LOS PRIMEROS EN ATREVERNOS A INICIAR UN MODELO EMPRESARIAL DE CULTIVO DE CACAO EN COLOMBIA UTILIZANDO CLONES DE CACAO FINO DE AROMA”</q>
 <p>Hace ocho años llegamos a la conclusión de que el país tenía un modelo disperso de desarrollo de cacao a partir de pequeños productores. Tradicionalmente, el cultivo de cacao en Colombia era una actividad en la cual los agricultores solían ser muy pobres, no tenían recursos tecnológicos, no adelantaban una gestión administrativa y no tenían la capacidad de proyectar el negocio a mediano o largo plazo.</p>
 <p>Fue entonces cuando se nos ocurrió un modelo de desarrollo empresarial que dinamizara a los pequeños productores y los animara a sembrar cacao. En 2010, Luker Chocolate optó por tener cultivos propios que ayudaran a la compañía a satisfacer su demanda de Cacao Fino de Aroma −sin dejar de lado las relaciones ya establecidas con las asociaciones de cacaoteros en todo el país−, con el objetivo de tener proyectos agroindustriales demostrativos que promovieran la siembra de cacao a gran escala e impulsaran el desarrollo rural. En ese mismo año, la compañía encontró 550 hectáreas de tierra que eran utilizadas tradicionalmente para ganadería en Necoclí, Antioquia, y que luego convirtió en su primer cultivo agroindustrial y en el mayor cultivo agro-productivo de variedades Fino de Aroma del país, diseñado bajo un sistema agroforestal.</p>
@@ -873,14 +1168,14 @@ y un sancocho en los que todos participan por igual; llevar un equipo de profesi
 <p>For me, it is a source of pride to know that this company is not afraid to undertake major projects, rather it has been a pioneer and example throughout the country for this very reason.</p>
 `,
     autor: { name: 'GUIDO SIERRA', avatar: 'https://media.licdn.com/dms/image/C4E03AQHh3XbrtXhmKQ/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=PD2w7KFQty_KkqUIHiUYgJNfA9GLs_S1MTMSqczVWWI', details: 'General Manager Luker Agricola', description: '17 years of professional experience in human talent management and generation of high performance teams, Financial Management, Process Optimization, Installation and commissioning of industrial facilities and Development of Supply Chains with successful results in increases in efficiency, productivity, reduction of costs and value generation through the satisfaction and loyalty of customers and suppliers.', linkedin: ['https://www.linkedin.com/in/guido-sierra-1301a339/', 'Guido Sierra'] },
-    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DICIEMBRE 2019', url: '/blog/tomando-posicion/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AGOSTO 2019', url: '/blog/tomando-posicion/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULIO 2019', url: '/blog/tomando-posicion/right-spark' }]
   },
   {
-    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/create-shared-value', name: 'Create shared value' }],
+    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/valor-compartido', name: 'Valor Compartido' }],
     url: 'chocolate–esparciendo-el-amor-por-el-mundo',
     title: 'CHOCOLATE – ESPARCIENDO EL AMOR POR EL MUNDO',
     cover: 'stand-banner.jpg',
-    date: 'OCTOBER 2019',
+    date: 'OCTUBRE 2019',
     content: `<p>Hacer un viaje a Luker Chocolate en Colombia y vivir #LukerExperience en carne propia, resultó ser una experiencia reveladora para la dueña de Le Salon Du Chocolat, Dawn Shrives. De su visita, regresó con un nuevo aprecio por la producción de chocolate y llena de ideas sobre cómo su empresa, ubicada en Chichester, Sur de Inglaterra, puede apoyar el trabajo que se está haciendo en ese país.</p>
 <p>Establecido en 2004, Le Salon Du Chocolat es un estudio de chocolate en el cual sus visitantes pueden poner a prueba sus habilidades con talleres y fiestas temáticas. Dawn también dicta charlas y demostraciones para organizaciones y escuelas locales.</p>
 <p>Pero la pasión de Dawn es la “calidad” del chocolate, desde la fuente de granos de cacao hasta el producto terminado. Ella explica:</p>
@@ -899,14 +1194,14 @@ y un sancocho en los que todos participan por igual; llevar un equipo de profesi
 <p>Tras usar su chocolate por más de una década, y ahora ver el trabajo que Luker y su proyecto Chocolate Dream están realizando, me emociona mucho ayudarles a compartir esta historia. María de Restrepo fue miembro de la familia fundadora de Luker Chocolate. Todos los sábados, en Manizales, salía a su ventana y regalaba chocolate a las personas sin hogar con el único propósito de consolarlas y asegurarse de que tuvieran comida en sus estómagos. En ese momento, no se había investigado sobre la “felicidad de comer chocolate”, pero lo que ella hizo y el chocolate que regaló debió haber reconfortado a muchas personas. Supongo que al usar chocolate Luker hoy en día, estoy haciendo lo mismo, no solo en términos de apoyar a las familias que se encuentran en la fuente de esta travesía, sino también al llevar la felicidad de compartir su fino chocolate con mis clientes. Los suizos llamaron al cacao “Theobroma” en el siglo XVIII, que significa “alimento de los dioses”. Me gusta pensar que soy una versión moderna de una “diosa de chocolate”, y que es mi deber llevar el mejor chocolate a las manos de todas las personas del mundo. Y si puedo hacer esto de una manera en la que sé que estoy ayudando y apoyando a las familias que lo proveen, pues mucho mejor.</p>
 `,
     autor: { name: 'JOSÉ MALDONADO', avatar: 'https://media.licdn.com/dms/image/C5603AQGWmXeWsufD9Q/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=sPc6xh78N7oYmS61XLxym_XcKLYzzBJ9PSp5kyFCPQk', details: 'SUSTAINABLE SUPPLY ANALYST', description: 'Sustainable Supply Analyst for Luker Chocolate, focused on agricultural development and sustainability projects of the company\'s value chain.Project leader for organizations of cocoa producers and small- scale farmers.', linkedin: ['https://www.linkedin.com/in/jos%C3%A9-miguel-maldonado-v%C3%A9lez-79a818114/', 'Jose Maldonado'] },
-    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DICIEMBRE 2019', url: '/blog/tomando-posicion/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AGOSTO 2019', url: '/blog/tomando-posicion/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULIO 2019', url: '/blog/tomando-posicion/right-spark' }]
   },
   {
-    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/create-shared-value', name: 'Create shared value' }],
+    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/valor-compartido', name: 'Valor Compartido' }],
     url: 'cacao-bosques-y-paz',
     title: 'CACAO, BOSQUES Y PAZ',
     cover: 'banner-cacaos-w.jpg',
-    date: 'OCTOBER 2019',
+    date: 'OCTUBRE 2019',
     content: `<p>En Luker Chocolate, todos los días partimos y buscamos crecer desde nuestro propósito superior: hacer del mundo un lugar mejor, ayudando a otras empresas a crear productos con propósito, utilizando nuestro chocolate como una herramienta de cambio. Este futuro y cambio que soñamos empieza en las regiones productoras de cacao en Colombia, de donde obtenemos el mejor Cacao Fino y de Aroma. Pero no nos queríamos quedar ahí. Por eso, hace unos años, decidimos poner todas nuestras fuerzas y ofrecerle soluciones reales al campo colombiano; de ahí nace “El Sueño de Chocolate”.</p>
 <p>El reto es enorme. En Colombia, se produce cacao en 27 de los 32 departamentos, lo que genera una gran dispersión geográfica en la producción y un sin número de barreras para los productores y sus familias. Además, las principales regiones cacaoteras de Colombia han sido históricamente zonas de conflicto armado, minería ilegal, narcotráfico etc.; y por desgracia, hoy en día muchas lo siguen siendo. A pesar de que los obstáculos se presentaran una y otra vez en el camino, nuestro sueño es más grande. Sabemos que solos no podemos y que la llave para alcanzar nuestra meta es el trabajo en equipo; solo así lograremos que “El Sueño de Chocolate” deje algún día de ser una aspiración.</p>
 <img src="/static/media/bosque-necocli.12b8874a.jpg" alt="Forest Necoclí">
@@ -934,14 +1229,14 @@ y un sancocho en los que todos participan por igual; llevar un equipo de profesi
 <p>Cacao, Bosques y Paz es un hito muy importante para la cacaocultura en Colombia y todo lo que hay detrás de ella. Será el primer gran pacto por el desarrollo sostenible de la producción de cacao en el país que harán los tres sectores de la economía. Este proyecto será un aporte muy importante en la protección y conservación de toda la riqueza natural con la que convive el cacao, además; transformará las realidades que hoy en día viven las familias cacaocultoras del país, ayudará a superar dificultades y ofrecerá un mejor futuro para el campo colombiano.</p>
 `,
     autor: { name: 'JOSÉ MALDONADO', avatar: 'https://media.licdn.com/dms/image/C5603AQGWmXeWsufD9Q/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=sPc6xh78N7oYmS61XLxym_XcKLYzzBJ9PSp5kyFCPQk', details: 'SUSTAINABLE SUPPLY ANALYST', description: 'Sustainable Supply Analyst for Luker Chocolate, focused on agricultural development and sustainability projects of the company\'s value chain.Project leader for organizations of cocoa producers and small- scale farmers.', linkedin: ['https://www.linkedin.com/in/jos%C3%A9-miguel-maldonado-v%C3%A9lez-79a818114/', 'Jose Maldonado'] },
-    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DICIEMBRE 2019', url: '/blog/tomando-posicion/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AGOSTO 2019', url: '/blog/tomando-posicion/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULIO 2019', url: '/blog/tomando-posicion/right-spark' }]
   },
   {
-    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/innovacion', name: 'Innovación' }],
+    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/innovacion', name: 'Innovacion' }],
     url: 'beau-cao-un-chocolate-que-cuida-la-belleza-desde-el-interior',
     cover: 'beucao-banner.jpg',
     title: 'BEAU CAO, UN CHOCOLATE QUE CUIDA LA BELLEZA DESDE EL INTERIOR',
-    date: 'NOVEMBER 2019',
+    date: 'NOVIEMBRE 2019',
     content: `<p>Durante más de 30 años, la feria comercial anual PLMA (Private Label Manufacturing Association) ha sido el evento más importante en Estados Unidos donde retailers e industriales obtienen información y conocen proveedores para desarrollar sus marcas privadas. En la edición de este año, más de 1.500 empresas de 40 países exhibirán sus productos y servicios, incluidos 25 pabellones internacionales.</p>
 <p>A pesar de que desde hace más de 5 años hemos participado en este evento, esta ocasión decidimos presentarnos de una manera diferente, comenzando por nuestro stand; un stand más experiencial, donde los visitantes podrán vivir la experiencia del Luker Chocolate Market, un espacio donde encontrarán nuestra trayectoria de más de 110 años como maestros chocolateros llevada al mundo de algunas de las megatendencias de los alimentos: el mundo premium, ético y saludable.</p>
 <p>Además, este año decidimos ir más allá y presentarnos al New Product Expo, una plataforma donde solo algunas de las compañías que participarán en la feria podrán exhibir sus últimas innovaciones en productos y empaques. Los productos serán exhibidos en el Idea SuperMarket, un lugar en la feria que muestra lo que supermercados, hipermercados y retailers de todo tipo, están haciendo con sus marcas. La selección de los productos que se mostrarán aquí está basada en el nivel de innovación de los mismos, después de que un jurado probara el producto postulado y de esta manera pudiera comprobar su nivel de innovación. Un par de semanas después de haber postulado nuestras ideas, tuvimos la gran noticia de haber sido seleccionados con dos innovaciones: Beau Cao y Protein Pud.</p>
@@ -959,14 +1254,14 @@ y un sancocho en los que todos participan por igual; llevar un equipo de profesi
 <small>*Estos estudios fueron realizados por investigaciones internas de Casa Luker S.A.. La declaración de beneficios de este producto deberá ser aprobada por las entidades regulatorias competentes según el país y con el lleno de los requisitos correspondientes.</small>
 `,
     autor: { name: 'MELISSA CHARRY', avatar: 'https://media.licdn.com/dms/image/C4E03AQE3fTb1qaHvGQ/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=G7ZrphPGrtZfzoLSk3L65yb14Hnoqh4KC3FWqMpkwOM', details: 'Portfolio and Business Growth Professional', description: `Master's degree student in Marketing from the University of Liverpool, Uk, with experience in the creation of strategies of positioning and generation of brand value, development of experiences, product conceptualization and communication plans complemented with the management of design and advertising agencies.`, linkedin: ['https://www.linkedin.com/in/melissa-charry-clavijo-828b30166', 'Melissa Charry Clavijo'] },
-    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DICIEMBRE 2019', url: '/blog/tomando-posicion/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AGOSTO 2019', url: '/blog/tomando-posicion/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULIO 2019', url: '/blog/tomando-posicion/right-spark' }]
   },
   {
-    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/innovacion', name: 'Innovación' }],
+    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/innovacion', name: 'Innovacion' }],
     url: 'protein-pud-el-snack-perfecto',
     cover: 'protein-pud-banner.jpg',
     title: 'PROTEIN PUD, EL SNACK PERFECTO',
-    date: 'NOVEMBER 2019',
+    date: 'NOVIEMBRE 2019',
     content: `<p>En el blog de la semana pasada, les contamos sobre nuestra participación en la feria PLMA (Private Label Manufacturing Association), donde nuestros clientes y asistentes al evento podrán vivir la experiencia del Luker Chocolate Market. Además, presentamos una de nuestras últimas innovaciones en producto: Beau Cao, un chocolate que cuida la belleza desde el interior, el cual exhibiremos en el New Product Expo, una plataforma donde solo algunas de las compañías que participarán en la feria podrán exhibir sus últimas innovaciones.</p>
 <p>Hoy, el protagonista de este blog es el Protein Pud, el segundo producto innovador que exhibiremos en ese mismo espacio. Una formulación que hemos desarrollado y puesto a disposición de nuestros clientes quienes la deseen tener en su portafolio de marca privada. Aquí les contamos cómo fue la creación de este producto.</p>
 <img src="/static/media/protein-pud.e083a995.jpg" alt="Protein pud">
@@ -982,14 +1277,14 @@ y un sancocho en los que todos participan por igual; llevar un equipo de profesi
 <p>¡Te esperamos!</p>
 `,
     autor: { name: 'JOHANNA VERDUGO', avatar: 'https://media.licdn.com/dms/image/C4E03AQEBjQMIzBoosQ/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=PJFM_xfyNj0lFBOFrXEG8yuGX72o0fnMupSc49dazWw', details: 'Brand and Communications Analyst', description: 'Social communicator with emphasis on journalism from the Pontificia Universidad Javeriana de Bogotá, Colombia.', linkedin: ['https://www.linkedin.com/in/johanna-verdugo-romero-0564a9151/', 'Johanna Verdugo Romero'] },
-    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DICIEMBRE 2019', url: '/blog/tomando-posicion/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AGOSTO 2019', url: '/blog/tomando-posicion/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULIO 2019', url: '/blog/tomando-posicion/right-spark' }]
   },
   {
-    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/take-stand', name: 'Take a stand' }],
+    breads: [{ href: '/blog', name: 'Blog' }, { href: '/blog/tomando-posicion', name: 'Tomando posicion' }],
     url: 'pequenos-cambios-grandes-revolucones',
     cover: 'banner-cocoa-forest.jpg',
     title: 'PEQUEÑOS CAMBIOS, GRANDES REVOLUCIONES',
-    date: 'DECEMBER 2019',
+    date: 'DICIEMBRE 2019',
     content: `<p>Esta historia empieza hace 8 años cuando llegamos, contra todo pronóstico, a Necoclí, Urabá antioqueño, a cultivar nuestro primer bosque de cacao. Por muchos años, esta región ha cargado con el lastre de la violencia y todo lo que esto significa: pobreza, inequidad, falta de educación, pérdida del sentido de la vida y de la esperanza. Luker en su llegada decide no solo tener el mejor cultivo de Cacao Fino de Aroma en el país, sino convertirse en un modelo de sostenibilidad donde las personas fueran el centro, el fin último.</p>
 <img src="/static/media/bosque-necocli.12b8874a.jpg" alt="Forest Necoclí">
 <p>Después de 7 años de impactos positivos en las comunidades vecinas a las 550 hectáreas de bosque de cacao, en el 2017 uno de los corregimientos más beneficiados del proyecto tomó la iniciativa de la mano del equipo de El Sueño de Chocolate, de celebrar esta llegada histórica de la compañía a sus vidas a través de un festival.</p>
@@ -1014,7 +1309,7 @@ y un sancocho en los que todos participan por igual; llevar un equipo de profesi
     autor: {
       name: 'JUANA BOTERO', avatar: 'https://media.licdn.com/dms/image/C5603AQFburD-lKe7tQ/profile-displayphoto-shrink_800_800/0?e=1581552000&v=beta&t=OrPNQWmiurHcatseEVuDih5SDGN16X30sgHlTTP8ymg', details: 'Sustainability Director', description: 'Lawyer from Eafit University with an emphasis on public international law from the University of Salamanca, Spain. Current Director of Sustainability at Luker Chocolate where she works to improve the living conditions of rural cocoa farming communities.', linkedin: ['https://www.linkedin.com/in/juana-botero-62a78958/', 'Juana Botero']
     },
-    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
+    recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DICIEMBRE 2019', url: '/blog/tomando-posicion/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AGOSTO 2019', url: '/blog/tomando-posicion/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULIO 2019', url: '/blog/tomando-posicion/right-spark' }]
   }
 ].reverse();
 export const countries = [

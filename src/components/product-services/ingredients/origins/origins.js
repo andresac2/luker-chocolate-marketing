@@ -2,7 +2,11 @@ import React from 'react'
 import WrappedContactSide from '../../../layout/contact-side/contact-side';
 import { TiArrowSortedUp } from 'react-icons/ti';
 import Modals from '../../../modals/modals';
+import i18n from '../../../../i18n';
 import { withNamespaces } from 'react-i18next';
+
+import { itemsOrigins as itemsOriginsEn } from '../../../../commons/data/data-en';
+import { itemsOrigins as itemsOriginsEs } from '../../../../commons/data/data-es';
 
 class Ingredient1906 extends React.Component {
   constructor(props) {
@@ -12,139 +16,8 @@ class Ingredient1906 extends React.Component {
       openProducts: false,
       infoProductsVisible: false,
       productSelected: [],
-      itemsArauca: [{
-        id: 1,
-        img: 'p-tumaco.png',
-        description: 'DARK TUMACO',
-        cocoaContent: '65%',
-        viscosity: 3,
-        fluid: 5,
-        viscous: 1,
-        data: [{
-          key: 1,
-          enrobing: true,
-          decorativeFigures: true,
-          moulding: true,
-          fillingsGanaches: true,
-          decorating: true,
-          desserts: true
-        }],
-        selected: false
-      }, {
-        id: 2,
-        img: 'p-tumaco-85.png',
-        description: 'EXTRA DARK TUMACO',
-        cocoaContent: '85%',
-        viscosity: 4,
-        fluid: 5,
-        viscous: 1,
-        data: [{
-          key: 1,
-          enrobing: true,
-          decorativeFigures: false,
-          moulding: true,
-          fillingsGanaches: false,
-          decorating: true,
-          desserts: false
-        }],
-        selected: false
-      },
-      {
-        id: 3,
-        img: 'p-huila-65.png',
-        description: 'DARK HUILA',
-        cocoaContent: '65%',
-        viscosity: 3,
-        fluid: 5,
-        viscous: 1,
-        data: [{
-          key: 1,
-          enrobing: true,
-          decorativeFigures: true,
-          moulding: true,
-          fillingsGanaches: true,
-          decorating: true,
-          desserts: true
-        }],
-        selected: false
-      }, {
-        id: 4,
-        img: 'p-huila-70.png',
-        description: 'DARK HUILA',
-        cocoaContent: '70%',
-        viscosity: 4,
-        fluid: 5,
-        viscous: 1,
-        data: [{
-          key: 1,
-          enrobing: true,
-          decorativeFigures: false,
-          moulding: true,
-          fillingsGanaches: true,
-          decorating: true,
-          desserts: true
-        }],
-        selected: false
-      },
-      {
-        id: 5,
-        img: 'p-santander-65.png',
-        description: 'DARK SANTANDER',
-        cocoaContent: '65%',
-        viscosity: 3,
-        fluid: 5,
-        viscous: 1,
-        data: [{
-          key: 1,
-          enrobing: true,
-          decorativeFigures: true,
-          moulding: true,
-          fillingsGanaches: true,
-          decorating: true,
-          desserts: true
-        }],
-        selected: false
-      },
-      {
-        id: 6,
-        img: 'p-sanmartin-72.png',
-        description: 'DARK SAN MARTIN',
-        cocoaContent: '72%',
-        viscosity: 4,
-        fluid: 5,
-        viscous: 1,
-        data: [{
-          key: 1,
-          enrobing: true,
-          decorativeFigures: true,
-          moulding: true,
-          fillingsGanaches: true,
-          decorating: true,
-          desserts: true
-        }],
-        selected: false
-      },
-      {
-        id: 7,
-        img: 'p-arauca-55.png',
-        description: 'MILK ARAUCA',
-        cocoaContent: '55%',
-        viscosity: 5,
-        fluid: 5,
-        viscous: 1,
-        data: [{
-          key: 1,
-          enrobing: true,
-          decorativeFigures: false,
-          moulding: true,
-          fillingsGanaches: true,
-          decorating: true,
-          desserts: true
-        }],
-        selected: false
-      }
-      ]
-    };
+      itemsArauca: i18n.language === 'en' ? itemsOriginsEn : itemsOriginsEs
+    }
     this.handleSetProductSelected = this.handleSetProductSelected.bind(this);
     this.handleShowFormContact = this.handleShowFormContact.bind(this);
     this.showModalDist = this.showModalDist.bind(this)

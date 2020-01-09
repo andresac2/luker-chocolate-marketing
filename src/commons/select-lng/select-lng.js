@@ -27,13 +27,13 @@ const SelectLanguage = (props) => {
     console.log("language", lng)
     i18n.changeLanguage(lng);
     if (history.location.pathname.slice(1).split('/').shift() === "blog") {
-      window.location.reload();
+      //window.location.reload();
+      // i18n.changeLanguage(value);
     }
   };
 
-
   return (
-    <Select defaultValue={value} onChange={_handleChange}  >
+    <Select defaultValue={i18n.language} onChange={_handleChange}  >
       <Option value="es">ES</Option>
       <Option value="en">EN</Option>
     </Select>
