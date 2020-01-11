@@ -7,15 +7,15 @@ import { notification } from 'antd';
 import i18n from '../../../i18n';
 import { withNamespaces } from 'react-i18next';
 
-import termsConditions from '../../../assets/documents/policies/Términos y condiciones de uso sitio web CasaLuker inglés 16dic2019.pdf';
-import privacyPolicy from '../../../assets/documents/policies/Política privacidad sitio web CasaLuker inglés 16dic2019.pdf';
-import antiFraud from '../../../assets/documents/policies/Política antifraude y anticorrupción inglés 16dic2019.pdf';
-import dataTreatment from '../../../assets/documents/policies/Política tratamiento datos personales CasaLuker inglés 16dic2019.pdf';
+import { termsConditions } from "../../../commons/data/data-en";
+import { privacyPolicy } from "../../../commons/data/data-en";
+import { antiFraud } from "../../../commons/data/data-en";
+import { dataTreatment } from "../../../commons/data/data-en";
 
-import termsConditionsEs from '../../../assets/documents/policies/Términos y condiciones de uso sitio web CasaLuker español 16dic2019.pdf';
-import privacyPolicyEs from '../../../assets/documents/policies/Política privacidad sitio web CasaLuker español 16dic2019.pdf';
-import antiFraudEs from '../../../assets/documents/policies/Política antifraude y anticorrupción español 16dic2019.pdf';
-import dataTreatmentEs from '../../../assets/documents/policies/Política tratamiento datos personales CasaLuker español 16dic2019.pdf';
+import { termsConditions as termsConditionsEs } from "../../../commons/data/data-es";
+import { privacyPolicy as privacyPolicyEs } from "../../../commons/data/data-es";
+import { antiFraud as antiFraudEs } from "../../../commons/data/data-es";
+import { dataTreatment as dataTreatmentEs } from "../../../commons/data/data-es";
 
 class Footer extends React.Component {
   hideNews = ['moulding', 'dosing', 'panning', 'cocoa-powder', 'casaluker', 'our-services'];//VIstas en las que se oculta el newsletter

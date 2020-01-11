@@ -4,10 +4,10 @@ import FormItem from 'antd/lib/form/FormItem';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/img/Lukerlogo.svg'
 import Footer from '../footer/footer';
-import termsConditions from '../../../assets/documents/policies/Términos y condiciones de uso sitio web CasaLuker inglés 16dic2019.pdf';
-import privacyPolicy from '../../../assets/documents/policies/Política privacidad sitio web CasaLuker inglés 16dic2019.pdf';
-import termsConditionsEs from '../../../assets/documents/policies/Términos y condiciones de uso sitio web CasaLuker español 16dic2019.pdf';
-import privacyPolicyEs from '../../../assets/documents/policies/Política privacidad sitio web CasaLuker español 16dic2019.pdf';
+import { termsConditions } from "../../../commons/data/data-en";
+import { privacyPolicy } from "../../../commons/data/data-en";
+import { termsConditions as termsConditionsEs } from "../../../commons/data/data-es";
+import { privacyPolicy as privacyPolicyEs } from "../../../commons/data/data-es";
 import HelmetComponent from '../../../commons/helmet/helmet';
 import { withNamespaces } from 'react-i18next';
 import i18n from '../../../i18n';

@@ -19,11 +19,11 @@ const useStateWithLocalStorage = localStorageKey => {
 };
 
 const SelectLanguage = (props) => {
-  const [value, setValue] = useStateWithLocalStorage('lukerLng');
+  // const [value, setValue] = useStateWithLocalStorage('lukerLng');
   const { history } = props;
 
   const _handleChange = (lng) => {
-    setValue(lng);
+    //  setValue(lng);
     console.log("language", lng)
     i18n.changeLanguage(lng);
     if (history.location.pathname.slice(1).split('/').shift() === "blog") {

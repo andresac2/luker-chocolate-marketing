@@ -19,6 +19,10 @@ router.use(express.static(
   { maxAge: '30d' },
 ));
 
+// anything else should act as our index page
+// react-router will take care of everything
+router.use('*', serverRenderer);
+
 // tell the app to use the above rules
 app.use(router);
 

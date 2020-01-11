@@ -6,21 +6,26 @@ import { Form, Select, Input, Button, InputNumber } from 'antd';
 import FormItem from 'antd/lib/form/FormItem';
 import Article from '../../components/blog/article/article';
 import FloatLogo from '../../components/layout/float-logo/float-logo';
-import SustainabilityBrief from '../../assets/documents/Sustainabililty-2018-Luker-Chocolate-version-digital.pdf';
-import CocoaForestPeaceAgreement from '../../assets/documents/Colombia-Cocoa-Forests-and-Peace-Initiative-Joint-Framework-for-Action-English.pdf';
-import zipDocuments from '../../assets/documents/documents-luker.zip';
+//import SustainabilityBrief from 'https://www.lukerchocolate.com/static/media/Sustainabililty%202018%20Luker%20Chocolate%20VERSI%C3%93N%20DIGITAL.cb13c104.pdf';
+//import CocoaForestPeaceAgreement from '../../assets/documents/Colombia-Cocoa-Forests-and-Peace-Initiative-Joint-Framework-for-Action-English.pdf';
+//import zipDocuments from '../../assets/documents/documents-luker.zip';
 import HelmetComponent from '../../commons/helmet/helmet';
 import i18n from '../../i18n';
 import { withNamespaces } from 'react-i18next';
 
-import termsConditions from '../../assets/documents/policies/Términos y condiciones de uso sitio web CasaLuker inglés 16dic2019.pdf';
-import privacyPolicy from '../../assets/documents/policies/Política privacidad sitio web CasaLuker inglés 16dic2019.pdf';
+//import termsConditions from '../../assets/documents/policies/Términos y condiciones de uso sitio web CasaLuker inglés 16dic2019.pdf';
+//import privacyPolicy from '../../assets/documents/policies/Política privacidad sitio web CasaLuker inglés 16dic2019.pdf';
+import { termsConditions } from '../../commons/data/data-en';
+import { privacyPolicy } from '../../commons/data/data-es';
 
 import { articlesSustain as articlesSustainEn, countries as dataCountries, modalReportItems as modalReportItemsEn } from '../../commons/data/data-en';
 import { articlesSustain as articlesSustainEs, countries as paises, modalReportItems as modalReportItemsEs } from '../../commons/data/data-es';
 
 
 class Sustain extends React.Component {
+  SustainabilityBrief = 'https://www.lukerchocolate.com/static/media/Sustainabililty%202018%20Luker%20Chocolate%20VERSI%C3%93N%20DIGITAL.cb13c104.pdf';
+  CocoaForestPeaceAgreement = 'https://www.lukerchocolate.com/static/media/Sustainabililty%202018%20Luker%20Chocolate%20VERSI%C3%93N%20DIGITAL.cb13c104.pdf';
+  zipDocuments = 'https://www.lukerchocolate.com/static/media/Sustainabililty%202018%20Luker%20Chocolate%20VERSI%C3%93N%20DIGITAL.cb13c104.pdf';
 
   constructor(props) {
     super(props);

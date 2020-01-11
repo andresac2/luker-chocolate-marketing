@@ -1,10 +1,11 @@
 import React from "react";
 import {
-  BrowserRouter as Router,
+  Router,
   Redirect,
   Switch,
   Route
 } from "react-router-dom";
+import { createMemoryHistory } from 'history';
 
 import Home from "./scenes/Home/Home"
 import Flow from "./scenes/Flow/Flow"
@@ -25,9 +26,11 @@ import NavArrowLeft from "./components/layout/nav-arrows/nav-arrow-left";
 import WrappedWorkWithUs from "./components/layout/work-with-us/work-with-us";
 import ScrollToTop from "./commons/scroll-to-top/scroll-to-top";
 
+const history = createMemoryHistory();
+
 export default function BasicExample() {
   return (
-    <Router className="limit-width">
+    <Router className="limit-width" history={history}>
       <Header />
       <ScrollToTop />
       <Switch>
