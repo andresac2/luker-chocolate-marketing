@@ -68,11 +68,11 @@ class Sustain extends React.Component {
     let docs = this.state.modalReportItems.filter(item => item.selected);
     if (docs.length === 1) {
       if (docs.some(function (v) { return v.id.includes(2) }))
-        window.open(SustainabilityBrief);
+        window.open(this.SustainabilityBrief);
       if (docs.some(function (v) { return v.id.includes(4) }))
-        window.open(CocoaForestPeaceAgreement);
+        window.open(this.CocoaForestPeaceAgreement);
     } else {
-      window.open(zipDocuments);
+      window.open(this.zipDocuments);
     }
   }
 

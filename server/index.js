@@ -15,13 +15,9 @@ router.use('^/$', serverRenderer);
 
 // other static resources should just be served as they are
 router.use(express.static(
-  path.join(__dirname, 'public', 'build'),
+  path.resolve(__dirname, '..', 'build'),
   { maxAge: '30d' },
 ));
-
-// anything else should act as our index page
-// react-router will take care of everything
-router.use('*', serverRenderer);
 
 // tell the app to use the above rules
 app.use(router);
