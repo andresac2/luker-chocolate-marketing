@@ -6,7 +6,7 @@ import { Form, Select, Input, Button, InputNumber } from 'antd';
 import FormItem from 'antd/lib/form/FormItem';
 import Article from '../../components/blog/article/article';
 import FloatLogo from '../../components/layout/float-logo/float-logo';
-import SustainabilityBrief from '../../assets/documents/Sustainabililty 2018 Luker Chocolate VERSIÓN DIGITAL.pdf';
+import SustainabilityBrief from '../../assets/documents/Sustainabililty-2018-Luker-Chocolate-version-digital.pdf';
 import CocoaForestPeaceAgreement from '../../assets/documents/Colombia-Cocoa-Forests-and-Peace-Initiative-Joint-Framework-for-Action-English.pdf';
 import zipDocuments from '../../assets/documents/documents-luker.zip';
 import HelmetComponent from '../../commons/helmet/helmet';
