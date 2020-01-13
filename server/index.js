@@ -11,7 +11,11 @@ const app = express();
 const router = express.Router();
 
 // root (/) should always serve our server rendered page
-router.use('^/$', serverRenderer);
+//router.use('^/$', serverRenderer);
+
+// anything else should act as our index page
+// react-router will take care of everything
+//router.use('*', serverRenderer);
 
 // other static resources should just be served as they are
 router.use(express.static(
@@ -21,7 +25,10 @@ router.use(express.static(
 
 // tell the app to use the above rules
 app.use(router);
-
+// anything else should act as our index page
+// react-router will take care of everything
+router.use('*', serverRenderer);
+app.use(router);
 // start the app
 app.listen(PORT, (error) => {
   if (error) {

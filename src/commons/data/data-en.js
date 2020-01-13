@@ -1320,7 +1320,7 @@ It’s coming, the Festival’s coming. The families come together, each and eve
     },
     recommended: [{ img: 'planting.jpg', title: 'SMALL CHANGES, BIG REVOLUTIONS', subtitle: 'DECEMBER 2019', url: '/blog/take-stand/small-changes-big-revolutions' }, { img: 'planting.jpg', title: 'COCOA FRIENDS', subtitle: 'AUGUST 2019', url: '/blog/take-stand/cocoa-friends' }, { img: 'planting.jpg', title: 'THE RIGHT SPARK', subtitle: 'JULY 2019', url: '/blog/take-stand/right-spark' }]
   }
-]
+].reverse()
 export const countries = [
   {
     name: 'ARGENTINA',
