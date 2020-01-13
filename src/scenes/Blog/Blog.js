@@ -47,8 +47,8 @@ class Blog extends React.Component {
 
   loadArticle() {
     if (this.props.match.params.article) {
-      if (this.props.match.params.category === i18n.t('routes.our-clients').replace("/", "")) {
-        const client = clientsEn.find(client => client.url === this.props.match.params.article || clientsEs.find(client => client.url === this.props.match.params.article))
+      if (this.props.match.params.category === 'our-clients' || this.props.match.params.category === 'nuestros-clientes') {
+        const client = i18n.language === 'en' ? clientsEn.find(client => client.url === this.props.match.params.article) : clientsEs.find(client => client.url === this.props.match.params.article);
         this.articleLoaded = client;
         this.generateRecommendedEntries('clients');
       } else {
@@ -98,7 +98,6 @@ class Blog extends React.Component {
   }
 
   searchOnChange(event) {
-    console.log(event.target.value)
     const allArticles = articlesEn.concat(articlesEs);
     const searched = allArticles.filter(t => t.title.toLowerCase().includes(event.target.value.toLowerCase()));
     this.setState({ findedArticles: searched });
@@ -113,7 +112,6 @@ class Blog extends React.Component {
   }
 
   openNotification = (data) => {
-    console.log(data);
     if (data.AggregatedGroups) {
       if (data.Description === "preexistente") {
         notification.warning({
@@ -174,15 +172,15 @@ class Blog extends React.Component {
           <meta property="fb:app_id" content="your_app_id" />
           <meta name="twitter:site" content="@Luker_Chocolate" />
 </Helmet>*/}
-        <div className={`blog-component-header blog-component-header--${(article) ? article : category}`} style={{ backgroundImage: category !== t('routes.our-clients').replace("/", "") ? (article) ? `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/blog/${this.articleLoaded.cover}`)})` : '' : `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/${this.articleLoaded.banner}`)})` }}>
+        <div className={`blog-component-header blog-component-header--${(article) ? article : category}`} style={{ backgroundImage: (!this.articleLoaded.banner) ? (article) ? `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/blog/${this.articleLoaded.cover}`)})` : '' : `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/${this.articleLoaded.banner}`)})` }}>
           <div className="btn-dist">
             <Link to="/" className="logo"> <img src={logo} alt="Logo Luker" /></Link>
-            {category === t('routes.our-clients').replace("/", "") ?
+            {this.articleLoaded.banner ?
               <Link to={t('routes.our-clients')}>{t('buttons.back')}</Link> :
               <Link to='/blog'>BLOG</Link>
             }
           </div>
-          <FloatLogo btns={[{ url: category === t('routes.our-clients').replace("/", "") ? t('routes.our-clients') : '/blog', btnText: category === t('routes.our-clients').replace("/", "") ? t('buttons.back').toUpperCase() : 'BLOG' }]} />
+          <FloatLogo btns={[{ url: this.articleLoaded.banner ? t('routes.our-clients') : '/blog', btnText: (this.articleLoaded.banner) ? t('buttons.back').toUpperCase() : 'BLOG' }]} />
           <div style={{ marginTop: (article) ? '5em' : '3em' }}>
             <div className="blog-component-header--search">
               {category !== t('routes.our-clients').replace("/", "") &&

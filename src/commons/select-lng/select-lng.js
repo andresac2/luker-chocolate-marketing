@@ -26,10 +26,10 @@ const SelectLanguage = (props) => {
     //  setValue(lng);
     console.log("language", lng)
     i18n.changeLanguage(lng);
-    if (history.location.pathname.slice(1).split('/').shift() === "blog") {
-      //window.location.reload();
-      // i18n.changeLanguage(value);
-    }
+    /* if (history.location.pathname.slice(1).split('/').shift() === "blog") {
+       //window.location.reload();
+       // i18n.changeLanguage(value);
+     }*/
   };
 
   return (

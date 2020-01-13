@@ -666,7 +666,7 @@ export const modalReportItems = [
   }
 ]
 export const clients = [{
-  breads: [{ href: '/our-clients', name: 'Our clients' }],
+  breads: [{ href: '/nuestros-clientes', name: 'Nuestros clientes' }],
   url: 'doisy-dam',
   cover: 'Doisy&Dam.jpg',
   banner: 'doisy-header.jpg',
@@ -676,7 +676,7 @@ export const clients = [{
   <p>Para sus creaciones más nuevas, Crunchy Almond Butter y SNAPS, querían profundizar aún más en el corazón del rastreo del cacao, por lo que decidieron usar chocolate de origen único de nosotros, no solo porque cultivan algunos de los cacao más sabrosos. frijoles en la tierra pero también porque trabajamos muy duro para mejorar la comunidad local.</p>
   <div class="blog-article-content--img" ><img src="/static/media/doisy-milk.57393fc4.jpg" alt=""><span></span></div>`,
 }, {
-  breads: [{ href: '/our-clients', name: 'Our clients' }],
+  breads: [{ href: '/nuestros-clientes', name: 'Nuestros clientes' }],
   url: 'pots-co',
   title: 'Pots & Co',
   banner: 'pots-header.jpg',
@@ -686,7 +686,7 @@ export const clients = [{
 <p>Todos sus ingredientes base se obtienen con atención y cuidado, por lo que en Luker Chocolate se los proporcionamos. No hay aditivos o potenciadores del sabor necesarios, ni permitidos en su cocina. La mayoría de sus productos están basados en chocolate y se requiere la más alta calidad para producirlos.</p>
 <p>Como el equipo de Pots & Co probó el chocolate colombiano, sabían que la calidad y el sabor no se podían comparar con ninguna otra cosa en el mundo, por lo que decidieron convertirnos en su proveedor, garantizando un sabor fantástico y un valor especial.</p><div class="blog-article-content--img" ><img src="/static/media/pots-blog.caab403c.jpg" alt="Pots Cover"><span>POTS & CO</span></div></div>`,
 }, {
-  breads: [{ href: '/our-clients', name: 'Our clients' }],
+  breads: [{ href: '/nuestros-clientes', name: 'Nuestros clientes' }],
   url: 'york-cocoa-house',
   title: 'York Cocoa House',
   cover: 'york.jpg',
@@ -697,7 +697,7 @@ export const clients = [{
   <div class="blog-article-content--img" ><img src="/static/media/york-blog.6edf6a0f.jpg" alt="York Cocoa House" /><span></span></div>`,
 },
 {
-  breads: [{ href: '/our-clients', name: 'Our clients' }],
+  breads: [{ href: '/nuestros-clientes', name: 'Nuestros clientes' }],
   url: 'royce',
   title: 'ROYCE\'',
   cover: 'royce.jpg',
