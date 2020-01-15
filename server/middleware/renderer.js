@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOMServer from 'react-dom/server'
 import { StaticRouter } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 // import our main App component
 import App from '../../src/routes';
@@ -28,7 +29,7 @@ export default (req, res, next) => {
     //   );  
 
     // render the app as a string
-    let html = ReactDOMServer.renderToString(
+    let html = ReactDOMServer.renderToNodeStream(
       <StaticRouter location={req.url} context={context}>
         <App />
       </StaticRouter>);
@@ -37,6 +38,8 @@ export default (req, res, next) => {
       res.redirect(301, context.url);
       return;
     }
+
+    const helmet = Helmet.renderStatic();
     // inject the rendered app into our html and send it
     return res.send(
       htmlData.replace(

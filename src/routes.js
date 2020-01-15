@@ -5,7 +5,6 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import { createMemoryHistory } from 'history';
 
 import Home from "./scenes/Home/Home"
 import Flow from "./scenes/Flow/Flow"
@@ -25,12 +24,13 @@ import NavArrowRight from "./components/layout/nav-arrows/nav-arrow-right";
 import NavArrowLeft from "./components/layout/nav-arrows/nav-arrow-left";
 import WrappedWorkWithUs from "./components/layout/work-with-us/work-with-us";
 import ScrollToTop from "./commons/scroll-to-top/scroll-to-top";
+import { createMemoryHistory } from 'history';
 
 const history = createMemoryHistory();
 
 export default function BasicExample() {
   return (
-    <Router className="limit-width" history={history}>
+    <div className="limit-width" >
       <Header />
       <ScrollToTop />
       <Switch>
@@ -63,7 +63,8 @@ export default function BasicExample() {
       <NavArrowRight />
       <NavArrowLeft />
       <FooterCover />
-    </Router>
+    </div>
+
   );
 }
 //<Route path="/about" component={About} />

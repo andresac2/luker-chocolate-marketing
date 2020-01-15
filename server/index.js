@@ -24,7 +24,7 @@ router.use(express.static(
 ));
 
 // tell the app to use the above rules
-app.use(router);
+//app.use(router);
 // anything else should act as our index page
 // react-router will take care of everything
 router.use('*', serverRenderer);
