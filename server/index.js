@@ -32,7 +32,7 @@ app.use(router);
 // start the app
 console.log(process.env.PORT);
 
-app.listen(process.env.PORT, (error) => {
+app.listen(process.env.PORT, '0.0.0.0', (error) => {
   if (error) {
     return console.log('something bad happened', error);
   }
