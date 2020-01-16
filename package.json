@@ -16,7 +16,8 @@
     "react-meta-tags": "^0.7.4",
     "react-router-dom": "^5.1.2",
     "react-router-sitemap": "^1.2.0",
-    "react-scripts": "^3.3.0"
+    "react-scripts": "^3.3.0",
+    "ignore-styles": "^5.0.1"
   },
   "scripts": {
     "start": "node --max-old-space-size=6144 server/bootstrap.js",
@@ -51,7 +52,6 @@
     "babel-preset-react-app-babel-7": "^4.0.2-0",
     "css-loader": "^3.2.1",
     "eslint": "^6.8.0",
-    "ignore-styles": "^5.0.1",
     "style-loader": "^1.0.1"
   }
 }
