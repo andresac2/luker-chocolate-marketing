@@ -30,7 +30,9 @@ router.use(express.static(
 router.use('*', serverRenderer);
 app.use(router);
 // start the app
-app.listen(PORT, (error) => {
+console.log(process.env.PORT);
+
+app.listen(process.env.PORT, (error) => {
   if (error) {
     return console.log('something bad happened', error);
   }
