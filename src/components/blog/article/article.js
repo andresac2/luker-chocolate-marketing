@@ -4,6 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 import { FaFacebookF, FaLinkedinIn, FaPrint, FaInstagram, FaTwitter } from 'react-icons/fa';
 import Comments from '../comments/comments';
 import MetaTags from 'react-meta-tags';
+import { Helmet } from 'react-helmet';
 
 class Article extends React.Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class Article extends React.Component {
     const fullUrl = window.location.href;
     return (
       <div className="blog-article">
-        <MetaTags>
+        <Helmet>
           <title>{data.title.charAt(0).toUpperCase() + data.title.slice(1).toLowerCase()}</title>
           <meta name="description" content={data.flag ? "Our clients" : data.breads[0].href} />
           <meta property="og:title" content={data.title} />
@@ -28,7 +29,7 @@ class Article extends React.Component {
           <meta name="twitter:image:alt" content="Luker Chocolate | Cacao Fino de Aroma" />
           <meta property="fb:app_id" content="your_app_id" />
           <meta name="twitter:site" content="@Luker_Chocolate" />
-        </MetaTags>
+        </Helmet>
         {!window.location.href.includes('sustainability') && <div className="blog-article-title-resp">{data.title}</div>}
         <div className="blog-article-bread">
           <Breadcrumb>

@@ -29,40 +29,24 @@ export default (req, res, next) => {
     //   );  
 
     // render the app as a string
-    let html = ReactDOMServer.renderToString(
+    let html = ReactDOMServer.renderToNodeStream(
       <StaticRouter location={req.url} context={context}>
         <App />
       </StaticRouter>);
+
+    const helmet = Helmet.renderStatic();
 
     if (context.url) {
       res.redirect(301, context.url);
       return;
     }
 
-    const helmet = Helmet.renderStatic();
-
-    const helmetHtml = `
-    <!doctype html>
-    <html ${helmet.htmlAttributes.toString()}>
-        <head>
-            ${helmet.title.toString()}
-            ${helmet.meta.toString()}
-            ${helmet.link.toString()}
-        </head>
-        <body ${helmet.bodyAttributes.toString()}>
-          <div id="root"></div>
-        </body>
-    </html>
-`;
-
     // inject the rendered app into our html and send it
     return res.send(
       htmlData.replace(
-        '<html_data_attributes/>',
-        `${helmet.title.toString()}
-         ${helmet.meta.toString()}
-         ${helmet.link.toString()}`
-      ),
+        '<div id="root"></div>',
+        `<div id="root">${html}</div>`
+      )
     );
   });
 }
