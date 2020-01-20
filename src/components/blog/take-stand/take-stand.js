@@ -25,6 +25,7 @@ function TakeStand(props) {
   const lim = 0; //props.articles.length - 1;
   const category = props.category;
   const { t } = props;
+  console.log("cat: ", props.articles)
   return (
     <div className="take-stand">
       <div className="blog-layout-latest">

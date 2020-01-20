@@ -15,6 +15,7 @@ class Article extends React.Component {
     const { data, recommended } = this.props;
     const altImg = 'img-example.svg';
     const fullUrl = window.location.href;
+    console.log("lod", data)
     return (
       <div className="blog-article">
         <Helmet>
@@ -22,7 +23,7 @@ class Article extends React.Component {
           <meta name="description" content={data.flag ? "Our clients" : data.breads[0].href} />
           <meta property="og:title" content={data.title} />
           <meta property="og:description" content={(data.flag) ? 'Our clients' : data.breads[0].href} />
-          <meta property="og:image" content={"https://www.lukerchocolate.com" + require(`../../../assets/img/${data.flag ? '' : 'blog/'}${data.cover ? data.cover : 'img-example.svg'}`)} />
+          <meta property="og:image" content={require(`../../../assets/img/${data.flag ? '' : 'blog/'}${data.cover ? data.cover : 'img-example.svg'}`)} />
           <meta property="og:url" content={fullUrl} />
           <meta name="twitter:card" content="summary_large_image" />
           <meta property="og:site_name" content="Luker Chocolate." />
@@ -58,7 +59,7 @@ class Article extends React.Component {
             <h2>{data.autor.name}</h2>
             <span>{data.autor.details}</span>
             {/*<p>{data.autor.description}</p>*/}
-            <a href={data.autor.linkedin[0]} target="_blank" ><FaLinkedinIn /> {data.autor.linkedin[1]}</a>
+            <a href={data.autor.linkedin} target="_blank" ><FaLinkedinIn /> {data.autor.name}</a>
           </div>
         </div>}
         {recommended && recommended.length > 0 &&

@@ -21,8 +21,6 @@ export const Authenticate = () => {
 
 export async function NewContact(email) {
   return Authenticate().then(async response => {
-    console.log(response.Token);
-
     const _response = await fetch('https://cors-anywhere.herokuapp.com/https://api.embluemail.com/Services/Emblue3Service.svc/json/NewContact', {
       method: 'POST',
       headers: {

@@ -22,6 +22,8 @@ import SelectLanguage from '../../commons/select-lng/select-lng';
 import { clients as clientsEn, articles as articlesEn } from '../../commons/data/data-en';
 import { clients as clientsEs, articles as articlesEs } from '../../commons/data/data-es';
 
+import { getClients, getPosts } from "../../commons/services/api";
+
 class Blog extends React.Component {
   constructor(props) {
     super(props);
@@ -30,16 +32,86 @@ class Blog extends React.Component {
       emailNewsletter: '',
       findedArticles: [],
       searchValue: '',
-      newsletterWaiting: false
+      newsletterWaiting: false,
+      posts: [],
+      latestArticle: [],
+      allArticles: [],
+      clients: [],
+      isLoading: true
     };
     this.handleChange = this.handleChange.bind(this);
     this.registerEmailNewsletter = this.registerEmailNewsletter.bind(this);
     this.searchArticle = this.searchArticle.bind(this);
+    this.getArticles = this.getArticles.bind(this);
+    this.getCustomers = this.getCustomers.bind(this);
   }
-  clients = i18n.language === 'en' ? clientsEn : clientsEs;
-  articles = i18n.language === 'en' ? articlesEn : articlesEs;
+
+  //clients = i18n.language === 'en' ? clientsEn : clientsEs;
+  //articles = i18n.language === 'en' ? articlesEn : articlesEs;
   articleLoaded = [];
   recommendedEntries = [];
+
+  async getCustomers() {
+    //this.setState({ isLoading: true });
+    let breads = [{ href: '/', name: '' }]
+    let cust = {};
+    let customers = [{}];
+    getClients().then(data =>
+      data.map((e, i) => {
+        cust['url'] = e.acf.url;
+        cust['cover'] = e.acf.cover || 'banner-cocoa-forest.jpg';
+        cust['title'] = e.acf.title;
+        cust['banner'] = e.acf.banner;
+        cust['flag'] = e.acf.flag;
+        cust['content'] = e.acf.content;
+        breads[0]['href'] = e.acf.href;
+        breads[0]['name'] = e.acf.categoryname || "Nuestros clientes";
+        cust['breads'] = breads;
+        customers.push(cust);
+        /*         this.setState({ allArticles: arts }); */
+        cust = {};
+        breads = [{}, {}];
+      }))
+      .then(data =>
+        this.setState({ clients: customers })
+      )
+    //console.log(getPages().then(data => console.log(data)));  
+  }
+
+  async getArticles() {
+    //this.setState({ isLoading: true });
+    let breads = [{ href: '/blog', name: 'Blog' }, { href: '/blog/take-stand', name: 'Take a stand' }]
+    let autor = { name: '', avatar: '', details: '', linkedin: '' }
+    //let art = examArt;
+    let art = {};
+    let arts = [{}];
+    getPosts().then(data =>
+      data.map((e, i) => {
+        art['url'] = e.acf.url;
+        art['cover'] = e.acf.cover || 'banner-cocoa-forest.jpg';
+        art['title'] = e.title.rendered;
+        art['date'] = e.acf.date;
+        art['content'] = e.content.rendered;
+        autor['name'] = e.acf.authorname;
+        autor['avatar'] = e.acf.avatar;
+        autor['details'] = e.acf.details;
+        autor['linkedin'] = e.acf.linkeind;
+        breads[0]['href'] = "/blog/";
+        breads[0]['name'] = "Blog";
+        breads[1]['href'] = "/blog/" + e.acf.categoria.slug;
+        breads[1]['name'] = e.acf.categoria.name;
+        art['autor'] = autor;
+        art['breads'] = breads;
+        arts.push(art);
+        /*         this.setState({ allArticles: arts }); */
+        art = {};
+        breads = [{}, {}];
+        autor = {};
+      })).then(data =>
+        this.setState({ allArticles: arts, latestArticle: arts[1] })
+      )
+    //console.log(getPages().then(data => console.log(data)));  
+  }
 
   searchToggle() {
     this.setState({ searchOpen: !this.state.searchOpen });
@@ -48,11 +120,11 @@ class Blog extends React.Component {
   loadArticle() {
     if (this.props.match.params.article) {
       if (this.props.match.params.category === 'our-clients' || this.props.match.params.category === 'nuestros-clientes') {
-        const client = i18n.language === 'en' ? clientsEn.find(client => client.url === this.props.match.params.article) : clientsEs.find(client => client.url === this.props.match.params.article);
+        const client = this.state.clients.find(client => client.url === this.props.match.params.article);
         this.articleLoaded = client;
         this.generateRecommendedEntries('clients');
       } else {
-        const art = articlesEn.find(art => art.url === this.props.match.params.article) || articlesEs.find(art => art.url === this.props.match.params.article);
+        const art = this.state.allArticles.find(art => art.url === this.props.match.params.article);
         this.articleLoaded = art;
         this.generateRecommendedEntries('article');
       }
@@ -74,10 +146,10 @@ class Blog extends React.Component {
     let array = [];
     let nCategory = (this.props.match.params.category === 'under-the-tree') ? 'take-stand' : this.props.match.params.category;
     if (type === 'article') {
-      array = this.articles.filter(t => t.breads.find(e => e.href.includes(nCategory)));
-      //array = this.articles;
+      array = this.state.allArticles.filter(t => t.breads && t.breads.find(e => e.href.includes(nCategory)));
+      //array = this.state.allArticles;
     } else {
-      array = this.clients;
+      array = this.state.clients;
     }
     const fIndex = array.findIndex(art => art.url === this.props.match.params.article);
     let rest = 1;
@@ -137,31 +209,38 @@ class Blog extends React.Component {
     this.setState({ newsletterWaiting: false });
   };
 
+  componentDidMount() {
+    this.getArticles();
+    this.getCustomers();
+  }
+
   render() {
+    const { searchOpen, emailNewsletter, newsletterWaiting, findedArticles, searchValue, posts, latestArticle, allArticles, clients } = this.state;
     const { Search } = Input;
     const { Option } = Select;
-    const { searchOpen, emailNewsletter, newsletterWaiting, findedArticles, searchValue } = this.state;
     const { category, article } = this.props.match.params;
     const { t } = this.props;
-    const latestArticle = this.articles[0];
-    const allArticles = articlesEn.concat(articlesEs);
+    //const latestArticle = this.state.allArticles[0];
+    //const allArticles = articlesEn.concat(articlesEs);
     const imgs = [item2, item3, item4, item5];
+    console.log("client: ", clients)
+    //this.setState({ latestArticle: this.state.allArticles[0] })
     this.loadArticle();
-
     return (
       <Layout className="blog-component">
-        <MetaTags>
-          <title>Blog | Under The Tree</title>
-          <meta property="og:title" content="Blog | Under The Tree" />
-          <meta property="og:image" content='https://www.lukerchocolate.com/static/media/blog-header.8847659a.jpg' />
-          <meta property="og:url" content={window.location.href} />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta property="og:site_name" content="Luker Chocolate." />
-          <meta name="twitter:image:alt" content="Blog | Under The Tree" />
-          <meta property="fb:app_id" content="your_app_id" />
-          <meta name="twitter:site" content="@Luker_Chocolate" />
-        </MetaTags>
-        {/*        <Helmet>
+        {allArticles.length > 0 &&
+          <><Helmet>
+            <title>Blog | Under The Tree</title>
+            <meta property="og:title" content="Blog | Under The Tree" />
+            <meta property="og:image" content='https://www.lukerchocolate.com/static/media/blog-header.8847659a.jpg' />
+            <meta property="og:url" content={window.location.href} />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta property="og:site_name" content="Luker Chocolate." />
+            <meta name="twitter:image:alt" content="Blog | Under The Tree" />
+            <meta property="fb:app_id" content="your_app_id" />
+            <meta name="twitter:site" content="@Luker_Chocolate" />
+          </Helmet>
+            {/*        <Helmet>
           <title>Blog | Under The Tree</title>
           <meta property="og:title" content="Blog | Under The Tree" />
           <meta property="og:image" content='https://www.lukerchocolate.com/static/media/blog-header.8847659a.jpg' />
@@ -172,104 +251,117 @@ class Blog extends React.Component {
           <meta property="fb:app_id" content="your_app_id" />
           <meta name="twitter:site" content="@Luker_Chocolate" />
 </Helmet>*/}
-        <div className={`blog-component-header blog-component-header--${(article) ? article : category}`} style={{ backgroundImage: (!this.articleLoaded.banner) ? (article) ? `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/blog/${this.articleLoaded.cover}`)})` : '' : `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/${this.articleLoaded.banner}`)})` }}>
-          <div className="btn-dist">
-            <Link to="/" className="logo"> <img src={logo} alt="Logo Luker" /></Link>
-            {this.articleLoaded.banner ?
-              <Link to={t('routes.our-clients')}>{t('buttons.back')}</Link> :
-              <Link to='/blog'>BLOG</Link>
-            }
-          </div>
-          <FloatLogo btns={[{ url: this.articleLoaded.banner ? t('routes.our-clients') : '/blog', btnText: (this.articleLoaded.banner) ? t('buttons.back').toUpperCase() : 'BLOG' }]} />
-          <div style={{ marginTop: (article) ? '5em' : '3em' }}>
-            <div className="blog-component-header--search">
-              {category !== t('routes.our-clients').replace("/", "") &&
-                <Search
-                  value={searchValue}
-                  onChange={(event) => this.searchOnChange(event)}
-                  placeholder={t('form.input-search')}
-                  onSearch={(value) => this.searchArticle(value)}
-                  className={searchOpen && 'blog-component-header--search-open'}
-                  style={{ width: 400 }}
-                />}
-              <SelectLanguage />
-            </div>
-            <h1 style={{ fontSize: (article) ? '4em' : '5em' }}>{(article) ? this.articleLoaded.title : (category) ? (category === 'innovacion') ? 'innovación' : (category === 'tomando-posicion') ? 'tomando posición' : (category === 'sueno-del-chocolate') ? 'sueño del chocolate' : (category === 'lo-que-no-sabias') ? 'lo que no sabías' : category.replace("/", "").replace(/-/g, " ") : 'Under The Tree'}
-              {this.articleLoaded.flag && <img className="blog-component-header-flag" src={require('../../assets/img/' + this.articleLoaded.flag + "-flag.png")} alt={this.articleLoaded.flag.substr(0, 2)} />} </h1>
-          </div>
-        </div >
-        <div className="blog-component-content">
-          {(category !== t('routes.our-clients').replace("/", "")) && <div className={`blog-tabs blog-tabs-${category && 'selected'}`} >
-            <Link to={'/blog' + t('routes.take-stand')} className={category === t('routes.take-stand').replace("/", "") ? 'tab-blog-selected' : undefined}>{t('blog.take-stand')}</Link>
-            <Link to={'/blog' + t('routes.innovation')} className={category === t('routes.innovation').replace("/", "") ? 'tab-blog-selected' : undefined}>{t('blog.innovation')}</Link>
-            <Link to={'/blog' + t('routes.create-shared-value')} className={category === t('routes.create-shared-value').replace("/", "") ? 'tab-blog-selected' : undefined}>{t('blog.create-shared-value')}</Link>
-            <Link to={'/blog' + t('routes.chocolate-dream')} className={category === t('routes.chocolate-dream').replace("/", "") ? 'tab-blog-selected' : undefined}>{t('blog.chocolate-dream-journey')}</Link>
-            <Link to={'/blog' + t('routes.what-you-didnt-know')} className={category === t('routes.what-you-didnt-know').replace("/", "") ? 'tab-blog-selected' : undefined}>{t('blog.what-did-know')}</Link>
-          </div>}
-          {(findedArticles.length > 0 && searchValue.length > 0) ?
-            <div className="blog-layout-articles-searched-results">
-              <h3>{t('blog.finded') + " " + findedArticles.length + " " + t('blog.articles-for') + ' "' + searchValue + '"'} </h3>
-              <div className="blog-layout-articles">
-                {Object.keys(findedArticles).map(i =>
-                  <div className="blog-layout-articles--item" key={i}>
-                    <Link onClick={() => this.clearSearch()} to={findedArticles[i].breads[1].href + '/' + findedArticles[i].url} className="blog-layout-latest--article">
-                      <img src={require('../../assets/img/blog/' + findedArticles[i].cover)} />
-                      <p>{findedArticles[i].date}</p>
-                      <h2>{findedArticles[i].title}</h2>
-                    </Link>
-                  </div>
-                )}
+            <div className={`blog-component-header blog-component-header--${(article) ? article : category}`} style={{ backgroundImage: (!this.articleLoaded.banner) ? (article) ? `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/blog/${this.articleLoaded.cover}`)})` : '' : `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/${this.articleLoaded.banner}`)})` }}>
+              <div className="btn-dist">
+                <Link to="/" className="logo"> <img src={logo} alt="Logo Luker" /></Link>
+                {this.articleLoaded.banner ?
+                  <Link to={t('routes.our-clients')}>{t('buttons.back')}</Link> :
+                  <Link to='/blog'>BLOG</Link>
+                }
               </div>
-              <br />
-            </div> :
-            (category) ?
-              (article) ? <Article data={this.articleLoaded} recommended={this.recommendedEntries} /> : <TakeStand articles={allArticles.filter(t => t.breads.find(e => e.href.includes(category)))} category={category} />
-              :
-              <div className="blog-layout">
-                <div className="blog-layout-latest">
-                  <h1>{t('blog.latest-entries')}</h1>
-                  <Link to={latestArticle.breads[1].href + '/' + latestArticle.url} className="blog-layout-latest--article">
-                    <img src={require('../../assets/img/blog/' + latestArticle.cover)} alt={latestArticle.title} />
-                    <p>{latestArticle.date}</p>
-                    <h2>{latestArticle.title}</h2>
-                  </Link>
+              <FloatLogo btns={[{ url: this.articleLoaded.banner ? t('routes.our-clients') : '/blog', btnText: (this.articleLoaded.banner) ? t('buttons.back').toUpperCase() : 'BLOG' }]} />
+              <div style={{ marginTop: (article) ? '5em' : '3em' }}>
+                <div className="blog-component-header--search">
+                  {category !== t('routes.our-clients').replace("/", "") &&
+                    <Search
+                      value={searchValue}
+                      onChange={(event) => this.searchOnChange(event)}
+                      placeholder={t('form.input-search')}
+                      onSearch={(value) => this.searchArticle(value)}
+                      className={searchOpen && 'blog-component-header--search-open'}
+                      style={{ width: 400 }}
+                    />}
+                  <SelectLanguage />
                 </div>
-                <div className="blog-layout-articles">
-                  {Object.keys(this.articles).map(i =>
-                    i <= 3 && <div className="blog-layout-articles--item" key={i}>
-                      <Link to={this.articles[i].breads[1].href + '/' + this.articles[i].url} className="blog-layout-latest--article">
-                        <img src={require('../../assets/img/blog/' + this.articles[i].cover)} />
-                        <p>{this.articles[i].date}</p>
-                        <h2>{this.articles[i].title}</h2>
-                      </Link>
-                    </div>
-                  )}
-                </div>
-                <div className="blog-layout-featured">
-                  <h1>{t('blog.featured')}</h1>
-                  <div className="blog-layout-featured-item">
-                    {Object.keys(this.articles).map(i =>
-                      i <= 4 && <div className="blog-layout-articles--item" key={i}>
-                        <Link to={this.articles[i].breads[1].href + '/' + this.articles[i].url} className="blog-layout-latest--article">
-                          <p>{this.articles[i].date}</p>
-                          <h2>{this.articles[i].title} </h2>
+                <h1 style={{ fontSize: (article) ? '4em' : '5em' }}>{(article) ? this.articleLoaded.title : (category) ? (category === 'innovacion') ? 'innovación' : (category === 'tomando-posicion') ? 'tomando posición' : (category === 'sueno-del-chocolate') ? 'sueño del chocolate' : (category === 'lo-que-no-sabias') ? 'lo que no sabías' : category.replace("/", "").replace(/-/g, " ") : 'Under The Tree'}
+                  {this.articleLoaded.flag && <img className="blog-component-header-flag" src={require('../../assets/img/' + this.articleLoaded.flag + "-flag.png")} alt={this.articleLoaded.flag.substr(0, 2)} />} </h1>
+              </div>
+            </div >
+            <div className="blog-component-content">
+              {(category !== t('routes.our-clients').replace("/", "")) && <div className={`blog-tabs blog-tabs-${category && 'selected'}`} >
+                <Link to={'/blog' + t('routes.take-stand')} className={category === t('routes.take-stand').replace("/", "") ? 'tab-blog-selected' : undefined}>{t('blog.take-stand')}</Link>
+                <Link to={'/blog' + t('routes.innovation')} className={category === t('routes.innovation').replace("/", "") ? 'tab-blog-selected' : undefined}>{t('blog.innovation')}</Link>
+                <Link to={'/blog' + t('routes.create-shared-value')} className={category === t('routes.create-shared-value').replace("/", "") ? 'tab-blog-selected' : undefined}>{t('blog.create-shared-value')}</Link>
+                <Link to={'/blog' + t('routes.chocolate-dream')} className={category === t('routes.chocolate-dream').replace("/", "") ? 'tab-blog-selected' : undefined}>{t('blog.chocolate-dream-journey')}</Link>
+                <Link to={'/blog' + t('routes.what-you-didnt-know')} className={category === t('routes.what-you-didnt-know').replace("/", "") ? 'tab-blog-selected' : undefined}>{t('blog.what-did-know')}</Link>
+              </div>}
+              {(findedArticles.length > 0 && searchValue.length > 0) ?
+                <div className="blog-layout-articles-searched-results">
+                  <h3>{t('blog.finded') + " " + findedArticles.length + " " + t('blog.articles-for') + ' "' + searchValue + '"'} </h3>
+                  <div className="blog-layout-articles">
+                    {Object.keys(findedArticles).map(i =>
+                      <div className="blog-layout-articles--item" key={i}>
+                        <Link onClick={() => this.clearSearch()} to={findedArticles[i].breads[1].href + '/' + findedArticles[i].url} className="blog-layout-latest--article">
+                          <img src={require('../../assets/img/blog/' + findedArticles[i].cover)} />
+                          <p>{findedArticles[i].date}</p>
+                          <h2>{findedArticles[i].title}</h2>
                         </Link>
                       </div>
                     )}
                   </div>
-                </div>
-                <div className="blog-layout-newsletter">
-                  <h2>{t('blog.newsletter')}</h2>
-                  <p>{t('blog.newsletter-text')}</p>
-                  <form onSubmit={this.registerEmailNewsletter}>
-                    <input type="email" name="email" placeholder={t('form.give-us-email')} value={emailNewsletter} onChange={this.handleChange} />
-                    <input type="submit" value={t('buttons.send')} disabled={newsletterWaiting} />
-                  </form>
-                </div>
-              </div>
-          }
-        </div>
-        <Footer />
+                  <br />
+                </div> :
+                (category) ?
+                  (article) ? <Article data={this.articleLoaded} recommended={this.recommendedEntries} /> : <TakeStand articles={allArticles.filter(t => t.breads && t.breads.find(e => e.href.includes(category)))} category={category} />
+                  :
+                  <div className="blog-layout">
+                    <div className="blog-layout-latest">
+                      <h1>{t('blog.latest-entries')}</h1>
+                      {latestArticle.breads && <Link to={latestArticle.breads[1].href + '/' + latestArticle.url} className="blog-layout-latest--article">
+                        <img src={require('../../assets/img/blog/' + latestArticle.cover)} alt={latestArticle.title} />
+                        <p>{latestArticle.date}</p>
+                        <h2>{latestArticle.title}</h2>
+                      </Link>}
+                    </div>
+                    <div className="blog-layout-articles">
+                      {allArticles && allArticles.length > 0 && allArticles.map((data, i) => {
+                        return data.breads &&
+                          i <= 4 && <div className="blog-layout-articles--item" key={i}>
+                            <Link to={allArticles[i].breads[1].href + '/' + allArticles[i].url} className="blog-layout-latest--article">
+                              <img src={require('../../assets/img/blog/' + allArticles[i].cover)} />
+                              <p>{allArticles[i].date}</p>
+                              <h2>{allArticles[i].title}</h2>
+                            </Link>
+                          </div>
+                      })}
+                    </div>
+                    <div className="blog-layout-featured">
+                      <h1>{t('blog.featured')}</h1>
+                      <div className="blog-layout-featured-item">
+                        {allArticles && allArticles.length > 0 && allArticles.map((data, i) => {
+                          return data.breads &&
+                            i <= 4 && <div className="blog-layout-articles--item" key={i}>
+                              <Link to={allArticles[i].breads[1].href + '/' + allArticles[i].url} className="blog-layout-latest--article">
+                                <p>{allArticles[i].date}</p>
+                                <h2>{allArticles[i].title} </h2>
+                              </Link>
+                            </div>
+                        }
+                        )}
+                        {/*Object.keys(allArticles).map(i =>
+                          i <= 4 && <div className="blog-layout-articles--item" key={i}>
+                            <Link to={allArticles[i].breads[1].href + '/' + allArticles[i].url} className="blog-layout-latest--article">
+                              <p>{allArticles[i].date}</p>
+                              <h2>{allArticles[i].title} </h2>
+                            </Link>
+                          </div>
+                        )*/}
+                      </div>
+                    </div>
+                    <div className="blog-layout-newsletter">
+                      <h2>{t('blog.newsletter')}</h2>
+                      <p>{t('blog.newsletter-text')}</p>
+                      <form onSubmit={this.registerEmailNewsletter}>
+                        <input type="email" name="email" placeholder={t('form.give-us-email')} value={emailNewsletter} onChange={this.handleChange} />
+                        <input type="submit" value={t('buttons.send')} disabled={newsletterWaiting} />
+                      </form>
+                    </div>
+                  </div>
+              }
+            </div>
+            <Footer />
+          </>
+        }
       </Layout >
     );
   }
