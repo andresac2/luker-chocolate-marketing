@@ -8,6 +8,11 @@ export async function getPosts() {
   return await response.json();
 }
 
+export async function getPostsEs() {
+  const response = await fetch('https://www.back.lukerchocolate.com/es/wp-json/wp/v2/posts?per_page=100');
+  return await response.json();
+}
+
 export async function getClients() {
   const response = await fetch('https://www.back.lukerchocolate.com/wp-json/wp/v2/clients?per_page=100');
   return await response.json();

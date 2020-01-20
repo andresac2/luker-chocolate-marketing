@@ -76,22 +76,11 @@ class ModalDistributors extends React.Component {
       country: 'ca',
       company: 'CHOCOLATE ALIMENTS',
       address: 'Vancouver, Columbia Británica, Canadá',
-      phone: '778 895 6549',
+      phone: '+1 (604) 831 8558',
       fax: '',
       web: 'https://chocolatealiments.com/',
       email: 'mailto:terry@chocolatealiments.ca',
       urlMap: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d166655.30827522842!2d-123.2639867747921!3d49.2576507715125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x548673f143a94fb3%3A0xbb9196ea9b81f38b!2sVancouver%2C%20Columbia%20Brit%C3%A1nica%2C%20Canad%C3%A1!5e0!3m2!1ses!2sco!4v1576099002020!5m2!1ses!2sco"',
-      selected: false
-    },
-    {
-      country: 'ca',
-      company: 'CHOCOLAT CENTRAL',
-      address: 'Quebec, Canadá',
-      phone: '1-877-745-199 - 514-745-7199',
-      fax: '514-745-8731',
-      web: 'www.chococentral.com',
-      email: 'administration@chococentral.com - commande.order@chococentral.com',
-      urlMap: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2797.263288262578!2d-73.6963656844419!3d45.484642579101155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc93d336058dc4f%3A0x9fb447050ff18d10!2sChocolat%20Central%20C%20J%20Inc!5e0!3m2!1ses!2sco!4v1576099029078!5m2!1ses!2sco',
       selected: false
     },
     {
@@ -223,7 +212,18 @@ class ModalDistributors extends React.Component {
       fax: '+971 04 813 5898',
       web: 'www.pascalclair.com',
       email: 'pascal@pascalclair.com',
-      urlMap: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.877428250431!2d55.15225371500567!3d25.004280583986283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f72595c21a2c7%3A0x541547da78266a1a!2sEuropean%20Business%20Center!5e0!3m2!1ses!2sco!4v1576099565849!5m2!1ses!2sco',
+      urlMap: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d82735.31077607637!2d6.065830435993233!3d49.60758382175535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479548cd9df32c57%3A0x400d1d6d1056d10!2sLuxemburgo!5e0!3m2!1ses!2sco!4v1576099530590!5m2!1ses!2sco',
+      selected: false
+    },
+    {
+      country: 'mx',
+      company: 'CHOCOSOLUTIONS',
+      address: 'Calzada San Pedro #200-A, Esquina con Ave. Miravalle, Monterrey, NL 64640',
+      phone: '+52 (81) 8363.2182',
+      fax: '+971 04 813 5898',
+      web: 'www.chocosolutions.com',
+      email: 'info@chocosolutions.com',
+      urlMap: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d898.9968242869783!2d-100.36898237077615!3d25.67171580770557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8662961cfe91fffb%3A0xc84ed9884ea0852e!2sChocosolutions!5e0!3m2!1ses!2sco!4v1579560263498!5m2!1ses!2sco',
       selected: false
     },
     {
@@ -392,6 +392,9 @@ class ModalDistributors extends React.Component {
     }, {
       name: 'MIDDLE EAST',
       abrev: 'me'
+    }, {
+      name: 'MEXICO',
+      abrev: 'mx'
     }, {
       name: 'NETHERLANDS',
       abrev: 'nl'

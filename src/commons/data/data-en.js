@@ -1376,7 +1376,10 @@ export const countries = [
   }, {
     name: 'MIDDLE EAST',
     abrev: 'me'
-  }, {
+  },{
+    name: 'MEXICO',
+    abrev: 'mx'
+  },{
     name: 'NETHERLANDS',
     abrev: 'nl'
   }, {

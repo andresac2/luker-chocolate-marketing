@@ -6,6 +6,7 @@ require("@babel/register")({
   plugins: [
     "@babel/plugin-proposal-class-properties",
     '@babel/syntax-dynamic-import',
+    '@babel/plugin-transform-runtime',
     'dynamic-import-node'
   ]
 
