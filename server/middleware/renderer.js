@@ -30,11 +30,12 @@ module.exports.renderer = (req, res, next) => {
     
     const finishIndex = htmlData.substring(htmlData.lastIndexOf('<div id="root">') + '<div id="root">'.length)
 
-    htmlData = htmlData.replace('<metadynamyc/>', `
+    htmlData = htmlData.substring(0, htmlData.indexOf('<div id="root">'))
+    .replace('<metadynamyc/>', `
       ${helmet.title.toString()}
       ${helmet.meta.toString()}
       ${helmet.link.toString()}
-    `).substring(0, htmlData.indexOf('<div id="root">')) + '</noscript><div id="root">'
+    `)
 
     res.write(htmlData);
 
