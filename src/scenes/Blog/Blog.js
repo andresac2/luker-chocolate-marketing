@@ -22,7 +22,7 @@ import SelectLanguage from '../../commons/select-lng/select-lng';
 import { clients as clientsEn, articles as articlesEn } from '../../commons/data/data-en';
 import { clients as clientsEs, articles as articlesEs } from '../../commons/data/data-es';
 
-import { getClients, getPosts, getPostsEs } from "../../commons/services/api";
+import { getClients, getPosts } from "../../commons/services/api";
 
 class Blog extends React.Component {
   constructor(props) {
@@ -85,7 +85,7 @@ class Blog extends React.Component {
     //let art = examArt;
     let art = {};
     let arts = [{}];
-    i18n.language === 'en' ? getPosts() : getPostsEs().then(data =>
+    getPosts().then(data =>
       data.map((e, i) => {
         art['url'] = e.acf.url;
         art['cover'] = e.acf.cover || 'banner-cocoa-forest.jpg';

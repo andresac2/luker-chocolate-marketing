@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/static/css/main.0dab757a.chunk.css",
-    "main.js": "/static/js/main.28f15b69.chunk.js",
-    "main.js.map": "/static/js/main.28f15b69.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.3dccbdd2.js",
-    "runtime-main.js.map": "/static/js/runtime-main.3dccbdd2.js.map",
-    "static/css/2.2bcbc079.chunk.css": "/static/css/2.2bcbc079.chunk.css",
-    "static/js/2.1e0776a2.chunk.js": "/static/js/2.1e0776a2.chunk.js",
-    "static/js/2.1e0776a2.chunk.js.map": "/static/js/2.1e0776a2.chunk.js.map",
+    "main.js": "/static/js/main.5ec0033b.chunk.js",
+    "main.js.map": "/static/js/main.5ec0033b.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.3ab68fef.js",
+    "runtime-main.js.map": "/static/js/runtime-main.3ab68fef.js.map",
+    "static/css/2.624e4bf4.chunk.css": "/static/css/2.624e4bf4.chunk.css",
+    "static/js/2.4b7155e6.chunk.js": "/static/js/2.4b7155e6.chunk.js",
+    "static/js/2.4b7155e6.chunk.js.map": "/static/js/2.4b7155e6.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.a9bb0ead22b8e268216896681c1e6378.js": "/precache-manifest.a9bb0ead22b8e268216896681c1e6378.js",
+    "precache-manifest.591712462dd4683a88e03af22d812ac5.js": "/precache-manifest.591712462dd4683a88e03af22d812ac5.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/2.2bcbc079.chunk.css.map": "/static/css/2.2bcbc079.chunk.css.map",
+    "static/css/2.624e4bf4.chunk.css.map": "/static/css/2.624e4bf4.chunk.css.map",
     "static/css/main.0dab757a.chunk.css.map": "/static/css/main.0dab757a.chunk.css.map",
-    "static/js/2.1e0776a2.chunk.js.LICENSE": "/static/js/2.1e0776a2.chunk.js.LICENSE",
+    "static/js/2.4b7155e6.chunk.js.LICENSE": "/static/js/2.4b7155e6.chunk.js.LICENSE",
     "static/media/app.scss": "/static/media/serv-maquila-cover.609fd2be.jpg",
     "static/media/5thdimensions.jpg": "/static/media/5thdimensions.81cf3384.jpg",
     "static/media/Doisy&Dam.jpg": "/static/media/Doisy&Dam.c8f44fc8.jpg",
@@ -258,10 +258,10 @@
     "static/media/york.jpg": "/static/media/york.a1887e7a.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.3dccbdd2.js",
-    "static/css/2.2bcbc079.chunk.css",
-    "static/js/2.1e0776a2.chunk.js",
+    "static/js/runtime-main.3ab68fef.js",
+    "static/css/2.624e4bf4.chunk.css",
+    "static/js/2.4b7155e6.chunk.js",
     "static/css/main.0dab757a.chunk.css",
-    "static/js/main.28f15b69.chunk.js"
+    "static/js/main.5ec0033b.chunk.js"
   ]
 }
