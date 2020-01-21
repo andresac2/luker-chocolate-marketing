@@ -5,6 +5,7 @@ import { MdClose } from 'react-icons/md';
 import logo from '../../../assets/img/Lukerlogo.svg'
 import logoDark from '../../../assets/img/LukerlogoDark.svg'
 import { withNamespaces } from 'react-i18next';
+import { getDistributors } from '../../../commons/services/api';
 
 class ModalDistributors extends React.Component {
 
@@ -12,11 +13,13 @@ class ModalDistributors extends React.Component {
     super(props);
     this.state = {
       actualDist: [],
-      distValue: 'co',
+      distributors: [],
+      distValue: 'col',
       distSelected: 0
     };
+    this.getDist = this.getDist.bind(this);
   }
-  distributors = [
+  /*distributors = [
     {
       country: 'ar',
       company: 'TRADING ARGENTINA SRL',
@@ -336,7 +339,7 @@ class ModalDistributors extends React.Component {
       urlMap: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2947.630275597935!2d-87.95144528454334!3d42.3717180791861!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880f91e14084d0a1%3A0xd903a29e781814b9!2s760%20Lakeside%20Dr%20Unit%20A%2C%20Gurnee%2C%20IL%2060031%2C%20EE.%20UU.!5e0!3m2!1ses!2sco!4v1576099935568!5m2!1ses!2sco',
       selected: false
     }
-  ]
+  ]*/
   countries = [
     {
       name: 'ARGENTINA',
@@ -361,7 +364,7 @@ class ModalDistributors extends React.Component {
       abrev: 'cl'
     }, {
       name: 'COLOMBIA',
-      abrev: 'co'
+      abrev: 'col'
     }, {
       name: 'CZECH REPUBLIC',
       abrev: 'cz'
@@ -421,8 +424,18 @@ class ModalDistributors extends React.Component {
       abrev: 'us'
     }
   ]
+
+  async getDist() {
+    let dists = [];
+    getDistributors().then(data =>
+      data.map((e, i) => {
+        dists.push(e.acf)
+      })).then(data =>
+        this.setState({ distributors: dists, actualDist: dists.filter(e => e.country.includes(this.state.distValue)) })
+      )
+  }
+
   handleChange = (value) => {
-    console.log(value);
     this.setState({
       distValue: value
     }, () => {
@@ -435,15 +448,16 @@ class ModalDistributors extends React.Component {
   }
 
   selectDistributorCountry() {
-    let arr = this.distributors.filter(e => e.country.includes(this.state.distValue));
+    let arr = this.state.distributors.filter(e => e.country.includes(this.state.distValue));
     this.setState({ actualDist: arr });
   }
 
   componentDidMount() {
-    this.selectDistributorCountry();
+    this.getDist();
+    //this.selectDistributorCountry();
   }
   render() {
-    const { distValue, actualDist, distSelected } = this.state;
+    const { distValue, actualDist, distSelected, distributors } = this.state;
     const { t } = this.props;
     const { Option } = Select;
     return (
@@ -458,7 +472,7 @@ class ModalDistributors extends React.Component {
             </Select>
           </div>
           <div className="modal-dist-list-cards">
-            {Object.keys(actualDist).map(i =>
+            {distributors.length > 0 && Object.keys(actualDist).map(i =>
               <div key={i} className={`modal-dist-list-cards-card modal-dist-list-cards-card--${i == distSelected && 'active'}`} onClick={() => this.selectDist(i)}>
                 <h2>{actualDist[i].company}</h2>
                 <p><span>Address: </span>{actualDist[i].address}</p>
@@ -468,10 +482,10 @@ class ModalDistributors extends React.Component {
               </div>
             )}
           </div>
-        </div>
+          }</div>
         <div className="modal-dist-map">
           {actualDist.length > 0 &&
-            <iframe src={actualDist[distSelected].urlMap} width="100%" height="100%" style={{ border: 0 }} ></iframe>
+            <iframe src={actualDist[distSelected].urlmap} width="100%" height="100%" style={{ border: 0 }} ></iframe>
           }
         </div>
       </div>

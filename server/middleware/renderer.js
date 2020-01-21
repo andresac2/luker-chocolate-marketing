@@ -41,9 +41,17 @@ export default (req, res, next) => {
       return;
     }
 
+    let helmetHtml = htmlData.replace(
+      '<head>',
+      `<head>
+        ${helmet.title.toString()}
+        ${helmet.meta.toString()}
+        ${helmet.link.toString()}`
+    )
+
     // inject the rendered app into our html and send it
     return res.send(
-      htmlData.replace(
+      helmetHtml.replace(
         '<div id="root"></div>',
         `<div id="root">${html}</div>`
       )

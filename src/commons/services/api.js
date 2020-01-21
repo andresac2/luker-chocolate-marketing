@@ -17,3 +17,8 @@ export async function getClients() {
   const response = await fetch('https://www.back.lukerchocolate.com/wp-json/wp/v2/clients?per_page=100');
   return await response.json();
 }
+
+export async function getDistributors() {
+  const response = await fetch('https://www.back.lukerchocolate.com/wp-json/wp/v2/distributor?per_page=100');
+  return await response.json();
+}
