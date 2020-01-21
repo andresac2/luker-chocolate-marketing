@@ -1,7 +1,7 @@
 import express from 'express';
 
 // we'll talk about this in a minute:
-import { renderer } from './middleware/renderer';
+const { renderer } = require('./middleware/renderer');
 
 const PORT = 3000;
 const path = require('path');

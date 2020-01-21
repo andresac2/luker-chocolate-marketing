@@ -8,7 +8,8 @@ import FlowTabs from '../../components/flow-cacao/flow-tabs/flow-tabs'
 import FloatLogo from '../../components/layout/float-logo/float-logo';
 import HelmetComponent from '../../commons/helmet/helmet';
 
-function Flow() {
+function Flow(props) {
+
   return (
     <div className="flow-component">
       <HelmetComponent title="Luker Chocolate | The chocolate process" />

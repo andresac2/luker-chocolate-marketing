@@ -7,14 +7,17 @@ import MetaTags from 'react-meta-tags';
 import { Helmet } from 'react-helmet';
 
 class Article extends React.Component {
-  constructor(props) {
-    super(props);
+  
+  window;
+
+  componentDidMount(){
+    this.window = window;
   }
 
   render() {
     const { data, recommended } = this.props;
     const altImg = 'img-example.svg';
-    const fullUrl = window.location.href;
+    const fullUrl = this.window;
 
     return (
       <div className="blog-article">
@@ -31,7 +34,7 @@ class Article extends React.Component {
           <meta property="fb:app_id" content="your_app_id" />
           <meta name="twitter:site" content="@Luker_Chocolate" />
         </Helmet>
-        {!window.location.href.includes('sustainability') && <div className="blog-article-title-resp">{data.title}</div>}
+        {this.window && !this.window.location.href.includes('sustainability') && <div className="blog-article-title-resp">{data.title}</div>}
         <div className="blog-article-bread">
           <Breadcrumb>
             {data.breads &&

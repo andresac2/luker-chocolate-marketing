@@ -146,7 +146,7 @@ class Blog extends React.Component {
   }
 
   loadArticle() {
-    if (this.props.match.params.article) {
+    if (this.props.match && this.props.match.params.article) {
       if (this.props.match.params.category === 'our-clients' || this.props.match.params.category === 'nuestros-clientes') {
         const client = this.state.clients.find(client => client.url === this.props.match.params.article);
         this.articleLoaded = client;
@@ -246,38 +246,29 @@ class Blog extends React.Component {
     const { searchOpen, emailNewsletter, newsletterWaiting, findedArticles, searchValue, posts, latestArticle, allArticles, clients } = this.state;
     const { Search } = Input;
     const { Option } = Select;
-    const { category, article } = this.props.match.params;
-    const { t } = this.props;
+    const { category, article } = this.props.match? this.props.match.params: {};
+    const { t, serverProps } = this.props;
     //const latestArticle = this.state.allArticles[0];
     //const allArticles = articlesEn.concat(articlesEs);
     const imgs = [item2, item3, item4, item5];
     //this.setState({ latestArticle: this.state.allArticles[0] })
     this.loadArticle();
+    
     return (
       <Layout className="blog-component">
-        {allArticles.length > 0 &&
-          <><Helmet>
-            <title>Blog | Under The Tree</title>
-            <meta property="og:title" content="Blog | Under The Tree" />
-            <meta property="og:image" content='https://www.lukerchocolate.com/static/media/blog-header.8847659a.jpg' />
-            <meta property="og:url" content={window.location.href} />
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta property="og:site_name" content="Luker Chocolate." />
-            <meta name="twitter:image:alt" content="Blog | Under The Tree" />
-            <meta property="fb:app_id" content="your_app_id" />
-            <meta name="twitter:site" content="@Luker_Chocolate" />
-          </Helmet>
-            {/*        <Helmet>
+        <Helmet>
           <title>Blog | Under The Tree</title>
           <meta property="og:title" content="Blog | Under The Tree" />
           <meta property="og:image" content='https://www.lukerchocolate.com/static/media/blog-header.8847659a.jpg' />
-          <meta property="og:url" content={window.location.href} />
+          <meta property="og:url" content={serverProps.url} />
           <meta name="twitter:card" content="summary_large_image" />
           <meta property="og:site_name" content="Luker Chocolate." />
           <meta name="twitter:image:alt" content="Blog | Under The Tree" />
           <meta property="fb:app_id" content="your_app_id" />
           <meta name="twitter:site" content="@Luker_Chocolate" />
-</Helmet>*/}
+        </Helmet>
+        {allArticles.length > 0 &&
+          <>
             <div className={`blog-component-header blog-component-header--${(article) ? article : category}`} style={{ backgroundImage: (!this.articleLoaded.banner) ? (article) ? `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/blog/${this.articleLoaded.cover}`)})` : '' : `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/${this.articleLoaded.banner}`)})` }}>
               <div className="btn-dist">
                 <Link to="/" className="logo"> <img src={logo} alt="Logo Luker" /></Link>

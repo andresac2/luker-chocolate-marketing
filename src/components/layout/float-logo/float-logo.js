@@ -29,7 +29,9 @@ class FloatLogo extends React.Component {
     return (
       <>
         <div className="float-logo">
-          <Link to="/" className="logo"><img src={dark ? logoDark : logo} alt="Logo Luker" /></Link>
+          <Link to="/" className="logo">
+            <img src={dark ? logoDark : logo} alt="Logo Luker" />
+          </Link>
           {btnText === 'dist' ?
             <button className="float-logo-dist" onClick={() => this.showModalDist(distModalVisible)}>{t('buttons.find-distributor')}</button> :
             (btns[0].btnText === 'dist') ? <button className="float-logo-dist" onClick={() => this.showModalDist(distModalVisible)}> {t('buttons.find-distributor')} </button> :
