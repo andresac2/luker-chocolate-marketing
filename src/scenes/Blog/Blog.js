@@ -22,7 +22,7 @@ import SelectLanguage from '../../commons/select-lng/select-lng';
 import { clients as clientsEn, articles as articlesEn } from '../../commons/data/data-en';
 import { clients as clientsEs, articles as articlesEs } from '../../commons/data/data-es';
 
-import { getClients, getPosts } from "../../commons/services/api";
+import { getClients, getPosts, getPostsEs } from "../../commons/services/api";
 
 class Blog extends React.Component {
   constructor(props) {
@@ -85,31 +85,59 @@ class Blog extends React.Component {
     //let art = examArt;
     let art = {};
     let arts = [{}];
-    getPosts().then(data =>
-      data.map((e, i) => {
-        art['url'] = e.acf.url;
-        art['cover'] = e.acf.cover || 'banner-cocoa-forest.jpg';
-        art['title'] = e.title.rendered;
-        art['date'] = e.acf.date;
-        art['content'] = e.content.rendered;
-        autor['name'] = e.acf.authorname;
-        autor['avatar'] = e.acf.avatar;
-        autor['details'] = e.acf.details;
-        autor['linkedin'] = e.acf.linkeind;
-        breads[0]['href'] = "/blog/";
-        breads[0]['name'] = "Blog";
-        breads[1]['href'] = "/blog/" + e.acf.categoria.slug;
-        breads[1]['name'] = e.acf.categoria.name;
-        art['autor'] = autor;
-        art['breads'] = breads;
-        arts.push(art);
-        /*         this.setState({ allArticles: arts }); */
-        art = {};
-        breads = [{}, {}];
-        autor = {};
-      })).then(data =>
-        this.setState({ allArticles: arts, latestArticle: arts[1] })
-      )
+    if (i18n.language === 'en') {
+      getPosts().then(data =>
+        data.map((e, i) => {
+          art['url'] = e.acf.url;
+          art['cover'] = e.acf.cover || 'banner-cocoa-forest.jpg';
+          art['title'] = e.title.rendered;
+          art['date'] = e.acf.date;
+          art['content'] = e.content.rendered;
+          autor['name'] = e.acf.authorname;
+          autor['avatar'] = e.acf.avatar;
+          autor['details'] = e.acf.details;
+          autor['linkedin'] = e.acf.linkeind;
+          breads[0]['href'] = "/blog/";
+          breads[0]['name'] = "Blog";
+          breads[1]['href'] = "/blog/" + e.acf.categoria.slug;
+          breads[1]['name'] = e.acf.categoria.name;
+          art['autor'] = autor;
+          art['breads'] = breads;
+          arts.push(art);
+          /*         this.setState({ allArticles: arts }); */
+          art = {};
+          breads = [{}, {}];
+          autor = {};
+        })).then(data =>
+          this.setState({ allArticles: arts, latestArticle: arts[1] })
+        )
+    } else {
+      getPostsEs().then(data =>
+        data.map((e, i) => {
+          art['url'] = e.acf.url;
+          art['cover'] = e.acf.cover || 'banner-cocoa-forest.jpg';
+          art['title'] = e.title.rendered;
+          art['date'] = e.acf.date;
+          art['content'] = e.content.rendered;
+          autor['name'] = e.acf.authorname;
+          autor['avatar'] = e.acf.avatar;
+          autor['details'] = e.acf.details;
+          autor['linkedin'] = e.acf.linkeind;
+          breads[0]['href'] = "/blog/";
+          breads[0]['name'] = "Blog";
+          breads[1]['href'] = "/blog/" + e.acf.categoria.slug;
+          breads[1]['name'] = e.acf.categoria.name;
+          art['autor'] = autor;
+          art['breads'] = breads;
+          arts.push(art);
+          /*         this.setState({ allArticles: arts }); */
+          art = {};
+          breads = [{}, {}];
+          autor = {};
+        })).then(data =>
+          this.setState({ allArticles: arts, latestArticle: arts[1] })
+        )
+    }
     //console.log(getPages().then(data => console.log(data)));  
   }
 

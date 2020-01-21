@@ -27,7 +27,7 @@ function Customer(props) {
     <div className='customer-component'>
       <HelmetComponent title="Luker Chocolate | Our clients" />
       <div className="customer-component--header">
-        <h1>{t('our-clients').toUpperCase()}</h1>
+        <h1>{t('header.our-clients').toUpperCase()}</h1>
         <FloatLogo btnText='dist' />
       </div>
       <div className="customer-component--content">
