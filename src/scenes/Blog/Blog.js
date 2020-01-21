@@ -245,22 +245,22 @@ class Blog extends React.Component {
   render() {
     const { searchOpen, emailNewsletter, newsletterWaiting, findedArticles, searchValue, posts, latestArticle, allArticles, clients } = this.state;
     const { Search } = Input;
-    const { Option } = Select;
     const { category, article } = this.props.match? this.props.match.params: {};
     const { t, serverProps } = this.props;
-    //const latestArticle = this.state.allArticles[0];
-    //const allArticles = articlesEn.concat(articlesEs);
-    const imgs = [item2, item3, item4, item5];
-    //this.setState({ latestArticle: this.state.allArticles[0] })
-    this.loadArticle();
     
+    this.loadArticle();
+
+    let url
+    if(serverProps)
+      url = serverProps.url;
+
     return (
       <Layout className="blog-component">
         <Helmet>
           <title>Blog | Under The Tree</title>
           <meta property="og:title" content="Blog | Under The Tree" />
           <meta property="og:image" content='https://www.lukerchocolate.com/static/media/blog-header.8847659a.jpg' />
-          <meta property="og:url" content={serverProps.url} />
+          <meta property="og:url" content={url} />
           <meta name="twitter:card" content="summary_large_image" />
           <meta property="og:site_name" content="Luker Chocolate." />
           <meta name="twitter:image:alt" content="Blog | Under The Tree" />

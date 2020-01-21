@@ -25,7 +25,7 @@ module.exports.renderer = (req, res, url) => {
     }
 
     if(req.params['0'].includes('/blog')){
-      serverProps.articles = [] //await getArticles()
+      serverProps.articles = []
     }
     
     // render the app as a string
