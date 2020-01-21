@@ -1,7 +1,7 @@
 import express from 'express';
 
 // we'll talk about this in a minute:
-import serverRenderer from './middleware/renderer';
+import { renderer } from './middleware/renderer';
 
 const PORT = 3000;
 const path = require('path');
@@ -70,7 +70,7 @@ app.get('/upgradation', function (req, res, next) {
 //app.use(router);
 // anything else should act as our index page
 // react-router will take care of everything
-router.use('*', serverRenderer);
+router.use('*', renderer);
 app.use(router);
 // start the app
 console.log(process.env.PORT);
