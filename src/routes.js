@@ -31,7 +31,6 @@ const history = createMemoryHistory();
 export default function BasicExample() {
   return (
     <div className="limit-width" >
-      <Suspense fallback={(<div>Loading</div>)}>
         <Header />
         <ScrollToTop />
         <Switch>
@@ -64,7 +63,6 @@ export default function BasicExample() {
         <NavArrowRight />
         <NavArrowLeft />
         <FooterCover />
-      </Suspense>
     </div>
 
   );

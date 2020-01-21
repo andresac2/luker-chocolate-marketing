@@ -19,42 +19,29 @@ export default (req, res, next) => {
       console.error('err', err);
       return res.status(404).end()
     }
-    // app.get('*', (req, res) => {
-    //   let context = {}
-    //
-    //   let html = ReactDOMServer.renderToString(
-    //     <StaticRouter location={req.url} context={context}>
-    //       <App /> (includes the RouteStatus component below e.g. for 404 errors)
-    //     </StaticRouter>
-    //   );  
 
     // render the app as a string
-    let html = ReactDOMServer.renderToNodeStream(
+    let html = ReactDOMServer.renderToString(
       <StaticRouter location={req.url} context={context}>
         <App />
       </StaticRouter>);
-
-    const helmet = Helmet.renderStatic();
 
     if (context.url) {
       res.redirect(301, context.url);
       return;
     }
 
-    let helmetHtml = htmlData.replace(
-      '<head>',
-      `<head>
-        ${helmet.title.toString()}
-        ${helmet.meta.toString()}
-        ${helmet.link.toString()}`
-    )
+    const helmet = Helmet.renderStatic();
+    
+    htmlData = htmlData.replace('<metadynamyc/>', `
+      ${helmet.title.toString()}
+      ${helmet.meta.toString()}
+      ${helmet.link.toString()}
+    `)
+
+    htmlData = htmlData.replace('<div id="root"></div>', `<div id="root">${html}</div>`)
 
     // inject the rendered app into our html and send it
-    return res.send(
-      helmetHtml.replace(
-        '<div id="root"></div>',
-        `<div id="root">${html}</div>`
-      )
-    );
+    return res.send(htmlData);
   });
 }
