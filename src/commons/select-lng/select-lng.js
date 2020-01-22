@@ -23,8 +23,7 @@ const SelectLanguage = (props) => {
   const { history } = props;
 
   const _handleChange = (lng) => {
-    //  setValue(lng);
-    console.log("language", lng)
+    //  setValue(lng);    
     i18n.changeLanguage(lng);
     /* if (history.location.pathname.slice(1).split('/').shift() === "blog") {
        //window.location.reload();

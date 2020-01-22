@@ -197,6 +197,12 @@ class Blog extends React.Component {
     this.setState({ emailNewsletter: event.target.value });
   }
 
+  _handleChange = (lng) => {
+    i18n.changeLanguage(lng);
+    if (!this.props.match.params.category)
+      this.getArticles();
+  };
+
   searchOnChange(event) {
     const allArticles = articlesEn.concat(articlesEs);
     const searched = allArticles.filter(t => t.title.toLowerCase().includes(event.target.value.toLowerCase()));
@@ -245,6 +251,7 @@ class Blog extends React.Component {
   render() {
     const { searchOpen, emailNewsletter, newsletterWaiting, findedArticles, searchValue, posts, latestArticle, allArticles, clients } = this.state;
     const { Search } = Input;
+    const { Option } = Select;
     const { category, article } = this.props.match ? this.props.match.params : {};
     const { t, serverProps } = this.props;
 
@@ -290,7 +297,10 @@ class Blog extends React.Component {
                       className={searchOpen && 'blog-component-header--search-open'}
                       style={{ width: 400 }}
                     />}
-                  <SelectLanguage />
+                  <Select defaultValue={i18n.language} onChange={this._handleChange}  >
+                    <Option value="es">ES</Option>
+                    <Option value="en">EN</Option>
+                  </Select>
                 </div>
                 <h1 style={{ fontSize: (article) ? '4em' : '5em' }}>{(article) ? this.articleLoaded.title : (category) ? (category === 'innovacion') ? 'innovación' : (category === 'tomando-posicion') ? 'tomando posición' : (category === 'sueno-del-chocolate') ? 'sueño del chocolate' : (category === 'lo-que-no-sabias') ? 'lo que no sabías' : category.replace("/", "").replace(/-/g, " ") : 'Under The Tree'}
                   {this.articleLoaded.flag && <img className="blog-component-header-flag" src={require('../../assets/img/' + this.articleLoaded.flag + "-flag.png")} alt={this.articleLoaded.flag.substr(0, 2)} />} </h1>
