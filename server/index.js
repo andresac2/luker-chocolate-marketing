@@ -41,7 +41,7 @@ app.get('/upgradation', function (req, res, next) {
       )
       console.log(pages[0]);
       //fs.writeFile('../src/public/locales/en/translation.json', json, 'utf8', callback);
-      fs.writeFile('src/public/locales/en/translation.json', JSON.stringify(pages[0]), 'utf8', function (err) {
+      fs.writeFile('src/locales/en/translation.json', JSON.stringify(pages[0]), 'utf8', function (err) {
         if (err) { throw err } else {
           console.log('complete');
         }
@@ -60,7 +60,7 @@ app.get('/upgradation', function (req, res, next) {
       )
       console.log(pagesEs[0]);
       //fs.writeFile('../src/public/locales/en/translation.json', json, 'utf8', callback);
-      fs.writeFile('src/public/locales/es/translation.json', JSON.stringify(pagesEs[0]), 'utf8', function (err) {
+      fs.writeFile('src/locales/es/translation.json', JSON.stringify(pagesEs[0]), 'utf8', function (err) {
         if (err) { throw err } else {
           console.log('complete es');
         }

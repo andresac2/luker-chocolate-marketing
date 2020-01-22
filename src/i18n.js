@@ -1,10 +1,11 @@
 import i18n from "i18next";
-import Backend from 'i18next-xhr-backend';
 import detector from "i18next-browser-languagedetector";
 import { reactI18nextModule } from "react-i18next";
+//import Backend from 'i18next-xhr-backend';
+import Backend from 'i18next-node-fs-backend';
 
-import translationEN from './public/locales/en/translation.json';
-import translationES from './public/locales/es/translation.json';
+import translationEN from './locales/en/translation.json';
+import translationES from './locales/es/translation.json';
 
 // the translations
 const resources = {
@@ -24,6 +25,7 @@ i18n
     resources,
     lng: "en",
     fallbackLng: 'en', // localStorage.getItem('lukerLng') || use en if detected lng is not available
+    debug: true,
 
     keySeparator: ".", // we do not use keys in form messages.welcome
 

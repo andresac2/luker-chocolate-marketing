@@ -5,7 +5,8 @@ export async function parseArticle(articles, url, articlesEs) {
 	let art = {};
 	let arts = [{}];
 	articles.map((e, i) => {
-		art['url'] = e.acf.url;
+		art['url'] = e.slug;
+		art['fullUrl'] = e.acf.url;
 		art['cover'] = e.acf.cover || 'banner-cocoa-forest.jpg';
 		art['title'] = e.title.rendered;
 		art['description'] = e.content.rendered.substr(0, 100);
@@ -27,7 +28,8 @@ export async function parseArticle(articles, url, articlesEs) {
 		autor = {};
 	})
 	articlesEs.map((e, i) => {
-		art['url'] = e.acf.url;
+		art['url'] = e.slug;
+		art['fullUrl'] = e.acf.url;
 		art['cover'] = e.acf.cover || 'banner-cocoa-forest.jpg';
 		art['title'] = e.title.rendered;
 		art['description'] = e.content.rendered.substr(0, 100);

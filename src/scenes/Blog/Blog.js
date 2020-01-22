@@ -22,7 +22,7 @@ import SelectLanguage from '../../commons/select-lng/select-lng';
 import { clients as clientsEn, articles as articlesEn } from '../../commons/data/data-en';
 import { clients as clientsEs, articles as articlesEs } from '../../commons/data/data-es';
 
-import { getClients, getPosts, getPostsEs } from "../../commons/services/api";
+import { getClients, getPosts, getPostsEs, getClientsEs } from "../../commons/services/api";
 
 class Blog extends React.Component {
   constructor(props) {
@@ -35,6 +35,7 @@ class Blog extends React.Component {
       newsletterWaiting: false,
       posts: [],
       latestArticle: [],
+      concatArticles: [],
       allArticles: [],
       clients: [],
       isLoading: true
@@ -56,29 +57,51 @@ class Blog extends React.Component {
     let breads = [{ href: '/', name: '' }]
     let cust = {};
     let customers = [{}];
-    getClients().then(data =>
-      data.map((e, i) => {
-        cust['url'] = e.acf.url;
-        cust['cover'] = e.acf.cover || 'banner-cocoa-forest.jpg';
-        cust['title'] = e.acf.title;
-        cust['banner'] = e.acf.banner;
-        cust['flag'] = e.acf.flag;
-        cust['content'] = e.acf.content;
-        breads[0]['href'] = e.acf.href;
-        breads[0]['name'] = e.acf.categoryname || "Nuestros clientes";
-        cust['breads'] = breads;
-        customers.push(cust);
-        cust = {};
-        breads = [{}, {}];
-      }))
-      .then(data =>
-        this.setState({ clients: customers })
-      )
+    if (i18n.language === 'en') {
+      getClients().then(data =>
+        data.map((e, i) => {
+          cust['url'] = e.acf.url;
+          cust['cover'] = e.acf.cover || 'banner-cocoa-forest.jpg';
+          cust['title'] = e.acf.title;
+          cust['banner'] = e.acf.banner;
+          cust['flag'] = e.acf.flag;
+          cust['content'] = e.acf.content;
+          breads[0]['href'] = e.acf.href;
+          breads[0]['name'] = e.acf.categoryname || "Nuestros clientes";
+          cust['breads'] = breads;
+          customers.push(cust);
+          cust = {};
+          breads = [{}, {}];
+        }))
+        .then(data =>
+          this.setState({ clients: customers })
+        )
+    } else {
+      getClientsEs().then(data =>
+        data.map((e, i) => {
+          cust['url'] = e.acf.url;
+          cust['cover'] = e.acf.cover || 'banner-cocoa-forest.jpg';
+          cust['title'] = e.acf.title;
+          cust['banner'] = e.acf.banner;
+          cust['flag'] = e.acf.flag;
+          cust['content'] = e.acf.content;
+          breads[0]['href'] = e.acf.href;
+          breads[0]['name'] = e.acf.categoryname || "Nuestros clientes";
+          cust['breads'] = breads;
+          customers.push(cust);
+          cust = {};
+          breads = [{}, {}];
+        }))
+        .then(data =>
+          this.setState({ clients: customers })
+        )
+    }
     //console.log(getPages().then(data => console.log(data)));  
   }
 
   async getArticles() {
     //this.setState({ isLoading: true });
+    this.setState({ concatArticles: [] })
     let breads = [{ href: '/blog', name: 'Blog' }, { href: '/blog/take-stand', name: 'Take a stand' }]
     let autor = { name: '', avatar: '', details: '', linkedin: '' }
     //let art = examArt;
@@ -87,9 +110,11 @@ class Blog extends React.Component {
     if (i18n.language === 'en') {
       getPosts().then(data =>
         data.map((e, i) => {
-          art['url'] = e.acf.url;
+          art['url'] = e.slug;
+          art['fullUrl'] = e.acf.url;
           art['cover'] = e.acf.cover || 'banner-cocoa-forest.jpg';
           art['title'] = e.title.rendered;
+          art['description'] = e.content.rendered.substr(0, 100);
           art['date'] = e.acf.date;
           art['content'] = e.content.rendered;
           autor['name'] = e.acf.authorname;
@@ -103,19 +128,20 @@ class Blog extends React.Component {
           art['autor'] = autor;
           art['breads'] = breads;
           arts.push(art);
-          /*         this.setState({ allArticles: arts }); */
           art = {};
           breads = [{}, {}];
           autor = {};
         })).then(data =>
-          this.setState({ allArticles: arts, latestArticle: arts[1] })
+          this.setState({ allArticles: arts, latestArticle: arts[1], concatArticles: this.state.concatArticles.concat(this.state.allArticles) })
         )
     } else {
       getPostsEs().then(data =>
         data.map((e, i) => {
-          art['url'] = e.acf.url;
+          art['url'] = e.slug;
+          art['fullUrl'] = e.acf.url;
           art['cover'] = e.acf.cover || 'banner-cocoa-forest.jpg';
           art['title'] = e.title.rendered;
+          art['description'] = e.content.rendered.substr(0, 100);
           art['date'] = e.acf.date;
           art['content'] = e.content.rendered;
           autor['name'] = e.acf.authorname;
@@ -129,12 +155,11 @@ class Blog extends React.Component {
           art['autor'] = autor;
           art['breads'] = breads;
           arts.push(art);
-          /*         this.setState({ allArticles: arts }); */
           art = {};
           breads = [{}, {}];
           autor = {};
         })).then(data =>
-          this.setState({ allArticles: arts, latestArticle: arts[1] })
+          this.setState({ allArticles: arts, latestArticle: arts[1], concatArticles: this.state.concatArticles.concat(this.state.allArticles) })
         )
     }
     //console.log(getPages().then(data => console.log(data)));  
@@ -263,14 +288,15 @@ class Blog extends React.Component {
     return (
       <Layout className="blog-component">
         <Helmet>
-          <title>{articles ? articles.title : `Blog | Under The Tree`}</title>
-          <meta property="og:title" content={articles ? articles.title : `Blog | Under The Tree`} />
-          <meta property="og:image" content={articles ? articles.cover : 'https://www.lukerchocolate.com/static/media/blog-header.8847659a.jpg'} />
+          <title>{articles ? articles.title : t('blog.titulo_seo')}</title>
+          <meta property="og:title" content={articles ? articles.title : t('blog.titulo_protocolo_opengraph')} />
+          <meta property="og:image" content={articles ? articles.cover : t('blog.imagen_open_graph.url')} />
+          <meta name="keywords" content={t('blog.keywords')} />
           <meta property="og:url" content={this.props.match.url} />
-          <meta property="og:description" content={articles ? articles.description : `Our existence is condensed into a collection of moments, experiences, anecdotes, and conversations. For us, it is the latter that makes things happen; memorable events that you never forget, events that transcend, that mark the difference and change the world. At Luker Chocolate, we believe that memorable conversations do not happen just anywhere. Ours, for example, have taken place under a tree.`} />
+          <meta property="og:description" content={articles ? articles.description : t('blog.descripcion_opengraph')} />
           <meta name="twitter:card" content="summary_large_image" />
           <meta property="og:site_name" content="Luker Chocolate." />
-          <meta name="twitter:image:alt" content="Blog | Under The Tree" />
+          <meta name="twitter:image:alt" content={articles ? articles.title : t('blog.descripcion_opengraph')} />
           <meta property="fb:app_id" content="your_app_id" />
           <meta name="twitter:site" content="@Luker_Chocolate" />
         </Helmet>
