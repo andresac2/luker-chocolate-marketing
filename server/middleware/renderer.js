@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet";
 
 // import our main App component
 import App from '../../src/routes';
+import { parseArticle } from '../template';
 
 const path = require("path");
 const fs = require("fs");
@@ -13,6 +14,7 @@ module.exports.renderer = (req, res, url) => {
 
   // point to the html file created by CRA's build tool
   const filePath = path.resolve(__dirname, '..', '..', 'build', 'index.html');
+
   fs.readFile(filePath, 'utf8', async (err, htmlData) => {
     let context = {}
     if (err) {
@@ -21,13 +23,16 @@ module.exports.renderer = (req, res, url) => {
     }
 
     let serverProps = {
-      url: req.params['0'] 
+      articles: {},
+      articlesES: {}
     }
 
-    if(req.params['0'].includes('/blog')){
-      serverProps.articles = []
+    if (req.params['0'].includes('/blog')) {
+      const response = await fetch('https://www.back.lukerchocolate.com/wp-json/wp/v2/posts?per_page=100');
+      const responseEs = await fetch('https://www.back.lukerchocolate.com/es/wp-json/wp/v2/posts?per_page=100');
+      serverProps.articles = await parseArticle(await response.json(), req.params[0], await responseEs.json());
     }
-    
+
     // render the app as a string
     let html = ReactDOMServer.renderToString(
       <StaticRouter location={req.params['0']} context={context}>
@@ -40,7 +45,7 @@ module.exports.renderer = (req, res, url) => {
     }
 
     const helmet = Helmet.renderStatic();
-    
+
     htmlData = htmlData.replace('<metadynamyc/>', `
       ${helmet.title.toString()}
       ${helmet.meta.toString()}
@@ -51,4 +56,4 @@ module.exports.renderer = (req, res, url) => {
     // inject the rendered app into our html and send it
     return res.send(htmlData);
   });
-}
+};

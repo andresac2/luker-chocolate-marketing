@@ -245,22 +245,23 @@ class Blog extends React.Component {
   render() {
     const { searchOpen, emailNewsletter, newsletterWaiting, findedArticles, searchValue, posts, latestArticle, allArticles, clients } = this.state;
     const { Search } = Input;
-    const { category, article } = this.props.match? this.props.match.params: {};
+    const { category, article } = this.props.match ? this.props.match.params : {};
     const { t, serverProps } = this.props;
-    
+
     this.loadArticle();
 
-    let url
-    if(serverProps)
-      url = serverProps.url;
+    let articles
+    if (serverProps)
+      articles = serverProps.articles;
 
     return (
       <Layout className="blog-component">
         <Helmet>
-          <title>Blog | Under The Tree</title>
-          <meta property="og:title" content="Blog | Under The Tree" />
-          <meta property="og:image" content='https://www.lukerchocolate.com/static/media/blog-header.8847659a.jpg' />
-          <meta property="og:url" content={url} />
+          <title>{articles ? articles.title : `Blog | Under The Tree`}</title>
+          <meta property="og:title" content={articles ? articles.title : `Blog | Under The Tree`} />
+          <meta property="og:image" content={articles ? articles.cover : 'https://www.lukerchocolate.com/static/media/blog-header.8847659a.jpg'} />
+          <meta property="og:url" content={this.props.match.url} />
+          <meta property="og:description" content={articles ? articles.description : `Our existence is condensed into a collection of moments, experiences, anecdotes, and conversations. For us, it is the latter that makes things happen; memorable events that you never forget, events that transcend, that mark the difference and change the world. At Luker Chocolate, we believe that memorable conversations do not happen just anywhere. Ours, for example, have taken place under a tree.`} />
           <meta name="twitter:card" content="summary_large_image" />
           <meta property="og:site_name" content="Luker Chocolate." />
           <meta name="twitter:image:alt" content="Blog | Under The Tree" />
