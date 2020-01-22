@@ -68,7 +68,6 @@ class Blog extends React.Component {
         breads[0]['name'] = e.acf.categoryname || "Nuestros clientes";
         cust['breads'] = breads;
         customers.push(cust);
-        /*         this.setState({ allArticles: arts }); */
         cust = {};
         breads = [{}, {}];
       }))
@@ -204,7 +203,7 @@ class Blog extends React.Component {
   };
 
   searchOnChange(event) {
-    const allArticles = articlesEn.concat(articlesEs);
+    const allArticles = this.state.allArticles.slice(1);// articlesEn.concat(articlesEs);
     const searched = allArticles.filter(t => t.title.toLowerCase().includes(event.target.value.toLowerCase()));
     this.setState({ findedArticles: searched });
     this.setState({ searchValue: event.target.value });
