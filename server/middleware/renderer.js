@@ -12,6 +12,14 @@ import { parseArticle } from '../template';
 const path = require("path");
 const fs = require("fs");
 
+const writeContentHtml = (res, stream) => {
+  return new Promise((resolve, reject) => {
+    stream.on('data', (chunk) => res.write(chunk))
+    .on('error', (err) => reject(err))
+    .on('end', () => resolve());
+  })
+}
+
 module.exports.renderer = (req, res, url) => {
 
   // point to the html file created by CRA's build tool
@@ -24,9 +32,15 @@ module.exports.renderer = (req, res, url) => {
       return res.status(404).end()
     }
 
-    let serverProps = { articles: {}, articlesES: {}}
+    let serverProps = { articles: {}, articlesES: {} }
 
-    if (req.params['0'].includes('/blog')) {
+    console.log(req.params['0'])
+
+    if(req.params['0'].includes('[object Object]')){
+      return res.status(200).end();
+    }
+
+    if(req.params['0'].includes('/blog')) {
       const response = await fetch('https://www.back.lukerchocolate.com/wp-json/wp/v2/posts?per_page=100');
       const responseEs = await fetch('https://www.back.lukerchocolate.com/es/wp-json/wp/v2/posts?per_page=100');
       serverProps.articles = await parseArticle(await response.json(), req.params[0], await responseEs.json());
@@ -34,16 +48,15 @@ module.exports.renderer = (req, res, url) => {
 
     let stream = ReactDOMServer.renderToNodeStream(
       <StaticRouter location={req.params['0']} context={context}>
-        <App serverProps={serverProps}/>
+        <App serverProps={serverProps} />
       </StaticRouter>)
 
     const helmet = Helmet.renderStatic();
-    console.log(helmet.title.toString());
-    
+
     const finishIndex = htmlData.substring(htmlData.lastIndexOf('<div id="root">') + '<div id="root">'.length)
 
     htmlData = htmlData.substring(0, htmlData.indexOf('<div id="root">'))
-    .replace('<metadynamyc/>', `
+      .replace('<metadynamyc/>', `
       ${helmet.title.toString()}
       ${helmet.meta.toString()}
       ${helmet.link.toString()}
@@ -52,7 +65,7 @@ module.exports.renderer = (req, res, url) => {
     res.write(htmlData);
 
     // render the app as a string
-    stream.pipe(res, { end: false })
+    await writeContentHtml(res, stream)
 
     stream.on('end', () => {
       res.status(200);
