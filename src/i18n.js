@@ -25,7 +25,7 @@ i18n
     resources,
     lng: "en",
     fallbackLng: 'en', // localStorage.getItem('lukerLng') || use en if detected lng is not available
-    debug: true,
+    debug: false,
 
     keySeparator: ".", // we do not use keys in form messages.welcome
 

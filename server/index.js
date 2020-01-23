@@ -1,6 +1,6 @@
 import express from 'express';
 
-// we'll talk about this in a minute:
+const { spawn } = require('child_process');
 const { renderer } = require('./middleware/renderer');
 
 const PORT = 3000;
@@ -21,7 +21,18 @@ router.use(express.static(
 app.get('/upgradation', function (req, res, next) {
   getTranslations('en')
   getTranslations('es')
-  res.send('OK');
+  const build = spawn('npm', ['run', 'build']);
+  let response = 'stdout: ';
+  build.stdout.on('data', (data) => {
+    response += `${data}
+    
+    `;
+    console.log(`stdout: ${data}`);
+  });
+  build.on('close', (code) => {
+    console.log(`child process exited with code ${code}`);
+    res.send(response);
+  });
 });
 
 function getTranslations(lng) {
