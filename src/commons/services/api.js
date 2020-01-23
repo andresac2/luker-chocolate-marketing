@@ -86,3 +86,23 @@ export async function getMouldingShapesEs() {
   const response = await fetch('https://www.back.lukerchocolate.com/es/wp-json/wp/v2/mouldingShapes?per_page=100');
   return await response.json();
 }
+
+export async function getDesignProcess() {
+  const response = await fetch('https://www.back.lukerchocolate.com/wp-json/wp/v2/designprocess?per_page=100');
+  return await response.json();
+}
+
+export async function getDesignProcessEs() {
+  const response = await fetch('https://www.back.lukerchocolate.com/es/wp-json/wp/v2/designprocess?per_page=100');
+  return await response.json();
+}
+
+export async function getItemsOurServices() {
+  const response = await fetch('https://www.back.lukerchocolate.com/wp-json/wp/v2/itemsourservices?per_page=100');
+  return await response.json();
+}
+
+export async function getItemsOurServicesEs() {
+  const response = await fetch('https://www.back.lukerchocolate.com/es/wp-json/wp/v2/itemsourservices?per_page=100');
+  return await response.json();
+}
