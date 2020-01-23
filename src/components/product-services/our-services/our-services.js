@@ -8,13 +8,16 @@ import { T } from 'antd/lib/upload/utils';
 
 import { designProcess as designProcessEn, itemsOurServices as itemsOurServicesEn } from '../../../commons/data/data-en';
 import { designProcess as designProcessEs, itemsOurServices as itemsOurServicesEs } from '../../../commons/data/data-es';
+import { getDesignProcess, getDesignProcessEs, getItemsOurServices, getItemsOurServicesEs } from '../../../commons/services/api';
+import { Spin } from 'antd';
 
 class OurServices extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       dpSelected: 0,
-      designProcess: i18n.language === 'en' ? designProcessEn : designProcessEs
+      designProcess: '',
+      items: ''
     }
   }
 
@@ -29,23 +32,66 @@ class OurServices extends React.Component {
     this.setState({ dpSelected: this.state.dpSelected + n });
   };
 
+  async getDesignProcessData() {
+    let arrItems = [];
+    if (i18n.language === 'en') {
+      getDesignProcess().then(data =>
+        data.map((e, i) => {
+          arrItems.push(e.acf.title);
+        })).then(data =>
+          this.setState({ designProcess: arrItems })
+        )
+    } else {
+      getDesignProcessEs().then(data =>
+        data.map((e, i) => {
+          arrItems.push(e.acf.title);
+        })).then(data =>
+          this.setState({ designProcess: arrItems })
+        )
+    }
+  }
+
+  async getItemsOurServicesData() {
+    let arrItems = [];
+    if (i18n.language === 'en') {
+      getItemsOurServices().then(data =>
+        data.map((e, i) => {
+          arrItems.push(e.acf);
+        })).then(data =>
+          this.setState({ items: arrItems })
+        )
+    } else {
+      getItemsOurServicesEs().then(data =>
+        data.map((e, i) => {
+          arrItems.push(e.acf);
+        })).then(data =>
+          this.setState({ items: arrItems })
+        )
+    }
+  }
+
+  componentDidMount() {
+    this.getDesignProcessData();
+    this.getItemsOurServicesData();
+  }
+
   render() {
 
     const altImg = 'img-example.svg';
-    const { dpSelected, designProcess } = this.state;
+    const { dpSelected, designProcess, items } = this.state;
     const { t } = this.props;
-    const items = i18n.language === 'en' ? itemsOurServicesEn : itemsOurServicesEs;
 
     return (
       <div className="our-services-component" >
         <h2>{t('products-services.this-how-works')}</h2>
-        <div className="our-services-component-process">
+        {items ? <div className="our-services-component-process">
           {Object.keys(items).map(i =>
             <div key={i} className={`card-image`}>
               <img src={require('../../../assets/img/' + (items[i].img ? items[i].img : altImg))} alt={items[i].title} />
               <p>{items[i].title}</p>
             </div>)}
-        </div>
+        </div> : <Spin size="large" />
+        }
         <div className="our-services-component--header">
           <h1>{t('products-services.services-first-title')}</h1>
           <h1>{t('products-services.services-second-title')}</h1>

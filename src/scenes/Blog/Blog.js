@@ -9,6 +9,7 @@ import item3 from '../../assets/img/blog-item2.jpg'
 import item4 from '../../assets/img/blog-item3.jpg'
 import item5 from '../../assets/img/blog-item4.jpg'
 import { withNamespaces } from 'react-i18next';
+import { Spin } from 'antd';
 
 import logo from '../../assets/img/Lukerlogo.svg'
 import TakeStand from '../../components/blog/take-stand/take-stand';
@@ -300,7 +301,7 @@ class Blog extends React.Component {
           <meta property="fb:app_id" content="your_app_id" />
           <meta name="twitter:site" content="@Luker_Chocolate" />
         </Helmet>
-        {allArticles.length > 0 &&
+        {allArticles.length > 0 ?
           <>
             <div className={`blog-component-header blog-component-header--${(article) ? article : category}`} style={{ backgroundImage: (!this.articleLoaded.banner) ? (article) ? `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/blog/${this.articleLoaded.cover}`)})` : '' : `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/${this.articleLoaded.banner}`)})` }}>
               <div className="btn-dist">
@@ -414,7 +415,7 @@ class Blog extends React.Component {
               }
             </div>
             <Footer />
-          </>
+          </> : <Spin size="large" />
         }
       </Layout >
     );
