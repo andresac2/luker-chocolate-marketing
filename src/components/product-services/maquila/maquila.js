@@ -4,9 +4,11 @@ import { Link } from 'react-router-dom';
 import ProductServices from '../product-services';
 import i18n from '../../../i18n';
 import { withNamespaces } from 'react-i18next';
+import { Spin } from 'antd';
 
 import { dosing as dosingEn, panning as panningEn, moulding as mouldingEn, mouldingBars as mouldingBarsEn, mouldingShapes as mouldingShapesEn } from '../../../commons/data/data-en';
 import { dosing as dosingEs, panning as panningEs, moulding as mouldingEs, mouldingBars as mouldingBarsEs, mouldingShapes as mouldingShapesEs } from '../../../commons/data/data-es';
+import { getDosing, getDosingEs, getPanning, getPanningEs, getMoulding, getMouldingEs, getMouldingBars, getMouldingBarsEs, getMouldingShapes, getMouldingShapesEs } from '../../../commons/services/api';
 
 
 class Maquila extends React.Component {
@@ -17,11 +19,12 @@ class Maquila extends React.Component {
       hasSelected: false,
       showMouldingOption: '',
       itemSelected: [],
-      dosing: i18n.language === 'en' ? dosingEn : dosingEs,
-      panning: i18n.language === 'en' ? panningEn : panningEs,
-      moulding: i18n.language === 'en' ? mouldingEn : mouldingEs,
-      mouldingBars: i18n.language === 'en' ? mouldingBarsEn : mouldingBarsEs,
-      mouldingShapes: i18n.language === 'en' ? mouldingShapesEn : mouldingShapesEs,
+      isLoading: true,
+      dosing: '',
+      panning: '',
+      moulding: '',
+      mouldingBars: '',
+      mouldingShapes: '',
     };
     this.handleSetProductSelected = this.handleSetProductSelected.bind(this);
     this.handleShowFormContact = this.handleShowFormContact.bind(this)
@@ -51,6 +54,111 @@ class Maquila extends React.Component {
       }
     }
   };
+
+  async getDosingData() {
+    let arrItems = [];
+    if (i18n.language === 'en') {
+      getDosing().then(data =>
+        data.map((e, i) => {
+          arrItems.push(e.acf);
+          arrItems[i].selected = false
+        })).then(data =>
+          this.setState({ dosing: arrItems })
+        )
+    } else {
+      getDosingEs().then(data =>
+        data.map((e, i) => {
+          arrItems.push(e.acf);
+          arrItems[i].selected = false
+        })).then(data =>
+          this.setState({ dosing: arrItems })
+        )
+    }
+  }
+
+  async getPanningData() {
+    let arrItems = [];
+    if (i18n.language === 'en') {
+      getPanning().then(data =>
+        data.map((e, i) => {
+          arrItems.push(e.acf);
+          arrItems[i].selected = false
+        })).then(data =>
+          this.setState({ panning: arrItems })
+        )
+    } else {
+      getPanningEs().then(data =>
+        data.map((e, i) => {
+          arrItems.push(e.acf);
+          arrItems[i].selected = false
+        })).then(data =>
+          this.setState({ panning: arrItems })
+        )
+    }
+  }
+
+  async getMouldingData() {
+    let arrItems = [];
+    if (i18n.language === 'en') {
+      getMoulding().then(data =>
+        data.map((e, i) => {
+          arrItems.push(e.acf);
+          arrItems[i].selected = false
+        })).then(data =>
+          this.setState({ moulding: arrItems })
+        )
+    } else {
+      getMouldingEs().then(data =>
+        data.map((e, i) => {
+          arrItems.push(e.acf);
+          arrItems[i].selected = false
+        })).then(data =>
+          this.setState({ moulding: arrItems })
+        )
+    }
+  }
+
+  async getMouldingBarsData() {
+    let arrItems = [];
+    if (i18n.language === 'en') {
+      getMouldingBars().then(data =>
+        data.map((e, i) => {
+          arrItems.push(e.acf);
+          arrItems[i].selected = false
+        })).then(data =>
+          this.setState({ mouldingBars: arrItems })
+        )
+    } else {
+      getMouldingBarsEs().then(data =>
+        data.map((e, i) => {
+          arrItems.push(e.acf);
+          arrItems[i].selected = false
+        })).then(data =>
+          this.setState({ mouldingBars: arrItems })
+        )
+    }
+  }
+
+  async getMouldingShapeData() {
+    let arrItems = [];
+    if (i18n.language === 'en') {
+      getMouldingBars().then(data =>
+        data.map((e, i) => {
+          arrItems.push(e.acf);
+          arrItems[i].selected = false
+        })).then(data =>
+          this.setState({ mouldingShape: arrItems })
+        )
+    } else {
+      getMouldingBarsEs().then(data =>
+        data.map((e, i) => {
+          arrItems.push(e.acf);
+          arrItems[i].selected = false
+        })).then(data =>
+          this.setState({ mouldingShape: arrItems })
+        )
+    }
+  }
 
   addProduct(product) {
     this.setState({ hasSelected: !this.state.hasSelected });
@@ -88,7 +196,6 @@ class Maquila extends React.Component {
     }
   }
 
-
   handleSetProductSelected(value) {
     this.setState({ hasSelected: false });
     this.setState({ showMouldingOption: '' });
@@ -100,11 +207,27 @@ class Maquila extends React.Component {
     this.setState({ hideFormContact: !action })
   }
 
-  render() {
+  componentDidMount() {
+    this.getDosingData();
+    this.getPanningData();
+    this.getMouldingData();
+    this.getMouldingBarsData();
+    this.getMouldingShapeData();
 
+    setTimeout(
+      function () {
+        this.setState({ isLoading: false });
+      }
+        .bind(this),
+      300
+    );
+
+  }
+
+  render() {
     const altImg = 'img-example.svg';
     const { product, t } = this.props;
-    const { hideFormContact, itemSelected, dosing, panning, moulding, hasSelected, mouldingShapes, mouldingBars, showMouldingOption } = this.state;
+    const { hideFormContact, itemSelected, dosing, panning, moulding, hasSelected, mouldingShapes, mouldingBars, showMouldingOption, isLoading } = this.state;
 
     return (
       <div className={`maquila-component ${hideFormContact && 'maquila-component--hide-form'} `} >
@@ -118,7 +241,7 @@ class Maquila extends React.Component {
             <p>{product.description}</p>
           </div>
           <h2 className="maquila-component-title">{t('products-services.customizable-logo-branding')}</h2>
-          {hasSelected ?
+          {isLoading ? <Spin size="large" /> : hasSelected ?
             showMouldingOption ?
               <div className={`maquila-product`}>
                 {showMouldingOption === 'bars' ?

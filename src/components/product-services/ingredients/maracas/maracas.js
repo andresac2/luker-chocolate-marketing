@@ -40,7 +40,6 @@ class IngredientDragees extends React.Component {
           this.setState({ items: arrItems })
         )
     }
-    //console.log(getPages().then(data => console.log(data)));  
   }
 
   productToggle(id, selected) {
@@ -59,14 +58,13 @@ class IngredientDragees extends React.Component {
   }
 
   componentDidMount() {
-    this.getItems().then(data => console.log(this.state.items));
   }
 
   render() {
     const { items, hideFormContact, openProducts } = this.state;
     const { t } = this.props;
     const altImg = 'img-example.svg';
-    console.log("it", items);
+    this.getItems();
 
     return (
       <div className={`dragees-component ${hideFormContact && 'dragees-component--hide-form'} `}>
