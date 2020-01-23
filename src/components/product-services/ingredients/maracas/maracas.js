@@ -3,9 +3,11 @@ import WrappedContactSide from '../../../layout/contact-side/contact-side';
 import { TiArrowSortedUp } from 'react-icons/ti';
 import i18n from '../../../../i18n';
 import { withNamespaces } from 'react-i18next';
+import { Spin } from 'antd';
 
 import { itemsMaracas as itemsMaracasEn } from '../../../../commons/data/data-en';
 import { itemsMaracas as itemsMaracasEs } from '../../../../commons/data/data-es';
+import { getItemsMaracas, getItemsMaracasEs } from '../../../../commons/services/api';
 
 class IngredientDragees extends React.Component {
   constructor(props) {
@@ -13,10 +15,32 @@ class IngredientDragees extends React.Component {
     this.state = {
       openProducts: false,
       hideFormContact: true,
-      items: i18n.language === 'en' ? itemsMaracasEn : itemsMaracasEs
+      items: ''//i18n.language === 'en' ? itemsMaracasEn : itemsMaracasEs
     };
     this.handleSetProductSelected = this.handleSetProductSelected.bind(this);
     this.handleShowFormContact = this.handleShowFormContact.bind(this)
+  }
+
+  async getItems() {
+    let arrItems = [];
+    if (i18n.language === 'en') {
+      getItemsMaracas().then(data =>
+        data.map((e, i) => {
+          arrItems.push(e.acf);
+          arrItems[i].selected = false
+        })).then(data =>
+          this.setState({ items: arrItems })
+        )
+    } else {
+      getItemsMaracasEs().then(data =>
+        data.map((e, i) => {
+          arrItems.push(e.acf);
+          arrItems[i].selected = false
+        })).then(data =>
+          this.setState({ items: arrItems })
+        )
+    }
+    //console.log(getPages().then(data => console.log(data)));  
   }
 
   productToggle(id, selected) {
@@ -34,10 +58,15 @@ class IngredientDragees extends React.Component {
     this.setState({ hideFormContact: !action })
   }
 
+  componentDidMount() {
+    this.getItems().then(data => console.log(this.state.items));
+  }
+
   render() {
     const { items, hideFormContact, openProducts } = this.state;
     const { t } = this.props;
     const altImg = 'img-example.svg';
+    console.log("it", items);
 
     return (
       <div className={`dragees-component ${hideFormContact && 'dragees-component--hide-form'} `}>
@@ -50,7 +79,7 @@ class IngredientDragees extends React.Component {
           <p>{t('products-services.maracas-second-text')}</p>
         </div>
         <div className={`dragees-component--products-arrow ${openProducts ? 'dragees-component--products-arrow-open' : ''}`} onClick={() => this.showProductToggle()}><span><TiArrowSortedUp /></span></div>
-        <div className={`dragees-component--products ${openProducts ? 'dragees-component--products-open' : ''}`}>
+        {items ? <div className={`dragees-component--products ${openProducts ? 'dragees-component--products-open' : ''}`}>
           <button className={`dragees-component--products-btn-next`} disabled={items.filter(item => item.selected).length <= 0} onClick={() => this.handleShowFormContact(true)}>{(items.filter(item => item.selected).length <= 0) ? t('buttons.choose-product') : t('buttons.next')}</button>
           {Object.keys(items).map(i =>
             <div key={i} className={`dragees-component--products-item dragees-component--products-item-${items[i].selected && 'active'}`} onClick={() => this.productToggle(items[i].id, !items[i].selected)}>
@@ -65,9 +94,10 @@ class IngredientDragees extends React.Component {
                 <span>{items[i].available}</span>
               </div>
             </div>)}
-        </div>
+        </div> : <Spin size="large" />
+        }
         <WrappedContactSide page='maracas' products={items} handleSetProductSelected={this.handleSetProductSelected} handleShowFormContact={this.handleShowFormContact} />
-      </div>
+      </div >
     );
   }
 };
