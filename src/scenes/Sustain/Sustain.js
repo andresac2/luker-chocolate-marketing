@@ -131,7 +131,6 @@ class Sustain extends React.Component {
   };
 
   modalItemToggle(id, selected) {
-    console.log(id);
     this.setState({
       modalReportItems: this.state.modalReportItems.map(el => (el.id === id ? { ...el, selected } : el))
     });
@@ -153,7 +152,7 @@ class Sustain extends React.Component {
 
     return (
       <div className="sustain-component">
-        <HelmetComponent title={t('sustainability.titulo_seo')} keywords={t('sustainability.keywords')} titleOg={t('sustainability.titulo_protocolo_opengraph')} description={t('sustainability.meta_descripcion')} descriptionOg={t('sustainability.descripcion_opengraph')} />      
+        <HelmetComponent title={t('sustainability.titulo_seo')} keywords={t('sustainability.keywords')} titleOg={t('sustainability.titulo_protocolo_opengraph')} description={t('sustainability.meta_descripcion')} descriptionOg={t('sustainability.descripcion_opengraph')} />
         <FloatLogo btnText='dist' />
         <div className="sustain-sidebar">
           <div className="sustain-sidebar--text">

@@ -28,7 +28,6 @@ class IngredientCacao extends React.Component {
       infoProductsVisible: !this.state.infoProductsVisible,
     });
     if (product) {
-      console.log("prod: ", product);
       this.setState({
         productSelected: product,
       });
@@ -42,7 +41,6 @@ class IngredientCacao extends React.Component {
   }
 
   selectProduct(product) {
-    console.log(product)
     product.selected = !product.selected;
     if (this.state.itemsSelected.indexOf(product) < 0) {
       this.setState((state) => ({

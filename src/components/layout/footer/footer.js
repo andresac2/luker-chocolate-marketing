@@ -69,8 +69,7 @@ class Footer extends React.Component {
     const { mode, history, t } = this.props;
     const { emailNewsletter, newsletterWaiting } = this.state;
     const isNewsletterHidden = this.hideNews.some(function (v) { return history.location.pathname.includes(v); });
-    console.log(i18n.t('routes.products-services') + '/');
-    console.log([i18n.t('routes.products-services') + '/', '/blog', i18n.t('routes.contact-us'), i18n.t('routes.work-with-us'), i18n.t('routes.our-value') + '/']);
+
     return (
       <div>
         <div className={`footer-component ${mode == 'vertical' && 'footer-component-vertical'} ${mode == 'responsive' && 'footer-component-responsive'}`}>

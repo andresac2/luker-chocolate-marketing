@@ -23,6 +23,7 @@ module.exports.renderer = (req, res, url) => {
     }
 
     let serverProps = {
+      url: req.params['0'],
       articles: {},
       articlesES: {}
     }

@@ -36,7 +36,7 @@ class Maquila extends React.Component {
 
     if (product.id === 'bars' || product.id === 'shapes') {
       this.setState({ hasSelected: true });
-      this.setState(({ showMouldingOption: product.description.toLowerCase() }), () => { console.log('entro', this.state.showMouldingOption) });
+      this.setState(({ showMouldingOption: product.description.toLowerCase() }));
     } else {
       if (this.state.itemSelected.length === 0) {
         this.setState({ hasSelected: true });

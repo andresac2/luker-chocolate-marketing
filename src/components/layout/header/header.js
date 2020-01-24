@@ -28,7 +28,6 @@ class Header extends React.Component {
   componentDidMount() {
     if (this.props.location.pathname === '/')
       setTimeout(() => {
-        console.log(this.props.location.pathname)
         this.menuToggle();
       }, 2000);
   }

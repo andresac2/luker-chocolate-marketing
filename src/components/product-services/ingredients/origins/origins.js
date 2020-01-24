@@ -27,7 +27,6 @@ class Ingredient1906 extends React.Component {
       infoProductsVisible: !this.state.infoProductsVisible,
     });
     if (product) {
-      console.log("prod: ", product);
       this.setState({
         productSelected: product,
       });

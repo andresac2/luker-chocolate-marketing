@@ -23,7 +23,6 @@ class ContactSide extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
     const templateId = 'contact_form_luker';
-    console.log(this.props.products.filter(item => item.selected));
     this.props.form.validateFields((err, values) => {
       if (!err) {
         //  values.push();
