@@ -35,12 +35,12 @@ class FlowTabs extends React.Component {
   render() {
     const { t } = this.props;
     const { selectTab, statusOpened } = this.state;
-    const cacaoImgs = ['cacao-fino-de-aroma.jpg', 'cacao-fino-de-aroma-1.jpg', 'cacao-fino-de-aroma-2.jpg'];
-    const finishedImgs = ['finished-product-1.jpg', 'finished-product-2.jpg'];
-    const harvestingImgs = ['harvesting-1.jpg', 'harvesting-2.jpg', 'harvesting-3.jpg', 'harvesting-4.jpg'];
-    const postharvestingImgs = ['post-harvesting-1.jpg', 'post-harvesting-2.jpg', 'post-harvesting-3.jpg', 'post-harvesting-4.jpg'];
-    const processingImgs = ['processing-1.jpg'];
-    const raffinementImgs = ['raffinement-conching.jpg'];
+    const cacaoImgs = ['static/media/cacao-fino-de-aroma.9975d69d.jpg', 'static/media/cacao-fino-de-aroma-1.0349d733.jpg', 'static/media/cacao-fino-de-aroma-2.4c9825c4.jpg'];
+    const finishedImgs = ['static/media/finished-product-1.a09dd9cf.jpg', 'static/media/finished-product-2.34f5f615.jpg'];
+    const harvestingImgs = ['static/media/harvesting-1.9f14c429.jpg', 'static/media/harvesting-2.079dc287.jpg', 'static/media/harvesting-3.8308f09b.jpg', 'static/media/harvesting-4.5cce74ac.jpg'];
+    const postharvestingImgs = ['static/media/post-harvesting-1.f92d4cb1.jpg', 'static/media/post-harvesting-2.32f487a3.jpg', 'static/media/post-harvesting-3.734684e1.jpg', 'static/media/post-harvesting-4.275d5a09.jpg'];
+    const processingImgs = ['static/media/processing-1.d6b755a6.jpg'];
+    const raffinementImgs = ['static/media/raffinement-conching.f6701ba3.jpg'];
 
     return (
       <div className="flow-tabs">
@@ -70,49 +70,49 @@ class FlowTabs extends React.Component {
               <div dangerouslySetInnerHTML={{ __html: t('chocolate-process.finished-products-text') }} />
             }
             <div className="arrow-back">
-              <img src={back} />
+              <img src="/static/media/back.9ae9d2c8.svg" />
             </div>
           </div>
           <div className={`flow-content-component--slider ${!statusOpened ? 'opened' : 'close'}`} onClick={() => { this.handleCheck(statusOpened, 'rigth') }} >
             <div className="arrow-back">
-              <img className="back-rotate" src={back} />
+              <img className="back-rotate" src="/static/media/back.9ae9d2c8.svg" />
             </div>
             <Carousel autoplay>
               {selectTab === 'cacao' &&
                 cacaoImgs.map((item, i) =>
                   <div key={i}>
-                    <img src={require('../../../assets/img/the-chocolate-process/cacao/' + item)} alt={selectTab} key={i} />
+                    <img src={item} alt={selectTab} key={i} />
                   </div>
                 )
               }
               {selectTab === 'granjeros' &&
                 harvestingImgs.map((item, i) =>
                   <div key={i}>
-                    <img src={require('../../../assets/img/the-chocolate-process/harvesting/' + item)} alt={selectTab} key={i} />
+                    <img src={item} alt={selectTab} key={i} />
                   </div>)
               }
               {selectTab === 'abastecimiento' &&
                 postharvestingImgs.map((item, i) =>
                   <div key={i}>
-                    <img src={require('../../../assets/img/the-chocolate-process/post-harvesting/' + item)} alt={selectTab} key={i} />
+                    <img src={item} alt={selectTab} key={i} />
                   </div>)
               }
               {selectTab === 'procesamiento' &&
                 processingImgs.map((item, i) =>
                   <div key={i}>
-                    <img src={require('../../../assets/img/the-chocolate-process/Processing/' + item)} alt={selectTab} key={i} />
+                    <img src={item} alt={selectTab} key={i} />
                   </div>)
               }
               {selectTab === 'coberturas' &&
                 raffinementImgs.map((item, i) =>
                   <div key={i}>
-                    <img src={require('../../../assets/img/the-chocolate-process/raffinement-conching/' + item)} alt={selectTab} key={i} />
+                    <img src={item} alt={selectTab} key={i} />
                   </div>)
               }
               {selectTab === 'producto' &&
                 finishedImgs.map((item, i) =>
                   <div key={i}>
-                    <img src={require('../../../assets/img/the-chocolate-process/finished-products/' + item)} alt={selectTab} key={i} />
+                    <img src={item} alt={selectTab} key={i} />
                   </div>)
               }
             </Carousel>

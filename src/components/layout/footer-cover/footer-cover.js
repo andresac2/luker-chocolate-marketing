@@ -29,7 +29,7 @@ class FooterCover extends React.Component {
     this.setState({ isOpen: !this.state.isOpen });
     setTimeout(() => {
       this.setState({ isOpen: false });
-    }, 60000)
+    }, 6000)
   }
 
   showModalDist = () => {

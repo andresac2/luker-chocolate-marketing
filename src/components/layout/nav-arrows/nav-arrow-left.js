@@ -27,7 +27,7 @@ class NavArrowLeft extends React.Component {
       isHidden && !firstView &&
       <div className={`nav-arrow-left`} >
         <div className="nav-arrow-left-content">
-          <img src={back} className="arrow" alt="Left arrow" onClick={e => this.goView(e)} />
+          <img src="/static/media/back.9ae9d2c8.svg" className="arrow" alt="Left arrow" onClick={e => this.goView(e)} />
         </div>
       </div>
     );

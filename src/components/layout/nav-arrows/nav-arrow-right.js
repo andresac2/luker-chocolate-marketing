@@ -26,9 +26,9 @@ class NavArrowRight extends React.Component {
 
     return (
       isHidden && !lastView &&
-      < div className={`nav-arrow-right nav-arrow-right-${this.props.history.location.pathname === '/' && 'visible'} `} >
+      <div className={`nav-arrow-right nav-arrow-right-${this.props.history.location.pathname === '/' && 'visible'} `} >
         <div className="nav-arrow-right-content">
-          <img src={back} className="arrow" alt="Right arrow" onClick={e => this.goView(e)} />
+          <img src="/static/media/back.9ae9d2c8.svg" className="arrow" alt="Right arrow" onClick={e => this.goView(e)} />
         </div>
       </div >
     );

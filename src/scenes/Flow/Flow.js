@@ -16,9 +16,9 @@ function Flow(props) {
       <div className="flow-sidebar">
         <div className="cacao-link">
           <div className="cacao-link-content">
-            <img src={cacao3} className="cacao-link-2" alt="Logo Luker" />
-            <img src={cacao1} className="cacao-link-1" alt="Logo Luker" />
-            <img src={cacao2} className="cacao-link-2" alt="Logo Luker" />
+            <img src="/static/media/roto-a.ac0d2a9d.png" className="cacao-link-2" alt="Logo Luker" />
+            <img src="/static/media/roto-b.57c38cbe.png" className="cacao-link-1" alt="Logo Luker" />
+            <img src="/static/media/roto-c.73e83564.png" className="cacao-link-2" alt="Logo Luker" />
           </div>
         </div>
         <FloatLogo btnText='dist' />

@@ -15,8 +15,8 @@ const fs = require("fs");
 const writeContentHtml = (res, stream) => {
   return new Promise((resolve, reject) => {
     stream.on('data', (chunk) => res.write(chunk))
-    .on('error', (err) => reject(err))
-    .on('end', () => resolve());
+      .on('error', (err) => reject(err))
+      .on('end', () => resolve());
   })
 }
 
@@ -34,13 +34,13 @@ module.exports.renderer = (req, res, url) => {
 
     let serverProps = { articles: {}, articlesES: {} }
 
-    console.log(req.params['0'])
+    console.log("req", req.params['0'])
 
-    if(req.params['0'].includes('[object Object]')){
+    if (req.params['0'].includes('[object Object]')) {
       return res.status(200).end();
     }
 
-    if(req.params['0'].includes('/blog')) {
+    if (req.params['0'].includes('/blog')) {
       const response = await fetch('https://www.back.lukerchocolate.com/wp-json/wp/v2/posts?per_page=100');
       const responseEs = await fetch('https://www.back.lukerchocolate.com/es/wp-json/wp/v2/posts?per_page=100');
       serverProps.articles = await parseArticle(await response.json(), req.params[0], await responseEs.json());
