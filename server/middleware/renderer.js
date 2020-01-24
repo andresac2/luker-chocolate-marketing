@@ -2,8 +2,6 @@ import React from 'react'
 import ReactDOMServer from 'react-dom/server'
 import { StaticRouter } from "react-router-dom";
 import { Helmet } from "react-helmet";
-var i18next = require("i18next");
-var middleware = require("i18next-express-middleware");
 
 // import our main App component
 import App from '../../src/routes';
@@ -11,14 +9,6 @@ import { parseArticle } from '../template';
 
 const path = require("path");
 const fs = require("fs");
-
-const writeContentHtml = (res, stream) => {
-  return new Promise((resolve, reject) => {
-    stream.on('data', (chunk) => res.write(chunk))
-      .on('error', (err) => reject(err))
-      .on('end', () => resolve());
-  })
-}
 
 module.exports.renderer = (req, res, url) => {
 
@@ -32,12 +22,9 @@ module.exports.renderer = (req, res, url) => {
       return res.status(404).end()
     }
 
-    let serverProps = { articles: {}, articlesES: {} }
-
-    console.log("req", req.params['0'])
-
-    if (req.params['0'].includes('[object Object]')) {
-      return res.status(200).end();
+    let serverProps = {
+      articles: {},
+      articlesES: {}
     }
 
     if (req.params['0'].includes('/blog')) {
@@ -46,30 +33,27 @@ module.exports.renderer = (req, res, url) => {
       serverProps.articles = await parseArticle(await response.json(), req.params[0], await responseEs.json());
     }
 
-    let stream = ReactDOMServer.renderToNodeStream(
+    // render the app as a string
+    let html = ReactDOMServer.renderToString(
       <StaticRouter location={req.params['0']} context={context}>
         <App serverProps={serverProps} />
-      </StaticRouter>)
+      </StaticRouter>);
+
+    if (context.url) {
+      res.redirect(301, context.url);
+      return;
+    }
 
     const helmet = Helmet.renderStatic();
 
-    const finishIndex = htmlData.substring(htmlData.lastIndexOf('<div id="root">') + '<div id="root">'.length)
-
-    htmlData = htmlData.substring(0, htmlData.indexOf('<div id="root">'))
-      .replace('<metadynamyc/>', `
+    htmlData = htmlData.replace('<metadynamyc/>', `
       ${helmet.title.toString()}
       ${helmet.meta.toString()}
       ${helmet.link.toString()}
     `)
 
-    res.write(htmlData);
-
-    // render the app as a string
-    await writeContentHtml(res, stream)
-
-    stream.on('end', () => {
-      res.status(200);
-      res.end(finishIndex);
-    });
+    htmlData = htmlData.replace('<div id="root"></div>', `<div id="root">${html}</div>`)
+    // inject the rendered app into our html and send it
+    return res.send(htmlData);
   });
 };

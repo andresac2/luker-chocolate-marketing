@@ -18,7 +18,7 @@ function ValuePropose(props) {
       <HelmetComponent title="Luker Chocolate | Our value propose" />
       <div className="value-propose-component--expo">
         <div className="btn-dist">
-          <Link to="/" className="logo"> <img src={logo} alt="Logo Luker" /></Link>
+          <Link to="/" className="logo"> <img src="/static/media/Lukerlogo.af6f7609.svg" alt="Logo Luker" /></Link>
         </div>
         <FloatLogo btnText='dist' />
         <div className="value-propose-component--expo-pagraph">

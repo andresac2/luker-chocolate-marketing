@@ -100,7 +100,7 @@ class WorkWithUs extends React.Component {
         <HelmetComponent title="Work with us" />
         <div className="work-with-us-header">
           <div className="btn-dist">
-            <Link to="/" className="logo"> <img src={logo} alt="Logo Luker" /></Link>
+            <Link to="/" className="logo"> <img src="/static/media/Lukerlogo.af6f7609.svg" alt="Logo Luker" /></Link>
           </div>
           <h1>{t('form.work-with-us')}</h1>
         </div>

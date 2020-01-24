@@ -40,7 +40,7 @@ class ProductsServices extends React.Component {
       <div className="services-component">
         <div className={`services-header services-header--${title} ${(item) && 'services-header--title-short'}`}>
           <div className="btn-dist">
-            <Link to="/" className="logo"> <img src={logo} alt="Logo Luker" /></Link>
+            <Link to="/" className="logo"> <img src="/static/media/Lukerlogo.af6f7609.svg" alt="Logo Luker" /></Link>
             <button className="float-logo-dist" onClick={() => this.showModalDist(distModalVisible)}>{t('buttons.find-distributor')}</button>
             {(item) ?
               <Link to={t('routes.products-services') + '/' + title}>{t('buttons.back').toUpperCase()}</Link> :

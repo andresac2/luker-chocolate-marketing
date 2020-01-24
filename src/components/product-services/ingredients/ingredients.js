@@ -26,5 +26,4 @@ const Ingredients = props => {
   );
 };
 
-
 export default withNamespaces()(Ingredients);

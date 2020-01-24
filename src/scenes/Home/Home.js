@@ -49,7 +49,7 @@ class Home extends React.Component {
       <div className="home">
         <HelmetComponent title={t('home.titulo_seo')} keywords={t('home.keywords')} titleOg={t('home.titulo_protocolo_opengraph')} description={t('home.meta_descripcion')} descriptionOg={t('home.descripcion_opengraph')} />
         <div className="home-logo">
-          <Link to="/" className="logo"> <img src={logo} alt="Logo Luker" /></Link>
+          <Link to="/" className="logo"> <img src="/static/media/Lukerlogo.af6f7609.svg" alt="Logo Luker" /></Link>
           <SelectLanguage />
         </div>
         <div className="home-content">

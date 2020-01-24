@@ -32,7 +32,7 @@ class ProductServices extends React.Component {
       <div className={`product-services-component product-services-component--${page}`} >
         {!selectedProduct && <><h2 className="product-services-component-title"> {title}</h2>
           <div className="product-carrousel">
-            <img className="btn-next-img" src={back} alt='left' onClick={() => this.reorderItems(items, 0, limit)} />
+            <img className="btn-next-img" src="/static/media/back.9ae9d2c8.svg" alt='left' onClick={() => this.reorderItems(items, 0, limit)} />
             {
               Object.keys(items).map(i =>
                 <div key={i} className={`carr-item carr-item--${i == 1 && 'active'} carr-item--${items[i].id}`} onClick={() => this.reorderItems(items, (i === '0') ? limit : 0, (i === '0') ? 0 : limit)}>
@@ -46,7 +46,7 @@ class ProductServices extends React.Component {
                 </div>
               )
             }
-            <img className="btn-next-img btn-next-img--right" src={back} alt='right' onClick={() => this.reorderItems(items, limit, 0)} />
+            <img className="btn-next-img btn-next-img--right" src="/static/media/back.9ae9d2c8.svg" alt='right' onClick={() => this.reorderItems(items, limit, 0)} />
           </div>
           <Link className="btn-tobuy" to={t('routes.products-services') + "/" + page + "/" + items[1].id}>{(page === 'maquila') ? t('buttons.find-out-more').toUpperCase() : t('buttons.get-it-here').toUpperCase()}</Link>
           <div className={`product-services-component--footer product-services-component--footer--${items[1].id}`}>

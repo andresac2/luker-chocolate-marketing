@@ -75,7 +75,7 @@ class Footer extends React.Component {
       <div>
         <div className={`footer-component ${mode == 'vertical' && 'footer-component-vertical'} ${mode == 'responsive' && 'footer-component-responsive'}`}>
           <div className="footer-component-logo">
-            <Link to="/" className="logo"> <img src={logo} alt="Logo Luker" /></Link>
+            <Link to="/" className="logo"> <img src="/static/media/Lukerlogo.af6f7609.svg" alt="Logo Luker" /></Link>
           </div>
           {mode === 'responsive' &&
             <div className="footer-component-social--btn">
