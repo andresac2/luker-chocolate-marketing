@@ -10,7 +10,7 @@ function Solution(props) {
   const { t } = props;
   return (
     <div className='solution-component'>
-      <HelmetComponent title="Luker Chocolate | Products & services" />
+      <HelmetComponent title={t('products-services.titulo_seo')} keywords={t('products-services.keywords')} titleOg={t('products-services.titulo_protocolo_opengraph')} description={t('products-services.meta_descripcion')} descriptionOg={t('products-services.descripcion_opengraph')} />
       <FloatLogo btnText='dist' />
       <Link to={t('routes.products-services') + t('routes.ingredients')} className="solution-component--ingredient">
         <div className="header-btn">

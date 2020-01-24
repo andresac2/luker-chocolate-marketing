@@ -106,3 +106,43 @@ export async function getItemsOurServicesEs() {
   const response = await fetch('https://www.back.lukerchocolate.com/es/wp-json/wp/v2/itemsourservices?per_page=100');
   return await response.json();
 }
+
+export async function getFinishedChocolateProducts() {
+  const response = await fetch('https://www.back.lukerchocolate.com/wp-json/wp/v2/finishedchocolatepro?per_page=100');
+  return await response.json();
+}
+
+export async function getFinishedChocolateProductsEs() {
+  const response = await fetch('https://www.back.lukerchocolate.com/es/wp-json/wp/v2/finishedchocolatepro?per_page=100');
+  return await response.json();
+}
+
+export async function getModalReportItems() {
+  const response = await fetch('https://www.back.lukerchocolate.com/wp-json/wp/v2/modalreportitems?per_page=100');
+  return await response.json();
+}
+
+export async function getModalReportItemsEs() {
+  const response = await fetch('https://www.back.lukerchocolate.com/es/wp-json/wp/v2/modalreportitems?per_page=100');
+  return await response.json();
+}
+
+export async function getArticlesSustain() {
+  const response = await fetch('https://www.back.lukerchocolate.com/wp-json/wp/v2/sustainability?per_page=100');
+  return await response.json();
+}
+
+export async function getArticlesSustainEs() {
+  const response = await fetch('https://www.back.lukerchocolate.com/es/wp-json/wp/v2/sustainability?per_page=100');
+  return await response.json();
+}
+
+export async function getIngredients() {
+  const response = await fetch('https://www.back.lukerchocolate.com/wp-json/wp/v2/ingredients?per_page=100');
+  return await response.json();
+}
+
+export async function getIngredientsEs() {
+  const response = await fetch('https://www.back.lukerchocolate.com/es/wp-json/wp/v2/ingredients?per_page=100');
+  return await response.json();
+}

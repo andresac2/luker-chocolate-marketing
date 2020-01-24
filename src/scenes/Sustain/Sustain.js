@@ -2,7 +2,7 @@ import React from 'react';
 import panel from '../../assets/img/sustain-panel.jpg'
 import back from '../../assets/img/back.svg'
 import { MdClose } from 'react-icons/md';
-import { Form, Select, Input, Button, InputNumber } from 'antd';
+import { Form, Select, Input, Button, InputNumber, Spin } from 'antd';
 import FormItem from 'antd/lib/form/FormItem';
 import Article from '../../components/blog/article/article';
 import FloatLogo from '../../components/layout/float-logo/float-logo';
@@ -20,6 +20,7 @@ import { privacyPolicy } from '../../commons/data/data-es';
 
 import { articlesSustain as articlesSustainEn, countries as dataCountries, modalReportItems as modalReportItemsEn } from '../../commons/data/data-en';
 import { articlesSustain as articlesSustainEs, countries as paises, modalReportItems as modalReportItemsEs } from '../../commons/data/data-es';
+import { getArticlesSustain, getArticlesSustainEs, getModalReportItems, getModalReportItemsEs } from '../../commons/services/api';
 
 
 class Sustain extends React.Component {
@@ -36,7 +37,48 @@ class Sustain extends React.Component {
       firstItem: 0,
       modalSelectedIndex: 0,
       items: i18n.language === 'en' ? articlesSustainEn : articlesSustainEs,
-      modalReportItems: i18n.language === 'en' ? modalReportItemsEn : modalReportItemsEs
+      modalReportItems: ''//i18n.language === 'en' ? modalReportItemsEn : modalReportItemsEs
+    };
+    this.getReportItems = this.getReportItems.bind(this);
+  }
+
+  async getItems() {
+    let arrItems = [];
+    if (i18n.language === 'en') {
+      getArticlesSustain().then(data =>
+        data.map((e, i) => {
+          arrItems.push(e.acf);
+        })).then(data =>
+          this.setState({ items: arrItems })
+        )
+    } else {
+      getArticlesSustainEs().then(data =>
+        data.map((e, i) => {
+          arrItems.push(e.acf);
+        })).then(data =>
+          this.setState({ items: arrItems })
+        )
+    }
+  }
+
+  async getReportItems() {
+    let arrItems = [];
+    if (i18n.language === 'en') {
+      getModalReportItems().then(data =>
+        data.map((e, i) => {
+          arrItems.push(e.acf);
+          arrItems[i].selected = false
+        })).then(data =>
+          this.setState({ modalReportItems: arrItems })
+        )
+    } else {
+      getModalReportItemsEs().then(data =>
+        data.map((e, i) => {
+          arrItems.push(e.acf);
+          arrItems[i].selected = false
+        })).then(data =>
+          this.setState({ modalReportItems: arrItems })
+        )
     }
   }
 
@@ -95,6 +137,11 @@ class Sustain extends React.Component {
     });
   };
 
+  componentDidMount() {
+    this.getReportItems();
+    //this.getItems();  
+  }
+
   render() {
     const { getFieldDecorator } = this.props.form;
     const { t } = this.props;
@@ -106,7 +153,7 @@ class Sustain extends React.Component {
 
     return (
       <div className="sustain-component">
-        <HelmetComponent title="Luker Chocolate | Sustainability" />
+        <HelmetComponent title={t('sustainability.titulo_seo')} keywords={t('sustainability.keywords')} titleOg={t('sustainability.titulo_protocolo_opengraph')} description={t('sustainability.meta_descripcion')} descriptionOg={t('sustainability.descripcion_opengraph')} />      
         <FloatLogo btnText='dist' />
         <div className="sustain-sidebar">
           <div className="sustain-sidebar--text">
@@ -120,7 +167,7 @@ class Sustain extends React.Component {
             <h1>{t('sustainability.impact')}</h1>
             <div className="sustain-content-contain-carr">
               <img className="btn-next-img btn-next-img-left" src="/static/media/back.9ae9d2c8.svg" alt='left' onClick={() => this.carrAction('l')} />
-              <div className="sustain-content-contain-carr--items" >
+              {items.length > 0 ? <div className="sustain-content-contain-carr--items" >
                 {Object.keys(items).map(i =>
                   <div key={i} className={`card-image ${firstItem > i && 'item-action--l'}`} onClick={() => this.showModalArticle(i)}>
                     <img src={(items[i].img ? items[i].img : altImg)} alt={items[i].title} />
@@ -132,7 +179,7 @@ class Sustain extends React.Component {
                         </div>)}
                     </div>
                   </div>)}
-              </div>
+              </div> : <Spin size="large" />}
               <img className="btn-next-img" src="/static/media/back.9ae9d2c8.svg" alt='left' onClick={() => this.carrAction('r')} />
             </div>
             <div className="sustain-content-contain-carr--dots">
@@ -157,7 +204,7 @@ class Sustain extends React.Component {
               <div className="modal-report-modal-report-header">
                 <h2>{t('modals.modal-documents-title')}</h2>
               </div>
-              <div className="modal-report-modal-report-cards">
+              {modalReportItems.length > 0 ? <div className="modal-report-modal-report-cards">
                 {
                   Object.keys(modalReportItems).map(i =>
                     <div key={i} className={`modal-report-modal-report-cards-card modal-report-modal-report-cards-card--${modalReportItems[i].selected && 'active'}`} onClick={() => this.modalItemToggle(modalReportItems[i].id, !modalReportItems[i].selected)}>
@@ -166,7 +213,7 @@ class Sustain extends React.Component {
                     </div>
                   )
                 }
-              </div>
+              </div> : <Spin size="large" />}
             </div>
             <div className="modal-report-modal-contact">
               <div className={`contact-component-content`}>
@@ -219,15 +266,16 @@ class Sustain extends React.Component {
                     )}
                   </Form.Item>
                   <div className="contact-form-products">
-                    <div className="contact-form-products--list">
-                      {modalReportItems.filter(item => item.selected).length > 0 ?
-                        Object.keys(modalReportItems.filter(item => item.selected)).map(i =>
-                          <div key={i} className={`contact-form-products--list-item`} onClick={() => this.modalItemToggle(modalReportItems.filter(item => item.selected)[i].id, false)}>
-                            <img src={require('../../assets/img/img-example.svg')} alt={modalReportItems.filter(item => item.selected)[i].id} />
-                            <p>{modalReportItems.filter(item => item.selected)[i].title}</p>
-                          </div>)
-                        : <span>{t('form.choose-documentation')}</span>}
-                    </div>
+                    {modalReportItems.length > 0 ?
+                      <div className="contact-form-products--list">
+                        {modalReportItems.filter(item => item.selected).length > 0 ?
+                          Object.keys(modalReportItems.filter(item => item.selected)).map(i =>
+                            <div key={i} className={`contact-form-products--list-item`} onClick={() => this.modalItemToggle(modalReportItems.filter(item => item.selected)[i].id, false)}>
+                              <img src={require('../../assets/img/img-example.svg')} alt={modalReportItems.filter(item => item.selected)[i].id} />
+                              <p>{modalReportItems.filter(item => item.selected)[i].title}</p>
+                            </div>)
+                          : <span>{t('form.choose-documentation')}</span>}
+                      </div> : <Spin size="large" />}
                   </div>
                   <Form.Item>
                     <Button type="primary" htmlType="submit" className="contact-form-button">
@@ -242,19 +290,20 @@ class Sustain extends React.Component {
         </div>
         <div className={`modal-article modal-article-${articleModalVisible && 'visible'}`}>
           <div className="modal-article-bkg" onClick={() => this.showModalArticle()}></div>
-          <div className="modal-article-modal">
-            <MdClose className="btn-x" onClick={() => this.showModalArticle()} />
-            <div className="modal-article-header" style={{ backgroundImage: `url(${items[modalSelectedIndex].img}` }}>
-              <h1>{items[modalSelectedIndex].title}</h1>
-              <div className="modal-article-header-badges">
-                {(items[modalSelectedIndex].badges).map((badge, i) =>
-                  <div key={i} className={`modal-badge`}>
-                    <img src={badge} alt={items[modalSelectedIndex].title} />
-                  </div>)}
+          {items.length > 0 ?
+            <div className="modal-article-modal">
+              <MdClose className="btn-x" onClick={() => this.showModalArticle()} />
+              <div className="modal-article-header" style={{ backgroundImage: `url(${items[modalSelectedIndex].img}` }}>
+                <h1>{items[modalSelectedIndex].title}</h1>
+                {items.length > 0 ? <div className="modal-article-header-badges">
+                  {(items[modalSelectedIndex].badges).map((badge, i) =>
+                    <div key={i} className={`modal-badge`}>
+                      <img src={badge} alt={items[modalSelectedIndex].title} />
+                    </div>)}
+                </div> : <Spin size="large" />}
               </div>
-            </div>
-            <Article data={items[modalSelectedIndex]} />
-          </div>
+              <Article data={items[modalSelectedIndex]} />
+            </div> : <Spin size="large" />}
         </div>
 
       </div >

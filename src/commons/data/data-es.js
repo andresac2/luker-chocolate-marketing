@@ -80,20 +80,20 @@ export const finishedChocolateProducts = [
   }];
 export const ingredients = [
   {
-    img: 'milk-atlantico-33.png',
+    img: '/static/media/milk-atlantico-33.69d16f78.png',
     name: 'CasaLuker Cacao',
     subtitle: 'LOS MEJORES INGREDIENTES',
     id: 'casaluker-cacao',
     description: 'he meticulous selection of ingredients is essential to achieve the unique sensory profile that characterizes our chocolate.We select the best Cacao Fino de Aroma cocoa beans from Colombia, Ecuador, and Peru.We also use 100% natural cocoa butter and vanilla for our couverture with an exquisite and particular flavor, ideal for chocolate products of all kinds.'
   },
   {
-    img: 'p-huila-70.png',
+    img: '/static/media/p-huila-70.002c5dc4.png',
     name: 'Luker 1906',
     subtitle: 'CHOCOLATES DE ORIGEN',
     id: 'casaluker-origins',
     description: 'Los chocolates de origen único de CasaLuker 1906 tienen un sabor particular que se debe a la pureza de sus orígenes. Elaborado a partir de granos seleccionados de las diferentes regiones y países productores de Cacao Fino de Aroma, su sabor no solo refleja la variedad de cacao, sino también la riqueza del suelo y la cultura de cultivo de cacao de su región. CasaLuker 1906, una delicia para los sentidos.'
   }, {
-    img: 'luker-maracas.png',
+    img: '/static/media/luker-maracas.26424e03.png',
     name: 'Luker Maracas',
     subtitle: 'GRAGEAS DE CHOCOLATE',
     id: 'casaluker-maracas',

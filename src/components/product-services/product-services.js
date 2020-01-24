@@ -27,7 +27,6 @@ class ProductServices extends React.Component {
     const { selectedProduct } = this.state;
     const { items, title, page, t } = this.props;
     const limit = items.length - 1;
-
     return (
       <div className={`product-services-component product-services-component--${page}`} >
         {!selectedProduct && <><h2 className="product-services-component-title"> {title}</h2>
@@ -37,7 +36,7 @@ class ProductServices extends React.Component {
               Object.keys(items).map(i =>
                 <div key={i} className={`carr-item carr-item--${i == 1 && 'active'} carr-item--${items[i].id}`} onClick={() => this.reorderItems(items, (i === '0') ? limit : 0, (i === '0') ? 0 : limit)}>
                   <div className={`carr-item-img`}>
-                    <img src={require('../../assets/img/' + (items[i].img ? items[i].img : altImg))} alt={items[i].name} />
+                    <img src={(items[i].img ? items[i].img : altImg)} alt={items[i].name} />
                   </div>
                   <div className={`carr-item-data`}>
                     <p>{items[i].subtitle}</p>

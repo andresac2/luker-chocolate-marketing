@@ -18,7 +18,8 @@ class IngredientDragees extends React.Component {
       items: ''//i18n.language === 'en' ? itemsMaracasEn : itemsMaracasEs
     };
     this.handleSetProductSelected = this.handleSetProductSelected.bind(this);
-    this.handleShowFormContact = this.handleShowFormContact.bind(this)
+    this.handleShowFormContact = this.handleShowFormContact.bind(this);
+    this.getItems = this.getItems.bind(this)
   }
 
   async getItems() {
@@ -58,13 +59,13 @@ class IngredientDragees extends React.Component {
   }
 
   componentDidMount() {
+    this.getItems();
   }
 
   render() {
     const { items, hideFormContact, openProducts } = this.state;
     const { t } = this.props;
     const altImg = 'img-example.svg';
-    this.getItems();
 
     return (
       <div className={`dragees-component ${hideFormContact && 'dragees-component--hide-form'} `}>
