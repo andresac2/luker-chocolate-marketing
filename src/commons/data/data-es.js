@@ -629,37 +629,37 @@ export const itemsAroma = ['SOLO CERCA DEL 8% DEL CACAO DEL MUNDO ES CONSIDERADO
 export const itemsFlavour = [{
   title: 'RELACIÓN CON PEQUEÑOS AGRICULTORES',
   content: 'Estamos comprometidos con los pequeños agricultores, por eso hemos establecido una red de alianzas con más de 50 asociaciones de productores de cacao que nos permiten garantizar la compra y ayudarlos a crear el máximo valor posible para los agricultores y sus familias. Compramos directamente de 65 asociaciones y más de 7,500 familias colombianas. También capacitamos a alrededor de 30,000 agricultores en la Granja Luker y construimos 10 instalaciones centralizadas de poscosecha en Tumaco, tenemos una actualmente en construcción en Huila y una en Necoclí.',
-  img: 'our-flavour-1.jpg'
+  img: '/static/media/our-flavour-1.ed8f930b.jpg'
 },
 {
   title: 'INTEGRACIÓN VERTICAL, CULTIVOS PROPIOS Y TRAZABILIDAD',
   content: 'En 2010, Luker Chocolate optó por cultivar sus propios cultivos para ayudar a la compañía a satisfacer sus propias necesidades de Cacao Fino de Aroma. Sin abandonar las relaciones establecidas con las asociaciones de cacao en todo el país, la compañía se propuso promover proyectos agroindustriales demostrativos que impulsarían las plantaciones de cacao a gran escala para impulsar el desarrollo rural. En el mismo año, la compañía encontró 550 hectáreas de tierra tradicionalmente utilizadas para la ganadería en Necoclí, Antioquia. Convirtió esta tierra en su primera plantación agroindustrial y la mayor plantación agroproductiva de variedades de Cacao Fino de Aroma, diseñada como un sistema agroforestal (integración simultánea y continua de árboles frutales y variedades que producen madera con cultivos agrícolas, lo que permite una mayor rendimientos y evitar la erosión del suelo y la pérdida de biodiversidad). Este proyecto nos ha permitido integrar toda la cadena de valor del cacao, desde la semilla hasta el producto final, creando un mayor bienestar social y ambiental en los territorios en los que trabajamos. Gracias a esto, podemos controlar todos los procesos de cacao, especialmente después de la cosecha. Así es como podemos garantizar sostenibilidad, transparencia, suministro, trazabilidad, un sabor superior y consistencia en nuestros productos. ',
-  img: 'cacaoOpen.jpg'
+  img: '/static/media/cacaoOpen.e5a62492.jpg'
 },
 {
   title: 'PROCESO DE CALIDAD',
   content: 'En Luker Chocolate, mejoramos continuamente nuestros procesos de análisis y control de calidad para que podamos cumplir nuestra promesa de entregar un chocolate de sabor único y superior, asegurando un perfil sensorial que se mantenga con el tiempo. Nuestro proceso de control comienza en nuestros diferentes puntos de compra en las regiones productoras. Cada grano de cacao comprado se analiza en términos de su nivel de fermentación, humedad e impurezas. Luego, los granos se llevan al depósito de cacao en Bogotá, donde se repite el proceso. El licor de cacao se produce en el laboratorio de cacao, que luego utilizamos para validar el perfil sensorial de cada lote de cacao comprado y ratificar que realmente coincida con el origen del cual se compró. Durante el proceso de fabricación del chocolate, nuestro panel de calidad lleva a cabo un tercer análisis de calidad. Se realizan dos sesiones de panel de calidad sensorial al día, donde 15 panelistas altamente calificados analizan cada lote de chocolate que se fabrica. Para garantizar la estandarización del sabor, los procesos de tostado y preparación son 100% automatizados.',
-  img: 'our-flavour-3.jpg'
+  img: '/static/media/our-flavour-3.7d576fde.jpg'
 }]
 export const itemsProducts = [{
   title: 'EMPAQUES',
   content: 'Este equipo se encarga de desarrollar los empaques primarios y secundarios, garantizando que estén de acuerdo con los requerimientos de nuestros clientes y de sus productos. Siempre piensan desde la innovación y para ellos lo más importante es la inocuidad.',
-  img: 'our-product-1.jpg'
+  img: '/static/media/our-product-1.ce49f008.jpg'
 },
 {
   title: 'INVESTIGACIÓN Y DESARROLLO',
   content: 'Desde este departamento se ejecutan investigaciones agrícolas y científicas que promueven la cacao-cultura colombiana, profundizando siempre en las características genéticas y de origen de las diferentes variedades de Cacao Fino de Aroma que se encuentran en el país. Por otro lado, diseñan y desarrollan las mejores fórmulas de chocolate satisfaciendo las necesidades de nuestros clientes. Son puros en su máxima expresión: cumplen con los más altos estándares normativos y de calidad bajo los lineamientos estratégicos de la compañía.',
-  img: 'our-product-2.jpg'
+  img: '/static/media/our-product-2.04f1a533.jpg'
 },
 {
   title: 'MERCADEO',
   content: 'El equipo que cree que hacer las cosas con pasión marca la diferencia. Diseñan y ejecutan estrategias de marketing e investigan las últimas tendencias del mercado, con el fin de ayudar a nuestros clientes a que se destaquen frente a la competencia.',
-  img: 'our-product-3.jpg'
+  img: '/static/media/our-product-3.fb7482aa.jpg'
 },
 {
   title: 'DESIGN HUB',
   content: 'Con un acercamiento al planeamiento estratégico basado en las tendencias locales, desarrollan productos para su mercado objetivo, resaltando los mensajes más atractivos y creando relaciones emocionales de los clientes con su marca. Su objetivo: vender hasta agotar existencias.',
-  img: 'our-product-4.jpg'
+  img: '/static/media/our-product-4.dd39941b.jpg'
 }]
 export const modalReportItems = [
   {

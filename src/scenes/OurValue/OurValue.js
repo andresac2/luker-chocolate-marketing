@@ -1,9 +1,9 @@
 import React from 'react';
 import logo from '../../assets/img/Lukerlogo.svg'
-import item1 from '../../assets/img/unique-flavour.jpg'
-import item2 from '../../assets/img/consistency-flavour.jpg'
-import item3 from '../../assets/img/integrated-packaging.jpg'
-import item4 from '../../assets/img/grano4.jpg'
+//import item1 from '../../assets/img/unique-flavour.jpg'
+//import item2 from '../../assets/img/consistency-flavour.jpg'
+//import item3 from '../../assets/img/integrated-packaging.jpg'
+//import item4 from '../../assets/img/grano4.jpg'
 
 import { Link } from 'react-router-dom';
 import OurAroma from '../../components/our-value/aroma/our-aroma';
@@ -20,6 +20,7 @@ class OurValue extends React.Component {
       selectTab: this.props.match.params.id,
     };
   }
+
   tabToggle(tab) {
     this.setState({ selectTab: tab });
   }
@@ -27,6 +28,11 @@ class OurValue extends React.Component {
   render() {
     const { selectTab } = this.state;
     const { t } = this.props;
+
+    const item1 = '/static/media/unique-flavour.b9eb31ba.jpg';
+    const item2 = '/static/media/consistency-flavour.6fd7309d.jpg';
+    const item3 = '/static/media/integrated-packaging.79e11ca3.jpg';
+    const item4 = '/static/media/grano4.d444b217.jpg';
 
     return (
       <div className="our-value-component">

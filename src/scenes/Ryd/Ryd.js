@@ -24,7 +24,7 @@ class Ryd extends React.Component {
 
     return (
       <div className="ryd-component">
-        <HelmetComponent title="Luker Chocolate | Ideas & trends" />
+        <HelmetComponent title={t('ryd.titulo_seo')} keywords={t('ryd.keywords')} titleOg={t('ryd.titulo_protocolo_opengraph')} description={t('ryd.meta_descripcion')} descriptionOg={t('ryd.descripcion_opengraph')} />
         {!selectTab &&
           <FloatLogo btnText='dist' />}
         <div className={`ryd-tab ryd-tab--${selectTab}`}>

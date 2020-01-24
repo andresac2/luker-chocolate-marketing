@@ -5,7 +5,12 @@ import item4 from '../../../assets/img/secado-2.jpg'
 import { withNamespaces } from 'react-i18next';
 
 const OurSocial = (props) => {
-const {t} = props;
+  const { t } = props;
+
+  const item2 = '/static/media/cut-cacao.5c8243b0.jpg'
+  const item3 = '/static/media/cacao-store.f951491e.jpg'
+  const item4 = '/static/media/secado-2.7430d41c.jpg'
+
   return (
     <div className="our-social-component" >
       <h1>{t('value-propose.social-title')}</h1>

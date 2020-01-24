@@ -630,37 +630,37 @@ export const itemsAroma = ['ONLY ABOUT 8% OF THE WORLD’S COCOA IS CONSIDERED C
 export const itemsFlavour = [{
   title: 'RELATIONSHIP WITH SMALL FARMERS',
   content: 'At Luker Chocolate, we believe that support for small farmers is essential for our business model. As such, we have consolidated commercial partnerships with over 50 farmers associations, benefiting more than 7,500 Colombian families, thanks to a direct purchase model in which we are committed to pay a fair price and pay a deposit to ensure the purchase of the entire harvest. To add to this, at Granja Luker, we offer technical advice for crop improvement, training in improved agricultural practices, and we offer farmers the opportunity to update their crops with high quality Fino de Aroma varieties. This allows us better quality control in products and supply, guaranteeing our customers the availability of each of our Fino de Aroma chocolates.',
-  img: 'our-flavour-1.jpg'
+  img: '/static/media/our-flavour-1.ed8f930b.jpg'
 },
 {
   title: 'VERTICAL INTEGRATION, OWN CROPS, AND TRACEABILITY',
   content: 'In 2010, Luker Chocolate opted to grow its own crops to help the company satisfy its own Cacao Fino de Aroma needs. Without abandoning the relationships established with cocoa associations all over the country, the company set out to promote demonstrative agro industrial projects that would boost large-scale cocoa plantations to drive rural development. In the same year, the company found 550 hectares of land traditionally used for cattle farming in Necoclí, Antioquia. It turned this land into its first agro industrial plantation and the largest agro-productive plantation of varieties of Cacao Fino de Aroma, designed as an agroforestry system (simultaneous and continuous integration of fruit trees and timber-yielding varieties with agricultural crops, which allow greater yields and avoid soil erosion and loss of biodiversity). This project has allowed us to integrate the entire cocoa value chain, from the seed, to the final product, creating greater social and environmental well being in the territories in which we work. Thanks to this, we can control all cocoa processes, especially postharvest. This is how we can guarantee sustainability, transparency, supply, traceability, a superior flavour, and consistency in our products.',
-  img: 'cacaoOpen.jpg'
+  img: '/static/media/cacaoOpen.e5a62492.jpg'
 },
 {
   title: 'QUALITY PROCESS',
   content: 'At Luker Chocolate, we continuously improve our analysis and quality control processes so that we can keep our promise of delivering a chocolate of unique and superior flavour, ensuring a sensory profile that is maintained over time. Our control process starts at our different points of purchase in the producing regions. Every purchased cocoa bean is analysed in terms of its fermentation level, humidity, and impurities. The beans are then taken to the cocoa storehouse in Bogotá, where the process is repeated. Cocoa liquor is produced in the cocoa laboratory, which we then use to validate the sensory profile of each batch of cocoa purchased and ratify that it actually matches the origin from which it has been purchased. During the chocolate manufacturing process, a third quality analysis is carried out by our quality panel. Two sensory quality panel sessions a day are held, where 15 highly qualified panellists analyse every batch of chocolate that is being manufactured. To guarantee flavour standardization, the roasting and preparation processes are 100% automated.',
-  img: 'our-flavour-3.jpg'
+  img: '/static/media/our-flavour-3.7d576fde.jpg'
 }]
 export const itemsProducts = [{
   title: 'PACKAGING',
   content: 'This team is responsible for developing the primary and secondary packaging ensuring that they suit the requirements of our customers and their products. They are always innovating bearing in mind safety as the most important element.',
-  img: 'our-product-1.jpg'
+  img: '/static/media/our-product-1.ce49f008.jpg'
 },
 {
   title: 'R&D',
   content: 'This department is responsible for our agricultural and scientific research to promote Colombian cocoa-culture, always researching the genetic and origin properties of the different varieties of Cacao Fino de Aroma found in the country. On the other hand, they design and develop the best chocolate formulas, satisfying the needs of our clients. They are pure in their maximum expression: they comply with the highest quality standards under our strategic company guidelines',
-  img: 'our-product-2.jpg'
+  img: '/static/media/our-product-2.04f1a533.jpg'
 },
 {
   title: 'MARKETING',
   content: 'The team that believes that doing things with passion makes a difference. They design and execute marketing strategies and research the latest market trends to help our clients standout from their competitors.',
-  img: 'our-product-3.jpg'
+  img: '/static/media/our-product-3.fb7482aa.jpg'
 },
 {
   title: 'DESIGN HUB',
   content: 'They develop products for their target market with an approach to strategic planning based on local trends, highlighting the most important messages and creating emotional relationships between customers and your brand. Their goal: Sell while supplies last.',
-  img: 'our-product-4.jpg'
+  img: '/static/media/our-product-4.dd39941b.jpg'
 }]
 export const modalReportItems = [
   {
