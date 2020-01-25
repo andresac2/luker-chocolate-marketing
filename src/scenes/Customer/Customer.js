@@ -8,12 +8,12 @@ import { Link } from 'react-router-dom';
 //import lyra from '../../assets/img/lyra_eshop.jpg'
 //import paul from '../../assets/img/PAUL LAFAYET_Creme.png'
 //import pots from '../../assets/img/pots&co.jpg'
-import dengel from '../../assets/img/dengel.jpg'
+//import dengel from '../../assets/img/dengel.jpg'
 //import york from '../../assets/img/york.jpg'
 
 //import frFlag from '../../assets/img/fr-flag.png'
 //import usFlag from '../../assets/img/us-flag.png'
-import dkFlag from '../../assets/img/dk-flag.png'
+//import dkFlag from '../../assets/img/dk-flag.png'
 //import ukFlag from '../../assets/img/uk-flag.png'
 //import jpFlag from '../../assets/img/jp-flag.png'
 import FloatLogo from '../../components/layout/float-logo/float-logo';

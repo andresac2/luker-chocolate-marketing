@@ -1,8 +1,3 @@
-const endpoint = "https://api.embluemail.com/Services/Emblue3Service.svc/json";
-const corssproxy = "https://api.embluemail.com/Services/Emblue3Service.svc/json";
-let tokenApi = "17642-HeE-LdmUz-3uZnH-QAa4JEDqUw";
-
-
 export const Authenticate = () => {
   return fetch('https://cors-anywhere.herokuapp.com/https://api.embluemail.com/Services/Emblue3Service.svc/json/Authenticate', {
     method: 'POST',

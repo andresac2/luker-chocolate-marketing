@@ -1,6 +1,6 @@
 import React from 'react';
-import panel from '../../assets/img/sustain-panel.jpg'
-import back from '../../assets/img/back.svg'
+//import panel from '../../assets/img/sustain-panel.jpg'
+//import back from '../../assets/img/back.svg'
 import { MdClose } from 'react-icons/md';
 import { Form, Select, Input, Button, InputNumber, Spin } from 'antd';
 import FormItem from 'antd/lib/form/FormItem';
@@ -13,8 +13,6 @@ import HelmetComponent from '../../commons/helmet/helmet';
 import i18n from '../../i18n';
 import { withNamespaces } from 'react-i18next';
 
-//import termsConditions from '../../assets/documents/policies/Términos y condiciones de uso sitio web CasaLuker inglés 16dic2019.pdf';
-//import privacyPolicy from '../../assets/documents/policies/Política privacidad sitio web CasaLuker inglés 16dic2019.pdf';
 import { termsConditions } from '../../commons/data/data-en';
 import { privacyPolicy } from '../../commons/data/data-es';
 

@@ -1333,13 +1333,13 @@ export const countries = [
     name: 'BAHRAIN',
     abrev: 'bh'
   }, {
-    name: 'BELGIUM',
+    name: 'BÉLGICA',
     abrev: 'be'
   }, {
-    name: 'BRAZIL',
+    name: 'BRASIL',
     abrev: 'br'
   }, {
-    name: 'CANADA',
+    name: 'CANADÁ',
     abrev: 'ca'
   }, {
     name: 'CHILE',
@@ -1348,61 +1348,61 @@ export const countries = [
     name: 'COLOMBIA',
     abrev: 'co'
   }, {
-    name: 'CZECH REPUBLIC',
+    name: 'RÉPUBLICA CHECA',
     abrev: 'cz'
   }, {
-    name: 'FRANCE',
+    name: 'FRANCIA',
     abrev: 'fr'
   }, {
-    name: 'GERMANY',
+    name: 'ALEMANIA',
     abrev: 'de'
   }, {
-    name: 'GREECE',
+    name: 'GRECIA',
     abrev: 'gr'
   }, {
     name: 'GUATEMALA',
     abrev: 'gl'
   }, {
-    name: 'HUNGARY',
+    name: 'HUNGRIA',
     abrev: 'hu'
   }, {
-    name: 'ITALY',
+    name: 'ITALIA',
     abrev: 'it'
   }, {
-    name: 'JAPAN',
+    name: 'JAPÓN',
     abrev: 'jp'
   }, {
-    name: 'LUXEMBOURG',
+    name: 'LUXEMBURGO',
     abrev: 'lu'
   }, {
-    name: 'MIDDLE EAST',
+    name: 'ORIENTE MEDIO',
     abrev: 'me'
   }, {
-    name: 'MEXICO',
+    name: 'MÉXICO',
     abrev: 'mx'
   }, {
-    name: 'NETHERLANDS',
+    name: 'PAISES BAJOS',
     abrev: 'nl'
   }, {
-    name: 'ROMANIA',
+    name: 'RUMANIA',
     abrev: 'ro'
   }, {
-    name: 'RUSSIA',
+    name: 'RUSIA',
     abrev: 'ru'
   }, {
-    name: 'SLOVAK REPUBLIK',
+    name: 'ESLOVAQUIA',
     abrev: 'sk'
   }, {
     name: 'TAIWAN',
     abrev: 'tw'
   }, {
-    name: 'UKRANIE',
+    name: 'UCRANIA',
     abrev: 'ua'
   }, {
-    name: 'UNITED KINGDOM ',
+    name: 'REINO UNIDO ',
     abrev: 'uk'
   }, {
-    name: 'UNITED STATES',
+    name: 'ESTADOS UNIDOS',
     abrev: 'us'
   }
 ]
