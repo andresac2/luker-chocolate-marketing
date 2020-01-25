@@ -30,7 +30,7 @@ class OurProduct extends React.Component {
         <div className="our-product-component-cards">
           {Object.keys(items).map(i =>
             <div key={i} className={`our-product-component-card our-product-component-card-${selectedItem === i && 'active'}`} onClick={() => this.toggleItem(i)}>
-              <img src={require('../../../assets/img/' + (items[i].img ? items[i].img : altImg))} alt={items[i].title} />
+              <img src={(items[i].img ? items[i].img : altImg)} alt={items[i].title} />
               <div className="our-product-component-card-cover"><p>{items[i].title}</p></div>
             </div>
           )}

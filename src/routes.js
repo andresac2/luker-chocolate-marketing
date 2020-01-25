@@ -1,6 +1,5 @@
-import React, { Suspense, useEffect } from 'react';
+import React from 'react';
 import {
-  Router,
   Redirect,
   Switch,
   Route

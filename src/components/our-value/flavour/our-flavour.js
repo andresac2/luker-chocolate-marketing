@@ -31,7 +31,7 @@ class OurFlavour extends React.Component {
         <div className="our-flavour-component-cards">
           {Object.keys(items).map(i =>
             <div key={i} className={`our-flavour-component-card our-flavour-component-card--${openedItem !== 99 && 'open'} our-flavour-component-card--${openedItem === i && 'opened'}`}>
-              {openedItem !== i && <img src={require('../../../assets/img/' + (items[i].img ? items[i].img : altImg))} alt={items[i].title} key={i} />}
+              {openedItem !== i && <img src={(items[i].img ? items[i].img : altImg)} alt={items[i].title} key={i} />}
               {(openedItem !== i) ?
                 <div className={`our-flavour-component-card--header`}>
                   <p>{items[i].title}</p>
@@ -44,7 +44,7 @@ class OurFlavour extends React.Component {
                     </div>
                   </div>
                   <div className="our-flavour-component-card--data-img">
-                    <img src={require('../../../assets/img/' + (items[i].img ? items[i].img : altImg))} alt={items[i].title} key={i} />
+                    <img src={(items[i].img ? items[i].img : altImg)} alt={items[i].title} key={i} />
                   </div>
                 </div>
               }
