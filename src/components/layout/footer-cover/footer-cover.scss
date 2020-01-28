@@ -46,42 +46,49 @@
       cursor: pointer;
 
       span {
+        text-transform: uppercase;
         border-bottom-width: 5px;
         border-bottom-style: solid;
       }
     }
   }
 
+  &-proceso-del-chocolate,
   &-chocolate-process {
     span {
       border-bottom-color: $ocher-yellow;
     }
   }
 
+  &-sostenibilidad,
   &-sustainability {
     span {
       border-bottom-color: $beige;
     }
   }
 
+  &-productos-servicios,
   &-products-services {
     span {
       border-bottom-color: $peach;
     }
   }
 
+  &-nuestros-clientes,
   &-our-clients {
     span {
       border-bottom-color: $citrus;
     }
   }
 
+  &-ideas-tendencias,
   &-ideas-trends {
     span {
       border-bottom-color: $tangerine;
     }
   }
 
+  &-propuesta-valor,
   &-our-value {
     span {
       border-bottom-color: $light-gray;

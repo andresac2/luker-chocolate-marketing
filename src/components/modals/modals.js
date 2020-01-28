@@ -1,6 +1,7 @@
 import React from 'react';
 import { MdClose } from 'react-icons/md';
 import ModalDistributors from './distributors/modal-dist';
+import ModalInfoProducts from './info-product/info-product';
 
 class Modals extends React.Component {
 
@@ -9,7 +10,7 @@ class Modals extends React.Component {
   }
 
   render() {
-    const { visible, modal } = this.props;
+    const { visible, modal, product, title, subtitle, contentTitle } = this.props;
     return (
       <div className={`modal-content modal-content-${visible && 'visible'}`}>
         <div className="modal-content-bkg" onClick={() => this.props.showModalDist()}></div>
@@ -17,6 +18,9 @@ class Modals extends React.Component {
           <MdClose className="btn-x" onClick={() => this.props.showModalDist()} />
           {modal === 'distributors' &&
             <ModalDistributors />
+          }
+          {modal === 'info-product' &&
+            <ModalInfoProducts product={product} title={title} subtitle={subtitle} contentTitle={contentTitle} />
           }
         </div>
       </div>

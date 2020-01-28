@@ -1,6 +1,12 @@
 import React from 'react'
 import WrappedContactSide from '../../../layout/contact-side/contact-side';
 import { TiArrowSortedUp } from 'react-icons/ti';
+import Modals from '../../../modals/modals';
+import i18n from '../../../../i18n';
+import { withNamespaces } from 'react-i18next';
+
+import { itemsOrigins as itemsOriginsEn } from '../../../../commons/data/data-en';
+import { itemsOrigins as itemsOriginsEs } from '../../../../commons/data/data-es';
 
 class Ingredient1906 extends React.Component {
   constructor(props) {
@@ -8,52 +14,24 @@ class Ingredient1906 extends React.Component {
     this.state = {
       hideFormContact: true,
       openProducts: false,
-      itemsArauca: [{
-        id: 1,
-        img: 'p-tumaco.png',
-        description: 'DARK TUMACO 65%',
-        selected: false
-      }, {
-        id: 2,
-        img: 'p-tumaco-85.png',
-        description: 'EXTRA DARK TUMACO 85%',
-        selected: false
-      },
-      {
-        id: 3,
-        img: 'p-huila-65.png',
-        description: 'DARK HUILA 65%',
-        selected: false
-      }, {
-        id: 4,
-        img: 'p-huila-70.png',
-        description: 'DARK HUILA 70%',
-        selected: false
-      },
-      {
-        id: 5,
-        img: 'p-santander-65.png',
-        description: 'DARK SANTANDER 65%',
-        selected: false
-      },
-      {
-        id: 6,
-        img: 'p-sanmartin-72.png',
-        description: 'DARK SAN MARTIN 72%',
-        selected: false
-      },
-      {
-        id: 7,
-        img: 'p-arauca-55.png',
-        description: 'MILK ARAUCA 55%',
-        selected: false
-      }
-      ]
-    };
+      infoProductsVisible: false,
+      productSelected: [],
+      itemsArauca: i18n.language === 'en' ? itemsOriginsEn : itemsOriginsEs
+    }
     this.handleSetProductSelected = this.handleSetProductSelected.bind(this);
-    this.handleShowFormContact = this.handleShowFormContact.bind(this)
-
+    this.handleShowFormContact = this.handleShowFormContact.bind(this);
+    this.showModalDist = this.showModalDist.bind(this)
   }
+  showModalDist = (product) => {
+    this.setState({
+      infoProductsVisible: !this.state.infoProductsVisible,
+    });
+    if (product) {
+      this.setState({
+        productSelected: product,
+      });
+    }
+  };
 
   productToggle(id, selected) {
     this.setState({
@@ -74,8 +52,8 @@ class Ingredient1906 extends React.Component {
   }
 
   render() {
-    const { data } = this.props;
-    const { itemsArauca, hideFormContact, openProducts } = this.state;
+    const { data, t } = this.props;
+    const { itemsArauca, hideFormContact, openProducts, infoProductsVisible, productSelected } = this.state;
     const altImg = 'img-example.svg';
 
     return (
@@ -86,9 +64,9 @@ class Ingredient1906 extends React.Component {
           <img src={require('../../../../assets/img/chocolate-ingredients/origins/origenes-line-up.png')} alt='Products Origins' />
         </div>
         <div className={`i1906-component--content ${openProducts ? 'i1906-component--content-open-product' : ''}`}>
-          <h2>SINGLE ORIGIN</h2>
-          <p>Luker 1906, SANTANDER, HUILA, TUMACO and ARAUCA. Four Colombian Origin Chocolates with flavours that reflect the country’s geographic and cultural diversity. Santander cocoa is cultivated in the Andes; Tumaco, in the tropical forests of the Pacific Coast and Huila cocoa is typical of the region’s deep valleys. In Arauca, cocoa grows in wild landscapes between the snow-capped mountains and valleys of the Orinoco. Mountains, forests and valleys: Luker 1906, the chocolate with an inimitable flavour of the land that it grows in.</p>
-          <p className="i1906-component--content-specifications">Available in: 2,5 bag or 20kg box<br /> Shelf life: Dark 24 months, Milk 18 months & White 14 months.</p>
+          <h2>{t('products-services.single-origin').toUpperCase()}</h2>
+          <p>{t('products-services.origins-text')}</p>
+          <p className="i1906-component--content-specifications">{t('products-services.available-in')} {t('products-services.bag-box-origins')}<br /> {t('products-services.shelf-life-origins')}</p>
         </div>
         <div className={`i1906-component--contain-products-arrow ${openProducts ? 'i1906-component--contain-products-arrow-open' : ''}`} onClick={() => this.showProductToggle()}><span><TiArrowSortedUp /></span></div>
         <div className={`i1906-component--contain-products ${openProducts ? 'i1906-component--contain-products-open' : ''}`} >
@@ -97,16 +75,17 @@ class Ingredient1906 extends React.Component {
             {Object.keys(itemsArauca).map(i =>
               <div key={i} className={`i1906-component--products-item i1906-component--products-item-${itemsArauca[i].selected && 'active'}`} onClick={() => this.productToggle(itemsArauca[i].id, !itemsArauca[i].selected)}>
                 <img src={require('../../../../assets/img/' + (itemsArauca[i].img ? itemsArauca[i].img : altImg))} alt={itemsArauca[i].description} />
-                <h2>Luker 1906</h2>
-                <span>i</span>
-                <p>{itemsArauca[i].description}</p>
+                <h2>{t('products-services.luker-1906')}</h2>
+                <p>{itemsArauca[i].description} {itemsArauca[i].cocoaContent}</p>
+                <span onClick={() => this.showModalDist(itemsArauca[i])}>i</span>
               </div>)}
           </div>
         </div>
+        <Modals visible={infoProductsVisible} modal={'info-product'} showModalDist={this.showModalDist} product={productSelected} title={t('products-services.single-origin-chocolates')} subtitle={t('products-services.luker-1906')} contentTitle={t('products-services.luker-1906')} />
         <WrappedContactSide page='ingredients' products={itemsArauca} handleSetProductSelected={this.handleSetProductSelected} handleShowFormContact={this.handleShowFormContact} />
       </div>
     );
   }
 };
 
-export default Ingredient1906;
+export default withNamespaces()(Ingredient1906);

@@ -105,6 +105,7 @@
 
       span {
         @include vert-center;
+        cursor: pointer;
         align-items: center;
         right: 0;
         top: 0;

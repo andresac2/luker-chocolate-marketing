@@ -3,9 +3,10 @@ import IngredientCacao from './cacao/cacao';
 import Ingredient1906 from './origins/origins';
 import IngredientDragees from './maracas/maracas';
 import { Link } from 'react-router-dom';
+import { withNamespaces } from 'react-i18next';
 
 const Ingredients = props => {
-  const { product } = props;
+  const { product, t } = props;
 
   return (
     <div className="ingredients-component">
@@ -19,11 +20,10 @@ const Ingredients = props => {
         <IngredientDragees data={product} />
       }
       <div className="btn-back-sticky">
-        <Link to="/products-services/ingredients">BACK TO OUR PRODUCTS</Link>
+        <Link to={t('route.product-services') + t('route.ingredients')}>{t('buttons.back-to-products').toUpperCase()}</Link>
       </div>
     </div>
   );
 };
 
-
-export default Ingredients;
+export default withNamespaces()(Ingredients);

@@ -19,14 +19,16 @@ import item17 from '../../../assets/img/PAUL LAFAYET_Creme.png'
 import item18 from '../../../assets/img/unique-flavour.jpg'
 import item19 from '../../../assets/img/serv-maquila-cover.jpg'
 import { Link } from 'react-router-dom';
+import { withNamespaces } from 'react-i18next';
 
 function TakeStand(props) {
   const lim = 0; //props.articles.length - 1;
   const category = props.category;
+  const { t } = props;
   return (
     <div className="take-stand">
       <div className="blog-layout-latest">
-        <h1>FEATURED POST</h1>
+        <h1>{t('blog.featured-post')}</h1>
         {
           <div className="blog-layout-latest--article">
             <Link to={'/blog/' + category + '/' + props.articles[lim].url}>
@@ -51,4 +53,4 @@ function TakeStand(props) {
     </div>
   );
 }
-export default TakeStand;
+export default withNamespaces()(TakeStand);

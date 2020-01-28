@@ -4,10 +4,15 @@ import FormItem from 'antd/lib/form/FormItem';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/img/Lukerlogo.svg'
 import Footer from '../footer/footer';
-import termsConditions from '../../../assets/documents/policies/Términos y condiciones de uso sitio web CasaLuker inglés 16dic2019.pdf';
-import privacyPolicy from '../../../assets/documents/policies/Política privacidad sitio web CasaLuker inglés 16dic2019.pdf';
+import { termsConditions } from "../../../commons/data/data-en";
+import { privacyPolicy } from "../../../commons/data/data-en";
+import { termsConditions as termsConditionsEs } from "../../../commons/data/data-es";
+import { privacyPolicy as privacyPolicyEs } from "../../../commons/data/data-es";
 import HelmetComponent from '../../../commons/helmet/helmet';
-
+import { withNamespaces } from 'react-i18next';
+import i18n from '../../../i18n';
+import { countries as dataCountries } from '../../../commons/data/data-en';
+import { countries as paises } from '../../../commons/data/data-es';
 class Contact extends React.Component {
 
   constructor(props) {
@@ -15,87 +20,7 @@ class Contact extends React.Component {
     this.state = { feedback: '', name: 'Name', email: 'email@example.com', country: 'Colombia' };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-  countries = [
-    {
-      name: 'ARGENTINA',
-      abrev: 'ar'
-    }, {
-      name: 'AUSTRALIA',
-      abrev: 'au'
-    }, {
-      name: 'BAHRAIN',
-      abrev: 'bh'
-    }, {
-      name: 'BELGIUM',
-      abrev: 'be'
-    }, {
-      name: 'BRAZIL',
-      abrev: 'br'
-    }, {
-      name: 'CANADA',
-      abrev: 'ca'
-    }, {
-      name: 'CHILE',
-      abrev: 'cl'
-    }, {
-      name: 'COLOMBIA',
-      abrev: 'co'
-    }, {
-      name: 'CZECH REPUBLIC',
-      abrev: 'cz'
-    }, {
-      name: 'FRANCE',
-      abrev: 'fr'
-    }, {
-      name: 'GERMANY',
-      abrev: 'de'
-    }, {
-      name: 'GREECE',
-      abrev: 'gr'
-    }, {
-      name: 'GUATEMALA',
-      abrev: 'gl'
-    }, {
-      name: 'HUNGARY',
-      abrev: 'hu'
-    }, {
-      name: 'ITALY',
-      abrev: 'it'
-    }, {
-      name: 'JAPAN',
-      abrev: 'jp'
-    }, {
-      name: 'LUXEMBOURG',
-      abrev: 'lu'
-    }, {
-      name: 'MIDDLE EAST',
-      abrev: 'me'
-    }, {
-      name: 'NETHERLANDS',
-      abrev: 'nl'
-    }, {
-      name: 'ROMANIA',
-      abrev: 'ro'
-    }, {
-      name: 'RUSSIA',
-      abrev: 'ru'
-    }, {
-      name: 'SLOVAK REPUBLIK',
-      abrev: 'sk'
-    }, {
-      name: 'TAIWAN',
-      abrev: 'tw'
-    }, {
-      name: 'UKRANIE',
-      abrev: 'ua'
-    }, {
-      name: 'UNITED KINGDOM ',
-      abrev: 'uk'
-    }, {
-      name: 'UNITED STATES',
-      abrev: 'us'
-    }
-  ]
+  countries = i18n.language === 'en' ? dataCountries : paises;
 
   handleSubmit = e => {
     e.preventDefault();
@@ -135,6 +60,7 @@ class Contact extends React.Component {
 
   render() {
     const { getFieldDecorator } = this.props.form;
+    const { t } = this.props;
     const { Option } = Select;
     const { TextArea } = Input;
     return (
@@ -142,19 +68,19 @@ class Contact extends React.Component {
         <HelmetComponent title="Contact us" />
         <div className="contact-us-header">
           <div className="btn-dist">
-            <Link to="/" className="logo"> <img src={logo} alt="Logo Luker" /></Link>
+            <Link to="/" className="logo"> <img src="/static/media/Lukerlogo.af6f7609.svg" alt="Logo Luker" /></Link>
           </div>
-          <h1>Contact us</h1>
+          <h1>{t('form.contact-us')}</h1>
         </div >
 
         <div className={`contact-us-content`}>
-          <p>Get in touch with us and have all your questions about chocolate answerd by our experts.</p>
+          <p>{t('form.contact-message')}</p>
           <Form onSubmit={this.handleSubmit} className="contact-form">
             <Form.Item>
               {getFieldDecorator('username', {
-                rules: [{ required: true, message: 'Please input your username!' }],
+                rules: [{ required: true, message: t('errors.required-name') }],
               })(
-                <Input placeholder="Your name" />,
+                <Input placeholder={t('form.your-name')} />,
               )}
             </Form.Item>
             <FormItem>
@@ -162,22 +88,21 @@ class Contact extends React.Component {
                 rules: [
                   {
                     type: 'email',
-                    message: 'The input is not valid E-mail!',
+                    message: t('errors.invalid-email'),
                   },
                   {
                     required: true,
-                    message: 'Please input your E-mail!',
+                    message: t('errors.required-email'),
                   },
                 ],
-              })(<Input placeholder="Your Email" />)}
+              })(<Input placeholder={t('form.your-email')} />)}
             </FormItem>
             <Form.Item>
               {getFieldDecorator('country', {
-                rules: [{ required: true, message: 'Please input your country!' }],
+                rules: [{ required: true, message: t('errors.required-country') }],
               })(
                 <Select
-                  showSearch
-                  placeholder="Your country"
+                  placeholder={t('form.your-country')}
                   optionFilterProp="children"
                   filterOption={(input, option) =>
                     option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
@@ -191,17 +116,17 @@ class Contact extends React.Component {
             </Form.Item>
             <FormItem>
               {getFieldDecorator('message', {
-                rules: [{ required: true, message: 'Please leave us a comment!' }],
+                rules: [{ required: true, message: t('errors.required-comment') }],
               })(
-                <TextArea rows={5} placeholder="Write us a message!" />
+                <TextArea rows={5} placeholder={t('form.write-message')} />
               )}
             </FormItem>
             <Form.Item>
               <Button type="primary" htmlType="submit" className="contact-form-button">
-                Send
+                {t('buttons.send')}
               </Button>
             </Form.Item>
-            <p className="contact-form-terms">By clicking "send" you agree to the <a href={termsConditions} target="_blank">terms and conditions</a> and our <a href={privacyPolicy} target="_blank">privacy policy</a>.</p>
+            <p className="contact-form-terms">{t('form.clicking-send')} <a href={i18n.language === 'en' ? termsConditions : termsConditionsEs} target="_blank">{t('form.terms-conditions')} </a> {t('form.and-our')} <a href={i18n.language === 'en' ? privacyPolicy : privacyPolicyEs} target="_blank">{t('form.privacy-policy')}</a>.</p>
           </Form>
         </div>
         <Footer />
@@ -211,6 +136,4 @@ class Contact extends React.Component {
 };
 
 const WrappedContact = Form.create({ name: 'contact_form' })(Contact);
-
-
-export default WrappedContact;
+export default withNamespaces()(WrappedContact);

@@ -4,32 +4,30 @@ import { Link, withRouter } from 'react-router-dom';
 import { FaFacebookF, FaLinkedinIn, FaPrint, FaInstagram, FaTwitter } from 'react-icons/fa';
 import Comments from '../comments/comments';
 import MetaTags from 'react-meta-tags';
+import { Helmet } from 'react-helmet';
 
 class Article extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { data, recommended } = this.props;
     const altImg = 'img-example.svg';
-    const fullUrl = window.location.href;
+    const fullUrl = this.window;
+
     return (
       <div className="blog-article">
-        <MetaTags>
+        <Helmet>
           <title>{data.title.charAt(0).toUpperCase() + data.title.slice(1).toLowerCase()}</title>
           <meta name="description" content={data.flag ? "Our clients" : data.breads[0].href} />
           <meta property="og:title" content={data.title} />
           <meta property="og:description" content={(data.flag) ? 'Our clients' : data.breads[0].href} />
-          <meta property="og:image" content={"https://www.lukerchocolate.com" + require(`../../../assets/img/${data.flag ? '' : 'blog/'}${data.cover ? data.cover : 'img-example.svg'}`)} />
-          <meta property="og:url" content={fullUrl} />
+          <meta property="og:image" content={require(`../../../assets/img/${data.flag ? '' : 'blog/'}${data.cover ? data.cover : 'img-example.svg'}`)} />
+          <meta property="og:url" content='{fullUrl}' />
           <meta name="twitter:card" content="summary_large_image" />
           <meta property="og:site_name" content="Luker Chocolate." />
           <meta name="twitter:image:alt" content="Luker Chocolate | Cacao Fino de Aroma" />
           <meta property="fb:app_id" content="your_app_id" />
           <meta name="twitter:site" content="@Luker_Chocolate" />
-        </MetaTags>
-        {!window.location.href.includes('sustainability') && <div className="blog-article-title-resp">{data.title}</div>}
+        </Helmet>
+        {this.window && !this.window.location.href.includes('sustainability') && <div className="blog-article-title-resp">{data.title}</div>}
         <div className="blog-article-bread">
           <Breadcrumb>
             {data.breads &&
@@ -57,7 +55,7 @@ class Article extends React.Component {
             <h2>{data.autor.name}</h2>
             <span>{data.autor.details}</span>
             {/*<p>{data.autor.description}</p>*/}
-            <a href={data.autor.linkedin[0]} target="_blank" ><FaLinkedinIn /> {data.autor.linkedin[1]}</a>
+            <a href={data.autor.linkedin} target="_blank" ><FaLinkedinIn /> {data.autor.name}</a>
           </div>
         </div>}
         {recommended && recommended.length > 0 &&

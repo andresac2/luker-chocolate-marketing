@@ -29,14 +29,17 @@
 
     color: #fff;
 
+    &--productos-chocolate,
     &--finished-chocolate-products {
       background-image: url("../../assets/img/maquila-header.jpg");
     }
 
+    &--ingredientes,
     &--ingredients {
       background-image: url("../../assets/img/ingredients-header.jpg");
     }
 
+    &--nuestros-servicios,
     &--our-services {
       background-image: url('../../assets/img/services-header.jpg');
     }
@@ -68,7 +71,7 @@
         text-align: center;
         display: block;
         font-weight: 700;
-        font-size: smaller;
+        font-size: 9px;
         background: #F4C710;
         color: #685019;
         padding: 3px 0;

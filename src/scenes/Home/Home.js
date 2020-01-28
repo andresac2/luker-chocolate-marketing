@@ -2,11 +2,14 @@ import React from 'react';
 import logo from '../../assets/img/Lukerlogo.svg'
 import cacao1 from '../../assets/img/roto-b.png'
 import cacao2 from '../../assets/img/roto-c.png'
+import i18n from '../../i18n';
+import { withNamespaces } from 'react-i18next';
+
 import { MdClose } from 'react-icons/md';
-import { Select } from 'antd';
 import { Link } from 'react-router-dom';
 import Modals from '../../components/modals/modals';
 import HelmetComponent from '../../commons/helmet/helmet';
+import SelectLanguage from '../../commons/select-lng/select-lng';
 
 class Home extends React.Component {
   constructor(props) {
@@ -26,33 +29,41 @@ class Home extends React.Component {
       distModalVisible: !this.state.distModalVisible,
     });
   };
+  _handleChange(lng) {
+    console.log("language", lng)
+    i18n.changeLanguage(lng);
+  }
+  async UpdateData() {
+    const response = await fetch(window.location.href + '/upgradation');
+    return await response.json();
+  }
+  componentDidMount() {
+    this.UpdateData();
+  }
 
   render() {
     const { distModalVisible } = this.state;
-    const { Option } = Select;
+    const { t } = this.props;
 
     return (
       <div className="home">
-        <HelmetComponent title="Luker Chocolate | Cacao Fino de Aroma" />
+        <HelmetComponent title={t('home.titulo_seo')} keywords={t('home.keywords')} titleOg={t('home.titulo_protocolo_opengraph')} description={t('home.meta_descripcion')} descriptionOg={t('home.descripcion_opengraph')} />
         <div className="home-logo">
-          <Link to="/" className="logo"> <img src={logo} alt="Logo Luker" /></Link>
-          <Select defaultValue="en"  >
-            <Option value="es">ES</Option>
-            <Option value="en">EN</Option>
-          </Select>
+          <Link to="/" className="logo"> <img src="/static/media/Lukerlogo.af6f7609.svg" alt="Logo Luker" /></Link>
+          <SelectLanguage />
         </div>
         <div className="home-content">
           <div className="intro">
             <div className="intro-title">
-              <h1>113 YEARS</h1>
-              <h2>OF TRADITION</h2>
+              <h1>{t('home.home-years')}</h1>
+              <h2>{t('home.home-tradition')}</h2>
             </div>
-            <p>We are a family company with over 110 years of tradition built on a dream, where chocolate is the source of inspiration and the opportunity to transform communities. We provide unique chocolate as an ingredient for other food companies and we manufacture finished products for other brands.</p>
+            <p>{t('home.home-description')}</p>
           </div>
           <div className="dist">
             <div className="dist-text">
-              <h2>CREATE YOUR OWN CHOCOLATE</h2>
-              <button onClick={() => this.showModalDist()}>FIND A DISTRIBUTOR</button>
+              <h2>{t('home.create-own-chocolate')}</h2>
+              <button onClick={() => this.showModalDist()}>{t('buttons.find-distributor')}</button>
             </div>
           </div>
         </div>
@@ -70,4 +81,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default withNamespaces()(Home);

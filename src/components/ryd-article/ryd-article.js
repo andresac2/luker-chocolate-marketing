@@ -9,8 +9,7 @@ const RydArticle = props => {
   return (
     <div className="ryd-article" >
       <div className="btn-dist">
-        <Link to="/" className="logo"> <img src={logo} alt="Logo Luker" /></Link>
-        <button onClick={() => console.log('hi')}> DISTRIBUTORS </button>
+        <Link to="/" className="logo"> <img src="/static/media/LukerlogoDark.dd2dafc7.svg" alt="Logo Luker" /></Link>
       </div>
       <div className="ryd-article--text">
         <h2>{title}</h2>

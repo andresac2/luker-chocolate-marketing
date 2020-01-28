@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../../../assets/img/Lukerlogo.svg'
 import HelmetComponent from '../../../commons/helmet/helmet';
+import { withNamespaces } from 'react-i18next';
 
 class Page404 extends React.Component {
 
@@ -11,9 +12,9 @@ class Page404 extends React.Component {
   }
 
   componentDidMount() {
-    setTimeout(() => {
+    /*setTimeout(() => {
       this.goHome();
-    }, 6000)
+    }, 6000)*/
   }
 
   goHome() {
@@ -21,17 +22,18 @@ class Page404 extends React.Component {
   }
 
   render() {
+    const { t } = this.props;
     return (
       <div className="component-404">
         <HelmetComponent title="Page not found | 404 " />
         <div className="component-404-content">
-          <img src={logo} className="logo" alt="Logo Luker" />
-          <p>Error</p>
+          <img src="/static/media/Lukerlogo.af6f7609.svg" className="logo" alt="Logo Luker" />
+          <p>{t('errors.error')}</p>
           <p>404</p>
-          <p>The page you are looking for doesn’t exist</p>
+          <p>{t('errors.error-404')}</p>
         </div>
       </div>
     );
   }
 };
-export default Page404;
+export default withNamespaces()(Page404);

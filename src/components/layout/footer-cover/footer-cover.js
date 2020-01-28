@@ -5,10 +5,12 @@ import { Select } from 'antd';
 import { MdClose } from 'react-icons/md';
 import Footer from '../footer/footer';
 import Modals from '../../modals/modals';
+import i18n from '../../../i18n';
+import { withNamespaces } from 'react-i18next';
 
 class FooterCover extends React.Component {
-  hideView = ['/products-services/', '/blog', '/contact-us', '/work-with-us', '/our-value/'];//VIstas en las que se oculta el footer
-  darkIcon = ['/services', '/blog'];//VIstas en las que se muestra modo oscuro
+  hideView = [i18n.t('routes.products-services') + '/', '/blog', i18n.t('routes.contact-us'), i18n.t('routes.work-with-us'), i18n.t('routes.our-value') + '/', '/productos-servicios/', '/propuesta-valor/'];//VIstas en las que se oculta el footer
+  darkIcon = ['/blog'];//VIstas en las que se muestra modo oscuro
 
   constructor(props) {
     super(props);
@@ -27,7 +29,7 @@ class FooterCover extends React.Component {
     this.setState({ isOpen: !this.state.isOpen });
     setTimeout(() => {
       this.setState({ isOpen: false });
-    }, 60000)
+    }, 6000)
   }
 
   showModalDist = () => {
@@ -44,12 +46,11 @@ class FooterCover extends React.Component {
   };
 
   render() {
-    const { history } = this.props;
+    const { history, t } = this.props;
     const { isOpen, distModalVisible, moreInfoVisible, distValue, actualDist } = this.state;
     const { Option } = Select;
     const selectTab = history.location.pathname;
     const isFooterHidden = this.hideView.some(function (v) { return history.location.pathname.includes(v); });
-
     return (
       !isFooterHidden &&
       <div>
@@ -57,13 +58,13 @@ class FooterCover extends React.Component {
           <div className="footer-cover-bkg" onClick={this.footerToggle}></div>
           <FiChevronUp onClick={this.footerToggle} />
           <nav className={`footer-cover-nav footer-cover-${selectTab.slice(1)}`}>
-            <Link to="/blog"><span>BLOG</span></Link>
+            <Link to="/blog"><span>{t('header.blog')}</span></Link>
             {false && <Link to="/"><span>CREATE YOUR OWN CHOCOLATE</span></Link>}
-            <Link to='' onClick={e => { this.handleShowMoreInfo(e); this.footerToggle(); }}><span>MORE INFO</span></Link>
-            <Link to="/contact-us"><span>CONTACT US</span></Link>
+            <Link to='' onClick={e => { this.handleShowMoreInfo(e); this.footerToggle(); }}><span>{t('header.more-info')}</span></Link>
+            <Link to={t('routes.contact-us')}><span>{t('header.contact-us')}</span></Link>
           </nav>
         </div>
-        <button className="btn-dist-footer" onClick={() => this.showModalDist()}> FIND A DISTRIBUTOR </button>
+        <button className="btn-dist-footer" onClick={() => this.showModalDist()}>{t('buttons.find-distributor')}</button>
         <Modals visible={distModalVisible} modal={'distributors'} showModalDist={this.showModalDist} />
         {moreInfoVisible && <Footer mode='vertical' handleShowMoreInfo={this.handleShowMoreInfo} />}
       </div>
@@ -71,4 +72,4 @@ class FooterCover extends React.Component {
   }
 };
 
-export default withRouter(FooterCover);
+export default withNamespaces()(withRouter(FooterCover));
