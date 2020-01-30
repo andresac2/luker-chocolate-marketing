@@ -7,6 +7,7 @@
   @include vert-center;
   align-items: center;
   min-height: 660px;
+  flex-direction: column;
 
   &-logo {
     position: absolute;
@@ -52,6 +53,30 @@
     .logo {
       margin-right: .5em;
       //margin: 7em 5em 3em;      
+    }
+  }
+
+  &-logos {
+    display: flex;
+    align-self: flex-start;
+    margin-left: 5em;
+    margin-top: 5em;
+
+    img {
+      width: fit-content;
+      border-right: 1px white solid;
+      padding-right: 1em;
+      margin-right: 1em;
+      height: 80px;
+      object-fit: scale-down;
+
+      &:first-child {
+        width: auto;
+      }
+
+      &:last-child {
+        border: none;
+      }
     }
   }
 
