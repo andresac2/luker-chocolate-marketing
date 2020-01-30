@@ -212,6 +212,18 @@
       display: none;
     }
 
+    &-logos {
+      margin-left: 1em;
+      margin-top: 0;
+
+      img {
+        height: 35px;
+        width: auto;
+        padding-right: 5px;
+        margin-right: 5px;
+      }
+    }
+
     &-content {
       position: relative;
       display: flex;
