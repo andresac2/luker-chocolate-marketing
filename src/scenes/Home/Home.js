@@ -44,7 +44,7 @@ class Home extends React.Component {
   render() {
     const { distModalVisible } = this.state;
     const { t } = this.props;
-    const logoUtz = t('home.logo-utz') !== false ? t('home.logo-utz') : "https://chocolateconnoisseurmag.com/wp-content/uploads/2017/06/Utz-Certified-Cocoa.png";
+    const logoUtz = t('home.logo-utz') !== false ? t('home.logo-utz') : "https://www.back.lukerchocolate.com/wp-content/uploads/2020/01/UTZ.png";
     const logoSedex = t('home.logo-sedex') !== false ? t('home.logo-sedex') : "https://www.back.lukerchocolate.com/wp-content/uploads/2020/01/Sedex-Member.png";
     const logoGmo = t('home.logo-gmo') !== false ? t('home.logo-gmo') : "https://www.back.lukerchocolate.com/wp-content/uploads/2020/01/Non-GMO.png";
     const logoKosher = t('home.logo-kosher') !== false ? t('home.logo-kosher') : "https://www.back.lukerchocolate.com/wp-content/uploads/2020/01/OU-Kosher.png";
