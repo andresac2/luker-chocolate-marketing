@@ -302,7 +302,6 @@ class Sustain extends React.Component {
               <Article data={items[modalSelectedIndex]} />
             </div> : <Spin size="large" />}
         </div>
-
       </div >
     );
   }
