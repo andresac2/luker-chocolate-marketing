@@ -7,6 +7,7 @@
   @include vert-center;
   align-items: center;
   min-height: 660px;
+  flex-direction: column;
 
   &-logo {
     position: absolute;
@@ -55,11 +56,36 @@
     }
   }
 
+  &-logos {
+    display: flex;
+    align-self: flex-start;
+    margin-left: 5em;
+    margin-top: 3em;
+
+    img {
+      width: fit-content;
+      border-right: 1px white solid;
+      padding-right: 1em;
+      margin-right: 1em;
+      height: 80px;
+      object-fit: scale-down;
+
+      &:first-child {
+        width: auto;
+      }
+
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+
   &-content {
     position: relative;
     display: inline-grid;
     grid-template-columns: 45% 45%;
     margin-left: 5em;
+    margin-top: 110px;
     color: #fff;
 
 
@@ -185,6 +211,18 @@
 
     &-logo {
       display: none;
+    }
+
+    &-logos {
+      margin-left: 1em;
+      margin-top: 0;
+
+      img {
+        height: 35px;
+        width: auto;
+        padding-right: 5px;
+        margin-right: 5px;
+      }
     }
 
     &-content {

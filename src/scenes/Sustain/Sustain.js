@@ -189,7 +189,7 @@ class Sustain extends React.Component {
             <h1>{t('sustainability.we-go-beyond')}</h1>
             <div className="sustain-content-model--panel">
               <img src={panel} alt="Panel" />
-              <a href='https://www.thechocolatedream.co/' target="_blank"> {t('buttons.find-out-more')} </a>
+              <a href='http://thechocolatedream.com/' target="_blank"> {t('buttons.find-out-more')} </a>
             </div>
           </div>
         </div>
@@ -302,7 +302,6 @@ class Sustain extends React.Component {
               <Article data={items[modalSelectedIndex]} />
             </div> : <Spin size="large" />}
         </div>
-
       </div >
     );
   }

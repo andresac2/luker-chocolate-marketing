@@ -64,7 +64,7 @@ class Ingredient1906 extends React.Component {
           <img src={require('../../../../assets/img/chocolate-ingredients/origins/origenes-line-up.png')} alt='Products Origins' />
         </div>
         <div className={`i1906-component--content ${openProducts ? 'i1906-component--content-open-product' : ''}`}>
-          <h2>{t('products-services.single-origin').toUpperCase()}</h2>
+          {false && <h2>{t('products-services.single-origin').toUpperCase()}</h2>}
           <p>{t('products-services.origins-text')}</p>
           <p className="i1906-component--content-specifications">{t('products-services.available-in')} {t('products-services.bag-box-origins')}<br /> {t('products-services.shelf-life-origins')}</p>
         </div>

@@ -263,7 +263,7 @@ class Maquila extends React.Component {
                   </div>)}
               </div>
             :
-            <div className={`maquila-product maquila-product--${product.id}`}>
+            <div className={`maquila-product maquila-product--${product.id}`}>              
               {product.id === 'dosing' && Object.keys(dosing).map((i) =>
                 <div key={i} className={`maquila-product-item maquila-product-item--${dosing[i].selected && 'active'}`} onClick={() => this.selectProduct(dosing[i])}>
                   <img src={require('../../../assets/img/' + (dosing[i].img ? dosing[i].img : altImg))} alt={dosing[i].id} />
@@ -283,7 +283,7 @@ class Maquila extends React.Component {
         <div className="btn-back-sticky">
           <Link to={t('route.product-services') + t('route.finished-chocolate-products')}>{t('buttons.back-to-products').toUpperCase()}</Link>
         </div>
-        <ContactSide page='maquila' products={itemSelected} handleSetProductSelected={this.handleSetProductSelected} handleShowFormContact={this.handleShowFormContact} />
+        <ContactSide page={product.id === 'cocoa-powder'? 'cocoa-powder':'maquila'} products={itemSelected} handleSetProductSelected={this.handleSetProductSelected} handleShowFormContact={this.handleShowFormContact} />
       </div >
     );
   }
