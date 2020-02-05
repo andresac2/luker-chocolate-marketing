@@ -19,6 +19,9 @@ import { dataTreatment as dataTreatmentEs } from "../../../commons/data/data-es"
 
 class Footer extends React.Component {
   hideNews = ['moulding', 'dosing', 'panning', 'cocoa-powder', 'casaluker', 'our-services'];//VIstas en las que se oculta el newsletter
+  hideWorkUs = ["work-with-us", "trabaja-con-nosotros"]
+  hideContact = ["contact-us", "contactanos"]
+
   constructor(props) {
     super(props);
     this.state = {
@@ -69,6 +72,8 @@ class Footer extends React.Component {
     const { mode, history, t } = this.props;
     const { emailNewsletter, newsletterWaiting } = this.state;
     const isNewsletterHidden = this.hideNews.some(function (v) { return history.location.pathname.includes(v); });
+    const seeWorkUs = this.hideWorkUs.some(function (v) { return history.location.pathname.includes(v); });
+    const seeContact = this.hideContact.some(function (v) { return history.location.pathname.includes(v); });
 
     return (
       <div>
@@ -112,8 +117,8 @@ class Footer extends React.Component {
             </div>
           }
           <div className="footer-component-link">
-            <Link to={t('routes.work-with-us')}>{t('form.work-with-us').toUpperCase()}</Link>
-            <Link to={t('routes.contact-us')}>{t('form.contact-us')}</Link>
+            {!seeWorkUs && <Link to={t('routes.work-with-us')}>{t('form.work-with-us').toUpperCase()}</Link>}
+            {!seeContact && <Link to={t('routes.contact-us')}>{t('form.contact-us')}</Link>}
             <Link to="/blog">{t('footer.visit-our-blog').toUpperCase()}</Link>
           </div>
           {(!isNewsletterHidden && mode !== 'responsive') && <div className="footer-component-social">
