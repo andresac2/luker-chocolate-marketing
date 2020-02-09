@@ -58,9 +58,9 @@ class FooterCover extends React.Component {
           <div className="footer-cover-bkg" onClick={this.footerToggle}></div>
           <FiChevronUp onClick={this.footerToggle} />
           <nav className={`footer-cover-nav footer-cover-${selectTab.slice(1)}`}>
-            <Link to="/blog"><span>{t('header.blog')}</span></Link>
+            {false && <Link to="/blog"><span>{t('header.blog')}</span></Link>}
             {false && <Link to="/"><span>CREATE YOUR OWN CHOCOLATE</span></Link>}
-            <Link to='' onClick={e => { this.handleShowMoreInfo(e); this.footerToggle(); }}><span>{t('header.more-info')}</span></Link>
+            {false && <Link to='' onClick={e => { this.handleShowMoreInfo(e); this.footerToggle(); }}><span>{t('header.more-info')}</span></Link>}
             <Link to={t('routes.contact-us')}><span>{t('header.contact-us')}</span></Link>
           </nav>
         </div>

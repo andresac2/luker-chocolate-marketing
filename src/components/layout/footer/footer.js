@@ -105,7 +105,8 @@ class Footer extends React.Component {
               <li><a href="tel:+32(0) 9 2450460">+32(0) 9 2450460</a></li>
             </ul>
           </div>
-          {mode === 'vertical' &&
+          {mode === 'vertical'}
+          {(!isNewsletterHidden && mode !== 'responsive') &&
             <div className="footer-component-data footer-component-data-policies">
               <h2>{t('footer.our-policies').toUpperCase()}</h2>
               <ul>
@@ -114,8 +115,7 @@ class Footer extends React.Component {
                 <li><a href={i18n.language === 'en' ? antiFraud : antiFraudEs} target='_blank'>{t('footer.anti-fraud-corruption-policy')}</a></li>
                 <li><a href={i18n.language === 'en' ? dataTreatment : dataTreatmentEs} target='_blank'>{t('footer.personal-data-processing-policy')}</a></li>
               </ul>
-            </div>
-          }
+            </div>}
           <div className="footer-component-link">
             {!seeWorkUs && <Link to={t('routes.work-with-us')}>{t('form.work-with-us').toUpperCase()}</Link>}
             {!seeContact && <Link to={t('routes.contact-us')}>{t('form.contact-us')}</Link>}

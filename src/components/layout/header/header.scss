@@ -97,6 +97,87 @@
     }
   }
 
+  .blog-tab {
+    margin: auto;
+    width: fit-content;
+    padding: 7px 15px;
+    background: $apple-green;
+
+    &-proceso-del-chocolate,
+    &-chocolate-process {
+      background: $ocher-yellow;
+
+      &.header-component-responsive--tabs-visible {
+        background: $ocher-yellow;
+      }
+    }
+
+    &-sostenibilidad,
+    &-sustainability {
+      background: $beige;
+
+      &.header-component-responsive--tabs-visible {
+        background: $beige;
+      }
+    }
+
+    &-productos-servicios,
+    &-products-services {
+      background: $peach;
+
+      &.header-component-responsive--tabs-visible {
+        background: $peach;
+      }
+    }
+
+    &-nuestros-clientes,
+    &-our-clients {
+      background: $citrus;
+
+      &.header-component-responsive--tabs-visible {
+        background: $citrus;
+      }
+    }
+
+    &-ideas-tendencias,
+    &-ideas-trends {
+      background: $tangerine;
+
+      &.header-component-responsive--tabs-visible {
+        background: $tangerine;
+      }
+    }
+
+    &-propuesta-valor,
+    &-our-value {
+      background: $light-gray;
+
+      &.header-component-responsive--tabs-visible {
+        background: $light-gray;
+      }
+    }
+
+    &-blog {
+      background: $live-yellow;
+
+      &.header-component-responsive--tabs-visible {
+        background: $live-yellow;
+      }
+    }
+
+    &-trabaja-con-nosotros,
+    &-contactanos,
+    &-work-with-us,
+    &-contac-us {
+      background: $wine;
+
+      &.header-component-responsive--tabs-visible {
+        background: $wine;
+      }
+    }
+
+  }
+
   .intro::after,
   .chocolate-process::after,
   .proceso-del-chocolate::after,

@@ -1,9 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import logo from '../../../assets/img/Lukerlogo.svg'
 import logoDark from '../../../assets/img/LukerlogoDark.svg'
 import Modals from '../../modals/modals';
 import { withNamespaces } from 'react-i18next';
+import SelectLanguage from '../../../commons/select-lng/select-lng';
 
 class FloatLogo extends React.Component {
 
@@ -24,14 +25,18 @@ class FloatLogo extends React.Component {
   };
 
   render() {
-    const { dark, btns, btnText, t } = this.props;
+    const { dark, btns, btnText, t, history } = this.props;
     const { distModalVisible } = this.state;
+    const selectTab = history.location.pathname;
     return (
       <>
         <div className="float-logo">
-          <Link to="/" className="logo">
-            <img src='/static/media/Lukerlogo.af6f7609.svg' alt="Logo Luker" />
-          </Link>
+          <div className="content-logo-select">
+            <Link to="/" className="logo">
+              <img src='/static/media/Lukerlogo.af6f7609.svg' alt="Logo Luker" />
+            </Link>
+            {!selectTab.includes('/blog') && <SelectLanguage />}
+          </div>
           {btnText === 'dist' ?
             <button className="float-logo-dist" onClick={() => this.showModalDist(distModalVisible)}>{t('buttons.find-distributor')}</button> :
             (btns[0].btnText === 'dist') ? <button className="float-logo-dist" onClick={() => this.showModalDist(distModalVisible)}> {t('buttons.find-distributor')} </button> :
@@ -44,4 +49,4 @@ class FloatLogo extends React.Component {
     );
   }
 };
-export default withNamespaces()(FloatLogo);
+export default withNamespaces()(withRouter(FloatLogo));
