@@ -29,11 +29,13 @@ $Extra-large: 1200px;
 
     .btn-dist {
       position: absolute;
-      top: 0;
+      top: 4em;
       left: 3em;
+      display: flex;
+      align-items: center;
 
       .logo {
-        margin: 3em auto .5em;
+        margin: 0 auto .5em;
         width: 10em;
         display: block;
 
@@ -41,6 +43,36 @@ $Extra-large: 1200px;
           width: 100%;
         }
       }
+
+      .ant-input,
+      .ant-select-selection {
+        align-items: center;
+        border: none;
+        border-radius: unset;
+        background: transparent;
+        color: #fff;
+        font-weight: 900;
+        font-size: 1em;
+        padding-right: 5px;
+        margin-left: 5px;
+        border-left: 2px solid #fff;
+      }
+
+      .ant-select-selection__rendered {
+        margin-left: 5px;
+      }
+
+      .ant-select-selection .anticon {
+        margin-top: -.2em;
+      }
+
+      .anticon {
+        @include vert-center;
+        font-weight: 900;
+        font-size: 1em;
+        color: #fff;
+      }
+
 
       @media screen and (max-width: 960px) {
         display: none;

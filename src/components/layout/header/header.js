@@ -64,7 +64,7 @@ class Header extends React.Component {
             {(showMenu) ? <MdClose className={`btn-x`} onClick={() => this.menuToggle()} /> : <MdMenu className={`btn-x`} onClick={() => this.menuToggle()} />}
           </div>
           <nav className={`header-component-responsive--tabs header-component-responsive--tabs-${selectTab.slice(1).split('/').shift()} header-component-responsive--tabs-${showMenu && 'visible'}`} >
-            <Link to="/" className={`selected-tab ${selectTab === '/' && 'intro'}`}><span>{t('header.home')}</span></Link>
+            {false && <Link to="/" className={`selected-tab ${selectTab === '/' && 'intro'}`}><span>{t('header.home')}</span></Link>}
             <Link to={t('routes.chocolate-process')} className={`selected-tab ${selectTab === t('routes.chocolate-process') && selectTab.slice(1)}`}><span>{t('header.chocolate-process')}</span></Link>
             <Link to={t('routes.sustainability')} className={`selected-tab ${selectTab === t('routes.sustainability') && selectTab.slice(1)}`}><span>{t('header.sustainability')}</span></Link>
             <Link to={t('routes.products-services')} className={`selected-tab ${(selectTab === t('routes.products-services') || selectTab.slice(1).split('/').shift() === 'services') && 'products-services'}`}><span>{t('header.products-services')}</span></Link>

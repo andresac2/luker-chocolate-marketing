@@ -10,6 +10,7 @@ import OurServices from '../../components/product-services/our-services/our-serv
 import Modals from '../../components/modals/modals';
 import i18n from '../../i18n';
 import { withNamespaces } from 'react-i18next';
+import SelectLanguage from '../../commons/select-lng/select-lng';
 
 //import { finishedChocolateProducts as finishedChocolateProductsEn, ingredients as ingredientsEn } from '../../commons/data/data-en';
 //import { finishedChocolateProducts as finishedChocolateProductsEs, ingredients as ingredientsEs } from '../../commons/data/data-es';
@@ -91,7 +92,10 @@ class ProductsServices extends React.Component {
       <div className="services-component">
         <div className={`services-header services-header--${title} ${(item) && 'services-header--title-short'}`}>
           <div className="btn-dist">
-            <Link to="/" className="logo"> <img src="/static/media/Lukerlogo.af6f7609.svg" alt="Logo Luker" /></Link>
+            <div className="content-logo-select">
+              <Link to="/" className="logo"> <img src="/static/media/Lukerlogo.af6f7609.svg" alt="Logo Luker" /></Link>
+              <SelectLanguage />
+            </div>
             <button className="float-logo-dist" onClick={() => this.showModalDist(distModalVisible)}>{t('buttons.find-distributor')}</button>
             {(item) ?
               <Link to={t('routes.products-services') + '/' + title}>{t('buttons.back').toUpperCase()}</Link> :

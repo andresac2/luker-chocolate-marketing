@@ -10,6 +10,8 @@ import { termsConditions as termsConditionsEs } from "../../../commons/data/data
 import { privacyPolicy as privacyPolicyEs } from "../../../commons/data/data-es";
 import HelmetComponent from '../../../commons/helmet/helmet';
 import { withNamespaces } from 'react-i18next';
+import SelectLanguage from '../../../commons/select-lng/select-lng';
+
 import i18n from '../../../i18n';
 import { countries as dataCountries } from '../../../commons/data/data-en';
 import { countries as paises } from '../../../commons/data/data-es';
@@ -69,6 +71,7 @@ class Contact extends React.Component {
         <div className="contact-us-header">
           <div className="btn-dist">
             <Link to="/" className="logo"> <img src="/static/media/Lukerlogo.af6f7609.svg" alt="Logo Luker" /></Link>
+            <SelectLanguage />
           </div>
           <h1>{t('form.contact-us')}</h1>
         </div >

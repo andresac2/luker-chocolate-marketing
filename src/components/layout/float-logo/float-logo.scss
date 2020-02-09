@@ -4,6 +4,40 @@
   left: 4em;
   width: fit-content;
 
+  .content-logo-select {
+    display: flex;
+    align-items: center;
+  }
+
+  .ant-input,
+  .ant-select-selection {
+    align-items: center;
+    border: none;
+    border-radius: unset;
+    background: transparent;
+    color: #fff;
+    font-weight: 900;
+    font-size: 1em;
+    padding-right: 5px;
+    margin-left: 5px;
+    border-left: 2px solid #fff;
+  }
+
+  .ant-select-selection__rendered {
+    margin-left: 5px;
+  }
+
+  .ant-select-selection .anticon {
+    margin-top: -.2em;
+  }
+
+  .anticon {
+    @include vert-center;
+    font-weight: 900;
+    font-size: 1em;
+    color: #fff;
+  }
+
   .logo {
     background: transparent;
     width: fit-content;
