@@ -19,6 +19,7 @@ import { privacyPolicy } from '../../commons/data/data-es';
 import { articlesSustain as articlesSustainEn, countries as dataCountries, modalReportItems as modalReportItemsEn } from '../../commons/data/data-en';
 import { articlesSustain as articlesSustainEs, countries as paises, modalReportItems as modalReportItemsEs } from '../../commons/data/data-es';
 import { getArticlesSustain, getArticlesSustainEs, getModalReportItems, getModalReportItemsEs } from '../../commons/services/api';
+import Modals from '../../components/modals/modals';
 
 
 class Sustain extends React.Component {
@@ -136,7 +137,6 @@ class Sustain extends React.Component {
 
   componentDidMount() {
     this.getReportItems();
-    //this.getItems();  
   }
 
   render() {
@@ -193,98 +193,7 @@ class Sustain extends React.Component {
             </div>
           </div>
         </div>
-        <div className={`modal-report modal-report-${reportModalVisible && 'visible'}`}>
-          <div className="modal-report-bkg" onClick={() => this.showModalReport()}></div>
-          <div className="modal-report-modal">
-            <MdClose className="btn-x" onClick={() => this.showModalReport()} />
-            <div className="modal-report-modal-report">
-              <div className="modal-report-modal-report-header">
-                <h2>{t('modals.modal-documents-title')}</h2>
-              </div>
-              {modalReportItems.length > 0 ? <div className="modal-report-modal-report-cards">
-                {
-                  Object.keys(modalReportItems).map(i =>
-                    <div key={i} className={`modal-report-modal-report-cards-card modal-report-modal-report-cards-card--${modalReportItems[i].selected && 'active'}`} onClick={() => this.modalItemToggle(modalReportItems[i].id, !modalReportItems[i].selected)}>
-                      <h2>{modalReportItems[i].title}</h2>
-                      <p>{modalReportItems[i].content}</p>
-                    </div>
-                  )
-                }
-              </div> : <Spin size="large" />}
-            </div>
-            <div className="modal-report-modal-contact">
-              <div className={`contact-component-content`}>
-                <h1>{t('form.give-us-details')}</h1>
-                <Form onSubmit={this.handleSubmit} className="contact-form">
-                  <Form.Item>
-                    {getFieldDecorator('username', {
-                      rules: [{ required: true, message: t('errors.required-name') }],
-                    })(
-                      <Input placeholder={t('form.your-name')} />,
-                    )}
-                  </Form.Item>
-                  <FormItem>
-                    {getFieldDecorator('email', {
-                      rules: [
-                        {
-                          type: 'email',
-                          message: t('errors.invalid-email'),
-                        },
-                        {
-                          required: true,
-                          message: t('errors.required-email'),
-                        },
-                      ],
-                    })(<Input placeholder="Email" />)}
-                  </FormItem>
-                  <Form.Item>
-                    {getFieldDecorator('country', {
-                      rules: [{ required: true, message: t('errors.required-country') }],
-                    })(
-                      <Select
-                        showSearch
-                        placeholder={t('form.your-country')}
-                        optionFilterProp="children"
-                        filterOption={(input, option) =>
-                          option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                        }
-                      >
-                        {Object.keys(countries).map(i =>
-                          <Option key={i} value={countries[i].abrev} key={i}>{countries[i].name}</Option>
-                        )}
-                      </Select>,
-                    )}
-                  </Form.Item>
-                  <Form.Item>
-                    {getFieldDecorator('phone', {
-                      rules: [{ required: true, message: t('errors.required-number') }],
-                    })(
-                      <InputNumber min={7} placeholder={t('form.phone-number')} style={{ width: '100%' }} />,
-                    )}
-                  </Form.Item>
-                  <div className="contact-form-products">
-                    {modalReportItems.length > 0 ?
-                      <div className="contact-form-products--list">
-                        {modalReportItems.filter(item => item.selected).length > 0 ?
-                          Object.keys(modalReportItems.filter(item => item.selected)).map(i =>
-                            <div key={i} className={`contact-form-products--list-item`} onClick={() => this.modalItemToggle(modalReportItems.filter(item => item.selected)[i].id, false)}>
-                              <img src={require('../../assets/img/img-example.svg')} alt={modalReportItems.filter(item => item.selected)[i].id} />
-                              <p>{modalReportItems.filter(item => item.selected)[i].title}</p>
-                            </div>)
-                          : <span>{t('form.choose-documentation')}</span>}
-                      </div> : <Spin size="large" />}
-                  </div>
-                  <Form.Item>
-                    <Button type="primary" htmlType="submit" className="contact-form-button">
-                      {t('buttons.download')}
-                    </Button>
-                  </Form.Item>
-                  <p className="contact-form-terms">{t('form.clicking-download')} <a href={termsConditions} target="_blank">{t('form.terms-conditions')} </a> {t('form.and-our')} <a href={privacyPolicy} target="_blank">{t('form.privacy-policy')}</a>.</p>
-                </Form>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Modals visible={reportModalVisible} modal={'report-doc'} showModalDist={this.showModalReport} />
         <div className={`modal-article modal-article-${articleModalVisible && 'visible'}`}>
           <div className="modal-article-bkg" onClick={() => this.showModalArticle()}></div>
           {items.length > 0 ?

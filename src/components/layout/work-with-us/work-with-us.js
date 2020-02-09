@@ -4,10 +4,8 @@ import FormItem from 'antd/lib/form/FormItem';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/img/Lukerlogo.svg'
 import Footer from '../footer/footer';
-import { termsConditions } from "../../../commons/data/data-en";
-import { privacyPolicy } from "../../../commons/data/data-en";
-import { termsConditions as termsConditionsEs } from "../../../commons/data/data-es";
-import { privacyPolicy as privacyPolicyEs } from "../../../commons/data/data-es";
+import { termsConditions, privacyPolicy } from "../../../commons/data/data-en";
+import { termsConditions as termsConditionsEs, privacyPolicy as privacyPolicyEs } from "../../../commons/data/data-es";
 import HelmetComponent from '../../../commons/helmet/helmet';
 import { withNamespaces } from 'react-i18next';
 import i18n from '../../../i18n';

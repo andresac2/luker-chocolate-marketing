@@ -2,6 +2,8 @@ import React from 'react';
 import { MdClose } from 'react-icons/md';
 import ModalDistributors from './distributors/modal-dist';
 import ModalInfoProducts from './info-product/info-product';
+import ModalReportDocs from './report-doc/report-doc';
+
 
 class Modals extends React.Component {
 
@@ -21,6 +23,9 @@ class Modals extends React.Component {
           }
           {modal === 'info-product' &&
             <ModalInfoProducts product={product} title={title} subtitle={subtitle} contentTitle={contentTitle} />
+          }
+          {modal === 'report-doc' &&
+            <ModalReportDocs />
           }
         </div>
       </div>

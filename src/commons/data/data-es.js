@@ -1406,7 +1406,7 @@ export const countries = [
     abrev: 'us'
   }
 ]
-export const termsConditions = "https://www.lukerchocolate.com/static/media/T%C3%A9rminos%20y%20condiciones%20de%20uso%20sitio%20web%20CasaLuker%20ingl%C3%A9s%2016dic2019.e4dd39ae.pdf"
-export const privacyPolicy = 'https://www.lukerchocolate.com/static/media/Pol%C3%ADtica%20privacidad%20sitio%20web%20CasaLuker%20ingl%C3%A9s%2016dic2019.7ae939d7.pdf';
-export const antiFraud = "https://www.lukerchocolate.com/static/media/Pol%C3%ADtica%20antifraude%20y%20anticorrupci%C3%B3n%20ingl%C3%A9s%2016dic2019.311badc2.pdf";
-export const dataTreatment = 'https://www.lukerchocolate.com/static/media/Pol%C3%ADtica%20tratamiento%20datos%20personales%20CasaLuker%20ingl%C3%A9s%2016dic2019.9a94abcf.pdf';
+export const termsConditions = "https://back.lukerchocolate.com/es/wp-content/uploads/2020/02/Términos-y-condiciones-de-uso-sitio-web-CasaLuker-español-16dic2019.pdf"
+export const privacyPolicy = 'https://back.lukerchocolate.com/es/wp-content/uploads/2020/02/Política-privacidad-sitio-web-CasaLuker-español-16dic2019.pdf';
+export const antiFraud = "https://back.lukerchocolate.com/es/wp-content/uploads/2020/02/Política-antifraude-y-anticorrupción-español-16dic2019.pdf";
+export const dataTreatment = 'https://back.lukerchocolate.com/es/wp-content/uploads/2020/02/Política-tratamiento-datos-personales-CasaLuker-español-16dic2019.pdf';
