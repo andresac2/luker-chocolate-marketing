@@ -34,10 +34,13 @@
 
   &-nav {
     display: none;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
+    //grid-template-columns: 1fr 1fr 1fr;
     margin-top: .5em;
     margin-bottom: 2em;
+
+    //display: flex;
+    align-items: center;
+    justify-content: center;
 
     a {
       z-index: 0;
@@ -111,7 +114,7 @@
     }
 
     nav {
-      display: grid;
+      display: flex;
     }
   }
 
