@@ -48,13 +48,14 @@ class Header extends React.Component {
     return (
       <div>
         <nav className={`header-component header-component-${selectTab.slice(1).split('/').shift()} header-component-${selectTab === '/' && 'intro'}`} onClick={() => this.menuToggle()} >
-          <Link to="/" className={`selected-tab ${selectTab === '/' && 'intro'}`}>{t('header.home')}</Link>
+          {false && <Link to="/" className={`selected-tab ${selectTab === '/' && 'intro'}`}>{t('header.home')}</Link>}
           <Link to={t('routes.chocolate-process')} className={`selected-tab ${selectTab === t('routes.chocolate-process') && selectTab.slice(1)}`}>{t('header.chocolate-process')}</Link>
           <Link to={t('routes.sustainability')} className={`selected-tab ${selectTab === t('routes.sustainability') && selectTab.slice(1)}`}>{t('header.sustainability')}</Link>
           <Link to={t('routes.products-services')} className={`selected-tab ${(selectTab === t('routes.products-services') || selectTab.slice(1).split('/').shift() === 'services') && 'products-services'}`}>{t('header.products-services')}</Link>
           <Link to={t('routes.our-clients')} className={`selected-tab ${selectTab === t('routes.our-clients') && selectTab.slice(1)}`}>{t('header.our-clients')}</Link>
           <Link to={t('routes.ideas-trends')} className={`selected-tab ${selectTab === t('routes.ideas-trends') && selectTab.slice(1)}`}>{t('header.ideas-trends')}</Link>
           <Link to={t('routes.our-value')} className={`selected-tab ${(selectTab === t('routes.our-value') || selectTab.slice(1).split('/').shift() === 'our-value') && 'our-value'}`}>{t('header.our-value-proposition')}</Link>
+          <Link to="/blog" className={`selected-tab blog-tab blog-tab-${selectTab.slice(1)} ${(selectTab === '/blog') && 'blog-tab-selected'}`}>{t('blog.blog-title')}</Link>
         </nav>
         <div className={`header-component-responsive header-component-responsive-${showMenu && 'visible'} header-component-responsive-${selectTab.slice(1).split('/').shift()}`} onClick={() => this.menuToggle()} >
           <div className={`header-logo header-logo-${showMenu && 'visible'}`}>
