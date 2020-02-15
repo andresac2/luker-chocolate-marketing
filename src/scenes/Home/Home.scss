@@ -12,6 +12,7 @@
   &-logo {
     position: absolute;
     top: 5em;
+    width: auto;
     left: 5em;
     @include vert-center;
     align-items: center;
