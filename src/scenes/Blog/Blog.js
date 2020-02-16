@@ -98,15 +98,12 @@ class Blog extends React.Component {
           this.setState({ clients: customers })
         )
     }
-    //console.log(getPages().then(data => console.log(data)));  
   }
 
   async getArticles() {
-    //this.setState({ isLoading: true });
     this.setState({ concatArticles: [] })
-    let breads = [{ href: '/blog', name: 'Blog' }, { href: '/blog/take-stand', name: 'Take a stand' }]
-    let autor = { name: '', avatar: '', details: '', linkedin: '' }
-    //let art = examArt;
+    let breads = [{ href: '/blog', name: 'Blog' }, { href: '/blog/take-stand', name: 'Take a stand' }];
+    let autor = { name: '', avatar: '', details: '', linkedin: '' };
     let art = {};
     let arts = [{}];
     if (i18n.language === 'en') {
@@ -176,9 +173,6 @@ class Blog extends React.Component {
       if (this.props.match.params.category === 'our-clients' || this.props.match.params.category === 'nuestros-clientes') {
         const client = this.state.clients.find(client => client.url === this.props.match.params.article);
         this.articleLoaded = client;
-        console.log('======================================================');
-        console.log('article', this.state.clients);
-        console.log('======================================================');
         this.generateRecommendedEntries('clients');
       } else {
         const art = this.state.allArticles.find(art => art.url === this.props.match.params.article);

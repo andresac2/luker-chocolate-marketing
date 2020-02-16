@@ -142,20 +142,20 @@ class Maquila extends React.Component {
   async getMouldingShapeData() {
     let arrItems = [];
     if (i18n.language === 'en') {
-      getMouldingBars().then(data =>
+      getMouldingShapes().then(data =>
         data.map((e, i) => {
           arrItems.push(e.acf);
           arrItems[i].selected = false
         })).then(data =>
-          this.setState({ mouldingShape: arrItems })
+          this.setState({ mouldingShapes: arrItems })
         )
     } else {
-      getMouldingBarsEs().then(data =>
+      getMouldingShapesEs().then(data =>
         data.map((e, i) => {
           arrItems.push(e.acf);
           arrItems[i].selected = false
         })).then(data =>
-          this.setState({ mouldingShape: arrItems })
+          this.setState({ mouldingShapes: arrItems })
         )
     }
   }
@@ -241,6 +241,8 @@ class Maquila extends React.Component {
             <p>{product.description}</p>
           </div>
           <h2 className="maquila-component-title">{t('products-services.customizable-logo-branding')}</h2>
+          {showMouldingOption &&
+            <div style={{ textAlign: 'center' }}><button className="btn-back" onClick={() => this.setState({ hasSelected: false, showMouldingOption: '' })}>{t('buttons.back')}</button></div>}
           {isLoading ? <Spin size="large" /> : hasSelected ?
             showMouldingOption ?
               <div className={`maquila-product`}>
@@ -263,7 +265,7 @@ class Maquila extends React.Component {
                   </div>)}
               </div>
             :
-            <div className={`maquila-product maquila-product--${product.id}`}>              
+            <div className={`maquila-product maquila-product--${product.id}`}>
               {product.id === 'dosing' && Object.keys(dosing).map((i) =>
                 <div key={i} className={`maquila-product-item maquila-product-item--${dosing[i].selected && 'active'}`} onClick={() => this.selectProduct(dosing[i])}>
                   <img src={require('../../../assets/img/' + (dosing[i].img ? dosing[i].img : altImg))} alt={dosing[i].id} />
@@ -283,7 +285,7 @@ class Maquila extends React.Component {
         <div className="btn-back-sticky">
           <Link to={t('route.product-services') + t('route.finished-chocolate-products')}>{t('buttons.back-to-products').toUpperCase()}</Link>
         </div>
-        <ContactSide page={product.id === 'cocoa-powder'? 'cocoa-powder':'maquila'} products={itemSelected} handleSetProductSelected={this.handleSetProductSelected} handleShowFormContact={this.handleShowFormContact} />
+        <ContactSide page={product.id === 'cocoa-powder' ? 'cocoa-powder' : 'maquila'} products={itemSelected} handleSetProductSelected={this.handleSetProductSelected} handleShowFormContact={this.handleShowFormContact} />
       </div >
     );
   }

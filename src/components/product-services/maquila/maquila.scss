@@ -39,6 +39,15 @@
     }
   }
 
+  .btn-back {
+    background: #62812E 0% 0% no-repeat padding-box;
+    width: 90px;
+    height: 28px;
+    font-size: 1em;
+    font-weight: bolder;
+    color: #FFFFFF;
+  }
+
   &--product-data {
     @include vert-center;
     align-items: center;

@@ -55,7 +55,7 @@ class Header extends React.Component {
           <Link to={t('routes.ideas-trends')} className={`selected-tab ${selectTab === t('routes.ideas-trends') && selectTab.slice(1)}`}>{t('header.ideas-trends')}</Link>
           <Link to={t('routes.sustainability')} className={`selected-tab ${selectTab === t('routes.sustainability') && selectTab.slice(1)}`}>{t('header.sustainability')}</Link>
           <Link to={t('routes.our-clients')} className={`selected-tab ${selectTab === t('routes.our-clients') && selectTab.slice(1)}`}>{t('header.our-clients')}</Link>
-          <Link to="/blog" className={`selected-tab blog-tab blog-tab-${selectTab.slice(1)} ${(selectTab === '/blog') && 'blog-tab-selected'}`}>{t('blog.blog-title')}</Link>
+          <Link to="/blog" className={`selected-tab blog-tab blog-tab-${selectTab.slice(1)} ${(selectTab === '/blog') && 'blog-tab-selected'}`}>Blog</Link>
         </nav>
         <div className={`header-component-responsive header-component-responsive-${showMenu && 'visible'} header-component-responsive-${selectTab.slice(1).split('/').shift()}`} onClick={() => this.menuToggle()} >
           <div className={`header-logo header-logo-${showMenu && 'visible'}`}>
