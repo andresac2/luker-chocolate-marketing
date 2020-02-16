@@ -73,8 +73,8 @@ class ModalDistributors extends React.Component {
             {distributors.length > 0 && Object.keys(actualDist).map(i =>
               <div key={i} className={`modal-dist-list-cards-card modal-dist-list-cards-card--${i == distSelected && 'active'}`} onClick={() => this.selectDist(i)}>
                 <h2>{actualDist[i].company}</h2>
-                <p><span>Address: </span>{actualDist[i].address}</p>
-                <p><span>Phone: </span>{actualDist[i].phone}</p>
+                <p><span>{i18n.language === 'en' ? 'Address:' : 'Dirección:'} </span>{actualDist[i].address}</p>
+                <p><span>{t('form.phone-number')}: </span>{actualDist[i].phone}</p>
                 <p><span>Web: </span><a href={'https://' + actualDist[i].web} target='_blank'>{actualDist[i].web}</a> </p>
                 <p><span>E-mail: </span> {actualDist[i].email}</p>
               </div>

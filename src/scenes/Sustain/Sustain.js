@@ -163,8 +163,8 @@ class Sustain extends React.Component {
           <div className="sustain-content-model">
             <h1>{t('sustainability.impact')}</h1>
             <div className="sustain-content-contain-carr">
-              <img className="btn-next-img btn-next-img-left" src="/static/media/back.9ae9d2c8.svg" alt='left' onClick={() => this.carrAction('l')} />
               {items.length > 0 ? <div className="sustain-content-contain-carr--items" >
+                <img className={`btn-next-img btn-next-img-left btn-next-img${firstItem < 1 && '-disabled'}`} src="/static/media/back.9ae9d2c8.svg" alt='left' onClick={() => this.carrAction('l')} />
                 {Object.keys(items).map(i =>
                   <div key={i} className={`card-image ${firstItem > i && 'item-action--l'}`} onClick={() => this.showModalArticle(i)}>
                     <img src={(items[i].img ? items[i].img : altImg)} alt={items[i].title} />
@@ -177,7 +177,7 @@ class Sustain extends React.Component {
                     </div>
                   </div>)}
               </div> : <Spin size="large" />}
-              <img className="btn-next-img" src="/static/media/back.9ae9d2c8.svg" alt='left' onClick={() => this.carrAction('r')} />
+              <img className={`btn-next-img btn-next-img${firstItem >= 3 && '-disabled'}`} src="/static/media/back.9ae9d2c8.svg" alt='right' onClick={() => this.carrAction('r')} />
             </div>
             <div className="sustain-content-contain-carr--dots">
               <span className={`${firstItem < 1 && 'dots-active'}`} onClick={() => this.carrAction(0)} ></span>
@@ -194,23 +194,7 @@ class Sustain extends React.Component {
           </div>
         </div>
         <Modals visible={reportModalVisible} modal={'report-doc'} showModalDist={this.showModalReport} />
-        <div className={`modal-article modal-article-${articleModalVisible && 'visible'}`}>
-          <div className="modal-article-bkg" onClick={() => this.showModalArticle()}></div>
-          {items.length > 0 ?
-            <div className="modal-article-modal">
-              <MdClose className="btn-x" onClick={() => this.showModalArticle()} />
-              <div className="modal-article-header" style={{ backgroundImage: `url(${items[modalSelectedIndex].img}` }}>
-                <h1>{items[modalSelectedIndex].title}</h1>
-                {items.length > 0 ? <div className="modal-article-header-badges">
-                  {(items[modalSelectedIndex].badges).map((badge, i) =>
-                    <div key={i} className={`modal-badge`}>
-                      <img src={badge} alt={items[modalSelectedIndex].title} />
-                    </div>)}
-                </div> : <Spin size="large" />}
-              </div>
-              <Article data={items[modalSelectedIndex]} />
-            </div> : <Spin size="large" />}
-        </div>
+        <Modals visible={articleModalVisible} modal={'article'} showModalDist={this.showModalArticle} item={items[modalSelectedIndex]} />
       </div >
     );
   }
