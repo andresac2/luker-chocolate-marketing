@@ -27,7 +27,8 @@ class ProductsServices extends React.Component {
       distModalVisible: false,
       products: ''
     };
-    this.showModalDist = this.showModalDist.bind(this)
+    this.showModalDist = this.showModalDist.bind(this);
+    this.getMaquilaItems = this.getMaquilaItems.bind(this);
   }
 
   async getMaquilaItems() {
