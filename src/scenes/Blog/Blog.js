@@ -38,6 +38,7 @@ class Blog extends React.Component {
       latestArticle: [],
       concatArticles: [],
       allArticles: [],
+      allClients: [],
       clients: [],
       isLoading: true
     };
@@ -175,6 +176,9 @@ class Blog extends React.Component {
       if (this.props.match.params.category === 'our-clients' || this.props.match.params.category === 'nuestros-clientes') {
         const client = this.state.clients.find(client => client.url === this.props.match.params.article);
         this.articleLoaded = client;
+        console.log('======================================================');
+        console.log('article', this.state.clients);
+        console.log('======================================================');
         this.generateRecommendedEntries('clients');
       } else {
         const art = this.state.allArticles.find(art => art.url === this.props.match.params.article);
@@ -301,7 +305,7 @@ class Blog extends React.Component {
           <meta property="fb:app_id" content="your_app_id" />
           <meta name="twitter:site" content="@Luker_Chocolate" />
         </Helmet>
-        {allArticles.length > 0 ?
+        {(allArticles.length > 0 && clients.length > 0) ?
           <>
             <div className={`blog-component-header blog-component-header--${(article) ? article : category}`} style={{ backgroundImage: (!this.articleLoaded.banner) ? (article) ? `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/blog/${this.articleLoaded.cover}`)})` : '' : `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/${this.articleLoaded.banner}`)})` }}>
               <div className="btn-dist">
@@ -393,14 +397,6 @@ class Blog extends React.Component {
                             </div>
                         }
                         )}
-                        {/*Object.keys(allArticles).map(i =>
-                          i <= 4 && <div className="blog-layout-articles--item" key={i}>
-                            <Link to={allArticles[i].breads[1].href + '/' + allArticles[i].url} className="blog-layout-latest--article">
-                              <p>{allArticles[i].date}</p>
-                              <h2>{allArticles[i].title} </h2>
-                            </Link>
-                          </div>
-                        )*/}
                       </div>
                     </div>
                     <div className="blog-layout-newsletter">
