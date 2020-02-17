@@ -150,7 +150,7 @@ class Sustain extends React.Component {
 
     return (
       <div className="sustain-component">
-        <HelmetComponent title={t('sustainability.titulo_seo')} keywords={t('sustainability.keywords')} titleOg={t('sustainability.titulo_protocolo_opengraph')} description={t('sustainability.meta_descripcion')} descriptionOg={t('sustainability.descripcion_opengraph')} />
+        <HelmetComponent title={t('sustainability.titulo_seo')} keywords={t('sustainability.keywords')} titleOg={t('sustainability.titulo_protocolo_opengraph')} description={t('sustainability.meta_descripcion')} descriptionOg={t('sustainability.descripcion_opengraph')} cover={t('sustainability.imagen_open_graph.url')} />
         <FloatLogo btnText='dist' />
         <div className="sustain-sidebar">
           <div className="sustain-sidebar--text">

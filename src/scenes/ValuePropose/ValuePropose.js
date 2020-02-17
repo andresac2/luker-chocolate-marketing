@@ -21,7 +21,7 @@ function ValuePropose(props) {
 
   return (
     <div className="value-propose-component">
-      <HelmetComponent title={t('value-propose.titulo_seo')} keywords={t('value-propose.keywords')} titleOg={t('value-propose.titulo_protocolo_opengraph')} description={t('value-propose.meta_descripcion')} descriptionOg={t('value-propose.descripcion_opengraph')} />
+      <HelmetComponent title={t('value-propose.titulo_seo')} keywords={t('value-propose.keywords')} titleOg={t('value-propose.titulo_protocolo_opengraph')} description={t('value-propose.meta_descripcion')} descriptionOg={t('value-propose.descripcion_opengraph')} cover={t('value-propose.imagen_open_graph.url')} />
       <div className="value-propose-component--expo">
         <div className="btn-dist">
           <Link to="/" className="logo"> <img src="/static/media/Lukerlogo.af6f7609.svg" alt="Logo Luker" /></Link>

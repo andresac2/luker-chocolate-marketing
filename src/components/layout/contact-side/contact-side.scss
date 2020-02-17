@@ -79,15 +79,17 @@
           text-transform: capitalize;
           text-align: center;
           width: 270px;
-          height: 22px;
+          height: auto;
+          min-height: 25px;
           padding: 0 5px;
           max-width: 90px;
           line-height: 1em;
-          font-size: 9px;
-          white-space: nowrap;
-          overflow: hidden;
-          font-weight: 500;
-          text-overflow: ellipsis;
+          font-size: small;
+          font-weight: 700;
+
+          @media screen and (min-width: 1240px) {
+            min-height: 35px;
+          }
         }
 
         &-item-maracas {
@@ -99,16 +101,26 @@
 
         &-item-maquila {
           cursor: pointer;
+          position: relative;
           box-shadow: 0px 3px 6px #00000029;
           background: #fff;
+          border-radius: 5px;
           width: 90px;
-          height: 90px;
           align-self: center;
           color: #61822E;
 
           img {
             height: calc(90px - 1em);
             object-fit: contain;
+          }
+
+          &::before {
+            content: 'x';
+            position: absolute;
+            font-weight: bold;
+            top: 0;
+            right: 5px;
+            color: #61822E;
           }
 
           &-dmw {
@@ -304,6 +316,12 @@
 
     h1 {
       font-weight: 600;
+    }
+  }
+
+  @media screen and (max-width: 1240px) {
+    .ant-form-item-control {
+      line-height: 20px;
     }
   }
 

@@ -51,12 +51,23 @@ class ModalDistributors extends React.Component {
     //this.selectDistributorCountry();
   }
 
+  compareStrings(a, b) {
+    // Assuming you want case-insensitive comparison
+    a = a.toLowerCase();
+    b = b.toLowerCase();
+
+    return (a < b) ? -1 : (a > b) ? 1 : 0;
+  }
+
   render() {
     const { distValue, actualDist, distSelected, distributors } = this.state;
     const { t } = this.props;
     const { Option } = Select;
 
     let countries = i18n.language === 'en' ? dataCountries : paises;
+    countries = countries.sort(function (a, b) {
+      return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
+    });
 
     return (
       <div className="modal-dist">
