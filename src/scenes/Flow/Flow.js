@@ -13,7 +13,7 @@ function Flow(props) {
 
   return (
     <div className="flow-component">
-      <HelmetComponent title={props.t('chocolate-process.titulo_seo')} keywords={props.t('chocolate-process.keywords')} titleOg={props.t('chocolate-process.titulo_protocolo_opengraph')} description={props.t('chocolate-process.meta_descripcion')} descriptionOg={props.t('chocolate-process.descripcion_opengraph')} cover={t('chocolate-process.imagen_open_graph.url')} />
+      <HelmetComponent title={props.t('chocolate-process.titulo_seo')} keywords={props.t('chocolate-process.keywords')} titleOg={props.t('chocolate-process.titulo_protocolo_opengraph')} description={props.t('chocolate-process.meta_descripcion')} descriptionOg={props.t('chocolate-process.descripcion_opengraph')} cover={props.t('chocolate-process.imagen_open_graph.url')} />
       <div className="flow-sidebar">
         <div className="cacao-link">
           <div className="cacao-link-content">
