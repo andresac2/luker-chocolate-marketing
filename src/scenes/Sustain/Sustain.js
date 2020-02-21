@@ -25,7 +25,7 @@ import Modals from '../../components/modals/modals';
 class Sustain extends React.Component {
   SustainabilityBrief = 'https://www.lukerchocolate.com/static/media/Sustainabililty%202018%20Luker%20Chocolate%20VERSI%C3%93N%20DIGITAL.cb13c104.pdf';
   CocoaForestPeaceAgreement = 'https://www.lukerchocolate.com/static/media/Sustainabililty%202018%20Luker%20Chocolate%20VERSI%C3%93N%20DIGITAL.cb13c104.pdf';
-  zipDocuments = 'https://www.lukerchocolate.com/static/media/Sustainabililty%202018%20Luker%20Chocolate%20VERSI%C3%93N%20DIGITAL.cb13c104.pdf';
+  zipDocuments = 'https://www.back.lukerchocolate.com/wp-content/uploads/2020/02/documents-sustainability.zip';
 
   constructor(props) {
     super(props);
