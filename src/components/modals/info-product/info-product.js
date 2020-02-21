@@ -2,6 +2,7 @@ import React from 'react';
 import { GiWaterDrop } from "react-icons/gi";
 import { FaCheck } from "react-icons/fa";
 import { Table } from 'antd';
+import i18n from '../../../i18n';
 
 class ModalInfoProducts extends React.Component {
 
@@ -60,8 +61,8 @@ class ModalInfoProducts extends React.Component {
               <img src={require('../../../assets/img/' + (product.img ? product.img : altImg))} alt={product.description} />
             </div>
             <div className="info-product-contain-data">
-    <div className="info-product-contain-data-cocoa">Cocoa content: {product.cocoaContent} {product.milkContent && <span> Milk content: {product.milkContent}</span> }</div>
-              <div className="info-product-contain-data-viscosity"><span>Viscosity:</span>
+              <div className="info-product-contain-data-cocoa">{i18n.language === 'en' ? 'Cocoa content:' : 'Contenido de cacao:'} {product.cocoaContent} {product.milkContent && <span> {i18n.language === 'en' ? 'Milk content:' : 'Contenido de leche:'} {product.milkContent}</span>}</div>
+              <div className="info-product-contain-data-viscosity"><span>{i18n.language === 'en' ? 'Viscosity:' : 'Viscosidad:'}</span>
                 {[...Array(product.viscosity)].map((_, i) => <div key={i}>
                   <GiWaterDrop />
                 </div>)}
@@ -70,12 +71,12 @@ class ModalInfoProducts extends React.Component {
                 <Table columns={columns} dataSource={product.data} pagination={false} bordered />
               </div>
               <div className="info-product-contain-data-very">
-                <div className="info-product-contain-data-very-fluid"><span>Very fluid:</span>
+                <div className="info-product-contain-data-very-fluid"><span>{i18n.language === 'en' ? 'Very fluid:' : 'Muy fluido:'}</span>
                   {[...Array(product.fluid)].map((_, i) => <div key={i}>
                     <GiWaterDrop />
                   </div>)}
                 </div>
-                <div className="info-product-contain-data-very-fluid"><span>Very viscous:</span>
+                <div className="info-product-contain-data-very-fluid"><span>{i18n.language === 'en' ? 'Very viscous:' : 'Muy viscoso:'}</span>
                   {[...Array(product.viscous)].map((_, i) => <div key={i}>
                     <GiWaterDrop />
                   </div>)}

@@ -18,7 +18,7 @@ class Maquila extends React.Component {
       hideFormContact: true,
       hasSelected: false,
       showMouldingOption: '',
-      itemSelected: [],
+      itemsSelected: [],
       isLoading: true,
       dosing: '',
       panning: '',
@@ -31,26 +31,25 @@ class Maquila extends React.Component {
   }
 
   selectProduct(product) {
-    this.clearProducts();
-    this.setState({ itemSelected: [] });
+    product.selected = !product.selected;
 
     if (product.id === 'bars' || product.id === 'shapes') {
       this.setState({ hasSelected: true });
       this.setState(({ showMouldingOption: product.description.toLowerCase() }));
     } else {
-      if (this.state.itemSelected.length === 0) {
+      if (this.state.itemsSelected.indexOf(product) < 0) {
         this.setState({ hasSelected: true });
         this.setState({ showMouldingOption: '' });
-        product.selected = !product.selected;
-        this.setState(({
-          itemSelected: [product]
-        }), () => {
-          console.log(this.state.itemSelected);
-        })
+        this.setState((state) => ({
+          itemsSelected: state.itemsSelected.concat([product])
+        }))
       } else {
-        this.setState({ showMouldingOption: '' });
-        product.selected = false;
-        this.setState({ itemSelected: [] });
+        let array = [...this.state.itemsSelected]; // make a separate copy of the array
+        let index = array.indexOf(product)
+        if (index !== -1) {
+          array.splice(index, 1);
+          this.setState({ itemsSelected: array });
+        }
       }
     }
   };
@@ -142,20 +141,20 @@ class Maquila extends React.Component {
   async getMouldingShapeData() {
     let arrItems = [];
     if (i18n.language === 'en') {
-      getMouldingBars().then(data =>
+      getMouldingShapes().then(data =>
         data.map((e, i) => {
           arrItems.push(e.acf);
           arrItems[i].selected = false
         })).then(data =>
-          this.setState({ mouldingShape: arrItems })
+          this.setState({ mouldingShapes: arrItems })
         )
     } else {
-      getMouldingBarsEs().then(data =>
+      getMouldingShapesEs().then(data =>
         data.map((e, i) => {
           arrItems.push(e.acf);
           arrItems[i].selected = false
         })).then(data =>
-          this.setState({ mouldingShape: arrItems })
+          this.setState({ mouldingShapes: arrItems })
         )
     }
   }
@@ -164,12 +163,13 @@ class Maquila extends React.Component {
     this.setState({ hasSelected: !this.state.hasSelected });
     this.setState({ showMouldingOption: '' });
     //this.clearProducts();
-    this.setState(({
-      itemSelected: this.state.itemSelected.concat(product)
-    }), () => {
-      console.log(this.state.itemSelected);
-    })
-    this.handleShowFormContact(true);
+    if (product !== 'none') {
+      this.setState(({
+        itemsSelected: this.state.itemsSelected.concat(product)
+      }), () => {
+        console.log(this.state.itemsSelected);
+      })
+    } this.handleShowFormContact(true);
   };
 
   clearProducts() {
@@ -195,12 +195,10 @@ class Maquila extends React.Component {
       }
     }
   }
-
   handleSetProductSelected(value) {
     this.setState({ hasSelected: false });
     this.setState({ showMouldingOption: '' });
-    this.clearProducts();
-    this.setState({ itemSelected: [] });
+    value.selected = !value.selected;
   }
 
   handleShowFormContact(action) {
@@ -227,7 +225,7 @@ class Maquila extends React.Component {
   render() {
     const altImg = 'img-example.svg';
     const { product, t } = this.props;
-    const { hideFormContact, itemSelected, dosing, panning, moulding, hasSelected, mouldingShapes, mouldingBars, showMouldingOption, isLoading } = this.state;
+    const { hideFormContact, itemsSelected, dosing, panning, moulding, hasSelected, mouldingShapes, mouldingBars, showMouldingOption, isLoading } = this.state;
 
     return (
       <div className={`maquila-component ${hideFormContact && 'maquila-component--hide-form'} `} >
@@ -241,6 +239,8 @@ class Maquila extends React.Component {
             <p>{product.description}</p>
           </div>
           <h2 className="maquila-component-title">{t('products-services.customizable-logo-branding')}</h2>
+          {showMouldingOption &&
+            <div style={{ textAlign: 'center' }}><button className="btn-back" onClick={() => this.setState({ hasSelected: false, showMouldingOption: '' })}>{t('buttons.back')}</button></div>}
           {isLoading ? <Spin size="large" /> : hasSelected ?
             showMouldingOption ?
               <div className={`maquila-product`}>
@@ -258,12 +258,12 @@ class Maquila extends React.Component {
               </div> :
               <div className={`maquila-product maquila-product-dmw`}>
                 {[t('products-services.dark').toUpperCase(), t('products-services.milk').toUpperCase(), t('products-services.white').toUpperCase()].map((item, i) =>
-                  <div key={i} className={`maquila-product-item maquila-product-item-dmw`} onClick={() => this.addProduct(item)}>
+                  <div key={i} className={`maquila-product-item maquila-product-item-dmw`} onClick={() => this.addProduct('none')}>
                     {item}
                   </div>)}
               </div>
             :
-            <div className={`maquila-product maquila-product--${product.id}`}>              
+            <div className={`maquila-product maquila-product--${product.id}`}>
               {product.id === 'dosing' && Object.keys(dosing).map((i) =>
                 <div key={i} className={`maquila-product-item maquila-product-item--${dosing[i].selected && 'active'}`} onClick={() => this.selectProduct(dosing[i])}>
                   <img src={require('../../../assets/img/' + (dosing[i].img ? dosing[i].img : altImg))} alt={dosing[i].id} />
@@ -283,7 +283,7 @@ class Maquila extends React.Component {
         <div className="btn-back-sticky">
           <Link to={t('route.product-services') + t('route.finished-chocolate-products')}>{t('buttons.back-to-products').toUpperCase()}</Link>
         </div>
-        <ContactSide page={product.id === 'cocoa-powder'? 'cocoa-powder':'maquila'} products={itemSelected} handleSetProductSelected={this.handleSetProductSelected} handleShowFormContact={this.handleShowFormContact} />
+        <ContactSide page={product.id === 'cocoa-powder' ? 'cocoa-powder' : 'maquila'} products={itemsSelected} handleSetProductSelected={this.handleSetProductSelected} handleShowFormContact={this.handleShowFormContact} />
       </div >
     );
   }

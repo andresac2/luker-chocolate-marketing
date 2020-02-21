@@ -138,17 +138,12 @@ class ContactSide extends React.Component {
                 {products &&
                   <div className="contact-form-products--list">
                     {products.filter(item => item.selected).length > 0 ?
-                      page !== 'maquila' ?
-                        Object.keys(products.filter(item => item.selected)).map(i =>
-                          <div key={i} className={`contact-form-products--list-item`} onClick={() => this.props.handleSetProductSelected(products.filter(item => item.selected)[i])}>
-                            <img src={require('../../../assets/img/' + (products.filter(item => item.selected)[i].img ? products.filter(item => item.selected)[i].img : altImg))} alt={products.filter(item => item.selected)[i].id} />
-                            <p className={`contact-form-products--list-item-${page}`} >{products.filter(item => item.selected)[i].description}</p>
-                          </div>)
-                        : <><div className={`contact-form-products--list-item-${page}`} onClick={() => this.props.handleSetProductSelected()}>
-                          <img src={require('../../../assets/img/' + products[0].img)} alt={products[0].description} />
-                          <p>{products[0].description}</p>
-                        </div>
-                          {(products[1]) && <div className={`contact-form-products--list-item-${page} contact-form-products--list-item-${page}-dmw`} onClick={() => this.props.handleSetProductSelected()}>{products[1]}</div>}</>
+                      Object.keys(products.filter(item => item.selected)).map(i =>
+                        <div key={i} className={`contact-form-products--list-item contact-form-products--list-item-${page}`} onClick={() => this.props.handleSetProductSelected(products.filter(item => item.selected)[i])}>
+                          <img src={require('../../../assets/img/' + (products.filter(item => item.selected)[i].img ? products.filter(item => item.selected)[i].img : altImg))} alt={products.filter(item => item.selected)[i].id} />
+                          <p className={``} >{products.filter(item => item.selected)[i].description}</p>
+                        </div>)
+
                       : <span>{page === 'maquila' ? t('form.choose-option') : t('form.choose-products')}</span>
                     }
                   </div>

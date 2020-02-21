@@ -69,6 +69,10 @@
     @media screen and (min-width: 1440px) {
       font-size: 14px;
     }
+
+    @media screen and (min-width: 1280px) {
+      padding: 0px 1em;
+    }
   }
 
   &-intro {
@@ -99,7 +103,7 @@
 
   .blog-tab {
     margin: auto;
-    width: fit-content;
+    width: 90%;
     padding: 7px 15px;
     background: $apple-green;
 

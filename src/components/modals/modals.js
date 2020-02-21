@@ -3,6 +3,7 @@ import { MdClose } from 'react-icons/md';
 import ModalDistributors from './distributors/modal-dist';
 import ModalInfoProducts from './info-product/info-product';
 import ModalReportDocs from './report-doc/report-doc';
+import ModalArticle from './article/modal-article';
 
 
 class Modals extends React.Component {
@@ -12,7 +13,7 @@ class Modals extends React.Component {
   }
 
   render() {
-    const { visible, modal, product, title, subtitle, contentTitle } = this.props;
+    const { visible, modal, product, title, subtitle, contentTitle, item } = this.props;
     return (
       <div className={`modal-content modal-content-${visible && 'visible'}`}>
         <div className="modal-content-bkg" onClick={() => this.props.showModalDist()}></div>
@@ -26,6 +27,9 @@ class Modals extends React.Component {
           }
           {modal === 'report-doc' &&
             <ModalReportDocs />
+          }
+          {modal === 'article' &&
+            <ModalArticle item={item} visible={visible} />
           }
         </div>
       </div>

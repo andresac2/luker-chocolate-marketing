@@ -19,34 +19,36 @@ import { ingredients as ingredientsEs } from '../../commons/data/data-es';
 
 import { getFinishedChocolateProducts, getFinishedChocolateProductsEs, getIngredients, getIngredientsEs } from '../../commons/services/api';
 import { Spin } from 'antd';
+import HelmetComponent from '../../commons/helmet/helmet';
 
 class ProductsServices extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       distModalVisible: false,
-      products: ''
+      products: '',
+      productsEn: '',
+      productsEs: ''
     };
-    this.showModalDist = this.showModalDist.bind(this)
+    this.showModalDist = this.showModalDist.bind(this);
+    this.getMaquilaItems = this.getMaquilaItems.bind(this);
   }
 
   async getMaquilaItems() {
     let arrItems = [];
-    if (i18n.language === 'en') {
-      getFinishedChocolateProducts().then(data =>
-        data.map((e, i) => {
-          arrItems.push(e.acf);
-        })).then(data =>
-          this.setState({ products: arrItems })
-        )
-    } else {
-      getFinishedChocolateProductsEs().then(data =>
-        data.map((e, i) => {
-          arrItems.push(e.acf);
-        })).then(data =>
-          this.setState({ products: arrItems })
-        )
-    }
+    let arrItemsES = [];
+    getFinishedChocolateProducts().then(data =>
+      data.map((e, i) => {
+        arrItems.push(e.acf);
+      })).then(data =>
+        this.setState({ productsEn: arrItems })
+      )
+    getFinishedChocolateProductsEs().then(data =>
+      data.map((e, i) => {
+        arrItemsES.push(e.acf);
+      })).then(data =>
+        this.setState({ productsEs: arrItemsES })
+      )
   }
 
   async getIngredientsItems() {
@@ -82,14 +84,18 @@ class ProductsServices extends React.Component {
 
   render() {
     const { title, item } = this.props.match.params;
-    const { distModalVisible, products } = this.state;
+    const { distModalVisible, productsEn, productsEs } = this.state;
     const { t } = this.props;
 
     //const products = i18n.language === 'en' ? finishedChocolateProductsEn : finishedChocolateProductsEs;
     const ingredients = i18n.language === 'en' ? ingredientsEn : ingredientsEs;
 
+    const products = i18n.language === 'en' ? productsEn : productsEs;
+    //this.setState({ products: prod })
+
     return (
       <div className="services-component">
+        <HelmetComponent title={t('products-services.titulo_seo')} keywords={t('products-services.keywords')} titleOg={t('products-services.titulo_protocolo_opengraph')} description={t('products-services.meta_descripcion')} descriptionOg={t('products-services.descripcion_opengraph')} cover={t('products-services.imagen_open_graph.url')} />
         <div className={`services-header services-header--${title} ${(item) && 'services-header--title-short'}`}>
           <div className="btn-dist">
             <div className="content-logo-select">
@@ -102,12 +108,13 @@ class ProductsServices extends React.Component {
               <Link to={t('routes.products-services')} style={{ fontSize: '9px' }}>{t('buttons.back-to-products-services').toUpperCase()}</Link>
             }
           </div>
-          <h1>{(title === t('routes.finished-chocolate-products').slice(1).split('/').shift()) ? t('products-services.finished-chocolate-products').toUpperCase() : (title === t('routes.ingredients').slice(1).split('/').shift()) ? t('products-services.chocolate').toUpperCase() + ' ' + t('products-services.ingredients').toUpperCase() : t('products-services.our-services').toUpperCase()}</h1>
+          <h1>{(title.includes('chocolate')) ? t('products-services.finished-chocolate-products').toUpperCase() : (title.includes('ingredient')) ? t('products-services.chocolate').toUpperCase() + ' ' + t('products-services.ingredients').toUpperCase() : t('products-services.our-services').toUpperCase()}</h1>
         </div>
         {(products.length > 0 && ingredients.length > 0) ? <div className="services-content">
-          {(title === t('routes.our-services').slice(1).split('/').shift()) ? <OurServices /> :
-            (item) ? (title === t('routes.finished-chocolate-products').slice(1).split('/').shift()) ? <Maquila product={products[products.findIndex(product => product.id === item)]} /> : <Ingredients product={ingredients[ingredients.findIndex(i => i.id === item)]} />
-              : <ProductServices items={(title === t('routes.finished-chocolate-products').slice(1).split('/').shift()) ? products : ingredients} title={(title === t('routes.finished-chocolate-products').slice(1).split('/').shift()) ? t('products-services.branded-chocolate-products').toUpperCase() : t('products-services.our-products').toUpperCase()} page={title} />}
+
+          {(title.includes('servic')) ? <OurServices /> :
+            (item) ? (title.includes('chocolate')) ? <Maquila product={products[products.findIndex(product => product.id === item)]} /> : <Ingredients product={ingredients[ingredients.findIndex(i => i.id === item)]} />
+              : <ProductServices items={(title.includes('chocolate')) ? products : ingredients} title={(title.includes('chocolate')) ? t('products-services.branded-chocolate-products').toUpperCase() : t('products-services.our-products').toUpperCase()} page={title} />}
         </div> : <Spin size="large" />}
         <Footer />
         <Modals visible={distModalVisible} modal={'distributors'} showModalDist={this.showModalDist} />

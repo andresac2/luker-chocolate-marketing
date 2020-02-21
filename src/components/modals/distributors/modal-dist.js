@@ -51,12 +51,23 @@ class ModalDistributors extends React.Component {
     //this.selectDistributorCountry();
   }
 
+  compareStrings(a, b) {
+    // Assuming you want case-insensitive comparison
+    a = a.toLowerCase();
+    b = b.toLowerCase();
+
+    return (a < b) ? -1 : (a > b) ? 1 : 0;
+  }
+
   render() {
     const { distValue, actualDist, distSelected, distributors } = this.state;
     const { t } = this.props;
     const { Option } = Select;
 
     let countries = i18n.language === 'en' ? dataCountries : paises;
+    countries = countries.sort(function (a, b) {
+      return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
+    });
 
     return (
       <div className="modal-dist">
@@ -73,8 +84,8 @@ class ModalDistributors extends React.Component {
             {distributors.length > 0 && Object.keys(actualDist).map(i =>
               <div key={i} className={`modal-dist-list-cards-card modal-dist-list-cards-card--${i == distSelected && 'active'}`} onClick={() => this.selectDist(i)}>
                 <h2>{actualDist[i].company}</h2>
-                <p><span>Address: </span>{actualDist[i].address}</p>
-                <p><span>Phone: </span>{actualDist[i].phone}</p>
+                <p><span>{i18n.language === 'en' ? 'Address:' : 'Dirección:'} </span>{actualDist[i].address}</p>
+                <p><span>{t('form.phone-number')}: </span>{actualDist[i].phone}</p>
                 <p><span>Web: </span><a href={'https://' + actualDist[i].web} target='_blank'>{actualDist[i].web}</a> </p>
                 <p><span>E-mail: </span> {actualDist[i].email}</p>
               </div>
