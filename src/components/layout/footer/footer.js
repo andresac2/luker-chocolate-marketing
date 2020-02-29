@@ -110,10 +110,11 @@ class Footer extends React.Component {
             <div className="footer-component-data footer-component-data-policies">
               <h2>{t('footer.our-policies').toUpperCase()}</h2>
               <ul>
-                <li><a href={i18n.language === 'en' ? termsConditions : termsConditionsEs} target='_blank'>{t('footer.terms-conditions')}</a></li>
-                <li><a href={i18n.language === 'en' ? privacyPolicy : privacyPolicyEs} target='_blank'>{t('footer.web-privacy-policy')}</a></li>
-                <li><a href={i18n.language === 'en' ? antiFraud : antiFraudEs} target='_blank'>{t('footer.anti-fraud-corruption-policy')}</a></li>
-                <li><a href={i18n.language === 'en' ? dataTreatment : dataTreatmentEs} target='_blank'>{t('footer.personal-data-processing-policy')}</a></li>
+                <li><a href={t('documentos.politica-terminos-condiciones')} target='_blank'>{t('footer.terms-conditions')}</a></li>
+                <li><a href={t('documentos.politica-privacidad')} target='_blank'>{t('footer.web-privacy-policy')}</a></li>
+                <li><a href={t('documentos.politica-antifraude')} target='_blank'>{t('footer.anti-fraud-corruption-policy')}</a></li>
+                <li><a href={t('documentos.politica-tratamiento-de-datos')} target='_blank'>{t('footer.personal-data-processing-policy')}</a></li>
+                <li><a href={t('documentos.politica-integral-de-gestión')} target='_blank'>{t('footer.comprehensive_management_policy')}</a></li>
               </ul>
             </div>}
           <div className="footer-component-link">

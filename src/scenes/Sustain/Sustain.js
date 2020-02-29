@@ -1,10 +1,5 @@
 import React from 'react';
-//import panel from '../../assets/img/sustain-panel.jpg'
-//import back from '../../assets/img/back.svg'
-import { MdClose } from 'react-icons/md';
-import { Form, Select, Input, Button, InputNumber, Spin } from 'antd';
-import FormItem from 'antd/lib/form/FormItem';
-import Article from '../../components/blog/article/article';
+import { Form, Select, Spin } from 'antd';
 import FloatLogo from '../../components/layout/float-logo/float-logo';
 //import SustainabilityBrief from 'https://www.lukerchocolate.com/static/media/Sustainabililty%202018%20Luker%20Chocolate%20VERSI%C3%93N%20DIGITAL.cb13c104.pdf';
 //import CocoaForestPeaceAgreement from '../../assets/documents/Colombia-Cocoa-Forests-and-Peace-Initiative-Joint-Framework-for-Action-English.pdf';
@@ -13,19 +8,13 @@ import HelmetComponent from '../../commons/helmet/helmet';
 import i18n from '../../i18n';
 import { withNamespaces } from 'react-i18next';
 
-import { termsConditions } from '../../commons/data/data-en';
-import { privacyPolicy } from '../../commons/data/data-es';
-
-import { articlesSustain as articlesSustainEn, countries as dataCountries, modalReportItems as modalReportItemsEn } from '../../commons/data/data-en';
-import { articlesSustain as articlesSustainEs, countries as paises, modalReportItems as modalReportItemsEs } from '../../commons/data/data-es';
-import { getArticlesSustain, getArticlesSustainEs, getModalReportItems, getModalReportItemsEs } from '../../commons/services/api';
+import { articlesSustain as articlesSustainEn, countries as dataCountries } from '../../commons/data/data-en';
+import { articlesSustain as articlesSustainEs, countries as paises } from '../../commons/data/data-es';
+import { getArticlesSustain, getArticlesSustainEs } from '../../commons/services/api';
 import Modals from '../../components/modals/modals';
 
 
 class Sustain extends React.Component {
-  SustainabilityBrief = 'https://www.lukerchocolate.com/static/media/Sustainabililty%202018%20Luker%20Chocolate%20VERSI%C3%93N%20DIGITAL.cb13c104.pdf';
-  CocoaForestPeaceAgreement = 'https://www.lukerchocolate.com/static/media/Sustainabililty%202018%20Luker%20Chocolate%20VERSI%C3%93N%20DIGITAL.cb13c104.pdf';
-  zipDocuments = 'https://www.back.lukerchocolate.com/wp-content/uploads/2020/02/documents-sustainability.zip';
 
   constructor(props) {
     super(props);
@@ -38,45 +27,23 @@ class Sustain extends React.Component {
       items: i18n.language === 'en' ? articlesSustainEn : articlesSustainEs,
       modalReportItems: ''//i18n.language === 'en' ? modalReportItemsEn : modalReportItemsEs
     };
-    this.getReportItems = this.getReportItems.bind(this);
   }
 
   async getItems() {
     let arrItems = [];
     if (i18n.language === 'en') {
       getArticlesSustain().then(data =>
-        data.map((e, i) => {
+        data.map((e) => {
           arrItems.push(e.acf);
-        })).then(data =>
+        })).then(() =>
           this.setState({ items: arrItems })
         )
     } else {
       getArticlesSustainEs().then(data =>
-        data.map((e, i) => {
+        data.map((e) => {
           arrItems.push(e.acf);
-        })).then(data =>
+        })).then(() =>
           this.setState({ items: arrItems })
-        )
-    }
-  }
-
-  async getReportItems() {
-    let arrItems = [];
-    if (i18n.language === 'en') {
-      getModalReportItems().then(data =>
-        data.map((e, i) => {
-          arrItems.push(e.acf);
-          arrItems[i].selected = false
-        })).then(data =>
-          this.setState({ modalReportItems: arrItems })
-        )
-    } else {
-      getModalReportItemsEs().then(data =>
-        data.map((e, i) => {
-          arrItems.push(e.acf);
-          arrItems[i].selected = false
-        })).then(data =>
-          this.setState({ modalReportItems: arrItems })
         )
     }
   }
@@ -93,30 +60,6 @@ class Sustain extends React.Component {
     }
   }
 
-  handleSubmit = e => {
-    e.preventDefault();
-    this.props.form.validateFields((err, values) => {
-      if (!err) {
-        console.log('Received values of form: ', values);
-        this.downloadDocuments();
-        this.props.form.resetFields();
-      }
-    });
-  };
-
-  downloadDocuments() {
-    //(modalReportItems.filter(item => item.selected).some(function (v) { return v.id.includes(2) }))
-    let docs = this.state.modalReportItems.filter(item => item.selected);
-    if (docs.length === 1) {
-      if (docs.some(function (v) { return v.id.includes(2) }))
-        window.open(this.SustainabilityBrief);
-      if (docs.some(function (v) { return v.id.includes(4) }))
-        window.open(this.CocoaForestPeaceAgreement);
-    } else {
-      window.open(this.zipDocuments);
-    }
-  }
-
   showModalDist = () => {
     this.setState({ distModalVisible: !this.state.distModalVisible });
   };
@@ -129,23 +72,10 @@ class Sustain extends React.Component {
     this.setState({ articleModalVisible: !this.state.articleModalVisible, modalSelectedIndex: i || 0 });
   };
 
-  modalItemToggle(id, selected) {
-    this.setState({
-      modalReportItems: this.state.modalReportItems.map(el => (el.id === id ? { ...el, selected } : el))
-    });
-  };
-
-  componentDidMount() {
-    this.getReportItems();
-  }
-
   render() {
-    const { getFieldDecorator } = this.props.form;
     const { t } = this.props;
-    const { items, firstItem, distModalVisible, reportModalVisible, articleModalVisible, modalSelectedIndex, modalReportItems } = this.state;
-    const { Option } = Select;
+    const { items, firstItem, reportModalVisible, articleModalVisible, modalSelectedIndex } = this.state;
     const altImg = 'img-example.svg';
-    const countries = i18n.language === 'en' ? dataCountries : paises;
     const panel = "/static/media/sustain-panel.999e85fe.jpg";
 
     return (

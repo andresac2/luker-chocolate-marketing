@@ -22,8 +22,8 @@ class ModalReportDoc extends React.Component {
   SustainabilityBriefEs = 'https://back.lukerchocolate.com/es/wp-content/uploads/2020/02/Sustainabililty-2018-Luker-Chocolate-version-digital.pdf';
   CocoaForestPeaceAgreementEs = 'https://back.lukerchocolate.com/es/wp-content/uploads/2020/02/Colombia-Cocoa-Forests-and-Peace-Initiative-Joint-Framework-for-Action-English.pdf';
 
+  zipDocuments = 'https://www.back.lukerchocolate.com/wp-content/uploads/2020/02/documents-sustainability.zip';
 
-  zipDocuments = 'https://www.lukerchocolate.com/static/media/Sustainabililty%202018%20Luker%20Chocolate%20VERSI%C3%93N%20DIGITAL.cb13c104.pdf';
 
   constructor(props) {
     super(props);
@@ -37,25 +37,6 @@ class ModalReportDoc extends React.Component {
       modalReportItems: ''//i18n.language === 'en' ? modalReportItemsEn : modalReportItemsEs
     };
     this.getReportItems = this.getReportItems.bind(this);
-  }
-
-  async getItems() {
-    let arrItems = [];
-    if (i18n.language === 'en') {
-      getArticlesSustain().then(data =>
-        data.map((e) => {
-          arrItems.push(e.acf);
-        })).then(() =>
-          this.setState({ items: arrItems })
-        )
-    } else {
-      getArticlesSustainEs().then(data =>
-        data.map((e) => {
-          arrItems.push(e.acf);
-        })).then(() =>
-          this.setState({ items: arrItems })
-        )
-    }
   }
 
   async getReportItems() {
@@ -76,18 +57,6 @@ class ModalReportDoc extends React.Component {
         })).then(() =>
           this.setState({ modalReportItems: arrItems })
         )
-    }
-  }
-
-  carrAction(fi) {
-    if (fi === 'l' && this.state.firstItem !== 0) {
-      this.setState({ firstItem: this.state.firstItem - 1 });
-    }
-    if (fi === 'r' && this.state.firstItem + 1 < this.state.items.length - 1) {
-      this.setState({ firstItem: this.state.firstItem + 1 });
-    }
-    if (!isNaN(fi)) {
-      this.setState({ firstItem: fi * 2 });
     }
   }
 
