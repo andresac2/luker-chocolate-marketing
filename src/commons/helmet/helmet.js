@@ -17,10 +17,10 @@ class HelmetComponent extends Component {
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="og:site_name" content="Luker Chocolate." />
         <meta name="twitter:image:alt" content="Luker Chocolate | Cacao Fino de Aroma" />
-        <meta property="fb:app_id" content="your_app_id" />
         <meta name="twitter:site" content="@Luker_Chocolate" />
+        <meta property="twitter:image" content={cover ? cover : "../../assets/img/brick-luker.jpg"} />
       </Helmet>
     );
   }
 }
-export default HelmetComponent;
+export default HelmetComponent;                
