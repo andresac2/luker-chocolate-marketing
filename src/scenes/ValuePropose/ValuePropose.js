@@ -10,6 +10,8 @@ import { withNamespaces } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import FloatLogo from '../../components/layout/float-logo/float-logo';
 import HelmetComponent from '../../commons/helmet/helmet';
+import Helmet from 'react-helmet';
+
 
 function ValuePropose(props) {
   const { t } = props;
@@ -18,10 +20,25 @@ function ValuePropose(props) {
   const item2 = '/static/media/consistency-flavour.6fd7309d.jpg';
   const item3 = '/static/media/integrated-packaging.79e11ca3.jpg';
   const item4 = '/static/media/grano4.d444b217.jpg';
-
   return (
     <div className="value-propose-component">
-      <HelmetComponent title={t('value-propose.titulo_seo')} keywords={t('value-propose.keywords')} titleOg={t('value-propose.titulo_protocolo_opengraph')} description={t('value-propose.meta_descripcion')} descriptionOg={t('value-propose.descripcion_opengraph')} cover={t('value-propose.imagen_open_graph.url')} url={'our-value'} />
+
+      <Helmet>
+        <title>{t('value-propose.titulo_seo')}</title>
+        <meta name="description" content={t('value-propose.meta_descripcion')} />
+        <meta property="og:title" content={t('value-propose.titulo_protocolo_opengraph')} />
+        <meta property="og:description" content={t('value-propose.descripcion_opengraph')} />
+        <meta name="keywords" content={t('value-propose.keywords')} />
+        <meta property="og:image" content={t('value-propose.imagen_open_graph.url')} />
+        <meta property="og:url" content={window.location.href} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="og:site_name" content="Luker Chocolate." />
+        <meta name="twitter:image:alt" content={t('value-propose.descripcion_opengraph')} />
+        <meta name="twitter:site" content="@Luker_Chocolate" />
+        <meta property="twitter:image" content={t('value-propose.imagen_open_graph.url')} />
+      </Helmet>
+
+
       <div className="value-propose-component--expo">
         <div className="btn-dist">
           <Link to="/" className="logo"> <img src="/static/media/Lukerlogo.af6f7609.svg" alt="Logo Luker" /></Link>

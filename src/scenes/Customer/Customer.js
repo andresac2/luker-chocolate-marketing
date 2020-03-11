@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Helmet from 'react-helmet';
 
 //import doisy from '../../assets/img/Doisy&Dam.jpg'
 //import royce from '../../assets/img/royce.jpg'
@@ -79,7 +80,6 @@ function Customer(props) {
   }
   return (
     <div className='customer-component'>
-      <HelmetComponent title={t('our-clients.titulo_seo')} keywords={t('our-clients.keywords')} titleOg={t('our-clients.titulo_protocolo_opengraph')} description={t('our-clients.meta_descripcion')} descriptionOg={t('our-clients.descripcion_opengraph')} cover={t('our-clients.imagen_open_graph.url')} url={'our-clients'} />
       {/*clients.map((client, i) =>
         <Link to={'/blog' + t('routes.our-clients') + '/pots-co'}>
           <img src={pots} alt="Pots&co" />
@@ -88,6 +88,22 @@ function Customer(props) {
         </Link>
       )*/
       }
+
+      <Helmet>
+        <title>{t('our-clients.titulo_seo')}</title>
+        <meta name="description" content={t('our-clients.meta_descripcion')} />
+        <meta property="og:title" content={t('our-clients.titulo_protocolo_opengraph')} />
+        <meta property="og:description" content={t('our-clients.descripcion_opengraph')} />
+        <meta name="keywords" content={t('our-clients.keywords')} />
+        <meta property="og:image" content={t('our-clients.imagen_open_graph.url')} />
+        <meta property="og:url" content={window.location.href} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="og:site_name" content="Luker Chocolate." />
+        <meta name="twitter:image:alt" content={t('our-clients.descripcion_opengraph')} />
+        <meta name="twitter:site" content="@Luker_Chocolate" />
+        <meta property="twitter:image" content={t('our-clients.imagen_open_graph.url')} />
+      </Helmet>
+
       <div className="customer-component--header">
         <h1>{t('header.our-clients').toUpperCase()}</h1>
         <FloatLogo btnText='dist' />

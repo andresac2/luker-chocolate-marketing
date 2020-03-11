@@ -8,12 +8,28 @@ import FlowTabs from '../../components/flow-cacao/flow-tabs/flow-tabs'
 import FloatLogo from '../../components/layout/float-logo/float-logo';
 import HelmetComponent from '../../commons/helmet/helmet';
 import { withNamespaces } from 'react-i18next';
+import Helmet from 'react-helmet';
 
 function Flow(props) {
 
   return (
     <div className="flow-component">
-      <HelmetComponent title={props.t('chocolate-process.titulo_seo')} keywords={props.t('chocolate-process.keywords')} titleOg={props.t('chocolate-process.titulo_protocolo_opengraph')} description={props.t('chocolate-process.meta_descripcion')} descriptionOg={props.t('chocolate-process.descripcion_opengraph')} cover={props.t('chocolate-process.imagen_open_graph.url')} url={'chocolate-process'} />
+
+      <Helmet>
+        <title>{t('chocolate-process.titulo_seo')}</title>
+        <meta name="description" content={t('chocolate-process.meta_descripcion')} />
+        <meta property="og:title" content={t('chocolate-process.titulo_protocolo_opengraph')} />
+        <meta property="og:description" content={t('chocolate-process.descripcion_opengraph')} />
+        <meta name="keywords" content={t('chocolate-process.keywords')} />
+        <meta property="og:image" content={t('chocolate-process.imagen_open_graph.url')} />
+        <meta property="og:url" content={window.location.href} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="og:site_name" content="Luker Chocolate." />
+        <meta name="twitter:image:alt" content={t('chocolate-process.descripcion_opengraph')} />
+        <meta name="twitter:site" content="@Luker_Chocolate" />
+        <meta property="twitter:image" content={t('chocolate-process.imagen_open_graph.url')} />
+      </Helmet>
+
       <div className="flow-sidebar">
         <div className="cacao-link">
           <div className="cacao-link-content">
