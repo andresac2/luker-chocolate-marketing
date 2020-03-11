@@ -7,6 +7,7 @@ import FloatLogo from '../../components/layout/float-logo/float-logo';
 import HelmetComponent from '../../commons/helmet/helmet';
 import i18n from '../../i18n';
 import { withNamespaces } from 'react-i18next';
+import Helmet from 'react-helmet';
 
 import { articlesSustain as articlesSustainEn, countries as dataCountries } from '../../commons/data/data-en';
 import { articlesSustain as articlesSustainEs, countries as paises } from '../../commons/data/data-es';
@@ -80,7 +81,21 @@ class Sustain extends React.Component {
 
     return (
       <div className="sustain-component">
-        <HelmetComponent title={t('sustainability.titulo_seo')} keywords={t('sustainability.keywords')} titleOg={t('sustainability.titulo_protocolo_opengraph')} description={t('sustainability.meta_descripcion')} descriptionOg={t('sustainability.descripcion_opengraph')} cover={t('sustainability.imagen_open_graph.url')} url={'sustainability'} />
+        <Helmet>
+          <title>{t('sustainability.titulo_seo')}</title>
+          <meta name="description" content={t('sustainability.meta_descripcion')} />
+          <meta property="og:title" content={t('sustainability.titulo_protocolo_opengraph')} />
+          <meta property="og:description" content={t('sustainability.descripcion_opengraph')} />
+          <meta name="keywords" content={t('sustainability.keywords')} />
+          <meta property="og:image" content={t('sustainability.imagen_open_graph.url')} />
+          <meta property="og:url" content={'https://www.lukerchocolate.com/sustainability'} />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta property="og:site_name" content="Luker Chocolate." />
+          <meta name="twitter:image:alt" content={t('sustainability.descripcion_opengraph')} />
+          <meta name="twitter:site" content="@Luker_Chocolate" />
+          <meta property="twitter:image" content={t('sustainability.imagen_open_graph.url')} />
+        </Helmet>
+
         <FloatLogo btnText='dist' />
         <div className="sustain-sidebar">
           <div className="sustain-sidebar--text">

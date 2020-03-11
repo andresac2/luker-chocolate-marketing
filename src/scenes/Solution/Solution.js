@@ -5,12 +5,27 @@ import logo from '../../assets/img/Lukerlogo.svg'
 import FloatLogo from '../../components/layout/float-logo/float-logo';
 import HelmetComponent from '../../commons/helmet/helmet';
 import { withNamespaces } from 'react-i18next';
+import Helmet from 'react-helmet';
 
 function Solution(props) {
   const { t } = props;
   return (
     <div className='solution-component'>
-      <HelmetComponent title={t('products-services.titulo_seo')} keywords={t('products-services.keywords')} titleOg={t('products-services.titulo_protocolo_opengraph')} description={t('products-services.meta_descripcion')} descriptionOg={t('products-services.descripcion_opengraph')} cover={t('products-services.imagen_open_graph.url')} url={'products-services'} />
+      <Helmet>
+        <title>{t('products-services.titulo_seo')}</title>
+        <meta name="description" content={t('products-services.meta_descripcion')} />
+        <meta property="og:title" content={t('products-services.titulo_protocolo_opengraph')} />
+        <meta property="og:description" content={t('products-services.descripcion_opengraph')} />
+        <meta name="keywords" content={t('products-services.keywords')} />
+        <meta property="og:image" content={t('products-services.imagen_open_graph.url')} />
+        <meta property="og:url" content={'https://www.lukerchocolate.com/products-services'} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="og:site_name" content="Luker Chocolate." />
+        <meta name="twitter:image:alt" content={t('products-services.descripcion_opengraph')} />
+        <meta name="twitter:site" content="@Luker_Chocolate" />
+        <meta property="twitter:image" content={t('products-services.imagen_open_graph.url')} />
+      </Helmet>
+
       <FloatLogo btnText='dist' />
       <Link to={t('routes.products-services') + t('routes.ingredients')} className="solution-component--ingredient">
         <div className="header-btn">
