@@ -10,8 +10,7 @@ class Article extends React.Component {
   render() {
     const { data, recommended } = this.props;
     const altImg = 'img-example.svg';
-    const fullUrl = this.window;
-
+    const fullUrl = window.location.href;
     return (
       <div className="blog-article">
         <Helmet>
