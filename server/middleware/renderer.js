@@ -47,10 +47,15 @@ module.exports.renderer = (req, res) => {
 
     const helmet = Helmet.renderStatic();
 
-    let find = '<metadynamyc />';
-    let re = new RegExp(find, 'g');
+    htmlData = htmlData.replace('<metadynamyc/>', `
+      ${helmet.title.toString()}
+      ${helmet.meta.toString()}
+      ${helmet.link.toString()}
+    `)
 
-    htmlData = htmlData.replace(re, `
+    htmlData = htmlData.replace('data-react-helmet="true" ', ``)
+
+    htmlData = htmlData.replace('<metadynamyc/>', `
       ${helmet.title.toString()}
       ${helmet.meta.toString()}
       ${helmet.link.toString()}
