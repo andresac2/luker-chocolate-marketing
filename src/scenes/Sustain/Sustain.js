@@ -81,6 +81,7 @@ class Sustain extends React.Component {
 
     return (
       <div className="sustain-component">
+
         <Helmet>
           <title>{t('sustainability.titulo_seo')}</title>
           <meta name="description" content={t('sustainability.meta_descripcion')} />
