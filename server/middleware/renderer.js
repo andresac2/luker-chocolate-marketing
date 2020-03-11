@@ -53,13 +53,13 @@ module.exports.renderer = (req, res) => {
       ${helmet.link.toString()}
     `)
 
-    htmlData = htmlData.replace('data-react-helmet="true" ', ``)
-
     htmlData = htmlData.replace('<metadynamyc/>', `
-      ${helmet.title.toString()}
-      ${helmet.meta.toString()}
-      ${helmet.link.toString()}
+    ${helmet.title.toString()}
+    ${helmet.meta.toString()}
+    ${helmet.link.toString()}
     `)
+
+    htmlData = htmlData.replace('data-react-helmet="true"', ``)
 
     htmlData = htmlData.replace('<div id="root"></div>', `<div id="root">${html}</div>`)
 
