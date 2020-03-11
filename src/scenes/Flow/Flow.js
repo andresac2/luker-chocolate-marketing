@@ -16,18 +16,18 @@ function Flow(props) {
     <div className="flow-component">
 
       <Helmet>
-        <title>{t('chocolate-process.titulo_seo')}</title>
-        <meta name="description" content={t('chocolate-process.meta_descripcion')} />
-        <meta property="og:title" content={t('chocolate-process.titulo_protocolo_opengraph')} />
-        <meta property="og:description" content={t('chocolate-process.descripcion_opengraph')} />
-        <meta name="keywords" content={t('chocolate-process.keywords')} />
-        <meta property="og:image" content={t('chocolate-process.imagen_open_graph.url')} />
+        <title>{props.t('chocolate-process.titulo_seo')}</title>
+        <meta name="description" content={props.t('chocolate-process.meta_descripcion')} />
+        <meta property="og:title" content={props.t('chocolate-process.titulo_protocolo_opengraph')} />
+        <meta property="og:description" content={props.t('chocolate-process.descripcion_opengraph')} />
+        <meta name="keywords" content={props.t('chocolate-process.keywords')} />
+        <meta property="og:image" content={props.t('chocolate-process.imagen_open_graph.url')} />
         <meta property="og:url" content={window.location.href} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="og:site_name" content="Luker Chocolate." />
-        <meta name="twitter:image:alt" content={t('chocolate-process.descripcion_opengraph')} />
+        <meta name="twitter:image:alt" content={props.t('chocolate-process.descripcion_opengraph')} />
         <meta name="twitter:site" content="@Luker_Chocolate" />
-        <meta property="twitter:image" content={t('chocolate-process.imagen_open_graph.url')} />
+        <meta property="twitter:image" content={props.t('chocolate-process.imagen_open_graph.url')} />
       </Helmet>
 
       <div className="flow-sidebar">
