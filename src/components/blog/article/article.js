@@ -26,7 +26,10 @@ class Article extends React.Component {
           <meta name="twitter:image:alt" content="Luker Chocolate | Cacao Fino de Aroma" />
           <meta property="fb:app_id" content="your_app_id" />
           <meta name="twitter:site" content="@Luker_Chocolate" />
+          <meta property="og:image" content={require(`../../../assets/img/${data.flag ? '' : 'blog/'}${data.cover ? data.cover : 'img-example.svg'}`)} />
+          <meta property="twitter:image" content={articles ? articles.cover : t('blog.imagen_open_graph.url')} />
         </Helmet>
+
         {this.window && !this.window.location.href.includes('sustainability') && <div className="blog-article-title-resp">{data.title}</div>}
         <div className="blog-article-bread">
           <Breadcrumb>
