@@ -79,7 +79,7 @@ function Customer(props) {
   }
   return (
     <div className='customer-component'>
-      <HelmetComponent title={t('our-clients.titulo_seo')} keywords={t('our-clients.keywords')} titleOg={t('our-clients.titulo_protocolo_opengraph')} description={t('our-clients.meta_descripcion')} descriptionOg={t('our-clients.descripcion_opengraph')} cover={t('our-clients.imagen_open_graph.url')} />
+      <HelmetComponent title={t('our-clients.titulo_seo')} keywords={t('our-clients.keywords')} titleOg={t('our-clients.titulo_protocolo_opengraph')} description={t('our-clients.meta_descripcion')} descriptionOg={t('our-clients.descripcion_opengraph')} cover={t('our-clients.imagen_open_graph.url')} url={'our-clients'} />
       {/*clients.map((client, i) =>
         <Link to={'/blog' + t('routes.our-clients') + '/pots-co'}>
           <img src={pots} alt="Pots&co" />

@@ -19,10 +19,10 @@ class Article extends React.Component {
           <meta property="og:title" content={data.title} />
           <meta property="og:description" content={(data.flag) ? 'Our clients' : data.breads[0].href} />
           <meta property="og:image" content={require(`../../../assets/img/${data.flag ? '' : 'blog/'}${data.cover ? data.cover : 'img-example.svg'}`)} />
-          <meta property="og:url" content='{fullUrl}' />
+          <meta property="og:url" content={fullUrl} />
           <meta name="twitter:card" content="summary_large_image" />
           <meta property="og:site_name" content="Luker Chocolate." />
-          <meta name="twitter:image:alt" content="Luker Chocolate | Cacao Fino de Aroma" />
+          <meta name="twitter:image:alt" content={data.flag ? "Our clients" : data.breads[0].href} />
           <meta property="fb:app_id" content="your_app_id" />
           <meta name="twitter:site" content="@Luker_Chocolate" />
           <meta property="twitter:image" content={require(`../../../assets/img/${data.flag ? '' : 'blog/'}${data.cover ? data.cover : 'img-example.svg'}`)} />
