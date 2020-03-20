@@ -92,7 +92,7 @@ class Contact extends React.Component {
 
     console.log("final", salesforce)
 
-    salesforce.success ? this.sendFeedback(templateId, client) : console.error("error", salesforce.message);
+    salesforce.success ? this.sendFeedback(templateId, client) : this.emailSent('Error en salesforce:', salesforce.message);
 
   }
 
