@@ -80,10 +80,10 @@ class Home extends React.Component {
           </div>
         </div>
         <div className="home-logos">
-          <img src={logoUtz} alt="Logo utz" />
-          <img src={logoSedex} alt="Logo sedex" />
-          <img src={logoGmo} alt="Logo gmo" />
-          <img src={logoKosher} alt="Logo kosher" />
+          <a href="https://utz.org/" target="_blank"> <img src={logoUtz} alt="Logo utz" /> </a>
+          <a href="https://www.sedexglobal.com/" target="_blank"> <img src={logoSedex} alt="Logo sedex" /> </a>
+          <a href="https://www.nongmoproject.org/find-non-gmo/verified-products/?brand_id=10589" target="_blank"> <img src={logoGmo} alt="Logo gmo" /> </a>
+          <a href="https://oukosher.org/product-search/#s=LUKER&dpm%5Bm%5D=false&dpm%5Bd%5D=false&dpm%5Bp%5D=false&prod%5Bpas_yisroel%5D=false&prod%5Bcholov_yisroel%5D=false&prod%5Byoshon%5D=false&prod%5Bgluten_free%5D=false&passover=false" target="_blank"> <img src={logoKosher} alt="Logo kosher" /> </a>
         </div>
         <Modals visible={distModalVisible} modal={'distributors'} showModalDist={this.showModalDist} />
       </div>
