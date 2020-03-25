@@ -30,7 +30,7 @@ function ValuePropose(props) {
         <meta property="og:description" content={t('value-propose.descripcion_opengraph')} />
         <meta name="keywords" content={t('value-propose.keywords')} />
         <meta property="og:image" content={t('value-propose.imagen_open_graph.url')} />
-        <meta property="og:url" content={window.location.href} />
+        <meta property="og:url" content='full-url' />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="og:site_name" content="Luker Chocolate." />
         <meta name="twitter:image:alt" content={t('value-propose.descripcion_opengraph')} />
