@@ -5,7 +5,7 @@ import { ReactTitle } from 'react-meta-tags';
 class HelmetComponent extends Component {
   render() {
     const { title, description, cover, url, keywords, titleOg, descriptionOg } = this.props;
-    const fullUrl = window.location.href;
+    const fullUrl = 'full-url';
     return (
       <Helmet>
         <title>{title.charAt(0).toUpperCase() + title.slice(1)}</title>

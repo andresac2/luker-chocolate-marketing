@@ -59,6 +59,8 @@ module.exports.renderer = (req, res) => {
     ${helmet.link.toString()}
     `)
 
+    htmlData = htmlData.replace('full-url', req.params['0'])
+
     htmlData = htmlData.replace('data-react-helmet="true"', ``)
 
     htmlData = htmlData.replace('<div id="root"></div>', `<div id="root">${html}</div>`)
