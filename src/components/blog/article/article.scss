@@ -52,8 +52,16 @@
     margin-bottom: 2em;
     transition: all ease 1s;
 
+    figure {
+      max-width: fit-content;
+      margin: auto;
+      margin-bottom: 15px;
+    }
+
     img {
+      margin: auto;
       width: 100%;
+      max-width: 900px;
       height: auto;
       object-fit: cover;
     }

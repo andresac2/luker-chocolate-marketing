@@ -26,11 +26,10 @@ class Contact extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    const templateId = 'contact_form_luker';
     this.props.form.validateFields((err, values) => {
       if (!err) {
         console.log('Received values of form: ', values);
-        this.sendFeedback(templateId, values);
+        this.registerCustomerSaleforce(values)
       }
     });
 
@@ -59,6 +58,45 @@ class Contact extends React.Component {
       modal.destroy();
     }, 8000);
   }
+
+  async registerCustomerSaleforce(client) {
+    const templateId = 'contact_form_luker';
+
+    const salesforceClient = {
+      payload: {
+        FirstName: client.username.replace(/ .*/, ''),
+        LastName: client.username.substr(client.username.indexOf(" ") + 1),
+        Company: "Luker web",
+        Email: client.email,
+        LeadSource: "Website",
+        Description: client.message
+      }
+    }
+    let salesforce;
+    salesforce = await fetch('https://poetri-middleware.herokuapp.com/v1/function/invoke/1107b0d8-a027-4463-944c-4952c3544ad7', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-type': 'application/json',
+        'Authorization': `Bearer 4xu7PghlWaSKClOugv0tN2+qa1voV47oFRU91W3aWn+gGeFatWYik+Dd99GcHMV7`
+      },
+      body: JSON.stringify(salesforceClient)
+    }).then(async response => {
+      if (response.status === 401) {
+        console.log("401: ", response)
+        return response;
+      }
+      response = await response.json()
+      return response;
+    }).catch(err => console.error("error", err))
+
+    console.log("final", salesforce)
+
+    salesforce.success ? this.sendFeedback(templateId, client) : this.emailSent('Error en salesforce:', salesforce.message);
+
+  }
+
+
 
   render() {
     const { getFieldDecorator } = this.props.form;

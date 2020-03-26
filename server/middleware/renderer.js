@@ -53,12 +53,22 @@ module.exports.renderer = (req, res) => {
       ${helmet.link.toString()}
     `)
 
+    htmlData = htmlData.replace('<metadynamyc/>', `
+    ${helmet.title.toString()}
+    ${helmet.meta.toString()}
+    ${helmet.link.toString()}
+    `)
+
+    htmlData = htmlData.replace('full-url', req.params['0'])
+
+    htmlData = htmlData.replace('data-react-helmet="true"', ``)
+
     htmlData = htmlData.replace('<div id="root"></div>', `<div id="root">${html}</div>`)
-    
-    if(html.includes('404') && html.includes('The page you are looking for doesn’t exist')){
+
+    if (html.includes('404') && html.includes('The page you are looking for doesn’t exist')) {
       res.status(404).send(htmlData);
       return
-    } 
+    }
 
     return res.send(htmlData);
   });

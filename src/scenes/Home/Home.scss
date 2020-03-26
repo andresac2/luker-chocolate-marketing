@@ -66,8 +66,10 @@
     margin-left: 5em;
     margin-top: 3em;
 
-    img {
+    a {
       width: fit-content;
+      display: flex;
+      align-items: center;
       border-right: 1px white solid;
       padding-right: 1em;
       margin-right: 1em;
@@ -238,9 +240,14 @@
       margin-left: 1em;
       margin-top: 0;
 
-      img {
-        height: 35px;
-        width: auto;
+      a {
+        height: 55px;
+
+        img {
+          height: 35px;
+          width: auto;
+        }
+
         padding-right: 5px;
         margin-right: 5px;
       }

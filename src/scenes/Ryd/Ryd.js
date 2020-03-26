@@ -4,6 +4,7 @@ import RydArticle from '../../components/ryd-article/ryd-article';
 import FloatLogo from '../../components/layout/float-logo/float-logo';
 import HelmetComponent from '../../commons/helmet/helmet';
 import { withNamespaces } from 'react-i18next';
+import Helmet from 'react-helmet';
 
 class Ryd extends React.Component {
 
@@ -24,7 +25,21 @@ class Ryd extends React.Component {
 
     return (
       <div className="ryd-component">
-        <HelmetComponent title={t('ryd.titulo_seo')} keywords={t('ryd.keywords')} titleOg={t('ryd.titulo_protocolo_opengraph')} description={t('ryd.meta_descripcion')} descriptionOg={t('ryd.descripcion_opengraph')} cover={t('ryd.imagen_open_graph.url')} />
+        <Helmet>
+          <title>{t('ryd.titulo_seo')}</title>
+          <meta name="description" content={t('ryd.meta_descripcion')} />
+          <meta property="og:title" content={t('ryd.titulo_protocolo_opengraph')} />
+          <meta property="og:description" content={t('ryd.descripcion_opengraph')} />
+          <meta name="keywords" content={t('ryd.keywords')} />
+          <meta property="og:image" content={t('ryd.imagen_open_graph.url')} />
+          <meta property="og:url" content={'https://www.lukerchocolate.com/ideas-trends'} />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta property="og:site_name" content="Luker Chocolate." />
+          <meta name="twitter:image:alt" content={t('ryd.descripcion_opengraph')} />
+          <meta name="twitter:site" content="@Luker_Chocolate" />
+          <meta property="twitter:image" content={t('ryd.imagen_open_graph.url')} />
+        </Helmet>
+
         {!selectTab &&
           <FloatLogo btnText='dist' />}
         <div className={`ryd-tab ryd-tab--${selectTab}`}>

@@ -288,17 +288,22 @@ class Blog extends React.Component {
       <Layout className="blog-component">
         <Helmet>
           <title>{articles ? articles.title : t('blog.titulo_seo')}</title>
+          <meta property="description" content={articles ? articles.description : t('blog.descripcion_opengraph')} />
+          <meta property="og:description" content={articles ? articles.description : t('blog.descripcion_opengraph')} />
           <meta property="og:title" content={articles ? articles.title : t('blog.titulo_protocolo_opengraph')} />
           <meta property="og:image" content={articles ? articles.cover : t('blog.imagen_open_graph.url')} />
           <meta name="keywords" content={t('blog.keywords')} />
-          <meta property="og:url" content={this.props.match.url} />
-          <meta property="og:description" content={articles ? articles.description : t('blog.descripcion_opengraph')} />
+          <meta property="og:url" content={"https://www.lukerchocolate.com" + this.props.match.url} />
           <meta name="twitter:card" content="summary_large_image" />
           <meta property="og:site_name" content="Luker Chocolate." />
           <meta name="twitter:image:alt" content={articles ? articles.title : t('blog.descripcion_opengraph')} />
           <meta property="fb:app_id" content="your_app_id" />
+          <meta property="twitter:image" content={articles ? articles.cover : t('blog.imagen_open_graph.url')} />
           <meta name="twitter:site" content="@Luker_Chocolate" />
         </Helmet>
+
+
+
         {(allArticles.length > 0 && clients.length > 0) ?
           <>
             <div className={`blog-component-header blog-component-header--${(article) ? article : category}`} style={{ backgroundImage: (!this.articleLoaded.banner) ? (article) ? `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/blog/${this.articleLoaded.cover}`)})` : '' : `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/${this.articleLoaded.banner}`)})` }}>
