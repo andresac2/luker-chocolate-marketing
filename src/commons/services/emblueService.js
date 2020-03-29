@@ -1,3 +1,6 @@
+const emblueApi = 'https://api.embluemail.com/Services/Emblue3Service.svc/json/';
+const linkCorss = 'https://cors-anywhere.herokuapp.com/'
+
 export const Authenticate = () => {
   return fetch('https://cors-anywhere.herokuapp.com/https://api.embluemail.com/Services/Emblue3Service.svc/json/Authenticate', {
     method: 'POST',
@@ -32,18 +35,26 @@ export async function NewContact(email) {
   })
 }
 
-export async function SendEmail(email) {
+export async function SendEmail(subject, body, sfState) {
   return Authenticate().then(async response => {
-    const _response = await fetch('https://cors-anywhere.herokuapp.com/https://api.embluemail.com/Services/Emblue3Service.svc/json/NewContact', {
+    console.log("token", response.Token)
+    console.log("subject", subject)
+    console.log("body", body)
+
+    const _response = await fetch(linkCorss + emblueApi + 'SendMailExpress', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        Email: email,
         Token: response.Token,
-        SelectGroups: "988045"
+        ActionId: "1339145",
+        Email: "stivent367@gmail.com", // siseñoragencia@gmail.co
+        Subject: subject,
+        Message: `${body} <br/>
+        <code> ${sfState} </code>
+        `
       }),
     });
     return await _response.json();
