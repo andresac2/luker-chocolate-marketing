@@ -15,6 +15,9 @@ import SelectLanguage from '../../../commons/select-lng/select-lng';
 import i18n from '../../../i18n';
 import { countries as dataCountries } from '../../../commons/data/data-en';
 import { countries as paises } from '../../../commons/data/data-es';
+import { SendEmail } from '../../../commons/services/emblueService';
+
+
 class Contact extends React.Component {
 
   constructor(props) {
@@ -59,16 +62,34 @@ class Contact extends React.Component {
     }, 8000);
   }
 
+  sendEmail(title, content, salesforce) {
+    SendEmail(title, content, salesforce).then((response) =>
+      (response.TotalSendEmail > 0) ?
+        this.emailSent(i18n.t('form.contact-email-send-ok-title'), 'We appreciate you contacting us. One of our colleagues will get back in touch with you soon!')
+        :
+        this.emailSent(i18n.t('errors.email-send-error'), i18n.t('errors.try_again'))
+    )
+  }
+
   async registerCustomerSaleforce(client) {
     const templateId = 'contact_form_luker';
+    const titleEmail = 'A petition to Luker Chocolate';
+    const contentEMail = `<h3>Hello</h3>
+    <p>Our customer <strong>${client.username}</strong> from <strong>${client.country}</strong> wants to get in touch with us from this email: ${client.email}</p>    
+    <p>Here is what he says:</p>
+    <blockquote>${client.message}</blockquote>
+    Best wishes, greetings from <strong>Luker WEB</strong> !!
+    `;
 
     const salesforceClient = {
       payload: {
         FirstName: client.username.replace(/ .*/, ''),
         LastName: client.username.substr(client.username.indexOf(" ") + 1),
-        Company: "Luker web",
+        CLK_DescriptionoFirstTouchPoint__c: `Luker web Form Contact`,
+        CLK_CommentMessage__c: client.message,
         Email: client.email,
         LeadSource: "Website",
+        Company: "Luker Web",
         Description: client.message
       }
     }
@@ -89,14 +110,20 @@ class Contact extends React.Component {
       response = await response.json()
       return response;
     }).catch(err => console.error("error", err))
-
-    console.log("final", salesforce)
-
-    salesforce.success ? this.sendFeedback(templateId, client) : this.emailSent('Error en salesforce:', salesforce.message);
-
+    let stateSalesforce = 'prueba'
+    if (salesforce.success) {
+      stateSalesforce = "The user has been registered in Salesforce correctly."
+      this.sendEmail(titleEmail, contentEMail, stateSalesforce)
+    } else if (salesforce[0].errorCode === "DUPLICATES_DETECTED") {
+      stateSalesforce = "The user was already registered in Salesforce."
+      this.sendEmail(titleEmail, contentEMail, stateSalesforce)
+      console.warn("Correo duplicado en salesforce")
+    } else {
+      stateSalesforce = "User failed to registered in salesforce. Error: " + salesforce[0].message
+      this.sendEmail(titleEmail, contentEMail, stateSalesforce)
+      console.error("Error salesforce: ", salesforce[0].message)
+    }
   }
-
-
 
   render() {
     const { getFieldDecorator } = this.props.form;
@@ -113,7 +140,6 @@ class Contact extends React.Component {
           </div>
           <h1>{t('form.contact-us')}</h1>
         </div >
-
         <div className={`contact-us-content`}>
           <p>{t('form.contact-message')}</p>
           <Form onSubmit={this.handleSubmit} className="contact-form">
@@ -149,8 +175,8 @@ class Contact extends React.Component {
                     option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
                   }
                 >
-                  {Object.keys(this.countries).map(i =>
-                    <Option key={i} value={this.countries[i].abrev} key={i}>{this.countries[i].name}</Option>
+                  {this.countries.map((country, i) =>
+                    <Option key={i} value={country.name} key={i}>{country.name}</Option>
                   )}
                 </Select>,
               )}
@@ -166,12 +192,13 @@ class Contact extends React.Component {
               <Button type="primary" htmlType="submit" className="contact-form-button">
                 {t('buttons.send')}
               </Button>
+
             </Form.Item>
             <p className="contact-form-terms">{t('form.clicking-send')} <a href={i18n.language === 'en' ? termsConditions : termsConditionsEs} target="_blank">{t('form.terms-conditions')} </a> {t('form.and-our')} <a href={i18n.language === 'en' ? privacyPolicy : privacyPolicyEs} target="_blank">{t('form.privacy-policy')}</a>.</p>
           </Form>
         </div>
         <Footer />
-      </div >
+      </div>
     );
   }
 };

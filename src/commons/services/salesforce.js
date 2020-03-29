@@ -1,0 +1,83 @@
+import i18n from "../../i18n";
+import { Modal } from 'antd';
+import { SendEmail } from "./emblueService";
+
+
+const sendEmail = (title, content) => {
+  SendEmail(title, content).then((response) =>
+    (response.TotalSendEmail > 0) ?
+      showNotification(i18n.t('form.contact-email-send-ok-title'), 'We appreciate you contacting us. One of our colleagues will get back in touch with you soon!')
+      :
+      showNotification(i18n.t('errors.email-send-error'), i18n.t('errors.try_again'))
+  )
+}
+
+const showNotification = (title, content) => {
+  const modal = Modal.success({
+    title: title,
+    content: content,
+  });
+
+  setTimeout(() => {
+    modal.destroy();
+  }, 8000);
+}
+
+
+export async function RegisterCustomerSaleforce(client, emailContent) {
+  const titleEmail = 'A petition to Luker Chocolate';
+  const contentEMail = `<h3>Hello</h3>
+    <p>Our customer <strong>${client.username}</strong> from <strong>${client.country}</strong> wants to get in touch with us from this email: ${client.email}</p>    
+    <p>Here is what he says:</p>
+    <blockquote>${client.message}</blockquote>
+    Best wishes, greetings from <strong>Luker WEB</strong> !!
+    `;
+
+  let stateSalesforce = '';
+
+  const salesforceClient = {
+    payload: {
+      FirstName: client.username.replace(/ .*/, ''),
+      LastName: client.username.substr(client.username.indexOf(" ") + 1),
+      CLK_DescriptionoFirstTouchPoint__c: `Luker web Form Contact`,
+      CLK_CommentMessage__c: client.message,
+      Email: client.email,
+      LeadSource: "Website",
+      Company: "Luker Web",
+      MobilePhone: "3134567865",
+      Description: client.message
+    }
+  }
+  let salesforce;
+  salesforce = await fetch('https://poetri-middleware.herokuapp.com/v1/function/invoke/1107b0d8-a027-4463-944c-4952c3544ad7', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-type': 'application/json',
+      'Authorization': `Bearer 4xu7PghlWaSKClOugv0tN2+qa1voV47oFRU91W3aWn+gGeFatWYik+Dd99GcHMV7`
+    },
+    body: JSON.stringify(salesforceClient)
+  }).then(async response => {
+    if (response.status === 401) {
+      console.log("401: ", response)
+      return response;
+    }
+    response = await response.json()
+    return response;
+  }).then(async response => {
+    if (response.success) {
+      stateSalesforce = "The user has been registered in Salesforce correctly."
+    } else if (response.errorCode === "DUPLICATES_DETECTED") {
+      stateSalesforce = "The user was already registered in Salesforce."
+      console.warn("Correo duplicado en salesforce")
+    } else {
+      stateSalesforce = "User failed to registered in salesforce. Error: " + response.message
+      console.error("Error salesforce: ", response.message)
+    }
+    return stateSalesforce
+  }
+  ).then(stateSalesforce =>
+    sendEmail(titleEmail, contentEMail, stateSalesforce)
+  ).catch(err => console.error("error", err))
+
+}
