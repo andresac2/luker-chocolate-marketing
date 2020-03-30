@@ -58,6 +58,10 @@
       margin-bottom: 15px;
     }
 
+    figcaption {
+      display: none;
+    }
+
     img {
       margin: auto;
       width: 100%;
@@ -133,6 +137,7 @@
     img {
       margin-right: 2em;
       width: 10em;
+      height: 10em;
       border-radius: 50%;
       object-fit: cover;
     }

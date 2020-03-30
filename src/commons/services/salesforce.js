@@ -9,7 +9,7 @@ const sendEmail = (title, content, sfState) => {
       showNotification(i18n.t('form.contact-email-send-ok-title'), 'We appreciate you contacting us. One of our colleagues will get back in touch with you soon!')
       :
       showNotification(i18n.t('errors.email-send-error'), i18n.t('errors.try_again'))
-  )
+  ).then((response) => console.log(response))
 }
 
 const showNotification = (title, content) => {
@@ -48,6 +48,8 @@ export async function RegisterCustomerSaleforce(payload, emailContent) {
     response = await response.json()
     return response;
   }).catch(err => console.error("error", err))
+
+  console.log(salesforce)
 
   if (salesforce.success) {
     stateSalesforce = "The user has been registered in Salesforce correctly."

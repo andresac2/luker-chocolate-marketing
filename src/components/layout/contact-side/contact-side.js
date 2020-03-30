@@ -142,7 +142,7 @@ class ContactSide extends React.Component {
                 {getFieldDecorator('phone', {
                   rules: [{ required: true, message: t('errors.required-number') }],
                 })(
-                  <InputNumber minLength={7} maxLength={10} placeholder={t('form.phone-number')} style={{ width: '100%' }} />,
+                  <InputNumber minLength={7} maxLength={20} placeholder={t('form.phone-number')} style={{ width: '100%' }} />,
                 )}
               </Form.Item>
             }
