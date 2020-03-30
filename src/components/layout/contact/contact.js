@@ -110,7 +110,7 @@ class Contact extends React.Component {
       response = await response.json()
       return response;
     }).catch(err => console.error("error", err))
-    let stateSalesforce = 'prueba'
+    let stateSalesforce = ''
     if (salesforce.success) {
       stateSalesforce = "The user has been registered in Salesforce correctly."
       this.sendEmail(titleEmail, contentEMail, stateSalesforce)

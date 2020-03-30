@@ -3,8 +3,8 @@ import { Modal } from 'antd';
 import { SendEmail } from "./emblueService";
 
 
-const sendEmail = (title, content) => {
-  SendEmail(title, content).then((response) =>
+const sendEmail = (title, content, sfState) => {
+  SendEmail(title, content, sfState).then((response) =>
     (response.TotalSendEmail > 0) ?
       showNotification(i18n.t('form.contact-email-send-ok-title'), 'We appreciate you contacting us. One of our colleagues will get back in touch with you soon!')
       :
@@ -24,30 +24,13 @@ const showNotification = (title, content) => {
 }
 
 
-export async function RegisterCustomerSaleforce(client, emailContent) {
+export async function RegisterCustomerSaleforce(payload, emailContent) {
   const titleEmail = 'A petition to Luker Chocolate';
-  const contentEMail = `<h3>Hello</h3>
-    <p>Our customer <strong>${client.username}</strong> from <strong>${client.country}</strong> wants to get in touch with us from this email: ${client.email}</p>    
-    <p>Here is what he says:</p>
-    <blockquote>${client.message}</blockquote>
-    Best wishes, greetings from <strong>Luker WEB</strong> !!
-    `;
 
   let stateSalesforce = '';
 
-  const salesforceClient = {
-    payload: {
-      FirstName: client.username.replace(/ .*/, ''),
-      LastName: client.username.substr(client.username.indexOf(" ") + 1),
-      CLK_DescriptionoFirstTouchPoint__c: `Luker web Form Contact`,
-      CLK_CommentMessage__c: client.message,
-      Email: client.email,
-      LeadSource: "Website",
-      Company: "Luker Web",
-      MobilePhone: "3134567865",
-      Description: client.message
-    }
-  }
+  const salesforceClient = payload
+
   let salesforce;
   salesforce = await fetch('https://poetri-middleware.herokuapp.com/v1/function/invoke/1107b0d8-a027-4463-944c-4952c3544ad7', {
     method: 'POST',
@@ -64,20 +47,20 @@ export async function RegisterCustomerSaleforce(client, emailContent) {
     }
     response = await response.json()
     return response;
-  }).then(async response => {
-    if (response.success) {
-      stateSalesforce = "The user has been registered in Salesforce correctly."
-    } else if (response.errorCode === "DUPLICATES_DETECTED") {
-      stateSalesforce = "The user was already registered in Salesforce."
-      console.warn("Correo duplicado en salesforce")
-    } else {
-      stateSalesforce = "User failed to registered in salesforce. Error: " + response.message
-      console.error("Error salesforce: ", response.message)
-    }
-    return stateSalesforce
+  }).catch(err => console.error("error", err))
+
+  if (salesforce.success) {
+    stateSalesforce = "The user has been registered in Salesforce correctly."
+    sendEmail(titleEmail, emailContent, "The user has been registered in Salesforce correctly.")
+  } else if (salesforce[0].errorCode === "DUPLICATES_DETECTED") {
+    stateSalesforce = "The user was already registered in Salesforce."
+    sendEmail(titleEmail, emailContent, "The user was already registered in Salesforce.")
+    console.warn("Correo duplicado en salesforce")
+  } else {
+    stateSalesforce = "User failed to registered in salesforce. Error: " + salesforce[0].message
+    sendEmail(titleEmail, emailContent, "User failed to registered in salesforce. Error: " + salesforce[0].message)
+    console.error("Error salesforce: ", salesforce[0].message)
   }
-  ).then(stateSalesforce =>
-    sendEmail(titleEmail, contentEMail, stateSalesforce)
-  ).catch(err => console.error("error", err))
 
 }
+

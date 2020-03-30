@@ -10,6 +10,7 @@ import { privacyPolicy as privacyPolicyEs } from "../../../commons/data/data-es"
 import { withNamespaces } from 'react-i18next';
 import { countries as dataCountries } from '../../../commons/data/data-en';
 import { countries as paises } from '../../../commons/data/data-es';
+import { RegisterCustomerSaleforce } from '../../../commons/services/salesforce';
 
 class ContactSide extends React.Component {
   constructor(props) {
@@ -27,11 +28,42 @@ class ContactSide extends React.Component {
       if (!err) {
         //  values.push();
         values.products = 'And get some information about this products: ' + this.props.products.filter(item => item.selected).map(a => a.description).join(', ');
-        this.sendFeedback(templateId, values);
+        values.productsString = this.props.products.filter(item => item.selected).map(a => a.description).join(', ');
+        //this.sendFeedback(templateId, values);
         console.log('Received values of form: ', values);
+        this.SendSalesForce(values)
       }
     });
   };
+
+  SendSalesForce(data) {
+    let bodyData = {
+      payload: {
+        FirstName: data.username.replace(/ .*/, ''),
+        LastName: data.username.substr(data.username.indexOf(" ") + 1),
+        CLK_DescriptionoFirstTouchPoint__c: `Luker web Product Form`,
+        CLK_CommentMessage__c: data.message,
+        products__c: data.productsString,
+        Email: data.email,
+        LeadSource: "Website",
+        MobilePhone: data.phone || "",
+        Company: data.companyName || "No company",
+        Description: data.message
+      }
+    }
+
+    let emailData = `<h3>Hi</h3>
+    <p>Our customer <strong>${data.username}</strong> from <strong>${data.country}</strong> wants to get in touch with us from this email: ${data.email}</p>    
+    ${data.productsString ? `<p>${data.products}</p>` : ''}
+    <p></p>
+    <p>Here is what he says:</p>
+    <blockquote>${data.message}</blockquote>
+    Best wishes, greetings from <strong>Luker WEB</strong> !!
+    `;
+
+    RegisterCustomerSaleforce(bodyData, emailData)
+  }
+
 
   sendFeedback(templateId, variables) {
     window.emailjs.send(
@@ -110,7 +142,7 @@ class ContactSide extends React.Component {
                 {getFieldDecorator('phone', {
                   rules: [{ required: true, message: t('errors.required-number') }],
                 })(
-                  <InputNumber min={7} max={10} placeholder={t('form.phone-number')} style={{ width: '100%' }} />,
+                  <InputNumber minLength={7} maxLength={10} placeholder={t('form.phone-number')} style={{ width: '100%' }} />,
                 )}
               </Form.Item>
             }
@@ -126,8 +158,8 @@ class ContactSide extends React.Component {
                     option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
                   }
                 >
-                  {Object.keys(this.countries).map(i =>
-                    <Option key={i} value={this.countries[i].abrev} key={i}>{this.countries[i].name}</Option>
+                  {this.countries.map((country, i) =>
+                    <Option key={i} value={country.name} key={i}>{country.name}</Option>
                   )}
                 </Select>,
               )}

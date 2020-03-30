@@ -38,7 +38,7 @@
   },
   "scripts": {
     "start": "node --max-old-space-size=6144 server/bootstrap.js",
-    "start:dev": "rescripts start",
+    "start:dev": "react-scripts start",
     "build": "rescripts build",
     "test": "rescripts test",
     "eject": "react-scripts eject"
