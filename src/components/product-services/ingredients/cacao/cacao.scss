@@ -1,7 +1,7 @@
 .cacao-component {
   position: relative;
   width: calc(100% - 340px);
-  align-self: start;
+  align-self: flex-start;
   padding-left: 20%;
 
   &--header {
@@ -160,7 +160,7 @@
 
   @media screen and (max-width: 992px) {
     width: calc(100%);
-    align-self: start;
+    align-self: flex-start;
     padding-left: 0;
 
     &--header {

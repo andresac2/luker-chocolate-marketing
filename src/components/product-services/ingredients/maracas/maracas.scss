@@ -1,7 +1,7 @@
 .dragees-component {
   position: relative;
   width: calc(100% - 340px);
-  align-self: start;
+  align-self: flex-start;
   padding-left: 10%;
 
   @media screen and (min-width: 1360px) {
@@ -141,7 +141,7 @@
 
   @media screen and (max-width: 996px) {
     width: 100vw;
-    align-self: start;
+    align-self: flex-start;
     padding-left: 0;
     overflow: hidden;
 
