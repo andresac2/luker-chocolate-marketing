@@ -138,7 +138,7 @@ class WorkWithUs extends React.Component {
         </div>
         <div className={`work-with-us-content`}>
           <h2>{t('form.personal-info')}</h2>
-          {isLoading ?
+          {!isLoading ?
             <Form onSubmit={this.handleSubmit} className="curriculum-form">
               <Form.Item>
                 {getFieldDecorator('username', {
