@@ -6,6 +6,10 @@ $Extra-large: 1200px;
 .work-with-us {
   color: #484848;
 
+  .ant-spin-spinning {
+    margin-top: 50px
+  }
+
   &-header {
     background: url('../../../assets/img/abastecimiento-car.jpg') no-repeat;
     min-height: 180px;

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, Select, Input, Button, Modal } from 'antd';
+import { Form, Select, Input, Button, Modal, Spin } from 'antd';
 import FormItem from 'antd/lib/form/FormItem';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/img/Lukerlogo.svg'
@@ -22,7 +22,7 @@ class Contact extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { feedback: '', name: 'Name', email: 'email@example.com', country: 'Colombia', companyName: 'Luker' };
+    this.state = { feedback: '', name: 'Name', email: 'email@example.com', country: 'Colombia', companyName: 'Luker', isLoading: false };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   countries = i18n.language === 'en' ? dataCountries : paises;
@@ -32,6 +32,7 @@ class Contact extends React.Component {
     this.props.form.validateFields((err, values) => {
       if (!err) {
         console.log('Received values of form: ', values);
+        this.setState({ isLoading: true })
         this.registerCustomerSaleforce(values)
       }
     });
@@ -88,6 +89,7 @@ class Contact extends React.Component {
         LastName: client.username.substr(client.username.indexOf(" ") + 1),
         CLK_DescriptionoFirstTouchPoint__c: `Luker web Form Contact`,
         CLK_CommentMessage__c: client.message,
+        Country: client.country,
         Email: client.email,
         LeadSource: "Website",
         Company: client.companyName,
@@ -114,20 +116,21 @@ class Contact extends React.Component {
     let stateSalesforce = ''
     if (salesforce.success) {
       stateSalesforce = "The user has been registered in Salesforce correctly."
-      this.sendEmail(titleEmail, contentEMail, stateSalesforce)
+      this.sendEmail(titleEmail, contentEMail, stateSalesforce).then(() => this.setState({ isLoading: false }))
     } else if (salesforce[0].errorCode === "DUPLICATES_DETECTED") {
       stateSalesforce = "The user was already registered in Salesforce."
-      this.sendEmail(titleEmail, contentEMail, stateSalesforce)
+      this.sendEmail(titleEmail, contentEMail, stateSalesforce).then(() => this.setState({ isLoading: false }))
       console.warn("Correo duplicado en salesforce")
     } else {
       stateSalesforce = "User failed to registered in salesforce. Error: " + salesforce[0].message
-      this.sendEmail(titleEmail, contentEMail, stateSalesforce)
+      this.sendEmail(titleEmail, contentEMail, stateSalesforce).then(() => this.setState({ isLoading: false }))
       console.error("Error salesforce: ", salesforce[0].message)
     }
   }
 
   render() {
     const { getFieldDecorator } = this.props.form;
+    const { isLoading } = this.state;
     const { t } = this.props;
     const { Option } = Select;
     const { TextArea } = Input;
@@ -143,67 +146,70 @@ class Contact extends React.Component {
         </div >
         <div className={`contact-us-content`}>
           <p>{t('form.contact-message')}</p>
-          <Form onSubmit={this.handleSubmit} className="contact-form">
-            <Form.Item>
-              {getFieldDecorator('username', {
-                rules: [{ required: true, message: t('errors.required-name') }],
-              })(
-                <Input placeholder={t('form.your-name')} />,
-              )}
-            </Form.Item>
-            <FormItem>
-              {getFieldDecorator('email', {
-                rules: [
-                  {
-                    type: 'email',
-                    message: t('errors.invalid-email'),
-                  },
-                  {
-                    required: true,
-                    message: t('errors.required-email'),
-                  },
-                ],
-              })(<Input placeholder={t('form.your-email')} />)}
-            </FormItem>
-            <Form.Item>
-              {getFieldDecorator('country', {
-                rules: [{ required: true, message: t('errors.required-country') }],
-              })(
-                <Select
-                  placeholder={t('form.your-country')}
-                  optionFilterProp="children"
-                  filterOption={(input, option) =>
-                    option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                  }
-                >
-                  {this.countries.map((country, i) =>
-                    <Option key={i} value={country.name} key={i}>{country.name}</Option>
-                  )}
-                </Select>,
-              )}
-            </Form.Item>
-            <Form.Item>
-              {getFieldDecorator('companyName', {
-                rules: [{ required: true, message: t('errors.required-company') }],
-              })(
-                <Input placeholder={t('form.company')} />,
-              )}
-            </Form.Item>
-            <FormItem>
-              {getFieldDecorator('message', {
-                rules: [{ required: true, message: t('errors.required-comment') }],
-              })(
-                <TextArea rows={5} placeholder={t('form.write-message')} />
-              )}
-            </FormItem>
-            <Form.Item>
-              <Button type="primary" htmlType="submit" className="contact-form-button">
-                {t('buttons.send')}
-              </Button>
+          {!isLoading ?
+            <Form onSubmit={this.handleSubmit} className="contact-form">
+              <Form.Item>
+                {getFieldDecorator('username', {
+                  rules: [{ required: true, message: t('errors.required-name') }],
+                })(
+                  <Input placeholder={t('form.your-name')} />,
+                )}
+              </Form.Item>
+              <FormItem>
+                {getFieldDecorator('email', {
+                  rules: [
+                    {
+                      type: 'email',
+                      message: t('errors.invalid-email'),
+                    },
+                    {
+                      required: true,
+                      message: t('errors.required-email'),
+                    },
+                  ],
+                })(<Input placeholder={t('form.your-email')} />)}
+              </FormItem>
+              <Form.Item>
+                {getFieldDecorator('country', {
+                  rules: [{ required: true, message: t('errors.required-country') }],
+                })(
+                  <Select
+                    placeholder={t('form.your-country')}
+                    optionFilterProp="children"
+                    filterOption={(input, option) =>
+                      option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                    }
+                  >
+                    {this.countries.map((country, i) =>
+                      <Option key={i} value={country.name} key={i}>{country.name}</Option>
+                    )}
+                  </Select>,
+                )}
+              </Form.Item>
+              <Form.Item>
+                {getFieldDecorator('companyName', {
+                  rules: [{ required: true, message: t('errors.required-company') }],
+                })(
+                  <Input placeholder={t('form.company')} />,
+                )}
+              </Form.Item>
+              <FormItem>
+                {getFieldDecorator('message', {
+                  rules: [{ required: true, message: t('errors.required-comment') }],
+                })(
+                  <TextArea rows={5} placeholder={t('form.write-message')} />
+                )}
+              </FormItem>
+              <Form.Item>
+                <Button type="primary" htmlType="submit" className="contact-form-button">
+                  {t('buttons.send')}
+                </Button>
 
-            </Form.Item>
-            <p className="contact-form-terms">{t('form.clicking-send')} <a href={i18n.language === 'en' ? termsConditions : termsConditionsEs} target="_blank">{t('form.terms-conditions')} </a> {t('form.and-our')} <a href={i18n.language === 'en' ? privacyPolicy : privacyPolicyEs} target="_blank">{t('form.privacy-policy')}</a>.</p>
-          </Form>
+              </Form.Item>
+              <p className="contact-form-terms">{t('form.clicking-send')} <a href={i18n.language === 'en' ? termsConditions : termsConditionsEs} target="_blank">{t('form.terms-conditions')} </a> {t('form.and-our')} <a href={i18n.language === 'en' ? privacyPolicy : privacyPolicyEs} target="_blank">{t('form.privacy-policy')}</a>.</p>
+            </Form>
+            : <Spin size="large" />
+          }
         </div>
         <Footer />
       </div>

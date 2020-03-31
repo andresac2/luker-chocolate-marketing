@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, Select, Input, InputNumber, Button, Modal, DatePicker, Upload, Icon } from 'antd';
+import { Form, Select, Input, InputNumber, Button, Modal, DatePicker, Upload, Icon, Spin } from 'antd';
 import FormItem from 'antd/lib/form/FormItem';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/img/Lukerlogo.svg'
@@ -18,7 +18,7 @@ class WorkWithUs extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { feedback: '', name: 'Name', email: 'email@example.com', birthday: '', phone: '', country: 'Colombia', upload: [] };
+    this.state = { feedback: '', name: 'Name', email: 'email@example.com', birthday: '', phone: '', country: 'Colombia', upload: [], isLoading: false };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   countries = i18n.language === 'en' ? dataCountries : paises;
@@ -33,6 +33,7 @@ class WorkWithUs extends React.Component {
           'birthday': fieldsValue['birthday'].format('YYYY-MM-DD')
         };
         console.log('Received values of form: ', values);
+        this.setState({ isLoading: true })
         this.SendSalesForce(values);
       }
     });
@@ -64,7 +65,7 @@ class WorkWithUs extends React.Component {
     Best wishes, greetings from <strong>Luker WEB</strong> !!
     `;
 
-    RegisterCustomerSaleforce(bodyData, emailData)
+    RegisterCustomerSaleforce(bodyData, emailData).then(() => this.setState({ isLoading: false }))
   }
 
 
@@ -119,6 +120,7 @@ class WorkWithUs extends React.Component {
 
   render() {
     const { getFieldDecorator } = this.props.form;
+    const { isLoading } = this.state;
     const { t } = this.props;
     const { fileUpload } = this.state;
     const { Option } = Select;
@@ -136,95 +138,98 @@ class WorkWithUs extends React.Component {
         </div>
         <div className={`work-with-us-content`}>
           <h2>{t('form.personal-info')}</h2>
-          <Form onSubmit={this.handleSubmit} className="curriculum-form">
-            <Form.Item>
-              {getFieldDecorator('username', {
-                rules: [{ required: true, message: t('errors.required-name') }],
-              })(
-                <Input placeholder={t('form.your-name')} />,
-              )}
-            </Form.Item>
-            <Form.Item>
-              {getFieldDecorator('phone', {
-                rules: [{ required: true, message: t('errors.required-number') }],
-              })(
-                <InputNumber minLength={7} maxLength={10} placeholder={t('form.phone-number')} style={{ width: '100%' }} />,
-              )}
-            </Form.Item>
-            <FormItem>
-              {getFieldDecorator('email', {
-                rules: [
-                  {
-                    type: 'email',
-                    message: t('errors.invalid-email'),
-                  },
-                  {
-                    required: true,
-                    message: t('errors.required-email'),
-                  },
-                ],
-              })(<Input placeholder={t('form.your-email')} />)}
-            </FormItem>
-            <FormItem>
-              <FormItem
-                label={t('form.birthday')}
-                style={{ display: 'inline-block', float: 'left', marginRight: '20px', textAlign: 'left' }}>
-                {getFieldDecorator('birthday', {
-                  rules: [{ required: true, message: t('errors.required-number') }],
+          {isLoading ?
+            <Form onSubmit={this.handleSubmit} className="curriculum-form">
+              <Form.Item>
+                {getFieldDecorator('username', {
+                  rules: [{ required: true, message: t('errors.required-name') }],
                 })(
-                  <DatePicker />
-                )}
-              </FormItem>
-              <Form.Item
-                label={t('form.your-country')}
-                style={{ display: 'inline-block', minWidth: '230px', float: 'left', textAlign: 'left' }}>
-                {getFieldDecorator('country', {
-                  rules: [{ required: true, message: t('errors.required-country') }],
-                })(
-                  <Select
-                    placeholder={t('form.your-country')}
-                    optionFilterProp="children"
-                    filterOption={(input, option) =>
-                      option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                    }
-                  >
-                    {this.countries.map((country, i) =>
-                      <Option key={i} value={country.name} key={i}>{country.name}</Option>
-                    )}
-                  </Select>,
+                  <Input placeholder={t('form.your-name')} />,
                 )}
               </Form.Item>
-            </FormItem>
-            <Form.Item
-              label={t('form.curriculum-vitae')}
-              extra={t('form.file-format')}
-              style={{ textAlign: 'left' }}>
-              {getFieldDecorator('upload', {
-                rules: [{ required: true, message: t('errors.required-cv') }],
-                //valuePropName: 'fileList',
-                getValueFromEvent: this.normFile,
-              })(
-                <Upload name="file" customRequest={this.dummyRequest} accept=".docx,.doc,.rtf,.pdf" onChange={this.handleChangeUpload} fileList={this.state.upload}>
-                  <Button className="curriculum-form-button">
-                    <Icon type="upload" /> {t('buttons.select-file')}
-                  </Button>
-                </Upload>,
-              )}
-            </Form.Item>
-            <FormItem>
-              {getFieldDecorator('message', {
-                rules: [{ required: true, message: t('errors.required-comment') }],
-              })(
-                <TextArea rows={3} placeholder={t('form.write-message')} />
-              )}
-            </FormItem>
-            <Form.Item>
-              <Button type="primary" htmlType="submit" className="curriculum-form-button">
-                {t('buttons.send')}
-              </Button>
-            </Form.Item>
-            <p className="work-with-us-terms">{t('form.clicking-send')} <a href={i18n.language === 'en' ? termsConditions : termsConditionsEs} target="_blank">{t('form.terms-conditions')} </a> {t('form.and-our')} <a href={i18n.language === 'en' ? privacyPolicy : privacyPolicyEs} target="_blank">{t('form.privacy-policy')}</a>.</p>
-          </Form>
+              <Form.Item>
+                {getFieldDecorator('phone', {
+                  rules: [{ required: true, message: t('errors.required-number') }],
+                })(
+                  <InputNumber minLength={7} maxLength={10} placeholder={t('form.phone-number')} style={{ width: '100%' }} />,
+                )}
+              </Form.Item>
+              <FormItem>
+                {getFieldDecorator('email', {
+                  rules: [
+                    {
+                      type: 'email',
+                      message: t('errors.invalid-email'),
+                    },
+                    {
+                      required: true,
+                      message: t('errors.required-email'),
+                    },
+                  ],
+                })(<Input placeholder={t('form.your-email')} />)}
+              </FormItem>
+              <FormItem>
+                <FormItem
+                  label={t('form.birthday')}
+                  style={{ display: 'inline-block', float: 'left', marginRight: '20px', textAlign: 'left' }}>
+                  {getFieldDecorator('birthday', {
+                    rules: [{ required: true, message: t('errors.required-number') }],
+                  })(
+                    <DatePicker />
+                  )}
+                </FormItem>
+                <Form.Item
+                  label={t('form.your-country')}
+                  style={{ display: 'inline-block', minWidth: '230px', float: 'left', textAlign: 'left' }}>
+                  {getFieldDecorator('country', {
+                    rules: [{ required: true, message: t('errors.required-country') }],
+                  })(
+                    <Select
+                      placeholder={t('form.your-country')}
+                      optionFilterProp="children"
+                      filterOption={(input, option) =>
+                        option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                      }
+                    >
+                      {this.countries.map((country, i) =>
+                        <Option key={i} value={country.name} key={i}>{country.name}</Option>
+                      )}
+                    </Select>,
+                  )}
+                </Form.Item>
+              </FormItem>
+              <Form.Item
+                label={t('form.curriculum-vitae')}
+                extra={t('form.file-format')}
+                style={{ textAlign: 'left' }}>
+                {getFieldDecorator('upload', {
+                  rules: [{ required: true, message: t('errors.required-cv') }],
+                  //valuePropName: 'fileList',
+                  getValueFromEvent: this.normFile,
+                })(
+                  <Upload name="file" customRequest={this.dummyRequest} accept=".docx,.doc,.rtf,.pdf" onChange={this.handleChangeUpload} fileList={this.state.upload}>
+                    <Button className="curriculum-form-button">
+                      <Icon type="upload" /> {t('buttons.select-file')}
+                    </Button>
+                  </Upload>,
+                )}
+              </Form.Item>
+              <FormItem>
+                {getFieldDecorator('message', {
+                  rules: [{ required: true, message: t('errors.required-comment') }],
+                })(
+                  <TextArea rows={3} placeholder={t('form.write-message')} />
+                )}
+              </FormItem>
+              <Form.Item>
+                <Button type="primary" htmlType="submit" className="curriculum-form-button">
+                  {t('buttons.send')}
+                </Button>
+              </Form.Item>
+              <p className="work-with-us-terms">{t('form.clicking-send')} <a href={i18n.language === 'en' ? termsConditions : termsConditionsEs} target="_blank">{t('form.terms-conditions')} </a> {t('form.and-our')} <a href={i18n.language === 'en' ? privacyPolicy : privacyPolicyEs} target="_blank">{t('form.privacy-policy')}</a>.</p>
+            </Form>
+            : <Spin size="large" />
+          }
         </div>
         <Footer />
       </div >
