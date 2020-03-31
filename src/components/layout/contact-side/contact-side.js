@@ -31,7 +31,7 @@ class ContactSide extends React.Component {
         values.productsString = this.props.products.filter(item => item.selected).map(a => a.description).join(', ');
         //this.sendFeedback(templateId, values);
         console.log('Received values of form: ', values);
-        this.SendSalesForce(values)
+        //this.SendSalesForce(values)
       }
     });
   };
@@ -115,14 +115,14 @@ class ContactSide extends React.Component {
                 <Input placeholder={t('form.your-name')} />,
               )}
             </Form.Item>
-            {page === 'service' &&
-              <Form.Item>
-                {getFieldDecorator('companyName', {
-                  rules: [{ required: true, message: t('errors.required-company') }],
-                })(
-                  <Input placeholder={t('form.company')} />,
-                )}
-              </Form.Item>}
+
+            <Form.Item>
+              {getFieldDecorator('companyName', {
+                rules: [{ required: true, message: t('errors.required-company') }],
+              })(
+                <Input placeholder={t('form.company')} />,
+              )}
+            </Form.Item>
             <FormItem>
               {getFieldDecorator('email', {
                 rules: [

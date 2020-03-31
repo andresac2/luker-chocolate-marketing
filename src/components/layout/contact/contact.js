@@ -22,7 +22,7 @@ class Contact extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { feedback: '', name: 'Name', email: 'email@example.com', country: 'Colombia' };
+    this.state = { feedback: '', name: 'Name', email: 'email@example.com', country: 'Colombia', companyName: 'Luker' };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   countries = i18n.language === 'en' ? dataCountries : paises;
@@ -67,7 +67,7 @@ class Contact extends React.Component {
       (response.TotalSendEmail > 0) ?
         this.emailSent(i18n.t('form.contact-email-send-ok-title'), 'We appreciate you contacting us. One of our colleagues will get back in touch with you soon!')
         :
-        this.emailSent(i18n.t('errors.email-send-error'), i18n.t('errors.try_again'))
+        this.emailSent(i18n.t('errors.email-send-error'), i18n.t('errors.try-again'))
     )
   }
 
@@ -77,6 +77,7 @@ class Contact extends React.Component {
     const contentEMail = `<h3>Hello</h3>
     <p>Our customer <strong>${client.username}</strong> from <strong>${client.country}</strong> wants to get in touch with us from this email: ${client.email}</p>    
     <p>Here is what he says:</p>
+    <p>Company: ${client.companyName}</p>
     <blockquote>${client.message}</blockquote>
     Best wishes, greetings from <strong>Luker WEB</strong> !!
     `;
@@ -89,7 +90,7 @@ class Contact extends React.Component {
         CLK_CommentMessage__c: client.message,
         Email: client.email,
         LeadSource: "Website",
-        Company: "Luker Web",
+        Company: client.companyName,
         Description: client.message
       }
     }
@@ -179,6 +180,13 @@ class Contact extends React.Component {
                     <Option key={i} value={country.name} key={i}>{country.name}</Option>
                   )}
                 </Select>,
+              )}
+            </Form.Item>
+            <Form.Item>
+              {getFieldDecorator('companyName', {
+                rules: [{ required: true, message: t('errors.required-company') }],
+              })(
+                <Input placeholder={t('form.company')} />,
               )}
             </Form.Item>
             <FormItem>

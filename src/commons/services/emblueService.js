@@ -46,7 +46,7 @@ export async function SendEmail(subject, body, sfState) {
       body: JSON.stringify({
         Token: response.Token,
         ActionId: "1339145",
-        Email: "siseñoragencia@gmail.co", //"stivent367@gmail.com",
+        Email: "stivent367@gmail.com", // "siseñoragencia@gmail.co", //"stivent367@gmail.com",
         Subject: subject,
         Message: `${body} <br/>
         <code> ${sfState} </code>

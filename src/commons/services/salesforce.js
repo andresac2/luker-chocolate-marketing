@@ -8,7 +8,7 @@ const sendEmail = (title, content, sfState) => {
     (response.TotalSendEmail > 0) ?
       showNotification(i18n.t('form.contact-email-send-ok-title'), 'We appreciate you contacting us. One of our colleagues will get back in touch with you soon!')
       :
-      showNotification(i18n.t('errors.email-send-error'), i18n.t('errors.try_again'))
+      showNotification(i18n.t('errors.email-send-error'), i18n.t('errors.try-again'))
   ).then((response) => console.log(response))
 }
 

@@ -62,7 +62,7 @@ class Footer extends React.Component {
       notification.error({
         message: i18n.t('errors.email-send-error'),
         description:
-          i18n.t('errors.try_again')
+          i18n.t('errors.try-again')
       });
     }
     this.setState({ newsletterWaiting: false });
