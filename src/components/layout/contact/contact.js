@@ -52,12 +52,12 @@ class Contact extends React.Component {
       .catch(err => (console.error('Oh well, you failed. Here some thoughts on the error that occured:', err), this.emailSent('Oh well, something failed', 'Check your conection and try again')));
   }
 
-  emailSent(title, content) {
+  emailSent(title, content, salesforce) {
     const modal = Modal.success({
       title: title,
       content: content,
     });
-
+    console.log(salesforce)
     setTimeout(() => {
       modal.destroy();
     }, 8000);
@@ -66,9 +66,9 @@ class Contact extends React.Component {
   sendEmail(title, content, salesforce) {
     SendEmail(title, content, salesforce).then((response) =>
       (response.TotalSendEmail > 0) ?
-        this.emailSent(i18n.t('form.contact-email-send-ok-title'), 'We appreciate you contacting us. One of our colleagues will get back in touch with you soon!')
+        this.emailSent(i18n.t('form.contact-email-send-ok-title'), 'We appreciate you contacting us. One of our colleagues will get back in touch with you soon!', response)
         :
-        this.emailSent(i18n.t('errors.email-send-error'), i18n.t('errors.try-again'))
+        this.emailSent(i18n.t('errors.email-send-error'), i18n.t('errors.try-again'), response)
     )
   }
 
@@ -116,16 +116,20 @@ class Contact extends React.Component {
     let stateSalesforce = ''
     if (salesforce.success) {
       stateSalesforce = "The user has been registered in Salesforce correctly."
-      this.sendEmail(titleEmail, contentEMail, stateSalesforce).then(() => this.setState({ isLoading: false }))
+      this.sendEmail(titleEmail, contentEMail, stateSalesforce, salesforce)
     } else if (salesforce[0].errorCode === "DUPLICATES_DETECTED") {
       stateSalesforce = "The user was already registered in Salesforce."
-      this.sendEmail(titleEmail, contentEMail, stateSalesforce).then(() => this.setState({ isLoading: false }))
+      this.sendEmail(titleEmail, contentEMail, stateSalesforce, salesforce)
       console.warn("Correo duplicado en salesforce")
     } else {
       stateSalesforce = "User failed to registered in salesforce. Error: " + salesforce[0].message
-      this.sendEmail(titleEmail, contentEMail, stateSalesforce).then(() => this.setState({ isLoading: false }))
+      this.sendEmail(titleEmail, contentEMail, stateSalesforce, salesforce)
       console.error("Error salesforce: ", salesforce[0].message)
     }
+
+    setTimeout(() => {
+      this.setState({ isLoading: false })
+    }, 2000);
   }
 
   render() {

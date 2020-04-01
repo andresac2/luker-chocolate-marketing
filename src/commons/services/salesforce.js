@@ -6,18 +6,18 @@ import { SendEmail } from "./emblueService";
 const sendEmail = (title, content, sfState) => {
   SendEmail(title, content, sfState).then((response) =>
     (response.TotalSendEmail > 0) ?
-      showNotification(i18n.t('form.contact-email-send-ok-title'), 'We appreciate you contacting us. One of our colleagues will get back in touch with you soon!')
+      showNotification(i18n.t('form.contact-email-send-ok-title'), 'We appreciate you contacting us. One of our colleagues will get back in touch with you soon!', response)
       :
-      showNotification(i18n.t('errors.email-send-error'), i18n.t('errors.try-again'))
-  ).then((response) => console.log(response))
+      showNotification(i18n.t('errors.email-send-error'), i18n.t('errors.try-again'), response)
+  )
 }
 
-const showNotification = (title, content) => {
+const showNotification = (title, content, response) => {
   const modal = Modal.success({
     title: title,
     content: content,
   });
-
+  console.log(response);
   setTimeout(() => {
     modal.destroy();
   }, 8000);
