@@ -108,7 +108,6 @@ function Customer(props) {
         <h1>{t('header.our-clients').toUpperCase()}</h1>
         <FloatLogo btnText='dist' />
       </div>
-      {console.log("client", clients)}
       <div className="customer-component--content">
         <Link to={'/blog' + t('routes.our-clients') + '/pots-co'}>
           <img src={pots} alt="Pots&co" />

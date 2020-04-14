@@ -222,6 +222,10 @@ class Blog extends React.Component {
 
   _handleChange = (lng) => {
     i18n.changeLanguage(lng);
+
+    if (this.props.match.params.category === 'nuestros-clientes' || this.props.match.params.category === 'our-clients')
+      this.getCustomers();
+
     if (!this.props.match.params.category)
       this.getArticles();
   };
