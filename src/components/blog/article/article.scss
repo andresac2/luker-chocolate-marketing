@@ -147,8 +147,8 @@
 
     img {
       margin-right: 2em;
-      width: 10em;
-      height: 10em;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       object-fit: cover;
     }
@@ -253,7 +253,14 @@
       overflow: auto;
     }
 
+    &-bread {
+      flex-direction: column;
+      height: 5em;
+    }
+
     &-bread--social {
+      margin: 10px 0;
+
       a:last-child {
         display: none;
       }
@@ -261,10 +268,13 @@
 
     &-autor {
       max-width: 100%;
+      flex-direction: column;
 
       img {
-        width: 8em;
+        width: 120px;
         margin-right: 1em;
+        height: 120px;
+        margin-bottom: 1em;
       }
     }
   }

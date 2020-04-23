@@ -11,7 +11,7 @@ class Article extends React.Component {
   render() {
     const { data, recommended, t } = this.props;
     const altImg = 'img-example.svg';
-    const fullUrl = 'full-url';
+    const fullUrl = data.fullUrl;
     return (
       <div className="blog-article">
         <Helmet>
