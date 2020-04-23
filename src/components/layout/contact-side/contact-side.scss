@@ -10,6 +10,12 @@
   background-size: cover;
   z-index: 1;
 
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
   .ant-form-explain {
     margin: 0;
     padding-top: .2em;

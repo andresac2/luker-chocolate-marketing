@@ -15,7 +15,7 @@ import { RegisterCustomerSaleforce } from '../../../commons/services/salesforce'
 class ContactSide extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { feedback: '', name: 'Name', email: 'email@example.com', phone: '', country: 'Colombia', products: [], isLoading: false };
+    this.state = { feedback: '', name: 'Name', email: 'email@example.com', phone: '', country: 'Colombia', products: [], isLoading: false, countryCode: ['1'] };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -98,13 +98,27 @@ class ContactSide extends React.Component {
     this.props.history.push(i18n.t('routes.products-services') + newRoute);
   }
 
+  handleChangeInd(e) {
+    let inds = this.countries.filter(a => a.name.includes(e))
+    this.setState({ countryCode: inds[0].ind });
+  }
+
   render() {
     const { getFieldDecorator } = this.props.form;
-    const { isLoading } = this.state;
+    const { isLoading, countryCode } = this.state;
     const { products, page, t } = this.props;
     const { Option } = Select;
     const { TextArea } = Input;
     const altImg = 'img-example.svg';
+
+    const selectBefore = (
+      <Select defaultValue="" className="select-before">
+        <Option value="" disabled>+(--)</Option>
+        {countryCode.map((code, i) =>
+          <Option key={i} value={code} key={i}>+{code}</Option>
+        )}
+      </Select>
+    );
 
     return (
       <div className={`contact-component contact-component--${page}`} >
@@ -142,15 +156,6 @@ class ContactSide extends React.Component {
                   ],
                 })(<Input placeholder={t('form.your-email')} />)}
               </FormItem>
-              {page === 'service' &&
-                <Form.Item>
-                  {getFieldDecorator('phone', {
-                    rules: [{ required: true, message: t('errors.required-number') }],
-                  })(
-                    <InputNumber minLength={7} maxLength={20} placeholder={t('form.phone-number')} style={{ width: '100%' }} />,
-                  )}
-                </Form.Item>
-              }
               <Form.Item>
                 {getFieldDecorator('country', {
                   rules: [{ required: true, message: t('errors.required-country') }],
@@ -158,6 +163,7 @@ class ContactSide extends React.Component {
                   <Select
                     showSearch
                     placeholder={t('form.your-country')}
+                    onChange={(e) => this.handleChangeInd(e)}
                     optionFilterProp="children"
                     filterOption={(input, option) =>
                       option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
@@ -169,6 +175,17 @@ class ContactSide extends React.Component {
                   </Select>,
                 )}
               </Form.Item>
+
+              {page === 'service' &&
+                <Form.Item>
+                  {getFieldDecorator('phone', {
+                    rules: [{ required: true, message: t('errors.required-number') }],
+                  })(
+                    <Input type="number" addonBefore={selectBefore} minLength={7} maxLength={20} placeholder={t('form.phone-number')} style={{ width: '100%' }} />,
+                  )}
+                </Form.Item>
+              }
+
               {(page === 'maquila' || page === 'ingredients' || page === 'cacao' || page === 'maracas') &&
                 <div className="contact-form-products">
                   <p>{t('form.characteristics')}</p>

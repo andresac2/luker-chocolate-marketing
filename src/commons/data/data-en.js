@@ -1335,85 +1335,112 @@ It’s coming, the Festival’s coming. The families come together, each and eve
 export const countries = [
   {
     name: 'ARGENTINA',
-    abrev: 'ar'
+    abrev: 'ar',
+    ind: ['54']
   }, {
     name: 'AUSTRALIA',
-    abrev: 'au'
+    abrev: 'au',
+    ind: ['61']
   }, {
     name: 'BAHRAIN',
-    abrev: 'bh'
+    abrev: 'bh',
+    ind: ['973']
   }, {
     name: 'BELGIUM',
-    abrev: 'be'
+    abrev: 'be',
+    ind: ['32']
   }, {
     name: 'BRAZIL',
-    abrev: 'br'
+    abrev: 'br',
+    ind: ['55']
   }, {
     name: 'CANADA',
-    abrev: 'ca'
+    abrev: 'ca',
+    ind: ['1']
   }, {
     name: 'CHILE',
-    abrev: 'cl'
+    abrev: 'cl',
+    ind: ['56']
   }, {
     name: 'COLOMBIA',
-    abrev: 'co'
+    abrev: 'co',
+    ind: ['57']
   }, {
     name: 'CZECH REPUBLIC',
-    abrev: 'cz'
+    abrev: 'cz',
+    ind: ['420']
   }, {
     name: 'FRANCE',
-    abrev: 'fr'
+    abrev: 'fr',
+    ind: ['33']
   }, {
     name: 'GERMANY',
-    abrev: 'de'
+    abrev: 'de',
+    ind: ['49']
   }, {
     name: 'GREECE',
-    abrev: 'gr'
+    abrev: 'gr',
+    ind: ['30']
   }, {
     name: 'GUATEMALA',
-    abrev: 'gl'
+    abrev: 'gl',
+    ind: ['502']
   }, {
     name: 'HUNGARY',
-    abrev: 'hu'
+    abrev: 'hu',
+    ind: ['36']
   }, {
     name: 'ITALY',
-    abrev: 'it'
+    abrev: 'it',
+    ind: ['39']
   }, {
     name: 'JAPAN',
-    abrev: 'jp'
+    abrev: 'jp',
+    ind: ['81']
   }, {
     name: 'LUXEMBOURG',
-    abrev: 'lu'
+    abrev: 'lu',
+    ind: ['352']
   }, {
     name: 'MIDDLE EAST',
-    abrev: 'me'
+    abrev: 'me',
+    ind: ['971']
   }, {
     name: 'MEXICO',
-    abrev: 'mx'
+    abrev: 'mx',
+    ind: ['52']
   }, {
     name: 'NETHERLANDS',
-    abrev: 'nl'
+    abrev: 'nl',
+    ind: ['31', '599']
   }, {
     name: 'ROMANIA',
-    abrev: 'ro'
+    abrev: 'ro',
+    ind: ['40']
   }, {
     name: 'RUSSIA',
-    abrev: 'ru'
+    abrev: 'ru',
+    ind: ['7']
   }, {
     name: 'SLOVAK REPUBLIK',
-    abrev: 'sk'
+    abrev: 'sk',
+    ind: ['421']
   }, {
     name: 'TAIWAN',
-    abrev: 'tw'
+    abrev: 'tw',
+    ind: ['886']
   }, {
     name: 'UKRANIE',
-    abrev: 'ua'
+    abrev: 'ua',
+    ind: ['380']
   }, {
     name: 'UNITED KINGDOM ',
-    abrev: 'uk'
+    abrev: 'uk',
+    ind: ['44']
   }, {
     name: 'UNITED STATES',
-    abrev: 'us'
+    abrev: 'us',
+    ind: ['1']
   }
 ]
 export const termsConditions = "http://www.back.lukerchocolate.com/wp-content/uploads/2020/02/Términos-y-condiciones-de-uso-sitio-web-CasaLuker-inglés-16dic2019.pdf"

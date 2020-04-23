@@ -6,6 +6,12 @@ $Extra-large: 1200px;
 .contact-us {
   color: #484848;
 
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
   .ant-spin-spinning {
     margin-top: 50px;
     height: 50vh;
