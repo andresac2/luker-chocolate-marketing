@@ -1,6 +1,9 @@
 .home {
-  background: transparent url('../../assets/img/cocoaPods.jpg') 0% 0% no-repeat;
-  background-size: cover;
+  //background: transparent url('../../assets/img/cocoaPods.jpg') 0% 0% no-repeat;
+  background: transparent url('../../assets/img/cover-home.jpg') 0% 0% no-repeat;
+  background-size: contain;
+  background-position: right;
+  background-color: #0c0401;
   opacity: 1;
   position: fixed;
   height: 100%;
@@ -8,6 +11,16 @@
   align-items: center;
   min-height: 660px;
   flex-direction: column;
+
+  @media screen and (max-width: 1600px) {
+    background-position-x: 15vw;
+    background-size: cover;
+  }
+
+  @media screen and (max-width: 960px) {
+    background-position-y: 69vw;
+    background-size: cover;
+  }
 
   &-logo {
     position: absolute;
@@ -89,9 +102,9 @@
   &-content {
     position: relative;
     display: inline-grid;
-    grid-template-columns: 45% 45%;
+    grid-template-columns: 50% 45%;
     margin-left: 5em;
-    margin-top: 110px;
+    margin-top: 120px;
     color: #fff;
 
     @media screen and (max-width: 1024px) {
@@ -191,6 +204,7 @@
     right: 0;
     width: 30%;
     height: 100%;
+    display: none;
 
     &-content {
       position: relative;
@@ -228,6 +242,7 @@
   @media screen and (max-width: 1023px) {
     flex-direction: column;
     background-position: 85%;
+    background-position-y: 50vh;
     justify-content: flex-start;
     padding-top: 120px;
     width: 100vw;

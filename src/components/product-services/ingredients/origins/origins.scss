@@ -1,7 +1,7 @@
 .i1906-component {
   position: relative;
   width: calc(100% - 340px);
-  align-self: start;
+  align-self: flex-start;
   padding-left: 20%;
 
   &--header {
@@ -133,7 +133,7 @@
 
   @media screen and (max-width: 996px) {
     width: 100%;
-    align-self: start;
+    align-self: flex-start;
     padding-left: 0;
     height: 100%;
     overflow: hidden;

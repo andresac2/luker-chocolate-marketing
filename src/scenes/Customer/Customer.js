@@ -124,11 +124,11 @@ function Customer(props) {
           <h2>ROYCE'</h2>
           <img src={jpFlag} alt="Japan flag" className="flag-badge" />
         </Link>
-        <Link to={'/blog' + t('routes.our-clients') + '/york-cocoa-house'}>
+        {false && <Link to={'/blog' + t('routes.our-clients') + '/york-cocoa-house'}>
           <img src={york} alt="York Cocoa House" />
           <h2>YORK COCOA HOUSE</h2>
           <img src={usFlag} alt="United states flag" className="flag-badge" />
-        </Link>
+        </Link>}
       </div>
     </div>
   );

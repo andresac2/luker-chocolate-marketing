@@ -1325,85 +1325,112 @@ y un sancocho en los que todos participan por igual; llevar un equipo de profesi
 export const countries = [
   {
     name: 'ARGENTINA',
-    abrev: 'ar'
+    abrev: 'ar',
+    ind: ['54']
   }, {
     name: 'AUSTRALIA',
-    abrev: 'au'
+    abrev: 'au',
+    ind: ['61']
   }, {
-    name: 'BAHRAIN',
-    abrev: 'bh'
+    name: 'BAHREIN',
+    abrev: 'bh',
+    ind: ['973']
   }, {
     name: 'BÉLGICA',
-    abrev: 'be'
+    abrev: 'be',
+    ind: ['32']
   }, {
     name: 'BRASIL',
-    abrev: 'br'
+    abrev: 'br',
+    ind: ['55']
   }, {
     name: 'CANADÁ',
-    abrev: 'ca'
+    abrev: 'ca',
+    ind: ['1']
   }, {
     name: 'CHILE',
-    abrev: 'cl'
+    abrev: 'cl',
+    ind: ['56']
   }, {
     name: 'COLOMBIA',
-    abrev: 'co'
+    abrev: 'co',
+    ind: ['57']
   }, {
     name: 'RÉPUBLICA CHECA',
-    abrev: 'cz'
+    abrev: 'cz',
+    ind: ['420']
   }, {
     name: 'FRANCIA',
-    abrev: 'fr'
+    abrev: 'fr',
+    ind: ['33']
   }, {
     name: 'ALEMANIA',
-    abrev: 'de'
+    abrev: 'de',
+    ind: ['49']
   }, {
     name: 'GRECIA',
-    abrev: 'gr'
+    abrev: 'gr',
+    ind: ['30']
   }, {
     name: 'GUATEMALA',
-    abrev: 'gl'
+    abrev: 'gl',
+    ind: ['502']
   }, {
     name: 'HUNGRIA',
-    abrev: 'hu'
+    abrev: 'hu',
+    ind: ['36']
   }, {
     name: 'ITALIA',
-    abrev: 'it'
+    abrev: 'it',
+    ind: ['39']
   }, {
     name: 'JAPÓN',
-    abrev: 'jp'
+    abrev: 'jp',
+    ind: ['81']
   }, {
     name: 'LUXEMBURGO',
-    abrev: 'lu'
+    abrev: 'lu',
+    ind: ['352']
   }, {
     name: 'ORIENTE MEDIO',
-    abrev: 'me'
+    abrev: 'me',
+    ind: ['971']
   }, {
     name: 'MÉXICO',
-    abrev: 'mx'
+    abrev: 'mx',
+    ind: ['52']
   }, {
     name: 'PAISES BAJOS',
-    abrev: 'nl'
+    abrev: 'nl',
+    ind: ['31', '599']
   }, {
     name: 'RUMANIA',
-    abrev: 'ro'
+    abrev: 'ro',
+    ind: ['40']
   }, {
     name: 'RUSIA',
-    abrev: 'ru'
+    abrev: 'ru',
+    ind: ['7']
   }, {
     name: 'ESLOVAQUIA',
-    abrev: 'sk'
+    abrev: 'sk',
+    ind: ['421']
   }, {
-    name: 'TAIWAN',
-    abrev: 'tw'
+    name: 'TAIWÁN',
+    abrev: 'tw',
+    ind: ['886']
   }, {
     name: 'UCRANIA',
-    abrev: 'ua'
+    abrev: 'ua',
+    ind: ['380']
   }, {
     name: 'REINO UNIDO ',
-    abrev: 'uk'
+    abrev: 'uk',
+    ind: ['44']
   }, {
     name: 'ESTADOS UNIDOS',
-    abrev: 'us'
+    abrev: 'us',
+    ind: ['1']
   }
 ]
 export const termsConditions = "https://back.lukerchocolate.com/es/wp-content/uploads/2020/02/Términos-y-condiciones-de-uso-sitio-web-CasaLuker-español-16dic2019.pdf"

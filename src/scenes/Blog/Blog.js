@@ -131,7 +131,7 @@ class Blog extends React.Component {
           breads = [{}, {}];
           autor = {};
         })).then(data =>
-          this.setState({ allArticles: arts, latestArticle: arts[1], concatArticles: this.state.concatArticles.concat(this.state.allArticles) })
+          this.setState({ allArticles: arts.reverse(), latestArticle: arts[0], concatArticles: this.state.concatArticles.concat(this.state.allArticles) })
         )
     } else {
       getPostsEs().then(data =>
@@ -158,7 +158,7 @@ class Blog extends React.Component {
           breads = [{}, {}];
           autor = {};
         })).then(data =>
-          this.setState({ allArticles: arts, latestArticle: arts[1], concatArticles: this.state.concatArticles.concat(this.state.allArticles) })
+          this.setState({ allArticles: arts.reverse(), latestArticle: arts[0], concatArticles: this.state.concatArticles.concat(this.state.allArticles) })
         )
     }
     //console.log(getPages().then(data => console.log(data)));  
@@ -222,12 +222,17 @@ class Blog extends React.Component {
 
   _handleChange = (lng) => {
     i18n.changeLanguage(lng);
+    if (this.props.match.params.category === 'nuestros-clientes' || this.props.match.params.category === 'our-clients')
+      this.getCustomers();
+
     if (!this.props.match.params.category)
       this.getArticles();
   };
 
   searchOnChange(event) {
-    const allArticles = this.state.allArticles.slice(1);// articlesEn.concat(articlesEs);
+    console.log(event)
+    console.log(event.target.value)
+    const allArticles = this.state.allArticles.slice(0, -1);// articlesEn.concat(articlesEs);
     const searched = allArticles.filter(t => t.title.toLowerCase().includes(event.target.value.toLowerCase()));
     this.setState({ findedArticles: searched });
     this.setState({ searchValue: event.target.value });
@@ -260,7 +265,7 @@ class Blog extends React.Component {
       notification.error({
         message: i18n.t('errors.email-send-error'),
         description:
-          i18n.t('errors.try_again')
+          i18n.t('errors.try-again')
       });
     }
     this.setState({ newsletterWaiting: false });
@@ -283,6 +288,8 @@ class Blog extends React.Component {
     let articles
     if (serverProps)
       articles = serverProps.articles;
+
+    console.log(allArticles)
 
     return (
       <Layout className="blog-component">
@@ -320,7 +327,7 @@ class Blog extends React.Component {
                   {category !== t('routes.our-clients').replace("/", "") &&
                     <Search
                       value={searchValue}
-                      onChange={(event) => this.searchOnChange(event)}
+                      onChange={(e) => this.searchOnChange(e)}
                       placeholder={t('form.input-search')}
                       onSearch={(value) => this.searchArticle(value)}
                       className={searchOpen && 'blog-component-header--search-open'}
@@ -331,7 +338,7 @@ class Blog extends React.Component {
                     <Option value="en">EN</Option>
                   </Select>
                 </div>
-                <h1 style={{ fontSize: (article) ? '4em' : '5em' }}>{(article) ? this.articleLoaded.title : (category) ? (category === 'innovacion') ? 'innovación' : (category === 'tomando-posicion') ? 'tomando posición' : (category === 'sueno-del-chocolate') ? 'sueño del chocolate' : (category === 'lo-que-no-sabias') ? 'lo que no sabías' : category.replace("/", "").replace(/-/g, " ") : 'Under The Tree'}
+                <h1 style={{ fontSize: (article) ? '4em' : '5em' }}>{(article) ? this.articleLoaded.title : (category) ? (category === 'innovacion') ? 'innovación' : (category === 'tomando-posicion') ? 'tomando posición' : (category === 'sueno-del-chocolate') ? 'sueño del chocolate' : (category === 'lo-que-no-sabias') ? 'lo que no sabías' : (category === 'take-stand') ? 'Take a stand' : category.replace("/", "").replace(/-/g, " ") : 'Under The Tree'}
                   {this.articleLoaded.flag && <img className="blog-component-header-flag" src={require('../../assets/img/' + this.articleLoaded.flag + "-flag.png")} alt={this.articleLoaded.flag.substr(0, 2)} />} </h1>
               </div>
             </div >
@@ -374,7 +381,7 @@ class Blog extends React.Component {
                     <div className="blog-layout-articles">
                       {allArticles && allArticles.length > 0 && allArticles.map((data, i) => {
                         return data.breads &&
-                          i <= 4 && <div className="blog-layout-articles--item" key={i}>
+                          (i >= 3 && i <= 6) && <div className="blog-layout-articles--item" key={i}>
                             <Link to={allArticles[i].breads[1].href + '/' + allArticles[i].url} className="blog-layout-latest--article">
                               <img src={require('../../assets/img/blog/' + allArticles[i].cover)} />
                               <p>{allArticles[i].date}</p>

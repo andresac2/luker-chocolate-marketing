@@ -18,22 +18,22 @@ router.use(express.static(
   { maxAge: '30d' },
 ));
 
-app.get('/upgradation', function (req, res, next) {
-  getTranslations('en')
-  getTranslations('es')
-  const build = spawn('npm', ['run', 'build']);
-  let response = 'stdout: ';
-  build.stdout.on('data', (data) => {
-    response += `${data}
-    
-    `;
-    console.log(`stdout: ${data}`);
-  });
-  build.on('close', (code) => {
-    console.log(`child process exited with code ${code}`);
-    res.send(response);
-  });
-});
+// app.get('/upgradation', function (req, res, next) {
+//   getTranslations('en')
+//   getTranslations('es')
+//   const build = spawn('npm', ['run', 'build']);
+//   let response = 'stdout: ';
+//   build.stdout.on('data', (data) => {
+//     response += `${data}
+
+//     `;
+//     console.log(`stdout: ${data}`);
+//   });
+//   build.on('close', (code) => {
+//     console.log(`child process exited with code ${code}`);
+//     res.send(response);
+//   });
+// });
 
 function getTranslations(lng) {
   return new Promise((resolve) => {

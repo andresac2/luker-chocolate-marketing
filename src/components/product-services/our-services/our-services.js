@@ -11,6 +11,25 @@ import { designProcess as designProcessEs, itemsOurServices as itemsOurServicesE
 import { getDesignProcess, getDesignProcessEs, getItemsOurServices, getItemsOurServicesEs } from '../../../commons/services/api';
 import { Spin } from 'antd';
 
+
+
+// back
+// const Back = React.createClass({
+//   getDefaultProps() {
+//     return {
+//       classNames: 'btn-next-img'
+//     };
+//   },
+//   render() {
+//     return (
+//       <svg width="30" height="112" viewBox="0 0 30 112" fill="none" xmlns="http://www.w3.org/2000/svg">
+//         <path d="M5.14001 5.5L24.51 56.5L5.14001 106.26" stroke="white" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+//       </svg>
+//     )
+//   }
+// });
+
+
 class OurServices extends React.Component {
   constructor(props) {
     super(props);
@@ -80,7 +99,9 @@ class OurServices extends React.Component {
     const altImg = 'img-example.svg';
     const { dpSelected, designProcess, items } = this.state;
     const { t } = this.props;
-
+    console.log("dpSelected", dpSelected)
+    console.log("designProcess", designProcess)
+    console.log("items", items)
     return (
       <div className="our-services-component" >
         <h2>{t('products-services.this-how-works')}</h2>
@@ -98,11 +119,11 @@ class OurServices extends React.Component {
           <p>{t('products-services.services-first-subtitle')} <br /> {t('products-services.services-second-subtitle')}</p>
         </div>
         <div className="our-services-component-contain-carr">
-          <Back className={`btn-next-img btn-next-img-left ${dpSelected === 0 && 'btn-inactive'}`} onClick={() => this.carrAction('l')} />
+          {/* <Back className={`btn-next-img btn-next-img-left ${dpSelected === 0 && 'btn-inactive'}`} onClick={() => this.carrAction('l')} /> */}
           <div className="our-services-component-contain-carr--items" >
             <p>{designProcess[dpSelected]}</p>
           </div>
-          <Back className={`btn-next-img ${dpSelected === designProcess.length - 1 && 'btn-inactive'}`} onClick={() => this.carrAction('r')} />
+          {/* <Back className={`btn-next-img ${dpSelected === designProcess.length - 1 && 'btn-inactive'}`} onClick={() => this.carrAction('r')} /> */}
         </div>
         <div className="btn-back-sticky">
           <Link to={t('routes.products-services')}>{t('buttons.back-to-solutions').toUpperCase()}</Link>

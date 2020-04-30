@@ -1,7 +1,7 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom';
 import i18n from '../../../i18n';
-import { Form, Select, Input, Button, InputNumber, Modal } from 'antd';
+import { Form, Select, Input, Button, InputNumber, Modal, Spin } from 'antd';
 import FormItem from 'antd/lib/form/FormItem';
 import { termsConditions } from "../../../commons/data/data-en";
 import { privacyPolicy } from "../../../commons/data/data-en";
@@ -10,11 +10,12 @@ import { privacyPolicy as privacyPolicyEs } from "../../../commons/data/data-es"
 import { withNamespaces } from 'react-i18next';
 import { countries as dataCountries } from '../../../commons/data/data-en';
 import { countries as paises } from '../../../commons/data/data-es';
+import { RegisterCustomerSaleforce } from '../../../commons/services/salesforce';
 
 class ContactSide extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { feedback: '', name: 'Name', email: 'email@example.com', phone: '', country: 'Colombia', products: [] };
+    this.state = { feedback: '', name: 'Name', email: 'email@example.com', phone: '', country: 'Colombia', products: [], isLoading: false, countryCode: ['1'] };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -25,13 +26,46 @@ class ContactSide extends React.Component {
     const templateId = 'contact_form_luker';
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        //  values.push();
+        //  values.push();        
+        this.setState({ isLoading: true });
         values.products = 'And get some information about this products: ' + this.props.products.filter(item => item.selected).map(a => a.description).join(', ');
-        this.sendFeedback(templateId, values);
+        values.productsString = this.props.products.filter(item => item.selected).map(a => a.description).join(', ');
+        //this.sendFeedback(templateId, values);
         console.log('Received values of form: ', values);
+        this.SendSalesForce(values)
       }
     });
   };
+
+  SendSalesForce(data) {
+    let bodyData = {
+      payload: {
+        FirstName: data.username.replace(/ .*/, ''),
+        LastName: data.username.substr(data.username.indexOf(" ") + 1),
+        CLK_DescriptionoFirstTouchPoint__c: `Luker web Product Form`,
+        CLK_CommentMessage__c: data.message,
+        products__c: data.productsString,
+        Country: data.country,
+        Email: data.email,
+        LeadSource: "Website",
+        MobilePhone: data.phone || "",
+        Company: data.companyName || "No company",
+        Description: data.message
+      }
+    }
+
+    let emailData = `<h3>Hi</h3>
+    <p>Our customer <strong>${data.username}</strong> from <strong>${data.country}</strong> wants to get in touch with us from this email: ${data.email}</p>    
+    ${data.productsString ? `<p>${data.products}</p>` : ''}
+    <p></p>
+    <p>Here is what he says:</p>
+    <blockquote>${data.message}</blockquote>
+    Best wishes, greetings from <strong>Luker WEB</strong> !!
+    `;
+
+    RegisterCustomerSaleforce(bodyData, emailData).then(() => this.setState({ isLoading: false }))
+  }
+
 
   sendFeedback(templateId, variables) {
     window.emailjs.send(
@@ -64,109 +98,131 @@ class ContactSide extends React.Component {
     this.props.history.push(i18n.t('routes.products-services') + newRoute);
   }
 
+  handleChangeInd(e) {
+    let inds = this.countries.filter(a => a.name.includes(e))
+    this.setState({ countryCode: inds[0].ind });
+  }
+
   render() {
     const { getFieldDecorator } = this.props.form;
+    const { isLoading, countryCode } = this.state;
     const { products, page, t } = this.props;
     const { Option } = Select;
     const { TextArea } = Input;
     const altImg = 'img-example.svg';
 
+    const selectBefore = (
+      <Select defaultValue="" className="select-before">
+        <Option value="" disabled>+(--)</Option>
+        {countryCode.map((code, i) =>
+          <Option key={i} value={code} key={i}>+{code}</Option>
+        )}
+      </Select>
+    );
+
     return (
       <div className={`contact-component contact-component--${page}`} >
         <div className={`contact-component-content`}>
           <h1>{t('form.give-us-details')}</h1>
-          <Form onSubmit={this.handleSubmit} className="contact-form">
-            <Form.Item>
-              {getFieldDecorator('username', {
-                rules: [{ required: true, message: t('errors.required-name') }],
-              })(
-                <Input placeholder={t('form.your-name')} />,
-              )}
-            </Form.Item>
-            {page === 'service' &&
+
+          {!isLoading ?
+            <Form onSubmit={this.handleSubmit} className="contact-form">
+              <Form.Item>
+                {getFieldDecorator('username', {
+                  rules: [{ required: true, message: t('errors.required-name') }],
+                })(
+                  <Input placeholder={t('form.your-name')} />,
+                )}
+              </Form.Item>
+
               <Form.Item>
                 {getFieldDecorator('companyName', {
                   rules: [{ required: true, message: t('errors.required-company') }],
                 })(
                   <Input placeholder={t('form.company')} />,
                 )}
-              </Form.Item>}
-            <FormItem>
-              {getFieldDecorator('email', {
-                rules: [
-                  {
-                    type: 'email',
-                    message: t('errors.invalid-email'),
-                  },
-                  {
-                    required: true,
-                    message: t('errors.required-email'),
-                  },
-                ],
-              })(<Input placeholder={t('form.your-email')} />)}
-            </FormItem>
-            {page === 'service' &&
+              </Form.Item>
+              <FormItem>
+                {getFieldDecorator('email', {
+                  rules: [
+                    {
+                      type: 'email',
+                      message: t('errors.invalid-email'),
+                    },
+                    {
+                      required: true,
+                      message: t('errors.required-email'),
+                    },
+                  ],
+                })(<Input placeholder={t('form.your-email')} />)}
+              </FormItem>
               <Form.Item>
-                {getFieldDecorator('phone', {
-                  rules: [{ required: true, message: t('errors.required-number') }],
+                {getFieldDecorator('country', {
+                  rules: [{ required: true, message: t('errors.required-country') }],
                 })(
-                  <InputNumber min={7} max={10} placeholder={t('form.phone-number')} style={{ width: '100%' }} />,
+                  <Select
+                    showSearch
+                    placeholder={t('form.your-country')}
+                    onChange={(e) => this.handleChangeInd(e)}
+                    optionFilterProp="children"
+                    filterOption={(input, option) =>
+                      option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                    }
+                  >
+                    {this.countries.map((country, i) =>
+                      <Option key={i} value={country.name} key={i}>{country.name}</Option>
+                    )}
+                  </Select>,
                 )}
               </Form.Item>
-            }
-            <Form.Item>
-              {getFieldDecorator('country', {
-                rules: [{ required: true, message: t('errors.required-country') }],
-              })(
-                <Select
-                  showSearch
-                  placeholder={t('form.your-country')}
-                  optionFilterProp="children"
-                  filterOption={(input, option) =>
-                    option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                  }
-                >
-                  {Object.keys(this.countries).map(i =>
-                    <Option key={i} value={this.countries[i].abrev} key={i}>{this.countries[i].name}</Option>
-                  )}
-                </Select>,
-              )}
-            </Form.Item>
-            {(page === 'maquila' || page === 'ingredients' || page === 'cacao' || page === 'maracas') &&
-              <div className="contact-form-products">
-                <p>{t('form.characteristics')}</p>
-                {products &&
-                  <div className="contact-form-products--list">
-                    {products.filter(item => item.selected).length > 0 ?
-                      Object.keys(products.filter(item => item.selected)).map(i =>
-                        <div key={i} className={`contact-form-products--list-item contact-form-products--list-item-${page}`} onClick={() => this.props.handleSetProductSelected(products.filter(item => item.selected)[i])}>
-                          <img src={require('../../../assets/img/' + (products.filter(item => item.selected)[i].img ? products.filter(item => item.selected)[i].img : altImg))} alt={products.filter(item => item.selected)[i].id} />
-                          <p className={``} >{products.filter(item => item.selected)[i].description}</p>
-                        </div>)
 
-                      : <span>{page === 'maquila' ? t('form.choose-option') : t('form.choose-products')}</span>
-                    }
-                  </div>
-                }
-              </div>
-            }
-            <FormItem>
-              {getFieldDecorator('message', {
-                rules: [{ required: true, message: t('errors.required-comment') }],
-              })(
-                <TextArea rows={3} placeholder={t('form.write-message')} />
-              )}
-            </FormItem>
-            <Form.Item>
-              <Button type="primary" className="contact-form-button contact-form-button-back" onClick={() => this.props.handleShowFormContact(false)}>
-                {t('buttons.back')}
-              </Button>
-              <Button type="primary" htmlType="submit" className="contact-form-button">
-                {t('buttons.send')}
-              </Button>
-            </Form.Item>
-            <p className="contact-form-terms">{t('form.clicking-send')} <a href={i18n.language === 'en' ? termsConditions : termsConditionsEs} target="_blank">{t('form.terms-conditions')} </a> {t('form.and-our')} <a href={i18n.language === 'en' ? privacyPolicy : privacyPolicyEs} target="_blank">{t('form.privacy-policy')}</a>.</p>
-          </Form>
+              {page === 'service' &&
+                <Form.Item>
+                  {getFieldDecorator('phone', {
+                    rules: [{ required: true, message: t('errors.required-number') }],
+                  })(
+                    <Input type="number" addonBefore={selectBefore} minLength={7} maxLength={20} placeholder={t('form.phone-number')} style={{ width: '100%' }} />,
+                  )}
+                </Form.Item>
+              }
+
+              {(page === 'maquila' || page === 'ingredients' || page === 'cacao' || page === 'maracas') &&
+                <div className="contact-form-products">
+                  <p>{t('form.characteristics')}</p>
+                  {products &&
+                    <div className="contact-form-products--list">
+                      {products.filter(item => item.selected).length > 0 ?
+                        Object.keys(products.filter(item => item.selected)).map(i =>
+                          <div key={i} className={`contact-form-products--list-item contact-form-products--list-item-${page} contact-form-products--list-item-maquila`} onClick={() => this.props.handleSetProductSelected(products.filter(item => item.selected)[i])}>
+                            <img src={require('../../../assets/img/' + (products.filter(item => item.selected)[i].img ? products.filter(item => item.selected)[i].img : altImg))} alt={products.filter(item => item.selected)[i].id} />
+                            <p className={``} >{products.filter(item => item.selected)[i].description}</p>
+                          </div>)
+
+                        : <span>{page === 'maquila' ? t('form.choose-option') : t('form.choose-products')}</span>
+                      }
+                    </div>
+                  }
+                </div>
+              }
+              <FormItem>
+                {getFieldDecorator('message', {
+                  rules: [{ required: true, message: t('errors.required-comment') }],
+                })(
+                  <TextArea rows={3} placeholder={t('form.write-message')} />
+                )}
+              </FormItem>
+              <Form.Item>
+                <Button type="primary" className="contact-form-button contact-form-button-back" onClick={() => this.props.handleShowFormContact(false)}>
+                  {t('buttons.back')}
+                </Button>
+                <Button type="primary" htmlType="submit" className="contact-form-button">
+                  {t('buttons.send')}
+                </Button>
+              </Form.Item>
+              <p className="contact-form-terms">{t('form.clicking-send')} <a href={i18n.language === 'en' ? termsConditions : termsConditionsEs} target="_blank">{t('form.terms-conditions')} </a> {t('form.and-our')} <a href={i18n.language === 'en' ? privacyPolicy : privacyPolicyEs} target="_blank">{t('form.privacy-policy')}</a>.</p>
+            </Form>
+            : <Spin size="large" />
+          }
         </div>
       </div >
     );

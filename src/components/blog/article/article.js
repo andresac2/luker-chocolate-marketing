@@ -1,16 +1,17 @@
 import React from 'react';
 import { Breadcrumb, Icon } from 'antd';
-import { Link, withRouter } from 'react-router-dom';
-import { FaFacebookF, FaLinkedinIn, FaPrint, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import { FaFacebookF, FaLinkedinIn, FaPrint, FaTwitter } from 'react-icons/fa';
 import Comments from '../comments/comments';
-import MetaTags from 'react-meta-tags';
 import { Helmet } from 'react-helmet';
+import { withNamespaces } from 'react-i18next';
+
 
 class Article extends React.Component {
   render() {
-    const { data, recommended } = this.props;
+    const { data, recommended, t } = this.props;
     const altImg = 'img-example.svg';
-    const fullUrl = window.location.href;
+    const fullUrl = data.fullUrl;
     return (
       <div className="blog-article">
         <Helmet>
@@ -61,7 +62,7 @@ class Article extends React.Component {
         </div>}
         {recommended && recommended.length > 0 &&
           <div className="blog-article-entries">
-            <h2>{data.flag ? 'OTHER CLIENTS' : 'RECOMMENDED ENTRIES'}</h2>
+            <h2>{data.flag ? t('blog.other-clients') : t('blog.recommended-entries')}</h2>
             <div className="blog-article-entries--list">
               {Object.keys(recommended).map(i =>
                 <Link key={i} to={recommended[i].url}>
@@ -82,4 +83,4 @@ class Article extends React.Component {
     );
   }
 }
-export default Article;
+export default withNamespaces()(Article);

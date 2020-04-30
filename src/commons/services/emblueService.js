@@ -37,10 +37,6 @@ export async function NewContact(email) {
 
 export async function SendEmail(subject, body, sfState) {
   return Authenticate().then(async response => {
-    console.log("token", response.Token)
-    console.log("subject", subject)
-    console.log("body", body)
-
     const _response = await fetch(linkCorss + emblueApi + 'SendMailExpress', {
       method: 'POST',
       headers: {
@@ -50,12 +46,12 @@ export async function SendEmail(subject, body, sfState) {
       body: JSON.stringify({
         Token: response.Token,
         ActionId: "1339145",
-        Email: "stivent367@gmail.com", // siseñoragencia@gmail.co
+        Email: "sisenoragencia@gmail.co", // "stivent367@gmail.com",        
         Subject: subject,
         Message: `${body} <br/>
         <code> ${sfState} </code>
         `
-      }),
+      })
     });
     return await _response.json();
   })
