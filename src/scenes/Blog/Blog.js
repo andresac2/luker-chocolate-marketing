@@ -13,7 +13,6 @@ import FloatLogo from '../../components/layout/float-logo/float-logo';
 import { Helmet } from 'react-helmet';
 import i18n from '../../i18n';
 import { NewContact } from '../../commons/services/emblueService';
-import { getClients, getPosts, getPostsEs, getClientsEs } from "../../commons/services/api";
 import { article as ArticleActions } from '../../services/Articles/ArticlesActions'
 import { client as ClientActions } from '../../services/Client/ClientActions'
 
