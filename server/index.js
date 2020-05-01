@@ -18,6 +18,8 @@ router.use(express.static(
   { maxAge: '30d' },
 ));
 
+getTranslations('en')
+getTranslations('es')
 // app.get('/upgradation', function (req, res, next) {
 //   getTranslations('en')
 //   getTranslations('es')

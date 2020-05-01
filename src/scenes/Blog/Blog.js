@@ -18,13 +18,13 @@ import { article as ArticleActions } from '../../services/Articles/ArticlesActio
 import { client as ClientActions } from '../../services/Client/ClientActions'
 
 const { Search } = Input;
-    const { Option } = Select;
-    
+const { Option } = Select;
+
 class Blog extends React.Component {
 
   constructor(props) {
     super(props);
-    
+
     this.state = {
       searchOpen: false,
       emailNewsletter: '',
@@ -32,8 +32,6 @@ class Blog extends React.Component {
       searchValue: '',
       newsletterWaiting: false,
       posts: [],
-      allClients: [],
-      clients: [],
       isLoading: true,
       lngSelect: i18n.language
     };
@@ -51,8 +49,8 @@ class Blog extends React.Component {
     this.props.getAllClients(i18n.language)
   }
 
-  componentDidUpdate(){
-    if(this.state.lngSelect !== i18n.language){
+  componentDidUpdate() {
+    if (this.state.lngSelect !== i18n.language) {
       this.setState({ lngSelect: i18n.language })
       this.props.getPost(i18n.language)
     }
@@ -172,11 +170,10 @@ class Blog extends React.Component {
   };
 
   render() {
-    const { article: { articles: allArticles }, lastArticle } = this.props
+    const { article: { articles: allArticles }, lastArticle, t, serverProps } = this.props
     const { clients } = this.props.client
-    const { searchOpen, emailNewsletter, newsletterWaiting, findedArticles, searchValue, posts } = this.state;
+    const { searchOpen, emailNewsletter, newsletterWaiting, findedArticles, searchValue } = this.state;
     const { category, article } = this.props.match ? this.props.match.params : {};
-    const { t, serverProps } = this.props;
     
     this.loadArticle();
 
@@ -256,14 +253,18 @@ class Blog extends React.Component {
                     )}
                   </div>
                   <br />
-                </div> :
+                </div>
+                :
                 (category) ?
-                  (article) ? <Article data={this.articleLoaded} recommended={this.recommendedEntries} /> : <TakeStand articles={allArticles.filter(t => t.breads && t.breads.find(e => e.href.includes(category)))} category={category} />
+                  (article) ?
+                    <Article data={this.articleLoaded} recommended={this.recommendedEntries} />
+                    :
+                    <TakeStand articles={allArticles.filter(t => t.breads && t.breads.find(e => e.href.includes(category)))} category={category} />
                   :
                   <div className="blog-layout">
                     <div className="blog-layout-latest">
                       <h1>{t('blog.latest-entries')}</h1>
-                      {lastArticle?.breads && 
+                      {lastArticle?.breads &&
                         <Link to={lastArticle.breads[1].href + '/' + lastArticle.url} className="blog-layout-latest--article">
                           <img src={require('../../assets/img/blog/' + lastArticle.cover)} alt={lastArticle.title} />
                           <p>{lastArticle.date}</p>
@@ -273,8 +274,8 @@ class Blog extends React.Component {
                     </div>
                     <div className="blog-layout-articles">
                       {allArticles?.length > 0 && allArticles.map((data, i) => {
-                        return data.breads &&
-                          (i >= 3 && i <= 6) && <div className="blog-layout-articles--item" key={i}>
+                        return data.breads && (i >= 3 && i <= 6) &&
+                          <div className="blog-layout-articles--item" key={i}>
                             <Link to={allArticles[i].breads[1].href + '/' + allArticles[i].url} className="blog-layout-latest--article">
                               <img src={require('../../assets/img/blog/' + allArticles[i].cover)} />
                               <p>{allArticles[i].date}</p>
@@ -287,7 +288,7 @@ class Blog extends React.Component {
                       <h1>{t('blog.featured')}</h1>
                       <div className="blog-layout-featured-item">
                         {allArticles && allArticles.length > 0 && allArticles.map((data, i) => {
-                          return data.breads && i <= 4 && 
+                          return data.breads && i <= 4 &&
                             <div className="blog-layout-articles--item" key={i}>
                               <Link to={data.breads[1].href + '/' + data.url} className="blog-layout-latest--article">
                                 <p>{data.date}</p>

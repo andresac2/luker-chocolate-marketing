@@ -12,7 +12,7 @@ class Article extends React.Component {
     const { data, recommended, t } = this.props;
     const altImg = 'img-example.svg';
     const fullUrl = data.fullUrl;
-    
+
     return (
       <div className="blog-article">
         <Helmet>
@@ -33,13 +33,11 @@ class Article extends React.Component {
         {this.window && !this.window.location.href.includes('sustainability') && <div className="blog-article-title-resp">{data.title}</div>}
         <div className="blog-article-bread">
           <Breadcrumb>
-            {data.breads &&
-              Object.keys(data.breads).map(i =>
-                <Breadcrumb.Item href={data.breads[i].href} key={i}>
-                  {(data.breads[i].name === 'Blog') ? <Icon type="home" /> : data.breads[i].name}
-                </Breadcrumb.Item>
-              )
-            }
+            {data.breads && Object.values(data.breads).map((item, i) =>
+              <Breadcrumb.Item href={item.href} key={i}>
+                {(item.name === 'Blog') ? <Icon type="home" /> : item.name}
+              </Breadcrumb.Item>
+            )}
             <Breadcrumb.Item>
               <span>{data.title}</span>
             </Breadcrumb.Item>
@@ -61,15 +59,15 @@ class Article extends React.Component {
             <a href={data.autor.linkedin} target="_blank" ><FaLinkedinIn /> {data.autor.name}</a>
           </div>
         </div>}
-        {recommended && recommended.length > 0 &&
+        {recommended?.length > 0 &&
           <div className="blog-article-entries">
             <h2>{data.flag ? t('blog.other-clients') : t('blog.recommended-entries')}</h2>
             <div className="blog-article-entries--list">
-              {Object.keys(recommended).map(i =>
-                <Link key={i} to={recommended[i].url}>
-                  <img src={require('../../../assets/img/' + (data.flag ? '' : 'blog/') + (recommended[i].cover ? recommended[i].cover : altImg))} alt={recommended[i].title} />
-                  <p>{recommended[i].date}</p>
-                  <h2>{recommended[i].title}</h2>
+              {Object.values(recommended).map((item, i) =>
+                <Link key={i} to={item.url}>
+                  <img src={require('../../../assets/img/' + (data.flag ? '' : 'blog/') + (item.cover ? item.cover : altImg))} alt={item.title} />
+                  <p>{item.date}</p>
+                  <h2>{item.title}</h2>
                 </Link>
               )}
             </div>

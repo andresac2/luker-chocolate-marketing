@@ -12,7 +12,7 @@ export default (articles) => {
       name: data.acf.authorname,
       avatar: data.acf.avatar,
       details: data.acf.details,
-      linkedin: data.acf.linkeind
+      linkedin: data.acf.linkedin
     };
     art.breads = [
       { href: "/blog/", name: "Blog" },
