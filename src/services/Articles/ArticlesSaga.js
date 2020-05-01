@@ -15,9 +15,8 @@ function* getPost({ payload: { lng } }) {
     
     if (ok) {
       const transform = articleTransform(payload)
-      transform.reverse()
-      console.log(transform);
-      
+      transform.sort((a, b) => b._date - a._date)
+      console.log(transform)
       yield put(articleActions.getPostResponse(transform, lng));
     } else {
       const err = new TypeError('ERROR_GET_POST')

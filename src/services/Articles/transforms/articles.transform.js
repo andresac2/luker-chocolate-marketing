@@ -25,7 +25,7 @@ export default (articles) => {
 
     const [ month, year ] = data.acf.date.split(' ');
     art._date = new Date(year + '-' + months[month] + '-02');
-    
+
     art['content'] = data.content.rendered;
     art.autor = {
       name: data.acf.authorname,
