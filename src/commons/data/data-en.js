@@ -56,6 +56,7 @@ export const articlesSustain = [{
         The purpose of these projects is to take agricultural and social development to the communities in each of the regions in which we grow our cocoa and to come up with innovative solutions that are supported by our clients and partners. So far, we’ve accomplished to set up a total of 3 business crops with 1600 hectares planted sustainably in 3 regions of the country and we’ve projected a catch of 33,925 tons of Co2 per year in our crops.
         `
 }]
+
 export const finishedChocolateProducts = [
   {
     img: 'cocoa-grageas.png',
@@ -79,6 +80,7 @@ export const finishedChocolateProducts = [
     id: 'cocoa-powder',
     description: 'Our sugar and cholesterol-free cocoa powder is made with the best quality fine or flavour cocoa beans. It’s perfect to make delicious hot chocolate or recipes with chocolaty combinations. It can also be used as an ingredient to flavor ice cream, cakes, desserts, and ganache.'
   }];
+
 export const ingredients = [
   {
     img: '/static/media/milk-atlantico-33.69d16f78.png',
@@ -100,6 +102,7 @@ export const ingredients = [
     id: 'casaluker-maracas',
     description: 'In the same way as that magical seductive instrument that characterises the happy upbeat feel of the tropics with its sweet and varied rhythm, Luker Maracas presents a new range of chocolate-covered dragees. Filled with roasted coffee, roasted cocoa and sweet tropical fruits, these delightful dragees are covered in our finest Fino de Aroma chocolate. Luker Maracas, Tropical Dragees are ideal for decorating desserts and cakes, to include in preparations, as toppings for ice - cream or simply to give that special touch to your recipes.They are also a good accompaniment for coffee and other hot drinks; they can be mixed in with cereals and dried fruit to prepare delicious, healthy snacks.'
   }];
+
 export const itemsOrigins = [{
   id: 1,
   img: 'p-tumaco.png',

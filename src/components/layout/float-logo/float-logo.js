@@ -19,9 +19,7 @@ class FloatLogo extends React.Component {
   }
 
   showModalDist = () => {
-    this.setState({
-      distModalVisible: !this.state.distModalVisible,
-    });
+    this.setState({ distModalVisible: !this.state.distModalVisible });
   };
 
   render() {

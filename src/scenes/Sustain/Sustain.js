@@ -9,11 +9,9 @@ import i18n from '../../i18n';
 import { withNamespaces } from 'react-i18next';
 import Helmet from 'react-helmet';
 
-import { articlesSustain as articlesSustainEn, countries as dataCountries } from '../../commons/data/data-en';
-import { articlesSustain as articlesSustainEs, countries as paises } from '../../commons/data/data-es';
-import { getArticlesSustain, getArticlesSustainEs } from '../../commons/services/api';
+import { articlesSustain as articlesSustainEn } from '../../commons/data/data-en';
+import { articlesSustain as articlesSustainEs } from '../../commons/data/data-es';
 import Modals from '../../components/modals/modals';
-
 
 class Sustain extends React.Component {
 
@@ -26,26 +24,17 @@ class Sustain extends React.Component {
       firstItem: 0,
       modalSelectedIndex: 0,
       items: i18n.language === 'en' ? articlesSustainEn : articlesSustainEs,
+      lngSelect: i18n.language,
       modalReportItems: ''//i18n.language === 'en' ? modalReportItemsEn : modalReportItemsEs
     };
   }
 
-  async getItems() {
-    let arrItems = [];
-    if (i18n.language === 'en') {
-      getArticlesSustain().then(data =>
-        data.map((e) => {
-          arrItems.push(e.acf);
-        })).then(() =>
-          this.setState({ items: arrItems })
-        )
-    } else {
-      getArticlesSustainEs().then(data =>
-        data.map((e) => {
-          arrItems.push(e.acf);
-        })).then(() =>
-          this.setState({ items: arrItems })
-        )
+  componentDidUpdate() {
+    if(this.state.lngSelect !== i18n.language){
+      this.setState({ 
+        items: i18n.language === 'en' ? articlesSustainEn : articlesSustainEs,
+        lngSelect: i18n.language
+      })
     }
   }
 
@@ -109,20 +98,25 @@ class Sustain extends React.Component {
           <div className="sustain-content-model">
             <h1>{t('sustainability.impact')}</h1>
             <div className="sustain-content-contain-carr">
-              {items.length > 0 ? <div className="sustain-content-contain-carr--items" >
-                <img className={`btn-next-img btn-next-img-left btn-next-img${firstItem < 1 && '-disabled'}`} src="/static/media/back.9ae9d2c8.svg" alt='left' onClick={() => this.carrAction('l')} />
-                {Object.keys(items).map(i =>
-                  <div key={i} className={`card-image ${firstItem > i && 'item-action--l'}`} onClick={() => this.showModalArticle(i)}>
-                    <img src={(items[i].img ? items[i].img : altImg)} alt={items[i].title} />
-                    <p>{items[i].title}</p>
-                    <div className="card-badges" >
-                      {(items[i].badges).map((badge, j) =>
-                        <div key={j} className={`card-badge`}>
-                          <img src={badge} alt={items[i].title} />
-                        </div>)}
-                    </div>
-                  </div>)}
-              </div> : <Spin size="large" />}
+              {items.length > 0 ?
+                <div className="sustain-content-contain-carr--items" >
+                  <img className={`btn-next-img btn-next-img-left btn-next-img${firstItem < 1 && '-disabled'}`} src="/static/media/back.9ae9d2c8.svg" alt='left' onClick={() => this.carrAction('l')} />
+                  {Object.values(items).map((item, i) =>
+                    <div key={i} className={`card-image ${firstItem > i && 'item-action--l'}`} onClick={() => this.showModalArticle(i)}>
+                      <img src={(item.img ? item.img : altImg)} alt={item.title} />
+                      <p>{item.title}</p>
+                      <div className="card-badges" >
+                        {item.badges && item.badges.map((badge, j) =>
+                          <div key={j} className={`card-badge`}>
+                            <img src={badge} alt={item.title} />
+                          </div>
+                        )}
+                      </div>
+                    </div>)}
+                </div>
+                :
+                <Spin size="large" />
+              }
               <img className={`btn-next-img btn-next-img${firstItem >= 3 && '-disabled'}`} src="/static/media/back.9ae9d2c8.svg" alt='right' onClick={() => this.carrAction('r')} />
             </div>
             <div className="sustain-content-contain-carr--dots">

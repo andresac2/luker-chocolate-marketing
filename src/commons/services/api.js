@@ -127,8 +127,8 @@ export async function getModalReportItemsEs() {
   return await response.json();
 }
 
-export async function getArticlesSustain() {
-  const response = await fetch('https://www.back.lukerchocolate.com/wp-json/wp/v2/sustainability?per_page=100');
+export async function getArticlesSustain(lng) {
+  const response = await fetch(`https://www.back.lukerchocolate.com${lng === 'en'? '': '/' + lng}/wp-json/wp/v2/sustainability?per_page=100`);
   return await response.json();
 }
 

@@ -3,31 +3,28 @@ import { Layout, Input, Select } from 'antd';
 import Footer from '../../components/layout/footer/footer';
 import { Link } from 'react-router-dom';
 import { notification } from 'antd';
-import item1 from '../../assets/img/doisy-milk.jpg'
-import item2 from '../../assets/img/blog-item1.jpg'
-import item3 from '../../assets/img/blog-item2.jpg'
-import item4 from '../../assets/img/blog-item3.jpg'
-import item5 from '../../assets/img/blog-item4.jpg'
 import { withNamespaces } from 'react-i18next';
 import { Spin } from 'antd';
+import { connect } from 'react-redux';
 
-import logo from '../../assets/img/Lukerlogo.svg'
 import TakeStand from '../../components/blog/take-stand/take-stand';
 import Article from '../../components/blog/article/article';
 import FloatLogo from '../../components/layout/float-logo/float-logo';
 import { Helmet } from 'react-helmet';
 import i18n from '../../i18n';
-import MetaTags from 'react-meta-tags';
 import { NewContact } from '../../commons/services/emblueService';
-import SelectLanguage from '../../commons/select-lng/select-lng';
-import { clients as clientsEn, articles as articlesEn } from '../../commons/data/data-en';
-import { clients as clientsEs, articles as articlesEs } from '../../commons/data/data-es';
-
 import { getClients, getPosts, getPostsEs, getClientsEs } from "../../commons/services/api";
+import { article as ArticleActions } from '../../services/Articles/ArticlesActions'
+import { client as ClientActions } from '../../services/Client/ClientActions'
 
+const { Search } = Input;
+    const { Option } = Select;
+    
 class Blog extends React.Component {
+
   constructor(props) {
     super(props);
+    
     this.state = {
       searchOpen: false,
       emailNewsletter: '',
@@ -35,133 +32,30 @@ class Blog extends React.Component {
       searchValue: '',
       newsletterWaiting: false,
       posts: [],
-      latestArticle: [],
-      concatArticles: [],
-      allArticles: [],
       allClients: [],
       clients: [],
-      isLoading: true
+      isLoading: true,
+      lngSelect: i18n.language
     };
+
     this.handleChange = this.handleChange.bind(this);
     this.registerEmailNewsletter = this.registerEmailNewsletter.bind(this);
     this.searchArticle = this.searchArticle.bind(this);
-    this.getArticles = this.getArticles.bind(this);
-    this.getCustomers = this.getCustomers.bind(this);
   }
 
-  //clients = i18n.language === 'en' ? clientsEn : clientsEs;
-  //articles = i18n.language === 'en' ? articlesEn : articlesEs;
   articleLoaded = [];
   recommendedEntries = [];
 
-  async getCustomers() {
-    //this.setState({ isLoading: true });
-    let breads = [{ href: '/', name: '' }]
-    let cust = {};
-    let customers = [{}];
-    if (i18n.language === 'en') {
-      getClients().then(data =>
-        data.map((e, i) => {
-          cust['url'] = e.acf.url;
-          cust['cover'] = e.acf.cover || 'banner-cocoa-forest.jpg';
-          cust['title'] = e.acf.title;
-          cust['banner'] = e.acf.banner;
-          cust['flag'] = e.acf.flag;
-          cust['content'] = e.acf.content;
-          breads[0]['href'] = e.acf.href;
-          breads[0]['name'] = e.acf.categoryname || "Nuestros clientes";
-          cust['breads'] = breads;
-          customers.push(cust);
-          cust = {};
-          breads = [{}, {}];
-        }))
-        .then(data =>
-          this.setState({ clients: customers })
-        )
-    } else {
-      getClientsEs().then(data =>
-        data.map((e, i) => {
-          cust['url'] = e.acf.url;
-          cust['cover'] = e.acf.cover || 'banner-cocoa-forest.jpg';
-          cust['title'] = e.acf.title;
-          cust['banner'] = e.acf.banner;
-          cust['flag'] = e.acf.flag;
-          cust['content'] = e.acf.content;
-          breads[0]['href'] = e.acf.href;
-          breads[0]['name'] = e.acf.categoryname || "Nuestros clientes";
-          cust['breads'] = breads;
-          customers.push(cust);
-          cust = {};
-          breads = [{}, {}];
-        }))
-        .then(data =>
-          this.setState({ clients: customers })
-        )
-    }
+  componentDidMount() {
+    this.props.getPost(i18n.language)
+    this.props.getAllClients(i18n.language)
   }
 
-  async getArticles() {
-    this.setState({ concatArticles: [] })
-    let breads = [{ href: '/blog', name: 'Blog' }, { href: '/blog/take-stand', name: 'Take a stand' }];
-    let autor = { name: '', avatar: '', details: '', linkedin: '' };
-    let art = {};
-    let arts = [{}];
-    if (i18n.language === 'en') {
-      getPosts().then(data =>
-        data.map((e, i) => {
-          art['url'] = e.slug;
-          art['fullUrl'] = e.acf.url;
-          art['cover'] = e.acf.cover || 'banner-cocoa-forest.jpg';
-          art['title'] = e.title.rendered;
-          art['description'] = e.content.rendered.substr(0, 100);
-          art['date'] = e.acf.date;
-          art['content'] = e.content.rendered;
-          autor['name'] = e.acf.authorname;
-          autor['avatar'] = e.acf.avatar;
-          autor['details'] = e.acf.details;
-          autor['linkedin'] = e.acf.linkeind;
-          breads[0]['href'] = "/blog/";
-          breads[0]['name'] = "Blog";
-          breads[1]['href'] = "/blog/" + e.acf.categoria.slug;
-          breads[1]['name'] = e.acf.categoria.name;
-          art['autor'] = autor;
-          art['breads'] = breads;
-          arts.push(art);
-          art = {};
-          breads = [{}, {}];
-          autor = {};
-        })).then(data =>
-          this.setState({ allArticles: arts.reverse(), latestArticle: arts[0], concatArticles: this.state.concatArticles.concat(this.state.allArticles) })
-        )
-    } else {
-      getPostsEs().then(data =>
-        data.map((e, i) => {
-          art['url'] = e.slug;
-          art['fullUrl'] = e.acf.url;
-          art['cover'] = e.acf.cover || 'banner-cocoa-forest.jpg';
-          art['title'] = e.title.rendered;
-          art['description'] = e.content.rendered.substr(0, 100);
-          art['date'] = e.acf.date;
-          art['content'] = e.content.rendered;
-          autor['name'] = e.acf.authorname;
-          autor['avatar'] = e.acf.avatar;
-          autor['details'] = e.acf.details;
-          autor['linkedin'] = e.acf.linkeind;
-          breads[0]['href'] = "/blog/";
-          breads[0]['name'] = "Blog";
-          breads[1]['href'] = "/blog/" + e.acf.categoria.slug;
-          breads[1]['name'] = e.acf.categoria.name;
-          art['autor'] = autor;
-          art['breads'] = breads;
-          arts.push(art);
-          art = {};
-          breads = [{}, {}];
-          autor = {};
-        })).then(data =>
-          this.setState({ allArticles: arts.reverse(), latestArticle: arts[0], concatArticles: this.state.concatArticles.concat(this.state.allArticles) })
-        )
+  componentDidUpdate(){
+    if(this.state.lngSelect !== i18n.language){
+      this.setState({ lngSelect: i18n.language })
+      this.props.getPost(i18n.language)
     }
-    //console.log(getPages().then(data => console.log(data)));  
   }
 
   searchToggle() {
@@ -169,13 +63,17 @@ class Blog extends React.Component {
   }
 
   loadArticle() {
-    if (this.props.match && this.props.match.params.article) {
-      if (this.props.match.params.category === 'our-clients' || this.props.match.params.category === 'nuestros-clientes') {
-        const client = this.state.clients.find(client => client.url === this.props.match.params.article);
+    const { match } = this.props
+    const { articles } = this.props.article
+    const { clients } = this.props.client
+
+    if (articles && match?.params.article) {
+      if (match.params.category === 'our-clients' || match.params.category === 'nuestros-clientes') {
+        const client = clients.find(client => client.url === match.params.article);
         this.articleLoaded = client;
         this.generateRecommendedEntries('clients');
       } else {
-        const art = this.state.allArticles.find(art => art.url === this.props.match.params.article);
+        const art = articles.find(art => art.url === match.params.article);
         this.articleLoaded = art;
         this.generateRecommendedEntries('article');
       }
@@ -193,16 +91,19 @@ class Blog extends React.Component {
   }
 
   generateRecommendedEntries(type) {
+    const { match } = this.props
+    const { articles } = this.props.article
+    const { clients } = this.props.client
+
     let recommended = [];
     let array = [];
-    let nCategory = (this.props.match.params.category === 'under-the-tree') ? 'take-stand' : this.props.match.params.category;
+    let nCategory = (match.params.category === 'under-the-tree') ? 'take-stand' : match.params.category;
     if (type === 'article') {
-      array = this.state.allArticles.filter(t => t.breads && t.breads.find(e => e.href.includes(nCategory)));
-      //array = this.state.allArticles;
+      array = articles.filter(t => t.breads && t.breads.find(e => e.href.includes(nCategory)));
     } else {
-      array = this.state.clients;
+      array = clients;
     }
-    const fIndex = array.findIndex(art => art.url === this.props.match.params.article);
+    const fIndex = array.findIndex(art => art.url === match.params.article);
     let rest = 1;
     let lim = array.length > 3 ? 4 : array.length;
     for (let i = 1; i < lim; i++) {
@@ -221,18 +122,19 @@ class Blog extends React.Component {
   }
 
   _handleChange = (lng) => {
-    i18n.changeLanguage(lng);
-    if (this.props.match.params.category === 'nuestros-clientes' || this.props.match.params.category === 'our-clients')
-      this.getCustomers();
+    const { match } = this.props
 
-    if (!this.props.match.params.category)
-      this.getArticles();
+    i18n.changeLanguage(lng);
+    if (match.params.category === 'nuestros-clientes' || match.params.category === 'our-clients')
+      this.props.getAllClients(i18n.language)
+
+    if (!match.params.category)
+      this.props.getPost(i18n.language)
   };
 
   searchOnChange(event) {
-    console.log(event)
-    console.log(event.target.value)
-    const allArticles = this.state.allArticles.slice(0, -1);// articlesEn.concat(articlesEs);
+    const { article: { articles } } = this.props
+    const allArticles = articles.slice(0, -1);// articlesEn.concat(articlesEs);
     const searched = allArticles.filter(t => t.title.toLowerCase().includes(event.target.value.toLowerCase()));
     this.setState({ findedArticles: searched });
     this.setState({ searchValue: event.target.value });
@@ -250,68 +152,57 @@ class Blog extends React.Component {
       if (data.Description === "preexistente") {
         notification.warning({
           message: i18n.t('errors.already-did-it'),
-          description:
-            i18n.t('errors.registered-email')
+          description: i18n.t('errors.registered-email')
         });
       } else {
         notification.success({
           message: i18n.t('messages.welcome-community'),
-          description:
-            i18n.t('messages.newsletter-ok')
+          description: i18n.t('messages.newsletter-ok')
         });
         this.setState({ emailNewsletter: '' });
       }
     } else {
       notification.error({
         message: i18n.t('errors.email-send-error'),
-        description:
-          i18n.t('errors.try-again')
+        description: i18n.t('errors.try-again')
       });
     }
+
     this.setState({ newsletterWaiting: false });
   };
 
-  componentDidMount() {
-    this.getArticles();
-    this.getCustomers();
-  }
-
   render() {
-    const { searchOpen, emailNewsletter, newsletterWaiting, findedArticles, searchValue, posts, latestArticle, allArticles, clients } = this.state;
-    const { Search } = Input;
-    const { Option } = Select;
+    const { article: { articles: allArticles }, lastArticle } = this.props
+    const { clients } = this.props.client
+    const { searchOpen, emailNewsletter, newsletterWaiting, findedArticles, searchValue, posts } = this.state;
     const { category, article } = this.props.match ? this.props.match.params : {};
     const { t, serverProps } = this.props;
-
+    
     this.loadArticle();
 
-    let articles
+    let articleSEO
     if (serverProps)
-      articles = serverProps.articles;
-
-    console.log(allArticles)
+      articleSEO = serverProps.articles;
 
     return (
       <Layout className="blog-component">
         <Helmet>
-          <title>{articles ? articles.title : t('blog.titulo_seo')}</title>
-          <meta property="description" content={articles ? articles.description : t('blog.descripcion_opengraph')} />
-          <meta property="og:description" content={articles ? articles.description : t('blog.descripcion_opengraph')} />
-          <meta property="og:title" content={articles ? articles.title : t('blog.titulo_protocolo_opengraph')} />
-          <meta property="og:image" content={articles ? articles.cover : t('blog.imagen_open_graph.url')} />
+          <title>{articleSEO ? articleSEO.title : t('blog.titulo_seo')}</title>
+          <meta property="description" content={articleSEO ? articleSEO.description : t('blog.descripcion_opengraph')} />
+          <meta property="og:description" content={articleSEO ? articleSEO.description : t('blog.descripcion_opengraph')} />
+          <meta property="og:title" content={articleSEO ? articleSEO.title : t('blog.titulo_protocolo_opengraph')} />
+          <meta property="og:image" content={articleSEO ? articleSEO.cover : t('blog.imagen_open_graph.url')} />
           <meta name="keywords" content={t('blog.keywords')} />
           <meta property="og:url" content={"https://www.lukerchocolate.com" + this.props.match.url} />
           <meta name="twitter:card" content="summary_large_image" />
           <meta property="og:site_name" content="Luker Chocolate." />
-          <meta name="twitter:image:alt" content={articles ? articles.title : t('blog.descripcion_opengraph')} />
+          <meta name="twitter:image:alt" content={articleSEO ? articleSEO.title : t('blog.descripcion_opengraph')} />
           <meta property="fb:app_id" content="your_app_id" />
-          <meta property="twitter:image" content={articles ? articles.cover : t('blog.imagen_open_graph.url')} />
+          <meta property="twitter:image" content={articleSEO ? articleSEO.cover : t('blog.imagen_open_graph.url')} />
           <meta name="twitter:site" content="@Luker_Chocolate" />
         </Helmet>
 
-
-
-        {(allArticles.length > 0 && clients.length > 0) ?
+        {(allArticles?.length > 0 && clients?.length > 0) ?
           <>
             <div className={`blog-component-header blog-component-header--${(article) ? article : category}`} style={{ backgroundImage: (!this.articleLoaded.banner) ? (article) ? `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/blog/${this.articleLoaded.cover}`)})` : '' : `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/${this.articleLoaded.banner}`)})` }}>
               <div className="btn-dist">
@@ -372,14 +263,16 @@ class Blog extends React.Component {
                   <div className="blog-layout">
                     <div className="blog-layout-latest">
                       <h1>{t('blog.latest-entries')}</h1>
-                      {latestArticle.breads && <Link to={latestArticle.breads[1].href + '/' + latestArticle.url} className="blog-layout-latest--article">
-                        <img src={require('../../assets/img/blog/' + latestArticle.cover)} alt={latestArticle.title} />
-                        <p>{latestArticle.date}</p>
-                        <h2>{latestArticle.title}</h2>
-                      </Link>}
+                      {lastArticle?.breads && 
+                        <Link to={lastArticle.breads[1].href + '/' + lastArticle.url} className="blog-layout-latest--article">
+                          <img src={require('../../assets/img/blog/' + lastArticle.cover)} alt={lastArticle.title} />
+                          <p>{lastArticle.date}</p>
+                          <h2>{lastArticle.title}</h2>
+                        </Link>
+                      }
                     </div>
                     <div className="blog-layout-articles">
-                      {allArticles && allArticles.length > 0 && allArticles.map((data, i) => {
+                      {allArticles?.length > 0 && allArticles.map((data, i) => {
                         return data.breads &&
                           (i >= 3 && i <= 6) && <div className="blog-layout-articles--item" key={i}>
                             <Link to={allArticles[i].breads[1].href + '/' + allArticles[i].url} className="blog-layout-latest--article">
@@ -394,11 +287,11 @@ class Blog extends React.Component {
                       <h1>{t('blog.featured')}</h1>
                       <div className="blog-layout-featured-item">
                         {allArticles && allArticles.length > 0 && allArticles.map((data, i) => {
-                          return data.breads &&
-                            i <= 4 && <div className="blog-layout-articles--item" key={i}>
-                              <Link to={allArticles[i].breads[1].href + '/' + allArticles[i].url} className="blog-layout-latest--article">
-                                <p>{allArticles[i].date}</p>
-                                <h2>{allArticles[i].title} </h2>
+                          return data.breads && i <= 4 && 
+                            <div className="blog-layout-articles--item" key={i}>
+                              <Link to={data.breads[1].href + '/' + data.url} className="blog-layout-latest--article">
+                                <p>{data.date}</p>
+                                <h2>{data.title} </h2>
                               </Link>
                             </div>
                         }
@@ -423,4 +316,19 @@ class Blog extends React.Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    article: state.article,
+    client: state.client
+  }
+}
+
+const mapDispatchToProps = {
+  getPost: ArticleActions.getPost,
+  getAllClients: ClientActions.getAll
+};
+
+Blog = connect(mapStateToProps, mapDispatchToProps)(Blog);
+
 export default withNamespaces()(Blog);
