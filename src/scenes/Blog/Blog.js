@@ -127,6 +127,8 @@ class Blog extends React.Component {
 
     if (!match.params.category)
       this.props.getPost(i18n.language)
+    
+    this.props.history.push('/blog')
   };
 
   searchOnChange(event) {
@@ -134,7 +136,6 @@ class Blog extends React.Component {
     const allArticles = articles.slice(0, -1);// articlesEn.concat(articlesEs);
     const searched = allArticles.filter(t => t.title.toLowerCase().includes(event.target.value.toLowerCase()));
     this.setState({ findedArticles: searched });
-    this.setState({ searchValue: event.target.value });
     this.setState({ searchValue: event.target.value });
   }
 

@@ -28,15 +28,17 @@ class Home extends React.Component {
     this.setState({
       distModalVisible: !this.state.distModalVisible,
     });
-  };
+  }
+
   _handleChange(lng) {
-    console.log("language", lng)
     i18n.changeLanguage(lng);
   }
+
   async UpdateData() {
     const response = await fetch(window.location.href + '/upgradation');
     return await response.json();
   }
+
   componentDidMount() {
     this.UpdateData();
   }
@@ -73,7 +75,7 @@ class Home extends React.Component {
         </div>
         <div className="cacao-link">
           <div className="cacao-link-content">
-            <Link to="/" onClick={() => console.log('aroma')}>
+            <Link to="/">
               <img src={cacao1} className="cacao-link-1" alt="Logo Luker" />
               <img src={cacao2} className="cacao-link-2" alt="Logo Luker" />
             </Link>
