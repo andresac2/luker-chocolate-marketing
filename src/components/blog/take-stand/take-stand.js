@@ -14,7 +14,7 @@ function TakeStand({ category, t, articles }) {
         { articles?.length > 0 &&
           <div className="blog-layout-latest--article">
             <Link to={'/blog/' + category + '/' + articles[lim].url}>
-              <img src={require('../../../assets/img/blog/' + articles[lim].cover)} alt={articles[lim].title} />
+              <img src={articles[lim].cover.includes('http')? articles[lim].cover: require('../../../assets/img/blog/' + articles[lim].cover)} alt={articles[lim].title} />
               <p>{articles[lim].date}</p>
               <h2>{articles[lim].title}</h2>
             </Link>
@@ -25,7 +25,7 @@ function TakeStand({ category, t, articles }) {
         {Object.values(articles).map((item, i) =>
           <div className="blog-layout-articles--item" key={i}>
             <Link to={'/blog/' + category + '/' + item.url} className="blog-layout-latest--article">
-              <img src={require('../../../assets/img/blog/' + item.cover)} alt={item.title} />
+              <img src={item.cover.includes('http')? item.cover: require('../../../assets/img/blog/' + item.cover)} alt={item.title} />
               <p>{item.date}</p>
               <h2>{item.title} </h2>
             </Link>

@@ -1,4 +1,5 @@
 import { put, takeLatest, all, select } from 'redux-saga/effects';
+
 import Api from '../../commons/Api/Api'
 import { article as articleActions } from "./ArticlesActions"
 import articleTransform from './transforms/articles.transform'
@@ -15,6 +16,8 @@ function* getPost({ payload: { lng } }) {
     if (ok) {
       const transform = articleTransform(payload)
       transform.reverse()
+      console.log(transform);
+      
       yield put(articleActions.getPostResponse(transform, lng));
     } else {
       const err = new TypeError('ERROR_GET_POST')
