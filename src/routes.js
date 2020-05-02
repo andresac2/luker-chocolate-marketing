@@ -25,12 +25,10 @@ import WrappedWorkWithUs from "./components/layout/work-with-us/work-with-us";
 import ScrollToTop from "./commons/scroll-to-top/scroll-to-top";
 import { createMemoryHistory } from 'history';
 
-const history = createMemoryHistory();
-
 export default function BasicExample(props) {
 
   return (
-    <div className="limit-width" >
+    <div className="limit-width">
       <Header />
       <ScrollToTop />
       <Switch>
@@ -64,7 +62,6 @@ export default function BasicExample(props) {
       <NavArrowLeft />
       <FooterCover />
     </div>
-
   );
 }
 //<Route path="/about" component={About} />
