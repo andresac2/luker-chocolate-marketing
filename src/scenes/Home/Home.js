@@ -34,15 +34,6 @@ class Home extends React.Component {
     i18n.changeLanguage(lng);
   }
 
-  async UpdateData() {
-    const response = await fetch(window.location.href + '/upgradation');
-    return await response.json();
-  }
-
-  componentDidMount() {
-    this.UpdateData();
-  }
-
   render() {
     const { distModalVisible } = this.state;
     const { t } = this.props;
