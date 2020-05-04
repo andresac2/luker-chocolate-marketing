@@ -63,14 +63,24 @@ class Blog extends React.Component {
     const { match } = this.props
     const { articles } = this.props.article
     const { clients } = this.props.client
-
+    
     if (articles && match?.params.article) {
       if (match.params.category === 'our-clients' || match.params.category === 'nuestros-clientes') {
         const client = clients.find(client => client.url === match.params.article);
+        if(!client){
+          this.props.history.push('/blog')
+          return
+        }
+        
         this.articleLoaded = client;
         this.generateRecommendedEntries('clients');
       } else {
         const art = articles.find(art => art.url === match.params.article);
+        if(!art){
+          this.props.history.push('/blog')
+          return 
+        }
+
         this.articleLoaded = art;
         this.generateRecommendedEntries('article');
       }
@@ -201,17 +211,19 @@ class Blog extends React.Component {
           <meta name="twitter:site" content="@Luker_Chocolate" />
         </Helmet>
 
-        {(allArticles?.length > 0 && clients?.length > 0) ?
+        {(allArticles?.length > 0 && clients?.length > 0) && this.articleLoaded?
           <>
-            <div className={`blog-component-header blog-component-header--${(article) ? article : category}`} style={{ backgroundImage: (!this.articleLoaded.banner) ? (article) ? `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/blog/${this.articleLoaded.cover}`)})` : '' : `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/${this.articleLoaded.banner}`)})` }}>
+            <div 
+            className={`blog-component-header blog-component-header--${(article) ? article : category}`} 
+            style={{ backgroundImage: (!this.articleLoaded?.banner) ? (article) ? `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/blog/${this.articleLoaded?.cover}`)})` : '' : `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/${this.articleLoaded?.banner}`)})` }}>
               <div className="btn-dist">
                 <Link to="/" className="logo"> <img src="/static/media/Lukerlogo.af6f7609.svg" alt="Logo Luker" /></Link>
-                {this.articleLoaded.banner ?
+                {this.articleLoaded?.banner ?
                   <Link to={t('routes.our-clients')}>{t('buttons.back')}</Link> :
                   <Link to='/blog'>BLOG</Link>
                 }
               </div>
-              <FloatLogo btns={[{ url: this.articleLoaded.banner ? t('routes.our-clients') : '/blog', btnText: (this.articleLoaded.banner) ? t('buttons.back').toUpperCase() : 'BLOG' }]} />
+              <FloatLogo btns={[{ url: this.articleLoaded?.banner ? t('routes.our-clients') : '/blog', btnText: (this.articleLoaded.banner) ? t('buttons.back').toUpperCase() : 'BLOG' }]} />
               <div style={{ marginTop: (article) ? '5em' : '3em' }}>
                 <div className="blog-component-header--search">
                   {category !== t('routes.our-clients').replace("/", "") &&
