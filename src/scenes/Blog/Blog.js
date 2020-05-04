@@ -182,7 +182,7 @@ class Blog extends React.Component {
   };
 
   render() {
-    const { article: { articles: allArticles }, lastArticle, t, serverProps } = this.props
+    const { article: { articles: allArticles, lastArticle }, t, serverProps } = this.props
     const { clients } = this.props.client
     const { searchOpen, emailNewsletter, newsletterWaiting, findedArticles, searchValue } = this.state;
     const { category, article } = this.props.match ? this.props.match.params : {};
@@ -241,7 +241,10 @@ class Blog extends React.Component {
                   </Select>
                 </div>
                 <h1 style={{ fontSize: (article) ? '4em' : '5em' }}>{(article) ? this.articleLoaded.title : (category) ? (category === 'innovacion') ? 'innovación' : (category === 'tomando-posicion') ? 'tomando posición' : (category === 'sueno-del-chocolate') ? 'sueño del chocolate' : (category === 'lo-que-no-sabias') ? 'lo que no sabías' : (category === 'take-stand') ? 'Take a stand' : category.replace("/", "").replace(/-/g, " ") : 'Under The Tree'}
-                  {this.articleLoaded.flag && <img className="blog-component-header-flag" src={require('../../assets/img/' + this.articleLoaded.flag + "-flag.png")} alt={this.articleLoaded.flag.substr(0, 2)} />} </h1>
+                  {this.articleLoaded.flag && 
+                    <img className="blog-component-header-flag" src={require('../../assets/img/' + this.articleLoaded.flag + "-flag.png")} alt={this.articleLoaded.flag.substr(0, 2)} />
+                  } 
+                </h1>
               </div>
             </div >
             <div className="blog-component-content">
@@ -277,7 +280,8 @@ class Blog extends React.Component {
                   :
                   <div className="blog-layout">
                     <div className="blog-layout-latest">
-                      <h1>{t('blog.latest-entries')}</h1>
+                      { lastArticle?.priority && <h1>{lastArticle.title}</h1> }
+                      { !lastArticle?.priority && <h1>{t('blog.latest-entries')}</h1> }
                       {lastArticle?.breads &&
                         <Link to={lastArticle.breads[1].href + '/' + lastArticle.url} className="blog-layout-latest--article">
                           <img src={require('../../assets/img/blog/' + lastArticle.cover)} alt={lastArticle.title} />

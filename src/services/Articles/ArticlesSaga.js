@@ -16,7 +16,8 @@ function* getPost({ payload: { lng } }) {
     if (ok) {
       const transform = articleTransform(payload)
       transform.sort((a, b) => a.url === 'manifesto-under-the-tree'? -1: b._date - a._date)
-      
+      transform[0].priority = true
+
       yield put(articleActions.getPostResponse(transform, lng));
     } else {
       const err = new TypeError('ERROR_GET_POST')
