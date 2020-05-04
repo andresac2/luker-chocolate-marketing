@@ -54,9 +54,8 @@ export default function BasicExample(props) {
         <Route path="/contactanos" component={WrappedContact} />
         <Route path="/work-with-us" component={WrappedWorkWithUs} />
         <Route path="/trabaja-con-nosotros" component={WrappedWorkWithUs} />
-        <Redirect from="/:en/blog/:article" to="/blog/under-the-tree/:article" />
-
-        <Route component={Page404} />
+        <Route path="/404" component={Page404} />
+        <Redirect to="/404" />
       </Switch>
       <NavArrowRight />
       <NavArrowLeft />
