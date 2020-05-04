@@ -122,13 +122,15 @@ class Blog extends React.Component {
     const { match } = this.props
 
     i18n.changeLanguage(lng);
+
     if (match.params.category === 'nuestros-clientes' || match.params.category === 'our-clients')
       this.props.getAllClients(i18n.language)
 
     if (!match.params.category)
       this.props.getPost(i18n.language)
     
-    this.props.history.push('/blog')
+    if(!match.params.article)
+      this.props.history.push('/blog')
   };
 
   searchOnChange(event) {

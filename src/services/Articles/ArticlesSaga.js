@@ -15,7 +15,7 @@ function* getPost({ payload: { lng } }) {
     
     if (ok) {
       const transform = articleTransform(payload)
-      transform.sort((a, b) => b._date - a._date)
+      transform.sort((a, b) => a.url === 'manifesto-under-the-tree'? -1: b._date - a._date)
       
       yield put(articleActions.getPostResponse(transform, lng));
     } else {
