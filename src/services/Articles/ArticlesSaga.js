@@ -26,8 +26,30 @@ function* getPost({ payload: { lng } }) {
   }
 }
 
+function* getCategories({ payload: { lng } }) {
+  const categoriesCache = yield select(state => state.article.categoriesCache)
+  
+  if(categoriesCache[lng]){
+    yield put(articleActions.getCategoriesResponse(categoriesCache[lng], lng));
+
+  } else {
+    let { ok, payload } = yield Api.get(`${lng === 'en'? '': '/' + lng}/wp-json/wp/v2/categories?per_page=100`)
+    
+    const exluceCategories = ['Sin categoría', 'Uncategorized']
+    payload = payload.filter(item => !exluceCategories.includes(item.name))
+
+    if (ok) {
+      yield put(articleActions.getCategoriesResponse(payload, lng));
+    } else {
+      const err = new TypeError('ERROR_GET_CATEGORIES')
+      yield put(articleActions.getCategoriesResponse(err))
+    }
+  }
+}
+
 function* ActionWatcher() {
   yield takeLatest(articleActions.getPost, getPost)
+  yield takeLatest(articleActions.getCategories, getCategories)
 }
 
 export default function* rootSaga() {

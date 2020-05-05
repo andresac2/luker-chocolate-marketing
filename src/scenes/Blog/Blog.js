@@ -45,6 +45,7 @@ class Blog extends React.Component {
 
   componentDidMount() {
     this.props.getPost(i18n.language)
+    this.props.getCategories(i18n.language)
     this.props.getAllClients(i18n.language)
   }
 
@@ -52,6 +53,7 @@ class Blog extends React.Component {
     if (this.state.lngSelect !== i18n.language) {
       this.setState({ lngSelect: i18n.language })
       this.props.getPost(i18n.language)
+      this.props.getCategories(i18n.language)
     }
   }
 
@@ -63,22 +65,22 @@ class Blog extends React.Component {
     const { match } = this.props
     const { articles } = this.props.article
     const { clients } = this.props.client
-    
+
     if (articles && match?.params.article) {
       if (match.params.category === 'our-clients' || match.params.category === 'nuestros-clientes') {
         const client = clients.find(client => client.url === match.params.article);
-        if(!client){
+        if (!client) {
           this.props.history.push('/blog')
           return
         }
-        
+
         this.articleLoaded = client;
         this.generateRecommendedEntries('clients');
       } else {
         const art = articles.find(art => art.url === match.params.article);
-        if(!art){
+        if (!art) {
           this.props.history.push('/blog')
-          return 
+          return
         }
 
         this.articleLoaded = art;
@@ -138,8 +140,8 @@ class Blog extends React.Component {
 
     if (!match.params.category)
       this.props.getPost(i18n.language)
-    
-    if(!match.params.article)
+
+    if (!match.params.article)
       this.props.history.push('/blog')
   };
 
@@ -182,11 +184,11 @@ class Blog extends React.Component {
   };
 
   render() {
-    const { article: { articles: allArticles, lastArticle }, t, serverProps } = this.props
+    const { article: { articles: allArticles, lastArticle, categories }, t, serverProps } = this.props
     const { clients } = this.props.client
     const { searchOpen, emailNewsletter, newsletterWaiting, findedArticles, searchValue } = this.state;
     const { category, article } = this.props.match ? this.props.match.params : {};
-    
+
     this.loadArticle();
 
     let articleSEO
@@ -211,11 +213,11 @@ class Blog extends React.Component {
           <meta name="twitter:site" content="@Luker_Chocolate" />
         </Helmet>
 
-        {(allArticles?.length > 0 && clients?.length > 0) && this.articleLoaded?
+        {(allArticles?.length > 0 && clients?.length > 0) && this.articleLoaded ?
           <>
-            <div 
-            className={`blog-component-header blog-component-header--${(article) ? article : category}`} 
-            style={{ backgroundImage: (!this.articleLoaded?.banner) ? (article) ? `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/blog/${this.articleLoaded?.cover}`)})` : '' : `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/${this.articleLoaded?.banner}`)})` }}>
+            <div
+              className={`blog-component-header blog-component-header--${(article) ? article : category}`}
+              style={{ backgroundImage: (!this.articleLoaded?.banner) ? (article) ? `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/blog/${this.articleLoaded?.cover}`)})` : '' : `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/${this.articleLoaded?.banner}`)})` }}>
               <div className="btn-dist">
                 <Link to="/" className="logo"> <img src="/static/media/Lukerlogo.af6f7609.svg" alt="Logo Luker" /></Link>
                 {this.articleLoaded?.banner ?
@@ -241,21 +243,27 @@ class Blog extends React.Component {
                   </Select>
                 </div>
                 <h1 style={{ fontSize: (article) ? '4em' : '5em' }}>{(article) ? this.articleLoaded.title : (category) ? (category === 'innovacion') ? 'innovación' : (category === 'tomando-posicion') ? 'tomando posición' : (category === 'sueno-del-chocolate') ? 'sueño del chocolate' : (category === 'lo-que-no-sabias') ? 'lo que no sabías' : (category === 'take-stand') ? 'Take a stand' : category.replace("/", "").replace(/-/g, " ") : 'Under The Tree'}
-                  {this.articleLoaded.flag && 
+                  {this.articleLoaded.flag &&
                     <img className="blog-component-header-flag" src={require('../../assets/img/' + this.articleLoaded.flag + "-flag.png")} alt={this.articleLoaded.flag.substr(0, 2)} />
-                  } 
+                  }
                 </h1>
               </div>
             </div>
-            
+
             <div className="blog-component-content">
-              {(category !== t('routes.our-clients').replace("/", "")) && <div className={`blog-tabs blog-tabs-${category && 'selected'}`} >
-                <Link to={'/blog' + t('routes.take-stand')} className={category === t('routes.take-stand').replace("/", "") ? 'tab-blog-selected' : undefined}>{t('blog.take-stand')}</Link>
-                <Link to={'/blog' + t('routes.innovation')} className={category === t('routes.innovation').replace("/", "") ? 'tab-blog-selected' : undefined}>{t('blog.innovation')}</Link>
-                <Link to={'/blog' + t('routes.create-shared-value')} className={category === t('routes.create-shared-value').replace("/", "") ? 'tab-blog-selected' : undefined}>{t('blog.create-shared-value')}</Link>
-                <Link to={'/blog' + t('routes.chocolate-dream')} className={category === t('routes.chocolate-dream').replace("/", "") ? 'tab-blog-selected' : undefined}>{t('blog.chocolate-dream-journey')}</Link>
-                <Link to={'/blog' + t('routes.what-you-didnt-know')} className={category === t('routes.what-you-didnt-know').replace("/", "") ? 'tab-blog-selected' : undefined}>{t('blog.what-did-know')}</Link>
-              </div>}
+              {(category !== t('routes.our-clients').replace("/", "")) &&
+                <div className={`blog-tabs blog-tabs-${category && 'selected'}`}>
+                  { categories.map(categorie => 
+                    <Link 
+                      key={categorie.slug} 
+                      to={`/blog/${categorie.slug}`} 
+                      className={category == categorie.slug ? 'tab-blog-selected' : undefined}
+                    >
+                      {categorie.name.toUpperCase()}
+                    </Link>  
+                  )}
+                </div>
+              }
               {(findedArticles.length > 0 && searchValue.length > 0) ?
                 <div className="blog-layout-articles-searched-results">
                   <h3>{t('blog.finded') + " " + findedArticles.length + " " + t('blog.articles-for') + ' "' + searchValue + '"'} </h3>
@@ -281,8 +289,8 @@ class Blog extends React.Component {
                   :
                   <div className="blog-layout">
                     <div className="blog-layout-latest">
-                      <h1>{lastArticle.title}</h1> 
-                      { !lastArticle?.priority && <h1></h1> }
+                      <h1>{lastArticle.title}</h1>
+                      {!lastArticle?.priority && <h1></h1>}
                       {lastArticle?.breads &&
                         <Link to={lastArticle.breads[1].href + '/' + lastArticle.url} className="blog-layout-latest--article">
                           <img src={require('../../assets/img/blog/' + lastArticle.cover)} alt={lastArticle.title} />
@@ -346,7 +354,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {
   getPost: ArticleActions.getPost,
-  getAllClients: ClientActions.getAll
+  getCategories: ArticleActions.getCategories,
+  getAllClients: ClientActions.getAll,
 };
 
 Blog = connect(mapStateToProps, mapDispatchToProps)(Blog);

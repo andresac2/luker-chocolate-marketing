@@ -48,9 +48,10 @@ export default (articles) => {
       details: data.acf.details,
       linkedin: data.acf.linkedin
     };
+    
     art.breads = [
       { href: "/blog/", name: "Blog" },
-      { href: "/blog/" + data.acf.categoria.slug, name: data.acf.categoria.name }
+      { href: "/blog/" + data.acf.categoria?.slug, name: data.acf.categoria?.name }
     ];
     return art
   })

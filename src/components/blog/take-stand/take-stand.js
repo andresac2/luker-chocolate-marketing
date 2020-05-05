@@ -11,7 +11,7 @@ function TakeStand({ category, t, articles, articleFlux }) {
     <div className="take-stand">
       <div className="blog-layout-latest">
         { lastArticle && <h1>{lastArticle.title}</h1> }
-        { articles?.length == 0 && <h1>{t('blog.empty')}</h1> }
+        { !lastArticle && articles?.length == 0 && <h1>{t('blog.empty')}</h1> }
 
         { lastArticle &&
           <div className="blog-layout-latest--article">
