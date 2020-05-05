@@ -37,7 +37,7 @@ app.listen(process.env.PORT || PORT, '0.0.0.0', (error) => {
 
 const replaceXml = (sitemap) => {
   return new Promise((resolve, reject) => {
-    fs.writeFile(`public/sitemap.xml`, sitemap, 'utf8', (err) => {
+    fs.writeFile(`build/sitemap.xml`, sitemap, 'utf8', (err) => {
       if (err)
         resolve(err)
       else
