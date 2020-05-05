@@ -20,7 +20,8 @@ app.use(bodyParser.json());
 
 app.post('/sitemap-hook', async (req, res, next) => {
   const { sitemap } = req.body
-  res.send(await replaceXml(sitemap)) 
+  const sitemapEdit = await replaceXml(sitemap)
+  res.send("ENTRO") 
 });
 
 router.use(express.static(path.resolve(__dirname, '..', 'build'), { maxAge: '30d' }));
