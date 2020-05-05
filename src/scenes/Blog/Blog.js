@@ -67,25 +67,21 @@ class Blog extends React.Component {
     const { clients } = this.props.client
 
     if (articles && match?.params.article) {
-      if (match.params.category === 'our-clients' || match.params.category === 'nuestros-clientes') {
-        const client = clients.find(client => client.url === match.params.article);
-        if (!client) {
-          this.props.history.push('/blog')
-          return
-        }
+      let article, client;
 
-        this.articleLoaded = client;
-        this.generateRecommendedEntries('clients');
-      } else {
-        const art = articles.find(art => art.url === match.params.article);
-        if (!art) {
-          this.props.history.push('/blog')
-          return
-        }
+      if (match.params.category === 'our-clients' || match.params.category === 'nuestros-clientes')
+        client = clients.find(client => client.url === match.params.article);
+      else
+        article = articles.find(art => art.url === match.params.article);
 
-        this.articleLoaded = art;
-        this.generateRecommendedEntries('article');
+      if (!article && !client) {
+        this.props.history.push('/blog')
+        return
       }
+
+      this.articleLoaded = client || article;
+
+      this.generateRecommendedEntries(article ? 'article' : 'clients');
     }
   }
 
@@ -213,11 +209,18 @@ class Blog extends React.Component {
           <meta name="twitter:site" content="@Luker_Chocolate" />
         </Helmet>
 
-        {(allArticles?.length > 0 && clients?.length > 0) && this.articleLoaded ?
+        {allArticles?.length > 0 && clients?.length > 0 && this.articleLoaded ?
           <>
             <div
-              className={`blog-component-header blog-component-header--${(article) ? article : category}`}
-              style={{ backgroundImage: (!this.articleLoaded?.banner) ? (article) ? `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/blog/${this.articleLoaded?.cover}`)})` : '' : `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/${this.articleLoaded?.banner}`)})` }}>
+              className={`blog-component-header blog-component-header--${article ? article : category}`}
+              style={{
+                backgroundImage:
+                  (this.articleLoaded && this.articleLoaded !== []) || !article ? '' :
+                    !this.articleLoaded.banner ?
+                      `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/blog/${this.articleLoaded.cover}`)})` :
+                      `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/${this.articleLoaded.banner}`)})`
+              }}>
+
               <div className="btn-dist">
                 <Link to="/" className="logo"> <img src="/static/media/Lukerlogo.af6f7609.svg" alt="Logo Luker" /></Link>
                 {this.articleLoaded?.banner ?
@@ -253,14 +256,14 @@ class Blog extends React.Component {
             <div className="blog-component-content">
               {(category !== t('routes.our-clients').replace("/", "")) &&
                 <div className={`blog-tabs blog-tabs-${category && 'selected'}`}>
-                  { categories.map(categorie => 
-                    <Link 
-                      key={categorie.slug} 
-                      to={`/blog/${categorie.slug}`} 
+                  {categories.map(categorie =>
+                    <Link
+                      key={categorie.slug}
+                      to={`/blog/${categorie.slug}`}
                       className={category == categorie.slug ? 'tab-blog-selected' : undefined}
                     >
                       {categorie.name.toUpperCase()}
-                    </Link>  
+                    </Link>
                   )}
                 </div>
               }
@@ -281,8 +284,8 @@ class Blog extends React.Component {
                   <br />
                 </div>
                 :
-                (category) ?
-                  (article) ?
+                category ?
+                  this.articleLoaded && this.articleLoaded !== [] && article ?
                     <Article data={this.articleLoaded} recommended={this.recommendedEntries} />
                     :
                     <TakeStand articles={allArticles.filter(t => t.breads && t.breads.find(e => e.href.includes(category)))} category={category} />
