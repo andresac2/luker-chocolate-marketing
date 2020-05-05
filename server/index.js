@@ -1,6 +1,6 @@
 import express from 'express';
 
-const { spawn } = require('child_process');
+const bodyParser = require('body-parser');
 const { renderer } = require('./middleware/renderer');
 
 const PORT = 3000;
@@ -12,30 +12,39 @@ const app = express();
 const router = express.Router();
 var fs = require('fs');
 
-// other static resources should just be served as they are
-router.use(express.static(
-  path.resolve(__dirname, '..', 'build'),
-  { maxAge: '30d' },
-));
-
 getTranslations('en')
 getTranslations('es')
-// app.get('/upgradation', function (req, res, next) {
-//   getTranslations('en')
-//   getTranslations('es')
-//   const build = spawn('npm', ['run', 'build']);
-//   let response = 'stdout: ';
-//   build.stdout.on('data', (data) => {
-//     response += `${data}
 
-//     `;
-//     console.log(`stdout: ${data}`);
-//   });
-//   build.on('close', (code) => {
-//     console.log(`child process exited with code ${code}`);
-//     res.send(response);
-//   });
-// });
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+app.post('/sitemap-hook', async (req, res, next) => {
+  const { sitemap } = req.body
+  res.send(await replaceXml(sitemap))
+});
+
+router.use(express.static(path.resolve(__dirname, '..', 'build'), { maxAge: '30d' }));
+router.use('*', renderer);
+app.use(router);
+
+app.listen(process.env.PORT || PORT, '0.0.0.0', (error) => {
+  if (error) {
+    return console.log('something bad happened', error);
+  }
+
+  console.log("listening on " + PORT + "...");
+});
+
+const replaceXml = (sitemap) => {
+  return new Promise((resolve, reject) => {
+    fs.writeFile(`public/sitemap.xml`, sitemap, 'utf8', (err) => {
+      if (err)
+        reject(err)
+      else
+        resolve({ success: 'OK' })
+    });
+  })
+}
 
 function getTranslations(lng) {
   return new Promise((resolve) => {
@@ -55,15 +64,3 @@ function getTranslations(lng) {
       });
   })
 }
-
-router.use('*', renderer);
-app.use(router);
-// start the app
-
-app.listen(process.env.PORT || PORT, '0.0.0.0', (error) => {
-  if (error) {
-    return console.log('something bad happened', error);
-  }
-
-  console.log("listening on " + PORT + "...");
-});
