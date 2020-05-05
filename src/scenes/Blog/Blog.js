@@ -246,7 +246,8 @@ class Blog extends React.Component {
                   } 
                 </h1>
               </div>
-            </div >
+            </div>
+            
             <div className="blog-component-content">
               {(category !== t('routes.our-clients').replace("/", "")) && <div className={`blog-tabs blog-tabs-${category && 'selected'}`} >
                 <Link to={'/blog' + t('routes.take-stand')} className={category === t('routes.take-stand').replace("/", "") ? 'tab-blog-selected' : undefined}>{t('blog.take-stand')}</Link>
@@ -280,13 +281,13 @@ class Blog extends React.Component {
                   :
                   <div className="blog-layout">
                     <div className="blog-layout-latest">
-                      { lastArticle?.priority && <h1>{lastArticle.title}</h1> }
-                      { !lastArticle?.priority && <h1>{t('blog.latest-entries')}</h1> }
+                      <h1>{lastArticle.title}</h1> 
+                      { !lastArticle?.priority && <h1></h1> }
                       {lastArticle?.breads &&
                         <Link to={lastArticle.breads[1].href + '/' + lastArticle.url} className="blog-layout-latest--article">
                           <img src={require('../../assets/img/blog/' + lastArticle.cover)} alt={lastArticle.title} />
                           <p>{lastArticle.date}</p>
-                          <h2>{lastArticle.title}</h2>
+                          <h2>{t('blog.latest-entries')}</h2>
                         </Link>
                       }
                     </div>

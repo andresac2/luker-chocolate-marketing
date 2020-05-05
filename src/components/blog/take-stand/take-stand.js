@@ -1,22 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { withNamespaces } from 'react-i18next';
+import { connect } from 'react-redux';
 
-function TakeStand({ category, t, articles }) {
-  
+function TakeStand({ category, t, articles, articleFlux }) {
+  const { lastArticle } = articleFlux
+
   const lim = 0; //props.articles.length - 1;
   return (
     <div className="take-stand">
       <div className="blog-layout-latest">
-        { articles?.length > 0 && <h1>{t('blog.featured-post')}</h1> }
+        { lastArticle && <h1>{lastArticle.title}</h1> }
         { articles?.length == 0 && <h1>{t('blog.empty')}</h1> }
 
-        { articles?.length > 0 &&
+        { lastArticle &&
           <div className="blog-layout-latest--article">
-            <Link to={'/blog/' + category + '/' + articles[lim].url}>
-              <img src={articles[lim].cover.includes('http')? articles[lim].cover: require('../../../assets/img/blog/' + articles[lim].cover)} alt={articles[lim].title} />
-              <p>{articles[lim].date}</p>
-              <h2>{articles[lim].title}</h2>
+            <Link to={'/blog/' + category + '/' + lastArticle.url}>
+              <img src={lastArticle.cover.includes('http')? lastArticle.cover: require('../../../assets/img/blog/' + lastArticle.cover)} alt={lastArticle.title} />
+              <p>{lastArticle.date}</p>
+              <h2>{t('blog.latest-entries')}</h2>
             </Link>
           </div>
         }
@@ -35,4 +37,17 @@ function TakeStand({ category, t, articles }) {
     </div>
   );
 }
+
+
+const mapStateToProps = (state) => {
+  return {
+    articleFlux: state.article
+  }
+}
+
+const mapDispatchToProps = {
+};
+
+TakeStand = connect(mapStateToProps, mapDispatchToProps)(TakeStand);
+
 export default withNamespaces()(TakeStand);
