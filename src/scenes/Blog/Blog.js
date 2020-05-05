@@ -211,15 +211,7 @@ class Blog extends React.Component {
 
         {allArticles?.length > 0 && clients?.length > 0 && this.articleLoaded ?
           <>
-            <div
-              className={`blog-component-header blog-component-header--${article ? article : category}`}
-              style={{
-                backgroundImage:
-                  (this.articleLoaded && this.articleLoaded !== []) || !article ? '' :
-                    !this.articleLoaded.banner ?
-                      `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/blog/${this.articleLoaded.cover}`)})` :
-                      `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/${this.articleLoaded.banner}`)})`
-              }}>
+            <div className={`blog-component-header blog-component-header--${article? article : category}`} style={{ backgroundImage: !this.articleLoaded.banner? article ? `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/blog/${this.articleLoaded.cover}`)})` : '' : `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/${this.articleLoaded.banner}`)})` }}>
 
               <div className="btn-dist">
                 <Link to="/" className="logo"> <img src="/static/media/Lukerlogo.af6f7609.svg" alt="Logo Luker" /></Link>
