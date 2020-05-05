@@ -39,7 +39,7 @@ const replaceXml = (sitemap) => {
   return new Promise((resolve, reject) => {
     fs.writeFile(`public/sitemap.xml`, sitemap, 'utf8', (err) => {
       if (err)
-        reject(err)
+        resolve(err)
       else
         resolve({ success: 'OK' })
     });
