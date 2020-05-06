@@ -12,9 +12,6 @@ const app = express();
 const router = express.Router();
 var fs = require('fs');
 
-getTranslations('en')
-getTranslations('es')
-
 router.use(express.static(path.resolve(__dirname, '..', 'build'), { maxAge: '30d' }));
 /*app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());*/
@@ -22,7 +19,7 @@ app.use(bodyParser.json());*/
 
 app.get('/sitemap-hook2', function (req, res, next) {
   //const sitemapEdit = await replaceXml(sitemap)
-  res.send("ENTRO") 
+  res.json({ lala: "ENTRO" }) 
 });
 
 router.use('*', renderer);
@@ -44,23 +41,5 @@ const replaceXml = (sitemap) => {
       else
         resolve({ success: 'OK' })
     });
-  })
-}
-
-function getTranslations(lng) {
-  return new Promise((resolve) => {
-    let pages = [{}];
-    fetch(`https://www.back.lukerchocolate.com${lng === 'en' ? '' : ('/' + lng)}/wp-json/wp/v2/pages?per_page=100`)
-      .then((response) => response.json())
-      .then((response) => {
-        response.map((data, i) => pages.push(pages[0][data.slug] = data.acf))
-
-        fs.writeFile(`src/locales/${lng}/translation.json`, JSON.stringify(pages[0]), 'utf8', (err) => {
-          if (err)
-            throw err
-          else
-            resolve({ success: 'OK' })
-        });
-      });
   })
 }
