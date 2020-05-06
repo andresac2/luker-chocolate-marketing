@@ -15,6 +15,7 @@ var fs = require('fs');
 getTranslations('en')
 getTranslations('es')
 
+router.use(express.static(path.resolve(__dirname, '..', 'build'), { maxAge: '30d' }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -24,15 +25,14 @@ app.post('/sitemap-hook', async (req, res, next) => {
   res.send("ENTRO") 
 });
 
-router.use(express.static(path.resolve(__dirname, '..', 'build'), { maxAge: '30d' }));
-router.use('*', renderer);
-app.use(router);
-
 app.get('/sitemap-hook2', async (req, res, next) => {
   const { sitemap } = req.body
   //const sitemapEdit = await replaceXml(sitemap)
   res.send("ENTRO") 
 });
+
+router.use('*', renderer);
+app.use(router);
 
 app.listen(process.env.PORT || PORT, '0.0.0.0', (error) => {
   if (error) {
