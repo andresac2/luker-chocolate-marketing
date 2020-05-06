@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 
 app.post('/sitemap-hook', async (req, res, next) => {
   const { sitemap } = req.body
-  const sitemapEdit = await replaceXml(sitemap)
+  //const sitemapEdit = await replaceXml(sitemap)
   res.send("ENTRO") 
 });
 
