@@ -1,25 +1,29 @@
 import express from 'express';
 
-const bodyParser = require('body-parser');
-const { renderer } = require('./middleware/renderer');
-
-const PORT = 3000;
-const path = require('path');
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
-// initialize the application and create the routes
+
+const bodyParser = require('body-parser');
+const { renderer } = require('./middleware/renderer');
+const PORT = 3000;
+const path = require('path');
 const app = express();
 const router = express.Router();
 var fs = require('fs');
 
 router.use(express.static(path.resolve(__dirname, '..', 'build'), { maxAge: '30d' }));
-/*app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());*/
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
+app.get('/sitemap-test', function (req, res, next) {
+  res.send("TEST") 
+});
 
-app.get('/sitemap-hook2', function (req, res, next) {
-  //const sitemapEdit = await replaceXml(sitemap)
-  res.json({ lala: "ENTRO" }) 
+app.post('/sitemap-hook', async (req, res, next) => {
+  const { sitemap } = req.body;
+
+  const sitemapEdit = await replaceXml(sitemap)
+  res.send(sitemapEdit) 
 });
 
 router.use('*', renderer);
