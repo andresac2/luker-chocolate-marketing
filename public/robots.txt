@@ -1,2 +1,4 @@
-# https://www.robotstxt.org/robotstxt.html
+Sitemap: https://lukerchocolate.com/sitemap_index.xml
+Sitemap: https://lukerchocolate.com/sitemap.xml
+Sitemap: https://lukerchocolate.com/sitemap.xml.gz
 User-agent: *
