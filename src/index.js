@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createBrowserHistory } from 'history'
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
@@ -8,10 +7,7 @@ import './sass/app.scss';
 import App from './routes';
 import './i18n';
 import * as serviceWorker from './serviceWorker';
-import initStore from './store/Store';
-
-export const history = createBrowserHistory();
-export const store = initStore(history);
+import store from './store/Store';
 
 ReactDOM.hydrate(
   <Provider store={store}>

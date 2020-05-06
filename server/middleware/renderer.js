@@ -6,6 +6,12 @@ import { Helmet } from "react-helmet";
 // import our main App component
 import App from '../../src/routes';
 import { parseArticle } from '../template';
+import { Provider } from 'react-redux';
+import createSagaMiddleware from 'redux-saga';
+import { createStore, applyMiddleware } from 'redux';
+
+import rootSaga from '../../src/store/Sagas';
+import rootReducers from '../../src/store/Reducers';
 
 const path = require("path");
 const fs = require("fs");
@@ -34,11 +40,21 @@ module.exports.renderer = (req, res) => {
       serverProps.articles = await parseArticle(await response.json(), req.params[0], await responseEs.json());
     }
 
+    const sagaMiddleware = createSagaMiddleware();
+    let middleware = [sagaMiddleware]
+    const store = createStore(
+      rootReducers,
+      applyMiddleware(...middleware)
+    );
+    sagaMiddleware.run(rootSaga);
+    
     // render the app as a string
     let html = ReactDOMServer.renderToString(
-      <StaticRouter location={req.params['0']} context={context}>
-        <App serverProps={serverProps} />
-      </StaticRouter>);
+      <Provider store={store}>
+        <StaticRouter location={req.params['0']} context={context}>
+          <App serverProps={serverProps} />
+        </StaticRouter>
+      </Provider>);
 
     if (context.url) {
       res.redirect(301, context.url);

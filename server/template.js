@@ -18,8 +18,8 @@ export async function parseArticle(articles, url, articlesEs) {
 		autor['linkedin'] = e.acf.linkeind;
 		breads[0]['href'] = "/blog/";
 		breads[0]['name'] = "Blog";
-		breads[1]['href'] = "/blog/" + e.acf.categoria.slug;
-		breads[1]['name'] = e.acf.categoria.name;
+		breads[1]['href'] = "/blog/" + e.acf.categoria?.slug;
+		breads[1]['name'] = e.acf.categoria?.name;
 		art['autor'] = autor;
 		art['breads'] = breads;
 		arts.push(art);
@@ -41,8 +41,8 @@ export async function parseArticle(articles, url, articlesEs) {
 		autor['linkedin'] = e.acf.linkeind;
 		breads[0]['href'] = "/blog/";
 		breads[0]['name'] = "Blog";
-		breads[1]['href'] = "/blog/" + e.acf.categoria.slug;
-		breads[1]['name'] = e.acf.categoria.name;
+		breads[1]['href'] = "/blog/" + e.acf.categoria?.slug;
+		breads[1]['name'] = e.acf.categoria?.name;
 		art['autor'] = autor;
 		art['breads'] = breads;
 		arts.push(art);
