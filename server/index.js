@@ -19,13 +19,8 @@ router.use(express.static(path.resolve(__dirname, '..', 'build'), { maxAge: '30d
 /*app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());*/
 
-app.post('/sitemap-hook', async (req, res, next) => {
-  //const { sitemap } = req.body
-  //const sitemapEdit = await replaceXml(sitemap)
-  res.send("ENTRO") 
-});
 
-app.get('/sitemap-hook2', async (req, res, next) => {
+app.get('/sitemap-hook2', function (req, res, next) {
   //const sitemapEdit = await replaceXml(sitemap)
   res.send("ENTRO") 
 });
