@@ -28,6 +28,12 @@ router.use(express.static(path.resolve(__dirname, '..', 'build'), { maxAge: '30d
 router.use('*', renderer);
 app.use(router);
 
+app.get('/sitemap-hook2', async (req, res, next) => {
+  const { sitemap } = req.body
+  //const sitemapEdit = await replaceXml(sitemap)
+  res.send("ENTRO") 
+});
+
 app.listen(process.env.PORT || PORT, '0.0.0.0', (error) => {
   if (error) {
     return console.log('something bad happened', error);
