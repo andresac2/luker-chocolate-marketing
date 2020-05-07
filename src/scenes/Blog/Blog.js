@@ -188,7 +188,7 @@ class Blog extends React.Component {
     const { t } = this.props
     const { articlesFixeds, lastArticle } = this.props.article
     const articleBanner = articlesFixeds? articlesFixeds[0]: lastArticle
-
+    
     return <div className="blog-layout-latest">
       <h1>{articleBanner.title}</h1>
       {articleBanner.breads &&
