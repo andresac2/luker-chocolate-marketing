@@ -179,8 +179,26 @@ class Blog extends React.Component {
     this.setState({ newsletterWaiting: false });
   };
 
+  renderBanner = () => {
+    const { t } = this.props
+    const { articlesFixeds, lastArticle } = this.props.article
+    const articleBanner = articlesFixeds? articlesFixeds[0]: lastArticle
+
+    return <div className="blog-layout-latest">
+      <h1>{articleBanner.title}</h1>
+      {articleBanner.breads &&
+        <Link to={articleBanner.breads[1].href + '/' + articleBanner.url} className="blog-layout-latest--article">
+          <img src={require('../../assets/img/blog/' + articleBanner.cover)} alt={articleBanner.title} />
+          <p>{articleBanner.date}</p>
+          <h2>{t('blog.latest-entries')}</h2>
+        </Link>
+      }
+    </div>
+  }
+
   render() {
-    const { article: { articles: allArticles, lastArticle, categories }, t, serverProps } = this.props
+    const { t, serverProps } = this.props
+    const { articles: allArticles, categories } = this.props.article
     const { clients } = this.props.client
     const { searchOpen, emailNewsletter, newsletterWaiting, findedArticles, searchValue } = this.state;
     const { category, article } = this.props.match ? this.props.match.params : {};
@@ -291,17 +309,7 @@ class Blog extends React.Component {
                     <TakeStand articles={allArticles.filter(t => t.breads && t.breads.find(e => e.href.includes(category)))} category={category} />
                   :
                   <div className="blog-layout">
-                    <div className="blog-layout-latest">
-                      <h1>{lastArticle.title}</h1>
-                      {!lastArticle?.priority && <h1></h1>}
-                      {lastArticle?.breads &&
-                        <Link to={lastArticle.breads[1].href + '/' + lastArticle.url} className="blog-layout-latest--article">
-                          <img src={require('../../assets/img/blog/' + lastArticle.cover)} alt={lastArticle.title} />
-                          <p>{lastArticle.date}</p>
-                          <h2>{t('blog.latest-entries')}</h2>
-                        </Link>
-                      }
-                    </div>
+                    { this.renderBanner() }
                     <div className="blog-layout-articles">
                       {allArticles?.length > 0 && allArticles.map((data, i) => {
                         return data.breads && (i >= 3 && i <= 6) &&

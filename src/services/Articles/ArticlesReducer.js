@@ -4,6 +4,7 @@ export const INITIAL_STATE = {
   articles: undefined,
   categories: undefined,
   lastArticle: undefined,
+  articlesFixeds: undefined,
   articlesCache: {},
   categoriesCache: {},
   loading: {
@@ -16,12 +17,13 @@ const reducer = handleActions({
   ARTICLE: {
     GET_POST: (state, { payload: { } }) => ({ ...state, loading: { ...state.loading, getPost: true } }),
     GET_POST_RESPONSE: {
-      next(state, { payload: { payload, lng } }) {
+      next(state, { payload: { payload, fixeds, lng } }) {
         return { 
           ...state, 
           articlesCache: state.articlesCache[lng]? state.articlesCache :{ ...state.articlesCache, [lng]: payload }, 
           articles: payload,
           lastArticle: payload[0], 
+          articlesFixeds: fixeds,
           loading: { ...state.loading, getPost: false } 
         }
       },

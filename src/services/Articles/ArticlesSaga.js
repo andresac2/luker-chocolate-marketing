@@ -14,11 +14,13 @@ function* getPost({ payload: { lng } }) {
     const { ok, payload } = yield Api.get(`${lng === 'en'? '': '/' + lng}/wp-json/wp/v2/posts?per_page=100`)
     
     if (ok) {
-      const transform = articleTransform(payload)
-      transform.sort((a, b) => a.url === 'manifesto-under-the-tree'? -1: b._date - a._date)
-      transform[0].priority = true
+      let transform = articleTransform(payload)
+      const articlesFixeds = transform.filter(item => item.categorie.slug === 'fixeds')
+      
+      transform.sort((a, b) => b._date - a._date)
+      transform = transform.filter(item => item.categorie.slug !== 'fixeds')
 
-      yield put(articleActions.getPostResponse(transform, lng));
+      yield put(articleActions.getPostResponse(transform, articlesFixeds?.length > 0? articlesFixeds: undefined, lng));
     } else {
       const err = new TypeError('ERROR_GET_POST')
       yield put(articleActions.getPostResponse(err))

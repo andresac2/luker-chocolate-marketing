@@ -37,7 +37,8 @@ export default (articles) => {
     art['title'] = data.title.rendered;
     art['description'] = data.content.rendered.substr(0, 100);
     art['date'] = data.acf.date;
-
+    art['categorie'] = data.acf.categoria
+    
     const [ month, year ] = data.acf.date.split(' ');
     art._date = new Date(year + '-' + (months[month] || monthsES[month]) + '-02');
 
