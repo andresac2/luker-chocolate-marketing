@@ -72,10 +72,11 @@ class Blog extends React.Component {
       if (match.params.category === 'our-clients' || match.params.category === 'nuestros-clientes')
         client = clients.find(client => client.url === match.params.article);
       else {
-        if(articlesFixeds)
+        
+        article = articles.find(art => art.url === match.params.article);
+
+        if(articlesFixeds && !article)
           article = articlesFixeds.find(art => art.url === match.params.article);
-        else
-          article = articles.find(art => art.url === match.params.article);
       }
 
       if (!article && !client) {
