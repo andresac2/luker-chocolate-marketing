@@ -35,7 +35,7 @@ function* getCategories({ payload: { lng } }) {
   } else {
     let { ok, payload } = yield Api.get(`${lng === 'en'? '': '/' + lng}/wp-json/wp/v2/categories?per_page=100`)
     
-    const exluceCategories = ['Sin categoría', 'Uncategorized']
+    const exluceCategories = ['Sin categoría', 'Uncategorized', 'Fixeds', 'Fijados']
     payload = payload.filter(item => !exluceCategories.includes(item.name))
 
     if (ok) {
