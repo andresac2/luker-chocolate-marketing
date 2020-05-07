@@ -36,10 +36,17 @@ class FloatLogo extends React.Component {
             {!selectTab.includes('/blog') && <SelectLanguage />}
           </div>
           {btnText === 'dist' ?
-            <button className="float-logo-dist" onClick={() => this.showModalDist(distModalVisible)}>{t('buttons.find-distributor')}</button> :
-            (btns[0].btnText === 'dist') ? <button className="float-logo-dist" onClick={() => this.showModalDist(distModalVisible)}> {t('buttons.find-distributor')} </button> :
-              <><Link to={btns[0].url}>{btns[0].btnText}</Link>
-                {btns[1] && <Link to={btns[1].url}>{btns[1].btnText}</Link>}</>
+            <button className="float-logo-dist" onClick={() => this.showModalDist(distModalVisible)}>
+              {t('buttons.find-distributor')}
+            </button> 
+            :
+            (btns[0].btnText === 'dist') ? 
+              <button className="float-logo-dist" onClick={() => this.showModalDist(distModalVisible)}> {t('buttons.find-distributor')} </button> 
+              :
+              <>
+                <Link to={btns[0].url}>{btns[0].btnText}</Link>
+                {btns[1] && <Link to={btns[1].url}>{btns[1].btnText}</Link>}
+              </>
           }
         </div>
         <Modals visible={distModalVisible} modal={'distributors'} showModalDist={this.showModalDist} />

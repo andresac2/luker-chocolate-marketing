@@ -30,7 +30,9 @@ class Article extends React.Component {
           <meta property="twitter:image" content={require(`../../../assets/img/${data.flag ? '' : 'blog/'}${data.cover ? data.cover : 'img-example.svg'}`)} />
         </Helmet>
 
-        {this.window && !this.window.location.href.includes('sustainability') && <div className="blog-article-title-resp">{data.title}</div>}
+        {this.window && !this.window.location.href.includes('sustainability') &&
+          <div className="blog-article-title-resp">{data.title}</div>
+        }
         <div className="blog-article-bread">
           <Breadcrumb>
             {data.breads && Object.values(data.breads).map((item, i) =>

@@ -1332,7 +1332,7 @@ export const countries = [
     abrev: 'au',
     ind: ['61']
   }, {
-    name: 'BAHREIN',
+    name: 'BAREIN',
     abrev: 'bh',
     ind: ['973']
   }, {
@@ -1356,7 +1356,7 @@ export const countries = [
     abrev: 'co',
     ind: ['57']
   }, {
-    name: 'RÉPUBLICA CHECA',
+    name: 'REPÚBLICA CHECA',
     abrev: 'cz',
     ind: ['420']
   }, {
