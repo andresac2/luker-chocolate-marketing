@@ -63,22 +63,26 @@ class Blog extends React.Component {
 
   loadArticle() {
     const { match } = this.props
-    const { articles } = this.props.article
+    const { articles, articlesFixeds } = this.props.article
     const { clients } = this.props.client
-
+    
     if (articles && match?.params.article) {
       let article, client;
 
       if (match.params.category === 'our-clients' || match.params.category === 'nuestros-clientes')
         client = clients.find(client => client.url === match.params.article);
-      else
-        article = articles.find(art => art.url === match.params.article);
+      else {
+        if(articlesFixeds)
+          article = articlesFixeds.find(art => art.url === match.params.article);
+        else
+          article = articles.find(art => art.url === match.params.article);
+      }
 
       if (!article && !client) {
         this.props.history.push('/blog')
         return
       }
-
+      
       this.articleLoaded = client || article;
 
       this.generateRecommendedEntries(article ? 'article' : 'clients');

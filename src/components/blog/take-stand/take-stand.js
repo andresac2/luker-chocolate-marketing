@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 function TakeStand({ category, t, articles, articleFlux }) {
   const lastArticle = articles[0]
 
-  const lim = 0; //props.articles.length - 1;
   return (
     <div className="take-stand">
       <div className="blog-layout-latest">

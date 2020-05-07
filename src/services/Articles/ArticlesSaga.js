@@ -8,17 +8,18 @@ function* getPost({ payload: { lng } }) {
   const articlesCache = yield select(state => state.article.articlesCache)
   
   if(articlesCache[lng]){
-    yield put(articleActions.getPostResponse(articlesCache[lng], lng));
+    const articlesFixeds = articlesCache[lng].filter(item => item.categorie?.slug === 'fixed' || item.categorie?.slug === 'fijado')
+    yield put(articleActions.getPostResponse(articlesCache[lng], articlesFixeds, lng));
 
   } else {
     const { ok, payload } = yield Api.get(`${lng === 'en'? '': '/' + lng}/wp-json/wp/v2/posts?per_page=100`)
     
     if (ok) {
       let transform = articleTransform(payload)
-      const articlesFixeds = transform.filter(item => item.categorie.slug === 'fixeds')
+      const articlesFixeds = transform.filter(item => item.categorie?.slug === 'fixed' || item.categorie?.slug === 'fijado')
       
       transform.sort((a, b) => b._date - a._date)
-      transform = transform.filter(item => item.categorie.slug !== 'fixeds')
+      transform = transform.filter(item => item.categorie?.slug !== 'fixed' || item.categorie?.slug !== 'fijado')
 
       yield put(articleActions.getPostResponse(transform, articlesFixeds?.length > 0? articlesFixeds: undefined, lng));
     } else {
@@ -37,7 +38,7 @@ function* getCategories({ payload: { lng } }) {
   } else {
     let { ok, payload } = yield Api.get(`${lng === 'en'? '': '/' + lng}/wp-json/wp/v2/categories?per_page=100`)
     
-    const exluceCategories = ['Sin categoría', 'Uncategorized', 'Fixeds', 'Fijados']
+    const exluceCategories = ['Sin categoría', 'Uncategorized', 'Fixed', 'Fijado']
     payload = payload.filter(item => !exluceCategories.includes(item.name))
 
     if (ok) {
