@@ -66,7 +66,7 @@ class Sustain extends React.Component {
     const { t } = this.props;
     const { items, firstItem, reportModalVisible, articleModalVisible, modalSelectedIndex } = this.state;
     const altImg = 'img-example.svg';
-    const panel = "/static/media/sustain-panel.999e85fe.jpg";
+    const panel = "http://www.back.lukerchocolate.com/wp-content/uploads/2020/05/the-chocolate-dream.jpg";
 
     return (
       <div className="sustain-component">
