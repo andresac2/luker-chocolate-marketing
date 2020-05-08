@@ -7,6 +7,7 @@ export default (clients) => {
     client['banner'] = data.acf.banner;
     client['flag'] = data.acf.flag;
     client['content'] = data.acf.content;
+    client['visitUrl'] = data.acf['visit-url'];
     client.breads = [
       { href: data.acf.href, name: data.acf.categoryname || "Nuestros clientes" }
     ]

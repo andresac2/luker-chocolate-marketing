@@ -65,17 +65,17 @@ class Blog extends React.Component {
     const { match } = this.props
     const { articles, articlesFixeds } = this.props.article
     const { clients } = this.props.client
-    
+
     if (articles && match?.params.article) {
       let article, client;
 
-      if (match.params.category === 'our-clients' || match.params.category === 'nuestros-clientes')
+      if (clients && (match.params.category === 'our-clients' || match.params.category === 'nuestros-clientes'))
         client = clients.find(client => client.url === match.params.article);
       else {
-        
+
         article = articles.find(art => art.url === match.params.article);
 
-        if(articlesFixeds && !article)
+        if (articlesFixeds && !article)
           article = articlesFixeds.find(art => art.url === match.params.article);
       }
 
@@ -83,7 +83,7 @@ class Blog extends React.Component {
         this.props.history.push('/blog')
         return
       }
-      
+
       this.articleLoaded = client || article;
 
       this.generateRecommendedEntries(article ? 'article' : 'clients');
@@ -187,8 +187,8 @@ class Blog extends React.Component {
   renderBanner = () => {
     const { t } = this.props
     const { articlesFixeds, lastArticle } = this.props.article
-    const articleBanner = articlesFixeds? articlesFixeds[0]: lastArticle
-    
+    const articleBanner = articlesFixeds ? articlesFixeds[0] : lastArticle
+
     return <div className="blog-layout-latest">
       <h1>{articleBanner.title}</h1>
       {articleBanner.breads &&
@@ -207,7 +207,8 @@ class Blog extends React.Component {
     const { clients } = this.props.client
     const { searchOpen, emailNewsletter, newsletterWaiting, findedArticles, searchValue } = this.state;
     const { category, article } = this.props.match ? this.props.match.params : {};
-
+    const clientArticle = article && clients && clients.find(client => client.url === article)
+    
     this.loadArticle();
 
     let articleSEO
@@ -274,11 +275,11 @@ class Blog extends React.Component {
                   }
                 </h1>
               </div>
-              <div className="container-button-visit">
-                <button className="button-visit">
-                  <Link to={t('routes.our-clients')}>{t('buttons.visit-their-website')}</Link>
-                </button>
-              </div>
+              {(category === 'our-clients' || category === 'nuestros-clientes') && clientArticle &&
+                <div className="container-button-visit">
+                  <a className="button-visit" target="_blank" href={clientArticle.visitUrl}>{t('buttons.visit-their-website')}</a>
+                </div>
+              }
             </div>
 
             <div className="blog-component-content">
@@ -319,7 +320,7 @@ class Blog extends React.Component {
                     <TakeStand articles={allArticles.filter(t => t.breads && t.breads.find(e => e.href.includes(category)))} category={category} />
                   :
                   <div className="blog-layout">
-                    { this.renderBanner() }
+                    {this.renderBanner()}
                     <div className="blog-layout-articles">
                       {allArticles?.length > 0 && allArticles.map((data, i) => {
                         return data.breads && (i >= 3 && i <= 6) &&

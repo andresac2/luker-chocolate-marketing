@@ -1,4 +1,6 @@
-import { apiUrl } from '../Config/Environments.js';
+import { apiUrl, env_production } from '../Config/Environments.js';
+
+const isProduction = env_production === 'production'
 
 export class Api {
 
@@ -55,11 +57,15 @@ export class Api {
       Object.keys(params).forEach(key => url.searchParams.append(key, params[key]))*/
     return fetch(`${apiUrl}${url}`, { method: 'GET' })
     .then(async response => {
-      console.log('GET success', response)
+      if(!isProduction)
+        console.log('GET success', response)
+
       response.payload = await response.json()
       return response;
     }).catch(err => {
-      console.log('GET error', err)
+      if(!isProduction)
+        console.log('GET error', err)
+        
       return err
     })
   }
