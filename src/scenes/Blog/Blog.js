@@ -142,8 +142,10 @@ class Blog extends React.Component {
     if (!match.params.category)
       this.props.getPost(i18n.language)
 
-    if (!match.params.article)
+    if (!match.params.article){
+      console.log(match.params)
       this.props.history.push('/blog')
+    }
   };
 
   searchOnChange(event) {
@@ -215,6 +217,8 @@ class Blog extends React.Component {
     if (serverProps)
       articleSEO = serverProps.articles;
 
+      console.log(this.articleLoaded);
+      
     return (
       <Layout className="blog-component">
         <Helmet>
@@ -239,7 +243,7 @@ class Blog extends React.Component {
               className={`blog-component-header blog-component-header--${article ? article : category}`}
               style={{
                 backgroundImage:
-                  (this.articleLoaded && this.articleLoaded !== []) || !article ? '' :
+                  !this.articleLoaded || this.articleLoaded === [] || !article ? '' :
                     !this.articleLoaded.banner ?
                       `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/blog/${this.articleLoaded.cover}`)})` :
                       `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/${this.articleLoaded.banner}`)})`
