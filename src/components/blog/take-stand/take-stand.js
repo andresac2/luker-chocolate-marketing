@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { withNamespaces } from 'react-i18next';
 import { connect } from 'react-redux';
 
-function TakeStand({ category, t, articles, articleFlux }) {
+function TakeStand({ category, t, articles }) {
   const lastArticle = articles[0]
   const listArticles = articles.filter((item, i) =>  i !== 0)
 

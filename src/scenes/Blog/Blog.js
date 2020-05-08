@@ -274,6 +274,11 @@ class Blog extends React.Component {
                   }
                 </h1>
               </div>
+              <div className="container-button-visit">
+                <button className="button-visit">
+                  <Link to={t('routes.our-clients')}>{t('buttons.visit-their-website')}</Link>
+                </button>
+              </div>
             </div>
 
             <div className="blog-component-content">
