@@ -19,6 +19,28 @@ import { client as ClientActions } from '../../services/Client/ClientActions'
 const { Search } = Input;
 const { Option } = Select;
 
+const categoriesLanguagesBeetwen = {
+  languages: {
+    es: ['un-viaje-al-sueno-de-chocolate', 'innovacion', 'creando-valor-compartido', 'lo-que-no-sabias', 'tomando-posicion'],
+    en: ['the-chocolate-dream-journey', 'innovation', 'creating-shared-value', 'what-you-didnt-know', 'take-stand']
+  },
+
+  'the-chocolate-dream-journey': 'un-viaje-al-sueno-de-chocolate',
+  'un-viaje-al-sueno-de-chocolate': 'the-chocolate-dream-journey',
+
+  'innovation': 'innovacion',
+  'innovacion': 'innovation',
+
+  'creating-shared-value': 'creando-valor-compartido',
+  'creando-valor-compartido': 'creating-shared-value',
+
+  'what-you-didnt-know': 'lo-que-no-sabias',
+  'lo-que-no-sabias': 'what-you-didnt-know',
+
+  'take-stand': 'tomando-posicion',
+  'tomando-posicion': 'take-stand'
+}
+
 class Blog extends React.Component {
 
   constructor(props) {
@@ -44,7 +66,17 @@ class Blog extends React.Component {
   recommendedEntries = [];
 
   componentDidMount() {
-    this.props.getPost(i18n.language)
+    const articleEsBeetwen = categoriesLanguagesBeetwen.languages.es.includes(this.props.match.params.category)
+
+    //No se valida en ingles, ya que por default es en
+    if(articleEsBeetwen){
+      i18n.changeLanguage('es');
+      this.setState({ lngSelect: 'es' })
+      this.props.getPost('es')
+    } else {
+      this.props.getPost(i18n.language)
+    }
+
     this.props.getCategories(i18n.language)
     this.props.getAllClients(i18n.language)
   }
@@ -142,9 +174,12 @@ class Blog extends React.Component {
     if (!match.params.category)
       this.props.getPost(i18n.language)
 
-    if (!match.params.article){
-      console.log(match.params)
-      this.props.history.push('/blog')
+    if (!match.params.article) {
+      const beetwen = categoriesLanguagesBeetwen[match.params.category]
+      if (beetwen)
+        this.props.history.push(`/blog/${beetwen}`)
+      else
+        this.props.history.push('/blog')
     }
   };
 
@@ -184,7 +219,7 @@ class Blog extends React.Component {
     }
 
     this.setState({ newsletterWaiting: false });
-  };
+  }
 
   renderBanner = () => {
     const { t } = this.props
@@ -210,15 +245,13 @@ class Blog extends React.Component {
     const { searchOpen, emailNewsletter, newsletterWaiting, findedArticles, searchValue } = this.state;
     const { category, article } = this.props.match ? this.props.match.params : {};
     const clientArticle = article && clients && clients.find(client => client.url === article)
-    
+
     this.loadArticle();
 
     let articleSEO
     if (serverProps)
       articleSEO = serverProps.articles;
 
-      console.log(this.articleLoaded);
-      
     return (
       <Layout className="blog-component">
         <Helmet>

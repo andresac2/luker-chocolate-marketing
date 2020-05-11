@@ -2,8 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { withNamespaces } from 'react-i18next';
 import { connect } from 'react-redux';
+import { Spin } from 'antd';
 
-function TakeStand({ category, t, articles }) {
+function TakeStand({ category, t, articles, articleFlux }) {
+  const { loading: { getPost: loadingGetPost } } = articleFlux
   const lastArticle = articles[0]
   const listArticles = articles.filter((item, i) =>  i !== 0)
 
@@ -11,7 +13,8 @@ function TakeStand({ category, t, articles }) {
     <div className="take-stand">
       <div className="blog-layout-latest">
         { lastArticle && <h1>{t('blog.latest-entries')}</h1> }
-        { !lastArticle && articles?.length == 0 && <h1>{t('blog.empty')}</h1> }
+        { !loadingGetPost && !lastArticle && articles?.length == 0 && <h1>{t('blog.empty')}</h1> }
+        { loadingGetPost && <h1><Spin/></h1> }
 
         { lastArticle &&
           <div className="blog-layout-latest--article">

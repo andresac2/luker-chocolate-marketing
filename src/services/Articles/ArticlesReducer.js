@@ -28,7 +28,7 @@ const reducer = handleActions({
         }
       },
       throw(state, action) {
-        return { ...state }
+        return { ...state, loading: { ...state.loading, getPost: false }  }
       }
     },
 
