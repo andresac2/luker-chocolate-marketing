@@ -1355,11 +1355,9 @@ export const countries = [
     name: 'COLOMBIA',
     abrev: 'co',
     ind: ['57']
-  }, {
-    name: 'REPÚBLICA CHECA',
-    abrev: 'cz',
-    ind: ['420']
-  }, {
+  }, 
+  //{ name: 'REPÚBLICA CHECA', abrev: 'cz', ind: ['420']}, 
+  {
     name: 'FRANCIA',
     abrev: 'fr',
     ind: ['33']
@@ -1387,11 +1385,9 @@ export const countries = [
     name: 'JAPÓN',
     abrev: 'jp',
     ind: ['81']
-  }, {
-    name: 'LUXEMBURGO',
-    abrev: 'lu',
-    ind: ['352']
-  }, {
+  }, 
+  //{ name: 'LUXEMBURGO', abrev: 'lu', ind: ['352'] }, 
+  {
     name: 'ORIENTE MEDIO',
     abrev: 'me',
     ind: ['971']
@@ -1419,11 +1415,9 @@ export const countries = [
     name: 'TAIWÁN',
     abrev: 'tw',
     ind: ['886']
-  }, {
-    name: 'UCRANIA',
-    abrev: 'ua',
-    ind: ['380']
-  }, {
+  }, 
+  //{ name: 'UCRANIA', abrev: 'ua', ind: ['380'] }, 
+  {
     name: 'REINO UNIDO ',
     abrev: 'uk',
     ind: ['44']
