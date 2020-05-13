@@ -245,6 +245,10 @@ class Blog extends React.Component {
     const { searchOpen, emailNewsletter, newsletterWaiting, findedArticles, searchValue } = this.state;
     const { category, article } = this.props.match ? this.props.match.params : {};
     const clientArticle = article && clients && clients.find(client => client.url === article)
+    let categorieSelected;
+    
+    if(categories)
+      categorieSelected = categories.find(item => item.slug === category)
 
     this.loadArticle();
 
@@ -306,7 +310,10 @@ class Blog extends React.Component {
                     <Option value="en">EN</Option>
                   </Select>
                 </div>
-                <h1 style={{ fontSize: (article) ? '4em' : '5em' }}>{(article) ? this.articleLoaded.title : (category) ? (category === 'innovacion') ? 'innovación' : (category === 'tomando-posicion') ? 'tomando posición' : (category === 'sueno-del-chocolate') ? 'sueño del chocolate' : (category === 'lo-que-no-sabias') ? 'lo que no sabías' : (category === 'take-stand') ? 'Take a stand' : category.replace("/", "").replace(/-/g, " ") : 'Under The Tree'}
+                <h1 style={{ fontSize: (article) ? '4em' : '5em' }}>
+                  { article && this.articleLoaded.title }
+                  { !article && categorieSelected && categorieSelected.name}
+                  { !article && !categorieSelected && 'UNDER THE TREE'}
                   {this.articleLoaded.flag &&
                     <img className="blog-component-header-flag" src={require('../../assets/img/' + this.articleLoaded.flag + "-flag.png")} alt={this.articleLoaded.flag.substr(0, 2)} />
                   }
@@ -327,6 +334,7 @@ class Blog extends React.Component {
                       key={categorie.slug}
                       to={`/blog/${categorie.slug}`}
                       className={category == categorie.slug ? 'tab-blog-selected' : undefined}
+                      style={{'display': 'flex', 'align-items': 'center'}}
                     >
                       {categorie.name.toUpperCase()}
                     </Link>
