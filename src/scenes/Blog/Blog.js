@@ -69,7 +69,7 @@ class Blog extends React.Component {
     const articleEsBeetwen = categoriesLanguagesBeetwen.languages.es.includes(this.props.match.params.category)
 
     //No se valida en ingles, ya que por default es en
-    if(articleEsBeetwen){
+    if (articleEsBeetwen) {
       i18n.changeLanguage('es');
       this.setState({ lngSelect: 'es' })
       this.props.getPost('es')
@@ -230,7 +230,8 @@ class Blog extends React.Component {
       <h1>{articleBanner.title}</h1>
       {articleBanner.breads &&
         <Link to={articleBanner.breads[1].href + '/' + articleBanner.url} className="blog-layout-latest--article">
-          <img src={require('../../assets/img/blog/' + articleBanner.cover)} alt={articleBanner.title} />
+          {!articleBanner.cover.includes('http') && <img src={require('../../assets/img/blog/' + articleBanner.cover)} alt={articleBanner.title} />}
+          {articleBanner.cover.includes('http') && <img src={articleBanner.cover} alt={articleBanner.title} />}
           <p>{articleBanner.date}</p>
           <h2>{t('blog.latest-entries')}</h2>
         </Link>
@@ -246,8 +247,8 @@ class Blog extends React.Component {
     const { category, article } = this.props.match ? this.props.match.params : {};
     const clientArticle = article && clients && clients.find(client => client.url === article)
     let categorieSelected;
-    
-    if(categories)
+
+    if (categories)
       categorieSelected = categories.find(item => item.slug === category)
 
     this.loadArticle();
@@ -282,7 +283,9 @@ class Blog extends React.Component {
                 backgroundImage:
                   !this.articleLoaded || this.articleLoaded === [] || !article ? '' :
                     !this.articleLoaded.banner ?
-                      `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/blog/${this.articleLoaded.cover}`)})` :
+                      !this.articleLoaded.cover.includes('http') ?
+                        `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/blog/${this.articleLoaded.cover}`)})` :
+                        `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${this.articleLoaded.cover})` :
                       `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/${this.articleLoaded.banner}`)})`
               }}>
 
@@ -311,9 +314,9 @@ class Blog extends React.Component {
                   </Select>
                 </div>
                 <h1 style={{ fontSize: (article) ? '4em' : '5em' }}>
-                  { article && this.articleLoaded.title }
-                  { !article && categorieSelected && categorieSelected.name}
-                  { !article && !categorieSelected && 'UNDER THE TREE'}
+                  {article && this.articleLoaded.title}
+                  {!article && categorieSelected && categorieSelected.name}
+                  {!article && !categorieSelected && 'UNDER THE TREE'}
                   {this.articleLoaded.flag &&
                     <img className="blog-component-header-flag" src={require('../../assets/img/' + this.articleLoaded.flag + "-flag.png")} alt={this.articleLoaded.flag.substr(0, 2)} />
                   }
@@ -334,7 +337,7 @@ class Blog extends React.Component {
                       key={categorie.slug}
                       to={`/blog/${categorie.slug}`}
                       className={category == categorie.slug ? 'tab-blog-selected' : undefined}
-                      style={{'display': 'flex', 'align-items': 'center'}}
+                      style={{ 'display': 'flex', 'align-items': 'center' }}
                     >
                       {categorie.name.toUpperCase()}
                     </Link>
@@ -348,7 +351,8 @@ class Blog extends React.Component {
                     {Object.keys(findedArticles).map(i =>
                       <div className="blog-layout-articles--item" key={i}>
                         <Link onClick={() => this.clearSearch()} to={findedArticles[i].breads[1].href + '/' + findedArticles[i].url} className="blog-layout-latest--article">
-                          <img src={require('../../assets/img/blog/' + findedArticles[i].cover)} />
+                          {!findedArticles[i].cover.includes('http') && <img src={require('../../assets/img/blog/' + findedArticles[i].cover)} />}
+                          {findedArticles[i].cover.includes('http') && <img src={findedArticles[i].cover} />}
                           <p>{findedArticles[i].date}</p>
                           <h2>{findedArticles[i].title}</h2>
                         </Link>
@@ -371,7 +375,8 @@ class Blog extends React.Component {
                         return data.breads && (i >= 3 && i <= 6) &&
                           <div className="blog-layout-articles--item" key={i}>
                             <Link to={allArticles[i].breads[1].href + '/' + allArticles[i].url} className="blog-layout-latest--article">
-                              <img src={require('../../assets/img/blog/' + allArticles[i].cover)} />
+                              {!allArticles[i].cover.includes('http') && <img src={require('../../assets/img/blog/' + allArticles[i].cover)} />}
+                              {allArticles[i].cover.includes('http') && <img src={allArticles[i].cover} />}
                               <p>{allArticles[i].date}</p>
                               <h2>{allArticles[i].title}</h2>
                             </Link>
