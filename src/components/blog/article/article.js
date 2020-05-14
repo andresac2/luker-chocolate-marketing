@@ -54,23 +54,26 @@ class Article extends React.Component {
           </div>
         </div>
         <article className="blog-article-content" dangerouslySetInnerHTML={{ __html: data.content }} />
-        {data.autor && <div className="blog-article-autor">
-          <img src={data.autor.avatar} alt={data.autor.name} />
-          <div className="blog-article-autor--data">
-            <h2>{data.autor.name}</h2>
-            <span>{data.autor.details}</span>
-            {/*<p>{data.autor.description}</p>*/}
-            <a href={data.autor.linkedin} target="_blank" ><FaLinkedinIn /> {data.autor.name}</a>
-          </div>
-        </div>}
+        {data.autor &&
+          <div className="blog-article-autor">
+            <figure>
+              <img src={data.autor.avatar} alt={data.autor.name} />
+            </figure>
+            <div className="blog-article-autor--data">
+              <h2>{data.autor.name}</h2>
+              <span>{data.autor.details}</span>
+              {/*<p>{data.autor.description}</p>*/}
+              <a href={data.autor.linkedin} target="_blank" ><FaLinkedinIn /> {data.autor.name}</a>
+            </div>
+          </div>}
         {recommended?.length > 0 &&
           <div className="blog-article-entries">
             <h2>{data.flag ? t('blog.other-clients') : t('blog.recommended-entries')}</h2>
             <div className="blog-article-entries--list">
               {Object.values(recommended).map((item, i) =>
                 <Link key={i} to={item.url}>
-                  { !item.cover.includes('http') && <img src={require('../../../assets/img/' + (data.flag ? '' : 'blog/') + (item.cover ? item.cover : altImg))} alt={item.title} /> }
-                  { item.cover.includes('http') && <img src={item.cover} alt={item.title} /> }
+                  {!item.cover.includes('http') && <img src={require('../../../assets/img/' + (data.flag ? '' : 'blog/') + (item.cover ? item.cover : altImg))} alt={item.title} />}
+                  {item.cover.includes('http') && <img src={item.cover} alt={item.title} />}
                   <p>{item.date}</p>
                   <h2>{item.title}</h2>
                 </Link>
