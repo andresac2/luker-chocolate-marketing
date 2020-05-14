@@ -15,10 +15,6 @@ router.use(express.static(path.resolve(__dirname, '..', 'build'), { maxAge: '30d
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.get('/sitemap-test', function (req, res, next) {
-  res.send("TEST") 
-});
-
 app.post('/sitemap-hook', async (req, res, next) => {
   const { sitemap } = req.body;
 
