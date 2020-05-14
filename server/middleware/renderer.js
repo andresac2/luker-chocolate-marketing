@@ -55,7 +55,7 @@ module.exports.renderer = (req, res) => {
           <App serverProps={serverProps} />
         </StaticRouter>
       </Provider>);
-
+    
     if (context.url) {
       res.redirect(301, context.url);
       return;

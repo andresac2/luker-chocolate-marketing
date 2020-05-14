@@ -69,7 +69,8 @@ class Article extends React.Component {
             <div className="blog-article-entries--list">
               {Object.values(recommended).map((item, i) =>
                 <Link key={i} to={item.url}>
-                  <img src={require('../../../assets/img/' + (data.flag ? '' : 'blog/') + (item.cover ? item.cover : altImg))} alt={item.title} />
+                  { !item.cover.includes('http') && <img src={require('../../../assets/img/' + (data.flag ? '' : 'blog/') + (item.cover ? item.cover : altImg))} alt={item.title} /> }
+                  { item.cover.includes('http') && <img src={item.cover} alt={item.title} /> }
                   <p>{item.date}</p>
                   <h2>{item.title}</h2>
                 </Link>
