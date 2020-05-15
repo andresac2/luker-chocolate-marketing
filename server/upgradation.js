@@ -2,7 +2,7 @@ require('es6-promise').polyfill();
 require('isomorphic-fetch');
 var fs = require('fs');
 
-function getTranslations(lng) {
+export function getTranslations(lng) {
   console.log("Upgradation", lng)
   return new Promise((resolve) => {
     let pages = [{}];

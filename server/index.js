@@ -1,5 +1,7 @@
 import express from 'express';
+import { getTranslations } from './upgradation'
 
+const { spawn } = require('child_process');
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
 
@@ -19,14 +21,29 @@ app.post('/sitemap-hook', async (req, res, next) => {
   const { sitemap } = req.body;
 
   const sitemapEdit = await replaceXml(sitemap)
-  res.send(sitemapEdit) 
+  res.send(sitemapEdit)
+});
+
+app.get('/upgradation', async (req, res, next) => {
+  await getTranslations('en')
+  await getTranslations('es')
+  const build = spawn('npm', ['run', 'build']);
+  let response = 'stdout: ';
+  build.stdout.on('data', (data) => {
+    response += `${data}`;
+    console.log(`stdout: ${data}`);
+  });
+  build.on('close', (code) => {
+    console.log(`child process exited with code ${code}`);
+    res.send(response);
+  });
 });
 
 router.use('*', renderer);
 app.use(router);
 
 app.listen(process.env.PORT || PORT, '0.0.0.0', (error) => {
-  if (error) 
+  if (error)
     return console.log('something bad happened', error);
 
   console.log("listening on " + PORT + "...");
