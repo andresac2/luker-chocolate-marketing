@@ -27,4 +27,4 @@ function getTranslations(lng) {
 getTranslations('en')
 getTranslations('es')
 
-module.exports.getTranslations
+module.exports.getTranslations = getTranslations
