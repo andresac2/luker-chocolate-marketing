@@ -1,6 +1,5 @@
 import express from 'express';
-import { getTranslations } from './upgradation'
-
+const { getTranslations } = require('./upgradation')
 const { spawn } = require('child_process');
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
@@ -17,26 +16,28 @@ router.use(express.static(path.resolve(__dirname, '..', 'build'), { maxAge: '30d
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.post('/sitemap-hook', async (req, res, next) => {
+app.post('/sitemap-hook', function (req, res, next) {
   const { sitemap } = req.body;
 
-  const sitemapEdit = await replaceXml(sitemap)
-  res.send(sitemapEdit)
+  replaceXml(sitemap)
+  res.send()
 });
 
-app.get('/upgradation', async (req, res, next) => {
-  await getTranslations('en')
-  await getTranslations('es')
-  const build = spawn('npm', ['run', 'build']);
-  let response = 'stdout: ';
-  build.stdout.on('data', (data) => {
-    response += `${data}`;
-    console.log(`stdout: ${data}`);
-  });
-  build.on('close', (code) => {
-    console.log(`child process exited with code ${code}`);
-    res.send(response);
-  });
+app.get('/upgradation', function (req, res, next) {
+  getTranslations('en').then(() => {
+    getTranslations('es').then(() => {
+      const build = spawn('npm', ['run', 'build']);
+      let response = 'stdout: ';
+      build.stdout.on('data', (data) => {
+        response += `${data}`;
+        console.log(`stdout: ${data}`);
+      });
+      build.on('close', (code) => {
+        console.log(`child process exited with code ${code}`);
+        res.send(response);
+      });
+    })
+  })
 });
 
 router.use('*', renderer);
