@@ -338,7 +338,7 @@ class Blog extends React.Component {
                       key={categorie.slug}
                       to={`/blog/${categorie.slug}`}
                       className={category == categorie.slug ? 'tab-blog-selected' : undefined}
-                      style={{ 'display': 'flex', 'align-items': 'center' }}
+                      style={{ 'display': 'flex', 'alignItems': 'center' }}
                     >
                       {categorie.name.toUpperCase()}
                     </Link>

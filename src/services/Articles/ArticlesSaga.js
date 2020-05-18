@@ -40,7 +40,10 @@ function* getCategories({ payload: { lng } }) {
     
     const exluceCategories = ['Sin categoría', 'Uncategorized', 'Fixed', 'Fijado']
     payload = payload.filter(item => !exluceCategories.includes(item.name))
-
+    if(lng === 'es'){
+      arrayMove(payload, 3, 2)
+      arrayMove(payload, 4, 3)
+    }
     if (ok) {
       yield put(articleActions.getCategoriesResponse(payload, lng));
     } else {
@@ -59,4 +62,10 @@ export default function* rootSaga() {
   yield all([
     ActionWatcher()
   ]);
+}
+
+function arrayMove(arr, fromIndex, toIndex) {
+  const element = arr[fromIndex];
+  arr.splice(fromIndex, 1);
+  arr.splice(toIndex, 0, element);
 }
