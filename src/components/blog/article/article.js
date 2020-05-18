@@ -64,7 +64,7 @@ class Article extends React.Component {
               <span>{data.autor.details}</span>
               {/*<p>{data.autor.description}</p>*/}
               <a href={data.autor.linkedin} target="_blank">
-                { data.autor.linkedin.includes('linkedin') && <FaLinkedinIn />}
+                { data.autor?.linkedin?.includes('linkedin') && <FaLinkedinIn />}
                 {data.autor.name}
               </a>
             </div>
