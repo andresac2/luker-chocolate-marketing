@@ -63,7 +63,10 @@ class Article extends React.Component {
               <h2>{data.autor.name}</h2>
               <span>{data.autor.details}</span>
               {/*<p>{data.autor.description}</p>*/}
-              <a href={data.autor.linkedin} target="_blank" ><FaLinkedinIn /> {data.autor.name}</a>
+              <a href={data.autor.linkedin} target="_blank">
+                { data.autor.linkedin.includes('linkedin') && <FaLinkedinIn />}
+                {data.autor.name}
+              </a>
             </div>
           </div>}
         {recommended?.length > 0 &&
