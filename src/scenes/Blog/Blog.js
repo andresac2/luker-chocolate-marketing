@@ -314,7 +314,7 @@ class Blog extends React.Component {
                     <Option value="en">EN</Option>
                   </Select>
                 </div>
-                <h1 style={{ fontSize: (article) ? '4em' : '5em' }}>
+                <h1 style={{ fontSize: (article) ? '3.7em' : '5em' }}>
                   {article && this.articleLoaded.title}
                   {!article && categorieSelected && categorieSelected.name}
                   {!article && !categorieSelected && 'UNDER THE TREE'}
