@@ -47,7 +47,7 @@ export default (articles) => {
       name: data.acf.authorname,
       avatar: data.acf.avatar,
       details: data.acf.details,
-      linkedin: data.acf.linkedin
+      linkedin: data.acf.linkedin || data.acf.linkeind
     };
     
     art.breads = [

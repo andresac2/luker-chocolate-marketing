@@ -10,9 +10,11 @@ import { withNamespaces } from 'react-i18next';
 class Article extends React.Component {
   render() {
     const { data, recommended, t } = this.props;
+    const { autor } = data
     const altImg = 'img-example.svg';
     const fullUrl = data.fullUrl;
-
+    console.log(data.autor);
+    
     return (
       <div className="blog-article">
         <Helmet>
@@ -54,18 +56,18 @@ class Article extends React.Component {
           </div>
         </div>
         <article className="blog-article-content" dangerouslySetInnerHTML={{ __html: data.content }} />
-        {data.autor &&
+        {autor &&
           <div className="blog-article-autor">
             <figure>
-              <img src={data.autor.avatar} alt={data.autor.name} />
+              <img src={autor.avatar} alt={autor.name} />
             </figure>
             <div className="blog-article-autor--data">
-              <h2>{data.autor.name}</h2>
-              <span>{data.autor.details}</span>
+              <h2>{autor.name}</h2>
+              <span>{autor.details}</span>
               {/*<p>{data.autor.description}</p>*/}
-              <a href={data.autor.linkedin} target="_blank">
-                { data.autor?.linkedin?.includes('linkedin') && <FaLinkedinIn />}
-                {data.autor.name}
+              <a href={autor.linkedin} target="_blank">
+                {autor.linkedin?.includes('linkedin') && <FaLinkedinIn />}
+                {autor.name}
               </a>
             </div>
           </div>}
