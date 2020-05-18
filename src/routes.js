@@ -26,7 +26,7 @@ import ScrollToTop from "./commons/scroll-to-top/scroll-to-top";
 import { createMemoryHistory } from 'history';
 
 export default function BasicExample(props) {
-
+  
   return (
     <div className="limit-width">
       <Header />

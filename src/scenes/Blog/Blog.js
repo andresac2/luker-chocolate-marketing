@@ -157,6 +157,7 @@ class Blog extends React.Component {
       }
     }
     this.recommendedEntries = recommended;
+    this.recommendedEntries = this.recommendedEntries.filter(item => item.url !== 'york-cocoa-house')
   }
 
   handleChange(event) {
