@@ -11,6 +11,7 @@ import OurFlavour from '../../components/our-value/flavour/our-flavour';
 import OurProduct from '../../components/our-value/product/our-product';
 import OurSocial from '../../components/our-value/social/our-social';
 import { withNamespaces } from 'react-i18next';
+import { connect } from 'react-redux';
 
 class OurValue extends React.Component {
 
@@ -83,5 +84,14 @@ class OurValue extends React.Component {
   }
 };
 
+const mapStateToProps = (state) => {
+  return {
+  }
+}
+
+const mapDispatchToProps = {
+};
+
+OurValue = connect(mapStateToProps, mapDispatchToProps)(OurValue);
 
 export default withNamespaces()(OurValue);

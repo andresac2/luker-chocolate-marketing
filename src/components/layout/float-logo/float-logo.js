@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { withRouter, Link } from 'react-router-dom';
 import logo from '../../../assets/img/Lukerlogo.svg'
 import logoDark from '../../../assets/img/LukerlogoDark.svg'
@@ -23,9 +24,11 @@ class FloatLogo extends React.Component {
   };
 
   render() {
-    const { dark, btns, btnText, t, history } = this.props;
+    const { dark, btns, btnText, t, history, components } = this.props;
     const { distModalVisible } = this.state;
     const selectTab = history.location.pathname;
+    const { isButtonFindDistributor } = components
+
     return (
       <>
         <div className="float-logo">
@@ -35,23 +38,41 @@ class FloatLogo extends React.Component {
             </Link>
             {!selectTab.includes('/blog') && <SelectLanguage />}
           </div>
-          {btnText === 'dist' ?
-            <button className="float-logo-dist" onClick={() => this.showModalDist(distModalVisible)}>
-              {t('buttons.find-distributor')}
-            </button> 
-            :
-            (btns[0].btnText === 'dist') ? 
-              <button className="float-logo-dist" onClick={() => this.showModalDist(distModalVisible)}> {t('buttons.find-distributor')} </button> 
-              :
-              <>
-                <Link to={btns[0].url}>{btns[0].btnText}</Link>
-                {btns[1] && <Link to={btns[1].url}>{btns[1].btnText}</Link>}
-              </>
-          }
+          {isButtonFindDistributor &&
+            <>
+              {btnText === 'dist' ?
+                <button className="float-logo-dist" onClick={() => this.showModalDist(distModalVisible)}>
+                  {t('buttons.find-distributor')}
+                </button>
+                :
+                (btns[0].btnText === 'dist') ?
+                  <button className="float-logo-dist" onClick={() => this.showModalDist(distModalVisible)}> {t('buttons.find-distributor')} </button>
+                  :
+                  <>
+                    <Link to={btns[0].url}>{btns[0].btnText}</Link>
+                    {btns[1] && <Link to={btns[1].url}>{btns[1].btnText}</Link>}
+                  </>
+              }
+            </>}
+            <Link className="float-logo-dist" to={t('routes.contact-us')}>
+              {t('header.contact-us')}
+            </Link>
         </div>
         <Modals visible={distModalVisible} modal={'distributors'} showModalDist={this.showModalDist} />
       </>
     );
   }
 };
+
+const mapStateToProps = (state) => {
+  return {
+    components: state.components
+  }
+}
+
+const mapDispatchToProps = {
+};
+
+FloatLogo = connect(mapStateToProps, mapDispatchToProps)(FloatLogo);
+
 export default withNamespaces()(withRouter(FloatLogo));

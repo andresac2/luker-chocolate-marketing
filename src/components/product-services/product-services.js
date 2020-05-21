@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import altImg from '../../assets/img/img-example.svg'
 import back from '../../assets/img/back.svg'
@@ -70,5 +71,16 @@ class ProductServices extends React.Component {
     );
   }
 };
+
+const mapStateToProps = (state) => {
+  return {
+    components: state.components
+  }
+}
+
+const mapDispatchToProps = {
+};
+
+ProductServices = connect(mapStateToProps, mapDispatchToProps)(ProductServices);
 
 export default withNamespaces()(ProductServices);
