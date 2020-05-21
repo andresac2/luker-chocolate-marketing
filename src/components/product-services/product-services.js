@@ -27,6 +27,10 @@ class ProductServices extends React.Component {
     const { selectedProduct } = this.state;
     const { items, title, page, t } = this.props;
     const limit = items.length - 1;
+    const logoSedex = t('home.logo-sedex') !== false ? t('home.logo-sedex') : "https://www.back.lukerchocolate.com/wp-content/uploads/2020/01/Sedex-Member.png";
+    const logoGmo = t('home.logo-gmo') !== false ? t('home.logo-gmo') : "https://www.back.lukerchocolate.com/wp-content/uploads/2020/01/Non-GMO.png";
+    const logoKosher = t('home.logo-kosher') !== false ? t('home.logo-kosher') : "https://www.back.lukerchocolate.com/wp-content/uploads/2020/01/OU-Kosher.png";
+
     return (
       <div className={`product-services-component product-services-component--${page}`} >
         {!selectedProduct && <><h2 className="product-services-component-title"> {title}</h2>
@@ -50,7 +54,15 @@ class ProductServices extends React.Component {
           <Link className="btn-tobuy" to={t('routes.products-services') + "/" + page + "/" + items[1].id}>{(page === 'maquila') ? t('buttons.find-out-more').toUpperCase() : t('buttons.get-it-here').toUpperCase()}</Link>
           <div className={`product-services-component--footer product-services-component--footer--${items[1].id}`}>
             {items[1].description}
-          </div></>}
+            <div className="product-services-component-certificates">
+              <a href="https://www.sedexglobal.com/" target="_blank"> <img src={logoSedex} alt="Logo sedex" /> </a>
+              <a href="https://www.nongmoproject.org/find-non-gmo/verified-products/?brand_id=10589" target="_blank"> <img src={logoGmo} alt="Logo gmo" /> </a>
+              <a href="https://oukosher.org/product-search/#s=LUKER&dpm%5Bm%5D=false&dpm%5Bd%5D=false&dpm%5Bp%5D=false&prod%5Bpas_yisroel%5D=false&prod%5Bcholov_yisroel%5D=false&prod%5Byoshon%5D=false&prod%5Bgluten_free%5D=false&passover=false" target="_blank"> <img src={logoKosher} alt="Logo kosher" /> </a>
+            </div>
+            <span className="product-pending-certificates">Some products are pending Non CMO certification.</span>
+          </div>
+          </>
+        }
         <div className="btn-back-sticky">
           <Link to={t('routes.products-services')} >{t('buttons.back-to-products-services').toUpperCase()}</Link>
         </div>

@@ -17,6 +17,45 @@
     display: none;
   }
 
+  &-certificates {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+    border-top-style: solid;
+    padding-top: 2em;
+
+    a {
+      width: fit-content;
+      display: flex;
+      align-items: center;
+      border-right: 1px white solid;
+      padding-right: 1em;
+      margin-right: 1em;
+      margin-bottom: 1em;
+      height: 80px;
+      object-fit: scale-down;
+
+      &:first-child {
+        width: auto;
+      }
+
+      &:last-child {
+        border: none;
+      }
+
+      @media (max-width: 550px) {
+        img {
+          width: 6em;
+        }
+      }
+    }
+  }
+
+  .product-pending-certificates {
+    font-weight: normal;
+    font-size: .8em;
+  }
+
   .product-carrousel {
     //@include vert-center;
     align-items: center;
@@ -34,7 +73,6 @@
     .carr-item:nth-child(-n+4) {
       display: block;
     }
-
 
     .carr-item {
       display: none;

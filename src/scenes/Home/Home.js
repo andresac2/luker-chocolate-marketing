@@ -12,7 +12,7 @@ import HelmetComponent from '../../commons/helmet/helmet';
 import SelectLanguage from '../../commons/select-lng/select-lng';
 
 const isButtonDistributor = false
-const isCertifications = false
+const isCertifications = true
 
 class Home extends React.Component {
   constructor(props) {
