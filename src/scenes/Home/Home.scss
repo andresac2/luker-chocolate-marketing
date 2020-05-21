@@ -22,6 +22,31 @@
     background-size: cover;
   }
 
+  &-buttons {
+    display: flex;
+    align-self: flex-start;
+    margin-left: 5em;
+    margin-top: 3em;
+    width: 90%;
+
+    a {
+      background-color: #C8D226;
+      color: white;
+      padding: 10px 55px;
+      text-transform: uppercase;
+      align-self: center;
+      text-align: center;
+      font-weight: 700;
+      font-size: 1em;
+      line-height: 1em;
+    }
+    
+    @media screen and (min-width: 1400px) {
+      top: 7em;
+      left: 5em;
+    }
+  }
+
   &-logo {
     position: absolute;
     top: 5em;

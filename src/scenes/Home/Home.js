@@ -11,6 +11,9 @@ import Modals from '../../components/modals/modals';
 import HelmetComponent from '../../commons/helmet/helmet';
 import SelectLanguage from '../../commons/select-lng/select-lng';
 
+const isButtonDistributor = false
+const isCertifications = false
+
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -25,9 +28,7 @@ class Home extends React.Component {
   }
 
   showModalDist = () => {
-    this.setState({
-      distModalVisible: !this.state.distModalVisible,
-    });
+    this.setState({ distModalVisible: !this.state.distModalVisible });
   }
 
   _handleChange(lng) {
@@ -57,12 +58,14 @@ class Home extends React.Component {
             </div>
             <p>{t('home.home-description')}</p>
           </div>
-          <div className="dist">
-            <div className="dist-text">
-              <h2>{t('home.create-own-chocolate')}</h2>
-              <button onClick={() => this.showModalDist()}>{t('buttons.find-distributor')}</button>
+          {isButtonDistributor &&
+            <div className="dist">
+              <div className="dist-text">
+                <h2>{t('home.create-own-chocolate')}</h2>
+                <button onClick={() => this.showModalDist()}>{t('buttons.find-distributor')}</button>
+              </div>
             </div>
-          </div>
+          }
         </div>
         <div className="cacao-link">
           <div className="cacao-link-content">
@@ -72,12 +75,19 @@ class Home extends React.Component {
             </Link>
           </div>
         </div>
-        <div className="home-logos">
-          <a href="https://utz.org/" target="_blank"> <img src={logoUtz} alt="Logo utz" /> </a>
-          <a href="https://www.sedexglobal.com/" target="_blank"> <img src={logoSedex} alt="Logo sedex" /> </a>
-          <a href="https://www.nongmoproject.org/find-non-gmo/verified-products/?brand_id=10589" target="_blank"> <img src={logoGmo} alt="Logo gmo" /> </a>
-          <a href="https://oukosher.org/product-search/#s=LUKER&dpm%5Bm%5D=false&dpm%5Bd%5D=false&dpm%5Bp%5D=false&prod%5Bpas_yisroel%5D=false&prod%5Bcholov_yisroel%5D=false&prod%5Byoshon%5D=false&prod%5Bgluten_free%5D=false&passover=false" target="_blank"> <img src={logoKosher} alt="Logo kosher" /> </a>
+
+        <div className="home-buttons">
+          <Link to={t('routes.contact-us')}><span>{t('header.contact-us')}</span></Link>
         </div>
+
+        {isCertifications && <>
+          <div className="home-logos">
+            <a href="https://utz.org/" target="_blank"> <img src={logoUtz} alt="Logo utz" /> </a>
+            <a href="https://www.sedexglobal.com/" target="_blank"> <img src={logoSedex} alt="Logo sedex" /> </a>
+            <a href="https://www.nongmoproject.org/find-non-gmo/verified-products/?brand_id=10589" target="_blank"> <img src={logoGmo} alt="Logo gmo" /> </a>
+            <a href="https://oukosher.org/product-search/#s=LUKER&dpm%5Bm%5D=false&dpm%5Bd%5D=false&dpm%5Bp%5D=false&prod%5Bpas_yisroel%5D=false&prod%5Bcholov_yisroel%5D=false&prod%5Byoshon%5D=false&prod%5Bgluten_free%5D=false&passover=false" target="_blank"> <img src={logoKosher} alt="Logo kosher" /> </a>
+          </div>
+        </>}
         <Modals visible={distModalVisible} modal={'distributors'} showModalDist={this.showModalDist} />
       </div>
     );

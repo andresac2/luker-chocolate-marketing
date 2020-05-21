@@ -25,6 +25,8 @@ import WrappedWorkWithUs from "./components/layout/work-with-us/work-with-us";
 import ScrollToTop from "./commons/scroll-to-top/scroll-to-top";
 import { createMemoryHistory } from 'history';
 
+const isFooter = false
+
 export default function BasicExample(props) {
   
   return (
@@ -59,7 +61,7 @@ export default function BasicExample(props) {
       </Switch>
       <NavArrowRight />
       <NavArrowLeft />
-      <FooterCover />
+      { isFooter && <FooterCover /> }
     </div>
   );
 }
