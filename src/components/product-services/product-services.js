@@ -60,7 +60,7 @@ class ProductServices extends React.Component {
               <a href="https://www.nongmoproject.org/find-non-gmo/verified-products/?brand_id=10589" target="_blank"> <img src={logoGmo} alt="Logo gmo" /> </a>
               <a href="https://oukosher.org/product-search/#s=LUKER&dpm%5Bm%5D=false&dpm%5Bd%5D=false&dpm%5Bp%5D=false&prod%5Bpas_yisroel%5D=false&prod%5Bcholov_yisroel%5D=false&prod%5Byoshon%5D=false&prod%5Bgluten_free%5D=false&passover=false" target="_blank"> <img src={logoKosher} alt="Logo kosher" /> </a>
             </div>
-            <span className="product-pending-certificates">Some products are pending Non CMO certification.</span>
+            <span className="product-pending-certificates">{t("products-services.pending_certification")}</span>
           </div>
           </>
         }
