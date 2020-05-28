@@ -29,8 +29,8 @@ class Article extends React.Component {
           <meta name="twitter:image:alt" content={data.flag ? "Our clients" : data.breads[0].href} />
           <meta property="fb:app_id" content="your_app_id" />
           <meta name="twitter:site" content="@Luker_Chocolate" />
-          {!data.cover.includes('http') && <meta property="twitter:image" content={require(`../../../assets/img/${data.flag ? '' : 'blog/'}${data.cover ? data.cover : 'img-example.svg'}`)} />}
-          {data.cover.includes('http') && <meta property="twitter:image" content={data.cover} />}
+          {!data.cover?.includes('http') && <meta property="twitter:image" content={require(`../../../assets/img/${data.flag ? '' : 'blog/'}${data.cover ? data.cover : 'img-example.svg'}`)} />}
+          {data.cover?.includes('http') && <meta property="twitter:image" content={data.cover} />}
         </Helmet>
 
         {this.window && !this.window.location.href.includes('sustainability') &&
@@ -76,8 +76,8 @@ class Article extends React.Component {
             <div className="blog-article-entries--list">
               {Object.values(recommended).map((item, i) =>
                 <Link key={i} to={item.url}>
-                  {!item.cover.includes('http') && <img src={require('../../../assets/img/' + (data.flag ? '' : 'blog/') + (item.cover ? item.cover : altImg))} alt={item.title} />}
-                  {item.cover.includes('http') && <img src={item.cover} alt={item.title} />}
+                  {!item.cover?.includes('http') && <img src={require('../../../assets/img/' + (data.flag ? '' : 'blog/') + (item.cover ? item.cover : altImg))} alt={item.title} />}
+                  {item.cover?.includes('http') && <img src={item.cover} alt={item.title} />}
                   <p>{item.date}</p>
                   <h2>{item.title}</h2>
                 </Link>
