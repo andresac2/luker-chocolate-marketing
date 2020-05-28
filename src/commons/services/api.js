@@ -1,5 +1,5 @@
 export async function getPages() {
-  const response = await fetch('http://www.back.lukerchocolate.com/wp-json/wp/v2/pages?per_page=100');
+  const response = await fetch('https://www.back.lukerchocolate.com/wp-json/wp/v2/pages?per_page=100');
   return await response.json();
 }
 

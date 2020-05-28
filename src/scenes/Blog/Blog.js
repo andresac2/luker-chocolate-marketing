@@ -318,9 +318,9 @@ class Blog extends React.Component {
                   {article && this.articleLoaded.title}
                   {!article && categorieSelected && categorieSelected.name}
                   {!article && !categorieSelected && 'UNDER THE TREE'}
-                  {this.articleLoaded.flag &&
+                  {/*this.articleLoaded.flag &&
                     <img className="blog-component-header-flag" src={require('../../assets/img/' + this.articleLoaded.flag + "-flag.png")} alt={this.articleLoaded.flag.substr(0, 2)} />
-                  }
+                  */}
                 </h1>
               </div>
               {(category === 'our-clients' || category === 'nuestros-clientes') && clientArticle &&

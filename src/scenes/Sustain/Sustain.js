@@ -66,7 +66,7 @@ class Sustain extends React.Component {
     const { t } = this.props;
     const { items, firstItem, reportModalVisible, articleModalVisible, modalSelectedIndex } = this.state;
     const altImg = 'img-example.svg';
-    const panel = "http://www.back.lukerchocolate.com/wp-content/uploads/2020/05/the-chocolate-dream.jpg";
+    const panel = "https://www.back.lukerchocolate.com/wp-content/uploads/2020/05/the-chocolate-dream.jpg";
 
     return (
       <div className="sustain-component">
@@ -129,7 +129,7 @@ class Sustain extends React.Component {
             <h1>{t('sustainability.we-go-beyond')}</h1>
             <div className="sustain-content-model--panel">
               <img src={panel} alt="Panel" />
-              <a href='http://thechocolatedream.com/' target="_blank"> {t('buttons.find-out-more')} </a>
+              <a href='https://thechocolatedream.com/' target="_blank"> {t('buttons.find-out-more')} </a>
             </div>
           </div>
         </div>
