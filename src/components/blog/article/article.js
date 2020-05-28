@@ -21,8 +21,8 @@ class Article extends React.Component {
           <meta name="description" content={data.flag ? "Our clients" : data.breads[0].href} />
           <meta property="og:title" content={data.title} />
           <meta property="og:description" content={(data.flag) ? 'Our clients' : data.breads[0].href} />
-          {!data.cover.includes('http') && <meta property="og:image" content={require(`../../../assets/img/${data.flag ? '' : 'blog/'}${data.cover ? data.cover : 'img-example.svg'}`)} />}
-          {data.cover.includes('http') && <meta property="og:image" content={data.cover} />}
+          {!data.cover?.includes('http') && <meta property="og:image" content={require(`../../../assets/img/${data.flag ? '' : 'blog/'}${data.cover ? data.cover : 'img-example.svg'}`)} />}
+          {data.cover?.includes('http') && <meta property="og:image" content={data.cover} />}
           <meta property="og:url" content={fullUrl} />
           <meta name="twitter:card" content="summary_large_image" />
           <meta property="og:site_name" content="Luker Chocolate." />
