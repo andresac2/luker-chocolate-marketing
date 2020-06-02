@@ -82,6 +82,8 @@ class Blog extends React.Component {
   }
 
   componentDidUpdate() {
+    this.articleLoaded = [];
+    
     if (this.state.lngSelect !== i18n.language) {
       this.setState({ lngSelect: i18n.language })
       this.props.getPost(i18n.language)
@@ -257,7 +259,7 @@ class Blog extends React.Component {
     let articleSEO
     if (serverProps)
       articleSEO = serverProps.articles;
-
+      
     return (
       <Layout className="blog-component">
         <Helmet>
@@ -318,9 +320,9 @@ class Blog extends React.Component {
                   {article && this.articleLoaded.title}
                   {!article && categorieSelected && categorieSelected.name}
                   {!article && !categorieSelected && 'UNDER THE TREE'}
-                  {/*this.articleLoaded.flag &&
+                  {this.articleLoaded.flag &&
                     <img className="blog-component-header-flag" src={require('../../assets/img/' + this.articleLoaded.flag + "-flag.png")} alt={this.articleLoaded.flag.substr(0, 2)} />
-                  */}
+                  }
                 </h1>
               </div>
               {(category === 'our-clients' || category === 'nuestros-clientes') && clientArticle &&
