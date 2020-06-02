@@ -47,22 +47,19 @@ class Footer extends React.Component {
       if (data.Description === "preexistente") {
         notification.warning({
           message: i18n.t('errors.already-did-it'),
-          description:
-            i18n.t('errors.registered-email')
+          description: i18n.t('errors.registered-email')
         });
       } else {
         notification.success({
           message: i18n.t('messages.welcome-community'),
-          description:
-            i18n.t('messages.newsletter-ok')
+          description: i18n.t('messages.newsletter-ok')
         });
       }
       this.setState({ emailNewsletter: '' });
     } else {
       notification.error({
         message: i18n.t('errors.email-send-error'),
-        description:
-          i18n.t('errors.try-again')
+        description: i18n.t('errors.try-again')
       });
     }
     this.setState({ newsletterWaiting: false });
@@ -71,9 +68,9 @@ class Footer extends React.Component {
   render() {
     const { mode, history, t } = this.props;
     const { emailNewsletter, newsletterWaiting } = this.state;
-    const isNewsletterHidden = this.hideNews.some(function (v) { return history.location.pathname.includes(v); });
-    const seeWorkUs = this.hideWorkUs.some(function (v) { return history.location.pathname.includes(v); });
-    const seeContact = this.hideContact.some(function (v) { return history.location.pathname.includes(v); });
+    const isNewsletterHidden = this.hideNews.some(v  => history.location.pathname.includes(v));
+    const seeWorkUs = this.hideWorkUs.some(v => history.location.pathname.includes(v));
+    const seeContact = this.hideContact.some(v => history.location.pathname.includes(v));
 
     return (
       <div>
@@ -126,6 +123,15 @@ class Footer extends React.Component {
             <h2>{t('blog.join-newsletter')}</h2>
             <form onSubmit={this.registerEmailNewsletter}>
               <input type="email" name="email" placeholder={t('form.give-us-email')} value={emailNewsletter} onChange={this.handleChangeNews} />
+              <div className="terms-and-conditions">
+                <input type="checkbox" required/>
+                <div>Al hacer click Aceptas&nbsp;
+                  <a target="_blank">Términos y Condiciones</a>&nbsp;
+                  y&nbsp;
+                  <a target="_blank">Política de Privacidad</a>
+                </div>
+              </div>
+
               <input type="submit" value={t('buttons.send')} disabled={newsletterWaiting} />
             </form>
             <div className="footer-component-social--btn">

@@ -2,6 +2,28 @@
   height: inherit;
   //overflow-x: hidden;
 
+  .terms-and-conditions {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    align-items: center;
+    justify-content: center;
+  
+    input {
+      width: 50px;
+      height: 50px;
+    }
+  
+    a {
+      color: white;
+      text-decoration: underline;
+    }
+  
+    a:hover, a:active {
+      font-weight:bold;
+    }
+  }
+
+  
   .container-button-visit {
     display: flex;
     justify-content: center;
