@@ -7,6 +7,11 @@ import { withNamespaces } from 'react-i18next';
 import { Spin } from 'antd';
 import { connect } from 'react-redux';
 
+import { termsConditions } from "../../commons/data/data-en";
+import { privacyPolicy } from "../../commons/data/data-en";
+import { termsConditions as termsConditionsEs } from "../../commons/data/data-es";
+import { privacyPolicy as privacyPolicyEs } from "../../commons/data/data-es";
+
 import TakeStand from '../../components/blog/take-stand/take-stand';
 import Article from '../../components/blog/article/article';
 import FloatLogo from '../../components/layout/float-logo/float-logo';
@@ -406,14 +411,16 @@ class Blog extends React.Component {
                       <p>{t('blog.newsletter-text')}</p>
                       <form onSubmit={this.registerEmailNewsletter}>
                         <input type="email" name="email" placeholder={t('form.give-us-email')} value={emailNewsletter} onChange={this.handleChange} />
+
                         <div className="terms-and-conditions">
                           <input type="checkbox" required/>
                           <div>{i18n.t('messages.click_accept')}&nbsp;
-                            <a target="_blank">{i18n.t('messages.terms_and_conditions')}</a>&nbsp;
-                            {i18n.t('messages.and')}&nbsp;
-                            <a target="_blank">{i18n.t('messages.privacy_policy')}</a>
+                          <a href={i18n.language === 'en' ? termsConditions : termsConditionsEs} target="_blank">{t('messages.terms_and_conditions')}</a>&nbsp;
+                          {i18n.t('messages.and')}&nbsp;
+                          <a href={i18n.language === 'en' ? privacyPolicy : privacyPolicyEs} target="_blank">{t('messages.privacy_policy')}</a>
                           </div>
                         </div>
+                        
                         <input type="submit" value={t('buttons.send')} disabled={newsletterWaiting} />
                       </form>
                     </div>

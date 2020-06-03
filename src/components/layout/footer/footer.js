@@ -9,13 +9,8 @@ import { withNamespaces } from 'react-i18next';
 
 import { termsConditions } from "../../../commons/data/data-en";
 import { privacyPolicy } from "../../../commons/data/data-en";
-import { antiFraud } from "../../../commons/data/data-en";
-import { dataTreatment } from "../../../commons/data/data-en";
-
 import { termsConditions as termsConditionsEs } from "../../../commons/data/data-es";
 import { privacyPolicy as privacyPolicyEs } from "../../../commons/data/data-es";
-import { antiFraud as antiFraudEs } from "../../../commons/data/data-es";
-import { dataTreatment as dataTreatmentEs } from "../../../commons/data/data-es";
 
 class Footer extends React.Component {
   hideNews = ['moulding', 'dosing', 'panning', 'cocoa-powder', 'casaluker', 'our-services'];//VIstas en las que se oculta el newsletter
@@ -123,12 +118,13 @@ class Footer extends React.Component {
             <h2>{t('blog.join-newsletter')}</h2>
             <form onSubmit={this.registerEmailNewsletter}>
               <input type="email" name="email" placeholder={t('form.give-us-email')} value={emailNewsletter} onChange={this.handleChangeNews} />
+
               <div className="foo-terms-and-conditions">
                 <input type="checkbox" required/>
                 <div>{i18n.t('messages.click_accept')}&nbsp;
-                  <a target="_blank">{i18n.t('messages.terms_and_conditions')}</a>&nbsp;
+                  <a href={i18n.language === 'en' ? termsConditions : termsConditionsEs} target="_blank">{t('messages.terms_and_conditions')}</a>&nbsp;
                   {i18n.t('messages.and')}&nbsp;
-                  <a target="_blank">{i18n.t('messages.privacy_policy')}</a>
+                  <a href={i18n.language === 'en' ? privacyPolicy : privacyPolicyEs} target="_blank">{t('messages.privacy_policy')}</a>
                 </div>
               </div>
 

@@ -10,6 +10,28 @@
   background-size: cover;
   z-index: 1;
 
+  .terms-and-conditions {
+    margin-bottom: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  
+    input {
+      width: 50px;
+      height: 15px;
+    }
+  
+    a {
+      color: white;
+      text-decoration: underline;
+    }
+  
+    a:hover, a:active {
+      font-weight:bold;
+    }
+  }
+
   input[type=number]::-webkit-inner-spin-button,
   input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
@@ -152,10 +174,16 @@
 
     &-terms {
       font-weight: 500;
-      margin-top: -0.5rem;
       line-height: 1.2em;
       font-size: smaller;
       color: #fff;
+      display: flex;
+      justify-items: cemter;
+      justify-content: cemter;
+
+      input {
+        width: 20px;
+      }
 
       a {
         font-weight: 800;

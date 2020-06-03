@@ -215,11 +215,20 @@ class ContactSide extends React.Component {
                 <Button type="primary" className="contact-form-button contact-form-button-back" onClick={() => this.props.handleShowFormContact(false)}>
                   {t('buttons.back')}
                 </Button>
+                <div className="terms-and-conditions">
+                  <input type="checkbox" required />
+                  <div>
+                    {i18n.t('messages.click_accept')}&nbsp;
+                    <a href={i18n.language === 'en' ? termsConditions : termsConditionsEs} target="_blank">{t('messages.terms_and_conditions')}</a>&nbsp;
+                    {i18n.t('messages.and')}&nbsp;
+                    <a href={i18n.language === 'en' ? privacyPolicy : privacyPolicyEs} target="_blank">{t('messages.privacy_policy')}</a>
+                  </div>
+                </div>
+
                 <Button type="primary" htmlType="submit" className="contact-form-button">
                   {t('buttons.send')}
                 </Button>
               </Form.Item>
-              <p className="contact-form-terms">{t('form.clicking-send')} <a href={i18n.language === 'en' ? termsConditions : termsConditionsEs} target="_blank">{t('form.terms-conditions')} </a> {t('form.and-our')} <a href={i18n.language === 'en' ? privacyPolicy : privacyPolicyEs} target="_blank">{t('form.privacy-policy')}</a>.</p>
             </Form>
             : <Spin size="large" />
           }

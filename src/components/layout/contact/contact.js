@@ -4,10 +4,12 @@ import FormItem from 'antd/lib/form/FormItem';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/img/Lukerlogo.svg'
 import Footer from '../footer/footer';
+
 import { termsConditions } from "../../../commons/data/data-en";
 import { privacyPolicy } from "../../../commons/data/data-en";
 import { termsConditions as termsConditionsEs } from "../../../commons/data/data-es";
 import { privacyPolicy as privacyPolicyEs } from "../../../commons/data/data-es";
+
 import HelmetComponent from '../../../commons/helmet/helmet';
 import { withNamespaces } from 'react-i18next';
 import SelectLanguage from '../../../commons/select-lng/select-lng';
@@ -192,12 +194,13 @@ class Contact extends React.Component {
                 )}
               </FormItem>
               <Form.Item>
+
               <div className="terms-and-conditions">
                 <input type="checkbox" required/>
                 <div>{i18n.t('messages.click_accept')}&nbsp;
-                  <a target="_blank">{i18n.t('messages.terms_and_conditions')}</a>&nbsp;
+                  <a href={i18n.language === 'en' ? termsConditions : termsConditionsEs} target="_blank">{t('messages.terms_and_conditions')}</a>&nbsp;
                   {i18n.t('messages.and')}&nbsp;
-                  <a target="_blank">{i18n.t('messages.privacy_policy')}</a>
+                  <a href={i18n.language === 'en' ? privacyPolicy : privacyPolicyEs} target="_blank">{t('messages.privacy_policy')}</a>
                 </div>
               </div>
 
