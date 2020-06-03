@@ -6,6 +6,29 @@ $Extra-large: 1200px;
 .contact-us {
   color: #484848;
 
+  .terms-and-conditions {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+  
+    input {
+      width: 50px;
+      height: 15px;
+    }
+  
+    a {
+      color: black;
+      text-decoration: underline;
+    }
+  
+    a:hover, a:active {
+      font-weight:bold;
+    }
+  }
+
   input[type=number]::-webkit-inner-spin-button,
   input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;

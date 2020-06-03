@@ -40,24 +40,17 @@ class Contact extends React.Component {
   };
 
   sendFeedback(templateId, variables) {
-    window.emailjs.send(
-      'sendgrid', templateId,
-      variables
-    ).then(res => {
+    window.emailjs.send('sendgrid', templateId, variables)
+    .then(res => {
       console.log('Email successfully sent!');
       this.emailSent('Thank you for getting in touch! ', 'We appreciate you contacting us. One of our colleagues will get back in touch with you soon!');
       this.props.form.resetFields();
     })
-      // Handle errors here however you like, or use a React error boundary
-      .catch(err => (console.error('Oh well, you failed. Here some thoughts on the error that occured:', err), this.emailSent('Oh well, something failed', 'Check your conection and try again')));
+    .catch(err => (console.error('Oh well, you failed. Here some thoughts on the error that occured:', err), this.emailSent('Oh well, something failed', 'Check your conection and try again')));
   }
 
   emailSent(title, content, salesforce) {
-    const modal = Modal.success({
-      title: title,
-      content: content,
-    });
-    console.log(salesforce)
+    const modal = Modal.success({ title, content });
     setTimeout(() => {
       modal.destroy();
     }, 8000);
@@ -117,7 +110,7 @@ class Contact extends React.Component {
     if (salesforce.success) {
       stateSalesforce = "The user has been registered in Salesforce correctly."
       this.sendEmail(titleEmail, contentEMail, stateSalesforce, salesforce)
-    } else if (salesforce[0].errorCode === "DUPLICATES_DETECTED") {
+    } else if (salesforce[0]?.errorCode === "DUPLICATES_DETECTED") {
       stateSalesforce = "The user was already registered in Salesforce."
       this.sendEmail(titleEmail, contentEMail, stateSalesforce, salesforce)
       console.warn("Correo duplicado en salesforce")
@@ -162,14 +155,8 @@ class Contact extends React.Component {
               <FormItem>
                 {getFieldDecorator('email', {
                   rules: [
-                    {
-                      type: 'email',
-                      message: t('errors.invalid-email'),
-                    },
-                    {
-                      required: true,
-                      message: t('errors.required-email'),
-                    },
+                    { type: 'email', message: t('errors.invalid-email') },
+                    { required: true, message: t('errors.required-email') },
                   ],
                 })(<Input placeholder={t('form.your-email')} />)}
               </FormItem>
@@ -205,6 +192,15 @@ class Contact extends React.Component {
                 )}
               </FormItem>
               <Form.Item>
+              <div className="terms-and-conditions">
+                <input type="checkbox" required/>
+                <div>Al hacer click Aceptas&nbsp;
+                  <a target="_blank">Términos y Condiciones</a>&nbsp;
+                  y&nbsp;
+                  <a target="_blank">Política de Privacidad</a>
+                </div>
+              </div>
+
                 <Button type="primary" htmlType="submit" className="contact-form-button">
                   {t('buttons.send')}
                 </Button>
