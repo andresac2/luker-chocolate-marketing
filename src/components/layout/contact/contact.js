@@ -194,10 +194,10 @@ class Contact extends React.Component {
               <Form.Item>
               <div className="terms-and-conditions">
                 <input type="checkbox" required/>
-                <div>Al hacer click Aceptas&nbsp;
-                  <a target="_blank">Términos y Condiciones</a>&nbsp;
-                  y&nbsp;
-                  <a target="_blank">Política de Privacidad</a>
+                <div>{i18n.t('messages.click_accept')}&nbsp;
+                  <a target="_blank">{i18n.t('messages.terms_and_conditions')}</a>&nbsp;
+                  {i18n.t('messages.and')}&nbsp;
+                  <a target="_blank">{i18n.t('messages.privacy_policy')}</a>
                 </div>
               </div>
 
@@ -206,7 +206,7 @@ class Contact extends React.Component {
                 </Button>
 
               </Form.Item>
-              <p className="contact-form-terms">{t('form.clicking-send')} <a href={i18n.language === 'en' ? termsConditions : termsConditionsEs} target="_blank">{t('form.terms-conditions')} </a> {t('form.and-our')} <a href={i18n.language === 'en' ? privacyPolicy : privacyPolicyEs} target="_blank">{t('form.privacy-policy')}</a>.</p>
+              {/*<p className="contact-form-terms">{t('form.clicking-send')} <a href={i18n.language === 'en' ? termsConditions : termsConditionsEs} target="_blank">{t('form.terms-conditions')} </a> {t('form.and-our')} <a href={i18n.language === 'en' ? privacyPolicy : privacyPolicyEs} target="_blank">{t('form.privacy-policy')}</a>.</p>*/}
             </Form>
             : <Spin size="large" />
           }

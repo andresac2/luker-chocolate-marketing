@@ -408,10 +408,10 @@ class Blog extends React.Component {
                         <input type="email" name="email" placeholder={t('form.give-us-email')} value={emailNewsletter} onChange={this.handleChange} />
                         <div className="terms-and-conditions">
                           <input type="checkbox" required/>
-                          <div>Al hacer click Aceptas&nbsp;
-                            <a target="_blank">Términos y Condiciones</a>&nbsp;
-                            y&nbsp;
-                            <a target="_blank">Política de Privacidad</a>
+                          <div>{i18n.t('messages.click_accept')}&nbsp;
+                            <a target="_blank">{i18n.t('messages.terms_and_conditions')}</a>&nbsp;
+                            {i18n.t('messages.and')}&nbsp;
+                            <a target="_blank">{i18n.t('messages.privacy_policy')}</a>
                           </div>
                         </div>
                         <input type="submit" value={t('buttons.send')} disabled={newsletterWaiting} />
