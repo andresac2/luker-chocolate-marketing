@@ -98,7 +98,8 @@
 
       @media (max-width: 992px) {
         width: 100%;
-        display: none;
+        font-size: 2.3em !important;
+        margin-top: 1em;
       }
     }
 
@@ -457,7 +458,7 @@
     }
 
     .blog-component-header {
-      min-height: 200px;
+      min-height: 300px;
       background-size: cover;
       background-position: right;
 
