@@ -378,7 +378,7 @@ class Blog extends React.Component {
                     {this.renderBanner()}
                     <div className="blog-layout-articles">
                       {allArticles?.length > 0 && allArticles.map((data, i) => {
-                        return data.breads && (i >= 3 && i <= 6) &&
+                        return data.breads && i < 4 &&
                           <div className="blog-layout-articles--item" key={i}>
                             <Link to={allArticles[i].breads[1].href + '/' + allArticles[i].url} className="blog-layout-latest--article">
                               {!allArticles[i].cover.includes('http') && <img src={require('../../assets/img/blog/' + allArticles[i].cover)} />}
