@@ -12,6 +12,7 @@ export async function parseArticle(articles, url, articlesEs) {
 		art['description'] = e.content.rendered.substr(0, 100);
 		art['date'] = e.acf.date;
 		art['content'] = e.content.rendered;
+		art['meta_descripcion'] = e.acf.meta_descripcion;
 		autor['name'] = e.acf.authorname;
 		autor['avatar'] = e.acf.avatar;
 		autor['details'] = e.acf.details;
@@ -32,6 +33,7 @@ export async function parseArticle(articles, url, articlesEs) {
 		art['fullUrl'] = e.acf.url;
 		art['cover'] = e.acf.cover || 'banner-cocoa-forest.jpg';
 		art['title'] = e.title.rendered;
+		art['meta_descripcion'] = e.acf.meta_descripcion;
 		art['description'] = e.content.rendered.substr(0, 100);
 		art['date'] = e.acf.date;
 		art['content'] = e.content.rendered;

@@ -262,7 +262,7 @@ class Blog extends React.Component {
     let articleSEO
     if (serverProps)
       articleSEO = serverProps.articles;
-      
+
     return (
       <Layout className="blog-component">
         <Helmet>
