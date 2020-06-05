@@ -18,16 +18,16 @@ class Article extends React.Component {
       <div className="blog-article">
         <Helmet>
           <title>{data.title.charAt(0).toUpperCase() + data.title.slice(1).toLowerCase()}</title>
-          <meta name="description" content={data.flag ? "Our clients" : data.breads[0].href} />
+          <meta name="description" content={data.meta_descripcion} />
           <meta property="og:type" content="website"/>
           <meta property="og:title" content={data.title} />
-          <meta property="og:description" content={data.meta_description} />
+          <meta property="og:description" content={data.meta_descripcion} />
           {!data.cover?.includes('http') && <meta property="og:image" content={require(`../../../assets/img/${data.flag ? '' : 'blog/'}${data.cover ? data.cover : 'img-example.svg'}`)} />}
           {data.cover?.includes('http') && <meta property="og:image" content={data.cover} />}
           <meta property="og:url" content={fullUrl} />
           <meta property="og:site_name" content="Luker Chocolate." />
           <meta name="twitter:title" content={data.title} />
-          <meta name="twitter:description" content={data.meta_description} />
+          <meta name="twitter:description" content={data.meta_descripcion} />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:image:alt" content={data.flag ? "Our clients" : data.breads[0].href} />
           <meta name="twitter:site" content="@Luker_Chocolate" />

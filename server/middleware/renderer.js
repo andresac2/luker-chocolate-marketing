@@ -70,6 +70,8 @@ module.exports.renderer = (req, res) => {
     
     htmlData = htmlData.substring(0, metaDefaultInit) + htmlData.substring(metaDefaultFinish, htmlData.length)
     
+    console.log(helmet.meta.toString());
+    
     htmlData = htmlData.replace('<metadynamyc/>', `
       ${helmet.title.toString()}
       ${helmet.meta.toString()}
