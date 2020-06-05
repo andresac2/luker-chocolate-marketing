@@ -63,16 +63,17 @@ module.exports.renderer = (req, res) => {
 
     const helmet = Helmet.renderStatic();
 
+    //remove metas default
+    
+    const metaDefaultInit = htmlData.indexOf('<meta-default-init/>')
+    const metaDefaultFinish = htmlData.indexOf('<meta-default-finish/>') + '<meta-default-finish/>'.length
+    
+    htmlData = htmlData.substring(0, metaDefaultInit) + htmlData.substring(metaDefaultFinish, htmlData.length)
+    
     htmlData = htmlData.replace('<metadynamyc/>', `
       ${helmet.title.toString()}
       ${helmet.meta.toString()}
       ${helmet.link.toString()}
-    `)
-
-    htmlData = htmlData.replace('<metadynamyc/>', `
-    ${helmet.title.toString()}
-    ${helmet.meta.toString()}
-    ${helmet.link.toString()}
     `)
 
     htmlData = htmlData.replace('full-url', req.params['0'])

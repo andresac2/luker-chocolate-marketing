@@ -20,7 +20,6 @@ function* getPost({ payload: { lng } }) {
       
       transform.sort((a, b) => b._date - a._date)
       transform = transform.filter(item => item.categorie?.slug !== 'fixed' || item.categorie?.slug !== 'fijado')
-      console.log(transform);
       
       yield put(articleActions.getPostResponse(transform, articlesFixeds?.length > 0? articlesFixeds: undefined, lng));
     } else {
