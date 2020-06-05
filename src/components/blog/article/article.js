@@ -6,29 +6,32 @@ import Comments from '../comments/comments';
 import { Helmet } from 'react-helmet';
 import { withNamespaces } from 'react-i18next';
 
-
 class Article extends React.Component {
   render() {
     const { data, recommended, t } = this.props;
     const { autor } = data
     const altImg = 'img-example.svg';
     const fullUrl = data.fullUrl;
+    console.log(data);
     
     return (
       <div className="blog-article">
         <Helmet>
           <title>{data.title.charAt(0).toUpperCase() + data.title.slice(1).toLowerCase()}</title>
           <meta name="description" content={data.flag ? "Our clients" : data.breads[0].href} />
+          <meta property="og:type" content="website"/>
           <meta property="og:title" content={data.title} />
-          <meta property="og:description" content={(data.flag) ? 'Our clients' : data.breads[0].href} />
+          <meta property="og:description" content={data.meta_description} />
           {!data.cover?.includes('http') && <meta property="og:image" content={require(`../../../assets/img/${data.flag ? '' : 'blog/'}${data.cover ? data.cover : 'img-example.svg'}`)} />}
           {data.cover?.includes('http') && <meta property="og:image" content={data.cover} />}
           <meta property="og:url" content={fullUrl} />
-          <meta name="twitter:card" content="summary_large_image" />
           <meta property="og:site_name" content="Luker Chocolate." />
+          <meta name="twitter:title" content={data.title} />
+          <meta name="twitter:description" content={data.meta_description} />
+          <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:image:alt" content={data.flag ? "Our clients" : data.breads[0].href} />
-          <meta property="fb:app_id" content="your_app_id" />
           <meta name="twitter:site" content="@Luker_Chocolate" />
+          <meta property="fb:app_id" content="your_app_id" />
           {!data.cover?.includes('http') && <meta property="twitter:image" content={require(`../../../assets/img/${data.flag ? '' : 'blog/'}${data.cover ? data.cover : 'img-example.svg'}`)} />}
           {data.cover?.includes('http') && <meta property="twitter:image" content={data.cover} />}
         </Helmet>

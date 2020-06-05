@@ -30,6 +30,7 @@ const monthsES = {
 
 export default (articles) => {
   return articles.map((data, i) => {
+    
     let art = {}
     art['url'] = data.slug;
     art['fullUrl'] = data.acf.url;
@@ -38,6 +39,7 @@ export default (articles) => {
     art['description'] = data.content.rendered.substr(0, 100);
     art['date'] = data.acf.date;
     art['categorie'] = data.acf.categoria
+    art['meta_descripcion'] = data.acf.meta_descripcion
     
     const [ month, year ] = data.acf.date.split(' ');
     art._date = new Date(year + '-' + (months[month] || monthsES[month]) + '-02');
