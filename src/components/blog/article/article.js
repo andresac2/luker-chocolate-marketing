@@ -13,6 +13,8 @@ class Article extends React.Component {
     const altImg = 'img-example.svg';
     const fullUrl = data.fullUrl;
     
+    console.log(data);
+    
     return (
       <div className="blog-article">
         <Helmet>

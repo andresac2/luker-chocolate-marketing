@@ -263,6 +263,8 @@ class Blog extends React.Component {
     if (serverProps)
       articleSEO = serverProps.articles;
     console.log(articleSEO);
+    console.log("articleLoaded", articleLoaded);
+    
     
     const imageOG = articleSEO?.imagen_open_graph || articleSEO?.cover || t('blog.imagen_open_graph.url')
     
