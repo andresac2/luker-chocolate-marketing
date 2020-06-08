@@ -263,6 +263,8 @@ class Blog extends React.Component {
     if (serverProps)
       articleSEO = serverProps.articles;
 
+    const imageOG = t('blog.imagen_open_graph.url')? t('blog.imagen_open_graph.url'): articleSEO.cover
+    
     return (
       <Layout className="blog-component">
         <Helmet>
@@ -271,8 +273,8 @@ class Blog extends React.Component {
           <meta property="description" content={articleSEO ? articleSEO.meta_descripcion : t('blog.descripcion_opengraph')} />
           <meta property="og:type" content="website"/>
           <meta property="og:description" content={articleSEO ? articleSEO.meta_descripcion : t('blog.descripcion_opengraph')} />
+          <meta property="og:image" content={imageOG} />
           <meta property="og:title" content={articleSEO ? articleSEO.title : t('blog.titulo_protocolo_opengraph')} />
-          <meta property="og:image" content={articleSEO ? articleSEO.cover : t('blog.imagen_open_graph.url')} />
           <meta property="og:site_name" content="Luker Chocolate." />
           <meta property="og:url" content={"https://www.lukerchocolate.com" + this.props.match.url} />
           <meta property="fb:app_id" content="your_app_id" />
