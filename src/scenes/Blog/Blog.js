@@ -270,18 +270,18 @@ class Blog extends React.Component {
         <Helmet>
           <title>{articleSEO ? articleSEO.title : t('blog.titulo_seo')}</title>
           <meta name="keywords" content={t('blog.keywords')} />
-          <meta property="description" content={articleSEO ? articleSEO.meta_descripcion : t('blog.descripcion_opengraph')} />
+          <meta property="description" content={articleSEO?.meta_descripcion || t('blog.descripcion_opengraph')} />
           <meta property="og:type" content="website"/>
-          <meta property="og:description" content={articleSEO ? articleSEO.meta_descripcion : t('blog.descripcion_opengraph')} />
+          <meta property="og:description" content={articleSEO?.meta_descripcion || t('blog.descripcion_opengraph')} />
           <meta property="og:image" content={imageOG} />
-          <meta property="og:title" content={articleSEO ? articleSEO.title : t('blog.titulo_protocolo_opengraph')} />
+          <meta property="og:title" content={articleSEO?.title || t('blog.titulo_protocolo_opengraph')} />
           <meta property="og:site_name" content="Luker Chocolate." />
           <meta property="og:url" content={"https://www.lukerchocolate.com" + this.props.match.url} />
           <meta property="fb:app_id" content="your_app_id" />
-          <meta property="twitter:image" content={articleSEO ? articleSEO.cover : t('blog.imagen_open_graph.url')} />
-          <meta name="twitter:title" content={articleSEO? articleSEO.title: t('blog.titulo_protocolo_opengraph')} />
-          <meta name="twitter:description" content={articleSEO? articleSEO.meta_descripcion: t('blog.descripcion_opengraph')} />
-          <meta name="twitter:image:alt" content={articleSEO ? articleSEO.title : t('blog.descripcion_opengraph')} />
+          <meta property="twitter:image" content={imageOG} />
+          <meta name="twitter:title" content={articleSEO.title || t('blog.titulo_protocolo_opengraph')} />
+          <meta name="twitter:description" content={articleSEO.meta_descripcion || t('blog.descripcion_opengraph')} />
+          <meta name="twitter:image:alt" content={articleSEO.title || t('blog.descripcion_opengraph')} />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:site" content="@Luker_Chocolate" />
         </Helmet>

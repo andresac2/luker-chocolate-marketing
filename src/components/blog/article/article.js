@@ -12,7 +12,6 @@ class Article extends React.Component {
     const { autor } = data
     const altImg = 'img-example.svg';
     const fullUrl = data.fullUrl;
-    console.log(data);
     
     return (
       <div className="blog-article">
@@ -22,8 +21,7 @@ class Article extends React.Component {
           <meta property="og:type" content="website"/>
           <meta property="og:title" content={data.title} />
           <meta property="og:description" content={data.meta_descripcion} />
-          {!data.cover?.includes('http') && <meta property="og:image" content={require(`../../../assets/img/${data.flag ? '' : 'blog/'}${data.cover ? data.cover : 'img-example.svg'}`)} />}
-          {data.cover?.includes('http') && <meta property="og:image" content={data.cover} />}
+          <meta property="og:image" content={data.image_open_graph} />
           <meta property="og:url" content={fullUrl} />
           <meta property="og:site_name" content="Luker Chocolate." />
           <meta name="twitter:title" content={data.title} />
@@ -31,9 +29,8 @@ class Article extends React.Component {
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:image:alt" content={data.flag ? "Our clients" : data.breads[0].href} />
           <meta name="twitter:site" content="@Luker_Chocolate" />
+          <meta property="twitter:image" content={data.image_open_graph} />
           <meta property="fb:app_id" content="your_app_id" />
-          {!data.cover?.includes('http') && <meta property="twitter:image" content={require(`../../../assets/img/${data.flag ? '' : 'blog/'}${data.cover ? data.cover : 'img-example.svg'}`)} />}
-          {data.cover?.includes('http') && <meta property="twitter:image" content={data.cover} />}
         </Helmet>
 
         {this.window && !this.window.location.href.includes('sustainability') &&
