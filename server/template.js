@@ -8,6 +8,7 @@ export async function parseArticle(articles, url, articlesEs) {
 		art['url'] = e.slug;
 		art['fullUrl'] = e.acf.url;
 		art['cover'] = e.acf.cover || 'banner-cocoa-forest.jpg';
+		art['imagen_open_graph'] = e.acf.imagen_open_graph || e.acf.cover
 		art['title'] = e.title.rendered;
 		art['description'] = e.content.rendered.substr(0, 100);
 		art['date'] = e.acf.date;
