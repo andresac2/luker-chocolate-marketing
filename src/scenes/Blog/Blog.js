@@ -266,7 +266,7 @@ class Blog extends React.Component {
     console.log("articleLoaded", this.articleLoaded);
     
     
-    const imageOG = this.articleLoaded?.imagen_open_graph || articleSEO?.imagen_open_graph?.url || articleSEO?.cover || t('blog.imagen_open_graph.url')
+    const imageOG = this.articleLoaded?.imagen_open_graph || articleSEO?.imagen_open_graph?.url || articleSEO?.cover || 'TEST BLOG'
     
     return (
       <Layout className="blog-component">
