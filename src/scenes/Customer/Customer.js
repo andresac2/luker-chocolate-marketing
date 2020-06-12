@@ -3,23 +3,7 @@ import { Link } from 'react-router-dom';
 import Helmet from 'react-helmet';
 import { useDispatch, useSelector } from 'react-redux';
 
-//import doisy from '../../assets/img/Doisy&Dam.jpg'
-//import royce from '../../assets/img/royce.jpg'
-//import fifthDim from '../../assets/img/5thdimensions.jpg'
-//import laceys from '../../assets/img/Lacy\'s New.png'
-//import lyra from '../../assets/img/lyra_eshop.jpg'
-//import paul from '../../assets/img/PAUL LAFAYET_Creme.png'
-//import pots from '../../assets/img/pots&co.jpg'
-//import dengel from '../../assets/img/dengel.jpg'
-//import york from '../../assets/img/york.jpg'
-
-//import frFlag from '../../assets/img/fr-flag.png'
-//import usFlag from '../../assets/img/us-flag.png'
-//import dkFlag from '../../assets/img/dk-flag.png'
-//import ukFlag from '../../assets/img/uk-flag.png'
-//import jpFlag from '../../assets/img/jp-flag.png'
 import FloatLogo from '../../components/layout/float-logo/float-logo';
-import HelmetComponent from '../../commons/helmet/helmet';
 import { withNamespaces } from 'react-i18next';
 import i18n from '../../i18n';
 import { client as clientActions } from '../../services/Client/ClientActions'

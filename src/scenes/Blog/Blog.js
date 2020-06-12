@@ -231,7 +231,8 @@ class Blog extends React.Component {
     const { t } = this.props
     const { articlesFixeds, lastArticle } = this.props.article
     const articleBanner = articlesFixeds ? articlesFixeds[0] : lastArticle
-
+    console.log(articleBanner);
+    
     return <div className="blog-layout-latest">
       <h1>{articleBanner.title}</h1>
       {articleBanner.breads &&
@@ -266,7 +267,7 @@ class Blog extends React.Component {
     const imageOG = this.articleLoaded?.imagen_open_graph || articleSEO?.imagen_open_graph?.url || articleSEO?.cover || t('blog.imagen_open_graph.url')
 
     let banner = ''
-    
+      
     if(!this.articleLoaded || this.articleLoaded.length === 0 || !article)
       banner = '/static/media/blog-header.8847659a.jpg'
     else if(this.articleLoaded?.banner?.includes('http'))
@@ -302,7 +303,7 @@ class Blog extends React.Component {
         {allArticles?.length > 0 && clients?.length > 0 && this.articleLoaded ?
           <>
             <div className={`blog-component-header blog-component-header--${article ? article : category}`}
-              style={{ backgroundImage: `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${banner})` }}>
+              style={{ backgroundImage: category && category !== 'our-clients' ? '': `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${banner})` }}>
 
               <div className="btn-dist">
                 <Link to="/" className="logo"> <img src="/static/media/Lukerlogo.af6f7609.svg" alt="Logo Luker" /></Link>
