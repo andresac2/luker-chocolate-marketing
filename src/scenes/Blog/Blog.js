@@ -171,7 +171,7 @@ class Blog extends React.Component {
 
   _handleChange = (lng) => {
     const { match } = this.props
-
+    
     i18n.changeLanguage(lng);
 
     if (match.params.category === 'nuestros-clientes' || match.params.category === 'our-clients')
@@ -231,8 +231,7 @@ class Blog extends React.Component {
     const { t } = this.props
     const { articlesFixeds, lastArticle } = this.props.article
     const articleBanner = articlesFixeds ? articlesFixeds[0] : lastArticle
-    console.log(articleBanner);
-    
+
     return <div className="blog-layout-latest">
       <h1>{articleBanner.title}</h1>
       {articleBanner.breads &&
@@ -267,14 +266,14 @@ class Blog extends React.Component {
     const imageOG = this.articleLoaded?.imagen_open_graph || articleSEO?.imagen_open_graph?.url || articleSEO?.cover || t('blog.imagen_open_graph.url')
 
     let banner = ''
-      
-    if(!this.articleLoaded || this.articleLoaded.length === 0 || !article)
+
+    if (!this.articleLoaded || this.articleLoaded.length === 0 || !article)
       banner = '/static/media/blog-header.8847659a.jpg'
-    else if(this.articleLoaded?.banner?.includes('http'))
+    else if (this.articleLoaded?.banner?.includes('http'))
       banner = this.articleLoaded.banner
-    else if(this.articleLoaded?.banner)
+    else if (this.articleLoaded?.banner)
       banner = require(`../../assets/img/${this.articleLoaded.banner}`)
-    else if(this.articleLoaded?.cover?.includes('http'))
+    else if (this.articleLoaded?.cover?.includes('http'))
       banner = this.articleLoaded.cover
     else
       banner = require(`../../assets/img/blog/${this.articleLoaded.cover}`)
@@ -303,7 +302,11 @@ class Blog extends React.Component {
         {allArticles?.length > 0 && clients?.length > 0 && this.articleLoaded ?
           <>
             <div className={`blog-component-header blog-component-header--${article ? article : category}`}
-              style={{ backgroundImage: category && category !== 'our-clients' ? '': `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${banner})` }}>
+              style={{
+                backgroundImage: category && category !== 'our-clients' && category !== 'nuestros-clientes' ?
+                  '' :
+                  `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${banner})`
+              }}>
 
               <div className="btn-dist">
                 <Link to="/" className="logo"> <img src="/static/media/Lukerlogo.af6f7609.svg" alt="Logo Luker" /></Link>
@@ -324,7 +327,7 @@ class Blog extends React.Component {
                       className={searchOpen && 'blog-component-header--search-open'}
                       style={{ width: 400 }}
                     />}
-                  <Select defaultValue={i18n.language} onChange={() => this._handleChange}  >
+                  <Select defaultValue={i18n.language} onChange={(e) => this._handleChange(e)}  >
                     <Option value="es">ES</Option>
                     <Option value="en">EN</Option>
                   </Select>
