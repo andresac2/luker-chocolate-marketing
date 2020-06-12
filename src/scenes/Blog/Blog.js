@@ -349,7 +349,7 @@ class Blog extends React.Component {
             </div>
 
             <div className="blog-component-content">
-              {(category !== t('routes.our-clients').replace("/", "")) && category !== 'nuestros-clientes' &&
+              {category !== 'our-clients' && category !== 'nuestros-clientes' &&
                 <div className={`blog-tabs blog-tabs-${category && 'selected'}`}>
                   {categories.map(categorie =>
                     <Link
