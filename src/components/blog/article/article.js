@@ -16,9 +16,9 @@ class Article extends React.Component {
     return (
       <div className="blog-article">
         <Helmet>
-          <title>{data.title.charAt(0).toUpperCase() + data.title.slice(1).toLowerCase()}</title>
+          <title>{data.title?.charAt(0).toUpperCase() + data.title?.slice(1).toLowerCase()}</title>
           <meta name="description" content={data.meta_descripcion} />
-          <meta property="og:type" content="website"/>
+          <meta property="og:type" content="article"/>
           <meta property="og:title" content={data.title} />
           <meta property="og:description" content={data.meta_descripcion} />
           <meta property="og:image" content={data.image_open_graph?.url} />
@@ -27,7 +27,7 @@ class Article extends React.Component {
           <meta name="twitter:title" content={data.title} />
           <meta name="twitter:description" content={data.meta_descripcion} />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:image:alt" content={data.flag ? "Our clients" : data.breads[0].href} />
+          <meta name="twitter:image:alt" content={data.flag ? "Our clients" : (data.breads? data.breads[0]?.href: '')} />
           <meta name="twitter:site" content="@Luker_Chocolate" />
           <meta property="twitter:image" content={data.image_open_graph?.url} />
           <meta property="fb:app_id" content="your_app_id" />

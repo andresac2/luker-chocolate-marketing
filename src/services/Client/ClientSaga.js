@@ -8,7 +8,9 @@ function* getAll({ payload: { lng } }) {
   
   if (ok) {
     const transform = clientsTransform(payload)
-    //transform.reverse()
+    const index = transform.findIndex(item => item.url === 'york-cocoa-house')
+    transform.splice(index, 1)
+    
     yield put(clientActions.getAllResponse(transform));
   } else {
     const err = new TypeError('ERROR_GET_CLIENTS')

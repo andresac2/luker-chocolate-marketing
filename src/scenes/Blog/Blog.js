@@ -262,19 +262,29 @@ class Blog extends React.Component {
     let articleSEO
     if (serverProps)
       articleSEO = serverProps.articles;
-    console.log(articleSEO);
-    console.log("articleLoaded", this.articleLoaded);
+
+    const imageOG = this.articleLoaded?.imagen_open_graph || articleSEO?.imagen_open_graph?.url || articleSEO?.cover || t('blog.imagen_open_graph.url')
+
+    let banner = ''
     
-    
-    const imageOG = this.articleLoaded?.imagen_open_graph || articleSEO?.imagen_open_graph?.url || articleSEO?.cover || 'TEST BLOG'
-    
+    if(!this.articleLoaded || this.articleLoaded.length === 0 || !article)
+      banner = '/static/media/blog-header.8847659a.jpg'
+    else if(this.articleLoaded?.banner?.includes('http'))
+      banner = this.articleLoaded.banner
+    else if(this.articleLoaded?.banner)
+      banner = require(`../../assets/img/${this.articleLoaded.banner}`)
+    else if(this.articleLoaded?.cover?.includes('http'))
+      banner = this.articleLoaded.cover
+    else
+      banner = require(`../../assets/img/blog/${this.articleLoaded.cover}`)
+
     return (
       <Layout className="blog-component">
         <Helmet>
           <title>{articleSEO ? articleSEO.title : t('blog.titulo_seo')}</title>
           <meta name="keywords" content={t('blog.keywords')} />
           <meta property="description" content={articleSEO?.meta_descripcion || t('blog.descripcion_opengraph')} />
-          <meta property="og:type" content="website"/>
+          <meta property="og:type" content="article" />
           <meta property="og:description" content={articleSEO?.meta_descripcion || t('blog.descripcion_opengraph')} />
           <meta property="og:image" content={imageOG} />
           <meta property="og:title" content={articleSEO?.title || t('blog.titulo_protocolo_opengraph')} />
@@ -291,17 +301,8 @@ class Blog extends React.Component {
 
         {allArticles?.length > 0 && clients?.length > 0 && this.articleLoaded ?
           <>
-            <div
-              className={`blog-component-header blog-component-header--${article ? article : category}`}
-              style={{
-                backgroundImage:
-                  !this.articleLoaded || this.articleLoaded === [] || !article ? '' :
-                    !this.articleLoaded.banner ?
-                      !this.articleLoaded.cover?.includes('http') ?
-                        `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/blog/${this.articleLoaded.cover}`)})` :
-                        `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${this.articleLoaded.cover})` :
-                      `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${require(`../../assets/img/${this.articleLoaded.banner}`)})`
-              }}>
+            <div className={`blog-component-header blog-component-header--${article ? article : category}`}
+              style={{ backgroundImage: `linear-gradient(to bottom, rgba(3, 3, 3, 0.4) 100%, transparent), url(${banner})` }}>
 
               <div className="btn-dist">
                 <Link to="/" className="logo"> <img src="/static/media/Lukerlogo.af6f7609.svg" alt="Logo Luker" /></Link>
@@ -322,7 +323,7 @@ class Blog extends React.Component {
                       className={searchOpen && 'blog-component-header--search-open'}
                       style={{ width: 400 }}
                     />}
-                  <Select defaultValue={i18n.language} onChange={this._handleChange}  >
+                  <Select defaultValue={i18n.language} onChange={() => this._handleChange}  >
                     <Option value="es">ES</Option>
                     <Option value="en">EN</Option>
                   </Select>
@@ -331,7 +332,7 @@ class Blog extends React.Component {
                   {article && this.articleLoaded.title}
                   {!article && categorieSelected && categorieSelected.name}
                   {!article && !categorieSelected && 'UNDER THE TREE'}
-                  {this.articleLoaded.flag && (category === 'our-clients' || category === 'nuestros-clientes')  &&
+                  {this.articleLoaded.flag && (category === 'our-clients' || category === 'nuestros-clientes') &&
                     <img className="blog-component-header-flag" src={require('../../assets/img/' + this.articleLoaded.flag + "-flag.png")} alt={this.articleLoaded.flag.substr(0, 2)} />
                   }
                 </h1>
@@ -419,14 +420,14 @@ class Blog extends React.Component {
                         <input type="email" name="email" placeholder={t('form.give-us-email')} value={emailNewsletter} onChange={this.handleChange} />
 
                         <div className="terms-and-conditions">
-                          <input type="checkbox" required/>
+                          <input type="checkbox" required />
                           <div>{i18n.t('messages.click_accept')}&nbsp;
                           <a href={i18n.language === 'en' ? termsConditions : termsConditionsEs} target="_blank">{t('messages.terms_and_conditions')}</a>&nbsp;
                           {i18n.t('messages.and')}&nbsp;
                           <a href={i18n.language === 'en' ? privacyPolicy : privacyPolicyEs} target="_blank">{t('messages.privacy_policy')}</a>
                           </div>
                         </div>
-                        
+
                         <input type="submit" value={t('buttons.send')} disabled={newsletterWaiting} />
                       </form>
                     </div>
