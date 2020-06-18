@@ -84,7 +84,7 @@ const Article = (props) => {
           </div>
         </div>}
 
-      {recommended?.length > 0 &&
+      {recommended?.length > 0 && data.flag && 
         <div className="entries-recommend">
           <h2 className="title-recommend">{data.flag ? t('blog.other-clients') : t('blog.recommended-entries')}</h2>
           <div className="entries-recommend-model">

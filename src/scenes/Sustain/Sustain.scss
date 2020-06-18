@@ -148,6 +148,24 @@
             background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 30%, rgba(0, 0, 0, 0) 100%);
           }
         }
+
+        .card-badges {
+          width: auto;
+          height: auto;
+          margin: 0;
+          position: absolute;
+          top: -1px;
+
+          .card-badge {
+            display: inline-block;
+            //margin-right: 1em;
+
+            img {
+              width: 25px;
+              height: 25px;
+            }
+          }
+        }
       }
 
       .btn-next-img {
@@ -241,6 +259,16 @@
     flex-direction: column;
     padding-top: 70px;
     padding-bottom: 2rem;
+
+    .sustain-sidebar {
+      width: calc(100vw);
+      padding-top: 20px;
+      padding-bottom: 20px;
+
+      &--text h1 {
+        font-size: 2em;
+      }
+    }
 
     .sustain-content {
       width: 100%;
