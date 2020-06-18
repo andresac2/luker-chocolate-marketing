@@ -152,7 +152,7 @@ class Blog extends React.Component {
     }
     const fIndex = array.findIndex(art => art.url === match.params.article);
     let rest = 1;
-    let lim = array.length > 3 ? 4 : array.length;
+    let lim = array.length;
     for (let i = 1; i < lim; i++) {
       if (fIndex + i < array.length) {
         recommended = recommended.concat(array[fIndex + i])
