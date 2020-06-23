@@ -61,7 +61,7 @@ class Sustain extends React.Component {
   showModalArticle = (i) => {
     this.setState({ articleModalVisible: !this.state.articleModalVisible, modalSelectedIndex: i || 0 });
   };
-
+  
   render() {
     const { t } = this.props;
     const { items, firstItem, reportModalVisible, articleModalVisible, modalSelectedIndex } = this.state;
@@ -129,7 +129,7 @@ class Sustain extends React.Component {
             <h1>{t('sustainability.we-go-beyond')}</h1>
             <div className="sustain-content-model--panel">
               <img src={panel} alt="Panel" />
-              <a href='https://thechocolatedream.com/' target="_blank"> {t('buttons.find-out-more')} </a>
+              <a href={t('sustainability.link_find_out_more')} target="_blank"> {t('buttons.find-out-more')} </a>
             </div>
           </div>
         </div>
