@@ -110,10 +110,10 @@ class Blog extends React.Component {
         client = clients.find(client => client.url === match.params.article);
       else {
 
-        article = articles.find(art => art.url === match.params.article);
+        article = articles.find(art => art.url === match.params.article || art.article_equivalent === match.params.article);
 
         if (articlesFixeds && !article)
-          article = articlesFixeds.find(art => art.url === match.params.article);
+          article = articlesFixeds.find(art => art.url === match.params.article || art.article_equivalent === match.params.article);
       }
 
       if (!article && !client) {
@@ -170,7 +170,7 @@ class Blog extends React.Component {
   }
 
   _handleChange = (lng) => {
-    const { match } = this.props
+    const { match, article: { articles } } = this.props
     
     i18n.changeLanguage(lng);
 

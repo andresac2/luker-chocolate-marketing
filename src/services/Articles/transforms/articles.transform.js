@@ -41,6 +41,7 @@ export default (articles) => {
     art['date'] = data.acf.date;
     art['categorie'] = data.acf.categoria
     art['meta_descripcion'] = data.acf.meta_descripcion
+    art.article_equivalent = data.acf.article_equivalent
     
     const [ month, year ] = data.acf.date.split(' ');
     art._date = new Date(year + '-' + (months[month] || monthsES[month]) + '-02');
@@ -57,6 +58,7 @@ export default (articles) => {
       { href: "/blog/", name: "Blog" },
       { href: "/blog/" + data.acf.categoria?.slug, name: data.acf.categoria?.name }
     ];
+
     return art
   })
 }

@@ -24,8 +24,6 @@ const Article = (props) => {
   const altImg = 'img-example.svg';
   const fullUrl = data.fullUrl;
 
-  console.log('firstItem', firstItem);
-  
   return (
     <div className="blog-article">
       <Helmet>

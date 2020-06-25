@@ -18,6 +18,8 @@ const fs = require("fs");
 
 module.exports.renderer = (req, res) => {
 
+
+  
   // point to the html file created by CRA's build tool
   const filePath = path.resolve(__dirname, '..', '..', 'build', 'index.html');
 
@@ -47,6 +49,7 @@ module.exports.renderer = (req, res) => {
       applyMiddleware(...middleware)
     );
     sagaMiddleware.run(rootSaga);
+
     
     // render the app as a string
     let html = ReactDOMServer.renderToString(
