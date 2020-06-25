@@ -24,7 +24,7 @@ export async function parseArticle(articles, url, articlesEs) {
 		breads[1]['name'] = e.acf.categoria?.name;
 		art['autor'] = autor;
 		art['breads'] = breads;
-		art.article_equivalent = data.acf.article_equivalent
+		art.article_equivalent = e.acf.article_equivalent
 		arts.push(art);
 		art = {};
 		breads = [{}, {}];
@@ -49,7 +49,7 @@ export async function parseArticle(articles, url, articlesEs) {
 		breads[1]['name'] = e.acf.categoria?.name;
 		art['autor'] = autor;
 		art['breads'] = breads;
-		art.article_equivalent = data.acf.article_equivalent
+		art.article_equivalent = e.acf.article_equivalent
 		arts.push(art);
 		art = {};
 		breads = [{}, {}];
