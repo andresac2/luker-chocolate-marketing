@@ -82,9 +82,11 @@ module.exports.renderer = (req, res) => {
     htmlData = htmlData.replace('<div id="root"></div>', `<div id="root">${html}</div>`)
     htmlData = htmlData.replace('<div id="root"></div>', `<div id="root">${html}</div>`)
 
-    const sectionInit = htmlData.indexOf('<section class="blog-component ant-layout">') + '<section class="blog-component ant-layout">'.length
-    const sectionFinish = htmlData.indexOf('</section>') 
-    htmlData = htmlData.substring(0, sectionInit) + serverProps.articles.content + htmlData.substring(sectionFinish, htmlData.length)
+    if (req.params['0'].includes('/blog')) {
+      const sectionInit = htmlData.indexOf('<section class="blog-component ant-layout">') + '<section class="blog-component ant-layout">'.length
+      const sectionFinish = htmlData.indexOf('</section>') 
+      htmlData = htmlData.substring(0, sectionInit) + serverProps.articles.content + htmlData.substring(sectionFinish, htmlData.length)
+    }
 
     if (html.includes('404') && html.includes('The page you are looking for doesn’t exist')) {
       res.status(404).send(htmlData);
