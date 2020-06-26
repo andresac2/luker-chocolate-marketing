@@ -18,8 +18,6 @@ const fs = require("fs");
 
 module.exports.renderer = (req, res) => {
 
-
-  
   // point to the html file created by CRA's build tool
   const filePath = path.resolve(__dirname, '..', '..', 'build', 'index.html');
 
@@ -48,9 +46,8 @@ module.exports.renderer = (req, res) => {
       rootReducers,
       applyMiddleware(...middleware)
     );
-    sagaMiddleware.run(rootSaga);
+    sagaMiddleware.run(rootSaga);      
 
-    
     // render the app as a string
     let html = ReactDOMServer.renderToString(
       <Provider store={store}>
@@ -60,6 +57,7 @@ module.exports.renderer = (req, res) => {
       </Provider>);
     
     if (context.url) {
+      console.log('context', context.url)
       res.redirect(301, context.url);
       return;
     }
@@ -80,11 +78,14 @@ module.exports.renderer = (req, res) => {
     `)
 
     htmlData = htmlData.replace('full-url', req.params['0'])
-
     htmlData = htmlData.replace(/data-react-helmet="true"/g, ``)
-    
     htmlData = htmlData.replace('<div id="root"></div>', `<div id="root">${html}</div>`)
-    
+    htmlData = htmlData.replace('<div id="root"></div>', `<div id="root">${html}</div>`)
+
+    const sectionInit = htmlData.indexOf('<section class="blog-component ant-layout">') + '<section class="blog-component ant-layout">'.length
+    const sectionFinish = htmlData.indexOf('</section>') 
+    htmlData = htmlData.substring(0, sectionInit) + serverProps.articles.content + htmlData.substring(sectionFinish, htmlData.length)
+
     if (html.includes('404') && html.includes('The page you are looking for doesn’t exist')) {
       res.status(404).send(htmlData);
       return
