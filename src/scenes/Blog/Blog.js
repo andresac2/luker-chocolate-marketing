@@ -299,7 +299,7 @@ class Blog extends React.Component {
           <meta name="twitter:site" content="@Luker_Chocolate" />
         </Helmet>
 
-        {allArticles?.length > 0 && clients?.length > 0 && this.articleLoaded ?
+        {allArticles?.length > 0 && clients?.length > 0 && this.articleLoaded &&
           <>
             <div className={`blog-component-header blog-component-header--${article ? article : category}`}
               style={{
@@ -349,6 +349,10 @@ class Blog extends React.Component {
             </div>
 
             <div className="blog-component-content">
+              {allArticles?.length === 0 || clients?.length == 0 || !this.articleLoaded &&
+                <Spin size="large" style={{ position: 'absolute', right: '50%', top: '50%' }}/>
+              }
+
               {category !== 'our-clients' && category !== 'nuestros-clientes' &&
                 <div className={`blog-tabs blog-tabs-${category && 'selected'}`}>
                   {categories.map(categorie =>
@@ -439,7 +443,7 @@ class Blog extends React.Component {
               }
             </div>
             <Footer />
-          </> : <Spin size="large" />
+          </>
         }
       </Layout >
     );

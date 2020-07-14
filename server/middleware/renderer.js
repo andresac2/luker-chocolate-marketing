@@ -15,6 +15,7 @@ import rootReducers from '../../src/store/Reducers';
 
 const path = require("path");
 const fs = require("fs");
+const { initTemplateArticle, finishTemplateArticle } = require('./templateStatic')
 
 module.exports.renderer = (req, res) => {
 
@@ -65,6 +66,7 @@ module.exports.renderer = (req, res) => {
     const helmet = Helmet.renderStatic();
 
     //remove metas default
+    console.log(htmlData);
     
     const metaDefaultInit = htmlData.indexOf('<meta-default-init/>')
     const metaDefaultFinish = htmlData.indexOf('<meta-default-finish/>') + '<meta-default-finish/>'.length
@@ -85,7 +87,14 @@ module.exports.renderer = (req, res) => {
     if (req.params['0'].includes('/blog') && serverProps.articles) {
       const sectionInit = htmlData.indexOf('<section class="blog-component ant-layout">') + '<section class="blog-component ant-layout">'.length
       const sectionFinish = htmlData.indexOf('</section>') 
-      htmlData = htmlData.substring(0, sectionInit) + serverProps.articles.content + htmlData.substring(sectionFinish, htmlData.length)
+      console.log(serverProps.articles.content);
+      
+      htmlData = 
+        htmlData.substring(0, sectionInit) + 
+        initTemplateArticle + 
+        serverProps.articles.content + 
+        finishTemplateArticle +
+        htmlData.substring(sectionFinish, htmlData.length)
     }
 
     if (html.includes('404') && html.includes('The page you are looking for doesn’t exist')) {
