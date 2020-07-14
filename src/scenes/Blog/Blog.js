@@ -260,8 +260,11 @@ class Blog extends React.Component {
     this.loadArticle();
 
     let articleSEO
-    if (serverProps)
+    if (serverProps){
+      //return article one
       articleSEO = serverProps.articles;
+      this.articleLoaded = serverProps.articles;
+    } 
 
     const imageOG = this.articleLoaded?.imagen_open_graph || articleSEO?.imagen_open_graph?.url || articleSEO?.cover || t('blog.imagen_open_graph.url')
 
