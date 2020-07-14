@@ -9,6 +9,7 @@ import { withNamespaces } from 'react-i18next';
 
 import { termsConditions, privacyPolicy } from "../../../commons/data/data-en";
 import { termsConditions as termsConditionsEs, privacyPolicy as privacyPolicyEs } from "../../../commons/data/data-es";
+import { RegisterCustomerSaleforce } from '../../../commons/services/salesforce';
 
 import { articlesSustain as articlesSustainEn, countries as dataCountries } from '../../../commons/data/data-en';
 import { articlesSustain as articlesSustainEs, countries as paises } from '../../../commons/data/data-es';
@@ -66,10 +67,39 @@ class ModalReportDoc extends React.Component {
       if (!err) {
         console.log('Received values of form: ', values);
         this.downloadDocuments();
+        this.SendSalesForce(values)
+        console.log(values);
+        
         this.props.form.resetFields();
       }
     });
   };
+
+  SendSalesForce(data) {
+    const countries = i18n.language === 'en' ? dataCountries : paises;
+    const countryName = countries.find(item => item.abrev === data.country)
+
+    let bodyData = {
+      payload: {
+        FirstName: data.username.replace(/ .*/, ''),
+        LastName: data.username.substr(data.username.indexOf(" ") + 1),
+        CLK_DescriptionoFirstTouchPoint__c: `Luker web Sustainability Report`,
+        Country: countryName.name,
+        Email: data.email,
+        LeadSource: "Website",
+        MobilePhone: data.phone || "",
+        Company: "No company"
+      }
+    }
+
+    let emailData = `<h3>Hi</h3>
+    <p>Our customer <strong>${data.username}</strong> from <strong>${data.country}</strong> generate a sustainability report from this email: ${data.email}</p>   
+    <p></p>
+    Best wishes, greetings from <strong>Luker WEB</strong> !!
+    `;
+
+    RegisterCustomerSaleforce(bodyData, emailData).then(() => this.setState({ isLoading: false }))
+  }
 
   downloadDocuments() {
     //(modalReportItems.filter(item => item.selected).some(function (v) { return v.id.includes(2) }))
@@ -119,6 +149,7 @@ class ModalReportDoc extends React.Component {
     const { reportModalVisible, modalReportItems } = this.state;
     const { Option } = Select;
     const countries = i18n.language === 'en' ? dataCountries : paises;
+
     return (
       <div className="modal-report">
         <div className="modal-report-report">
