@@ -54,9 +54,9 @@ class FloatLogo extends React.Component {
                   </>
               }
             </>}
-            <Link className="float-logo-dist" to={t('routes.contact-us')}>
+            <a className="float-logo-dist" href={t('routes.contact-us')} target="_self">
               {t('header.contact-us')}
-            </Link>
+            </a>
         </div>
         <Modals visible={distModalVisible} modal={'distributors'} showModalDist={this.showModalDist} />
       </>

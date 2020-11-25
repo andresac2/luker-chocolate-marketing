@@ -75,7 +75,7 @@ class Header extends React.Component {
             <Link to="/blog" className={`selected-tab selected-tab-responsive ${selectTab === '/blog' && selectTab.slice(1)}`} ><span>{t('header.blog')}</span></Link>
             {/*<Link to="/" className={`selected-tab selected-tab-responsive`} ><span>CREATE YOUR OWN CHOCOLATE</span></Link>*/}
             <Link to="/" onClick={e => this.handleShowMoreInfo(e)} className={`selected-tab selected-tab-responsive`} ><span>{t('header.more-info')}</span></Link>
-            <Link to={t('routes.contact-us')} className={`selected-tab selected-tab-responsive`}><span>{t('header.contact-us')}</span></Link>
+            <a href={t('routes.contact-us')} target="_self" className={`selected-tab selected-tab-responsive`}><span>{t('header.contact-us')}</span></a>
           </nav>
         </div>
         {moreInfoVisible && <Footer mode='responsive' handleShowMoreInfo={this.handleShowMoreInfo} />}

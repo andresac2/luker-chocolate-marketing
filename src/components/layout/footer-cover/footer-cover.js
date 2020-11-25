@@ -61,7 +61,9 @@ class FooterCover extends React.Component {
             {false && <Link to="/blog"><span>{t('header.blog')}</span></Link>}
             {false && <Link to="/"><span>CREATE YOUR OWN CHOCOLATE</span></Link>}
             {false && <Link to='' onClick={e => { this.handleShowMoreInfo(e); this.footerToggle(); }}><span>{t('header.more-info')}</span></Link>}
-            <Link to={t('routes.contact-us')}><span>{t('header.contact-us')}</span></Link>
+            <a href={t('routes.contact-us')} target="_self">
+              <span>{t('header.contact-us')}</span>
+            </a>
           </nav>
         </div>
         <button className="btn-dist-footer" onClick={() => this.showModalDist()}>{t('buttons.find-distributor')}</button>

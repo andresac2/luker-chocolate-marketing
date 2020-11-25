@@ -77,7 +77,9 @@ class Home extends React.Component {
         </div>
 
         <div className="home-buttons">
-          <Link to={t('routes.contact-us')}><span>{t('header.contact-us')}</span></Link>
+          <a href={t('routes.contact-us')} target="_self">
+            <span>{t('header.contact-us')}</span>
+          </a>
         </div>
 
         {isCertifications && <>
