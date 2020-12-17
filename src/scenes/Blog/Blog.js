@@ -425,7 +425,7 @@ class Blog extends React.Component {
                       </div>
                     </div>
                     <div className="blog-layout-newsletter">
-                      <h2><a href="{`https://info.lukercacao.com/luker/Newsletter/${lngSelect}`}"> {t('blog.newsletter')}</a></h2>
+                      <h2><a href="{`https://info.lukercacao.com/luker/Newsletter/${this.state.lngSelect}`}"> {t('blog.newsletter')}</a></h2>
                     
                     </div>
                   </div>
