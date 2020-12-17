@@ -425,22 +425,8 @@ class Blog extends React.Component {
                       </div>
                     </div>
                     <div className="blog-layout-newsletter">
-                      <h2>{t('blog.newsletter')}</h2>
-                      <p>{t('blog.newsletter-text')}</p>
-                      <form onSubmit={this.registerEmailNewsletter}>
-                        <input type="email" name="email" placeholder={t('form.give-us-email')} value={emailNewsletter} onChange={this.handleChange} />
-
-                        <div className="terms-and-conditions">
-                          <input type="checkbox" required />
-                          <div>{i18n.t('messages.click_accept')}&nbsp;
-                          <a href={i18n.language === 'en' ? termsConditions : termsConditionsEs} target="_blank">{t('messages.terms_and_conditions')}</a>&nbsp;
-                          {i18n.t('messages.and')}&nbsp;
-                          <a href={i18n.language === 'en' ? privacyPolicy : privacyPolicyEs} target="_blank">{t('messages.privacy_policy')}</a>
-                          </div>
-                        </div>
-
-                        <input type="submit" value={t('buttons.send')} disabled={newsletterWaiting} />
-                      </form>
+                      <h2><a href="{`https://info.lukercacao.com/luker/Newsletter/${lngSelect}`}"> {t('blog.newsletter')}</a></h2>
+                    
                     </div>
                   </div>
               }
