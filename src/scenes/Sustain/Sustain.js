@@ -91,7 +91,7 @@ class Sustain extends React.Component {
           <div className="sustain-sidebar--text">
             <h1>{t('header.sustainability')}</h1>
             <div className="sustain-sidebar--text-content" dangerouslySetInnerHTML={{ __html: t('sustainability.sustain-content') }} />
-            <button onClick={() => this.showModalReport()}> {t('buttons.get-full-report')} </button>
+            <a href="{`https://info.lukercacao.com/luker/Sostenibilidad/${this.state.lngSelect`}"> {t('buttons.get-full-report')} </a>
           </div>
         </div>
         <div className="sustain-content">
