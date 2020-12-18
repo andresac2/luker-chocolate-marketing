@@ -119,8 +119,8 @@ class Footer extends React.Component {
             <Link to="/blog">{t('footer.visit-our-blog').toUpperCase()}</Link>
           </div>
           {(!isNewsletterHidden && mode !== 'responsive') && <div className="footer-component-social">
-            <h2>{t('blog.join-newsletter')}</h2>
-            <form onSubmit={this.registerEmailNewsletter}>
+            <h2><a href={`https://info.lukercacao.com/luker/Newsletter/${i18n.language}`}>{t('blog.join-newsletter')}</a></h2>
+            {/* <form onSubmit={this.registerEmailNewsletter}>
               <input type="email" name="email" placeholder={t('form.give-us-email')} value={emailNewsletter} onChange={this.handleChangeNews} />
 
               <div className="foo-terms-and-conditions">
@@ -133,7 +133,7 @@ class Footer extends React.Component {
               </div>
 
               <input type="submit" value={t('buttons.send')} disabled={newsletterWaiting} />
-            </form>
+            </form> */}
             <div className="footer-component-social--btn">
               <a href="https://www.linkedin.com/company/lukerchocolate/" target="_blank" ><FaLinkedinIn /></a>
               <a href="https://www.instagram.com/lukerchocolate/" target="_blank" ><FaInstagram /></a>
