@@ -52,9 +52,12 @@ class ProductServices extends React.Component {
             }
             <img className="btn-next-img btn-next-img--right" src="/static/media/back.9ae9d2c8.svg" alt='right' onClick={() => this.reorderItems(items, limit, 0)} />
           </div>
+          <div className="description">
+            {items[1].description}
+          </div>
           <Link className="btn-tobuy" to={t('routes.products-services') + "/" + page + "/" + items[1].id}>{(page === 'maquila') ? t('buttons.find-out-more').toUpperCase() : t('buttons.get-it-here').toUpperCase()}</Link>
           <div className={`product-services-component--footer product-services-component--footer--${items[1].id}`}>
-            {items[1].description}
+            <p/>
             <div className="product-services-component-certificates">
               <a href="https://www.sedexglobal.com/" target="_blank"> <img src={logoSedex} alt="Logo sedex" /> </a>
               <a href="https://www.nongmoproject.org/find-non-gmo/verified-products/?brand_id=10589" target="_blank"> <img src={logoGmo} alt="Logo gmo" /> </a>
