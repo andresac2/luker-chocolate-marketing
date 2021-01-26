@@ -35,8 +35,12 @@ export default function BasicExample(props) {
       <ScrollToTop />
       <Switch>
         <Route exact path="/" component={Home} changefreq='weekly' priority={1} />
+
+        {/*
         <Route path="/chocolate-process" component={() => <Flow serverProps={props.serverProps} />} />
         <Route path="/proceso-del-chocolate" component={() => <Flow serverProps={props.serverProps} />} />
+        */}
+        
         <Route path="/sustainability" component={Sustain} />
         <Route path="/sostenibilidad" component={Sustain} />
         <Route path="/products-services/:title/:item?" component={Services} />
@@ -45,8 +49,12 @@ export default function BasicExample(props) {
         <Route path="/productos-servicios" component={Solutions} />
         <Route path="/our-clients" component={Customer} />
         <Route path="/nuestros-clientes" component={Customer} />
+
+        {/*
         <Route path="/ideas-trends" component={Ryd} />
         <Route path="/ideas-tendencias" component={Ryd} />
+        */}
+
         <Route path="/our-value/:id" component={OurValue} />
         <Route path="/propuesta-valor/:id" component={OurValue} />
         <Route path="/our-value" component={ValuePropose} />
