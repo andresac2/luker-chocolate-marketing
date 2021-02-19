@@ -84,7 +84,7 @@ class Footer extends React.Component {
             <ul>
               <li><a href="https://goo.gl/maps/6Ni5hcRznH8yMznv9" target="_blank">{t('footer.street')} 13 # 68-98</a></li>
               <li>Bogotá, Colombia</li>
-              <li><a href="mailto:lukercacao@lukerchocolate.com" target="_blank">lukercacao@lukerchocolate.com</a></li>
+              <li><a href="mailto:lukerchocolate@lukercacao.com" target="_blank">lukerchocolate@lukercacao.com</a></li>
               <li><a href="tel:+57(1) 4473700">+57(1) 4473700</a></li>
             </ul>
           </div>
