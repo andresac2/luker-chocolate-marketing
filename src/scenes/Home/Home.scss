@@ -1,7 +1,6 @@
 .home {
   //background: transparent url('../../assets/img/cocoaPods.jpg') 0% 0% no-repeat;
   background: transparent url('../../assets/img/cover-home.jpg') 0% 0% no-repeat;
-  background-size: contain;
   background-position: right;
   background-color: #0c0401;
   opacity: 1;
@@ -13,8 +12,6 @@
   flex-direction: column;
 
   @media screen and (max-width: 1600px) {
-    background-position-x: 15vw;
-    background-size: cover;
   }
 
   @media screen and (max-width: 960px) {
