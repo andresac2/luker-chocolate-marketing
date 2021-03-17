@@ -80,8 +80,10 @@ class Home extends React.Component {
           <a href={t('routes.contact-us')} target="_self">
             <span>{t('header.contact-us')}</span>
           </a>
-          <a className="home-buttons-blog" href="blog" target="_self">
-            <span>Blog</span>
+          <a 
+            className="home-buttons-blog" 
+            href={`https://info.lukercacao.com/luker/${i18n.language == 'es'?'Sostenibilidad/es/':'Sustainability/en/'}`}> 
+            {t('buttons.get-full-report')} 
           </a>
         </div>
 
