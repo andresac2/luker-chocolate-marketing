@@ -103,6 +103,13 @@ class ContactSide extends React.Component {
     this.setState({ countryCode: inds[0].ind });
   }
 
+  redirectContactUs = () => {
+    if(i18n.language === 'en')
+      window.location.replace('https://info.lukercacao.com/luker/ContactUs/en/')
+    else  
+      window.location.replace('https://info.lukercacao.com/luker/Contactanos/es/')
+  }
+
   render() {
     const { getFieldDecorator } = this.props.form;
     const { isLoading, countryCode } = this.state;
@@ -124,8 +131,10 @@ class ContactSide extends React.Component {
       <div className={`contact-component contact-component--${page}`} >
         <div className={`contact-component-content`}>
           <h1>{t('form.give-us-details')}</h1>
-
-          {!isLoading ?
+          <Button type="primary" className="contact-form-button" onClick={this.redirectContactUs}>
+            {t('buttons.contact_us_get_quote')}
+          </Button>
+          {/*!isLoading ?
             <Form onSubmit={this.handleSubmit} className="contact-form">
               <Form.Item>
                 {getFieldDecorator('username', {
@@ -231,7 +240,7 @@ class ContactSide extends React.Component {
               </Form.Item>
             </Form>
             : <Spin size="large" />
-          }
+                */}
         </div>
       </div >
     );
